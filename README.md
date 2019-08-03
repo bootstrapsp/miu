@@ -38,6 +38,47 @@ Current release covers implementation for most of the modules from Indy SDK, pre
 
 Note: You'll need to add pool_transactions_genesis file first before configuring in the config.json
 
+## Installation and trying out
+
+### Pre-req
+
+You'll need Indy node / Server before going through with steps defined below.
+
+1. Install python 3
+```
+sudo add-apt-repository ppa:deadsnakes/ppa
+sudo apt-get update
+sudo apt-get install python3.6
+```
+
+2. Clone [miu](https://github.com/bootstrapsp/miu.git) repository
+
+3. CD into the location where you have cloned
+
+4. Create virtualenv:
+
+```
+python3 -m venv my_venv
+```
+
+
+5. Activate virtualenv
+
+```
+source ./my_venv/bin/activate
+```
+
+6. Install Dependencies
+```
+pip install -r requirements.txt
+```
+
+7. Run the miu server
+```
+python server.py
+```
+
+This will start the server on localhost:50051. You then will have to connect your gRPC client to this. 
 
 ## What's next
 
