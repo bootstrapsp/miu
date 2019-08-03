@@ -1,0 +1,142 @@
+
+syntax = "proto3";
+
+
+// Request message with JSON structure for new wallet creation
+message NewWalletDefinition {
+  Config walletConfig = 1;
+  Credentials walletCredentials = 2;
+}
+message Config {
+  string walletID = 1;
+  string walletstorageType = 2;
+  StorageConfig storePath = 3;
+}
+message StorageConfig {
+  string newWalletPath = 1;
+}
+message Credentials {
+  string newWalletKey = 1;
+  string newWalletStorageCredentials = 2;
+  string newWalletKeyDerivationMethod = 3;
+}
+
+
+// Request message with passphrase
+message CreateWalletErrorCode {
+  string NewWalletErrorCode = 1;
+}
+
+
+// Request message OpenWalletDefinition
+message OpenWalletDefinition {
+  OpenWalletConfig Config = 1;
+  OpenWalletCredentials Credentials = 2;
+}
+message OpenWalletConfig {
+  string Id = 1;
+  string StorageType = 2;
+  OpenWalletStorageConfig Path = 3;
+}
+message OpenWalletStorageConfig {
+  string path = 1;
+}
+message OpenWalletCredentials {
+  string Key = 1;
+  string ReKey = 2;
+  string StorageCredentials = 3;
+  string KeyDerivationMethod = 4;
+  string ReKeyDerivationMethod = 5;
+}
+// Response message OpenWallethandle
+message OpenWalletHandle {
+  int64 WalletHandle = 1;
+}
+
+
+// Request message Close Wallet
+message CloseWalletHandle {
+  int64 WalletHandle = 1;
+}
+// Response message close wallet
+message CloseWalletStatus {
+  string CloseWalletCode = 1;
+}
+
+
+// Request message delete wallet
+message DeleteWalletDefinition {
+  DeleteWalletConfig Config = 1;
+  DeleteWaletCredentials Credentials = 2;
+}
+message DeleteWalletConfig {
+  string DeleteWalletID = 1;
+  string DeleteWalletStorageType = 2;
+  DeleteWalletStorageConfiguration StorageConfig = 3;
+}
+message DeleteWalletStorageConfiguration {
+  string Path = 1;
+}
+message DeleteWaletCredentials {
+  string DeleteWalletKey = 1;
+  string DeleteWalletStorageCredentials = 2;
+  string DeleteWalletKeyDerivationMethod = 3;
+}
+// Response message delete wallet
+message DeleteWalletConfirmation {
+  bool DeleteWalletStatus = 1;
+}
+
+// Request message export wallet
+message ExportWalletDefinition {
+  int64 ExportWalletHandle = 1;
+  ExportWalletConfigJson ExportConfigJson = 2;
+}
+message ExportWalletConfigJson {
+  string ExportWalletPath = 1;
+  string ExportWalletKey = 2;
+  string ExportWalletKeyDerivationMethod = 3;
+}
+// Response message export wallet
+message ExportWalletConfirmation {
+  bool ExportWalletStatus = 1;
+}
+
+// Request message Import wallet
+message ImportWalletDefinition {
+  ImportWalletConfig Config = 1;
+  ImportWalletCredentials Credentials = 2;
+  ImportWalletConfigJson ConfigJson = 3;
+}
+message ImportWalletConfig{
+  string Id = 1;
+  string StorageType = 2;
+  ImportWalletStorageConfig StorageConfig = 3;
+  
+}
+message ImportWalletStorageConfig{
+  string Path = 1;
+}
+message ImportWalletCredentials{
+  string Key = 1;
+  string StorageCredentials = 2;
+  string KeyDerivationMethod = 3;
+}
+message ImportWalletConfigJson{
+  string Path = 1;
+  string Key = 2;
+}
+// Response message Import Wallet
+message ImportWalletConfirmation {
+  string ImportWalletStatusCode = 1;
+}
+
+
+// Request message Generate wallet key
+message GenerateWalletKeyDefinition {
+  string Seed = 1;
+}
+// Response message Generate Wallet Key
+message GenerateWalletKeyConfirmation {
+  string GenerateWalletKeyStatus = 1;
+}

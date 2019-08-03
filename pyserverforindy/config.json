@@ -1,0 +1,4 @@
+{
+	"TEST_POOL_IP":"192.243.33.37",
+	"pool_genesis_txn_path":"./pool_transactions_genesis"
+}

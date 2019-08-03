@@ -1,0 +1,66 @@
+syntax = "proto3";
+
+// Create Pool Ledger Config
+message CreatePoolLedgerConfigRequest{
+	string ConfigName = 1;
+	ConfigCreatePoolLedger Config = 2;
+}
+message ConfigCreatePoolLedger{
+	string GensisTxn = 1;
+}
+message CreatePoolLedgerConfigResponse{
+	int64 ErrorCode = 1;
+}
+
+// Open Pool Ledger
+message OpenPoolLedgerRequest{
+	string ConfigName = 1;
+	ConfigOpenLedger Config = 2;
+}
+message ConfigOpenLedger{
+	int64 Timeout = 1;
+	int64 ExtendedTimeour = 2;
+	repeated string PreorderedNodes = 3;
+}
+message OpenPoolLedgerResponse{
+	int64 Handle = 1;
+}
+
+// Refresh Pool Ledger
+message RefreshPoolLedgerRequest{
+	int64 Handle = 1;
+}
+message RefreshPoolLedgerResponse{
+	int64 ErrorCode = 1;
+}
+
+// List Pools
+message ListPoolsRequest{
+}
+message ListPoolsResponse{
+	int64 ErrorCode = 1;
+}
+
+// Close Pool Ledger
+message ClosePoolLedgerRequest{
+	int64 Handle = 1;
+}
+message ClosePoolLedgerResponse{
+	int64 ErrorCode = 1;
+}
+
+// Delete Pool Ledger Config
+message DeletePoolLedgerConfigRequest{
+	string ConfigName = 1;
+}
+message DeletePoolLedgerConfigResponse{
+	int64 ErrorCode = 1;
+}
+
+// Set Protocol Version
+message SetProtocolVersionRequest{
+	int64 ProtocolVersion = 1;
+}
+message SetProtocolVersionResponse{
+	int64 ErrorCode = 1;
+}

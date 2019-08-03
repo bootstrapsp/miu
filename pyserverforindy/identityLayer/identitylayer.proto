@@ -1,0 +1,310 @@
+// All Service and field names are CamelCase
+
+syntax = "proto3";
+
+
+// For `strings`, the default value is the empty string.
+// For `bytes`, the default value is empty bytes.
+// For `bools`, the default value is false.
+// For `numeric` types, the default value is zero.
+// For `enums`, the default value is the first defined enum value, which must be 0.
+// For message fields, the field is not set. Its exact value is language-dependent. See the generated code guide for details.
+// The default value for `repeated` fields is empty (generally an empty list in the appropriate language).
+
+
+// IMPORT PROTO FILES
+import "blob_storage.proto";  // blob storage proto
+import "anoncreds.proto";  // anoncreds proto
+import "pool.proto";  // pool proto
+import "crypto.proto"; // crypto proto
+import "pairwise.proto"; // pairwise proto
+import "did.proto"; // did proto
+import "ledger.proto"; // ledger proto
+import "wallet.proto"; // wallet proto
+import "non_secret.proto"; // non-secret proto
+
+package identitylayer;
+
+
+// `non-secret` services
+service NonSecretService{
+  rpc AddWalletRecord (AddWalletRecordRequest) returns (AddWalletRecordResponse) {}
+  rpc UpdateWalletRecordValue (UpdateWalletRecordValueRequest) returns (UpdateWalletRecordValueResponse) {}
+  rpc UpdateWalletRecordTags (UpdateWalletRecordTagsRequest) returns (UpdateWalletRecordTagsResponse) {}
+  rpc AddWalletRecordTags (AddWalletRecordTagsRequest) returns (AddWalletRecordTagsResponse) {}
+  rpc DeleteWalletRecordTags (DeleteWalletRecordTagsRequest) returns (DeleteWalletRecordTagsResponse) {}
+  rpc DeleteWalletRecord (DeleteWalletRecordRequest) returns (DeleteWalletRecordResponse) {}
+  rpc GetWalletRecord (GetWalletRecordRequest) returns (GetWalletRecordResponse) {}
+  rpc OpenWalletSearch (OpenWalletSearchRequest) returns (OpenWalletSearchResponse) {}
+  rpc FetchWalletSearchNextRecords (FetchWalletSearchNextRecordsRequest) returns (FetchWalletSearchNextRecordsResponse) {}
+  rpc CloseWalletSearch (CloseWalletSearchRequest) returns (CloseWalletSearchResponse) {}
+}
+
+
+// `ledger` services
+service LedgerService{
+  rpc SignAndSubmitRequest (SignAndSubmitRequestRq) returns (SignAndSubmitRequestRs) {}
+  rpc SubmitRequest (SubmitRequestRq) returns (SubmitRequestRs) {}
+  rpc SubmitAction (SubmitActionRq) returns (SubmitActionRs) {}
+  rpc SignRequest (SignRequestRq) returns (SignRequestRs) {}
+  rpc MultiSignRequest (MultiSignRequestRq) returns (MultiSignRequestRs) {}
+  rpc BuildGetDdoRequest (BuildGetDdoRequestRq) returns (BuildGetDdoRequestRs) {}
+  rpc BuildNymRequest (BuildNymRequestRq) returns (BuildNymRequestRs) {}
+  rpc BuildAttribRequest (BuildAttribRequestRq) returns (BuildAttribRequestRs) {}
+  rpc BuildGetAttribRequest (BuildGetAttribRequestRq) returns (BuildGetAttribRequestRs) {}
+  rpc BuildGetNymRequest (BuildGetNymRequestRq) returns (BuildGetNymRequestRs) {}
+  rpc BuildSchemaRequest (BuildSchemaRequestRq) returns (BuildSchemaRequestRs) {}
+  rpc BuildGetSchemaRequest (BuildGetSchemaRequestRq) returns (BuildGetSchemaRequestRs) {}
+  rpc ParseGetSchemaResponse (ParseGetSchemaResponseRq) returns (ParseGetSchemaResponseRs) {}
+  rpc BuildCredDefRequest (BuildCredDefRequestRq) returns (BuildCredDefRequestRs) {}
+  rpc BuildGetCredDefRequest (BuildGetCredDefRequestRq) returns (BuildGetCredDefRequestRs) {}
+  rpc ParseGetCredDefResponse (ParseGetCredDefResponseRq) returns (ParseGetCredDefResponseRs) {}
+  rpc BuildNodeRequest (BuildNodeRequestRq) returns (BuildNodeRequestRs) {}
+  rpc BuildGetValidatorInfoRequest (BuildGetValidatorInfoRequestRq) returns (BuildGetValidatorInfoRequestRs) {}
+  rpc BuildGetTxnRequest (BuildGetTxnRequestRq) returns (BuildGetTxnRequestRs) {}
+  rpc BuildPoolConfigRequest (BuildPoolConfigRequestRq) returns (BuildPoolConfigRequestRs) {}
+  rpc BuildPoolRestartRequest (BuildPoolRestartRequestRq) returns (BuildPoolRestartRequestRs) {}
+  rpc BuildPoolUpgradeRequest (BuildPoolUpgradeRequestRq) returns (BuildPoolUpgradeRequestRs) {}
+  rpc BuildRevocRegDefRequest (BuildRevocRegDefRequestRq) returns (BuildRevocRegDefRequestRs) {}
+  rpc BuildGetRevocRegDefRequest (BuildGetRevocRegDefRequestRq) returns (BuildGetRevocRegDefRequestRs) {}
+  rpc ParseGetRevocRegDefResponse (ParseGetRevocRegDefResponseRq) returns (ParseGetRevocRegDefResponseRs) {}
+  rpc BuildRevocRegEntryRequest (BuildRevocRegEntryRequestRq) returns (BuildRevocRegEntryRequestRs) {}
+  rpc BuildGetRevocRegRequest (BuildGetRevocRegRequestRq) returns (BuildGetRevocRegRequestRs) {}
+  rpc ParseGetRevocRegResponse (ParseGetRevocRegResponseRq) returns (ParseGetRevocRegResponseRs) {}
+  rpc BuildGetRevocRegDeltaRequest (BuildGetRevocRegDeltaRequestRq) returns (BuildGetRevocRegDeltaRequestRs) {}
+  rpc ParseGetRevocRegDeltaResponse (ParseGetRevocRegDeltaResponseRq) returns (ParseGetRevocRegDeltaResponseRs) {}
+  rpc GetResponseMetadata (GetResponseMetadataRq) returns (GetResponseMetadataRs) {}
+}
+
+
+// `did` Services
+service DidService{
+  
+  // Create And Store My Did
+  rpc CreateAndStoreMyDid (CreateAndStoreMyDidRequest) returns (CreateAndStoreMyDidResponse) {}
+
+  // Replace Keys Start
+  rpc ReplaceKeysStart (ReplaceKeysStartRequest) returns (ReplaceKeysStartResponse) {}
+
+  // Replace Keys Apply
+  rpc ReplaceKeysApply (ReplaceKeysApplyRequest) returns (ReplaceKeysApplyResponse) {}
+
+  // Store Their Did
+  rpc StoreTheirDid (StoreTheirDidRequest) returns (StoreTheirDidResponse) {}
+
+  // Create Key; Prefix 'Did' to avoid conflict with other proto
+  rpc DidCreateKey (DidCreateKeyRequest) returns (DidCreateKeyResponse) {}
+
+  // Set Key Metadata
+  rpc DidSetKeyMetadata (DidSetKeyMetadataRequest) returns (DidSetKeyMetadataRequest) {}
+
+  // Get Key Metadata
+  rpc DidGetKeyMetadata (DidGetKeyMetadataRequest) returns (DidGetKeyMetadataResponse) {}
+
+  // Key For Did
+  rpc KeyForDid (KeyForDidRequest) returns (KeyForDidResponse) {}
+
+  // Key For Local Did
+  rpc KeyForLocalDid (KeyForLocalDidRequest) returns (KeyForLocalDidResponse) {}
+
+  // Set Endpoint For Did
+  rpc SetEndpointForDid (SetEndpointForDidRequest) returns (SetEndpointForDidResponse) {}
+
+  // Get Endpoint For Did
+  rpc GetEndpointForDid (GetEndpointForDidRequest) returns (GetEndpointForDidResponse) {}
+
+  // Set Did Metadata
+  rpc SetDidMetadata (SetDidMetadataRequest) returns (SetDidMetadataResponse) {}
+
+  // Get Did Metadata
+  rpc GetDidMetadata (GetDidMetadataRequest) returns (GetDidMetadataResponse) {}
+
+  // Get My Did With Meta
+  rpc GetMyDidWithMeta (GetMyDidWithMetaRequest) returns (GetMyDidWithMetaResponse) {}
+
+  // List My Dids With Meta
+  rpc ListMyDidsWithMeta (ListMyDidsWithMetaRequest) returns (ListMyDidsWithMetaResponse) {}
+
+  // Abbreviate Verkey
+  rpc AbbreviateVerkey (AbbreviateVerkeyRequest) returns (AbbreviateVerkeyResponse) {}
+}
+
+// `pairwise` Services
+service PairwiseService{
+  // Is Pairwise Exists
+  rpc IsPairwiseExists (IsPairwiseExistsRequest) returns (IsPairwiseExistsResponse) {}
+
+  // Create Pairwise
+  rpc CreatePairwise (CreatePairwiseRequest) returns (CreatePairwiseResponse) {}
+
+  // List Pairwise
+  rpc ListPairwise (ListPairwiseRequest) returns (ListPairwiseResponse) {}
+
+  // Get Pairwise
+  rpc GetPairwise (GetPairwiseRequest) returns (GetPairwiseResponse) {}
+
+  // Set Pairwise Metadata
+  rpc SetPairwiseMetadata (SetPairwiseMetadataRequest) returns (SetPairwiseMetadataResponse) {}
+}
+
+
+// `crypto` Services
+service CryptoService{
+  
+  // Create Key
+  rpc CreateKey (CreateKeyRequest) returns (CreateKeyResponse) {}
+  
+  // Set Key Metadata
+  rpc SetKeyMetadata (SetKeyMetadataRequest) returns (SetKeyMetadataResponse) {}
+  
+  // Get Key Metadata
+  rpc GetKeyMetadata (GetKeyMetadataRequest) returns (GetKeyMetadataResponse) {}
+  
+  // Crypto Sign
+  rpc CryptoSign (CryptoSignRequest) returns (CryptoSignResponse) {}
+  
+  // Crypto Verify
+  rpc CryptoVerify (CryptoVerifyRequest) returns (CryptoVerifyResponse) {}
+  
+  // Auth Crypt
+  rpc AuthCrypt (AuthCryptRequest) returns (AuthCryptResponse) {}
+  
+  // Auth Decrypt
+  rpc AuthDecrypt (AuthDecryptRequest) returns (AuthDecryptResponse) {}
+  
+  // Anon Crypt
+  rpc AnonCrypt (AnonCryptRequest) returns (AnonCryptResponse) {}
+  
+  // Anon Decrypt
+  rpc AnonDecrypt (AnonDecryptRequest) returns (AnonDecryptResponse) {}
+
+}
+
+// `pool` Services
+service PoolService{
+  
+  // Create Pool Ledger Config
+  rpc CreatePoolLedgerConfig (CreatePoolLedgerConfigRequest) returns (CreatePoolLedgerConfigResponse) {}
+
+  // Open Pool Ledger
+  rpc OpenPoolLedger(OpenPoolLedgerRequest) returns (OpenPoolLedgerResponse) {}
+
+  // Refresh Pool Ledger
+  rpc RefreshPoolLedger(RefreshPoolLedgerRequest) returns (RefreshPoolLedgerResponse) {}
+
+  // List Pools
+  rpc ListPools(ListPoolsRequest) returns(ListPoolsResponse) {}
+
+  // Close Pool Ledger
+  rpc ClosePoolLedger(ClosePoolLedgerRequest) returns (ClosePoolLedgerResponse) {}
+
+  // Delete Pool Ledger Config
+  rpc DeletePoolLedgerConfig(DeletePoolLedgerConfigRequest) returns (DeletePoolLedgerConfigResponse) {}
+
+  // Set Protocol Version
+  rpc SetProtocolVersion(SetProtocolVersionRequest) returns (SetProtocolVersionResponse) {}
+}
+
+
+//
+// `anoncreds` Services
+//
+
+service AnoncredsService{
+  
+  // Issuer Create Schema
+  rpc IssuerCreateSchema (IssuerCreateSchemaRequest) returns (IssuerCreateSchemaResponse) {}
+  
+  // issuer create and store credential def
+  rpc IssuerCreateAndStoreCredentialDef (IssuerCreateAndStoreCredentialDefRequest) returns (IssuerCreateAndStoreCredentialDefResponse) {}
+  
+  // Issuer Create And Store Revoc Reg
+  rpc IssuerCreateAndStoreRevocReg (IssuerCreateAndStoreRevocRegRequest) returns (IssuerCreateAndStoreRevocRegResponse) {}
+
+  // Issuer Create Credential Offer
+  rpc IssuerCreateCredentialOffer (IssuerCreateCredentialOfferRequest) returns (IssuerCreateCredentialOfferResponse) {}
+
+  // Issuer Create Credential
+  rpc IssuerCreateCredential (IssuerCreateCredentialRequest) returns (IssuerCreateCredentialResponse) {}
+
+  // Issuer Revoke Credential
+  rpc IssuerRevokeCredential (IssuerRevokeCredentialRequest) returns (IssuerRevokeCredentialResponse) {}
+
+  // Issuer Merge Revocation Registry Deltas
+  rpc IssuerMergeRevocationRegistryDeltas (IssuerMergeRevocationRegistryDeltasRequest) returns (IssuerMergeRevocationRegistryDeltasResponse) {}
+
+  // Prover Create Master Secret
+  rpc ProverCreateMasterSecret (ProverCreateMasterSecretRequest) returns (ProverCreateMasterSecretResponse) {}
+
+  // Prover Create Credential Req
+  rpc ProverCreateCredentialReq (ProverCreateCredentialReqRequest) returns (ProverCreateCredentialReqResponse) {}
+
+  // Prover Store Credential
+  rpc ProverStoreCredential (ProverStoreCredentialRequest) returns (ProverStoreCredentialResponse) {}
+
+  // Prover Get Credential
+  rpc ProverGetCredential (ProverGetCredentialRequest) returns (ProverGetCredentialResponse) {}
+
+  // Prover Get Credentials
+  rpc ProverGetCredentials (ProverGetCredentialsRequest) returns (ProverGetCredentialsResponse) {}
+
+  // Prover Seach Credentials
+  rpc ProverSeachCredentials (ProverSeachCredentialsRequest) returns (ProverSeachCredentialsResponse) {}
+
+  // Prover Fetch Credentials
+  rpc ProverFetchCredentials (ProverFetchCredentialsRequest) returns (ProverFetchCredentialsResponse) {}
+
+  // Prover Close Credentials Search
+  rpc ProverCloseCredentialsSearch (ProverCloseCredentialsSearchRequest) returns (ProverCloseCredentialsSearchResponse) {}
+
+  // Prover Get Credentials For Proof Req
+  rpc ProverGetCredentialsForProofReq (ProverGetCredentialsForProofReqRequest) returns (ProverGetCredentialsForProofReqResponse) {}
+
+  // Prover Search Credentials For Proof Req
+  rpc ProverSearchCredentialsForProofReq (ProverSearchCredentialsForProofReqRequest) returns (ProverSearchCredentialsForProofReqResponse) {}
+
+  // Prover Fetch Credentials For Proof Req
+  rpc ProverFetchCredentialsForProofReq (ProverFetchCredentialsForProofReqRequest) returns (ProverFetchCredentialsForProofReqResponse) {}
+
+  // Prover Close Credentials Search For Proof Req
+  rpc ProverCloseCredentialsSearchForProofReq (ProverCloseCredentialsSearchForProofReqRequest) returns (ProverCloseCredentialsSearchForProofReqResponse) {}
+
+  // Prover Create Proof
+  rpc ProverCreateProof (ProverCreateProofRequest) returns (ProverCreateProofResponse) {}
+
+  // Verifier Verify Proof
+  rpc VerifierVerifyProof (VerifierVerifyProofRequest) returns (VerifierVerifyProofResponse) {}
+
+  // Create Revocation State
+  rpc CreateRevocationState (CreateRevocationStateRequest) returns (CreateRevocationStateResponse) {}
+  // Update Revocation State
+  rpc UpdateRevocationState (UpdateRevocationStateRequest) returns (UpdateRevocationStateResponse) {}
+}
+
+
+
+//
+// Wallet Service Start
+//
+service WalletService {
+  // Create wallet
+  rpc CreateNewWallet (NewWalletDefinition) returns (CreateWalletErrorCode) {}
+  // Open Wallet
+  rpc OpenWallet (OpenWalletDefinition) returns (OpenWalletHandle) {}
+  // Close Wallet
+  rpc CloseWallet (CloseWalletHandle) returns (CloseWalletStatus) {}
+  // Delete Wallet
+  rpc DeleteWallet (DeleteWalletDefinition) returns (DeleteWalletConfirmation) {}
+  // Export Wallet
+  rpc ExportWallet (ExportWalletDefinition) returns (ExportWalletConfirmation) {}
+  // Import Wallet
+  rpc ImportWallet (ImportWalletDefinition) returns (ImportWalletConfirmation) {}
+  // Generate Wallet Key
+  rpc GenerateWalletKey (GenerateWalletKeyDefinition) returns (GenerateWalletKeyConfirmation) {}
+}
+
+// `blob storage` services
+service BlobStorageService{
+  rpc OpenReader (OpenReaderRequest) returns (OpenReaderResponse) {}
+  rpc OpenWriter (OpenWriterRequest) returns (OpenWriterResponse) {}
+}

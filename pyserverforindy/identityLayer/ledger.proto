@@ -1,0 +1,343 @@
+syntax = "proto3";
+
+
+// Sign And Submit Request
+message SignAndSubmitRequestRq{
+	int64 PoolHandle = 1;
+	int64 WalletHandle = 2;
+	string SubmitterDid = 3;
+	string RequestJson = 4;
+}
+message SignAndSubmitRequestRs{
+	string Resp = 1;
+}
+
+
+// Submit Request
+message SubmitRequestRq{
+	int64 PoolHandle = 1;
+	string RequestJson = 2;
+}
+message SubmitRequestRs{
+	string Resp = 1;
+}
+
+
+// Submit Action
+message SubmitActionRq{
+	int64 PoolHandle = 1;
+	string RequestJson = 2;
+	string Nodes = 3;
+	int64 Timeout = 4;
+}
+message SubmitActionRs{
+	string Resp = 1;
+}
+
+
+// Sign Request
+message SignRequestRq{
+	int64 WalletHandle = 1;
+	string SubmitterDid = 2;
+	string RequestJson = 3;
+}
+message SignRequestRs{
+	string Resp = 1;
+}
+
+
+//  Multi Sign Request
+message MultiSignRequestRq{
+	int64 WalletHandle = 1;
+	string SubmitterDid = 2;
+	string RequestJson = 3;
+}
+message MultiSignRequestRs{
+	string Resp = 1;
+}
+
+
+// Build Get Ddo Request
+message BuildGetDdoRequestRq{
+	string SubmitterDid = 1;
+	string TargetDid = 2;
+}
+message BuildGetDdoRequestRs{
+	string Resp = 1;
+}
+
+
+// Build Nym Request
+message BuildNymRequestRq{
+	string SubmitterDid = 1;
+	string TargetDid = 2;
+	string VerKey = 3;
+	string Alias = 4;
+	string Role = 5;
+}
+message BuildNymRequestRs{
+	string Resp = 1;
+}
+
+
+// Build Attrib Request
+message BuildAttribRequestRq{
+	string SubmitterDid = 1;
+	string TargetDid = 2;
+	string Xhash = 3;
+	string Raw = 4;
+	string Enc = 5;
+}
+message BuildAttribRequestRs{
+	string Resp = 1;
+}
+
+
+// Build Get Attrib Request
+message BuildGetAttribRequestRq{
+	string SubmitterDid = 1;
+	string TargetDid = 2;
+	string Xhash = 3;
+	string Raw = 4;
+	string Enc = 5;
+}
+message BuildGetAttribRequestRs{
+	string Resp = 1;
+}
+
+
+// Build Get Nym Request
+message BuildGetNymRequestRq{
+	string SubmitterDid = 1;
+	string TargetDid = 2;
+}
+message BuildGetNymRequestRs{
+	string Resp = 1;
+}
+
+
+// Build Schema Request
+message BuildSchemaRequestRq{
+	string SubmitterDid = 1;
+	string Data = 2;
+}
+message BuildSchemaRequestRs{
+	string Resp = 1;
+}
+
+
+// Build Get Schema Request
+message BuildGetSchemaRequestRq{
+	string SubmitterDid = 1;
+	string Id_ = 2;
+}
+message BuildGetSchemaRequestRs{
+	string Resp = 1;
+}
+
+
+// Parse Get Schema Response
+message ParseGetSchemaResponseRq{
+	string GetSchemaResponse = 1;
+}
+message ParseGetSchemaResponseRs{
+	string Id = 1;
+	string SchemaJson = 2;
+}
+
+
+// Build Cred Def Request
+message BuildCredDefRequestRq{
+	string SubmitterDid = 1;
+	string Data = 2;
+}
+message BuildCredDefRequestRs{
+	string Resp = 1;
+}
+
+
+// Build Get Cred Def Request
+message BuildGetCredDefRequestRq{
+	string SubmitterDid = 1;
+	string Id_ = 2;
+}
+message BuildGetCredDefRequestRs{
+	string Resp = 1;
+}
+
+// Parse Get Cred Deg Response
+message ParseGetCredDefResponseRq{
+	string GetCredDefResponse = 1;
+}
+message ParseGetCredDefResponseRs{
+	string CredentialDefinitionId = 1;
+	string CredentialDefinitionJson = 2;
+}
+
+
+// Build Node Request
+message BuildNodeRequestRq{
+	string SubmitterDid = 1;
+	string TargetDid = 2;
+	string Data = 3;
+}
+message BuildNodeRequestRs{
+	string Resp = 1;
+}
+
+
+// Build Get Validator Info Request
+message BuildGetValidatorInfoRequestRq{
+	string SubmitterDid = 1;
+}
+message BuildGetValidatorInfoRequestRs{
+	string Resp = 1;
+}
+
+
+// Build Get Txn Request
+message BuildGetTxnRequestRq{
+	string SubmitterDid = 1;
+	string LedgerType = 2;
+	string SeqNo = 3;
+}
+message BuildGetTxnRequestRs{
+	string Resp = 1;
+}
+
+
+// Build Pool Config Request
+message BuildPoolConfigRequestRq{
+	string SubmitterDid = 1;
+	bool Writes = 2;
+	bool Force = 3;
+}
+message BuildPoolConfigRequestRs{
+	string Resp = 1;
+}
+
+
+// Build Pool Restart Request
+message BuildPoolRestartRequestRq{
+	string SubmitterDid = 1;
+	string Action = 2;
+	string Datetime = 3;
+}
+message BuildPoolRestartRequestRs{
+	string Resp = 1;
+}
+
+
+// Build Pool Upgrade Request
+message BuildPoolUpgradeRequestRq{
+	string SubmitterDid = 1;
+	string Name = 2;
+	string Version = 3;
+	string Action = 4;
+	string _sha256 = 5;
+	int64 _timeout = 6;
+	string Schedule = 7;
+	string Justification = 8;
+	bool Reinstall = 9;
+	bool Force = 10;
+	string Package = 11;
+}
+message BuildPoolUpgradeRequestRs{
+	string Resp = 1;
+}
+
+
+// Build Revoc Reg Def Request
+message BuildRevocRegDefRequestRq{
+	string SubmitterDid = 1;
+	string Data = 2;
+}
+message BuildRevocRegDefRequestRs{
+	string Resp = 1;
+}
+
+
+// Build Get Revoc Reg Def Request
+message BuildGetRevocRegDefRequestRq{
+	string SubmitterDid = 1;
+	string RevRegDefId = 2;
+}
+message BuildGetRevocRegDefRequestRs{
+	string Resp = 1;
+}
+
+
+// Parse Get Revoc Reg Def Response
+message ParseGetRevocRegDefResponseRq{
+	string GetRevocRefDefResponse = 1;
+}
+message ParseGetRevocRegDefResponseRs{
+	string RevocationId = 1;
+	string RevocationJson = 2;
+}
+
+
+// Build Revoc Reg Entry Request
+message BuildRevocRegEntryRequestRq{
+	string SubmitterDid = 1;
+	string RevocRegDefId = 2;
+	string RevDefType = 3;
+	string Value = 4;
+}
+message BuildRevocRegEntryRequestRs{
+	string Resp = 1;
+}
+
+
+// Build Get Revoc Reg Request
+message BuildGetRevocRegRequestRq{
+	string SubmitterDid = 1;
+	string RevocRegDefId = 2;
+	string Timestamp = 3;
+}
+message BuildGetRevocRegRequestRs{
+	string Resp = 1;
+}
+
+
+// Parse Get Revoc Reg Response
+message ParseGetRevocRegResponseRq{
+	string GetRevocRegResponse = 1;
+}
+message ParseGetRevocRegResponseRs{
+	string Id = 1;
+	string Json = 2;
+	int64 Timestamp = 3;
+}
+
+
+// Build Get Revoc Reg Delta Request
+message BuildGetRevocRegDeltaRequestRq{
+	string SubmiterDid = 1;
+	string RevocRegDefId = 2;
+	int64 From_ = 3;
+	int64 To = 4;
+}
+message BuildGetRevocRegDeltaRequestRs{
+	string Resp = 1;
+}
+
+
+// Parse Get Revoc Reg Delta Response
+message ParseGetRevocRegDeltaResponseRq{
+	string GetRevocRegDeltaResponse = 1;
+}
+message ParseGetRevocRegDeltaResponseRs{
+	string Id = 1;
+	string Json = 2;
+	int64 Timestamp = 3;
+}
+
+
+// Get Response MetaData
+message GetResponseMetadataRq{
+	string Response = 1;
+}
+message GetResponseMetadataRs{
+	string Resp = 1;
+}
