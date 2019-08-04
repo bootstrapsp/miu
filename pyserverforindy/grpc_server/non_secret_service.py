@@ -1,18 +1,7 @@
-import asyncio
-import json
-import time
-import math
 import os
 import sys
-import base64
-import binascii
 
-import warnings
-# warnings.simplefilter('ignore')
-from concurrent import futures
-import grpc
-
-from indy import ledger as indy_ledger
+from indy import non_secrets as indy_non_secret
 
 
 ROOT_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -65,8 +54,8 @@ class NonSecretServiceServicer(object):
     async def AddWalletRecord(self, request, context):
         # missing associated documentation comment in .proto file
         try:
-            wallet_handle = get_value(request.WalletHandle)
-            resp = await indy_non_secret.add_wallet_record(wallet_handle)
+            wallet_handle, type_, id_, value, tags_json = get_value(request.WalletHandle), get_value(request.Type_), get_value(request.Id_), get_value(request.Value), get_value(request.TagsJson)
+            resp = await indy_non_secret.add_wallet_record(wallet_handle, type_, id_, value, tags_json)
             return identitylayer_pb2.AddWalletRecordResponse(resp)
         except Exception as e:
             logger.error("Exception occurred @ AddWalletRecord")
@@ -77,8 +66,8 @@ class NonSecretServiceServicer(object):
     async def UpdateWalletRecordValue(self, request, context):
         # missing associated documentation comment in .proto file
         try:
-            wallet_handle = get_value(request.WalletHandle)
-            resp = await indy_non_secret.update_wallet_record_value(wallet_handle)
+            wallet_handle, type_, id_, value = get_value(request.WalletHandle), get_value(request.Type_), get_value(request.Id_), get_value(request.Value)
+            resp = await indy_non_secret.update_wallet_record_value(wallet_handle, type_, id_, value)
             return identitylayer_pb2.UpdateWalletRecordValueResponse(resp)
         except Exception as e:
             logger.error("Exception occurred @ UpdateWalletRecordValue")
@@ -89,8 +78,8 @@ class NonSecretServiceServicer(object):
     async def UpdateWalletRecordTags(self, request, context):
         # missing associated documentation comment in .proto file
         try:
-            wallet_handle = get_value(request.WalletHandle)
-            resp = await indy_non_secret.update_wallet_record_tags(wallet_handle)
+            wallet_handle, type_, id_, tags_json = get_value(request.WalletHandle), get_value(request.Type_), get_value(request.Id_), get_value(request.TagsJson)
+            resp = await indy_non_secret.update_wallet_record_tags(wallet_handle, type_, id_, tags_json)
             return identitylayer_pb2.UpdateWalletRecordTagsResponse(resp)
         except Exception as e:
             logger.error("Exception occurred @ UpdateWalletRecordTags")
@@ -101,8 +90,8 @@ class NonSecretServiceServicer(object):
     async def AddWalletRecordTags(self, request, context):
         # missing associated documentation comment in .proto file
         try:
-            wallet_handle = get_value(request.WalletHandle)
-            resp = await indy_non_secret.add_wallet_record_tags(wallet_handle)
+            wallet_handle, type_, id_, tags_json = get_value(request.WalletHandle), get_value(request.Type_), get_value(request.Id_), get_value(request.TagsJson)
+            resp = await indy_non_secret.add_wallet_record_tags(wallet_handle, type_, id_, tags_json)
             return identitylayer_pb2.AddWalletRecordTagsResponse(resp)
         except Exception as e:
             logger.error("Exception occurred @ AddWalletRecordTags")
@@ -113,8 +102,8 @@ class NonSecretServiceServicer(object):
     async def DeleteWalletRecordTags(self, request, context):
         # missing associated documentation comment in .proto file
         try:
-            wallet_handle = get_value(request.WalletHandle)
-            resp = await indy_non_secret.delete_wallet_record_tags(wallet_handle)
+            wallet_handle, type_, id_, tag_names_json = get_value(request.WalletHandle), get_value(request.Type_), get_value(request.Id_), get_value(request.TagNamesJson)
+            resp = await indy_non_secret.delete_wallet_record_tags(wallet_handle, type_, id_, tag_names_json)
             return identitylayer_pb2.DeleteWalletRecordTagsResponse(resp)
         except Exception as e:
             logger.error("Exception occurred @ DeleteWalletRecordTags")
@@ -125,8 +114,8 @@ class NonSecretServiceServicer(object):
     async def DeleteWalletRecord(self, request, context):
         # missing associated documentation comment in .proto file
         try:
-            wallet_handle = get_value(request.WalletHandle)
-            resp = await indy_non_secret.delete_wallet_record(wallet_handle)
+            wallet_handle, type_, id_ = get_value(request.WalletHandle), get_value(request.Type_), get_value(request.Id_)
+            resp = await indy_non_secret.delete_wallet_record(wallet_handle, type_, id_)
             return identitylayer_pb2.DeleteWalletRecordResponse(resp)
         except Exception as e:
             logger.error("Exception occurred @ DeleteWalletRecord")
@@ -137,8 +126,8 @@ class NonSecretServiceServicer(object):
     async def GetWalletRecord(self, request, context):
         # missing associated documentation comment in .proto file
         try:
-            wallet_handle = get_value(request.WalletHandle)
-            resp = await indy_non_secret.get_wallet_record(wallet_handle)
+            wallet_handle, type_, id_, options_json = get_value(request.WalletHandle), get_value(request.Type_), get_value(request.Id), get_value(request.OptionsJson)
+            resp = await indy_non_secret.get_wallet_record(wallet_handle, type_, id_, options_json)
             return identitylayer_pb2.GetWalletRecordResponse(resp)
         except Exception as e:
             logger.error("Exception occurred @ GetWalletRecord")
@@ -149,8 +138,8 @@ class NonSecretServiceServicer(object):
     async def OpenWalletSearch(self, request, context):
         # missing associated documentation comment in .proto file
         try:
-            wallet_handle = get_value(request.WalletHandle)
-            resp = await indy_non_secret.open_wallet_search(wallet_handle)
+            wallet_handle, type_, query_json, options_json = get_value(request.WalletHandle), get_value(request.Type_), get_value(request.QueryJson), get_value(request.OptionsJson)
+            resp = await indy_non_secret.open_wallet_search(wallet_handle, type_, query_json, options_json)
             return identitylayer_pb2.OpenWalletSearchResponse(resp)
         except Exception as e:
             logger.error("Exception occurred @ OpenWalletSearch")
@@ -161,8 +150,8 @@ class NonSecretServiceServicer(object):
     async def FetchWalletSearchNextRecords(self, request, context):
         # missing associated documentation comment in .proto file
         try:
-            wallet_handle = get_value(request.WalletHandle)
-            resp = await indy_non_secret.fetch_wallet_search_next_records(wallet_handle)
+            wallet_handle, wallet_search_handle, count = get_value(request.WalletHandle), get_value(request.WalletSearchHandle), get_value(request.Count)
+            resp = await indy_non_secret.fetch_wallet_search_next_records(wallet_handle, wallet_search_handle, count)
             return identitylayer_pb2.FetchWalletSearchNextRecordsResponse(resp)
         except Exception as e:
             logger.error("Exception occurred @ FetchWalletSearchNextRecords")

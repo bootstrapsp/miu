@@ -1,18 +1,8 @@
-import asyncio
 import json
-import time
-import math
 import os
 import sys
-import base64
-import binascii
 
-import warnings
-# warnings.simplefilter('ignore')
-from concurrent import futures
-import grpc
-
-from indy import anoncreds as indy_anoncreds
+from indy import crypto as indy_crypto
 
 
 ROOT_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -68,6 +58,7 @@ class CryptoServiceServicer(identitylayer_pb2_grpc.CryptoServiceServicer):
     async def CreateKey(self, request, context):
         """Create Key
         """
+        resp = None
         try:
             wallet_handle = get_value(request.WalletHandle)
             key_json = json.dumps({"seed": get_value(request.KeyJsonCreateKey.seed),
@@ -82,6 +73,7 @@ class CryptoServiceServicer(identitylayer_pb2_grpc.CryptoServiceServicer):
     async def SetKeyMetadata(self, request, context):
         """Set Key Metadata
         """
+        resp = None
         try:
             wallet_handle, verkey, metadata = get_value(request.WalletHandle), \
             get_value(request.Verkey), get_value(request.Metadata)
@@ -95,6 +87,7 @@ class CryptoServiceServicer(identitylayer_pb2_grpc.CryptoServiceServicer):
     async def GetKeyMetadata(self, request, context):
         """Get Key Metadata
         """
+        resp = None
         try:
             wallet_handle, verkey = get_value(request.WalletHandle), get_value(request.Verkey)
             resp = await indy_crypto.get_key_metadata(wallet_handle, verkey)
@@ -107,6 +100,7 @@ class CryptoServiceServicer(identitylayer_pb2_grpc.CryptoServiceServicer):
     async def CryptoSign(self, request, context):
         """Crypto Sign
         """
+        resp = None
         try:
             wallet_handle, signer_vk, msg = get_value(request.WalletHandle), get_value(request.SignerVk), get_value(request.Msg)
             resp = await indy_crypto.crypto_sign(wallet_handle, signer_vk, msg)
@@ -119,6 +113,7 @@ class CryptoServiceServicer(identitylayer_pb2_grpc.CryptoServiceServicer):
     async def CryptoVerify(self, request, context):
         """Crypto Verify
         """
+        resp = None
         try:
             signer_vk, msg, signature = get_value(request.SignerVk), get_value(request.Msg), get_value(request.Signature)
             resp = await indy_crypto.crypto_verify(signer_vk, msg, signature)
@@ -131,6 +126,7 @@ class CryptoServiceServicer(identitylayer_pb2_grpc.CryptoServiceServicer):
     async def AuthCrypt(self, request, context):
         """Auth Crypt
         """
+        resp = None
         try:
             wallet_handle, sender_vk, recipient_vk, msg = get_value(request.WalletHandle), get_value(request.SenderVk), get_value(request.RecipientVk), get_value(request.Msg)
             resp = await indy_crypto.auth_crypt(wallet_handle, sender_vk, recipient_vk, msg)
@@ -143,6 +139,7 @@ class CryptoServiceServicer(identitylayer_pb2_grpc.CryptoServiceServicer):
     async def AuthDecrypt(self, request, context):
         """Auth Decrypt
         """
+        resp = None
         try:
             wallet_handle, recipient_vk, encrypted_msg = get_value(request.WalletHandle), get_value(request.RecipientVk), get_value(request.EncryptedMsg)
             resp = await indy_crypto.auth_decrypt(wallet_handle, recipient_vk, encrypted_msg)
@@ -155,6 +152,7 @@ class CryptoServiceServicer(identitylayer_pb2_grpc.CryptoServiceServicer):
     async def AnonCrypt(self, request, context):
         """Anon Crypt
         """
+        resp = None
         try:
             recipient_vk, msg = get_value(request.RecipientVk), get_value(request.Msg)
             resp = await indy_crypto.anon_crypt(recipient_vk, msg)
@@ -167,6 +165,7 @@ class CryptoServiceServicer(identitylayer_pb2_grpc.CryptoServiceServicer):
     async def AnonDecrypt(self, request, context):
         """Anon Decrypt
         """
+        resp = None
         try:
             wallet_handle, recipient_vk, encrypted_msg = get_value(request.WalletHandle), get_value(request.RecipientVk), get_value(request.EncryptedMsg)
             resp = await indy_crypto.anon_decrypt(wallet_handle, recipient_vk, encrypted_msg)

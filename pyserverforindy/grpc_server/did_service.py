@@ -1,17 +1,6 @@
-import asyncio
-import json
-import time
-import math
 import os
+import json
 import sys
-import base64
-import binascii
-
-import warnings
-# warnings.simplefilter('ignore')
-from concurrent import futures
-import grpc
-
 from indy import did as indy_did
 
 
@@ -76,7 +65,7 @@ class DidServiceServicer(identitylayer_pb2_grpc.DidServiceServicer):
                 "crypto_type": get_value(request.DidJson.CryptoType),
                 "cid": get_value(request.DidJson.Cid)})
             resp = await indy_did.create_and_store_my_did(wallet_handle, did_json)
-            return identitylayer_pb2.CreateAndStoreMyDidResponse(Did=resp[0], Verkey=Did[1])
+            return identitylayer_pb2.CreateAndStoreMyDidResponse(Did=resp[0], Verkey=resp[1])
         except Exception as e:
             logger.error("Exception occurred @ CreateAndStoreMyDid----")
             logger.error(e)
@@ -91,7 +80,7 @@ class DidServiceServicer(identitylayer_pb2_grpc.DidServiceServicer):
             did = get_value(request.Did)
             identity_json = json.dumps({"seed": get_value(request.IdentityJson.Seed),
                 "crypto_type":get_value(request.IdentityJson.CryptoType)})
-            resp = await indy_did.replace_keys_start(wallet_handle, did_json, identity_json)
+            resp = await indy_did.replace_keys_start(wallet_handle, did, identity_json)
             return identitylayer_pb2.ReplaceKeysStartResponse(resp)
         except Exception as e:
             logger.error("Exception occurred @ ReplaceKeysStart----")
@@ -121,7 +110,7 @@ class DidServiceServicer(identitylayer_pb2_grpc.DidServiceServicer):
             identity_json = json.dumps({"did": get_value(request.IdentityJson.Did),
                 "verkey": get_value(request.IdentityJson.Verkey),
                 "crypto_type":get_value(request.IdentityJson.CryptoType)})
-            resp = await indy_did.store_their_did()
+            resp = await indy_did.store_their_did(wallet_handle, identity_json)
             return identitylayer_pb2.StoreTheirDidResponse(resp)
         except Exception as e:
             logger.error("Exception occurred @ StoreTheirDid----")
@@ -136,7 +125,7 @@ class DidServiceServicer(identitylayer_pb2_grpc.DidServiceServicer):
             wallet_handle = get_value(request.WalletHandle)
             key_json = json.dumps({"did": get_value(request.KeyJson.Did),
                 "crypto_type":get_value(request.KeyJson.CryptoType)})
-            resp = await indy_did.create_key()
+            resp = await indy_did.create_key(wallet_handle, key_json)
             return identitylayer_pb2.DidCreateKeyResponse(verkey=resp)
         except Exception as e:
             logger.error("Exception occurred @ DidCreateKey----")
@@ -166,7 +155,7 @@ class DidServiceServicer(identitylayer_pb2_grpc.DidServiceServicer):
             wallet_handle = get_value(request.WalletHandle)
             verkey = get_value(request.Verkey)
             resp = await indy_did.get_key_metadata(wallet_handle, verkey)
-            return identitylayer_pb2.DidGetKeyMetadataResponse(metadata)
+            return identitylayer_pb2.DidGetKeyMetadataResponse(resp)
         except Exception as e:
             logger.error("Exception occurred @ DidGetKeyMetadata----")
             logger.error(e)

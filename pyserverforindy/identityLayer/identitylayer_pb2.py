@@ -12,15 +12,7 @@ from google.protobuf import symbol_database as _symbol_database
 _sym_db = _symbol_database.Default()
 
 
-import blob_storage_pb2 as blob__storage__pb2
-import anoncreds_pb2 as anoncreds__pb2
-import pool_pb2 as pool__pb2
-import crypto_pb2 as crypto__pb2
-import pairwise_pb2 as pairwise__pb2
-import did_pb2 as did__pb2
-import ledger_pb2 as ledger__pb2
-import wallet_pb2 as wallet__pb2
-import non_secret_pb2 as non__secret__pb2
+from google.protobuf import any_pb2 as google_dot_protobuf_dot_any__pb2
 
 
 DESCRIPTOR = _descriptor.FileDescriptor(
@@ -28,13 +20,11959 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   package='identitylayer',
   syntax='proto3',
   serialized_options=None,
-  serialized_pb=_b('\n\x13identitylayer.proto\x12\ridentitylayer\x1a\x12\x62lob_storage.proto\x1a\x0f\x61noncreds.proto\x1a\npool.proto\x1a\x0c\x63rypto.proto\x1a\x0epairwise.proto\x1a\tdid.proto\x1a\x0cledger.proto\x1a\x0cwallet.proto\x1a\x10non_secret.proto2\xe9\x06\n\x10NonSecretService\x12\x46\n\x0f\x41\x64\x64WalletRecord\x12\x17.AddWalletRecordRequest\x1a\x18.AddWalletRecordResponse\"\x00\x12^\n\x17UpdateWalletRecordValue\x12\x1f.UpdateWalletRecordValueRequest\x1a .UpdateWalletRecordValueResponse\"\x00\x12[\n\x16UpdateWalletRecordTags\x12\x1e.UpdateWalletRecordTagsRequest\x1a\x1f.UpdateWalletRecordTagsResponse\"\x00\x12R\n\x13\x41\x64\x64WalletRecordTags\x12\x1b.AddWalletRecordTagsRequest\x1a\x1c.AddWalletRecordTagsResponse\"\x00\x12[\n\x16\x44\x65leteWalletRecordTags\x12\x1e.DeleteWalletRecordTagsRequest\x1a\x1f.DeleteWalletRecordTagsResponse\"\x00\x12O\n\x12\x44\x65leteWalletRecord\x12\x1a.DeleteWalletRecordRequest\x1a\x1b.DeleteWalletRecordResponse\"\x00\x12\x46\n\x0fGetWalletRecord\x12\x17.GetWalletRecordRequest\x1a\x18.GetWalletRecordResponse\"\x00\x12I\n\x10OpenWalletSearch\x12\x18.OpenWalletSearchRequest\x1a\x19.OpenWalletSearchResponse\"\x00\x12m\n\x1c\x46\x65tchWalletSearchNextRecords\x12$.FetchWalletSearchNextRecordsRequest\x1a%.FetchWalletSearchNextRecordsResponse\"\x00\x12L\n\x11\x43loseWalletSearch\x12\x19.CloseWalletSearchRequest\x1a\x1a.CloseWalletSearchResponse\"\x00\x32\x82\x13\n\rLedgerService\x12J\n\x14SignAndSubmitRequest\x12\x17.SignAndSubmitRequestRq\x1a\x17.SignAndSubmitRequestRs\"\x00\x12\x35\n\rSubmitRequest\x12\x10.SubmitRequestRq\x1a\x10.SubmitRequestRs\"\x00\x12\x32\n\x0cSubmitAction\x12\x0f.SubmitActionRq\x1a\x0f.SubmitActionRs\"\x00\x12/\n\x0bSignRequest\x12\x0e.SignRequestRq\x1a\x0e.SignRequestRs\"\x00\x12>\n\x10MultiSignRequest\x12\x13.MultiSignRequestRq\x1a\x13.MultiSignRequestRs\"\x00\x12\x44\n\x12\x42uildGetDdoRequest\x12\x15.BuildGetDdoRequestRq\x1a\x15.BuildGetDdoRequestRs\"\x00\x12;\n\x0f\x42uildNymRequest\x12\x12.BuildNymRequestRq\x1a\x12.BuildNymRequestRs\"\x00\x12\x44\n\x12\x42uildAttribRequest\x12\x15.BuildAttribRequestRq\x1a\x15.BuildAttribRequestRs\"\x00\x12M\n\x15\x42uildGetAttribRequest\x12\x18.BuildGetAttribRequestRq\x1a\x18.BuildGetAttribRequestRs\"\x00\x12\x44\n\x12\x42uildGetNymRequest\x12\x15.BuildGetNymRequestRq\x1a\x15.BuildGetNymRequestRs\"\x00\x12\x44\n\x12\x42uildSchemaRequest\x12\x15.BuildSchemaRequestRq\x1a\x15.BuildSchemaRequestRs\"\x00\x12M\n\x15\x42uildGetSchemaRequest\x12\x18.BuildGetSchemaRequestRq\x1a\x18.BuildGetSchemaRequestRs\"\x00\x12P\n\x16ParseGetSchemaResponse\x12\x19.ParseGetSchemaResponseRq\x1a\x19.ParseGetSchemaResponseRs\"\x00\x12G\n\x13\x42uildCredDefRequest\x12\x16.BuildCredDefRequestRq\x1a\x16.BuildCredDefRequestRs\"\x00\x12P\n\x16\x42uildGetCredDefRequest\x12\x19.BuildGetCredDefRequestRq\x1a\x19.BuildGetCredDefRequestRs\"\x00\x12S\n\x17ParseGetCredDefResponse\x12\x1a.ParseGetCredDefResponseRq\x1a\x1a.ParseGetCredDefResponseRs\"\x00\x12>\n\x10\x42uildNodeRequest\x12\x13.BuildNodeRequestRq\x1a\x13.BuildNodeRequestRs\"\x00\x12\x62\n\x1c\x42uildGetValidatorInfoRequest\x12\x1f.BuildGetValidatorInfoRequestRq\x1a\x1f.BuildGetValidatorInfoRequestRs\"\x00\x12\x44\n\x12\x42uildGetTxnRequest\x12\x15.BuildGetTxnRequestRq\x1a\x15.BuildGetTxnRequestRs\"\x00\x12P\n\x16\x42uildPoolConfigRequest\x12\x19.BuildPoolConfigRequestRq\x1a\x19.BuildPoolConfigRequestRs\"\x00\x12S\n\x17\x42uildPoolRestartRequest\x12\x1a.BuildPoolRestartRequestRq\x1a\x1a.BuildPoolRestartRequestRs\"\x00\x12S\n\x17\x42uildPoolUpgradeRequest\x12\x1a.BuildPoolUpgradeRequestRq\x1a\x1a.BuildPoolUpgradeRequestRs\"\x00\x12S\n\x17\x42uildRevocRegDefRequest\x12\x1a.BuildRevocRegDefRequestRq\x1a\x1a.BuildRevocRegDefRequestRs\"\x00\x12\\\n\x1a\x42uildGetRevocRegDefRequest\x12\x1d.BuildGetRevocRegDefRequestRq\x1a\x1d.BuildGetRevocRegDefRequestRs\"\x00\x12_\n\x1bParseGetRevocRegDefResponse\x12\x1e.ParseGetRevocRegDefResponseRq\x1a\x1e.ParseGetRevocRegDefResponseRs\"\x00\x12Y\n\x19\x42uildRevocRegEntryRequest\x12\x1c.BuildRevocRegEntryRequestRq\x1a\x1c.BuildRevocRegEntryRequestRs\"\x00\x12S\n\x17\x42uildGetRevocRegRequest\x12\x1a.BuildGetRevocRegRequestRq\x1a\x1a.BuildGetRevocRegRequestRs\"\x00\x12V\n\x18ParseGetRevocRegResponse\x12\x1b.ParseGetRevocRegResponseRq\x1a\x1b.ParseGetRevocRegResponseRs\"\x00\x12\x62\n\x1c\x42uildGetRevocRegDeltaRequest\x12\x1f.BuildGetRevocRegDeltaRequestRq\x1a\x1f.BuildGetRevocRegDeltaRequestRs\"\x00\x12\x65\n\x1dParseGetRevocRegDeltaResponse\x12 .ParseGetRevocRegDeltaResponseRq\x1a .ParseGetRevocRegDeltaResponseRs\"\x00\x12G\n\x13GetResponseMetadata\x12\x16.GetResponseMetadataRq\x1a\x16.GetResponseMetadataRs\"\x00\x32\x9a\t\n\nDidService\x12R\n\x13\x43reateAndStoreMyDid\x12\x1b.CreateAndStoreMyDidRequest\x1a\x1c.CreateAndStoreMyDidResponse\"\x00\x12I\n\x10ReplaceKeysStart\x12\x18.ReplaceKeysStartRequest\x1a\x19.ReplaceKeysStartResponse\"\x00\x12I\n\x10ReplaceKeysApply\x12\x18.ReplaceKeysApplyRequest\x1a\x19.ReplaceKeysApplyResponse\"\x00\x12@\n\rStoreTheirDid\x12\x15.StoreTheirDidRequest\x1a\x16.StoreTheirDidResponse\"\x00\x12=\n\x0c\x44idCreateKey\x12\x14.DidCreateKeyRequest\x1a\x15.DidCreateKeyResponse\"\x00\x12K\n\x11\x44idSetKeyMetadata\x12\x19.DidSetKeyMetadataRequest\x1a\x19.DidSetKeyMetadataRequest\"\x00\x12L\n\x11\x44idGetKeyMetadata\x12\x19.DidGetKeyMetadataRequest\x1a\x1a.DidGetKeyMetadataResponse\"\x00\x12\x34\n\tKeyForDid\x12\x11.KeyForDidRequest\x1a\x12.KeyForDidResponse\"\x00\x12\x43\n\x0eKeyForLocalDid\x12\x16.KeyForLocalDidRequest\x1a\x17.KeyForLocalDidResponse\"\x00\x12L\n\x11SetEndpointForDid\x12\x19.SetEndpointForDidRequest\x1a\x1a.SetEndpointForDidResponse\"\x00\x12L\n\x11GetEndpointForDid\x12\x19.GetEndpointForDidRequest\x1a\x1a.GetEndpointForDidResponse\"\x00\x12\x43\n\x0eSetDidMetadata\x12\x16.SetDidMetadataRequest\x1a\x17.SetDidMetadataResponse\"\x00\x12\x43\n\x0eGetDidMetadata\x12\x16.GetDidMetadataRequest\x1a\x17.GetDidMetadataResponse\"\x00\x12I\n\x10GetMyDidWithMeta\x12\x18.GetMyDidWithMetaRequest\x1a\x19.GetMyDidWithMetaResponse\"\x00\x12O\n\x12ListMyDidsWithMeta\x12\x1a.ListMyDidsWithMetaRequest\x1a\x1b.ListMyDidsWithMetaResponse\"\x00\x12I\n\x10\x41\x62\x62reviateVerkey\x12\x18.AbbreviateVerkeyRequest\x1a\x19.AbbreviateVerkeyResponse\"\x00\x32\xf0\x02\n\x0fPairwiseService\x12I\n\x10IsPairwiseExists\x12\x18.IsPairwiseExistsRequest\x1a\x19.IsPairwiseExistsResponse\"\x00\x12\x43\n\x0e\x43reatePairwise\x12\x16.CreatePairwiseRequest\x1a\x17.CreatePairwiseResponse\"\x00\x12=\n\x0cListPairwise\x12\x14.ListPairwiseRequest\x1a\x15.ListPairwiseResponse\"\x00\x12:\n\x0bGetPairwise\x12\x13.GetPairwiseRequest\x1a\x14.GetPairwiseResponse\"\x00\x12R\n\x13SetPairwiseMetadata\x12\x1b.SetPairwiseMetadataRequest\x1a\x1c.SetPairwiseMetadataResponse\"\x00\x32\xab\x04\n\rCryptoService\x12\x34\n\tCreateKey\x12\x11.CreateKeyRequest\x1a\x12.CreateKeyResponse\"\x00\x12\x43\n\x0eSetKeyMetadata\x12\x16.SetKeyMetadataRequest\x1a\x17.SetKeyMetadataResponse\"\x00\x12\x43\n\x0eGetKeyMetadata\x12\x16.GetKeyMetadataRequest\x1a\x17.GetKeyMetadataResponse\"\x00\x12\x37\n\nCryptoSign\x12\x12.CryptoSignRequest\x1a\x13.CryptoSignResponse\"\x00\x12=\n\x0c\x43ryptoVerify\x12\x14.CryptoVerifyRequest\x1a\x15.CryptoVerifyResponse\"\x00\x12\x34\n\tAuthCrypt\x12\x11.AuthCryptRequest\x1a\x12.AuthCryptResponse\"\x00\x12:\n\x0b\x41uthDecrypt\x12\x13.AuthDecryptRequest\x1a\x14.AuthDecryptResponse\"\x00\x12\x34\n\tAnonCrypt\x12\x11.AnonCryptRequest\x1a\x12.AnonCryptResponse\"\x00\x12:\n\x0b\x41nonDecrypt\x12\x13.AnonDecryptRequest\x1a\x14.AnonDecryptResponse\"\x00\x32\xa9\x04\n\x0bPoolService\x12[\n\x16\x43reatePoolLedgerConfig\x12\x1e.CreatePoolLedgerConfigRequest\x1a\x1f.CreatePoolLedgerConfigResponse\"\x00\x12\x43\n\x0eOpenPoolLedger\x12\x16.OpenPoolLedgerRequest\x1a\x17.OpenPoolLedgerResponse\"\x00\x12L\n\x11RefreshPoolLedger\x12\x19.RefreshPoolLedgerRequest\x1a\x1a.RefreshPoolLedgerResponse\"\x00\x12\x34\n\tListPools\x12\x11.ListPoolsRequest\x1a\x12.ListPoolsResponse\"\x00\x12\x46\n\x0f\x43losePoolLedger\x12\x17.ClosePoolLedgerRequest\x1a\x18.ClosePoolLedgerResponse\"\x00\x12[\n\x16\x44\x65letePoolLedgerConfig\x12\x1e.DeletePoolLedgerConfigRequest\x1a\x1f.DeletePoolLedgerConfigResponse\"\x00\x12O\n\x12SetProtocolVersion\x12\x1a.SetProtocolVersionRequest\x1a\x1b.SetProtocolVersionResponse\"\x00\x32\xd0\x12\n\x10\x41noncredsService\x12O\n\x12IssuerCreateSchema\x12\x1a.IssuerCreateSchemaRequest\x1a\x1b.IssuerCreateSchemaResponse\"\x00\x12|\n!IssuerCreateAndStoreCredentialDef\x12).IssuerCreateAndStoreCredentialDefRequest\x1a*.IssuerCreateAndStoreCredentialDefResponse\"\x00\x12m\n\x1cIssuerCreateAndStoreRevocReg\x12$.IssuerCreateAndStoreRevocRegRequest\x1a%.IssuerCreateAndStoreRevocRegResponse\"\x00\x12j\n\x1bIssuerCreateCredentialOffer\x12#.IssuerCreateCredentialOfferRequest\x1a$.IssuerCreateCredentialOfferResponse\"\x00\x12[\n\x16IssuerCreateCredential\x12\x1e.IssuerCreateCredentialRequest\x1a\x1f.IssuerCreateCredentialResponse\"\x00\x12[\n\x16IssuerRevokeCredential\x12\x1e.IssuerRevokeCredentialRequest\x1a\x1f.IssuerRevokeCredentialResponse\"\x00\x12\x82\x01\n#IssuerMergeRevocationRegistryDeltas\x12+.IssuerMergeRevocationRegistryDeltasRequest\x1a,.IssuerMergeRevocationRegistryDeltasResponse\"\x00\x12\x61\n\x18ProverCreateMasterSecret\x12 .ProverCreateMasterSecretRequest\x1a!.ProverCreateMasterSecretResponse\"\x00\x12\x64\n\x19ProverCreateCredentialReq\x12!.ProverCreateCredentialReqRequest\x1a\".ProverCreateCredentialReqResponse\"\x00\x12X\n\x15ProverStoreCredential\x12\x1d.ProverStoreCredentialRequest\x1a\x1e.ProverStoreCredentialResponse\"\x00\x12R\n\x13ProverGetCredential\x12\x1b.ProverGetCredentialRequest\x1a\x1c.ProverGetCredentialResponse\"\x00\x12U\n\x14ProverGetCredentials\x12\x1c.ProverGetCredentialsRequest\x1a\x1d.ProverGetCredentialsResponse\"\x00\x12[\n\x16ProverSeachCredentials\x12\x1e.ProverSeachCredentialsRequest\x1a\x1f.ProverSeachCredentialsResponse\"\x00\x12[\n\x16ProverFetchCredentials\x12\x1e.ProverFetchCredentialsRequest\x1a\x1f.ProverFetchCredentialsResponse\"\x00\x12m\n\x1cProverCloseCredentialsSearch\x12$.ProverCloseCredentialsSearchRequest\x1a%.ProverCloseCredentialsSearchResponse\"\x00\x12v\n\x1fProverGetCredentialsForProofReq\x12\'.ProverGetCredentialsForProofReqRequest\x1a(.ProverGetCredentialsForProofReqResponse\"\x00\x12\x7f\n\"ProverSearchCredentialsForProofReq\x12*.ProverSearchCredentialsForProofReqRequest\x1a+.ProverSearchCredentialsForProofReqResponse\"\x00\x12|\n!ProverFetchCredentialsForProofReq\x12).ProverFetchCredentialsForProofReqRequest\x1a*.ProverFetchCredentialsForProofReqResponse\"\x00\x12\x8e\x01\n\'ProverCloseCredentialsSearchForProofReq\x12/.ProverCloseCredentialsSearchForProofReqRequest\x1a\x30.ProverCloseCredentialsSearchForProofReqResponse\"\x00\x12L\n\x11ProverCreateProof\x12\x19.ProverCreateProofRequest\x1a\x1a.ProverCreateProofResponse\"\x00\x12R\n\x13VerifierVerifyProof\x12\x1b.VerifierVerifyProofRequest\x1a\x1c.VerifierVerifyProofResponse\"\x00\x12X\n\x15\x43reateRevocationState\x12\x1d.CreateRevocationStateRequest\x1a\x1e.CreateRevocationStateResponse\"\x00\x12X\n\x15UpdateRevocationState\x12\x1d.UpdateRevocationStateRequest\x1a\x1e.UpdateRevocationStateResponse\"\x00\x32\xec\x03\n\rWalletService\x12\x41\n\x0f\x43reateNewWallet\x12\x14.NewWalletDefinition\x1a\x16.CreateWalletErrorCode\"\x00\x12\x38\n\nOpenWallet\x12\x15.OpenWalletDefinition\x1a\x11.OpenWalletHandle\"\x00\x12\x37\n\x0b\x43loseWallet\x12\x12.CloseWalletHandle\x1a\x12.CloseWalletStatus\"\x00\x12\x44\n\x0c\x44\x65leteWallet\x12\x17.DeleteWalletDefinition\x1a\x19.DeleteWalletConfirmation\"\x00\x12\x44\n\x0c\x45xportWallet\x12\x17.ExportWalletDefinition\x1a\x19.ExportWalletConfirmation\"\x00\x12\x44\n\x0cImportWallet\x12\x17.ImportWalletDefinition\x1a\x19.ImportWalletConfirmation\"\x00\x12S\n\x11GenerateWalletKey\x12\x1c.GenerateWalletKeyDefinition\x1a\x1e.GenerateWalletKeyConfirmation\"\x00\x32\x86\x01\n\x12\x42lobStorageService\x12\x37\n\nOpenReader\x12\x12.OpenReaderRequest\x1a\x13.OpenReaderResponse\"\x00\x12\x37\n\nOpenWriter\x12\x12.OpenWriterRequest\x1a\x13.OpenWriterResponse\"\x00\x62\x06proto3')
+  serialized_pb=_b('\n\x13identitylayer.proto\x12\ridentitylayer\x1a\x19google/protobuf/any.proto\"y\n\x13NewWalletDefinition\x12+\n\x0cwalletConfig\x18\x01 \x01(\x0b\x32\x15.identitylayer.Config\x12\x35\n\x11walletCredentials\x18\x02 \x01(\x0b\x32\x1a.identitylayer.Credentials\"f\n\x06\x43onfig\x12\x10\n\x08walletID\x18\x01 \x01(\t\x12\x19\n\x11walletstorageType\x18\x02 \x01(\t\x12/\n\tstorePath\x18\x03 \x01(\x0b\x32\x1c.identitylayer.StorageConfig\"&\n\rStorageConfig\x12\x15\n\rnewWalletPath\x18\x01 \x01(\t\"n\n\x0b\x43redentials\x12\x14\n\x0cnewWalletKey\x18\x01 \x01(\t\x12#\n\x1bnewWalletStorageCredentials\x18\x02 \x01(\t\x12$\n\x1cnewWalletKeyDerivationMethod\x18\x03 \x01(\t\"3\n\x15\x43reateWalletErrorCode\x12\x1a\n\x12NewWalletErrorCode\x18\x01 \x01(\t\"\x82\x01\n\x14OpenWalletDefinition\x12/\n\x06\x43onfig\x18\x01 \x01(\x0b\x32\x1f.identitylayer.OpenWalletConfig\x12\x39\n\x0b\x43redentials\x18\x02 \x01(\x0b\x32$.identitylayer.OpenWalletCredentials\"i\n\x10OpenWalletConfig\x12\n\n\x02Id\x18\x01 \x01(\t\x12\x13\n\x0bStorageType\x18\x02 \x01(\t\x12\x34\n\x04Path\x18\x03 \x01(\x0b\x32&.identitylayer.OpenWalletStorageConfig\"\'\n\x17OpenWalletStorageConfig\x12\x0c\n\x04path\x18\x01 \x01(\t\"\x8b\x01\n\x15OpenWalletCredentials\x12\x0b\n\x03Key\x18\x01 \x01(\t\x12\r\n\x05ReKey\x18\x02 \x01(\t\x12\x1a\n\x12StorageCredentials\x18\x03 \x01(\t\x12\x1b\n\x13KeyDerivationMethod\x18\x04 \x01(\t\x12\x1d\n\x15ReKeyDerivationMethod\x18\x05 \x01(\t\"(\n\x10OpenWalletHandle\x12\x14\n\x0cWalletHandle\x18\x01 \x01(\x03\")\n\x11\x43loseWalletHandle\x12\x14\n\x0cWalletHandle\x18\x01 \x01(\x03\",\n\x11\x43loseWalletStatus\x12\x17\n\x0f\x43loseWalletCode\x18\x01 \x01(\t\"\x87\x01\n\x16\x44\x65leteWalletDefinition\x12\x31\n\x06\x43onfig\x18\x01 \x01(\x0b\x32!.identitylayer.DeleteWalletConfig\x12:\n\x0b\x43redentials\x18\x02 \x01(\x0b\x32%.identitylayer.DeleteWaletCredentials\"\x95\x01\n\x12\x44\x65leteWalletConfig\x12\x16\n\x0e\x44\x65leteWalletID\x18\x01 \x01(\t\x12\x1f\n\x17\x44\x65leteWalletStorageType\x18\x02 \x01(\t\x12\x46\n\rStorageConfig\x18\x03 \x01(\x0b\x32/.identitylayer.DeleteWalletStorageConfiguration\"0\n DeleteWalletStorageConfiguration\x12\x0c\n\x04Path\x18\x01 \x01(\t\"\x82\x01\n\x16\x44\x65leteWaletCredentials\x12\x17\n\x0f\x44\x65leteWalletKey\x18\x01 \x01(\t\x12&\n\x1e\x44\x65leteWalletStorageCredentials\x18\x02 \x01(\t\x12\'\n\x1f\x44\x65leteWalletKeyDerivationMethod\x18\x03 \x01(\t\"6\n\x18\x44\x65leteWalletConfirmation\x12\x1a\n\x12\x44\x65leteWalletStatus\x18\x01 \x01(\x08\"u\n\x16\x45xportWalletDefinition\x12\x1a\n\x12\x45xportWalletHandle\x18\x01 \x01(\x03\x12?\n\x10\x45xportConfigJson\x18\x02 \x01(\x0b\x32%.identitylayer.ExportWalletConfigJson\"t\n\x16\x45xportWalletConfigJson\x12\x18\n\x10\x45xportWalletPath\x18\x01 \x01(\t\x12\x17\n\x0f\x45xportWalletKey\x18\x02 \x01(\t\x12\'\n\x1f\x45xportWalletKeyDerivationMethod\x18\x03 \x01(\t\"6\n\x18\x45xportWalletConfirmation\x12\x1a\n\x12\x45xportWalletStatus\x18\x01 \x01(\x08\"\xc3\x01\n\x16ImportWalletDefinition\x12\x31\n\x06\x43onfig\x18\x01 \x01(\x0b\x32!.identitylayer.ImportWalletConfig\x12;\n\x0b\x43redentials\x18\x02 \x01(\x0b\x32&.identitylayer.ImportWalletCredentials\x12\x39\n\nConfigJson\x18\x03 \x01(\x0b\x32%.identitylayer.ImportWalletConfigJson\"v\n\x12ImportWalletConfig\x12\n\n\x02Id\x18\x01 \x01(\t\x12\x13\n\x0bStorageType\x18\x02 \x01(\t\x12?\n\rStorageConfig\x18\x03 \x01(\x0b\x32(.identitylayer.ImportWalletStorageConfig\")\n\x19ImportWalletStorageConfig\x12\x0c\n\x04Path\x18\x01 \x01(\t\"_\n\x17ImportWalletCredentials\x12\x0b\n\x03Key\x18\x01 \x01(\t\x12\x1a\n\x12StorageCredentials\x18\x02 \x01(\t\x12\x1b\n\x13KeyDerivationMethod\x18\x03 \x01(\t\"3\n\x16ImportWalletConfigJson\x12\x0c\n\x04Path\x18\x01 \x01(\t\x12\x0b\n\x03Key\x18\x02 \x01(\t\":\n\x18ImportWalletConfirmation\x12\x1e\n\x16ImportWalletStatusCode\x18\x01 \x01(\t\"+\n\x1bGenerateWalletKeyDefinition\x12\x0c\n\x04Seed\x18\x01 \x01(\t\"@\n\x1dGenerateWalletKeyConfirmation\x12\x1f\n\x17GenerateWalletKeyStatus\x18\x01 \x01(\t\"j\n\x1d\x43reatePoolLedgerConfigRequest\x12\x12\n\nConfigName\x18\x01 \x01(\t\x12\x35\n\x06\x43onfig\x18\x02 \x01(\x0b\x32%.identitylayer.ConfigCreatePoolLedger\"+\n\x16\x43onfigCreatePoolLedger\x12\x11\n\tGensisTxn\x18\x01 \x01(\t\"3\n\x1e\x43reatePoolLedgerConfigResponse\x12\x11\n\tErrorCode\x18\x01 \x01(\x03\"\\\n\x15OpenPoolLedgerRequest\x12\x12\n\nConfigName\x18\x01 \x01(\t\x12/\n\x06\x43onfig\x18\x02 \x01(\x0b\x32\x1f.identitylayer.ConfigOpenLedger\"U\n\x10\x43onfigOpenLedger\x12\x0f\n\x07Timeout\x18\x01 \x01(\x03\x12\x17\n\x0f\x45xtendedTimeour\x18\x02 \x01(\x03\x12\x17\n\x0fPreorderedNodes\x18\x03 \x03(\t\"(\n\x16OpenPoolLedgerResponse\x12\x0e\n\x06Handle\x18\x01 \x01(\x03\"*\n\x18RefreshPoolLedgerRequest\x12\x0e\n\x06Handle\x18\x01 \x01(\x03\".\n\x19RefreshPoolLedgerResponse\x12\x11\n\tErrorCode\x18\x01 \x01(\x03\"\x12\n\x10ListPoolsRequest\"&\n\x11ListPoolsResponse\x12\x11\n\tErrorCode\x18\x01 \x01(\x03\"(\n\x16\x43losePoolLedgerRequest\x12\x0e\n\x06Handle\x18\x01 \x01(\x03\",\n\x17\x43losePoolLedgerResponse\x12\x11\n\tErrorCode\x18\x01 \x01(\x03\"3\n\x1d\x44\x65letePoolLedgerConfigRequest\x12\x12\n\nConfigName\x18\x01 \x01(\t\"3\n\x1e\x44\x65letePoolLedgerConfigResponse\x12\x11\n\tErrorCode\x18\x01 \x01(\x03\"4\n\x19SetProtocolVersionRequest\x12\x17\n\x0fProtocolVersion\x18\x01 \x01(\x03\"/\n\x1aSetProtocolVersionResponse\x12\x11\n\tErrorCode\x18\x01 \x01(\x03\"2\n\x11OpenReaderRequest\x12\r\n\x05Type_\x18\x01 \x01(\t\x12\x0e\n\x06\x43onfig\x18\x02 \x01(\t\"!\n\x12OpenReaderResponse\x12\x0b\n\x03Res\x18\x01 \x01(\x03\"2\n\x11OpenWriterRequest\x12\r\n\x05Type_\x18\x01 \x01(\t\x12\x0e\n\x06\x43onfig\x18\x02 \x01(\t\"!\n\x12OpenWriterResponse\x12\x0b\n\x03Res\x18\x01 \x01(\x03\"\\\n\x19IssuerCreateSchemaRequest\x12\x11\n\tIssuerDid\x18\x01 \x01(\t\x12\x0c\n\x04Name\x18\x02 \x01(\t\x12\x0f\n\x07Version\x18\x03 \x01(\t\x12\r\n\x05\x41ttrs\x18\x04 \x01(\t\"B\n\x1aIssuerCreateSchemaResponse\x12\x10\n\x08SchemaId\x18\x01 \x01(\t\x12\x12\n\nSchemaJson\x18\x02 \x01(\t\"\x9f\x01\n(IssuerCreateAndStoreCredentialDefRequest\x12\x14\n\x0cWalletHandle\x18\x01 \x01(\x03\x12\x11\n\tIssuerDid\x18\x02 \x01(\t\x12\x12\n\nSchemaJson\x18\x03 \x01(\t\x12\x0b\n\x03Tag\x18\x04 \x01(\t\x12\x15\n\rSignatureType\x18\x05 \x01(\t\x12\x12\n\nConfigJson\x18\x06 \x01(\t\"S\n)IssuerCreateAndStoreCredentialDefResponse\x12\x11\n\tCredDefId\x18\x01 \x01(\t\x12\x13\n\x0b\x43redDefJson\x18\x02 \x01(\t\"\xb3\x01\n#IssuerCreateAndStoreRevocRegRequest\x12\x14\n\x0cWalletHandle\x18\x01 \x01(\x03\x12\x11\n\tIssuerDid\x18\x02 \x01(\t\x12\x14\n\x0cRevocDefType\x18\x03 \x01(\t\x12\x0b\n\x03Tag\x18\x04 \x01(\t\x12\x11\n\tCredDefId\x18\x05 \x01(\t\x12\x12\n\nConfigJSon\x18\x06 \x01(\t\x12\x19\n\x11TailsWriterHandle\x18\x07 \x01(\x03\"n\n$IssuerCreateAndStoreRevocRegResponse\x12\x12\n\nRevocRegId\x18\x01 \x01(\t\x12\x17\n\x0fRevocRegDefJson\x18\x02 \x01(\t\x12\x19\n\x11RevocRegEntryJson\x18\x03 \x01(\t\"M\n\"IssuerCreateCredentialOfferRequest\x12\x14\n\x0cWalletHandle\x18\x01 \x01(\x03\x12\x11\n\tCredDefId\x18\x02 \x01(\t\"\x8c\x01\n#IssuerCreateCredentialOfferResponse\x12\x10\n\x08SchemaId\x18\x01 \x01(\t\x12\x11\n\tCredDefId\x18\x02 \x01(\t\x12\r\n\x05Nonce\x18\x03 \x01(\t\x12\x31\n\x13KeyCorrectnessProof\x18\x04 \x01(\x0b\x32\x14.google.protobuf.Any\"\xac\x01\n\x1dIssuerCreateCredentialRequest\x12\x14\n\x0cWalletHandle\x18\x01 \x01(\x03\x12\x15\n\rCredOfferJson\x18\x02 \x01(\t\x12\x13\n\x0b\x43redReqJson\x18\x03 \x01(\t\x12\x16\n\x0e\x43redValuesJson\x18\x04 \x01(\t\x12\x10\n\x08RevRegId\x18\x05 \x01(\t\x12\x1f\n\x17\x42lobStorageReaderHandle\x18\x06 \x01(\t\"\x82\x01\n\x1eIssuerCreateCredentialResponse\x12\x30\n\x08\x43redJson\x18\x01 \x01(\x0b\x32\x1e.identitylayer.CredJsonMessage\x12\x13\n\x0b\x43redRevocId\x18\x02 \x01(\t\x12\x19\n\x11RevocRegDeltaJson\x18\x03 \x01(\t\"\xd3\x01\n\x0f\x43redJsonMessage\x12\x10\n\x08SchemaId\x18\x01 \x01(\t\x12\x11\n\tCredDefId\x18\x02 \x01(\t\x12\x13\n\x0bRevRegDefID\x18\x03 \x01(\t\x12$\n\x06Values\x18\x04 \x01(\x0b\x32\x14.google.protobuf.Any\x12\'\n\tSignature\x18\x05 \x01(\x0b\x32\x14.google.protobuf.Any\x12\x37\n\x19SignatureCorrectnessProof\x18\x06 \x01(\x0b\x32\x14.google.protobuf.Any\"}\n\x1dIssuerRevokeCredentialRequest\x12\x14\n\x0cWalletHandle\x18\x01 \x01(\x03\x12\x1f\n\x17\x42lobStorageReaderHandle\x18\x02 \x01(\x03\x12\x10\n\x08RevRegId\x18\x03 \x01(\t\x12\x13\n\x0b\x43redRevocId\x18\x04 \x01(\t\"E\n\x1eIssuerRevokeCredentialResponse\x12#\n\x1bRevocationRegistryDeltaJson\x18\x01 \x01(\t\"c\n*IssuerMergeRevocationRegistryDeltasRequest\x12\x17\n\x0fRevRegDeltaJson\x18\x01 \x01(\t\x12\x1c\n\x14OtherRevRegDeltaJson\x18\x02 \x01(\t\"T\n+IssuerMergeRevocationRegistryDeltasResponse\x12%\n\x1dMergedRevocationRegistryDelta\x18\x01 \x01(\t\"Q\n\x1fProverCreateMasterSecretRequest\x12\x14\n\x0cWalletHandle\x18\x01 \x01(\x03\x12\x18\n\x10MasterSecretName\x18\x02 \x01(\t\"C\n ProverCreateMasterSecretResponse\x12\x1f\n\x17GeneratedMasterSecretId\x18\x01 \x01(\t\"\x8e\x01\n ProverCreateCredentialReqRequest\x12\x13\n\x0bWaletHandle\x18\x01 \x01(\x03\x12\x11\n\tProverDid\x18\x02 \x01(\t\x12\x15\n\rCredOfferJSon\x18\x03 \x01(\t\x12\x13\n\x0b\x43redDefJson\x18\x04 \x01(\t\x12\x16\n\x0eMasterSecretId\x18\x05 \x01(\t\"x\n!ProverCreateCredentialReqResponse\x12\x36\n\x0b\x43redReqJson\x18\x01 \x01(\x0b\x32!.identitylayer.CredReqJsonMessage\x12\x1b\n\x13\x43redReqMetadataJson\x18\x02 \x01(\t\"\xab\x01\n\x12\x43redReqJsonMessage\x12\x11\n\tProverDid\x18\x01 \x01(\t\x12\x11\n\tCredDefId\x18\x02 \x01(\t\x12\'\n\tBlindedMs\x18\x03 \x01(\x0b\x32\x14.google.protobuf.Any\x12\x37\n\x19\x42lindedMsCorrectnessProof\x18\x04 \x01(\x0b\x32\x14.google.protobuf.Any\x12\r\n\x05Nonce\x18\x05 \x01(\t\"\x9f\x01\n\x1cProverStoreCredentialRequest\x12\x14\n\x0cWalletHandle\x18\x01 \x01(\x03\x12\x0e\n\x06\x43redId\x18\x02 \x01(\t\x12\x1b\n\x13\x43redReqMetadataJson\x18\x03 \x01(\t\x12\x10\n\x08\x43redJson\x18\x04 \x01(\t\x12\x13\n\x0b\x43redDefJson\x18\x05 \x01(\t\x12\x15\n\rRevRegDefJson\x18\x06 \x01(\t\"/\n\x1dProverStoreCredentialResponse\x12\x0e\n\x06\x43redId\x18\x01 \x01(\t\"B\n\x1aProverGetCredentialRequest\x12\x14\n\x0cWalletHandle\x18\x01 \x01(\x03\x12\x0e\n\x06\x43redId\x18\x02 \x01(\t\"\x88\x01\n\x1bProverGetCredentialResponse\x12\x10\n\x08Referent\x18\x01 \x01(\t\x12\r\n\x05\x41ttrs\x18\x02 \x01(\t\x12\x10\n\x08SchemaId\x18\x03 \x01(\t\x12\x11\n\tCredDefId\x18\x04 \x01(\t\x12\x10\n\x08RevRegId\x18\x05 \x01(\t\x12\x11\n\tCredRevId\x18\x06 \x01(\t\"i\n\x1bProverGetCredentialsRequest\x12\x14\n\x0cWalletHandle\x18\x01 \x01(\x03\x12\x34\n\nFilterJson\x18\x02 \x01(\x0b\x32 .identitylayer.FilterJsonMessage\"\x8f\x01\n\x11\x46ilterJsonMessage\x12\x10\n\x08SchemaId\x18\x01 \x01(\t\x12\x17\n\x0fSchemaIssuerDid\x18\x02 \x01(\t\x12\x12\n\nSchemaName\x18\x03 \x01(\t\x12\x15\n\rSchemaVersion\x18\x04 \x01(\t\x12\x11\n\tIssuerDid\x18\x05 \x01(\t\x12\x11\n\tCredDefId\x18\x06 \x01(\t\"^\n\x1cProverGetCredentialsResponse\x12>\n\x0f\x43redentialsJson\x18\x01 \x03(\x0b\x32%.identitylayer.CredentialsJsonMessage\"\x83\x01\n\x16\x43redentialsJsonMessage\x12\x10\n\x08Referent\x18\x01 \x01(\t\x12\r\n\x05\x41ttrs\x18\x02 \x01(\t\x12\x10\n\x08SchemaID\x18\x03 \x01(\t\x12\x11\n\tCredDefId\x18\x04 \x01(\t\x12\x10\n\x08RevRegId\x18\x05 \x01(\t\x12\x11\n\tCredRevId\x18\x06 \x01(\t\"H\n\x1dProverSeachCredentialsRequest\x12\x14\n\x0cWalletHandle\x18\x01 \x01(\x03\x12\x11\n\tQueryJson\x18\x02 \x01(\t\"J\n\x1eProverSeachCredentialsResponse\x12\x14\n\x0cSearchHandle\x18\x01 \x01(\x03\x12\x12\n\nTotalCount\x18\x02 \x01(\x03\"D\n\x1dProverFetchCredentialsRequest\x12\x14\n\x0cSearchHandle\x18\x01 \x01(\x03\x12\r\n\x05\x43ount\x18\x02 \x01(\x03\"`\n\x1eProverFetchCredentialsResponse\x12>\n\x0f\x43redentialsJson\x18\x01 \x03(\x0b\x32%.identitylayer.CredentialsJsonMessage\";\n#ProverCloseCredentialsSearchRequest\x12\x14\n\x0cSearchHandle\x18\x01 \x01(\x03\"4\n$ProverCloseCredentialsSearchResponse\x12\x0c\n\x04Resp\x18\x01 \x01(\t\"\x80\x01\n&ProverGetCredentialsForProofReqRequest\x12\x14\n\x0cWalletHandle\x18\x01 \x01(\x03\x12@\n\x10ProofRequestJson\x18\x02 \x01(\x0b\x32&.identitylayer.ProofRequestJsonMessage\"\xab\x01\n\x17ProofRequestJsonMessage\x12\x0c\n\x04Name\x18\x01 \x01(\t\x12\x0f\n\x07Version\x18\x02 \x01(\t\x12\r\n\x05Nonce\x18\x03 \x01(\t\x12\x1b\n\x13RequestedAttributes\x18\x04 \x01(\t\x12\x1b\n\x13RequestedPredicates\x18\x05 \x01(\t\x12(\n\nNonRevoked\x18\x06 \x01(\x0b\x32\x14.google.protobuf.Any\"^\n\'ProverGetCredentialsForProofReqResponse\x12\x16\n\x0eRequestedAttrs\x18\x01 \x01(\t\x12\x1b\n\x13RequestedPredicates\x18\x02 \x01(\t\"\xc1\x01\n)ProverSearchCredentialsForProofReqRequest\x12\x14\n\x0cWalletHandle\x18\x01 \x01(\x03\x12@\n\x10ProofRequestJson\x18\x02 \x01(\x0b\x32&.identitylayer.ProofRequestJsonMessage\x12<\n\x0e\x45xtraQueryJson\x18\x03 \x01(\x0b\x32$.identitylayer.ExtraQueryJsonMessage\"t\n\x15\x45xtraQueryJsonMessage\x12*\n\x0c\x41ttrReferent\x18\x01 \x01(\x0b\x32\x14.google.protobuf.Any\x12/\n\x11PredicateReferent\x18\x02 \x01(\x0b\x32\x14.google.protobuf.Any\"B\n*ProverSearchCredentialsForProofReqResponse\x12\x14\n\x0cSearchHandle\x18\x01 \x01(\x03\"f\n(ProverFetchCredentialsForProofReqRequest\x12\x14\n\x0cSearchHandle\x18\x01 \x01(\x03\x12\x15\n\rItemReference\x18\x02 \x01(\t\x12\r\n\x05\x43ount\x18\x03 \x01(\x03\"q\n)ProverFetchCredentialsForProofReqResponse\x12\x44\n\x0f\x43redentialsJson\x18\x01 \x03(\x0b\x32+.identitylayer.CredentialsGivenProofRequest\"w\n\x1c\x43redentialsGivenProofRequest\x12/\n\x08\x43redInfo\x18\x01 \x01(\x0b\x32\x1d.identitylayer.CredentialInfo\x12&\n\x08Interval\x18\x02 \x01(\x0b\x32\x14.google.protobuf.Any\"{\n\x0e\x43redentialInfo\x12\x10\n\x08Referent\x18\x01 \x01(\t\x12\r\n\x05\x41ttrs\x18\x02 \x01(\t\x12\x10\n\x08SchemaId\x18\x03 \x01(\t\x12\x11\n\tCredDefId\x18\x04 \x01(\t\x12\x10\n\x08RevRegId\x18\x05 \x01(\x03\x12\x11\n\tCredRevId\x18\x06 \x01(\x03\"F\n.ProverCloseCredentialsSearchForProofReqRequest\x12\x14\n\x0cSearchHandle\x18\x01 \x01(\x03\"?\n/ProverCloseCredentialsSearchForProofReqResponse\x12\x0c\n\x04Resp\x18\x01 \x01(\t\"\x9e\x02\n\x18ProverCreateProofRequest\x12\x14\n\x0cWalletHandle\x18\x01 \x01(\x03\x12\x38\n\x0cProofReqJson\x18\x02 \x01(\x0b\x32\".identitylayer.ProofReqJsonMessage\x12P\n\x18RequestedCredentialsJson\x18\x03 \x01(\x0b\x32..identitylayer.RequestedCredentialsJsonMessage\x12\x18\n\x10MasterSecretName\x18\x04 \x01(\t\x12\x13\n\x0bSchemasJson\x18\x05 \x01(\t\x12\x1a\n\x12\x43redentialDefsJson\x18\x06 \x01(\t\x12\x15\n\rRevStatesJson\x18\x07 \x01(\t\"\xbe\x01\n\x13ProofReqJsonMessage\x12\x0c\n\x04Name\x18\x01 \x01(\t\x12\x0f\n\x07Version\x18\x02 \x01(\t\x12\r\n\x05Nonce\x18\x03 \x01(\t\x12\x1b\n\x13RequestedAttributes\x18\x04 \x01(\t\x12\x1b\n\x13RequestedPredicates\x18\x05 \x01(\t\x12?\n\x0fNonRevoInterval\x18\x06 \x01(\x0b\x32&.identitylayer.NonRevocIntervalMessage\"3\n\x17NonRevocIntervalMessage\x12\x0c\n\x04\x46rom\x18\x01 \x01(\x03\x12\n\n\x02To\x18\x02 \x01(\x03\"{\n\x1fRequestedCredentialsJsonMessage\x12\x1e\n\x16SelfAttestedAttributes\x18\x01 \x01(\t\x12\x1b\n\x13RequestedAttributes\x18\x02 \x01(\t\x12\x1b\n\x13RequestedPredicates\x18\x03 \x01(\t\"R\n\x19ProverCreateProofResponse\x12\x11\n\tRequested\x18\x01 \x01(\t\x12\r\n\x05Proof\x18\x02 \x01(\t\x12\x13\n\x0bidentifiers\x18\x03 \x01(\t\"\xce\x01\n\x1aVerifierVerifyProofRequest\x12@\n\x10ProofRequestJson\x18\x01 \x01(\x0b\x32&.identitylayer.ProofRequestJsonMessage\x12\x11\n\tProofJson\x18\x02 \x01(\t\x12\x13\n\x0bSchemasJson\x18\x03 \x01(\t\x12\x1a\n\x12\x43redentialDefsJson\x18\x04 \x01(\t\x12\x16\n\x0eRevRegDefsJson\x18\x05 \x01(\t\x12\x12\n\nRevRegJson\x18\x06 \x01(\t\",\n\x1bVerifierVerifyProofResponse\x12\r\n\x05Valid\x18\x01 \x01(\x08\"\x95\x01\n\x1c\x43reateRevocationStateRequest\x12\x1f\n\x17\x42lobStorageReaderHandle\x18\x01 \x01(\x03\x12\x15\n\rRevRegDefJson\x18\x02 \x01(\t\x12\x17\n\x0fRevRegDeltaJson\x18\x03 \x01(\t\x12\x11\n\tTimestamp\x18\x04 \x01(\x03\x12\x11\n\tCredRevId\x18\x05 \x01(\t\"S\n\x1d\x43reateRevocationStateResponse\x12\x0e\n\x06RevReg\x18\x01 \x01(\t\x12\x0f\n\x07Witness\x18\x02 \x01(\t\x12\x11\n\tTimestamp\x18\x03 \x01(\x03\"\xab\x01\n\x1cUpdateRevocationStateRequest\x12\x1f\n\x17\x42lobStorageReaderHandle\x18\x01 \x01(\x03\x12\x14\n\x0cRevStateJson\x18\x02 \x01(\t\x12\x15\n\rRevRegDefJson\x18\x03 \x01(\t\x12\x17\n\x0fRevRegDeltaJson\x18\x04 \x01(\t\x12\x11\n\tTimestamp\x18\x05 \x01(\x03\x12\x11\n\tCredRevId\x18\x06 \x01(\t\"S\n\x1dUpdateRevocationStateResponse\x12\x0e\n\x06RevReg\x18\x01 \x01(\t\x12\x0f\n\x07Witness\x18\x02 \x01(\t\x12\x11\n\tTimestamp\x18\x03 \x01(\x03\"B\n\x10\x43reateKeyRequest\x12\x14\n\x0cWalletHandle\x18\x01 \x01(\x03\x12\x18\n\x10KeyJsonCreateKey\x18\x02 \x01(\t\"4\n\x10KeyJsonCreateKey\x12\x0c\n\x04seed\x18\x01 \x01(\t\x12\x12\n\nCryptoType\x18\x02 \x01(\t\"#\n\x11\x43reateKeyResponse\x12\x0e\n\x06Verkey\x18\x01 \x01(\t\"O\n\x15SetKeyMetadataRequest\x12\x14\n\x0cWalletHandle\x18\x01 \x01(\x03\x12\x0e\n\x06Verkey\x18\x02 \x01(\t\x12\x10\n\x08Metadata\x18\x03 \x01(\t\"+\n\x16SetKeyMetadataResponse\x12\x11\n\tErrorCode\x18\x01 \x01(\x03\"=\n\x15GetKeyMetadataRequest\x12\x14\n\x0cWalletHandle\x18\x01 \x01(\x03\x12\x0e\n\x06Verkey\x18\x02 \x01(\t\"*\n\x16GetKeyMetadataResponse\x12\x10\n\x08Metadata\x18\x01 \x01(\t\"H\n\x11\x43ryptoSignRequest\x12\x14\n\x0cWalletHandle\x18\x01 \x01(\x03\x12\x10\n\x08SignerVk\x18\x02 \x01(\t\x12\x0b\n\x03Msg\x18\x03 \x01(\x0c\"\'\n\x12\x43ryptoSignResponse\x12\x11\n\tSignature\x18\x01 \x01(\x0c\"G\n\x13\x43ryptoVerifyRequest\x12\x10\n\x08SignerVk\x18\x01 \x01(\t\x12\x0b\n\x03Msg\x18\x02 \x01(\x0c\x12\x11\n\tSignature\x18\x03 \x01(\x0c\"%\n\x14\x43ryptoVerifyResponse\x12\r\n\x05Valid\x18\x01 \x01(\x08\"\\\n\x10\x41uthCryptRequest\x12\x14\n\x0cWalletHandle\x18\x01 \x01(\x03\x12\x10\n\x08SenderVk\x18\x02 \x01(\t\x12\x13\n\x0bRecipientVk\x18\x03 \x01(\t\x12\x0b\n\x03Msg\x18\x04 \x01(\x0c\" \n\x11\x41uthCryptResponse\x12\x0b\n\x03Msg\x18\x01 \x01(\x0c\"U\n\x12\x41uthDecryptRequest\x12\x14\n\x0cWalletHandle\x18\x01 \x01(\x03\x12\x13\n\x0bRecipientVk\x18\x02 \x01(\t\x12\x14\n\x0c\x45ncryptedMsg\x18\x03 \x01(\x0c\"2\n\x13\x41uthDecryptResponse\x12\x0e\n\x06Verkey\x18\x01 \x01(\t\x12\x0b\n\x03Msg\x18\x02 \x01(\x0c\"4\n\x10\x41nonCryptRequest\x12\x13\n\x0bRecipientVk\x18\x01 \x01(\t\x12\x0b\n\x03Msg\x18\x02 \x01(\x0c\" \n\x11\x41nonCryptResponse\x12\x0b\n\x03Msg\x18\x01 \x01(\x0c\"U\n\x12\x41nonDecryptRequest\x12\x14\n\x0cWalletHandle\x18\x01 \x01(\x03\x12\x13\n\x0bRecipientVk\x18\x02 \x01(\t\x12\x14\n\x0c\x45ncryptedMsg\x18\x03 \x01(\x0c\"+\n\x13\x41nonDecryptResponse\x12\x14\n\x0c\x44\x65\x63ryptedMsg\x18\x01 \x01(\x0c\"A\n\x17IsPairwiseExistsRequest\x12\x14\n\x0cWalletHandle\x18\x01 \x01(\x03\x12\x10\n\x08TheirDid\x18\x02 \x01(\t\"\'\n\x18IsPairwiseExistsResponse\x12\x0b\n\x03Res\x18\x01 \x01(\x08\"`\n\x15\x43reatePairwiseRequest\x12\x14\n\x0cWalletHandle\x18\x01 \x01(\x03\x12\x10\n\x08TheirDid\x18\x02 \x01(\t\x12\r\n\x05MyDid\x18\x03 \x01(\t\x12\x10\n\x08Metadata\x18\x04 \x01(\t\"+\n\x16\x43reatePairwiseResponse\x12\x11\n\tErrorCode\x18\x01 \x01(\x03\"+\n\x13ListPairwiseRequest\x12\x14\n\x0cWalletHandle\x18\x01 \x01(\x03\",\n\x14ListPairwiseResponse\x12\x14\n\x0cPairwiseList\x18\x01 \x03(\t\"<\n\x12GetPairwiseRequest\x12\x14\n\x0cWalletHandle\x18\x01 \x01(\x03\x12\x10\n\x08TheirDid\x18\x02 \x01(\t\"/\n\x13GetPairwiseResponse\x12\x18\n\x10PairwiseInfoJson\x18\x01 \x01(\t\"V\n\x1aSetPairwiseMetadataRequest\x12\x14\n\x0cWalletHandle\x18\x01 \x01(\x03\x12\x10\n\x08TheirDid\x18\x02 \x01(\t\x12\x10\n\x08MetaData\x18\x03 \x01(\t\"0\n\x1bSetPairwiseMetadataResponse\x12\x11\n\tErrorCode\x18\x01 \x01(\x03\"r\n\x1a\x43reateAndStoreMyDidRequest\x12\x14\n\x0cWalletHandle\x18\x01 \x01(\x03\x12>\n\x07\x44idJson\x18\x02 \x01(\x0b\x32-.identitylayer.CreateAndStoreMyDidJsonMessage\"\\\n\x1e\x43reateAndStoreMyDidJsonMessage\x12\x0b\n\x03\x44id\x18\x01 \x01(\t\x12\x0c\n\x04Seed\x18\x02 \x01(\t\x12\x12\n\nCryptoType\x18\x03 \x01(\t\x12\x0b\n\x03\x43id\x18\x04 \x01(\x08\":\n\x1b\x43reateAndStoreMyDidResponse\x12\x0b\n\x03\x44id\x18\x01 \x01(\t\x12\x0e\n\x06Verkey\x18\x02 \x01(\t\"\x86\x01\n\x17ReplaceKeysStartRequest\x12\x14\n\x0cWalletHandle\x18\x01 \x01(\x03\x12\x0b\n\x03\x44id\x18\x02 \x01(\t\x12H\n\x0cIdentityJson\x18\x03 \x01(\x0b\x32\x32.identitylayer.ReplaceKeysStartIdentityJsonMessage\"G\n#ReplaceKeysStartIdentityJsonMessage\x12\x0c\n\x04Seed\x18\x01 \x01(\t\x12\x12\n\nCryptoType\x18\x02 \x01(\t\"*\n\x18ReplaceKeysStartResponse\x12\x0e\n\x06Verkey\x18\x01 \x01(\t\"<\n\x17ReplaceKeysApplyRequest\x12\x14\n\x0cWalletHandle\x18\x01 \x01(\x03\x12\x0b\n\x03\x44id\x18\x02 \x01(\t\"-\n\x18ReplaceKeysApplyResponse\x12\x11\n\tErrorCode\x18\x01 \x01(\x03\"s\n\x14StoreTheirDidRequest\x12\x14\n\x0cWalletHandle\x18\x01 \x01(\x03\x12\x45\n\x0cIdentityJson\x18\x02 \x01(\x0b\x32/.identitylayer.StoreTheirDidIdentityJsonMessage\"S\n StoreTheirDidIdentityJsonMessage\x12\x0b\n\x03\x44id\x18\x01 \x01(\t\x12\x0e\n\x06Verkey\x18\x02 \x01(\t\x12\x12\n\nCryptoType\x18\x03 \x01(\t\"*\n\x15StoreTheirDidResponse\x12\x11\n\tErrorCode\x18\x01 \x01(\x03\"<\n\x13\x44idCreateKeyRequest\x12\x14\n\x0cWalletHandle\x18\x01 \x01(\x03\x12\x0f\n\x07KeyJson\x18\x02 \x01(\t\"&\n\x14\x44idCreateKeyResponse\x12\x0e\n\x06Verkey\x18\x01 \x01(\t\"R\n\x18\x44idSetKeyMetadataRequest\x12\x14\n\x0cWalletHandle\x18\x01 \x01(\x03\x12\x0e\n\x06Verkey\x18\x02 \x01(\t\x12\x10\n\x08Metadata\x18\x03 \x01(\t\".\n\x19\x44idSetKeyMetadataResponse\x12\x11\n\tErrorCode\x18\x01 \x01(\x03\"@\n\x18\x44idGetKeyMetadataRequest\x12\x14\n\x0cWalletHandle\x18\x01 \x01(\x03\x12\x0e\n\x06Verkey\x18\x02 \x01(\t\"-\n\x19\x44idGetKeyMetadataResponse\x12\x10\n\x08Metadata\x18\x01 \x01(\t\"I\n\x10KeyForDidRequest\x12\x12\n\nPoolHandle\x18\x01 \x01(\x03\x12\x14\n\x0cWalletHandle\x18\x02 \x01(\x03\x12\x0b\n\x03\x44id\x18\x03 \x01(\t\" \n\x11KeyForDidResponse\x12\x0b\n\x03Key\x18\x01 \x01(\t\":\n\x15KeyForLocalDidRequest\x12\x14\n\x0cWalletHandle\x18\x01 \x01(\x03\x12\x0b\n\x03\x44id\x18\x02 \x01(\t\"%\n\x16KeyForLocalDidResponse\x12\x0b\n\x03Key\x18\x01 \x01(\t\"d\n\x18SetEndpointForDidRequest\x12\x14\n\x0cWalletHandle\x18\x01 \x01(\x03\x12\x0b\n\x03\x44id\x18\x02 \x01(\t\x12\x0f\n\x07\x41\x64\x64ress\x18\x03 \x01(\t\x12\x14\n\x0cTransportKey\x18\x04 \x01(\t\".\n\x19SetEndpointForDidResponse\x12\x11\n\tErrorCode\x18\x01 \x01(\x03\"Q\n\x18GetEndpointForDidRequest\x12\x14\n\x0cWalletHandle\x18\x01 \x01(\x03\x12\x12\n\nPoolHandle\x18\x02 \x01(\x03\x12\x0b\n\x03\x44id\x18\x03 \x01(\t\"B\n\x19GetEndpointForDidResponse\x12\x10\n\x08\x45ndpoint\x18\x01 \x01(\t\x12\x13\n\x0bTransportVk\x18\x02 \x01(\t\"L\n\x15SetDidMetadataRequest\x12\x14\n\x0cWalletHandle\x18\x01 \x01(\x03\x12\x0b\n\x03\x44id\x18\x02 \x01(\t\x12\x10\n\x08Metadata\x18\x03 \x01(\t\"\'\n\x16SetDidMetadataResponse\x12\r\n\x05\x45rror\x18\x01 \x01(\x03\":\n\x15GetDidMetadataRequest\x12\x14\n\x0cWalletHandle\x18\x01 \x01(\x03\x12\x0b\n\x03\x44id\x18\x02 \x01(\t\"*\n\x16GetDidMetadataResponse\x12\x10\n\x08Metadata\x18\x01 \x01(\t\"<\n\x17GetMyDidWithMetaRequest\x12\x14\n\x0cWalletHandle\x18\x01 \x01(\x03\x12\x0b\n\x03\x44id\x18\x02 \x01(\t\"\'\n\x18GetMyDidWithMetaResponse\x12\x0b\n\x03\x44id\x18\x01 \x01(\t\"1\n\x19ListMyDidsWithMetaRequest\x12\x14\n\x0cWalletHandle\x18\x01 \x01(\x03\")\n\x1aListMyDidsWithMetaResponse\x12\x0b\n\x03\x44id\x18\x01 \x03(\t\":\n\x17\x41\x62\x62reviateVerkeyRequest\x12\x0b\n\x03\x44id\x18\x01 \x01(\t\x12\x12\n\nFullVerkey\x18\x02 \x01(\t\",\n\x18\x41\x62\x62reviateVerkeyResponse\x12\x10\n\x08Metadata\x18\x01 \x01(\t\"m\n\x16SignAndSubmitRequestRq\x12\x12\n\nPoolHandle\x18\x01 \x01(\x03\x12\x14\n\x0cWalletHandle\x18\x02 \x01(\x03\x12\x14\n\x0cSubmitterDid\x18\x03 \x01(\t\x12\x13\n\x0bRequestJson\x18\x04 \x01(\t\"&\n\x16SignAndSubmitRequestRs\x12\x0c\n\x04Resp\x18\x01 \x01(\t\":\n\x0fSubmitRequestRq\x12\x12\n\nPoolHandle\x18\x01 \x01(\x03\x12\x13\n\x0bRequestJson\x18\x02 \x01(\t\"\x1f\n\x0fSubmitRequestRs\x12\x0c\n\x04Resp\x18\x01 \x01(\t\"Y\n\x0eSubmitActionRq\x12\x12\n\nPoolHandle\x18\x01 \x01(\x03\x12\x13\n\x0bRequestJson\x18\x02 \x01(\t\x12\r\n\x05Nodes\x18\x03 \x01(\t\x12\x0f\n\x07Timeout\x18\x04 \x01(\x03\"\x1e\n\x0eSubmitActionRs\x12\x0c\n\x04Resp\x18\x01 \x01(\t\"P\n\rSignRequestRq\x12\x14\n\x0cWalletHandle\x18\x01 \x01(\x03\x12\x14\n\x0cSubmitterDid\x18\x02 \x01(\t\x12\x13\n\x0bRequestJson\x18\x03 \x01(\t\"\x1d\n\rSignRequestRs\x12\x0c\n\x04Resp\x18\x01 \x01(\t\"U\n\x12MultiSignRequestRq\x12\x14\n\x0cWalletHandle\x18\x01 \x01(\x03\x12\x14\n\x0cSubmitterDid\x18\x02 \x01(\t\x12\x13\n\x0bRequestJson\x18\x03 \x01(\t\"\"\n\x12MultiSignRequestRs\x12\x0c\n\x04Resp\x18\x01 \x01(\t\"?\n\x14\x42uildGetDdoRequestRq\x12\x14\n\x0cSubmitterDid\x18\x01 \x01(\t\x12\x11\n\tTargetDid\x18\x02 \x01(\t\"$\n\x14\x42uildGetDdoRequestRs\x12\x0c\n\x04Resp\x18\x01 \x01(\t\"i\n\x11\x42uildNymRequestRq\x12\x14\n\x0cSubmitterDid\x18\x01 \x01(\t\x12\x11\n\tTargetDid\x18\x02 \x01(\t\x12\x0e\n\x06VerKey\x18\x03 \x01(\t\x12\r\n\x05\x41lias\x18\x04 \x01(\t\x12\x0c\n\x04Role\x18\x05 \x01(\t\"!\n\x11\x42uildNymRequestRs\x12\x0c\n\x04Resp\x18\x01 \x01(\t\"h\n\x14\x42uildAttribRequestRq\x12\x14\n\x0cSubmitterDid\x18\x01 \x01(\t\x12\x11\n\tTargetDid\x18\x02 \x01(\t\x12\r\n\x05Xhash\x18\x03 \x01(\t\x12\x0b\n\x03Raw\x18\x04 \x01(\t\x12\x0b\n\x03\x45nc\x18\x05 \x01(\t\"$\n\x14\x42uildAttribRequestRs\x12\x0c\n\x04Resp\x18\x01 \x01(\t\"k\n\x17\x42uildGetAttribRequestRq\x12\x14\n\x0cSubmitterDid\x18\x01 \x01(\t\x12\x11\n\tTargetDid\x18\x02 \x01(\t\x12\r\n\x05Xhash\x18\x03 \x01(\t\x12\x0b\n\x03Raw\x18\x04 \x01(\t\x12\x0b\n\x03\x45nc\x18\x05 \x01(\t\"\'\n\x17\x42uildGetAttribRequestRs\x12\x0c\n\x04Resp\x18\x01 \x01(\t\"?\n\x14\x42uildGetNymRequestRq\x12\x14\n\x0cSubmitterDid\x18\x01 \x01(\t\x12\x11\n\tTargetDid\x18\x02 \x01(\t\"$\n\x14\x42uildGetNymRequestRs\x12\x0c\n\x04Resp\x18\x01 \x01(\t\":\n\x14\x42uildSchemaRequestRq\x12\x14\n\x0cSubmitterDid\x18\x01 \x01(\t\x12\x0c\n\x04\x44\x61ta\x18\x02 \x01(\t\"$\n\x14\x42uildSchemaRequestRs\x12\x0c\n\x04Resp\x18\x01 \x01(\t\"<\n\x17\x42uildGetSchemaRequestRq\x12\x14\n\x0cSubmitterDid\x18\x01 \x01(\t\x12\x0b\n\x03Id_\x18\x02 \x01(\t\"\'\n\x17\x42uildGetSchemaRequestRs\x12\x0c\n\x04Resp\x18\x01 \x01(\t\"5\n\x18ParseGetSchemaResponseRq\x12\x19\n\x11GetSchemaResponse\x18\x01 \x01(\t\":\n\x18ParseGetSchemaResponseRs\x12\n\n\x02Id\x18\x01 \x01(\t\x12\x12\n\nSchemaJson\x18\x02 \x01(\t\";\n\x15\x42uildCredDefRequestRq\x12\x14\n\x0cSubmitterDid\x18\x01 \x01(\t\x12\x0c\n\x04\x44\x61ta\x18\x02 \x01(\t\"%\n\x15\x42uildCredDefRequestRs\x12\x0c\n\x04Resp\x18\x01 \x01(\t\"=\n\x18\x42uildGetCredDefRequestRq\x12\x14\n\x0cSubmitterDid\x18\x01 \x01(\t\x12\x0b\n\x03Id_\x18\x02 \x01(\t\"(\n\x18\x42uildGetCredDefRequestRs\x12\x0c\n\x04Resp\x18\x01 \x01(\t\"7\n\x19ParseGetCredDefResponseRq\x12\x1a\n\x12GetCredDefResponse\x18\x01 \x01(\t\"]\n\x19ParseGetCredDefResponseRs\x12\x1e\n\x16\x43redentialDefinitionId\x18\x01 \x01(\t\x12 \n\x18\x43redentialDefinitionJson\x18\x02 \x01(\t\"K\n\x12\x42uildNodeRequestRq\x12\x14\n\x0cSubmitterDid\x18\x01 \x01(\t\x12\x11\n\tTargetDid\x18\x02 \x01(\t\x12\x0c\n\x04\x44\x61ta\x18\x03 \x01(\t\"\"\n\x12\x42uildNodeRequestRs\x12\x0c\n\x04Resp\x18\x01 \x01(\t\"6\n\x1e\x42uildGetValidatorInfoRequestRq\x12\x14\n\x0cSubmitterDid\x18\x01 \x01(\t\".\n\x1e\x42uildGetValidatorInfoRequestRs\x12\x0c\n\x04Resp\x18\x01 \x01(\t\"O\n\x14\x42uildGetTxnRequestRq\x12\x14\n\x0cSubmitterDid\x18\x01 \x01(\t\x12\x12\n\nLedgerType\x18\x02 \x01(\t\x12\r\n\x05SeqNo\x18\x03 \x01(\t\"$\n\x14\x42uildGetTxnRequestRs\x12\x0c\n\x04Resp\x18\x01 \x01(\t\"O\n\x18\x42uildPoolConfigRequestRq\x12\x14\n\x0cSubmitterDid\x18\x01 \x01(\t\x12\x0e\n\x06Writes\x18\x02 \x01(\x08\x12\r\n\x05\x46orce\x18\x03 \x01(\x08\"(\n\x18\x42uildPoolConfigRequestRs\x12\x0c\n\x04Resp\x18\x01 \x01(\t\"S\n\x19\x42uildPoolRestartRequestRq\x12\x14\n\x0cSubmitterDid\x18\x01 \x01(\t\x12\x0e\n\x06\x41\x63tion\x18\x02 \x01(\t\x12\x10\n\x08\x44\x61tetime\x18\x03 \x01(\t\")\n\x19\x42uildPoolRestartRequestRs\x12\x0c\n\x04Resp\x18\x01 \x01(\t\"\xdf\x01\n\x19\x42uildPoolUpgradeRequestRq\x12\x14\n\x0cSubmitterDid\x18\x01 \x01(\t\x12\x0c\n\x04Name\x18\x02 \x01(\t\x12\x0f\n\x07Version\x18\x03 \x01(\t\x12\x0e\n\x06\x41\x63tion\x18\x04 \x01(\t\x12\x0f\n\x07_sha256\x18\x05 \x01(\t\x12\x10\n\x08_timeout\x18\x06 \x01(\x03\x12\x10\n\x08Schedule\x18\x07 \x01(\t\x12\x15\n\rJustification\x18\x08 \x01(\t\x12\x11\n\tReinstall\x18\t \x01(\x08\x12\r\n\x05\x46orce\x18\n \x01(\x08\x12\x0f\n\x07Package\x18\x0b \x01(\t\")\n\x19\x42uildPoolUpgradeRequestRs\x12\x0c\n\x04Resp\x18\x01 \x01(\t\"?\n\x19\x42uildRevocRegDefRequestRq\x12\x14\n\x0cSubmitterDid\x18\x01 \x01(\t\x12\x0c\n\x04\x44\x61ta\x18\x02 \x01(\t\")\n\x19\x42uildRevocRegDefRequestRs\x12\x0c\n\x04Resp\x18\x01 \x01(\t\"I\n\x1c\x42uildGetRevocRegDefRequestRq\x12\x14\n\x0cSubmitterDid\x18\x01 \x01(\t\x12\x13\n\x0bRevRegDefId\x18\x02 \x01(\t\",\n\x1c\x42uildGetRevocRegDefRequestRs\x12\x0c\n\x04Resp\x18\x01 \x01(\t\"?\n\x1dParseGetRevocRegDefResponseRq\x12\x1e\n\x16GetRevocRefDefResponse\x18\x01 \x01(\t\"M\n\x1dParseGetRevocRegDefResponseRs\x12\x14\n\x0cRevocationId\x18\x01 \x01(\t\x12\x16\n\x0eRevocationJson\x18\x02 \x01(\t\"m\n\x1b\x42uildRevocRegEntryRequestRq\x12\x14\n\x0cSubmitterDid\x18\x01 \x01(\t\x12\x15\n\rRevocRegDefId\x18\x02 \x01(\t\x12\x12\n\nRevDefType\x18\x03 \x01(\t\x12\r\n\x05Value\x18\x04 \x01(\t\"+\n\x1b\x42uildRevocRegEntryRequestRs\x12\x0c\n\x04Resp\x18\x01 \x01(\t\"[\n\x19\x42uildGetRevocRegRequestRq\x12\x14\n\x0cSubmitterDid\x18\x01 \x01(\t\x12\x15\n\rRevocRegDefId\x18\x02 \x01(\t\x12\x11\n\tTimestamp\x18\x03 \x01(\t\")\n\x19\x42uildGetRevocRegRequestRs\x12\x0c\n\x04Resp\x18\x01 \x01(\t\"9\n\x1aParseGetRevocRegResponseRq\x12\x1b\n\x13GetRevocRegResponse\x18\x01 \x01(\t\"I\n\x1aParseGetRevocRegResponseRs\x12\n\n\x02Id\x18\x01 \x01(\t\x12\x0c\n\x04Json\x18\x02 \x01(\t\x12\x11\n\tTimestamp\x18\x03 \x01(\x03\"g\n\x1e\x42uildGetRevocRegDeltaRequestRq\x12\x13\n\x0bSubmiterDid\x18\x01 \x01(\t\x12\x15\n\rRevocRegDefId\x18\x02 \x01(\t\x12\r\n\x05\x46rom_\x18\x03 \x01(\x03\x12\n\n\x02To\x18\x04 \x01(\x03\".\n\x1e\x42uildGetRevocRegDeltaRequestRs\x12\x0c\n\x04Resp\x18\x01 \x01(\t\"C\n\x1fParseGetRevocRegDeltaResponseRq\x12 \n\x18GetRevocRegDeltaResponse\x18\x01 \x01(\t\"N\n\x1fParseGetRevocRegDeltaResponseRs\x12\n\n\x02Id\x18\x01 \x01(\t\x12\x0c\n\x04Json\x18\x02 \x01(\t\x12\x11\n\tTimestamp\x18\x03 \x01(\x03\")\n\x15GetResponseMetadataRq\x12\x10\n\x08Response\x18\x01 \x01(\t\"%\n\x15GetResponseMetadataRs\x12\x0c\n\x04Resp\x18\x01 \x01(\t\"k\n\x16\x41\x64\x64WalletRecordRequest\x12\x14\n\x0cWalletHandle\x18\x01 \x01(\x03\x12\r\n\x05Type_\x18\x02 \x01(\t\x12\x0b\n\x03Id_\x18\x03 \x01(\t\x12\r\n\x05Value\x18\x04 \x01(\t\x12\x10\n\x08TagsJson\x18\x05 \x01(\t\"\'\n\x17\x41\x64\x64WalletRecordResponse\x12\x0c\n\x04Resp\x18\x01 \x01(\t\"a\n\x1eUpdateWalletRecordValueRequest\x12\x14\n\x0cWalletHandle\x18\x01 \x01(\x03\x12\r\n\x05Type_\x18\x02 \x01(\t\x12\x0b\n\x03Id_\x18\x03 \x01(\t\x12\r\n\x05value\x18\x04 \x01(\t\"/\n\x1fUpdateWalletRecordValueResponse\x12\x0c\n\x04Resp\x18\x01 \x01(\t\"c\n\x1dUpdateWalletRecordTagsRequest\x12\x14\n\x0cWalletHandle\x18\x01 \x01(\x03\x12\r\n\x05Type_\x18\x02 \x01(\t\x12\x0b\n\x03Id_\x18\x03 \x01(\t\x12\x10\n\x08TagsJson\x18\x04 \x01(\t\".\n\x1eUpdateWalletRecordTagsResponse\x12\x0c\n\x04Resp\x18\x01 \x01(\t\"`\n\x1a\x41\x64\x64WalletRecordTagsRequest\x12\x14\n\x0cWalletHandle\x18\x01 \x01(\x03\x12\r\n\x05Type_\x18\x02 \x01(\t\x12\x0b\n\x03Id_\x18\x03 \x01(\t\x12\x10\n\x08TagsJson\x18\x04 \x01(\t\"+\n\x1b\x41\x64\x64WalletRecordTagsResponse\x12\x0c\n\x04Resp\x18\x01 \x01(\t\"g\n\x1d\x44\x65leteWalletRecordTagsRequest\x12\x14\n\x0cWalletHandle\x18\x01 \x01(\x03\x12\r\n\x05Type_\x18\x02 \x01(\t\x12\x0b\n\x03Id_\x18\x03 \x01(\t\x12\x14\n\x0cTagNamesJson\x18\x04 \x01(\t\".\n\x1e\x44\x65leteWalletRecordTagsResponse\x12\x0c\n\x04Resp\x18\x01 \x01(\t\"M\n\x19\x44\x65leteWalletRecordRequest\x12\x14\n\x0cWalletHandle\x18\x01 \x01(\x03\x12\r\n\x05Type_\x18\x02 \x01(\t\x12\x0b\n\x03Id_\x18\x03 \x01(\t\"*\n\x1a\x44\x65leteWalletRecordResponse\x12\x0c\n\x04Resp\x18\x01 \x01(\t\"^\n\x16GetWalletRecordRequest\x12\x14\n\x0cWalletHandle\x18\x01 \x01(\x03\x12\r\n\x05Type_\x18\x02 \x01(\t\x12\n\n\x02Id\x18\x03 \x01(\t\x12\x13\n\x0bOptionsJson\x18\x04 \x01(\t\"\'\n\x17GetWalletRecordResponse\x12\x0c\n\x04Resp\x18\x01 \x01(\t\"f\n\x17OpenWalletSearchRequest\x12\x14\n\x0cWalletHandle\x18\x01 \x01(\x03\x12\r\n\x05Type_\x18\x02 \x01(\t\x12\x11\n\tQueryJson\x18\x03 \x01(\t\x12\x13\n\x0bOptionsJson\x18\x04 \x01(\t\"0\n\x18OpenWalletSearchResponse\x12\x14\n\x0cSearchHandle\x18\x01 \x01(\x03\"f\n#FetchWalletSearchNextRecordsRequest\x12\x14\n\x0cWalletHandle\x18\x01 \x01(\x03\x12\x1a\n\x12WalletSearchHandle\x18\x02 \x01(\x03\x12\r\n\x05\x43ount\x18\x03 \x01(\x03\"A\n$FetchWalletSearchNextRecordsResponse\x12\x19\n\x11WalletRecordsJson\x18\x01 \x01(\t\"6\n\x18\x43loseWalletSearchRequest\x12\x1a\n\x12WalletSearchHandle\x18\x01 \x01(\x03\")\n\x19\x43loseWalletSearchResponse\x12\x0c\n\x04Resp\x18\x01 \x01(\t2\x82\t\n\x10NonSecretService\x12\x62\n\x0f\x41\x64\x64WalletRecord\x12%.identitylayer.AddWalletRecordRequest\x1a&.identitylayer.AddWalletRecordResponse\"\x00\x12z\n\x17UpdateWalletRecordValue\x12-.identitylayer.UpdateWalletRecordValueRequest\x1a..identitylayer.UpdateWalletRecordValueResponse\"\x00\x12w\n\x16UpdateWalletRecordTags\x12,.identitylayer.UpdateWalletRecordTagsRequest\x1a-.identitylayer.UpdateWalletRecordTagsResponse\"\x00\x12n\n\x13\x41\x64\x64WalletRecordTags\x12).identitylayer.AddWalletRecordTagsRequest\x1a*.identitylayer.AddWalletRecordTagsResponse\"\x00\x12w\n\x16\x44\x65leteWalletRecordTags\x12,.identitylayer.DeleteWalletRecordTagsRequest\x1a-.identitylayer.DeleteWalletRecordTagsResponse\"\x00\x12k\n\x12\x44\x65leteWalletRecord\x12(.identitylayer.DeleteWalletRecordRequest\x1a).identitylayer.DeleteWalletRecordResponse\"\x00\x12\x62\n\x0fGetWalletRecord\x12%.identitylayer.GetWalletRecordRequest\x1a&.identitylayer.GetWalletRecordResponse\"\x00\x12\x65\n\x10OpenWalletSearch\x12&.identitylayer.OpenWalletSearchRequest\x1a\'.identitylayer.OpenWalletSearchResponse\"\x00\x12\x89\x01\n\x1c\x46\x65tchWalletSearchNextRecords\x12\x32.identitylayer.FetchWalletSearchNextRecordsRequest\x1a\x33.identitylayer.FetchWalletSearchNextRecordsResponse\"\x00\x12h\n\x11\x43loseWalletSearch\x12\'.identitylayer.CloseWalletSearchRequest\x1a(.identitylayer.CloseWalletSearchResponse\"\x00\x32\xe7\x19\n\rLedgerService\x12\x66\n\x14SignAndSubmitRequest\x12%.identitylayer.SignAndSubmitRequestRq\x1a%.identitylayer.SignAndSubmitRequestRs\"\x00\x12Q\n\rSubmitRequest\x12\x1e.identitylayer.SubmitRequestRq\x1a\x1e.identitylayer.SubmitRequestRs\"\x00\x12N\n\x0cSubmitAction\x12\x1d.identitylayer.SubmitActionRq\x1a\x1d.identitylayer.SubmitActionRs\"\x00\x12K\n\x0bSignRequest\x12\x1c.identitylayer.SignRequestRq\x1a\x1c.identitylayer.SignRequestRs\"\x00\x12Z\n\x10MultiSignRequest\x12!.identitylayer.MultiSignRequestRq\x1a!.identitylayer.MultiSignRequestRs\"\x00\x12`\n\x12\x42uildGetDdoRequest\x12#.identitylayer.BuildGetDdoRequestRq\x1a#.identitylayer.BuildGetDdoRequestRs\"\x00\x12W\n\x0f\x42uildNymRequest\x12 .identitylayer.BuildNymRequestRq\x1a .identitylayer.BuildNymRequestRs\"\x00\x12`\n\x12\x42uildAttribRequest\x12#.identitylayer.BuildAttribRequestRq\x1a#.identitylayer.BuildAttribRequestRs\"\x00\x12i\n\x15\x42uildGetAttribRequest\x12&.identitylayer.BuildGetAttribRequestRq\x1a&.identitylayer.BuildGetAttribRequestRs\"\x00\x12`\n\x12\x42uildGetNymRequest\x12#.identitylayer.BuildGetNymRequestRq\x1a#.identitylayer.BuildGetNymRequestRs\"\x00\x12`\n\x12\x42uildSchemaRequest\x12#.identitylayer.BuildSchemaRequestRq\x1a#.identitylayer.BuildSchemaRequestRs\"\x00\x12i\n\x15\x42uildGetSchemaRequest\x12&.identitylayer.BuildGetSchemaRequestRq\x1a&.identitylayer.BuildGetSchemaRequestRs\"\x00\x12l\n\x16ParseGetSchemaResponse\x12\'.identitylayer.ParseGetSchemaResponseRq\x1a\'.identitylayer.ParseGetSchemaResponseRs\"\x00\x12\x63\n\x13\x42uildCredDefRequest\x12$.identitylayer.BuildCredDefRequestRq\x1a$.identitylayer.BuildCredDefRequestRs\"\x00\x12l\n\x16\x42uildGetCredDefRequest\x12\'.identitylayer.BuildGetCredDefRequestRq\x1a\'.identitylayer.BuildGetCredDefRequestRs\"\x00\x12o\n\x17ParseGetCredDefResponse\x12(.identitylayer.ParseGetCredDefResponseRq\x1a(.identitylayer.ParseGetCredDefResponseRs\"\x00\x12Z\n\x10\x42uildNodeRequest\x12!.identitylayer.BuildNodeRequestRq\x1a!.identitylayer.BuildNodeRequestRs\"\x00\x12~\n\x1c\x42uildGetValidatorInfoRequest\x12-.identitylayer.BuildGetValidatorInfoRequestRq\x1a-.identitylayer.BuildGetValidatorInfoRequestRs\"\x00\x12`\n\x12\x42uildGetTxnRequest\x12#.identitylayer.BuildGetTxnRequestRq\x1a#.identitylayer.BuildGetTxnRequestRs\"\x00\x12l\n\x16\x42uildPoolConfigRequest\x12\'.identitylayer.BuildPoolConfigRequestRq\x1a\'.identitylayer.BuildPoolConfigRequestRs\"\x00\x12o\n\x17\x42uildPoolRestartRequest\x12(.identitylayer.BuildPoolRestartRequestRq\x1a(.identitylayer.BuildPoolRestartRequestRs\"\x00\x12o\n\x17\x42uildPoolUpgradeRequest\x12(.identitylayer.BuildPoolUpgradeRequestRq\x1a(.identitylayer.BuildPoolUpgradeRequestRs\"\x00\x12o\n\x17\x42uildRevocRegDefRequest\x12(.identitylayer.BuildRevocRegDefRequestRq\x1a(.identitylayer.BuildRevocRegDefRequestRs\"\x00\x12x\n\x1a\x42uildGetRevocRegDefRequest\x12+.identitylayer.BuildGetRevocRegDefRequestRq\x1a+.identitylayer.BuildGetRevocRegDefRequestRs\"\x00\x12{\n\x1bParseGetRevocRegDefResponse\x12,.identitylayer.ParseGetRevocRegDefResponseRq\x1a,.identitylayer.ParseGetRevocRegDefResponseRs\"\x00\x12u\n\x19\x42uildRevocRegEntryRequest\x12*.identitylayer.BuildRevocRegEntryRequestRq\x1a*.identitylayer.BuildRevocRegEntryRequestRs\"\x00\x12o\n\x17\x42uildGetRevocRegRequest\x12(.identitylayer.BuildGetRevocRegRequestRq\x1a(.identitylayer.BuildGetRevocRegRequestRs\"\x00\x12r\n\x18ParseGetRevocRegResponse\x12).identitylayer.ParseGetRevocRegResponseRq\x1a).identitylayer.ParseGetRevocRegResponseRs\"\x00\x12~\n\x1c\x42uildGetRevocRegDeltaRequest\x12-.identitylayer.BuildGetRevocRegDeltaRequestRq\x1a-.identitylayer.BuildGetRevocRegDeltaRequestRs\"\x00\x12\x81\x01\n\x1dParseGetRevocRegDeltaResponse\x12..identitylayer.ParseGetRevocRegDeltaResponseRq\x1a..identitylayer.ParseGetRevocRegDeltaResponseRs\"\x00\x12\x63\n\x13GetResponseMetadata\x12$.identitylayer.GetResponseMetadataRq\x1a$.identitylayer.GetResponseMetadataRs\"\x00\x32\xda\x0c\n\nDidService\x12n\n\x13\x43reateAndStoreMyDid\x12).identitylayer.CreateAndStoreMyDidRequest\x1a*.identitylayer.CreateAndStoreMyDidResponse\"\x00\x12\x65\n\x10ReplaceKeysStart\x12&.identitylayer.ReplaceKeysStartRequest\x1a\'.identitylayer.ReplaceKeysStartResponse\"\x00\x12\x65\n\x10ReplaceKeysApply\x12&.identitylayer.ReplaceKeysApplyRequest\x1a\'.identitylayer.ReplaceKeysApplyResponse\"\x00\x12\\\n\rStoreTheirDid\x12#.identitylayer.StoreTheirDidRequest\x1a$.identitylayer.StoreTheirDidResponse\"\x00\x12Y\n\x0c\x44idCreateKey\x12\".identitylayer.DidCreateKeyRequest\x1a#.identitylayer.DidCreateKeyResponse\"\x00\x12g\n\x11\x44idSetKeyMetadata\x12\'.identitylayer.DidSetKeyMetadataRequest\x1a\'.identitylayer.DidSetKeyMetadataRequest\"\x00\x12h\n\x11\x44idGetKeyMetadata\x12\'.identitylayer.DidGetKeyMetadataRequest\x1a(.identitylayer.DidGetKeyMetadataResponse\"\x00\x12P\n\tKeyForDid\x12\x1f.identitylayer.KeyForDidRequest\x1a .identitylayer.KeyForDidResponse\"\x00\x12_\n\x0eKeyForLocalDid\x12$.identitylayer.KeyForLocalDidRequest\x1a%.identitylayer.KeyForLocalDidResponse\"\x00\x12h\n\x11SetEndpointForDid\x12\'.identitylayer.SetEndpointForDidRequest\x1a(.identitylayer.SetEndpointForDidResponse\"\x00\x12h\n\x11GetEndpointForDid\x12\'.identitylayer.GetEndpointForDidRequest\x1a(.identitylayer.GetEndpointForDidResponse\"\x00\x12_\n\x0eSetDidMetadata\x12$.identitylayer.SetDidMetadataRequest\x1a%.identitylayer.SetDidMetadataResponse\"\x00\x12_\n\x0eGetDidMetadata\x12$.identitylayer.GetDidMetadataRequest\x1a%.identitylayer.GetDidMetadataResponse\"\x00\x12\x65\n\x10GetMyDidWithMeta\x12&.identitylayer.GetMyDidWithMetaRequest\x1a\'.identitylayer.GetMyDidWithMetaResponse\"\x00\x12k\n\x12ListMyDidsWithMeta\x12(.identitylayer.ListMyDidsWithMetaRequest\x1a).identitylayer.ListMyDidsWithMetaResponse\"\x00\x12\x65\n\x10\x41\x62\x62reviateVerkey\x12&.identitylayer.AbbreviateVerkeyRequest\x1a\'.identitylayer.AbbreviateVerkeyResponse\"\x00\x32\xfc\x03\n\x0fPairwiseService\x12\x65\n\x10IsPairwiseExists\x12&.identitylayer.IsPairwiseExistsRequest\x1a\'.identitylayer.IsPairwiseExistsResponse\"\x00\x12_\n\x0e\x43reatePairwise\x12$.identitylayer.CreatePairwiseRequest\x1a%.identitylayer.CreatePairwiseResponse\"\x00\x12Y\n\x0cListPairwise\x12\".identitylayer.ListPairwiseRequest\x1a#.identitylayer.ListPairwiseResponse\"\x00\x12V\n\x0bGetPairwise\x12!.identitylayer.GetPairwiseRequest\x1a\".identitylayer.GetPairwiseResponse\"\x00\x12n\n\x13SetPairwiseMetadata\x12).identitylayer.SetPairwiseMetadataRequest\x1a*.identitylayer.SetPairwiseMetadataResponse\"\x00\x32\xa7\x06\n\rCryptoService\x12P\n\tCreateKey\x12\x1f.identitylayer.CreateKeyRequest\x1a .identitylayer.CreateKeyResponse\"\x00\x12_\n\x0eSetKeyMetadata\x12$.identitylayer.SetKeyMetadataRequest\x1a%.identitylayer.SetKeyMetadataResponse\"\x00\x12_\n\x0eGetKeyMetadata\x12$.identitylayer.GetKeyMetadataRequest\x1a%.identitylayer.GetKeyMetadataResponse\"\x00\x12S\n\nCryptoSign\x12 .identitylayer.CryptoSignRequest\x1a!.identitylayer.CryptoSignResponse\"\x00\x12Y\n\x0c\x43ryptoVerify\x12\".identitylayer.CryptoVerifyRequest\x1a#.identitylayer.CryptoVerifyResponse\"\x00\x12P\n\tAuthCrypt\x12\x1f.identitylayer.AuthCryptRequest\x1a .identitylayer.AuthCryptResponse\"\x00\x12V\n\x0b\x41uthDecrypt\x12!.identitylayer.AuthDecryptRequest\x1a\".identitylayer.AuthDecryptResponse\"\x00\x12P\n\tAnonCrypt\x12\x1f.identitylayer.AnonCryptRequest\x1a .identitylayer.AnonCryptResponse\"\x00\x12V\n\x0b\x41nonDecrypt\x12!.identitylayer.AnonDecryptRequest\x1a\".identitylayer.AnonDecryptResponse\"\x00\x32\xed\x05\n\x0bPoolService\x12w\n\x16\x43reatePoolLedgerConfig\x12,.identitylayer.CreatePoolLedgerConfigRequest\x1a-.identitylayer.CreatePoolLedgerConfigResponse\"\x00\x12_\n\x0eOpenPoolLedger\x12$.identitylayer.OpenPoolLedgerRequest\x1a%.identitylayer.OpenPoolLedgerResponse\"\x00\x12h\n\x11RefreshPoolLedger\x12\'.identitylayer.RefreshPoolLedgerRequest\x1a(.identitylayer.RefreshPoolLedgerResponse\"\x00\x12P\n\tListPools\x12\x1f.identitylayer.ListPoolsRequest\x1a .identitylayer.ListPoolsResponse\"\x00\x12\x62\n\x0f\x43losePoolLedger\x12%.identitylayer.ClosePoolLedgerRequest\x1a&.identitylayer.ClosePoolLedgerResponse\"\x00\x12w\n\x16\x44\x65letePoolLedgerConfig\x12,.identitylayer.DeletePoolLedgerConfigRequest\x1a-.identitylayer.DeletePoolLedgerConfigResponse\"\x00\x12k\n\x12SetProtocolVersion\x12(.identitylayer.SetProtocolVersionRequest\x1a).identitylayer.SetProtocolVersionResponse\"\x00\x32\xdc\x17\n\x10\x41noncredsService\x12k\n\x12IssuerCreateSchema\x12(.identitylayer.IssuerCreateSchemaRequest\x1a).identitylayer.IssuerCreateSchemaResponse\"\x00\x12\x98\x01\n!IssuerCreateAndStoreCredentialDef\x12\x37.identitylayer.IssuerCreateAndStoreCredentialDefRequest\x1a\x38.identitylayer.IssuerCreateAndStoreCredentialDefResponse\"\x00\x12\x89\x01\n\x1cIssuerCreateAndStoreRevocReg\x12\x32.identitylayer.IssuerCreateAndStoreRevocRegRequest\x1a\x33.identitylayer.IssuerCreateAndStoreRevocRegResponse\"\x00\x12\x86\x01\n\x1bIssuerCreateCredentialOffer\x12\x31.identitylayer.IssuerCreateCredentialOfferRequest\x1a\x32.identitylayer.IssuerCreateCredentialOfferResponse\"\x00\x12w\n\x16IssuerCreateCredential\x12,.identitylayer.IssuerCreateCredentialRequest\x1a-.identitylayer.IssuerCreateCredentialResponse\"\x00\x12w\n\x16IssuerRevokeCredential\x12,.identitylayer.IssuerRevokeCredentialRequest\x1a-.identitylayer.IssuerRevokeCredentialResponse\"\x00\x12\x9e\x01\n#IssuerMergeRevocationRegistryDeltas\x12\x39.identitylayer.IssuerMergeRevocationRegistryDeltasRequest\x1a:.identitylayer.IssuerMergeRevocationRegistryDeltasResponse\"\x00\x12}\n\x18ProverCreateMasterSecret\x12..identitylayer.ProverCreateMasterSecretRequest\x1a/.identitylayer.ProverCreateMasterSecretResponse\"\x00\x12\x80\x01\n\x19ProverCreateCredentialReq\x12/.identitylayer.ProverCreateCredentialReqRequest\x1a\x30.identitylayer.ProverCreateCredentialReqResponse\"\x00\x12t\n\x15ProverStoreCredential\x12+.identitylayer.ProverStoreCredentialRequest\x1a,.identitylayer.ProverStoreCredentialResponse\"\x00\x12n\n\x13ProverGetCredential\x12).identitylayer.ProverGetCredentialRequest\x1a*.identitylayer.ProverGetCredentialResponse\"\x00\x12q\n\x14ProverGetCredentials\x12*.identitylayer.ProverGetCredentialsRequest\x1a+.identitylayer.ProverGetCredentialsResponse\"\x00\x12w\n\x16ProverSeachCredentials\x12,.identitylayer.ProverSeachCredentialsRequest\x1a-.identitylayer.ProverSeachCredentialsResponse\"\x00\x12w\n\x16ProverFetchCredentials\x12,.identitylayer.ProverFetchCredentialsRequest\x1a-.identitylayer.ProverFetchCredentialsResponse\"\x00\x12\x89\x01\n\x1cProverCloseCredentialsSearch\x12\x32.identitylayer.ProverCloseCredentialsSearchRequest\x1a\x33.identitylayer.ProverCloseCredentialsSearchResponse\"\x00\x12\x92\x01\n\x1fProverGetCredentialsForProofReq\x12\x35.identitylayer.ProverGetCredentialsForProofReqRequest\x1a\x36.identitylayer.ProverGetCredentialsForProofReqResponse\"\x00\x12\x9b\x01\n\"ProverSearchCredentialsForProofReq\x12\x38.identitylayer.ProverSearchCredentialsForProofReqRequest\x1a\x39.identitylayer.ProverSearchCredentialsForProofReqResponse\"\x00\x12\x98\x01\n!ProverFetchCredentialsForProofReq\x12\x37.identitylayer.ProverFetchCredentialsForProofReqRequest\x1a\x38.identitylayer.ProverFetchCredentialsForProofReqResponse\"\x00\x12\xaa\x01\n\'ProverCloseCredentialsSearchForProofReq\x12=.identitylayer.ProverCloseCredentialsSearchForProofReqRequest\x1a>.identitylayer.ProverCloseCredentialsSearchForProofReqResponse\"\x00\x12h\n\x11ProverCreateProof\x12\'.identitylayer.ProverCreateProofRequest\x1a(.identitylayer.ProverCreateProofResponse\"\x00\x12n\n\x13VerifierVerifyProof\x12).identitylayer.VerifierVerifyProofRequest\x1a*.identitylayer.VerifierVerifyProofResponse\"\x00\x12t\n\x15\x43reateRevocationState\x12+.identitylayer.CreateRevocationStateRequest\x1a,.identitylayer.CreateRevocationStateResponse\"\x00\x12t\n\x15UpdateRevocationState\x12+.identitylayer.UpdateRevocationStateRequest\x1a,.identitylayer.UpdateRevocationStateResponse\"\x00\x32\xb0\x05\n\rWalletService\x12]\n\x0f\x43reateNewWallet\x12\".identitylayer.NewWalletDefinition\x1a$.identitylayer.CreateWalletErrorCode\"\x00\x12T\n\nOpenWallet\x12#.identitylayer.OpenWalletDefinition\x1a\x1f.identitylayer.OpenWalletHandle\"\x00\x12S\n\x0b\x43loseWallet\x12 .identitylayer.CloseWalletHandle\x1a .identitylayer.CloseWalletStatus\"\x00\x12`\n\x0c\x44\x65leteWallet\x12%.identitylayer.DeleteWalletDefinition\x1a\'.identitylayer.DeleteWalletConfirmation\"\x00\x12`\n\x0c\x45xportWallet\x12%.identitylayer.ExportWalletDefinition\x1a\'.identitylayer.ExportWalletConfirmation\"\x00\x12`\n\x0cImportWallet\x12%.identitylayer.ImportWalletDefinition\x1a\'.identitylayer.ImportWalletConfirmation\"\x00\x12o\n\x11GenerateWalletKey\x12*.identitylayer.GenerateWalletKeyDefinition\x1a,.identitylayer.GenerateWalletKeyConfirmation\"\x00\x32\xbe\x01\n\x12\x42lobStorageService\x12S\n\nOpenReader\x12 .identitylayer.OpenReaderRequest\x1a!.identitylayer.OpenReaderResponse\"\x00\x12S\n\nOpenWriter\x12 .identitylayer.OpenWriterRequest\x1a!.identitylayer.OpenWriterResponse\"\x00\x62\x06proto3')
   ,
-  dependencies=[blob__storage__pb2.DESCRIPTOR,anoncreds__pb2.DESCRIPTOR,pool__pb2.DESCRIPTOR,crypto__pb2.DESCRIPTOR,pairwise__pb2.DESCRIPTOR,did__pb2.DESCRIPTOR,ledger__pb2.DESCRIPTOR,wallet__pb2.DESCRIPTOR,non__secret__pb2.DESCRIPTOR,])
+  dependencies=[google_dot_protobuf_dot_any__pb2.DESCRIPTOR,])
 
 
 
+
+_NEWWALLETDEFINITION = _descriptor.Descriptor(
+  name='NewWalletDefinition',
+  full_name='identitylayer.NewWalletDefinition',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='walletConfig', full_name='identitylayer.NewWalletDefinition.walletConfig', index=0,
+      number=1, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='walletCredentials', full_name='identitylayer.NewWalletDefinition.walletCredentials', index=1,
+      number=2, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=65,
+  serialized_end=186,
+)
+
+
+_CONFIG = _descriptor.Descriptor(
+  name='Config',
+  full_name='identitylayer.Config',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='walletID', full_name='identitylayer.Config.walletID', index=0,
+      number=1, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='walletstorageType', full_name='identitylayer.Config.walletstorageType', index=1,
+      number=2, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='storePath', full_name='identitylayer.Config.storePath', index=2,
+      number=3, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=188,
+  serialized_end=290,
+)
+
+
+_STORAGECONFIG = _descriptor.Descriptor(
+  name='StorageConfig',
+  full_name='identitylayer.StorageConfig',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='newWalletPath', full_name='identitylayer.StorageConfig.newWalletPath', index=0,
+      number=1, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=292,
+  serialized_end=330,
+)
+
+
+_CREDENTIALS = _descriptor.Descriptor(
+  name='Credentials',
+  full_name='identitylayer.Credentials',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='newWalletKey', full_name='identitylayer.Credentials.newWalletKey', index=0,
+      number=1, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='newWalletStorageCredentials', full_name='identitylayer.Credentials.newWalletStorageCredentials', index=1,
+      number=2, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='newWalletKeyDerivationMethod', full_name='identitylayer.Credentials.newWalletKeyDerivationMethod', index=2,
+      number=3, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=332,
+  serialized_end=442,
+)
+
+
+_CREATEWALLETERRORCODE = _descriptor.Descriptor(
+  name='CreateWalletErrorCode',
+  full_name='identitylayer.CreateWalletErrorCode',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='NewWalletErrorCode', full_name='identitylayer.CreateWalletErrorCode.NewWalletErrorCode', index=0,
+      number=1, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=444,
+  serialized_end=495,
+)
+
+
+_OPENWALLETDEFINITION = _descriptor.Descriptor(
+  name='OpenWalletDefinition',
+  full_name='identitylayer.OpenWalletDefinition',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='Config', full_name='identitylayer.OpenWalletDefinition.Config', index=0,
+      number=1, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='Credentials', full_name='identitylayer.OpenWalletDefinition.Credentials', index=1,
+      number=2, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=498,
+  serialized_end=628,
+)
+
+
+_OPENWALLETCONFIG = _descriptor.Descriptor(
+  name='OpenWalletConfig',
+  full_name='identitylayer.OpenWalletConfig',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='Id', full_name='identitylayer.OpenWalletConfig.Id', index=0,
+      number=1, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='StorageType', full_name='identitylayer.OpenWalletConfig.StorageType', index=1,
+      number=2, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='Path', full_name='identitylayer.OpenWalletConfig.Path', index=2,
+      number=3, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=630,
+  serialized_end=735,
+)
+
+
+_OPENWALLETSTORAGECONFIG = _descriptor.Descriptor(
+  name='OpenWalletStorageConfig',
+  full_name='identitylayer.OpenWalletStorageConfig',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='path', full_name='identitylayer.OpenWalletStorageConfig.path', index=0,
+      number=1, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=737,
+  serialized_end=776,
+)
+
+
+_OPENWALLETCREDENTIALS = _descriptor.Descriptor(
+  name='OpenWalletCredentials',
+  full_name='identitylayer.OpenWalletCredentials',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='Key', full_name='identitylayer.OpenWalletCredentials.Key', index=0,
+      number=1, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='ReKey', full_name='identitylayer.OpenWalletCredentials.ReKey', index=1,
+      number=2, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='StorageCredentials', full_name='identitylayer.OpenWalletCredentials.StorageCredentials', index=2,
+      number=3, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='KeyDerivationMethod', full_name='identitylayer.OpenWalletCredentials.KeyDerivationMethod', index=3,
+      number=4, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='ReKeyDerivationMethod', full_name='identitylayer.OpenWalletCredentials.ReKeyDerivationMethod', index=4,
+      number=5, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=779,
+  serialized_end=918,
+)
+
+
+_OPENWALLETHANDLE = _descriptor.Descriptor(
+  name='OpenWalletHandle',
+  full_name='identitylayer.OpenWalletHandle',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='WalletHandle', full_name='identitylayer.OpenWalletHandle.WalletHandle', index=0,
+      number=1, type=3, cpp_type=2, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=920,
+  serialized_end=960,
+)
+
+
+_CLOSEWALLETHANDLE = _descriptor.Descriptor(
+  name='CloseWalletHandle',
+  full_name='identitylayer.CloseWalletHandle',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='WalletHandle', full_name='identitylayer.CloseWalletHandle.WalletHandle', index=0,
+      number=1, type=3, cpp_type=2, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=962,
+  serialized_end=1003,
+)
+
+
+_CLOSEWALLETSTATUS = _descriptor.Descriptor(
+  name='CloseWalletStatus',
+  full_name='identitylayer.CloseWalletStatus',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='CloseWalletCode', full_name='identitylayer.CloseWalletStatus.CloseWalletCode', index=0,
+      number=1, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=1005,
+  serialized_end=1049,
+)
+
+
+_DELETEWALLETDEFINITION = _descriptor.Descriptor(
+  name='DeleteWalletDefinition',
+  full_name='identitylayer.DeleteWalletDefinition',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='Config', full_name='identitylayer.DeleteWalletDefinition.Config', index=0,
+      number=1, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='Credentials', full_name='identitylayer.DeleteWalletDefinition.Credentials', index=1,
+      number=2, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=1052,
+  serialized_end=1187,
+)
+
+
+_DELETEWALLETCONFIG = _descriptor.Descriptor(
+  name='DeleteWalletConfig',
+  full_name='identitylayer.DeleteWalletConfig',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='DeleteWalletID', full_name='identitylayer.DeleteWalletConfig.DeleteWalletID', index=0,
+      number=1, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='DeleteWalletStorageType', full_name='identitylayer.DeleteWalletConfig.DeleteWalletStorageType', index=1,
+      number=2, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='StorageConfig', full_name='identitylayer.DeleteWalletConfig.StorageConfig', index=2,
+      number=3, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=1190,
+  serialized_end=1339,
+)
+
+
+_DELETEWALLETSTORAGECONFIGURATION = _descriptor.Descriptor(
+  name='DeleteWalletStorageConfiguration',
+  full_name='identitylayer.DeleteWalletStorageConfiguration',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='Path', full_name='identitylayer.DeleteWalletStorageConfiguration.Path', index=0,
+      number=1, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=1341,
+  serialized_end=1389,
+)
+
+
+_DELETEWALETCREDENTIALS = _descriptor.Descriptor(
+  name='DeleteWaletCredentials',
+  full_name='identitylayer.DeleteWaletCredentials',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='DeleteWalletKey', full_name='identitylayer.DeleteWaletCredentials.DeleteWalletKey', index=0,
+      number=1, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='DeleteWalletStorageCredentials', full_name='identitylayer.DeleteWaletCredentials.DeleteWalletStorageCredentials', index=1,
+      number=2, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='DeleteWalletKeyDerivationMethod', full_name='identitylayer.DeleteWaletCredentials.DeleteWalletKeyDerivationMethod', index=2,
+      number=3, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=1392,
+  serialized_end=1522,
+)
+
+
+_DELETEWALLETCONFIRMATION = _descriptor.Descriptor(
+  name='DeleteWalletConfirmation',
+  full_name='identitylayer.DeleteWalletConfirmation',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='DeleteWalletStatus', full_name='identitylayer.DeleteWalletConfirmation.DeleteWalletStatus', index=0,
+      number=1, type=8, cpp_type=7, label=1,
+      has_default_value=False, default_value=False,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=1524,
+  serialized_end=1578,
+)
+
+
+_EXPORTWALLETDEFINITION = _descriptor.Descriptor(
+  name='ExportWalletDefinition',
+  full_name='identitylayer.ExportWalletDefinition',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='ExportWalletHandle', full_name='identitylayer.ExportWalletDefinition.ExportWalletHandle', index=0,
+      number=1, type=3, cpp_type=2, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='ExportConfigJson', full_name='identitylayer.ExportWalletDefinition.ExportConfigJson', index=1,
+      number=2, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=1580,
+  serialized_end=1697,
+)
+
+
+_EXPORTWALLETCONFIGJSON = _descriptor.Descriptor(
+  name='ExportWalletConfigJson',
+  full_name='identitylayer.ExportWalletConfigJson',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='ExportWalletPath', full_name='identitylayer.ExportWalletConfigJson.ExportWalletPath', index=0,
+      number=1, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='ExportWalletKey', full_name='identitylayer.ExportWalletConfigJson.ExportWalletKey', index=1,
+      number=2, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='ExportWalletKeyDerivationMethod', full_name='identitylayer.ExportWalletConfigJson.ExportWalletKeyDerivationMethod', index=2,
+      number=3, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=1699,
+  serialized_end=1815,
+)
+
+
+_EXPORTWALLETCONFIRMATION = _descriptor.Descriptor(
+  name='ExportWalletConfirmation',
+  full_name='identitylayer.ExportWalletConfirmation',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='ExportWalletStatus', full_name='identitylayer.ExportWalletConfirmation.ExportWalletStatus', index=0,
+      number=1, type=8, cpp_type=7, label=1,
+      has_default_value=False, default_value=False,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=1817,
+  serialized_end=1871,
+)
+
+
+_IMPORTWALLETDEFINITION = _descriptor.Descriptor(
+  name='ImportWalletDefinition',
+  full_name='identitylayer.ImportWalletDefinition',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='Config', full_name='identitylayer.ImportWalletDefinition.Config', index=0,
+      number=1, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='Credentials', full_name='identitylayer.ImportWalletDefinition.Credentials', index=1,
+      number=2, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='ConfigJson', full_name='identitylayer.ImportWalletDefinition.ConfigJson', index=2,
+      number=3, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=1874,
+  serialized_end=2069,
+)
+
+
+_IMPORTWALLETCONFIG = _descriptor.Descriptor(
+  name='ImportWalletConfig',
+  full_name='identitylayer.ImportWalletConfig',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='Id', full_name='identitylayer.ImportWalletConfig.Id', index=0,
+      number=1, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='StorageType', full_name='identitylayer.ImportWalletConfig.StorageType', index=1,
+      number=2, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='StorageConfig', full_name='identitylayer.ImportWalletConfig.StorageConfig', index=2,
+      number=3, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=2071,
+  serialized_end=2189,
+)
+
+
+_IMPORTWALLETSTORAGECONFIG = _descriptor.Descriptor(
+  name='ImportWalletStorageConfig',
+  full_name='identitylayer.ImportWalletStorageConfig',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='Path', full_name='identitylayer.ImportWalletStorageConfig.Path', index=0,
+      number=1, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=2191,
+  serialized_end=2232,
+)
+
+
+_IMPORTWALLETCREDENTIALS = _descriptor.Descriptor(
+  name='ImportWalletCredentials',
+  full_name='identitylayer.ImportWalletCredentials',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='Key', full_name='identitylayer.ImportWalletCredentials.Key', index=0,
+      number=1, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='StorageCredentials', full_name='identitylayer.ImportWalletCredentials.StorageCredentials', index=1,
+      number=2, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='KeyDerivationMethod', full_name='identitylayer.ImportWalletCredentials.KeyDerivationMethod', index=2,
+      number=3, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=2234,
+  serialized_end=2329,
+)
+
+
+_IMPORTWALLETCONFIGJSON = _descriptor.Descriptor(
+  name='ImportWalletConfigJson',
+  full_name='identitylayer.ImportWalletConfigJson',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='Path', full_name='identitylayer.ImportWalletConfigJson.Path', index=0,
+      number=1, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='Key', full_name='identitylayer.ImportWalletConfigJson.Key', index=1,
+      number=2, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=2331,
+  serialized_end=2382,
+)
+
+
+_IMPORTWALLETCONFIRMATION = _descriptor.Descriptor(
+  name='ImportWalletConfirmation',
+  full_name='identitylayer.ImportWalletConfirmation',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='ImportWalletStatusCode', full_name='identitylayer.ImportWalletConfirmation.ImportWalletStatusCode', index=0,
+      number=1, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=2384,
+  serialized_end=2442,
+)
+
+
+_GENERATEWALLETKEYDEFINITION = _descriptor.Descriptor(
+  name='GenerateWalletKeyDefinition',
+  full_name='identitylayer.GenerateWalletKeyDefinition',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='Seed', full_name='identitylayer.GenerateWalletKeyDefinition.Seed', index=0,
+      number=1, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=2444,
+  serialized_end=2487,
+)
+
+
+_GENERATEWALLETKEYCONFIRMATION = _descriptor.Descriptor(
+  name='GenerateWalletKeyConfirmation',
+  full_name='identitylayer.GenerateWalletKeyConfirmation',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='GenerateWalletKeyStatus', full_name='identitylayer.GenerateWalletKeyConfirmation.GenerateWalletKeyStatus', index=0,
+      number=1, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=2489,
+  serialized_end=2553,
+)
+
+
+_CREATEPOOLLEDGERCONFIGREQUEST = _descriptor.Descriptor(
+  name='CreatePoolLedgerConfigRequest',
+  full_name='identitylayer.CreatePoolLedgerConfigRequest',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='ConfigName', full_name='identitylayer.CreatePoolLedgerConfigRequest.ConfigName', index=0,
+      number=1, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='Config', full_name='identitylayer.CreatePoolLedgerConfigRequest.Config', index=1,
+      number=2, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=2555,
+  serialized_end=2661,
+)
+
+
+_CONFIGCREATEPOOLLEDGER = _descriptor.Descriptor(
+  name='ConfigCreatePoolLedger',
+  full_name='identitylayer.ConfigCreatePoolLedger',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='GensisTxn', full_name='identitylayer.ConfigCreatePoolLedger.GensisTxn', index=0,
+      number=1, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=2663,
+  serialized_end=2706,
+)
+
+
+_CREATEPOOLLEDGERCONFIGRESPONSE = _descriptor.Descriptor(
+  name='CreatePoolLedgerConfigResponse',
+  full_name='identitylayer.CreatePoolLedgerConfigResponse',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='ErrorCode', full_name='identitylayer.CreatePoolLedgerConfigResponse.ErrorCode', index=0,
+      number=1, type=3, cpp_type=2, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=2708,
+  serialized_end=2759,
+)
+
+
+_OPENPOOLLEDGERREQUEST = _descriptor.Descriptor(
+  name='OpenPoolLedgerRequest',
+  full_name='identitylayer.OpenPoolLedgerRequest',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='ConfigName', full_name='identitylayer.OpenPoolLedgerRequest.ConfigName', index=0,
+      number=1, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='Config', full_name='identitylayer.OpenPoolLedgerRequest.Config', index=1,
+      number=2, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=2761,
+  serialized_end=2853,
+)
+
+
+_CONFIGOPENLEDGER = _descriptor.Descriptor(
+  name='ConfigOpenLedger',
+  full_name='identitylayer.ConfigOpenLedger',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='Timeout', full_name='identitylayer.ConfigOpenLedger.Timeout', index=0,
+      number=1, type=3, cpp_type=2, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='ExtendedTimeour', full_name='identitylayer.ConfigOpenLedger.ExtendedTimeour', index=1,
+      number=2, type=3, cpp_type=2, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='PreorderedNodes', full_name='identitylayer.ConfigOpenLedger.PreorderedNodes', index=2,
+      number=3, type=9, cpp_type=9, label=3,
+      has_default_value=False, default_value=[],
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=2855,
+  serialized_end=2940,
+)
+
+
+_OPENPOOLLEDGERRESPONSE = _descriptor.Descriptor(
+  name='OpenPoolLedgerResponse',
+  full_name='identitylayer.OpenPoolLedgerResponse',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='Handle', full_name='identitylayer.OpenPoolLedgerResponse.Handle', index=0,
+      number=1, type=3, cpp_type=2, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=2942,
+  serialized_end=2982,
+)
+
+
+_REFRESHPOOLLEDGERREQUEST = _descriptor.Descriptor(
+  name='RefreshPoolLedgerRequest',
+  full_name='identitylayer.RefreshPoolLedgerRequest',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='Handle', full_name='identitylayer.RefreshPoolLedgerRequest.Handle', index=0,
+      number=1, type=3, cpp_type=2, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=2984,
+  serialized_end=3026,
+)
+
+
+_REFRESHPOOLLEDGERRESPONSE = _descriptor.Descriptor(
+  name='RefreshPoolLedgerResponse',
+  full_name='identitylayer.RefreshPoolLedgerResponse',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='ErrorCode', full_name='identitylayer.RefreshPoolLedgerResponse.ErrorCode', index=0,
+      number=1, type=3, cpp_type=2, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=3028,
+  serialized_end=3074,
+)
+
+
+_LISTPOOLSREQUEST = _descriptor.Descriptor(
+  name='ListPoolsRequest',
+  full_name='identitylayer.ListPoolsRequest',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=3076,
+  serialized_end=3094,
+)
+
+
+_LISTPOOLSRESPONSE = _descriptor.Descriptor(
+  name='ListPoolsResponse',
+  full_name='identitylayer.ListPoolsResponse',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='ErrorCode', full_name='identitylayer.ListPoolsResponse.ErrorCode', index=0,
+      number=1, type=3, cpp_type=2, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=3096,
+  serialized_end=3134,
+)
+
+
+_CLOSEPOOLLEDGERREQUEST = _descriptor.Descriptor(
+  name='ClosePoolLedgerRequest',
+  full_name='identitylayer.ClosePoolLedgerRequest',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='Handle', full_name='identitylayer.ClosePoolLedgerRequest.Handle', index=0,
+      number=1, type=3, cpp_type=2, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=3136,
+  serialized_end=3176,
+)
+
+
+_CLOSEPOOLLEDGERRESPONSE = _descriptor.Descriptor(
+  name='ClosePoolLedgerResponse',
+  full_name='identitylayer.ClosePoolLedgerResponse',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='ErrorCode', full_name='identitylayer.ClosePoolLedgerResponse.ErrorCode', index=0,
+      number=1, type=3, cpp_type=2, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=3178,
+  serialized_end=3222,
+)
+
+
+_DELETEPOOLLEDGERCONFIGREQUEST = _descriptor.Descriptor(
+  name='DeletePoolLedgerConfigRequest',
+  full_name='identitylayer.DeletePoolLedgerConfigRequest',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='ConfigName', full_name='identitylayer.DeletePoolLedgerConfigRequest.ConfigName', index=0,
+      number=1, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=3224,
+  serialized_end=3275,
+)
+
+
+_DELETEPOOLLEDGERCONFIGRESPONSE = _descriptor.Descriptor(
+  name='DeletePoolLedgerConfigResponse',
+  full_name='identitylayer.DeletePoolLedgerConfigResponse',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='ErrorCode', full_name='identitylayer.DeletePoolLedgerConfigResponse.ErrorCode', index=0,
+      number=1, type=3, cpp_type=2, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=3277,
+  serialized_end=3328,
+)
+
+
+_SETPROTOCOLVERSIONREQUEST = _descriptor.Descriptor(
+  name='SetProtocolVersionRequest',
+  full_name='identitylayer.SetProtocolVersionRequest',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='ProtocolVersion', full_name='identitylayer.SetProtocolVersionRequest.ProtocolVersion', index=0,
+      number=1, type=3, cpp_type=2, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=3330,
+  serialized_end=3382,
+)
+
+
+_SETPROTOCOLVERSIONRESPONSE = _descriptor.Descriptor(
+  name='SetProtocolVersionResponse',
+  full_name='identitylayer.SetProtocolVersionResponse',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='ErrorCode', full_name='identitylayer.SetProtocolVersionResponse.ErrorCode', index=0,
+      number=1, type=3, cpp_type=2, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=3384,
+  serialized_end=3431,
+)
+
+
+_OPENREADERREQUEST = _descriptor.Descriptor(
+  name='OpenReaderRequest',
+  full_name='identitylayer.OpenReaderRequest',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='Type_', full_name='identitylayer.OpenReaderRequest.Type_', index=0,
+      number=1, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='Config', full_name='identitylayer.OpenReaderRequest.Config', index=1,
+      number=2, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=3433,
+  serialized_end=3483,
+)
+
+
+_OPENREADERRESPONSE = _descriptor.Descriptor(
+  name='OpenReaderResponse',
+  full_name='identitylayer.OpenReaderResponse',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='Res', full_name='identitylayer.OpenReaderResponse.Res', index=0,
+      number=1, type=3, cpp_type=2, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=3485,
+  serialized_end=3518,
+)
+
+
+_OPENWRITERREQUEST = _descriptor.Descriptor(
+  name='OpenWriterRequest',
+  full_name='identitylayer.OpenWriterRequest',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='Type_', full_name='identitylayer.OpenWriterRequest.Type_', index=0,
+      number=1, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='Config', full_name='identitylayer.OpenWriterRequest.Config', index=1,
+      number=2, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=3520,
+  serialized_end=3570,
+)
+
+
+_OPENWRITERRESPONSE = _descriptor.Descriptor(
+  name='OpenWriterResponse',
+  full_name='identitylayer.OpenWriterResponse',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='Res', full_name='identitylayer.OpenWriterResponse.Res', index=0,
+      number=1, type=3, cpp_type=2, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=3572,
+  serialized_end=3605,
+)
+
+
+_ISSUERCREATESCHEMAREQUEST = _descriptor.Descriptor(
+  name='IssuerCreateSchemaRequest',
+  full_name='identitylayer.IssuerCreateSchemaRequest',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='IssuerDid', full_name='identitylayer.IssuerCreateSchemaRequest.IssuerDid', index=0,
+      number=1, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='Name', full_name='identitylayer.IssuerCreateSchemaRequest.Name', index=1,
+      number=2, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='Version', full_name='identitylayer.IssuerCreateSchemaRequest.Version', index=2,
+      number=3, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='Attrs', full_name='identitylayer.IssuerCreateSchemaRequest.Attrs', index=3,
+      number=4, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=3607,
+  serialized_end=3699,
+)
+
+
+_ISSUERCREATESCHEMARESPONSE = _descriptor.Descriptor(
+  name='IssuerCreateSchemaResponse',
+  full_name='identitylayer.IssuerCreateSchemaResponse',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='SchemaId', full_name='identitylayer.IssuerCreateSchemaResponse.SchemaId', index=0,
+      number=1, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='SchemaJson', full_name='identitylayer.IssuerCreateSchemaResponse.SchemaJson', index=1,
+      number=2, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=3701,
+  serialized_end=3767,
+)
+
+
+_ISSUERCREATEANDSTORECREDENTIALDEFREQUEST = _descriptor.Descriptor(
+  name='IssuerCreateAndStoreCredentialDefRequest',
+  full_name='identitylayer.IssuerCreateAndStoreCredentialDefRequest',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='WalletHandle', full_name='identitylayer.IssuerCreateAndStoreCredentialDefRequest.WalletHandle', index=0,
+      number=1, type=3, cpp_type=2, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='IssuerDid', full_name='identitylayer.IssuerCreateAndStoreCredentialDefRequest.IssuerDid', index=1,
+      number=2, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='SchemaJson', full_name='identitylayer.IssuerCreateAndStoreCredentialDefRequest.SchemaJson', index=2,
+      number=3, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='Tag', full_name='identitylayer.IssuerCreateAndStoreCredentialDefRequest.Tag', index=3,
+      number=4, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='SignatureType', full_name='identitylayer.IssuerCreateAndStoreCredentialDefRequest.SignatureType', index=4,
+      number=5, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='ConfigJson', full_name='identitylayer.IssuerCreateAndStoreCredentialDefRequest.ConfigJson', index=5,
+      number=6, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=3770,
+  serialized_end=3929,
+)
+
+
+_ISSUERCREATEANDSTORECREDENTIALDEFRESPONSE = _descriptor.Descriptor(
+  name='IssuerCreateAndStoreCredentialDefResponse',
+  full_name='identitylayer.IssuerCreateAndStoreCredentialDefResponse',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='CredDefId', full_name='identitylayer.IssuerCreateAndStoreCredentialDefResponse.CredDefId', index=0,
+      number=1, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='CredDefJson', full_name='identitylayer.IssuerCreateAndStoreCredentialDefResponse.CredDefJson', index=1,
+      number=2, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=3931,
+  serialized_end=4014,
+)
+
+
+_ISSUERCREATEANDSTOREREVOCREGREQUEST = _descriptor.Descriptor(
+  name='IssuerCreateAndStoreRevocRegRequest',
+  full_name='identitylayer.IssuerCreateAndStoreRevocRegRequest',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='WalletHandle', full_name='identitylayer.IssuerCreateAndStoreRevocRegRequest.WalletHandle', index=0,
+      number=1, type=3, cpp_type=2, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='IssuerDid', full_name='identitylayer.IssuerCreateAndStoreRevocRegRequest.IssuerDid', index=1,
+      number=2, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='RevocDefType', full_name='identitylayer.IssuerCreateAndStoreRevocRegRequest.RevocDefType', index=2,
+      number=3, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='Tag', full_name='identitylayer.IssuerCreateAndStoreRevocRegRequest.Tag', index=3,
+      number=4, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='CredDefId', full_name='identitylayer.IssuerCreateAndStoreRevocRegRequest.CredDefId', index=4,
+      number=5, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='ConfigJSon', full_name='identitylayer.IssuerCreateAndStoreRevocRegRequest.ConfigJSon', index=5,
+      number=6, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='TailsWriterHandle', full_name='identitylayer.IssuerCreateAndStoreRevocRegRequest.TailsWriterHandle', index=6,
+      number=7, type=3, cpp_type=2, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=4017,
+  serialized_end=4196,
+)
+
+
+_ISSUERCREATEANDSTOREREVOCREGRESPONSE = _descriptor.Descriptor(
+  name='IssuerCreateAndStoreRevocRegResponse',
+  full_name='identitylayer.IssuerCreateAndStoreRevocRegResponse',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='RevocRegId', full_name='identitylayer.IssuerCreateAndStoreRevocRegResponse.RevocRegId', index=0,
+      number=1, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='RevocRegDefJson', full_name='identitylayer.IssuerCreateAndStoreRevocRegResponse.RevocRegDefJson', index=1,
+      number=2, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='RevocRegEntryJson', full_name='identitylayer.IssuerCreateAndStoreRevocRegResponse.RevocRegEntryJson', index=2,
+      number=3, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=4198,
+  serialized_end=4308,
+)
+
+
+_ISSUERCREATECREDENTIALOFFERREQUEST = _descriptor.Descriptor(
+  name='IssuerCreateCredentialOfferRequest',
+  full_name='identitylayer.IssuerCreateCredentialOfferRequest',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='WalletHandle', full_name='identitylayer.IssuerCreateCredentialOfferRequest.WalletHandle', index=0,
+      number=1, type=3, cpp_type=2, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='CredDefId', full_name='identitylayer.IssuerCreateCredentialOfferRequest.CredDefId', index=1,
+      number=2, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=4310,
+  serialized_end=4387,
+)
+
+
+_ISSUERCREATECREDENTIALOFFERRESPONSE = _descriptor.Descriptor(
+  name='IssuerCreateCredentialOfferResponse',
+  full_name='identitylayer.IssuerCreateCredentialOfferResponse',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='SchemaId', full_name='identitylayer.IssuerCreateCredentialOfferResponse.SchemaId', index=0,
+      number=1, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='CredDefId', full_name='identitylayer.IssuerCreateCredentialOfferResponse.CredDefId', index=1,
+      number=2, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='Nonce', full_name='identitylayer.IssuerCreateCredentialOfferResponse.Nonce', index=2,
+      number=3, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='KeyCorrectnessProof', full_name='identitylayer.IssuerCreateCredentialOfferResponse.KeyCorrectnessProof', index=3,
+      number=4, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=4390,
+  serialized_end=4530,
+)
+
+
+_ISSUERCREATECREDENTIALREQUEST = _descriptor.Descriptor(
+  name='IssuerCreateCredentialRequest',
+  full_name='identitylayer.IssuerCreateCredentialRequest',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='WalletHandle', full_name='identitylayer.IssuerCreateCredentialRequest.WalletHandle', index=0,
+      number=1, type=3, cpp_type=2, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='CredOfferJson', full_name='identitylayer.IssuerCreateCredentialRequest.CredOfferJson', index=1,
+      number=2, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='CredReqJson', full_name='identitylayer.IssuerCreateCredentialRequest.CredReqJson', index=2,
+      number=3, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='CredValuesJson', full_name='identitylayer.IssuerCreateCredentialRequest.CredValuesJson', index=3,
+      number=4, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='RevRegId', full_name='identitylayer.IssuerCreateCredentialRequest.RevRegId', index=4,
+      number=5, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='BlobStorageReaderHandle', full_name='identitylayer.IssuerCreateCredentialRequest.BlobStorageReaderHandle', index=5,
+      number=6, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=4533,
+  serialized_end=4705,
+)
+
+
+_ISSUERCREATECREDENTIALRESPONSE = _descriptor.Descriptor(
+  name='IssuerCreateCredentialResponse',
+  full_name='identitylayer.IssuerCreateCredentialResponse',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='CredJson', full_name='identitylayer.IssuerCreateCredentialResponse.CredJson', index=0,
+      number=1, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='CredRevocId', full_name='identitylayer.IssuerCreateCredentialResponse.CredRevocId', index=1,
+      number=2, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='RevocRegDeltaJson', full_name='identitylayer.IssuerCreateCredentialResponse.RevocRegDeltaJson', index=2,
+      number=3, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=4708,
+  serialized_end=4838,
+)
+
+
+_CREDJSONMESSAGE = _descriptor.Descriptor(
+  name='CredJsonMessage',
+  full_name='identitylayer.CredJsonMessage',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='SchemaId', full_name='identitylayer.CredJsonMessage.SchemaId', index=0,
+      number=1, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='CredDefId', full_name='identitylayer.CredJsonMessage.CredDefId', index=1,
+      number=2, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='RevRegDefID', full_name='identitylayer.CredJsonMessage.RevRegDefID', index=2,
+      number=3, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='Values', full_name='identitylayer.CredJsonMessage.Values', index=3,
+      number=4, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='Signature', full_name='identitylayer.CredJsonMessage.Signature', index=4,
+      number=5, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='SignatureCorrectnessProof', full_name='identitylayer.CredJsonMessage.SignatureCorrectnessProof', index=5,
+      number=6, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=4841,
+  serialized_end=5052,
+)
+
+
+_ISSUERREVOKECREDENTIALREQUEST = _descriptor.Descriptor(
+  name='IssuerRevokeCredentialRequest',
+  full_name='identitylayer.IssuerRevokeCredentialRequest',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='WalletHandle', full_name='identitylayer.IssuerRevokeCredentialRequest.WalletHandle', index=0,
+      number=1, type=3, cpp_type=2, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='BlobStorageReaderHandle', full_name='identitylayer.IssuerRevokeCredentialRequest.BlobStorageReaderHandle', index=1,
+      number=2, type=3, cpp_type=2, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='RevRegId', full_name='identitylayer.IssuerRevokeCredentialRequest.RevRegId', index=2,
+      number=3, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='CredRevocId', full_name='identitylayer.IssuerRevokeCredentialRequest.CredRevocId', index=3,
+      number=4, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=5054,
+  serialized_end=5179,
+)
+
+
+_ISSUERREVOKECREDENTIALRESPONSE = _descriptor.Descriptor(
+  name='IssuerRevokeCredentialResponse',
+  full_name='identitylayer.IssuerRevokeCredentialResponse',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='RevocationRegistryDeltaJson', full_name='identitylayer.IssuerRevokeCredentialResponse.RevocationRegistryDeltaJson', index=0,
+      number=1, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=5181,
+  serialized_end=5250,
+)
+
+
+_ISSUERMERGEREVOCATIONREGISTRYDELTASREQUEST = _descriptor.Descriptor(
+  name='IssuerMergeRevocationRegistryDeltasRequest',
+  full_name='identitylayer.IssuerMergeRevocationRegistryDeltasRequest',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='RevRegDeltaJson', full_name='identitylayer.IssuerMergeRevocationRegistryDeltasRequest.RevRegDeltaJson', index=0,
+      number=1, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='OtherRevRegDeltaJson', full_name='identitylayer.IssuerMergeRevocationRegistryDeltasRequest.OtherRevRegDeltaJson', index=1,
+      number=2, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=5252,
+  serialized_end=5351,
+)
+
+
+_ISSUERMERGEREVOCATIONREGISTRYDELTASRESPONSE = _descriptor.Descriptor(
+  name='IssuerMergeRevocationRegistryDeltasResponse',
+  full_name='identitylayer.IssuerMergeRevocationRegistryDeltasResponse',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='MergedRevocationRegistryDelta', full_name='identitylayer.IssuerMergeRevocationRegistryDeltasResponse.MergedRevocationRegistryDelta', index=0,
+      number=1, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=5353,
+  serialized_end=5437,
+)
+
+
+_PROVERCREATEMASTERSECRETREQUEST = _descriptor.Descriptor(
+  name='ProverCreateMasterSecretRequest',
+  full_name='identitylayer.ProverCreateMasterSecretRequest',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='WalletHandle', full_name='identitylayer.ProverCreateMasterSecretRequest.WalletHandle', index=0,
+      number=1, type=3, cpp_type=2, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='MasterSecretName', full_name='identitylayer.ProverCreateMasterSecretRequest.MasterSecretName', index=1,
+      number=2, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=5439,
+  serialized_end=5520,
+)
+
+
+_PROVERCREATEMASTERSECRETRESPONSE = _descriptor.Descriptor(
+  name='ProverCreateMasterSecretResponse',
+  full_name='identitylayer.ProverCreateMasterSecretResponse',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='GeneratedMasterSecretId', full_name='identitylayer.ProverCreateMasterSecretResponse.GeneratedMasterSecretId', index=0,
+      number=1, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=5522,
+  serialized_end=5589,
+)
+
+
+_PROVERCREATECREDENTIALREQREQUEST = _descriptor.Descriptor(
+  name='ProverCreateCredentialReqRequest',
+  full_name='identitylayer.ProverCreateCredentialReqRequest',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='WaletHandle', full_name='identitylayer.ProverCreateCredentialReqRequest.WaletHandle', index=0,
+      number=1, type=3, cpp_type=2, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='ProverDid', full_name='identitylayer.ProverCreateCredentialReqRequest.ProverDid', index=1,
+      number=2, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='CredOfferJSon', full_name='identitylayer.ProverCreateCredentialReqRequest.CredOfferJSon', index=2,
+      number=3, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='CredDefJson', full_name='identitylayer.ProverCreateCredentialReqRequest.CredDefJson', index=3,
+      number=4, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='MasterSecretId', full_name='identitylayer.ProverCreateCredentialReqRequest.MasterSecretId', index=4,
+      number=5, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=5592,
+  serialized_end=5734,
+)
+
+
+_PROVERCREATECREDENTIALREQRESPONSE = _descriptor.Descriptor(
+  name='ProverCreateCredentialReqResponse',
+  full_name='identitylayer.ProverCreateCredentialReqResponse',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='CredReqJson', full_name='identitylayer.ProverCreateCredentialReqResponse.CredReqJson', index=0,
+      number=1, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='CredReqMetadataJson', full_name='identitylayer.ProverCreateCredentialReqResponse.CredReqMetadataJson', index=1,
+      number=2, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=5736,
+  serialized_end=5856,
+)
+
+
+_CREDREQJSONMESSAGE = _descriptor.Descriptor(
+  name='CredReqJsonMessage',
+  full_name='identitylayer.CredReqJsonMessage',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='ProverDid', full_name='identitylayer.CredReqJsonMessage.ProverDid', index=0,
+      number=1, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='CredDefId', full_name='identitylayer.CredReqJsonMessage.CredDefId', index=1,
+      number=2, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='BlindedMs', full_name='identitylayer.CredReqJsonMessage.BlindedMs', index=2,
+      number=3, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='BlindedMsCorrectnessProof', full_name='identitylayer.CredReqJsonMessage.BlindedMsCorrectnessProof', index=3,
+      number=4, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='Nonce', full_name='identitylayer.CredReqJsonMessage.Nonce', index=4,
+      number=5, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=5859,
+  serialized_end=6030,
+)
+
+
+_PROVERSTORECREDENTIALREQUEST = _descriptor.Descriptor(
+  name='ProverStoreCredentialRequest',
+  full_name='identitylayer.ProverStoreCredentialRequest',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='WalletHandle', full_name='identitylayer.ProverStoreCredentialRequest.WalletHandle', index=0,
+      number=1, type=3, cpp_type=2, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='CredId', full_name='identitylayer.ProverStoreCredentialRequest.CredId', index=1,
+      number=2, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='CredReqMetadataJson', full_name='identitylayer.ProverStoreCredentialRequest.CredReqMetadataJson', index=2,
+      number=3, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='CredJson', full_name='identitylayer.ProverStoreCredentialRequest.CredJson', index=3,
+      number=4, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='CredDefJson', full_name='identitylayer.ProverStoreCredentialRequest.CredDefJson', index=4,
+      number=5, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='RevRegDefJson', full_name='identitylayer.ProverStoreCredentialRequest.RevRegDefJson', index=5,
+      number=6, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=6033,
+  serialized_end=6192,
+)
+
+
+_PROVERSTORECREDENTIALRESPONSE = _descriptor.Descriptor(
+  name='ProverStoreCredentialResponse',
+  full_name='identitylayer.ProverStoreCredentialResponse',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='CredId', full_name='identitylayer.ProverStoreCredentialResponse.CredId', index=0,
+      number=1, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=6194,
+  serialized_end=6241,
+)
+
+
+_PROVERGETCREDENTIALREQUEST = _descriptor.Descriptor(
+  name='ProverGetCredentialRequest',
+  full_name='identitylayer.ProverGetCredentialRequest',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='WalletHandle', full_name='identitylayer.ProverGetCredentialRequest.WalletHandle', index=0,
+      number=1, type=3, cpp_type=2, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='CredId', full_name='identitylayer.ProverGetCredentialRequest.CredId', index=1,
+      number=2, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=6243,
+  serialized_end=6309,
+)
+
+
+_PROVERGETCREDENTIALRESPONSE = _descriptor.Descriptor(
+  name='ProverGetCredentialResponse',
+  full_name='identitylayer.ProverGetCredentialResponse',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='Referent', full_name='identitylayer.ProverGetCredentialResponse.Referent', index=0,
+      number=1, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='Attrs', full_name='identitylayer.ProverGetCredentialResponse.Attrs', index=1,
+      number=2, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='SchemaId', full_name='identitylayer.ProverGetCredentialResponse.SchemaId', index=2,
+      number=3, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='CredDefId', full_name='identitylayer.ProverGetCredentialResponse.CredDefId', index=3,
+      number=4, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='RevRegId', full_name='identitylayer.ProverGetCredentialResponse.RevRegId', index=4,
+      number=5, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='CredRevId', full_name='identitylayer.ProverGetCredentialResponse.CredRevId', index=5,
+      number=6, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=6312,
+  serialized_end=6448,
+)
+
+
+_PROVERGETCREDENTIALSREQUEST = _descriptor.Descriptor(
+  name='ProverGetCredentialsRequest',
+  full_name='identitylayer.ProverGetCredentialsRequest',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='WalletHandle', full_name='identitylayer.ProverGetCredentialsRequest.WalletHandle', index=0,
+      number=1, type=3, cpp_type=2, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='FilterJson', full_name='identitylayer.ProverGetCredentialsRequest.FilterJson', index=1,
+      number=2, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=6450,
+  serialized_end=6555,
+)
+
+
+_FILTERJSONMESSAGE = _descriptor.Descriptor(
+  name='FilterJsonMessage',
+  full_name='identitylayer.FilterJsonMessage',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='SchemaId', full_name='identitylayer.FilterJsonMessage.SchemaId', index=0,
+      number=1, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='SchemaIssuerDid', full_name='identitylayer.FilterJsonMessage.SchemaIssuerDid', index=1,
+      number=2, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='SchemaName', full_name='identitylayer.FilterJsonMessage.SchemaName', index=2,
+      number=3, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='SchemaVersion', full_name='identitylayer.FilterJsonMessage.SchemaVersion', index=3,
+      number=4, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='IssuerDid', full_name='identitylayer.FilterJsonMessage.IssuerDid', index=4,
+      number=5, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='CredDefId', full_name='identitylayer.FilterJsonMessage.CredDefId', index=5,
+      number=6, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=6558,
+  serialized_end=6701,
+)
+
+
+_PROVERGETCREDENTIALSRESPONSE = _descriptor.Descriptor(
+  name='ProverGetCredentialsResponse',
+  full_name='identitylayer.ProverGetCredentialsResponse',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='CredentialsJson', full_name='identitylayer.ProverGetCredentialsResponse.CredentialsJson', index=0,
+      number=1, type=11, cpp_type=10, label=3,
+      has_default_value=False, default_value=[],
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=6703,
+  serialized_end=6797,
+)
+
+
+_CREDENTIALSJSONMESSAGE = _descriptor.Descriptor(
+  name='CredentialsJsonMessage',
+  full_name='identitylayer.CredentialsJsonMessage',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='Referent', full_name='identitylayer.CredentialsJsonMessage.Referent', index=0,
+      number=1, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='Attrs', full_name='identitylayer.CredentialsJsonMessage.Attrs', index=1,
+      number=2, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='SchemaID', full_name='identitylayer.CredentialsJsonMessage.SchemaID', index=2,
+      number=3, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='CredDefId', full_name='identitylayer.CredentialsJsonMessage.CredDefId', index=3,
+      number=4, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='RevRegId', full_name='identitylayer.CredentialsJsonMessage.RevRegId', index=4,
+      number=5, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='CredRevId', full_name='identitylayer.CredentialsJsonMessage.CredRevId', index=5,
+      number=6, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=6800,
+  serialized_end=6931,
+)
+
+
+_PROVERSEACHCREDENTIALSREQUEST = _descriptor.Descriptor(
+  name='ProverSeachCredentialsRequest',
+  full_name='identitylayer.ProverSeachCredentialsRequest',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='WalletHandle', full_name='identitylayer.ProverSeachCredentialsRequest.WalletHandle', index=0,
+      number=1, type=3, cpp_type=2, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='QueryJson', full_name='identitylayer.ProverSeachCredentialsRequest.QueryJson', index=1,
+      number=2, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=6933,
+  serialized_end=7005,
+)
+
+
+_PROVERSEACHCREDENTIALSRESPONSE = _descriptor.Descriptor(
+  name='ProverSeachCredentialsResponse',
+  full_name='identitylayer.ProverSeachCredentialsResponse',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='SearchHandle', full_name='identitylayer.ProverSeachCredentialsResponse.SearchHandle', index=0,
+      number=1, type=3, cpp_type=2, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='TotalCount', full_name='identitylayer.ProverSeachCredentialsResponse.TotalCount', index=1,
+      number=2, type=3, cpp_type=2, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=7007,
+  serialized_end=7081,
+)
+
+
+_PROVERFETCHCREDENTIALSREQUEST = _descriptor.Descriptor(
+  name='ProverFetchCredentialsRequest',
+  full_name='identitylayer.ProverFetchCredentialsRequest',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='SearchHandle', full_name='identitylayer.ProverFetchCredentialsRequest.SearchHandle', index=0,
+      number=1, type=3, cpp_type=2, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='Count', full_name='identitylayer.ProverFetchCredentialsRequest.Count', index=1,
+      number=2, type=3, cpp_type=2, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=7083,
+  serialized_end=7151,
+)
+
+
+_PROVERFETCHCREDENTIALSRESPONSE = _descriptor.Descriptor(
+  name='ProverFetchCredentialsResponse',
+  full_name='identitylayer.ProverFetchCredentialsResponse',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='CredentialsJson', full_name='identitylayer.ProverFetchCredentialsResponse.CredentialsJson', index=0,
+      number=1, type=11, cpp_type=10, label=3,
+      has_default_value=False, default_value=[],
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=7153,
+  serialized_end=7249,
+)
+
+
+_PROVERCLOSECREDENTIALSSEARCHREQUEST = _descriptor.Descriptor(
+  name='ProverCloseCredentialsSearchRequest',
+  full_name='identitylayer.ProverCloseCredentialsSearchRequest',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='SearchHandle', full_name='identitylayer.ProverCloseCredentialsSearchRequest.SearchHandle', index=0,
+      number=1, type=3, cpp_type=2, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=7251,
+  serialized_end=7310,
+)
+
+
+_PROVERCLOSECREDENTIALSSEARCHRESPONSE = _descriptor.Descriptor(
+  name='ProverCloseCredentialsSearchResponse',
+  full_name='identitylayer.ProverCloseCredentialsSearchResponse',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='Resp', full_name='identitylayer.ProverCloseCredentialsSearchResponse.Resp', index=0,
+      number=1, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=7312,
+  serialized_end=7364,
+)
+
+
+_PROVERGETCREDENTIALSFORPROOFREQREQUEST = _descriptor.Descriptor(
+  name='ProverGetCredentialsForProofReqRequest',
+  full_name='identitylayer.ProverGetCredentialsForProofReqRequest',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='WalletHandle', full_name='identitylayer.ProverGetCredentialsForProofReqRequest.WalletHandle', index=0,
+      number=1, type=3, cpp_type=2, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='ProofRequestJson', full_name='identitylayer.ProverGetCredentialsForProofReqRequest.ProofRequestJson', index=1,
+      number=2, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=7367,
+  serialized_end=7495,
+)
+
+
+_PROOFREQUESTJSONMESSAGE = _descriptor.Descriptor(
+  name='ProofRequestJsonMessage',
+  full_name='identitylayer.ProofRequestJsonMessage',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='Name', full_name='identitylayer.ProofRequestJsonMessage.Name', index=0,
+      number=1, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='Version', full_name='identitylayer.ProofRequestJsonMessage.Version', index=1,
+      number=2, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='Nonce', full_name='identitylayer.ProofRequestJsonMessage.Nonce', index=2,
+      number=3, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='RequestedAttributes', full_name='identitylayer.ProofRequestJsonMessage.RequestedAttributes', index=3,
+      number=4, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='RequestedPredicates', full_name='identitylayer.ProofRequestJsonMessage.RequestedPredicates', index=4,
+      number=5, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='NonRevoked', full_name='identitylayer.ProofRequestJsonMessage.NonRevoked', index=5,
+      number=6, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=7498,
+  serialized_end=7669,
+)
+
+
+_PROVERGETCREDENTIALSFORPROOFREQRESPONSE = _descriptor.Descriptor(
+  name='ProverGetCredentialsForProofReqResponse',
+  full_name='identitylayer.ProverGetCredentialsForProofReqResponse',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='RequestedAttrs', full_name='identitylayer.ProverGetCredentialsForProofReqResponse.RequestedAttrs', index=0,
+      number=1, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='RequestedPredicates', full_name='identitylayer.ProverGetCredentialsForProofReqResponse.RequestedPredicates', index=1,
+      number=2, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=7671,
+  serialized_end=7765,
+)
+
+
+_PROVERSEARCHCREDENTIALSFORPROOFREQREQUEST = _descriptor.Descriptor(
+  name='ProverSearchCredentialsForProofReqRequest',
+  full_name='identitylayer.ProverSearchCredentialsForProofReqRequest',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='WalletHandle', full_name='identitylayer.ProverSearchCredentialsForProofReqRequest.WalletHandle', index=0,
+      number=1, type=3, cpp_type=2, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='ProofRequestJson', full_name='identitylayer.ProverSearchCredentialsForProofReqRequest.ProofRequestJson', index=1,
+      number=2, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='ExtraQueryJson', full_name='identitylayer.ProverSearchCredentialsForProofReqRequest.ExtraQueryJson', index=2,
+      number=3, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=7768,
+  serialized_end=7961,
+)
+
+
+_EXTRAQUERYJSONMESSAGE = _descriptor.Descriptor(
+  name='ExtraQueryJsonMessage',
+  full_name='identitylayer.ExtraQueryJsonMessage',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='AttrReferent', full_name='identitylayer.ExtraQueryJsonMessage.AttrReferent', index=0,
+      number=1, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='PredicateReferent', full_name='identitylayer.ExtraQueryJsonMessage.PredicateReferent', index=1,
+      number=2, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=7963,
+  serialized_end=8079,
+)
+
+
+_PROVERSEARCHCREDENTIALSFORPROOFREQRESPONSE = _descriptor.Descriptor(
+  name='ProverSearchCredentialsForProofReqResponse',
+  full_name='identitylayer.ProverSearchCredentialsForProofReqResponse',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='SearchHandle', full_name='identitylayer.ProverSearchCredentialsForProofReqResponse.SearchHandle', index=0,
+      number=1, type=3, cpp_type=2, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=8081,
+  serialized_end=8147,
+)
+
+
+_PROVERFETCHCREDENTIALSFORPROOFREQREQUEST = _descriptor.Descriptor(
+  name='ProverFetchCredentialsForProofReqRequest',
+  full_name='identitylayer.ProverFetchCredentialsForProofReqRequest',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='SearchHandle', full_name='identitylayer.ProverFetchCredentialsForProofReqRequest.SearchHandle', index=0,
+      number=1, type=3, cpp_type=2, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='ItemReference', full_name='identitylayer.ProverFetchCredentialsForProofReqRequest.ItemReference', index=1,
+      number=2, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='Count', full_name='identitylayer.ProverFetchCredentialsForProofReqRequest.Count', index=2,
+      number=3, type=3, cpp_type=2, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=8149,
+  serialized_end=8251,
+)
+
+
+_PROVERFETCHCREDENTIALSFORPROOFREQRESPONSE = _descriptor.Descriptor(
+  name='ProverFetchCredentialsForProofReqResponse',
+  full_name='identitylayer.ProverFetchCredentialsForProofReqResponse',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='CredentialsJson', full_name='identitylayer.ProverFetchCredentialsForProofReqResponse.CredentialsJson', index=0,
+      number=1, type=11, cpp_type=10, label=3,
+      has_default_value=False, default_value=[],
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=8253,
+  serialized_end=8366,
+)
+
+
+_CREDENTIALSGIVENPROOFREQUEST = _descriptor.Descriptor(
+  name='CredentialsGivenProofRequest',
+  full_name='identitylayer.CredentialsGivenProofRequest',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='CredInfo', full_name='identitylayer.CredentialsGivenProofRequest.CredInfo', index=0,
+      number=1, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='Interval', full_name='identitylayer.CredentialsGivenProofRequest.Interval', index=1,
+      number=2, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=8368,
+  serialized_end=8487,
+)
+
+
+_CREDENTIALINFO = _descriptor.Descriptor(
+  name='CredentialInfo',
+  full_name='identitylayer.CredentialInfo',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='Referent', full_name='identitylayer.CredentialInfo.Referent', index=0,
+      number=1, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='Attrs', full_name='identitylayer.CredentialInfo.Attrs', index=1,
+      number=2, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='SchemaId', full_name='identitylayer.CredentialInfo.SchemaId', index=2,
+      number=3, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='CredDefId', full_name='identitylayer.CredentialInfo.CredDefId', index=3,
+      number=4, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='RevRegId', full_name='identitylayer.CredentialInfo.RevRegId', index=4,
+      number=5, type=3, cpp_type=2, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='CredRevId', full_name='identitylayer.CredentialInfo.CredRevId', index=5,
+      number=6, type=3, cpp_type=2, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=8489,
+  serialized_end=8612,
+)
+
+
+_PROVERCLOSECREDENTIALSSEARCHFORPROOFREQREQUEST = _descriptor.Descriptor(
+  name='ProverCloseCredentialsSearchForProofReqRequest',
+  full_name='identitylayer.ProverCloseCredentialsSearchForProofReqRequest',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='SearchHandle', full_name='identitylayer.ProverCloseCredentialsSearchForProofReqRequest.SearchHandle', index=0,
+      number=1, type=3, cpp_type=2, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=8614,
+  serialized_end=8684,
+)
+
+
+_PROVERCLOSECREDENTIALSSEARCHFORPROOFREQRESPONSE = _descriptor.Descriptor(
+  name='ProverCloseCredentialsSearchForProofReqResponse',
+  full_name='identitylayer.ProverCloseCredentialsSearchForProofReqResponse',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='Resp', full_name='identitylayer.ProverCloseCredentialsSearchForProofReqResponse.Resp', index=0,
+      number=1, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=8686,
+  serialized_end=8749,
+)
+
+
+_PROVERCREATEPROOFREQUEST = _descriptor.Descriptor(
+  name='ProverCreateProofRequest',
+  full_name='identitylayer.ProverCreateProofRequest',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='WalletHandle', full_name='identitylayer.ProverCreateProofRequest.WalletHandle', index=0,
+      number=1, type=3, cpp_type=2, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='ProofReqJson', full_name='identitylayer.ProverCreateProofRequest.ProofReqJson', index=1,
+      number=2, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='RequestedCredentialsJson', full_name='identitylayer.ProverCreateProofRequest.RequestedCredentialsJson', index=2,
+      number=3, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='MasterSecretName', full_name='identitylayer.ProverCreateProofRequest.MasterSecretName', index=3,
+      number=4, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='SchemasJson', full_name='identitylayer.ProverCreateProofRequest.SchemasJson', index=4,
+      number=5, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='CredentialDefsJson', full_name='identitylayer.ProverCreateProofRequest.CredentialDefsJson', index=5,
+      number=6, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='RevStatesJson', full_name='identitylayer.ProverCreateProofRequest.RevStatesJson', index=6,
+      number=7, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=8752,
+  serialized_end=9038,
+)
+
+
+_PROOFREQJSONMESSAGE = _descriptor.Descriptor(
+  name='ProofReqJsonMessage',
+  full_name='identitylayer.ProofReqJsonMessage',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='Name', full_name='identitylayer.ProofReqJsonMessage.Name', index=0,
+      number=1, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='Version', full_name='identitylayer.ProofReqJsonMessage.Version', index=1,
+      number=2, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='Nonce', full_name='identitylayer.ProofReqJsonMessage.Nonce', index=2,
+      number=3, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='RequestedAttributes', full_name='identitylayer.ProofReqJsonMessage.RequestedAttributes', index=3,
+      number=4, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='RequestedPredicates', full_name='identitylayer.ProofReqJsonMessage.RequestedPredicates', index=4,
+      number=5, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='NonRevoInterval', full_name='identitylayer.ProofReqJsonMessage.NonRevoInterval', index=5,
+      number=6, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=9041,
+  serialized_end=9231,
+)
+
+
+_NONREVOCINTERVALMESSAGE = _descriptor.Descriptor(
+  name='NonRevocIntervalMessage',
+  full_name='identitylayer.NonRevocIntervalMessage',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='From', full_name='identitylayer.NonRevocIntervalMessage.From', index=0,
+      number=1, type=3, cpp_type=2, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='To', full_name='identitylayer.NonRevocIntervalMessage.To', index=1,
+      number=2, type=3, cpp_type=2, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=9233,
+  serialized_end=9284,
+)
+
+
+_REQUESTEDCREDENTIALSJSONMESSAGE = _descriptor.Descriptor(
+  name='RequestedCredentialsJsonMessage',
+  full_name='identitylayer.RequestedCredentialsJsonMessage',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='SelfAttestedAttributes', full_name='identitylayer.RequestedCredentialsJsonMessage.SelfAttestedAttributes', index=0,
+      number=1, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='RequestedAttributes', full_name='identitylayer.RequestedCredentialsJsonMessage.RequestedAttributes', index=1,
+      number=2, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='RequestedPredicates', full_name='identitylayer.RequestedCredentialsJsonMessage.RequestedPredicates', index=2,
+      number=3, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=9286,
+  serialized_end=9409,
+)
+
+
+_PROVERCREATEPROOFRESPONSE = _descriptor.Descriptor(
+  name='ProverCreateProofResponse',
+  full_name='identitylayer.ProverCreateProofResponse',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='Requested', full_name='identitylayer.ProverCreateProofResponse.Requested', index=0,
+      number=1, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='Proof', full_name='identitylayer.ProverCreateProofResponse.Proof', index=1,
+      number=2, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='identifiers', full_name='identitylayer.ProverCreateProofResponse.identifiers', index=2,
+      number=3, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=9411,
+  serialized_end=9493,
+)
+
+
+_VERIFIERVERIFYPROOFREQUEST = _descriptor.Descriptor(
+  name='VerifierVerifyProofRequest',
+  full_name='identitylayer.VerifierVerifyProofRequest',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='ProofRequestJson', full_name='identitylayer.VerifierVerifyProofRequest.ProofRequestJson', index=0,
+      number=1, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='ProofJson', full_name='identitylayer.VerifierVerifyProofRequest.ProofJson', index=1,
+      number=2, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='SchemasJson', full_name='identitylayer.VerifierVerifyProofRequest.SchemasJson', index=2,
+      number=3, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='CredentialDefsJson', full_name='identitylayer.VerifierVerifyProofRequest.CredentialDefsJson', index=3,
+      number=4, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='RevRegDefsJson', full_name='identitylayer.VerifierVerifyProofRequest.RevRegDefsJson', index=4,
+      number=5, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='RevRegJson', full_name='identitylayer.VerifierVerifyProofRequest.RevRegJson', index=5,
+      number=6, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=9496,
+  serialized_end=9702,
+)
+
+
+_VERIFIERVERIFYPROOFRESPONSE = _descriptor.Descriptor(
+  name='VerifierVerifyProofResponse',
+  full_name='identitylayer.VerifierVerifyProofResponse',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='Valid', full_name='identitylayer.VerifierVerifyProofResponse.Valid', index=0,
+      number=1, type=8, cpp_type=7, label=1,
+      has_default_value=False, default_value=False,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=9704,
+  serialized_end=9748,
+)
+
+
+_CREATEREVOCATIONSTATEREQUEST = _descriptor.Descriptor(
+  name='CreateRevocationStateRequest',
+  full_name='identitylayer.CreateRevocationStateRequest',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='BlobStorageReaderHandle', full_name='identitylayer.CreateRevocationStateRequest.BlobStorageReaderHandle', index=0,
+      number=1, type=3, cpp_type=2, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='RevRegDefJson', full_name='identitylayer.CreateRevocationStateRequest.RevRegDefJson', index=1,
+      number=2, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='RevRegDeltaJson', full_name='identitylayer.CreateRevocationStateRequest.RevRegDeltaJson', index=2,
+      number=3, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='Timestamp', full_name='identitylayer.CreateRevocationStateRequest.Timestamp', index=3,
+      number=4, type=3, cpp_type=2, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='CredRevId', full_name='identitylayer.CreateRevocationStateRequest.CredRevId', index=4,
+      number=5, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=9751,
+  serialized_end=9900,
+)
+
+
+_CREATEREVOCATIONSTATERESPONSE = _descriptor.Descriptor(
+  name='CreateRevocationStateResponse',
+  full_name='identitylayer.CreateRevocationStateResponse',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='RevReg', full_name='identitylayer.CreateRevocationStateResponse.RevReg', index=0,
+      number=1, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='Witness', full_name='identitylayer.CreateRevocationStateResponse.Witness', index=1,
+      number=2, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='Timestamp', full_name='identitylayer.CreateRevocationStateResponse.Timestamp', index=2,
+      number=3, type=3, cpp_type=2, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=9902,
+  serialized_end=9985,
+)
+
+
+_UPDATEREVOCATIONSTATEREQUEST = _descriptor.Descriptor(
+  name='UpdateRevocationStateRequest',
+  full_name='identitylayer.UpdateRevocationStateRequest',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='BlobStorageReaderHandle', full_name='identitylayer.UpdateRevocationStateRequest.BlobStorageReaderHandle', index=0,
+      number=1, type=3, cpp_type=2, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='RevStateJson', full_name='identitylayer.UpdateRevocationStateRequest.RevStateJson', index=1,
+      number=2, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='RevRegDefJson', full_name='identitylayer.UpdateRevocationStateRequest.RevRegDefJson', index=2,
+      number=3, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='RevRegDeltaJson', full_name='identitylayer.UpdateRevocationStateRequest.RevRegDeltaJson', index=3,
+      number=4, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='Timestamp', full_name='identitylayer.UpdateRevocationStateRequest.Timestamp', index=4,
+      number=5, type=3, cpp_type=2, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='CredRevId', full_name='identitylayer.UpdateRevocationStateRequest.CredRevId', index=5,
+      number=6, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=9988,
+  serialized_end=10159,
+)
+
+
+_UPDATEREVOCATIONSTATERESPONSE = _descriptor.Descriptor(
+  name='UpdateRevocationStateResponse',
+  full_name='identitylayer.UpdateRevocationStateResponse',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='RevReg', full_name='identitylayer.UpdateRevocationStateResponse.RevReg', index=0,
+      number=1, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='Witness', full_name='identitylayer.UpdateRevocationStateResponse.Witness', index=1,
+      number=2, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='Timestamp', full_name='identitylayer.UpdateRevocationStateResponse.Timestamp', index=2,
+      number=3, type=3, cpp_type=2, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=10161,
+  serialized_end=10244,
+)
+
+
+_CREATEKEYREQUEST = _descriptor.Descriptor(
+  name='CreateKeyRequest',
+  full_name='identitylayer.CreateKeyRequest',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='WalletHandle', full_name='identitylayer.CreateKeyRequest.WalletHandle', index=0,
+      number=1, type=3, cpp_type=2, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='KeyJsonCreateKey', full_name='identitylayer.CreateKeyRequest.KeyJsonCreateKey', index=1,
+      number=2, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=10246,
+  serialized_end=10312,
+)
+
+
+_KEYJSONCREATEKEY = _descriptor.Descriptor(
+  name='KeyJsonCreateKey',
+  full_name='identitylayer.KeyJsonCreateKey',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='seed', full_name='identitylayer.KeyJsonCreateKey.seed', index=0,
+      number=1, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='CryptoType', full_name='identitylayer.KeyJsonCreateKey.CryptoType', index=1,
+      number=2, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=10314,
+  serialized_end=10366,
+)
+
+
+_CREATEKEYRESPONSE = _descriptor.Descriptor(
+  name='CreateKeyResponse',
+  full_name='identitylayer.CreateKeyResponse',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='Verkey', full_name='identitylayer.CreateKeyResponse.Verkey', index=0,
+      number=1, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=10368,
+  serialized_end=10403,
+)
+
+
+_SETKEYMETADATAREQUEST = _descriptor.Descriptor(
+  name='SetKeyMetadataRequest',
+  full_name='identitylayer.SetKeyMetadataRequest',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='WalletHandle', full_name='identitylayer.SetKeyMetadataRequest.WalletHandle', index=0,
+      number=1, type=3, cpp_type=2, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='Verkey', full_name='identitylayer.SetKeyMetadataRequest.Verkey', index=1,
+      number=2, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='Metadata', full_name='identitylayer.SetKeyMetadataRequest.Metadata', index=2,
+      number=3, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=10405,
+  serialized_end=10484,
+)
+
+
+_SETKEYMETADATARESPONSE = _descriptor.Descriptor(
+  name='SetKeyMetadataResponse',
+  full_name='identitylayer.SetKeyMetadataResponse',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='ErrorCode', full_name='identitylayer.SetKeyMetadataResponse.ErrorCode', index=0,
+      number=1, type=3, cpp_type=2, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=10486,
+  serialized_end=10529,
+)
+
+
+_GETKEYMETADATAREQUEST = _descriptor.Descriptor(
+  name='GetKeyMetadataRequest',
+  full_name='identitylayer.GetKeyMetadataRequest',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='WalletHandle', full_name='identitylayer.GetKeyMetadataRequest.WalletHandle', index=0,
+      number=1, type=3, cpp_type=2, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='Verkey', full_name='identitylayer.GetKeyMetadataRequest.Verkey', index=1,
+      number=2, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=10531,
+  serialized_end=10592,
+)
+
+
+_GETKEYMETADATARESPONSE = _descriptor.Descriptor(
+  name='GetKeyMetadataResponse',
+  full_name='identitylayer.GetKeyMetadataResponse',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='Metadata', full_name='identitylayer.GetKeyMetadataResponse.Metadata', index=0,
+      number=1, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=10594,
+  serialized_end=10636,
+)
+
+
+_CRYPTOSIGNREQUEST = _descriptor.Descriptor(
+  name='CryptoSignRequest',
+  full_name='identitylayer.CryptoSignRequest',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='WalletHandle', full_name='identitylayer.CryptoSignRequest.WalletHandle', index=0,
+      number=1, type=3, cpp_type=2, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='SignerVk', full_name='identitylayer.CryptoSignRequest.SignerVk', index=1,
+      number=2, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='Msg', full_name='identitylayer.CryptoSignRequest.Msg', index=2,
+      number=3, type=12, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b(""),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=10638,
+  serialized_end=10710,
+)
+
+
+_CRYPTOSIGNRESPONSE = _descriptor.Descriptor(
+  name='CryptoSignResponse',
+  full_name='identitylayer.CryptoSignResponse',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='Signature', full_name='identitylayer.CryptoSignResponse.Signature', index=0,
+      number=1, type=12, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b(""),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=10712,
+  serialized_end=10751,
+)
+
+
+_CRYPTOVERIFYREQUEST = _descriptor.Descriptor(
+  name='CryptoVerifyRequest',
+  full_name='identitylayer.CryptoVerifyRequest',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='SignerVk', full_name='identitylayer.CryptoVerifyRequest.SignerVk', index=0,
+      number=1, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='Msg', full_name='identitylayer.CryptoVerifyRequest.Msg', index=1,
+      number=2, type=12, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b(""),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='Signature', full_name='identitylayer.CryptoVerifyRequest.Signature', index=2,
+      number=3, type=12, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b(""),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=10753,
+  serialized_end=10824,
+)
+
+
+_CRYPTOVERIFYRESPONSE = _descriptor.Descriptor(
+  name='CryptoVerifyResponse',
+  full_name='identitylayer.CryptoVerifyResponse',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='Valid', full_name='identitylayer.CryptoVerifyResponse.Valid', index=0,
+      number=1, type=8, cpp_type=7, label=1,
+      has_default_value=False, default_value=False,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=10826,
+  serialized_end=10863,
+)
+
+
+_AUTHCRYPTREQUEST = _descriptor.Descriptor(
+  name='AuthCryptRequest',
+  full_name='identitylayer.AuthCryptRequest',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='WalletHandle', full_name='identitylayer.AuthCryptRequest.WalletHandle', index=0,
+      number=1, type=3, cpp_type=2, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='SenderVk', full_name='identitylayer.AuthCryptRequest.SenderVk', index=1,
+      number=2, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='RecipientVk', full_name='identitylayer.AuthCryptRequest.RecipientVk', index=2,
+      number=3, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='Msg', full_name='identitylayer.AuthCryptRequest.Msg', index=3,
+      number=4, type=12, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b(""),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=10865,
+  serialized_end=10957,
+)
+
+
+_AUTHCRYPTRESPONSE = _descriptor.Descriptor(
+  name='AuthCryptResponse',
+  full_name='identitylayer.AuthCryptResponse',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='Msg', full_name='identitylayer.AuthCryptResponse.Msg', index=0,
+      number=1, type=12, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b(""),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=10959,
+  serialized_end=10991,
+)
+
+
+_AUTHDECRYPTREQUEST = _descriptor.Descriptor(
+  name='AuthDecryptRequest',
+  full_name='identitylayer.AuthDecryptRequest',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='WalletHandle', full_name='identitylayer.AuthDecryptRequest.WalletHandle', index=0,
+      number=1, type=3, cpp_type=2, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='RecipientVk', full_name='identitylayer.AuthDecryptRequest.RecipientVk', index=1,
+      number=2, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='EncryptedMsg', full_name='identitylayer.AuthDecryptRequest.EncryptedMsg', index=2,
+      number=3, type=12, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b(""),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=10993,
+  serialized_end=11078,
+)
+
+
+_AUTHDECRYPTRESPONSE = _descriptor.Descriptor(
+  name='AuthDecryptResponse',
+  full_name='identitylayer.AuthDecryptResponse',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='Verkey', full_name='identitylayer.AuthDecryptResponse.Verkey', index=0,
+      number=1, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='Msg', full_name='identitylayer.AuthDecryptResponse.Msg', index=1,
+      number=2, type=12, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b(""),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=11080,
+  serialized_end=11130,
+)
+
+
+_ANONCRYPTREQUEST = _descriptor.Descriptor(
+  name='AnonCryptRequest',
+  full_name='identitylayer.AnonCryptRequest',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='RecipientVk', full_name='identitylayer.AnonCryptRequest.RecipientVk', index=0,
+      number=1, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='Msg', full_name='identitylayer.AnonCryptRequest.Msg', index=1,
+      number=2, type=12, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b(""),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=11132,
+  serialized_end=11184,
+)
+
+
+_ANONCRYPTRESPONSE = _descriptor.Descriptor(
+  name='AnonCryptResponse',
+  full_name='identitylayer.AnonCryptResponse',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='Msg', full_name='identitylayer.AnonCryptResponse.Msg', index=0,
+      number=1, type=12, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b(""),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=11186,
+  serialized_end=11218,
+)
+
+
+_ANONDECRYPTREQUEST = _descriptor.Descriptor(
+  name='AnonDecryptRequest',
+  full_name='identitylayer.AnonDecryptRequest',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='WalletHandle', full_name='identitylayer.AnonDecryptRequest.WalletHandle', index=0,
+      number=1, type=3, cpp_type=2, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='RecipientVk', full_name='identitylayer.AnonDecryptRequest.RecipientVk', index=1,
+      number=2, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='EncryptedMsg', full_name='identitylayer.AnonDecryptRequest.EncryptedMsg', index=2,
+      number=3, type=12, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b(""),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=11220,
+  serialized_end=11305,
+)
+
+
+_ANONDECRYPTRESPONSE = _descriptor.Descriptor(
+  name='AnonDecryptResponse',
+  full_name='identitylayer.AnonDecryptResponse',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='DecryptedMsg', full_name='identitylayer.AnonDecryptResponse.DecryptedMsg', index=0,
+      number=1, type=12, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b(""),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=11307,
+  serialized_end=11350,
+)
+
+
+_ISPAIRWISEEXISTSREQUEST = _descriptor.Descriptor(
+  name='IsPairwiseExistsRequest',
+  full_name='identitylayer.IsPairwiseExistsRequest',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='WalletHandle', full_name='identitylayer.IsPairwiseExistsRequest.WalletHandle', index=0,
+      number=1, type=3, cpp_type=2, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='TheirDid', full_name='identitylayer.IsPairwiseExistsRequest.TheirDid', index=1,
+      number=2, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=11352,
+  serialized_end=11417,
+)
+
+
+_ISPAIRWISEEXISTSRESPONSE = _descriptor.Descriptor(
+  name='IsPairwiseExistsResponse',
+  full_name='identitylayer.IsPairwiseExistsResponse',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='Res', full_name='identitylayer.IsPairwiseExistsResponse.Res', index=0,
+      number=1, type=8, cpp_type=7, label=1,
+      has_default_value=False, default_value=False,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=11419,
+  serialized_end=11458,
+)
+
+
+_CREATEPAIRWISEREQUEST = _descriptor.Descriptor(
+  name='CreatePairwiseRequest',
+  full_name='identitylayer.CreatePairwiseRequest',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='WalletHandle', full_name='identitylayer.CreatePairwiseRequest.WalletHandle', index=0,
+      number=1, type=3, cpp_type=2, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='TheirDid', full_name='identitylayer.CreatePairwiseRequest.TheirDid', index=1,
+      number=2, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='MyDid', full_name='identitylayer.CreatePairwiseRequest.MyDid', index=2,
+      number=3, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='Metadata', full_name='identitylayer.CreatePairwiseRequest.Metadata', index=3,
+      number=4, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=11460,
+  serialized_end=11556,
+)
+
+
+_CREATEPAIRWISERESPONSE = _descriptor.Descriptor(
+  name='CreatePairwiseResponse',
+  full_name='identitylayer.CreatePairwiseResponse',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='ErrorCode', full_name='identitylayer.CreatePairwiseResponse.ErrorCode', index=0,
+      number=1, type=3, cpp_type=2, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=11558,
+  serialized_end=11601,
+)
+
+
+_LISTPAIRWISEREQUEST = _descriptor.Descriptor(
+  name='ListPairwiseRequest',
+  full_name='identitylayer.ListPairwiseRequest',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='WalletHandle', full_name='identitylayer.ListPairwiseRequest.WalletHandle', index=0,
+      number=1, type=3, cpp_type=2, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=11603,
+  serialized_end=11646,
+)
+
+
+_LISTPAIRWISERESPONSE = _descriptor.Descriptor(
+  name='ListPairwiseResponse',
+  full_name='identitylayer.ListPairwiseResponse',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='PairwiseList', full_name='identitylayer.ListPairwiseResponse.PairwiseList', index=0,
+      number=1, type=9, cpp_type=9, label=3,
+      has_default_value=False, default_value=[],
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=11648,
+  serialized_end=11692,
+)
+
+
+_GETPAIRWISEREQUEST = _descriptor.Descriptor(
+  name='GetPairwiseRequest',
+  full_name='identitylayer.GetPairwiseRequest',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='WalletHandle', full_name='identitylayer.GetPairwiseRequest.WalletHandle', index=0,
+      number=1, type=3, cpp_type=2, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='TheirDid', full_name='identitylayer.GetPairwiseRequest.TheirDid', index=1,
+      number=2, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=11694,
+  serialized_end=11754,
+)
+
+
+_GETPAIRWISERESPONSE = _descriptor.Descriptor(
+  name='GetPairwiseResponse',
+  full_name='identitylayer.GetPairwiseResponse',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='PairwiseInfoJson', full_name='identitylayer.GetPairwiseResponse.PairwiseInfoJson', index=0,
+      number=1, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=11756,
+  serialized_end=11803,
+)
+
+
+_SETPAIRWISEMETADATAREQUEST = _descriptor.Descriptor(
+  name='SetPairwiseMetadataRequest',
+  full_name='identitylayer.SetPairwiseMetadataRequest',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='WalletHandle', full_name='identitylayer.SetPairwiseMetadataRequest.WalletHandle', index=0,
+      number=1, type=3, cpp_type=2, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='TheirDid', full_name='identitylayer.SetPairwiseMetadataRequest.TheirDid', index=1,
+      number=2, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='MetaData', full_name='identitylayer.SetPairwiseMetadataRequest.MetaData', index=2,
+      number=3, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=11805,
+  serialized_end=11891,
+)
+
+
+_SETPAIRWISEMETADATARESPONSE = _descriptor.Descriptor(
+  name='SetPairwiseMetadataResponse',
+  full_name='identitylayer.SetPairwiseMetadataResponse',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='ErrorCode', full_name='identitylayer.SetPairwiseMetadataResponse.ErrorCode', index=0,
+      number=1, type=3, cpp_type=2, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=11893,
+  serialized_end=11941,
+)
+
+
+_CREATEANDSTOREMYDIDREQUEST = _descriptor.Descriptor(
+  name='CreateAndStoreMyDidRequest',
+  full_name='identitylayer.CreateAndStoreMyDidRequest',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='WalletHandle', full_name='identitylayer.CreateAndStoreMyDidRequest.WalletHandle', index=0,
+      number=1, type=3, cpp_type=2, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='DidJson', full_name='identitylayer.CreateAndStoreMyDidRequest.DidJson', index=1,
+      number=2, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=11943,
+  serialized_end=12057,
+)
+
+
+_CREATEANDSTOREMYDIDJSONMESSAGE = _descriptor.Descriptor(
+  name='CreateAndStoreMyDidJsonMessage',
+  full_name='identitylayer.CreateAndStoreMyDidJsonMessage',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='Did', full_name='identitylayer.CreateAndStoreMyDidJsonMessage.Did', index=0,
+      number=1, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='Seed', full_name='identitylayer.CreateAndStoreMyDidJsonMessage.Seed', index=1,
+      number=2, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='CryptoType', full_name='identitylayer.CreateAndStoreMyDidJsonMessage.CryptoType', index=2,
+      number=3, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='Cid', full_name='identitylayer.CreateAndStoreMyDidJsonMessage.Cid', index=3,
+      number=4, type=8, cpp_type=7, label=1,
+      has_default_value=False, default_value=False,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=12059,
+  serialized_end=12151,
+)
+
+
+_CREATEANDSTOREMYDIDRESPONSE = _descriptor.Descriptor(
+  name='CreateAndStoreMyDidResponse',
+  full_name='identitylayer.CreateAndStoreMyDidResponse',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='Did', full_name='identitylayer.CreateAndStoreMyDidResponse.Did', index=0,
+      number=1, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='Verkey', full_name='identitylayer.CreateAndStoreMyDidResponse.Verkey', index=1,
+      number=2, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=12153,
+  serialized_end=12211,
+)
+
+
+_REPLACEKEYSSTARTREQUEST = _descriptor.Descriptor(
+  name='ReplaceKeysStartRequest',
+  full_name='identitylayer.ReplaceKeysStartRequest',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='WalletHandle', full_name='identitylayer.ReplaceKeysStartRequest.WalletHandle', index=0,
+      number=1, type=3, cpp_type=2, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='Did', full_name='identitylayer.ReplaceKeysStartRequest.Did', index=1,
+      number=2, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='IdentityJson', full_name='identitylayer.ReplaceKeysStartRequest.IdentityJson', index=2,
+      number=3, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=12214,
+  serialized_end=12348,
+)
+
+
+_REPLACEKEYSSTARTIDENTITYJSONMESSAGE = _descriptor.Descriptor(
+  name='ReplaceKeysStartIdentityJsonMessage',
+  full_name='identitylayer.ReplaceKeysStartIdentityJsonMessage',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='Seed', full_name='identitylayer.ReplaceKeysStartIdentityJsonMessage.Seed', index=0,
+      number=1, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='CryptoType', full_name='identitylayer.ReplaceKeysStartIdentityJsonMessage.CryptoType', index=1,
+      number=2, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=12350,
+  serialized_end=12421,
+)
+
+
+_REPLACEKEYSSTARTRESPONSE = _descriptor.Descriptor(
+  name='ReplaceKeysStartResponse',
+  full_name='identitylayer.ReplaceKeysStartResponse',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='Verkey', full_name='identitylayer.ReplaceKeysStartResponse.Verkey', index=0,
+      number=1, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=12423,
+  serialized_end=12465,
+)
+
+
+_REPLACEKEYSAPPLYREQUEST = _descriptor.Descriptor(
+  name='ReplaceKeysApplyRequest',
+  full_name='identitylayer.ReplaceKeysApplyRequest',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='WalletHandle', full_name='identitylayer.ReplaceKeysApplyRequest.WalletHandle', index=0,
+      number=1, type=3, cpp_type=2, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='Did', full_name='identitylayer.ReplaceKeysApplyRequest.Did', index=1,
+      number=2, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=12467,
+  serialized_end=12527,
+)
+
+
+_REPLACEKEYSAPPLYRESPONSE = _descriptor.Descriptor(
+  name='ReplaceKeysApplyResponse',
+  full_name='identitylayer.ReplaceKeysApplyResponse',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='ErrorCode', full_name='identitylayer.ReplaceKeysApplyResponse.ErrorCode', index=0,
+      number=1, type=3, cpp_type=2, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=12529,
+  serialized_end=12574,
+)
+
+
+_STORETHEIRDIDREQUEST = _descriptor.Descriptor(
+  name='StoreTheirDidRequest',
+  full_name='identitylayer.StoreTheirDidRequest',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='WalletHandle', full_name='identitylayer.StoreTheirDidRequest.WalletHandle', index=0,
+      number=1, type=3, cpp_type=2, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='IdentityJson', full_name='identitylayer.StoreTheirDidRequest.IdentityJson', index=1,
+      number=2, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=12576,
+  serialized_end=12691,
+)
+
+
+_STORETHEIRDIDIDENTITYJSONMESSAGE = _descriptor.Descriptor(
+  name='StoreTheirDidIdentityJsonMessage',
+  full_name='identitylayer.StoreTheirDidIdentityJsonMessage',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='Did', full_name='identitylayer.StoreTheirDidIdentityJsonMessage.Did', index=0,
+      number=1, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='Verkey', full_name='identitylayer.StoreTheirDidIdentityJsonMessage.Verkey', index=1,
+      number=2, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='CryptoType', full_name='identitylayer.StoreTheirDidIdentityJsonMessage.CryptoType', index=2,
+      number=3, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=12693,
+  serialized_end=12776,
+)
+
+
+_STORETHEIRDIDRESPONSE = _descriptor.Descriptor(
+  name='StoreTheirDidResponse',
+  full_name='identitylayer.StoreTheirDidResponse',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='ErrorCode', full_name='identitylayer.StoreTheirDidResponse.ErrorCode', index=0,
+      number=1, type=3, cpp_type=2, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=12778,
+  serialized_end=12820,
+)
+
+
+_DIDCREATEKEYREQUEST = _descriptor.Descriptor(
+  name='DidCreateKeyRequest',
+  full_name='identitylayer.DidCreateKeyRequest',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='WalletHandle', full_name='identitylayer.DidCreateKeyRequest.WalletHandle', index=0,
+      number=1, type=3, cpp_type=2, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='KeyJson', full_name='identitylayer.DidCreateKeyRequest.KeyJson', index=1,
+      number=2, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=12822,
+  serialized_end=12882,
+)
+
+
+_DIDCREATEKEYRESPONSE = _descriptor.Descriptor(
+  name='DidCreateKeyResponse',
+  full_name='identitylayer.DidCreateKeyResponse',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='Verkey', full_name='identitylayer.DidCreateKeyResponse.Verkey', index=0,
+      number=1, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=12884,
+  serialized_end=12922,
+)
+
+
+_DIDSETKEYMETADATAREQUEST = _descriptor.Descriptor(
+  name='DidSetKeyMetadataRequest',
+  full_name='identitylayer.DidSetKeyMetadataRequest',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='WalletHandle', full_name='identitylayer.DidSetKeyMetadataRequest.WalletHandle', index=0,
+      number=1, type=3, cpp_type=2, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='Verkey', full_name='identitylayer.DidSetKeyMetadataRequest.Verkey', index=1,
+      number=2, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='Metadata', full_name='identitylayer.DidSetKeyMetadataRequest.Metadata', index=2,
+      number=3, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=12924,
+  serialized_end=13006,
+)
+
+
+_DIDSETKEYMETADATARESPONSE = _descriptor.Descriptor(
+  name='DidSetKeyMetadataResponse',
+  full_name='identitylayer.DidSetKeyMetadataResponse',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='ErrorCode', full_name='identitylayer.DidSetKeyMetadataResponse.ErrorCode', index=0,
+      number=1, type=3, cpp_type=2, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=13008,
+  serialized_end=13054,
+)
+
+
+_DIDGETKEYMETADATAREQUEST = _descriptor.Descriptor(
+  name='DidGetKeyMetadataRequest',
+  full_name='identitylayer.DidGetKeyMetadataRequest',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='WalletHandle', full_name='identitylayer.DidGetKeyMetadataRequest.WalletHandle', index=0,
+      number=1, type=3, cpp_type=2, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='Verkey', full_name='identitylayer.DidGetKeyMetadataRequest.Verkey', index=1,
+      number=2, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=13056,
+  serialized_end=13120,
+)
+
+
+_DIDGETKEYMETADATARESPONSE = _descriptor.Descriptor(
+  name='DidGetKeyMetadataResponse',
+  full_name='identitylayer.DidGetKeyMetadataResponse',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='Metadata', full_name='identitylayer.DidGetKeyMetadataResponse.Metadata', index=0,
+      number=1, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=13122,
+  serialized_end=13167,
+)
+
+
+_KEYFORDIDREQUEST = _descriptor.Descriptor(
+  name='KeyForDidRequest',
+  full_name='identitylayer.KeyForDidRequest',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='PoolHandle', full_name='identitylayer.KeyForDidRequest.PoolHandle', index=0,
+      number=1, type=3, cpp_type=2, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='WalletHandle', full_name='identitylayer.KeyForDidRequest.WalletHandle', index=1,
+      number=2, type=3, cpp_type=2, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='Did', full_name='identitylayer.KeyForDidRequest.Did', index=2,
+      number=3, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=13169,
+  serialized_end=13242,
+)
+
+
+_KEYFORDIDRESPONSE = _descriptor.Descriptor(
+  name='KeyForDidResponse',
+  full_name='identitylayer.KeyForDidResponse',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='Key', full_name='identitylayer.KeyForDidResponse.Key', index=0,
+      number=1, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=13244,
+  serialized_end=13276,
+)
+
+
+_KEYFORLOCALDIDREQUEST = _descriptor.Descriptor(
+  name='KeyForLocalDidRequest',
+  full_name='identitylayer.KeyForLocalDidRequest',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='WalletHandle', full_name='identitylayer.KeyForLocalDidRequest.WalletHandle', index=0,
+      number=1, type=3, cpp_type=2, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='Did', full_name='identitylayer.KeyForLocalDidRequest.Did', index=1,
+      number=2, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=13278,
+  serialized_end=13336,
+)
+
+
+_KEYFORLOCALDIDRESPONSE = _descriptor.Descriptor(
+  name='KeyForLocalDidResponse',
+  full_name='identitylayer.KeyForLocalDidResponse',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='Key', full_name='identitylayer.KeyForLocalDidResponse.Key', index=0,
+      number=1, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=13338,
+  serialized_end=13375,
+)
+
+
+_SETENDPOINTFORDIDREQUEST = _descriptor.Descriptor(
+  name='SetEndpointForDidRequest',
+  full_name='identitylayer.SetEndpointForDidRequest',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='WalletHandle', full_name='identitylayer.SetEndpointForDidRequest.WalletHandle', index=0,
+      number=1, type=3, cpp_type=2, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='Did', full_name='identitylayer.SetEndpointForDidRequest.Did', index=1,
+      number=2, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='Address', full_name='identitylayer.SetEndpointForDidRequest.Address', index=2,
+      number=3, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='TransportKey', full_name='identitylayer.SetEndpointForDidRequest.TransportKey', index=3,
+      number=4, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=13377,
+  serialized_end=13477,
+)
+
+
+_SETENDPOINTFORDIDRESPONSE = _descriptor.Descriptor(
+  name='SetEndpointForDidResponse',
+  full_name='identitylayer.SetEndpointForDidResponse',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='ErrorCode', full_name='identitylayer.SetEndpointForDidResponse.ErrorCode', index=0,
+      number=1, type=3, cpp_type=2, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=13479,
+  serialized_end=13525,
+)
+
+
+_GETENDPOINTFORDIDREQUEST = _descriptor.Descriptor(
+  name='GetEndpointForDidRequest',
+  full_name='identitylayer.GetEndpointForDidRequest',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='WalletHandle', full_name='identitylayer.GetEndpointForDidRequest.WalletHandle', index=0,
+      number=1, type=3, cpp_type=2, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='PoolHandle', full_name='identitylayer.GetEndpointForDidRequest.PoolHandle', index=1,
+      number=2, type=3, cpp_type=2, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='Did', full_name='identitylayer.GetEndpointForDidRequest.Did', index=2,
+      number=3, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=13527,
+  serialized_end=13608,
+)
+
+
+_GETENDPOINTFORDIDRESPONSE = _descriptor.Descriptor(
+  name='GetEndpointForDidResponse',
+  full_name='identitylayer.GetEndpointForDidResponse',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='Endpoint', full_name='identitylayer.GetEndpointForDidResponse.Endpoint', index=0,
+      number=1, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='TransportVk', full_name='identitylayer.GetEndpointForDidResponse.TransportVk', index=1,
+      number=2, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=13610,
+  serialized_end=13676,
+)
+
+
+_SETDIDMETADATAREQUEST = _descriptor.Descriptor(
+  name='SetDidMetadataRequest',
+  full_name='identitylayer.SetDidMetadataRequest',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='WalletHandle', full_name='identitylayer.SetDidMetadataRequest.WalletHandle', index=0,
+      number=1, type=3, cpp_type=2, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='Did', full_name='identitylayer.SetDidMetadataRequest.Did', index=1,
+      number=2, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='Metadata', full_name='identitylayer.SetDidMetadataRequest.Metadata', index=2,
+      number=3, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=13678,
+  serialized_end=13754,
+)
+
+
+_SETDIDMETADATARESPONSE = _descriptor.Descriptor(
+  name='SetDidMetadataResponse',
+  full_name='identitylayer.SetDidMetadataResponse',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='Error', full_name='identitylayer.SetDidMetadataResponse.Error', index=0,
+      number=1, type=3, cpp_type=2, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=13756,
+  serialized_end=13795,
+)
+
+
+_GETDIDMETADATAREQUEST = _descriptor.Descriptor(
+  name='GetDidMetadataRequest',
+  full_name='identitylayer.GetDidMetadataRequest',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='WalletHandle', full_name='identitylayer.GetDidMetadataRequest.WalletHandle', index=0,
+      number=1, type=3, cpp_type=2, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='Did', full_name='identitylayer.GetDidMetadataRequest.Did', index=1,
+      number=2, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=13797,
+  serialized_end=13855,
+)
+
+
+_GETDIDMETADATARESPONSE = _descriptor.Descriptor(
+  name='GetDidMetadataResponse',
+  full_name='identitylayer.GetDidMetadataResponse',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='Metadata', full_name='identitylayer.GetDidMetadataResponse.Metadata', index=0,
+      number=1, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=13857,
+  serialized_end=13899,
+)
+
+
+_GETMYDIDWITHMETAREQUEST = _descriptor.Descriptor(
+  name='GetMyDidWithMetaRequest',
+  full_name='identitylayer.GetMyDidWithMetaRequest',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='WalletHandle', full_name='identitylayer.GetMyDidWithMetaRequest.WalletHandle', index=0,
+      number=1, type=3, cpp_type=2, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='Did', full_name='identitylayer.GetMyDidWithMetaRequest.Did', index=1,
+      number=2, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=13901,
+  serialized_end=13961,
+)
+
+
+_GETMYDIDWITHMETARESPONSE = _descriptor.Descriptor(
+  name='GetMyDidWithMetaResponse',
+  full_name='identitylayer.GetMyDidWithMetaResponse',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='Did', full_name='identitylayer.GetMyDidWithMetaResponse.Did', index=0,
+      number=1, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=13963,
+  serialized_end=14002,
+)
+
+
+_LISTMYDIDSWITHMETAREQUEST = _descriptor.Descriptor(
+  name='ListMyDidsWithMetaRequest',
+  full_name='identitylayer.ListMyDidsWithMetaRequest',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='WalletHandle', full_name='identitylayer.ListMyDidsWithMetaRequest.WalletHandle', index=0,
+      number=1, type=3, cpp_type=2, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=14004,
+  serialized_end=14053,
+)
+
+
+_LISTMYDIDSWITHMETARESPONSE = _descriptor.Descriptor(
+  name='ListMyDidsWithMetaResponse',
+  full_name='identitylayer.ListMyDidsWithMetaResponse',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='Did', full_name='identitylayer.ListMyDidsWithMetaResponse.Did', index=0,
+      number=1, type=9, cpp_type=9, label=3,
+      has_default_value=False, default_value=[],
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=14055,
+  serialized_end=14096,
+)
+
+
+_ABBREVIATEVERKEYREQUEST = _descriptor.Descriptor(
+  name='AbbreviateVerkeyRequest',
+  full_name='identitylayer.AbbreviateVerkeyRequest',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='Did', full_name='identitylayer.AbbreviateVerkeyRequest.Did', index=0,
+      number=1, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='FullVerkey', full_name='identitylayer.AbbreviateVerkeyRequest.FullVerkey', index=1,
+      number=2, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=14098,
+  serialized_end=14156,
+)
+
+
+_ABBREVIATEVERKEYRESPONSE = _descriptor.Descriptor(
+  name='AbbreviateVerkeyResponse',
+  full_name='identitylayer.AbbreviateVerkeyResponse',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='Metadata', full_name='identitylayer.AbbreviateVerkeyResponse.Metadata', index=0,
+      number=1, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=14158,
+  serialized_end=14202,
+)
+
+
+_SIGNANDSUBMITREQUESTRQ = _descriptor.Descriptor(
+  name='SignAndSubmitRequestRq',
+  full_name='identitylayer.SignAndSubmitRequestRq',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='PoolHandle', full_name='identitylayer.SignAndSubmitRequestRq.PoolHandle', index=0,
+      number=1, type=3, cpp_type=2, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='WalletHandle', full_name='identitylayer.SignAndSubmitRequestRq.WalletHandle', index=1,
+      number=2, type=3, cpp_type=2, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='SubmitterDid', full_name='identitylayer.SignAndSubmitRequestRq.SubmitterDid', index=2,
+      number=3, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='RequestJson', full_name='identitylayer.SignAndSubmitRequestRq.RequestJson', index=3,
+      number=4, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=14204,
+  serialized_end=14313,
+)
+
+
+_SIGNANDSUBMITREQUESTRS = _descriptor.Descriptor(
+  name='SignAndSubmitRequestRs',
+  full_name='identitylayer.SignAndSubmitRequestRs',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='Resp', full_name='identitylayer.SignAndSubmitRequestRs.Resp', index=0,
+      number=1, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=14315,
+  serialized_end=14353,
+)
+
+
+_SUBMITREQUESTRQ = _descriptor.Descriptor(
+  name='SubmitRequestRq',
+  full_name='identitylayer.SubmitRequestRq',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='PoolHandle', full_name='identitylayer.SubmitRequestRq.PoolHandle', index=0,
+      number=1, type=3, cpp_type=2, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='RequestJson', full_name='identitylayer.SubmitRequestRq.RequestJson', index=1,
+      number=2, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=14355,
+  serialized_end=14413,
+)
+
+
+_SUBMITREQUESTRS = _descriptor.Descriptor(
+  name='SubmitRequestRs',
+  full_name='identitylayer.SubmitRequestRs',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='Resp', full_name='identitylayer.SubmitRequestRs.Resp', index=0,
+      number=1, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=14415,
+  serialized_end=14446,
+)
+
+
+_SUBMITACTIONRQ = _descriptor.Descriptor(
+  name='SubmitActionRq',
+  full_name='identitylayer.SubmitActionRq',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='PoolHandle', full_name='identitylayer.SubmitActionRq.PoolHandle', index=0,
+      number=1, type=3, cpp_type=2, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='RequestJson', full_name='identitylayer.SubmitActionRq.RequestJson', index=1,
+      number=2, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='Nodes', full_name='identitylayer.SubmitActionRq.Nodes', index=2,
+      number=3, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='Timeout', full_name='identitylayer.SubmitActionRq.Timeout', index=3,
+      number=4, type=3, cpp_type=2, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=14448,
+  serialized_end=14537,
+)
+
+
+_SUBMITACTIONRS = _descriptor.Descriptor(
+  name='SubmitActionRs',
+  full_name='identitylayer.SubmitActionRs',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='Resp', full_name='identitylayer.SubmitActionRs.Resp', index=0,
+      number=1, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=14539,
+  serialized_end=14569,
+)
+
+
+_SIGNREQUESTRQ = _descriptor.Descriptor(
+  name='SignRequestRq',
+  full_name='identitylayer.SignRequestRq',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='WalletHandle', full_name='identitylayer.SignRequestRq.WalletHandle', index=0,
+      number=1, type=3, cpp_type=2, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='SubmitterDid', full_name='identitylayer.SignRequestRq.SubmitterDid', index=1,
+      number=2, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='RequestJson', full_name='identitylayer.SignRequestRq.RequestJson', index=2,
+      number=3, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=14571,
+  serialized_end=14651,
+)
+
+
+_SIGNREQUESTRS = _descriptor.Descriptor(
+  name='SignRequestRs',
+  full_name='identitylayer.SignRequestRs',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='Resp', full_name='identitylayer.SignRequestRs.Resp', index=0,
+      number=1, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=14653,
+  serialized_end=14682,
+)
+
+
+_MULTISIGNREQUESTRQ = _descriptor.Descriptor(
+  name='MultiSignRequestRq',
+  full_name='identitylayer.MultiSignRequestRq',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='WalletHandle', full_name='identitylayer.MultiSignRequestRq.WalletHandle', index=0,
+      number=1, type=3, cpp_type=2, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='SubmitterDid', full_name='identitylayer.MultiSignRequestRq.SubmitterDid', index=1,
+      number=2, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='RequestJson', full_name='identitylayer.MultiSignRequestRq.RequestJson', index=2,
+      number=3, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=14684,
+  serialized_end=14769,
+)
+
+
+_MULTISIGNREQUESTRS = _descriptor.Descriptor(
+  name='MultiSignRequestRs',
+  full_name='identitylayer.MultiSignRequestRs',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='Resp', full_name='identitylayer.MultiSignRequestRs.Resp', index=0,
+      number=1, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=14771,
+  serialized_end=14805,
+)
+
+
+_BUILDGETDDOREQUESTRQ = _descriptor.Descriptor(
+  name='BuildGetDdoRequestRq',
+  full_name='identitylayer.BuildGetDdoRequestRq',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='SubmitterDid', full_name='identitylayer.BuildGetDdoRequestRq.SubmitterDid', index=0,
+      number=1, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='TargetDid', full_name='identitylayer.BuildGetDdoRequestRq.TargetDid', index=1,
+      number=2, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=14807,
+  serialized_end=14870,
+)
+
+
+_BUILDGETDDOREQUESTRS = _descriptor.Descriptor(
+  name='BuildGetDdoRequestRs',
+  full_name='identitylayer.BuildGetDdoRequestRs',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='Resp', full_name='identitylayer.BuildGetDdoRequestRs.Resp', index=0,
+      number=1, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=14872,
+  serialized_end=14908,
+)
+
+
+_BUILDNYMREQUESTRQ = _descriptor.Descriptor(
+  name='BuildNymRequestRq',
+  full_name='identitylayer.BuildNymRequestRq',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='SubmitterDid', full_name='identitylayer.BuildNymRequestRq.SubmitterDid', index=0,
+      number=1, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='TargetDid', full_name='identitylayer.BuildNymRequestRq.TargetDid', index=1,
+      number=2, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='VerKey', full_name='identitylayer.BuildNymRequestRq.VerKey', index=2,
+      number=3, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='Alias', full_name='identitylayer.BuildNymRequestRq.Alias', index=3,
+      number=4, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='Role', full_name='identitylayer.BuildNymRequestRq.Role', index=4,
+      number=5, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=14910,
+  serialized_end=15015,
+)
+
+
+_BUILDNYMREQUESTRS = _descriptor.Descriptor(
+  name='BuildNymRequestRs',
+  full_name='identitylayer.BuildNymRequestRs',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='Resp', full_name='identitylayer.BuildNymRequestRs.Resp', index=0,
+      number=1, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=15017,
+  serialized_end=15050,
+)
+
+
+_BUILDATTRIBREQUESTRQ = _descriptor.Descriptor(
+  name='BuildAttribRequestRq',
+  full_name='identitylayer.BuildAttribRequestRq',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='SubmitterDid', full_name='identitylayer.BuildAttribRequestRq.SubmitterDid', index=0,
+      number=1, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='TargetDid', full_name='identitylayer.BuildAttribRequestRq.TargetDid', index=1,
+      number=2, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='Xhash', full_name='identitylayer.BuildAttribRequestRq.Xhash', index=2,
+      number=3, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='Raw', full_name='identitylayer.BuildAttribRequestRq.Raw', index=3,
+      number=4, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='Enc', full_name='identitylayer.BuildAttribRequestRq.Enc', index=4,
+      number=5, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=15052,
+  serialized_end=15156,
+)
+
+
+_BUILDATTRIBREQUESTRS = _descriptor.Descriptor(
+  name='BuildAttribRequestRs',
+  full_name='identitylayer.BuildAttribRequestRs',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='Resp', full_name='identitylayer.BuildAttribRequestRs.Resp', index=0,
+      number=1, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=15158,
+  serialized_end=15194,
+)
+
+
+_BUILDGETATTRIBREQUESTRQ = _descriptor.Descriptor(
+  name='BuildGetAttribRequestRq',
+  full_name='identitylayer.BuildGetAttribRequestRq',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='SubmitterDid', full_name='identitylayer.BuildGetAttribRequestRq.SubmitterDid', index=0,
+      number=1, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='TargetDid', full_name='identitylayer.BuildGetAttribRequestRq.TargetDid', index=1,
+      number=2, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='Xhash', full_name='identitylayer.BuildGetAttribRequestRq.Xhash', index=2,
+      number=3, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='Raw', full_name='identitylayer.BuildGetAttribRequestRq.Raw', index=3,
+      number=4, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='Enc', full_name='identitylayer.BuildGetAttribRequestRq.Enc', index=4,
+      number=5, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=15196,
+  serialized_end=15303,
+)
+
+
+_BUILDGETATTRIBREQUESTRS = _descriptor.Descriptor(
+  name='BuildGetAttribRequestRs',
+  full_name='identitylayer.BuildGetAttribRequestRs',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='Resp', full_name='identitylayer.BuildGetAttribRequestRs.Resp', index=0,
+      number=1, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=15305,
+  serialized_end=15344,
+)
+
+
+_BUILDGETNYMREQUESTRQ = _descriptor.Descriptor(
+  name='BuildGetNymRequestRq',
+  full_name='identitylayer.BuildGetNymRequestRq',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='SubmitterDid', full_name='identitylayer.BuildGetNymRequestRq.SubmitterDid', index=0,
+      number=1, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='TargetDid', full_name='identitylayer.BuildGetNymRequestRq.TargetDid', index=1,
+      number=2, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=15346,
+  serialized_end=15409,
+)
+
+
+_BUILDGETNYMREQUESTRS = _descriptor.Descriptor(
+  name='BuildGetNymRequestRs',
+  full_name='identitylayer.BuildGetNymRequestRs',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='Resp', full_name='identitylayer.BuildGetNymRequestRs.Resp', index=0,
+      number=1, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=15411,
+  serialized_end=15447,
+)
+
+
+_BUILDSCHEMAREQUESTRQ = _descriptor.Descriptor(
+  name='BuildSchemaRequestRq',
+  full_name='identitylayer.BuildSchemaRequestRq',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='SubmitterDid', full_name='identitylayer.BuildSchemaRequestRq.SubmitterDid', index=0,
+      number=1, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='Data', full_name='identitylayer.BuildSchemaRequestRq.Data', index=1,
+      number=2, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=15449,
+  serialized_end=15507,
+)
+
+
+_BUILDSCHEMAREQUESTRS = _descriptor.Descriptor(
+  name='BuildSchemaRequestRs',
+  full_name='identitylayer.BuildSchemaRequestRs',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='Resp', full_name='identitylayer.BuildSchemaRequestRs.Resp', index=0,
+      number=1, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=15509,
+  serialized_end=15545,
+)
+
+
+_BUILDGETSCHEMAREQUESTRQ = _descriptor.Descriptor(
+  name='BuildGetSchemaRequestRq',
+  full_name='identitylayer.BuildGetSchemaRequestRq',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='SubmitterDid', full_name='identitylayer.BuildGetSchemaRequestRq.SubmitterDid', index=0,
+      number=1, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='Id_', full_name='identitylayer.BuildGetSchemaRequestRq.Id_', index=1,
+      number=2, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=15547,
+  serialized_end=15607,
+)
+
+
+_BUILDGETSCHEMAREQUESTRS = _descriptor.Descriptor(
+  name='BuildGetSchemaRequestRs',
+  full_name='identitylayer.BuildGetSchemaRequestRs',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='Resp', full_name='identitylayer.BuildGetSchemaRequestRs.Resp', index=0,
+      number=1, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=15609,
+  serialized_end=15648,
+)
+
+
+_PARSEGETSCHEMARESPONSERQ = _descriptor.Descriptor(
+  name='ParseGetSchemaResponseRq',
+  full_name='identitylayer.ParseGetSchemaResponseRq',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='GetSchemaResponse', full_name='identitylayer.ParseGetSchemaResponseRq.GetSchemaResponse', index=0,
+      number=1, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=15650,
+  serialized_end=15703,
+)
+
+
+_PARSEGETSCHEMARESPONSERS = _descriptor.Descriptor(
+  name='ParseGetSchemaResponseRs',
+  full_name='identitylayer.ParseGetSchemaResponseRs',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='Id', full_name='identitylayer.ParseGetSchemaResponseRs.Id', index=0,
+      number=1, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='SchemaJson', full_name='identitylayer.ParseGetSchemaResponseRs.SchemaJson', index=1,
+      number=2, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=15705,
+  serialized_end=15763,
+)
+
+
+_BUILDCREDDEFREQUESTRQ = _descriptor.Descriptor(
+  name='BuildCredDefRequestRq',
+  full_name='identitylayer.BuildCredDefRequestRq',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='SubmitterDid', full_name='identitylayer.BuildCredDefRequestRq.SubmitterDid', index=0,
+      number=1, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='Data', full_name='identitylayer.BuildCredDefRequestRq.Data', index=1,
+      number=2, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=15765,
+  serialized_end=15824,
+)
+
+
+_BUILDCREDDEFREQUESTRS = _descriptor.Descriptor(
+  name='BuildCredDefRequestRs',
+  full_name='identitylayer.BuildCredDefRequestRs',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='Resp', full_name='identitylayer.BuildCredDefRequestRs.Resp', index=0,
+      number=1, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=15826,
+  serialized_end=15863,
+)
+
+
+_BUILDGETCREDDEFREQUESTRQ = _descriptor.Descriptor(
+  name='BuildGetCredDefRequestRq',
+  full_name='identitylayer.BuildGetCredDefRequestRq',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='SubmitterDid', full_name='identitylayer.BuildGetCredDefRequestRq.SubmitterDid', index=0,
+      number=1, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='Id_', full_name='identitylayer.BuildGetCredDefRequestRq.Id_', index=1,
+      number=2, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=15865,
+  serialized_end=15926,
+)
+
+
+_BUILDGETCREDDEFREQUESTRS = _descriptor.Descriptor(
+  name='BuildGetCredDefRequestRs',
+  full_name='identitylayer.BuildGetCredDefRequestRs',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='Resp', full_name='identitylayer.BuildGetCredDefRequestRs.Resp', index=0,
+      number=1, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=15928,
+  serialized_end=15968,
+)
+
+
+_PARSEGETCREDDEFRESPONSERQ = _descriptor.Descriptor(
+  name='ParseGetCredDefResponseRq',
+  full_name='identitylayer.ParseGetCredDefResponseRq',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='GetCredDefResponse', full_name='identitylayer.ParseGetCredDefResponseRq.GetCredDefResponse', index=0,
+      number=1, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=15970,
+  serialized_end=16025,
+)
+
+
+_PARSEGETCREDDEFRESPONSERS = _descriptor.Descriptor(
+  name='ParseGetCredDefResponseRs',
+  full_name='identitylayer.ParseGetCredDefResponseRs',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='CredentialDefinitionId', full_name='identitylayer.ParseGetCredDefResponseRs.CredentialDefinitionId', index=0,
+      number=1, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='CredentialDefinitionJson', full_name='identitylayer.ParseGetCredDefResponseRs.CredentialDefinitionJson', index=1,
+      number=2, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=16027,
+  serialized_end=16120,
+)
+
+
+_BUILDNODEREQUESTRQ = _descriptor.Descriptor(
+  name='BuildNodeRequestRq',
+  full_name='identitylayer.BuildNodeRequestRq',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='SubmitterDid', full_name='identitylayer.BuildNodeRequestRq.SubmitterDid', index=0,
+      number=1, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='TargetDid', full_name='identitylayer.BuildNodeRequestRq.TargetDid', index=1,
+      number=2, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='Data', full_name='identitylayer.BuildNodeRequestRq.Data', index=2,
+      number=3, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=16122,
+  serialized_end=16197,
+)
+
+
+_BUILDNODEREQUESTRS = _descriptor.Descriptor(
+  name='BuildNodeRequestRs',
+  full_name='identitylayer.BuildNodeRequestRs',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='Resp', full_name='identitylayer.BuildNodeRequestRs.Resp', index=0,
+      number=1, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=16199,
+  serialized_end=16233,
+)
+
+
+_BUILDGETVALIDATORINFOREQUESTRQ = _descriptor.Descriptor(
+  name='BuildGetValidatorInfoRequestRq',
+  full_name='identitylayer.BuildGetValidatorInfoRequestRq',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='SubmitterDid', full_name='identitylayer.BuildGetValidatorInfoRequestRq.SubmitterDid', index=0,
+      number=1, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=16235,
+  serialized_end=16289,
+)
+
+
+_BUILDGETVALIDATORINFOREQUESTRS = _descriptor.Descriptor(
+  name='BuildGetValidatorInfoRequestRs',
+  full_name='identitylayer.BuildGetValidatorInfoRequestRs',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='Resp', full_name='identitylayer.BuildGetValidatorInfoRequestRs.Resp', index=0,
+      number=1, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=16291,
+  serialized_end=16337,
+)
+
+
+_BUILDGETTXNREQUESTRQ = _descriptor.Descriptor(
+  name='BuildGetTxnRequestRq',
+  full_name='identitylayer.BuildGetTxnRequestRq',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='SubmitterDid', full_name='identitylayer.BuildGetTxnRequestRq.SubmitterDid', index=0,
+      number=1, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='LedgerType', full_name='identitylayer.BuildGetTxnRequestRq.LedgerType', index=1,
+      number=2, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='SeqNo', full_name='identitylayer.BuildGetTxnRequestRq.SeqNo', index=2,
+      number=3, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=16339,
+  serialized_end=16418,
+)
+
+
+_BUILDGETTXNREQUESTRS = _descriptor.Descriptor(
+  name='BuildGetTxnRequestRs',
+  full_name='identitylayer.BuildGetTxnRequestRs',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='Resp', full_name='identitylayer.BuildGetTxnRequestRs.Resp', index=0,
+      number=1, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=16420,
+  serialized_end=16456,
+)
+
+
+_BUILDPOOLCONFIGREQUESTRQ = _descriptor.Descriptor(
+  name='BuildPoolConfigRequestRq',
+  full_name='identitylayer.BuildPoolConfigRequestRq',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='SubmitterDid', full_name='identitylayer.BuildPoolConfigRequestRq.SubmitterDid', index=0,
+      number=1, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='Writes', full_name='identitylayer.BuildPoolConfigRequestRq.Writes', index=1,
+      number=2, type=8, cpp_type=7, label=1,
+      has_default_value=False, default_value=False,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='Force', full_name='identitylayer.BuildPoolConfigRequestRq.Force', index=2,
+      number=3, type=8, cpp_type=7, label=1,
+      has_default_value=False, default_value=False,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=16458,
+  serialized_end=16537,
+)
+
+
+_BUILDPOOLCONFIGREQUESTRS = _descriptor.Descriptor(
+  name='BuildPoolConfigRequestRs',
+  full_name='identitylayer.BuildPoolConfigRequestRs',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='Resp', full_name='identitylayer.BuildPoolConfigRequestRs.Resp', index=0,
+      number=1, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=16539,
+  serialized_end=16579,
+)
+
+
+_BUILDPOOLRESTARTREQUESTRQ = _descriptor.Descriptor(
+  name='BuildPoolRestartRequestRq',
+  full_name='identitylayer.BuildPoolRestartRequestRq',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='SubmitterDid', full_name='identitylayer.BuildPoolRestartRequestRq.SubmitterDid', index=0,
+      number=1, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='Action', full_name='identitylayer.BuildPoolRestartRequestRq.Action', index=1,
+      number=2, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='Datetime', full_name='identitylayer.BuildPoolRestartRequestRq.Datetime', index=2,
+      number=3, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=16581,
+  serialized_end=16664,
+)
+
+
+_BUILDPOOLRESTARTREQUESTRS = _descriptor.Descriptor(
+  name='BuildPoolRestartRequestRs',
+  full_name='identitylayer.BuildPoolRestartRequestRs',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='Resp', full_name='identitylayer.BuildPoolRestartRequestRs.Resp', index=0,
+      number=1, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=16666,
+  serialized_end=16707,
+)
+
+
+_BUILDPOOLUPGRADEREQUESTRQ = _descriptor.Descriptor(
+  name='BuildPoolUpgradeRequestRq',
+  full_name='identitylayer.BuildPoolUpgradeRequestRq',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='SubmitterDid', full_name='identitylayer.BuildPoolUpgradeRequestRq.SubmitterDid', index=0,
+      number=1, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='Name', full_name='identitylayer.BuildPoolUpgradeRequestRq.Name', index=1,
+      number=2, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='Version', full_name='identitylayer.BuildPoolUpgradeRequestRq.Version', index=2,
+      number=3, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='Action', full_name='identitylayer.BuildPoolUpgradeRequestRq.Action', index=3,
+      number=4, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='_sha256', full_name='identitylayer.BuildPoolUpgradeRequestRq._sha256', index=4,
+      number=5, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='_timeout', full_name='identitylayer.BuildPoolUpgradeRequestRq._timeout', index=5,
+      number=6, type=3, cpp_type=2, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='Schedule', full_name='identitylayer.BuildPoolUpgradeRequestRq.Schedule', index=6,
+      number=7, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='Justification', full_name='identitylayer.BuildPoolUpgradeRequestRq.Justification', index=7,
+      number=8, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='Reinstall', full_name='identitylayer.BuildPoolUpgradeRequestRq.Reinstall', index=8,
+      number=9, type=8, cpp_type=7, label=1,
+      has_default_value=False, default_value=False,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='Force', full_name='identitylayer.BuildPoolUpgradeRequestRq.Force', index=9,
+      number=10, type=8, cpp_type=7, label=1,
+      has_default_value=False, default_value=False,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='Package', full_name='identitylayer.BuildPoolUpgradeRequestRq.Package', index=10,
+      number=11, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=16710,
+  serialized_end=16933,
+)
+
+
+_BUILDPOOLUPGRADEREQUESTRS = _descriptor.Descriptor(
+  name='BuildPoolUpgradeRequestRs',
+  full_name='identitylayer.BuildPoolUpgradeRequestRs',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='Resp', full_name='identitylayer.BuildPoolUpgradeRequestRs.Resp', index=0,
+      number=1, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=16935,
+  serialized_end=16976,
+)
+
+
+_BUILDREVOCREGDEFREQUESTRQ = _descriptor.Descriptor(
+  name='BuildRevocRegDefRequestRq',
+  full_name='identitylayer.BuildRevocRegDefRequestRq',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='SubmitterDid', full_name='identitylayer.BuildRevocRegDefRequestRq.SubmitterDid', index=0,
+      number=1, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='Data', full_name='identitylayer.BuildRevocRegDefRequestRq.Data', index=1,
+      number=2, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=16978,
+  serialized_end=17041,
+)
+
+
+_BUILDREVOCREGDEFREQUESTRS = _descriptor.Descriptor(
+  name='BuildRevocRegDefRequestRs',
+  full_name='identitylayer.BuildRevocRegDefRequestRs',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='Resp', full_name='identitylayer.BuildRevocRegDefRequestRs.Resp', index=0,
+      number=1, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=17043,
+  serialized_end=17084,
+)
+
+
+_BUILDGETREVOCREGDEFREQUESTRQ = _descriptor.Descriptor(
+  name='BuildGetRevocRegDefRequestRq',
+  full_name='identitylayer.BuildGetRevocRegDefRequestRq',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='SubmitterDid', full_name='identitylayer.BuildGetRevocRegDefRequestRq.SubmitterDid', index=0,
+      number=1, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='RevRegDefId', full_name='identitylayer.BuildGetRevocRegDefRequestRq.RevRegDefId', index=1,
+      number=2, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=17086,
+  serialized_end=17159,
+)
+
+
+_BUILDGETREVOCREGDEFREQUESTRS = _descriptor.Descriptor(
+  name='BuildGetRevocRegDefRequestRs',
+  full_name='identitylayer.BuildGetRevocRegDefRequestRs',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='Resp', full_name='identitylayer.BuildGetRevocRegDefRequestRs.Resp', index=0,
+      number=1, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=17161,
+  serialized_end=17205,
+)
+
+
+_PARSEGETREVOCREGDEFRESPONSERQ = _descriptor.Descriptor(
+  name='ParseGetRevocRegDefResponseRq',
+  full_name='identitylayer.ParseGetRevocRegDefResponseRq',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='GetRevocRefDefResponse', full_name='identitylayer.ParseGetRevocRegDefResponseRq.GetRevocRefDefResponse', index=0,
+      number=1, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=17207,
+  serialized_end=17270,
+)
+
+
+_PARSEGETREVOCREGDEFRESPONSERS = _descriptor.Descriptor(
+  name='ParseGetRevocRegDefResponseRs',
+  full_name='identitylayer.ParseGetRevocRegDefResponseRs',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='RevocationId', full_name='identitylayer.ParseGetRevocRegDefResponseRs.RevocationId', index=0,
+      number=1, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='RevocationJson', full_name='identitylayer.ParseGetRevocRegDefResponseRs.RevocationJson', index=1,
+      number=2, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=17272,
+  serialized_end=17349,
+)
+
+
+_BUILDREVOCREGENTRYREQUESTRQ = _descriptor.Descriptor(
+  name='BuildRevocRegEntryRequestRq',
+  full_name='identitylayer.BuildRevocRegEntryRequestRq',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='SubmitterDid', full_name='identitylayer.BuildRevocRegEntryRequestRq.SubmitterDid', index=0,
+      number=1, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='RevocRegDefId', full_name='identitylayer.BuildRevocRegEntryRequestRq.RevocRegDefId', index=1,
+      number=2, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='RevDefType', full_name='identitylayer.BuildRevocRegEntryRequestRq.RevDefType', index=2,
+      number=3, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='Value', full_name='identitylayer.BuildRevocRegEntryRequestRq.Value', index=3,
+      number=4, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=17351,
+  serialized_end=17460,
+)
+
+
+_BUILDREVOCREGENTRYREQUESTRS = _descriptor.Descriptor(
+  name='BuildRevocRegEntryRequestRs',
+  full_name='identitylayer.BuildRevocRegEntryRequestRs',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='Resp', full_name='identitylayer.BuildRevocRegEntryRequestRs.Resp', index=0,
+      number=1, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=17462,
+  serialized_end=17505,
+)
+
+
+_BUILDGETREVOCREGREQUESTRQ = _descriptor.Descriptor(
+  name='BuildGetRevocRegRequestRq',
+  full_name='identitylayer.BuildGetRevocRegRequestRq',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='SubmitterDid', full_name='identitylayer.BuildGetRevocRegRequestRq.SubmitterDid', index=0,
+      number=1, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='RevocRegDefId', full_name='identitylayer.BuildGetRevocRegRequestRq.RevocRegDefId', index=1,
+      number=2, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='Timestamp', full_name='identitylayer.BuildGetRevocRegRequestRq.Timestamp', index=2,
+      number=3, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=17507,
+  serialized_end=17598,
+)
+
+
+_BUILDGETREVOCREGREQUESTRS = _descriptor.Descriptor(
+  name='BuildGetRevocRegRequestRs',
+  full_name='identitylayer.BuildGetRevocRegRequestRs',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='Resp', full_name='identitylayer.BuildGetRevocRegRequestRs.Resp', index=0,
+      number=1, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=17600,
+  serialized_end=17641,
+)
+
+
+_PARSEGETREVOCREGRESPONSERQ = _descriptor.Descriptor(
+  name='ParseGetRevocRegResponseRq',
+  full_name='identitylayer.ParseGetRevocRegResponseRq',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='GetRevocRegResponse', full_name='identitylayer.ParseGetRevocRegResponseRq.GetRevocRegResponse', index=0,
+      number=1, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=17643,
+  serialized_end=17700,
+)
+
+
+_PARSEGETREVOCREGRESPONSERS = _descriptor.Descriptor(
+  name='ParseGetRevocRegResponseRs',
+  full_name='identitylayer.ParseGetRevocRegResponseRs',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='Id', full_name='identitylayer.ParseGetRevocRegResponseRs.Id', index=0,
+      number=1, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='Json', full_name='identitylayer.ParseGetRevocRegResponseRs.Json', index=1,
+      number=2, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='Timestamp', full_name='identitylayer.ParseGetRevocRegResponseRs.Timestamp', index=2,
+      number=3, type=3, cpp_type=2, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=17702,
+  serialized_end=17775,
+)
+
+
+_BUILDGETREVOCREGDELTAREQUESTRQ = _descriptor.Descriptor(
+  name='BuildGetRevocRegDeltaRequestRq',
+  full_name='identitylayer.BuildGetRevocRegDeltaRequestRq',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='SubmiterDid', full_name='identitylayer.BuildGetRevocRegDeltaRequestRq.SubmiterDid', index=0,
+      number=1, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='RevocRegDefId', full_name='identitylayer.BuildGetRevocRegDeltaRequestRq.RevocRegDefId', index=1,
+      number=2, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='From_', full_name='identitylayer.BuildGetRevocRegDeltaRequestRq.From_', index=2,
+      number=3, type=3, cpp_type=2, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='To', full_name='identitylayer.BuildGetRevocRegDeltaRequestRq.To', index=3,
+      number=4, type=3, cpp_type=2, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=17777,
+  serialized_end=17880,
+)
+
+
+_BUILDGETREVOCREGDELTAREQUESTRS = _descriptor.Descriptor(
+  name='BuildGetRevocRegDeltaRequestRs',
+  full_name='identitylayer.BuildGetRevocRegDeltaRequestRs',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='Resp', full_name='identitylayer.BuildGetRevocRegDeltaRequestRs.Resp', index=0,
+      number=1, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=17882,
+  serialized_end=17928,
+)
+
+
+_PARSEGETREVOCREGDELTARESPONSERQ = _descriptor.Descriptor(
+  name='ParseGetRevocRegDeltaResponseRq',
+  full_name='identitylayer.ParseGetRevocRegDeltaResponseRq',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='GetRevocRegDeltaResponse', full_name='identitylayer.ParseGetRevocRegDeltaResponseRq.GetRevocRegDeltaResponse', index=0,
+      number=1, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=17930,
+  serialized_end=17997,
+)
+
+
+_PARSEGETREVOCREGDELTARESPONSERS = _descriptor.Descriptor(
+  name='ParseGetRevocRegDeltaResponseRs',
+  full_name='identitylayer.ParseGetRevocRegDeltaResponseRs',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='Id', full_name='identitylayer.ParseGetRevocRegDeltaResponseRs.Id', index=0,
+      number=1, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='Json', full_name='identitylayer.ParseGetRevocRegDeltaResponseRs.Json', index=1,
+      number=2, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='Timestamp', full_name='identitylayer.ParseGetRevocRegDeltaResponseRs.Timestamp', index=2,
+      number=3, type=3, cpp_type=2, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=17999,
+  serialized_end=18077,
+)
+
+
+_GETRESPONSEMETADATARQ = _descriptor.Descriptor(
+  name='GetResponseMetadataRq',
+  full_name='identitylayer.GetResponseMetadataRq',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='Response', full_name='identitylayer.GetResponseMetadataRq.Response', index=0,
+      number=1, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=18079,
+  serialized_end=18120,
+)
+
+
+_GETRESPONSEMETADATARS = _descriptor.Descriptor(
+  name='GetResponseMetadataRs',
+  full_name='identitylayer.GetResponseMetadataRs',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='Resp', full_name='identitylayer.GetResponseMetadataRs.Resp', index=0,
+      number=1, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=18122,
+  serialized_end=18159,
+)
+
+
+_ADDWALLETRECORDREQUEST = _descriptor.Descriptor(
+  name='AddWalletRecordRequest',
+  full_name='identitylayer.AddWalletRecordRequest',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='WalletHandle', full_name='identitylayer.AddWalletRecordRequest.WalletHandle', index=0,
+      number=1, type=3, cpp_type=2, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='Type_', full_name='identitylayer.AddWalletRecordRequest.Type_', index=1,
+      number=2, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='Id_', full_name='identitylayer.AddWalletRecordRequest.Id_', index=2,
+      number=3, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='Value', full_name='identitylayer.AddWalletRecordRequest.Value', index=3,
+      number=4, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='TagsJson', full_name='identitylayer.AddWalletRecordRequest.TagsJson', index=4,
+      number=5, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=18161,
+  serialized_end=18268,
+)
+
+
+_ADDWALLETRECORDRESPONSE = _descriptor.Descriptor(
+  name='AddWalletRecordResponse',
+  full_name='identitylayer.AddWalletRecordResponse',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='Resp', full_name='identitylayer.AddWalletRecordResponse.Resp', index=0,
+      number=1, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=18270,
+  serialized_end=18309,
+)
+
+
+_UPDATEWALLETRECORDVALUEREQUEST = _descriptor.Descriptor(
+  name='UpdateWalletRecordValueRequest',
+  full_name='identitylayer.UpdateWalletRecordValueRequest',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='WalletHandle', full_name='identitylayer.UpdateWalletRecordValueRequest.WalletHandle', index=0,
+      number=1, type=3, cpp_type=2, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='Type_', full_name='identitylayer.UpdateWalletRecordValueRequest.Type_', index=1,
+      number=2, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='Id_', full_name='identitylayer.UpdateWalletRecordValueRequest.Id_', index=2,
+      number=3, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='value', full_name='identitylayer.UpdateWalletRecordValueRequest.value', index=3,
+      number=4, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=18311,
+  serialized_end=18408,
+)
+
+
+_UPDATEWALLETRECORDVALUERESPONSE = _descriptor.Descriptor(
+  name='UpdateWalletRecordValueResponse',
+  full_name='identitylayer.UpdateWalletRecordValueResponse',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='Resp', full_name='identitylayer.UpdateWalletRecordValueResponse.Resp', index=0,
+      number=1, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=18410,
+  serialized_end=18457,
+)
+
+
+_UPDATEWALLETRECORDTAGSREQUEST = _descriptor.Descriptor(
+  name='UpdateWalletRecordTagsRequest',
+  full_name='identitylayer.UpdateWalletRecordTagsRequest',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='WalletHandle', full_name='identitylayer.UpdateWalletRecordTagsRequest.WalletHandle', index=0,
+      number=1, type=3, cpp_type=2, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='Type_', full_name='identitylayer.UpdateWalletRecordTagsRequest.Type_', index=1,
+      number=2, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='Id_', full_name='identitylayer.UpdateWalletRecordTagsRequest.Id_', index=2,
+      number=3, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='TagsJson', full_name='identitylayer.UpdateWalletRecordTagsRequest.TagsJson', index=3,
+      number=4, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=18459,
+  serialized_end=18558,
+)
+
+
+_UPDATEWALLETRECORDTAGSRESPONSE = _descriptor.Descriptor(
+  name='UpdateWalletRecordTagsResponse',
+  full_name='identitylayer.UpdateWalletRecordTagsResponse',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='Resp', full_name='identitylayer.UpdateWalletRecordTagsResponse.Resp', index=0,
+      number=1, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=18560,
+  serialized_end=18606,
+)
+
+
+_ADDWALLETRECORDTAGSREQUEST = _descriptor.Descriptor(
+  name='AddWalletRecordTagsRequest',
+  full_name='identitylayer.AddWalletRecordTagsRequest',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='WalletHandle', full_name='identitylayer.AddWalletRecordTagsRequest.WalletHandle', index=0,
+      number=1, type=3, cpp_type=2, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='Type_', full_name='identitylayer.AddWalletRecordTagsRequest.Type_', index=1,
+      number=2, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='Id_', full_name='identitylayer.AddWalletRecordTagsRequest.Id_', index=2,
+      number=3, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='TagsJson', full_name='identitylayer.AddWalletRecordTagsRequest.TagsJson', index=3,
+      number=4, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=18608,
+  serialized_end=18704,
+)
+
+
+_ADDWALLETRECORDTAGSRESPONSE = _descriptor.Descriptor(
+  name='AddWalletRecordTagsResponse',
+  full_name='identitylayer.AddWalletRecordTagsResponse',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='Resp', full_name='identitylayer.AddWalletRecordTagsResponse.Resp', index=0,
+      number=1, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=18706,
+  serialized_end=18749,
+)
+
+
+_DELETEWALLETRECORDTAGSREQUEST = _descriptor.Descriptor(
+  name='DeleteWalletRecordTagsRequest',
+  full_name='identitylayer.DeleteWalletRecordTagsRequest',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='WalletHandle', full_name='identitylayer.DeleteWalletRecordTagsRequest.WalletHandle', index=0,
+      number=1, type=3, cpp_type=2, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='Type_', full_name='identitylayer.DeleteWalletRecordTagsRequest.Type_', index=1,
+      number=2, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='Id_', full_name='identitylayer.DeleteWalletRecordTagsRequest.Id_', index=2,
+      number=3, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='TagNamesJson', full_name='identitylayer.DeleteWalletRecordTagsRequest.TagNamesJson', index=3,
+      number=4, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=18751,
+  serialized_end=18854,
+)
+
+
+_DELETEWALLETRECORDTAGSRESPONSE = _descriptor.Descriptor(
+  name='DeleteWalletRecordTagsResponse',
+  full_name='identitylayer.DeleteWalletRecordTagsResponse',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='Resp', full_name='identitylayer.DeleteWalletRecordTagsResponse.Resp', index=0,
+      number=1, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=18856,
+  serialized_end=18902,
+)
+
+
+_DELETEWALLETRECORDREQUEST = _descriptor.Descriptor(
+  name='DeleteWalletRecordRequest',
+  full_name='identitylayer.DeleteWalletRecordRequest',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='WalletHandle', full_name='identitylayer.DeleteWalletRecordRequest.WalletHandle', index=0,
+      number=1, type=3, cpp_type=2, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='Type_', full_name='identitylayer.DeleteWalletRecordRequest.Type_', index=1,
+      number=2, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='Id_', full_name='identitylayer.DeleteWalletRecordRequest.Id_', index=2,
+      number=3, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=18904,
+  serialized_end=18981,
+)
+
+
+_DELETEWALLETRECORDRESPONSE = _descriptor.Descriptor(
+  name='DeleteWalletRecordResponse',
+  full_name='identitylayer.DeleteWalletRecordResponse',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='Resp', full_name='identitylayer.DeleteWalletRecordResponse.Resp', index=0,
+      number=1, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=18983,
+  serialized_end=19025,
+)
+
+
+_GETWALLETRECORDREQUEST = _descriptor.Descriptor(
+  name='GetWalletRecordRequest',
+  full_name='identitylayer.GetWalletRecordRequest',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='WalletHandle', full_name='identitylayer.GetWalletRecordRequest.WalletHandle', index=0,
+      number=1, type=3, cpp_type=2, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='Type_', full_name='identitylayer.GetWalletRecordRequest.Type_', index=1,
+      number=2, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='Id', full_name='identitylayer.GetWalletRecordRequest.Id', index=2,
+      number=3, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='OptionsJson', full_name='identitylayer.GetWalletRecordRequest.OptionsJson', index=3,
+      number=4, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=19027,
+  serialized_end=19121,
+)
+
+
+_GETWALLETRECORDRESPONSE = _descriptor.Descriptor(
+  name='GetWalletRecordResponse',
+  full_name='identitylayer.GetWalletRecordResponse',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='Resp', full_name='identitylayer.GetWalletRecordResponse.Resp', index=0,
+      number=1, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=19123,
+  serialized_end=19162,
+)
+
+
+_OPENWALLETSEARCHREQUEST = _descriptor.Descriptor(
+  name='OpenWalletSearchRequest',
+  full_name='identitylayer.OpenWalletSearchRequest',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='WalletHandle', full_name='identitylayer.OpenWalletSearchRequest.WalletHandle', index=0,
+      number=1, type=3, cpp_type=2, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='Type_', full_name='identitylayer.OpenWalletSearchRequest.Type_', index=1,
+      number=2, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='QueryJson', full_name='identitylayer.OpenWalletSearchRequest.QueryJson', index=2,
+      number=3, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='OptionsJson', full_name='identitylayer.OpenWalletSearchRequest.OptionsJson', index=3,
+      number=4, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=19164,
+  serialized_end=19266,
+)
+
+
+_OPENWALLETSEARCHRESPONSE = _descriptor.Descriptor(
+  name='OpenWalletSearchResponse',
+  full_name='identitylayer.OpenWalletSearchResponse',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='SearchHandle', full_name='identitylayer.OpenWalletSearchResponse.SearchHandle', index=0,
+      number=1, type=3, cpp_type=2, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=19268,
+  serialized_end=19316,
+)
+
+
+_FETCHWALLETSEARCHNEXTRECORDSREQUEST = _descriptor.Descriptor(
+  name='FetchWalletSearchNextRecordsRequest',
+  full_name='identitylayer.FetchWalletSearchNextRecordsRequest',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='WalletHandle', full_name='identitylayer.FetchWalletSearchNextRecordsRequest.WalletHandle', index=0,
+      number=1, type=3, cpp_type=2, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='WalletSearchHandle', full_name='identitylayer.FetchWalletSearchNextRecordsRequest.WalletSearchHandle', index=1,
+      number=2, type=3, cpp_type=2, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='Count', full_name='identitylayer.FetchWalletSearchNextRecordsRequest.Count', index=2,
+      number=3, type=3, cpp_type=2, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=19318,
+  serialized_end=19420,
+)
+
+
+_FETCHWALLETSEARCHNEXTRECORDSRESPONSE = _descriptor.Descriptor(
+  name='FetchWalletSearchNextRecordsResponse',
+  full_name='identitylayer.FetchWalletSearchNextRecordsResponse',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='WalletRecordsJson', full_name='identitylayer.FetchWalletSearchNextRecordsResponse.WalletRecordsJson', index=0,
+      number=1, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=19422,
+  serialized_end=19487,
+)
+
+
+_CLOSEWALLETSEARCHREQUEST = _descriptor.Descriptor(
+  name='CloseWalletSearchRequest',
+  full_name='identitylayer.CloseWalletSearchRequest',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='WalletSearchHandle', full_name='identitylayer.CloseWalletSearchRequest.WalletSearchHandle', index=0,
+      number=1, type=3, cpp_type=2, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=19489,
+  serialized_end=19543,
+)
+
+
+_CLOSEWALLETSEARCHRESPONSE = _descriptor.Descriptor(
+  name='CloseWalletSearchResponse',
+  full_name='identitylayer.CloseWalletSearchResponse',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='Resp', full_name='identitylayer.CloseWalletSearchResponse.Resp', index=0,
+      number=1, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=19545,
+  serialized_end=19586,
+)
+
+_NEWWALLETDEFINITION.fields_by_name['walletConfig'].message_type = _CONFIG
+_NEWWALLETDEFINITION.fields_by_name['walletCredentials'].message_type = _CREDENTIALS
+_CONFIG.fields_by_name['storePath'].message_type = _STORAGECONFIG
+_OPENWALLETDEFINITION.fields_by_name['Config'].message_type = _OPENWALLETCONFIG
+_OPENWALLETDEFINITION.fields_by_name['Credentials'].message_type = _OPENWALLETCREDENTIALS
+_OPENWALLETCONFIG.fields_by_name['Path'].message_type = _OPENWALLETSTORAGECONFIG
+_DELETEWALLETDEFINITION.fields_by_name['Config'].message_type = _DELETEWALLETCONFIG
+_DELETEWALLETDEFINITION.fields_by_name['Credentials'].message_type = _DELETEWALETCREDENTIALS
+_DELETEWALLETCONFIG.fields_by_name['StorageConfig'].message_type = _DELETEWALLETSTORAGECONFIGURATION
+_EXPORTWALLETDEFINITION.fields_by_name['ExportConfigJson'].message_type = _EXPORTWALLETCONFIGJSON
+_IMPORTWALLETDEFINITION.fields_by_name['Config'].message_type = _IMPORTWALLETCONFIG
+_IMPORTWALLETDEFINITION.fields_by_name['Credentials'].message_type = _IMPORTWALLETCREDENTIALS
+_IMPORTWALLETDEFINITION.fields_by_name['ConfigJson'].message_type = _IMPORTWALLETCONFIGJSON
+_IMPORTWALLETCONFIG.fields_by_name['StorageConfig'].message_type = _IMPORTWALLETSTORAGECONFIG
+_CREATEPOOLLEDGERCONFIGREQUEST.fields_by_name['Config'].message_type = _CONFIGCREATEPOOLLEDGER
+_OPENPOOLLEDGERREQUEST.fields_by_name['Config'].message_type = _CONFIGOPENLEDGER
+_ISSUERCREATECREDENTIALOFFERRESPONSE.fields_by_name['KeyCorrectnessProof'].message_type = google_dot_protobuf_dot_any__pb2._ANY
+_ISSUERCREATECREDENTIALRESPONSE.fields_by_name['CredJson'].message_type = _CREDJSONMESSAGE
+_CREDJSONMESSAGE.fields_by_name['Values'].message_type = google_dot_protobuf_dot_any__pb2._ANY
+_CREDJSONMESSAGE.fields_by_name['Signature'].message_type = google_dot_protobuf_dot_any__pb2._ANY
+_CREDJSONMESSAGE.fields_by_name['SignatureCorrectnessProof'].message_type = google_dot_protobuf_dot_any__pb2._ANY
+_PROVERCREATECREDENTIALREQRESPONSE.fields_by_name['CredReqJson'].message_type = _CREDREQJSONMESSAGE
+_CREDREQJSONMESSAGE.fields_by_name['BlindedMs'].message_type = google_dot_protobuf_dot_any__pb2._ANY
+_CREDREQJSONMESSAGE.fields_by_name['BlindedMsCorrectnessProof'].message_type = google_dot_protobuf_dot_any__pb2._ANY
+_PROVERGETCREDENTIALSREQUEST.fields_by_name['FilterJson'].message_type = _FILTERJSONMESSAGE
+_PROVERGETCREDENTIALSRESPONSE.fields_by_name['CredentialsJson'].message_type = _CREDENTIALSJSONMESSAGE
+_PROVERFETCHCREDENTIALSRESPONSE.fields_by_name['CredentialsJson'].message_type = _CREDENTIALSJSONMESSAGE
+_PROVERGETCREDENTIALSFORPROOFREQREQUEST.fields_by_name['ProofRequestJson'].message_type = _PROOFREQUESTJSONMESSAGE
+_PROOFREQUESTJSONMESSAGE.fields_by_name['NonRevoked'].message_type = google_dot_protobuf_dot_any__pb2._ANY
+_PROVERSEARCHCREDENTIALSFORPROOFREQREQUEST.fields_by_name['ProofRequestJson'].message_type = _PROOFREQUESTJSONMESSAGE
+_PROVERSEARCHCREDENTIALSFORPROOFREQREQUEST.fields_by_name['ExtraQueryJson'].message_type = _EXTRAQUERYJSONMESSAGE
+_EXTRAQUERYJSONMESSAGE.fields_by_name['AttrReferent'].message_type = google_dot_protobuf_dot_any__pb2._ANY
+_EXTRAQUERYJSONMESSAGE.fields_by_name['PredicateReferent'].message_type = google_dot_protobuf_dot_any__pb2._ANY
+_PROVERFETCHCREDENTIALSFORPROOFREQRESPONSE.fields_by_name['CredentialsJson'].message_type = _CREDENTIALSGIVENPROOFREQUEST
+_CREDENTIALSGIVENPROOFREQUEST.fields_by_name['CredInfo'].message_type = _CREDENTIALINFO
+_CREDENTIALSGIVENPROOFREQUEST.fields_by_name['Interval'].message_type = google_dot_protobuf_dot_any__pb2._ANY
+_PROVERCREATEPROOFREQUEST.fields_by_name['ProofReqJson'].message_type = _PROOFREQJSONMESSAGE
+_PROVERCREATEPROOFREQUEST.fields_by_name['RequestedCredentialsJson'].message_type = _REQUESTEDCREDENTIALSJSONMESSAGE
+_PROOFREQJSONMESSAGE.fields_by_name['NonRevoInterval'].message_type = _NONREVOCINTERVALMESSAGE
+_VERIFIERVERIFYPROOFREQUEST.fields_by_name['ProofRequestJson'].message_type = _PROOFREQUESTJSONMESSAGE
+_CREATEANDSTOREMYDIDREQUEST.fields_by_name['DidJson'].message_type = _CREATEANDSTOREMYDIDJSONMESSAGE
+_REPLACEKEYSSTARTREQUEST.fields_by_name['IdentityJson'].message_type = _REPLACEKEYSSTARTIDENTITYJSONMESSAGE
+_STORETHEIRDIDREQUEST.fields_by_name['IdentityJson'].message_type = _STORETHEIRDIDIDENTITYJSONMESSAGE
+DESCRIPTOR.message_types_by_name['NewWalletDefinition'] = _NEWWALLETDEFINITION
+DESCRIPTOR.message_types_by_name['Config'] = _CONFIG
+DESCRIPTOR.message_types_by_name['StorageConfig'] = _STORAGECONFIG
+DESCRIPTOR.message_types_by_name['Credentials'] = _CREDENTIALS
+DESCRIPTOR.message_types_by_name['CreateWalletErrorCode'] = _CREATEWALLETERRORCODE
+DESCRIPTOR.message_types_by_name['OpenWalletDefinition'] = _OPENWALLETDEFINITION
+DESCRIPTOR.message_types_by_name['OpenWalletConfig'] = _OPENWALLETCONFIG
+DESCRIPTOR.message_types_by_name['OpenWalletStorageConfig'] = _OPENWALLETSTORAGECONFIG
+DESCRIPTOR.message_types_by_name['OpenWalletCredentials'] = _OPENWALLETCREDENTIALS
+DESCRIPTOR.message_types_by_name['OpenWalletHandle'] = _OPENWALLETHANDLE
+DESCRIPTOR.message_types_by_name['CloseWalletHandle'] = _CLOSEWALLETHANDLE
+DESCRIPTOR.message_types_by_name['CloseWalletStatus'] = _CLOSEWALLETSTATUS
+DESCRIPTOR.message_types_by_name['DeleteWalletDefinition'] = _DELETEWALLETDEFINITION
+DESCRIPTOR.message_types_by_name['DeleteWalletConfig'] = _DELETEWALLETCONFIG
+DESCRIPTOR.message_types_by_name['DeleteWalletStorageConfiguration'] = _DELETEWALLETSTORAGECONFIGURATION
+DESCRIPTOR.message_types_by_name['DeleteWaletCredentials'] = _DELETEWALETCREDENTIALS
+DESCRIPTOR.message_types_by_name['DeleteWalletConfirmation'] = _DELETEWALLETCONFIRMATION
+DESCRIPTOR.message_types_by_name['ExportWalletDefinition'] = _EXPORTWALLETDEFINITION
+DESCRIPTOR.message_types_by_name['ExportWalletConfigJson'] = _EXPORTWALLETCONFIGJSON
+DESCRIPTOR.message_types_by_name['ExportWalletConfirmation'] = _EXPORTWALLETCONFIRMATION
+DESCRIPTOR.message_types_by_name['ImportWalletDefinition'] = _IMPORTWALLETDEFINITION
+DESCRIPTOR.message_types_by_name['ImportWalletConfig'] = _IMPORTWALLETCONFIG
+DESCRIPTOR.message_types_by_name['ImportWalletStorageConfig'] = _IMPORTWALLETSTORAGECONFIG
+DESCRIPTOR.message_types_by_name['ImportWalletCredentials'] = _IMPORTWALLETCREDENTIALS
+DESCRIPTOR.message_types_by_name['ImportWalletConfigJson'] = _IMPORTWALLETCONFIGJSON
+DESCRIPTOR.message_types_by_name['ImportWalletConfirmation'] = _IMPORTWALLETCONFIRMATION
+DESCRIPTOR.message_types_by_name['GenerateWalletKeyDefinition'] = _GENERATEWALLETKEYDEFINITION
+DESCRIPTOR.message_types_by_name['GenerateWalletKeyConfirmation'] = _GENERATEWALLETKEYCONFIRMATION
+DESCRIPTOR.message_types_by_name['CreatePoolLedgerConfigRequest'] = _CREATEPOOLLEDGERCONFIGREQUEST
+DESCRIPTOR.message_types_by_name['ConfigCreatePoolLedger'] = _CONFIGCREATEPOOLLEDGER
+DESCRIPTOR.message_types_by_name['CreatePoolLedgerConfigResponse'] = _CREATEPOOLLEDGERCONFIGRESPONSE
+DESCRIPTOR.message_types_by_name['OpenPoolLedgerRequest'] = _OPENPOOLLEDGERREQUEST
+DESCRIPTOR.message_types_by_name['ConfigOpenLedger'] = _CONFIGOPENLEDGER
+DESCRIPTOR.message_types_by_name['OpenPoolLedgerResponse'] = _OPENPOOLLEDGERRESPONSE
+DESCRIPTOR.message_types_by_name['RefreshPoolLedgerRequest'] = _REFRESHPOOLLEDGERREQUEST
+DESCRIPTOR.message_types_by_name['RefreshPoolLedgerResponse'] = _REFRESHPOOLLEDGERRESPONSE
+DESCRIPTOR.message_types_by_name['ListPoolsRequest'] = _LISTPOOLSREQUEST
+DESCRIPTOR.message_types_by_name['ListPoolsResponse'] = _LISTPOOLSRESPONSE
+DESCRIPTOR.message_types_by_name['ClosePoolLedgerRequest'] = _CLOSEPOOLLEDGERREQUEST
+DESCRIPTOR.message_types_by_name['ClosePoolLedgerResponse'] = _CLOSEPOOLLEDGERRESPONSE
+DESCRIPTOR.message_types_by_name['DeletePoolLedgerConfigRequest'] = _DELETEPOOLLEDGERCONFIGREQUEST
+DESCRIPTOR.message_types_by_name['DeletePoolLedgerConfigResponse'] = _DELETEPOOLLEDGERCONFIGRESPONSE
+DESCRIPTOR.message_types_by_name['SetProtocolVersionRequest'] = _SETPROTOCOLVERSIONREQUEST
+DESCRIPTOR.message_types_by_name['SetProtocolVersionResponse'] = _SETPROTOCOLVERSIONRESPONSE
+DESCRIPTOR.message_types_by_name['OpenReaderRequest'] = _OPENREADERREQUEST
+DESCRIPTOR.message_types_by_name['OpenReaderResponse'] = _OPENREADERRESPONSE
+DESCRIPTOR.message_types_by_name['OpenWriterRequest'] = _OPENWRITERREQUEST
+DESCRIPTOR.message_types_by_name['OpenWriterResponse'] = _OPENWRITERRESPONSE
+DESCRIPTOR.message_types_by_name['IssuerCreateSchemaRequest'] = _ISSUERCREATESCHEMAREQUEST
+DESCRIPTOR.message_types_by_name['IssuerCreateSchemaResponse'] = _ISSUERCREATESCHEMARESPONSE
+DESCRIPTOR.message_types_by_name['IssuerCreateAndStoreCredentialDefRequest'] = _ISSUERCREATEANDSTORECREDENTIALDEFREQUEST
+DESCRIPTOR.message_types_by_name['IssuerCreateAndStoreCredentialDefResponse'] = _ISSUERCREATEANDSTORECREDENTIALDEFRESPONSE
+DESCRIPTOR.message_types_by_name['IssuerCreateAndStoreRevocRegRequest'] = _ISSUERCREATEANDSTOREREVOCREGREQUEST
+DESCRIPTOR.message_types_by_name['IssuerCreateAndStoreRevocRegResponse'] = _ISSUERCREATEANDSTOREREVOCREGRESPONSE
+DESCRIPTOR.message_types_by_name['IssuerCreateCredentialOfferRequest'] = _ISSUERCREATECREDENTIALOFFERREQUEST
+DESCRIPTOR.message_types_by_name['IssuerCreateCredentialOfferResponse'] = _ISSUERCREATECREDENTIALOFFERRESPONSE
+DESCRIPTOR.message_types_by_name['IssuerCreateCredentialRequest'] = _ISSUERCREATECREDENTIALREQUEST
+DESCRIPTOR.message_types_by_name['IssuerCreateCredentialResponse'] = _ISSUERCREATECREDENTIALRESPONSE
+DESCRIPTOR.message_types_by_name['CredJsonMessage'] = _CREDJSONMESSAGE
+DESCRIPTOR.message_types_by_name['IssuerRevokeCredentialRequest'] = _ISSUERREVOKECREDENTIALREQUEST
+DESCRIPTOR.message_types_by_name['IssuerRevokeCredentialResponse'] = _ISSUERREVOKECREDENTIALRESPONSE
+DESCRIPTOR.message_types_by_name['IssuerMergeRevocationRegistryDeltasRequest'] = _ISSUERMERGEREVOCATIONREGISTRYDELTASREQUEST
+DESCRIPTOR.message_types_by_name['IssuerMergeRevocationRegistryDeltasResponse'] = _ISSUERMERGEREVOCATIONREGISTRYDELTASRESPONSE
+DESCRIPTOR.message_types_by_name['ProverCreateMasterSecretRequest'] = _PROVERCREATEMASTERSECRETREQUEST
+DESCRIPTOR.message_types_by_name['ProverCreateMasterSecretResponse'] = _PROVERCREATEMASTERSECRETRESPONSE
+DESCRIPTOR.message_types_by_name['ProverCreateCredentialReqRequest'] = _PROVERCREATECREDENTIALREQREQUEST
+DESCRIPTOR.message_types_by_name['ProverCreateCredentialReqResponse'] = _PROVERCREATECREDENTIALREQRESPONSE
+DESCRIPTOR.message_types_by_name['CredReqJsonMessage'] = _CREDREQJSONMESSAGE
+DESCRIPTOR.message_types_by_name['ProverStoreCredentialRequest'] = _PROVERSTORECREDENTIALREQUEST
+DESCRIPTOR.message_types_by_name['ProverStoreCredentialResponse'] = _PROVERSTORECREDENTIALRESPONSE
+DESCRIPTOR.message_types_by_name['ProverGetCredentialRequest'] = _PROVERGETCREDENTIALREQUEST
+DESCRIPTOR.message_types_by_name['ProverGetCredentialResponse'] = _PROVERGETCREDENTIALRESPONSE
+DESCRIPTOR.message_types_by_name['ProverGetCredentialsRequest'] = _PROVERGETCREDENTIALSREQUEST
+DESCRIPTOR.message_types_by_name['FilterJsonMessage'] = _FILTERJSONMESSAGE
+DESCRIPTOR.message_types_by_name['ProverGetCredentialsResponse'] = _PROVERGETCREDENTIALSRESPONSE
+DESCRIPTOR.message_types_by_name['CredentialsJsonMessage'] = _CREDENTIALSJSONMESSAGE
+DESCRIPTOR.message_types_by_name['ProverSeachCredentialsRequest'] = _PROVERSEACHCREDENTIALSREQUEST
+DESCRIPTOR.message_types_by_name['ProverSeachCredentialsResponse'] = _PROVERSEACHCREDENTIALSRESPONSE
+DESCRIPTOR.message_types_by_name['ProverFetchCredentialsRequest'] = _PROVERFETCHCREDENTIALSREQUEST
+DESCRIPTOR.message_types_by_name['ProverFetchCredentialsResponse'] = _PROVERFETCHCREDENTIALSRESPONSE
+DESCRIPTOR.message_types_by_name['ProverCloseCredentialsSearchRequest'] = _PROVERCLOSECREDENTIALSSEARCHREQUEST
+DESCRIPTOR.message_types_by_name['ProverCloseCredentialsSearchResponse'] = _PROVERCLOSECREDENTIALSSEARCHRESPONSE
+DESCRIPTOR.message_types_by_name['ProverGetCredentialsForProofReqRequest'] = _PROVERGETCREDENTIALSFORPROOFREQREQUEST
+DESCRIPTOR.message_types_by_name['ProofRequestJsonMessage'] = _PROOFREQUESTJSONMESSAGE
+DESCRIPTOR.message_types_by_name['ProverGetCredentialsForProofReqResponse'] = _PROVERGETCREDENTIALSFORPROOFREQRESPONSE
+DESCRIPTOR.message_types_by_name['ProverSearchCredentialsForProofReqRequest'] = _PROVERSEARCHCREDENTIALSFORPROOFREQREQUEST
+DESCRIPTOR.message_types_by_name['ExtraQueryJsonMessage'] = _EXTRAQUERYJSONMESSAGE
+DESCRIPTOR.message_types_by_name['ProverSearchCredentialsForProofReqResponse'] = _PROVERSEARCHCREDENTIALSFORPROOFREQRESPONSE
+DESCRIPTOR.message_types_by_name['ProverFetchCredentialsForProofReqRequest'] = _PROVERFETCHCREDENTIALSFORPROOFREQREQUEST
+DESCRIPTOR.message_types_by_name['ProverFetchCredentialsForProofReqResponse'] = _PROVERFETCHCREDENTIALSFORPROOFREQRESPONSE
+DESCRIPTOR.message_types_by_name['CredentialsGivenProofRequest'] = _CREDENTIALSGIVENPROOFREQUEST
+DESCRIPTOR.message_types_by_name['CredentialInfo'] = _CREDENTIALINFO
+DESCRIPTOR.message_types_by_name['ProverCloseCredentialsSearchForProofReqRequest'] = _PROVERCLOSECREDENTIALSSEARCHFORPROOFREQREQUEST
+DESCRIPTOR.message_types_by_name['ProverCloseCredentialsSearchForProofReqResponse'] = _PROVERCLOSECREDENTIALSSEARCHFORPROOFREQRESPONSE
+DESCRIPTOR.message_types_by_name['ProverCreateProofRequest'] = _PROVERCREATEPROOFREQUEST
+DESCRIPTOR.message_types_by_name['ProofReqJsonMessage'] = _PROOFREQJSONMESSAGE
+DESCRIPTOR.message_types_by_name['NonRevocIntervalMessage'] = _NONREVOCINTERVALMESSAGE
+DESCRIPTOR.message_types_by_name['RequestedCredentialsJsonMessage'] = _REQUESTEDCREDENTIALSJSONMESSAGE
+DESCRIPTOR.message_types_by_name['ProverCreateProofResponse'] = _PROVERCREATEPROOFRESPONSE
+DESCRIPTOR.message_types_by_name['VerifierVerifyProofRequest'] = _VERIFIERVERIFYPROOFREQUEST
+DESCRIPTOR.message_types_by_name['VerifierVerifyProofResponse'] = _VERIFIERVERIFYPROOFRESPONSE
+DESCRIPTOR.message_types_by_name['CreateRevocationStateRequest'] = _CREATEREVOCATIONSTATEREQUEST
+DESCRIPTOR.message_types_by_name['CreateRevocationStateResponse'] = _CREATEREVOCATIONSTATERESPONSE
+DESCRIPTOR.message_types_by_name['UpdateRevocationStateRequest'] = _UPDATEREVOCATIONSTATEREQUEST
+DESCRIPTOR.message_types_by_name['UpdateRevocationStateResponse'] = _UPDATEREVOCATIONSTATERESPONSE
+DESCRIPTOR.message_types_by_name['CreateKeyRequest'] = _CREATEKEYREQUEST
+DESCRIPTOR.message_types_by_name['KeyJsonCreateKey'] = _KEYJSONCREATEKEY
+DESCRIPTOR.message_types_by_name['CreateKeyResponse'] = _CREATEKEYRESPONSE
+DESCRIPTOR.message_types_by_name['SetKeyMetadataRequest'] = _SETKEYMETADATAREQUEST
+DESCRIPTOR.message_types_by_name['SetKeyMetadataResponse'] = _SETKEYMETADATARESPONSE
+DESCRIPTOR.message_types_by_name['GetKeyMetadataRequest'] = _GETKEYMETADATAREQUEST
+DESCRIPTOR.message_types_by_name['GetKeyMetadataResponse'] = _GETKEYMETADATARESPONSE
+DESCRIPTOR.message_types_by_name['CryptoSignRequest'] = _CRYPTOSIGNREQUEST
+DESCRIPTOR.message_types_by_name['CryptoSignResponse'] = _CRYPTOSIGNRESPONSE
+DESCRIPTOR.message_types_by_name['CryptoVerifyRequest'] = _CRYPTOVERIFYREQUEST
+DESCRIPTOR.message_types_by_name['CryptoVerifyResponse'] = _CRYPTOVERIFYRESPONSE
+DESCRIPTOR.message_types_by_name['AuthCryptRequest'] = _AUTHCRYPTREQUEST
+DESCRIPTOR.message_types_by_name['AuthCryptResponse'] = _AUTHCRYPTRESPONSE
+DESCRIPTOR.message_types_by_name['AuthDecryptRequest'] = _AUTHDECRYPTREQUEST
+DESCRIPTOR.message_types_by_name['AuthDecryptResponse'] = _AUTHDECRYPTRESPONSE
+DESCRIPTOR.message_types_by_name['AnonCryptRequest'] = _ANONCRYPTREQUEST
+DESCRIPTOR.message_types_by_name['AnonCryptResponse'] = _ANONCRYPTRESPONSE
+DESCRIPTOR.message_types_by_name['AnonDecryptRequest'] = _ANONDECRYPTREQUEST
+DESCRIPTOR.message_types_by_name['AnonDecryptResponse'] = _ANONDECRYPTRESPONSE
+DESCRIPTOR.message_types_by_name['IsPairwiseExistsRequest'] = _ISPAIRWISEEXISTSREQUEST
+DESCRIPTOR.message_types_by_name['IsPairwiseExistsResponse'] = _ISPAIRWISEEXISTSRESPONSE
+DESCRIPTOR.message_types_by_name['CreatePairwiseRequest'] = _CREATEPAIRWISEREQUEST
+DESCRIPTOR.message_types_by_name['CreatePairwiseResponse'] = _CREATEPAIRWISERESPONSE
+DESCRIPTOR.message_types_by_name['ListPairwiseRequest'] = _LISTPAIRWISEREQUEST
+DESCRIPTOR.message_types_by_name['ListPairwiseResponse'] = _LISTPAIRWISERESPONSE
+DESCRIPTOR.message_types_by_name['GetPairwiseRequest'] = _GETPAIRWISEREQUEST
+DESCRIPTOR.message_types_by_name['GetPairwiseResponse'] = _GETPAIRWISERESPONSE
+DESCRIPTOR.message_types_by_name['SetPairwiseMetadataRequest'] = _SETPAIRWISEMETADATAREQUEST
+DESCRIPTOR.message_types_by_name['SetPairwiseMetadataResponse'] = _SETPAIRWISEMETADATARESPONSE
+DESCRIPTOR.message_types_by_name['CreateAndStoreMyDidRequest'] = _CREATEANDSTOREMYDIDREQUEST
+DESCRIPTOR.message_types_by_name['CreateAndStoreMyDidJsonMessage'] = _CREATEANDSTOREMYDIDJSONMESSAGE
+DESCRIPTOR.message_types_by_name['CreateAndStoreMyDidResponse'] = _CREATEANDSTOREMYDIDRESPONSE
+DESCRIPTOR.message_types_by_name['ReplaceKeysStartRequest'] = _REPLACEKEYSSTARTREQUEST
+DESCRIPTOR.message_types_by_name['ReplaceKeysStartIdentityJsonMessage'] = _REPLACEKEYSSTARTIDENTITYJSONMESSAGE
+DESCRIPTOR.message_types_by_name['ReplaceKeysStartResponse'] = _REPLACEKEYSSTARTRESPONSE
+DESCRIPTOR.message_types_by_name['ReplaceKeysApplyRequest'] = _REPLACEKEYSAPPLYREQUEST
+DESCRIPTOR.message_types_by_name['ReplaceKeysApplyResponse'] = _REPLACEKEYSAPPLYRESPONSE
+DESCRIPTOR.message_types_by_name['StoreTheirDidRequest'] = _STORETHEIRDIDREQUEST
+DESCRIPTOR.message_types_by_name['StoreTheirDidIdentityJsonMessage'] = _STORETHEIRDIDIDENTITYJSONMESSAGE
+DESCRIPTOR.message_types_by_name['StoreTheirDidResponse'] = _STORETHEIRDIDRESPONSE
+DESCRIPTOR.message_types_by_name['DidCreateKeyRequest'] = _DIDCREATEKEYREQUEST
+DESCRIPTOR.message_types_by_name['DidCreateKeyResponse'] = _DIDCREATEKEYRESPONSE
+DESCRIPTOR.message_types_by_name['DidSetKeyMetadataRequest'] = _DIDSETKEYMETADATAREQUEST
+DESCRIPTOR.message_types_by_name['DidSetKeyMetadataResponse'] = _DIDSETKEYMETADATARESPONSE
+DESCRIPTOR.message_types_by_name['DidGetKeyMetadataRequest'] = _DIDGETKEYMETADATAREQUEST
+DESCRIPTOR.message_types_by_name['DidGetKeyMetadataResponse'] = _DIDGETKEYMETADATARESPONSE
+DESCRIPTOR.message_types_by_name['KeyForDidRequest'] = _KEYFORDIDREQUEST
+DESCRIPTOR.message_types_by_name['KeyForDidResponse'] = _KEYFORDIDRESPONSE
+DESCRIPTOR.message_types_by_name['KeyForLocalDidRequest'] = _KEYFORLOCALDIDREQUEST
+DESCRIPTOR.message_types_by_name['KeyForLocalDidResponse'] = _KEYFORLOCALDIDRESPONSE
+DESCRIPTOR.message_types_by_name['SetEndpointForDidRequest'] = _SETENDPOINTFORDIDREQUEST
+DESCRIPTOR.message_types_by_name['SetEndpointForDidResponse'] = _SETENDPOINTFORDIDRESPONSE
+DESCRIPTOR.message_types_by_name['GetEndpointForDidRequest'] = _GETENDPOINTFORDIDREQUEST
+DESCRIPTOR.message_types_by_name['GetEndpointForDidResponse'] = _GETENDPOINTFORDIDRESPONSE
+DESCRIPTOR.message_types_by_name['SetDidMetadataRequest'] = _SETDIDMETADATAREQUEST
+DESCRIPTOR.message_types_by_name['SetDidMetadataResponse'] = _SETDIDMETADATARESPONSE
+DESCRIPTOR.message_types_by_name['GetDidMetadataRequest'] = _GETDIDMETADATAREQUEST
+DESCRIPTOR.message_types_by_name['GetDidMetadataResponse'] = _GETDIDMETADATARESPONSE
+DESCRIPTOR.message_types_by_name['GetMyDidWithMetaRequest'] = _GETMYDIDWITHMETAREQUEST
+DESCRIPTOR.message_types_by_name['GetMyDidWithMetaResponse'] = _GETMYDIDWITHMETARESPONSE
+DESCRIPTOR.message_types_by_name['ListMyDidsWithMetaRequest'] = _LISTMYDIDSWITHMETAREQUEST
+DESCRIPTOR.message_types_by_name['ListMyDidsWithMetaResponse'] = _LISTMYDIDSWITHMETARESPONSE
+DESCRIPTOR.message_types_by_name['AbbreviateVerkeyRequest'] = _ABBREVIATEVERKEYREQUEST
+DESCRIPTOR.message_types_by_name['AbbreviateVerkeyResponse'] = _ABBREVIATEVERKEYRESPONSE
+DESCRIPTOR.message_types_by_name['SignAndSubmitRequestRq'] = _SIGNANDSUBMITREQUESTRQ
+DESCRIPTOR.message_types_by_name['SignAndSubmitRequestRs'] = _SIGNANDSUBMITREQUESTRS
+DESCRIPTOR.message_types_by_name['SubmitRequestRq'] = _SUBMITREQUESTRQ
+DESCRIPTOR.message_types_by_name['SubmitRequestRs'] = _SUBMITREQUESTRS
+DESCRIPTOR.message_types_by_name['SubmitActionRq'] = _SUBMITACTIONRQ
+DESCRIPTOR.message_types_by_name['SubmitActionRs'] = _SUBMITACTIONRS
+DESCRIPTOR.message_types_by_name['SignRequestRq'] = _SIGNREQUESTRQ
+DESCRIPTOR.message_types_by_name['SignRequestRs'] = _SIGNREQUESTRS
+DESCRIPTOR.message_types_by_name['MultiSignRequestRq'] = _MULTISIGNREQUESTRQ
+DESCRIPTOR.message_types_by_name['MultiSignRequestRs'] = _MULTISIGNREQUESTRS
+DESCRIPTOR.message_types_by_name['BuildGetDdoRequestRq'] = _BUILDGETDDOREQUESTRQ
+DESCRIPTOR.message_types_by_name['BuildGetDdoRequestRs'] = _BUILDGETDDOREQUESTRS
+DESCRIPTOR.message_types_by_name['BuildNymRequestRq'] = _BUILDNYMREQUESTRQ
+DESCRIPTOR.message_types_by_name['BuildNymRequestRs'] = _BUILDNYMREQUESTRS
+DESCRIPTOR.message_types_by_name['BuildAttribRequestRq'] = _BUILDATTRIBREQUESTRQ
+DESCRIPTOR.message_types_by_name['BuildAttribRequestRs'] = _BUILDATTRIBREQUESTRS
+DESCRIPTOR.message_types_by_name['BuildGetAttribRequestRq'] = _BUILDGETATTRIBREQUESTRQ
+DESCRIPTOR.message_types_by_name['BuildGetAttribRequestRs'] = _BUILDGETATTRIBREQUESTRS
+DESCRIPTOR.message_types_by_name['BuildGetNymRequestRq'] = _BUILDGETNYMREQUESTRQ
+DESCRIPTOR.message_types_by_name['BuildGetNymRequestRs'] = _BUILDGETNYMREQUESTRS
+DESCRIPTOR.message_types_by_name['BuildSchemaRequestRq'] = _BUILDSCHEMAREQUESTRQ
+DESCRIPTOR.message_types_by_name['BuildSchemaRequestRs'] = _BUILDSCHEMAREQUESTRS
+DESCRIPTOR.message_types_by_name['BuildGetSchemaRequestRq'] = _BUILDGETSCHEMAREQUESTRQ
+DESCRIPTOR.message_types_by_name['BuildGetSchemaRequestRs'] = _BUILDGETSCHEMAREQUESTRS
+DESCRIPTOR.message_types_by_name['ParseGetSchemaResponseRq'] = _PARSEGETSCHEMARESPONSERQ
+DESCRIPTOR.message_types_by_name['ParseGetSchemaResponseRs'] = _PARSEGETSCHEMARESPONSERS
+DESCRIPTOR.message_types_by_name['BuildCredDefRequestRq'] = _BUILDCREDDEFREQUESTRQ
+DESCRIPTOR.message_types_by_name['BuildCredDefRequestRs'] = _BUILDCREDDEFREQUESTRS
+DESCRIPTOR.message_types_by_name['BuildGetCredDefRequestRq'] = _BUILDGETCREDDEFREQUESTRQ
+DESCRIPTOR.message_types_by_name['BuildGetCredDefRequestRs'] = _BUILDGETCREDDEFREQUESTRS
+DESCRIPTOR.message_types_by_name['ParseGetCredDefResponseRq'] = _PARSEGETCREDDEFRESPONSERQ
+DESCRIPTOR.message_types_by_name['ParseGetCredDefResponseRs'] = _PARSEGETCREDDEFRESPONSERS
+DESCRIPTOR.message_types_by_name['BuildNodeRequestRq'] = _BUILDNODEREQUESTRQ
+DESCRIPTOR.message_types_by_name['BuildNodeRequestRs'] = _BUILDNODEREQUESTRS
+DESCRIPTOR.message_types_by_name['BuildGetValidatorInfoRequestRq'] = _BUILDGETVALIDATORINFOREQUESTRQ
+DESCRIPTOR.message_types_by_name['BuildGetValidatorInfoRequestRs'] = _BUILDGETVALIDATORINFOREQUESTRS
+DESCRIPTOR.message_types_by_name['BuildGetTxnRequestRq'] = _BUILDGETTXNREQUESTRQ
+DESCRIPTOR.message_types_by_name['BuildGetTxnRequestRs'] = _BUILDGETTXNREQUESTRS
+DESCRIPTOR.message_types_by_name['BuildPoolConfigRequestRq'] = _BUILDPOOLCONFIGREQUESTRQ
+DESCRIPTOR.message_types_by_name['BuildPoolConfigRequestRs'] = _BUILDPOOLCONFIGREQUESTRS
+DESCRIPTOR.message_types_by_name['BuildPoolRestartRequestRq'] = _BUILDPOOLRESTARTREQUESTRQ
+DESCRIPTOR.message_types_by_name['BuildPoolRestartRequestRs'] = _BUILDPOOLRESTARTREQUESTRS
+DESCRIPTOR.message_types_by_name['BuildPoolUpgradeRequestRq'] = _BUILDPOOLUPGRADEREQUESTRQ
+DESCRIPTOR.message_types_by_name['BuildPoolUpgradeRequestRs'] = _BUILDPOOLUPGRADEREQUESTRS
+DESCRIPTOR.message_types_by_name['BuildRevocRegDefRequestRq'] = _BUILDREVOCREGDEFREQUESTRQ
+DESCRIPTOR.message_types_by_name['BuildRevocRegDefRequestRs'] = _BUILDREVOCREGDEFREQUESTRS
+DESCRIPTOR.message_types_by_name['BuildGetRevocRegDefRequestRq'] = _BUILDGETREVOCREGDEFREQUESTRQ
+DESCRIPTOR.message_types_by_name['BuildGetRevocRegDefRequestRs'] = _BUILDGETREVOCREGDEFREQUESTRS
+DESCRIPTOR.message_types_by_name['ParseGetRevocRegDefResponseRq'] = _PARSEGETREVOCREGDEFRESPONSERQ
+DESCRIPTOR.message_types_by_name['ParseGetRevocRegDefResponseRs'] = _PARSEGETREVOCREGDEFRESPONSERS
+DESCRIPTOR.message_types_by_name['BuildRevocRegEntryRequestRq'] = _BUILDREVOCREGENTRYREQUESTRQ
+DESCRIPTOR.message_types_by_name['BuildRevocRegEntryRequestRs'] = _BUILDREVOCREGENTRYREQUESTRS
+DESCRIPTOR.message_types_by_name['BuildGetRevocRegRequestRq'] = _BUILDGETREVOCREGREQUESTRQ
+DESCRIPTOR.message_types_by_name['BuildGetRevocRegRequestRs'] = _BUILDGETREVOCREGREQUESTRS
+DESCRIPTOR.message_types_by_name['ParseGetRevocRegResponseRq'] = _PARSEGETREVOCREGRESPONSERQ
+DESCRIPTOR.message_types_by_name['ParseGetRevocRegResponseRs'] = _PARSEGETREVOCREGRESPONSERS
+DESCRIPTOR.message_types_by_name['BuildGetRevocRegDeltaRequestRq'] = _BUILDGETREVOCREGDELTAREQUESTRQ
+DESCRIPTOR.message_types_by_name['BuildGetRevocRegDeltaRequestRs'] = _BUILDGETREVOCREGDELTAREQUESTRS
+DESCRIPTOR.message_types_by_name['ParseGetRevocRegDeltaResponseRq'] = _PARSEGETREVOCREGDELTARESPONSERQ
+DESCRIPTOR.message_types_by_name['ParseGetRevocRegDeltaResponseRs'] = _PARSEGETREVOCREGDELTARESPONSERS
+DESCRIPTOR.message_types_by_name['GetResponseMetadataRq'] = _GETRESPONSEMETADATARQ
+DESCRIPTOR.message_types_by_name['GetResponseMetadataRs'] = _GETRESPONSEMETADATARS
+DESCRIPTOR.message_types_by_name['AddWalletRecordRequest'] = _ADDWALLETRECORDREQUEST
+DESCRIPTOR.message_types_by_name['AddWalletRecordResponse'] = _ADDWALLETRECORDRESPONSE
+DESCRIPTOR.message_types_by_name['UpdateWalletRecordValueRequest'] = _UPDATEWALLETRECORDVALUEREQUEST
+DESCRIPTOR.message_types_by_name['UpdateWalletRecordValueResponse'] = _UPDATEWALLETRECORDVALUERESPONSE
+DESCRIPTOR.message_types_by_name['UpdateWalletRecordTagsRequest'] = _UPDATEWALLETRECORDTAGSREQUEST
+DESCRIPTOR.message_types_by_name['UpdateWalletRecordTagsResponse'] = _UPDATEWALLETRECORDTAGSRESPONSE
+DESCRIPTOR.message_types_by_name['AddWalletRecordTagsRequest'] = _ADDWALLETRECORDTAGSREQUEST
+DESCRIPTOR.message_types_by_name['AddWalletRecordTagsResponse'] = _ADDWALLETRECORDTAGSRESPONSE
+DESCRIPTOR.message_types_by_name['DeleteWalletRecordTagsRequest'] = _DELETEWALLETRECORDTAGSREQUEST
+DESCRIPTOR.message_types_by_name['DeleteWalletRecordTagsResponse'] = _DELETEWALLETRECORDTAGSRESPONSE
+DESCRIPTOR.message_types_by_name['DeleteWalletRecordRequest'] = _DELETEWALLETRECORDREQUEST
+DESCRIPTOR.message_types_by_name['DeleteWalletRecordResponse'] = _DELETEWALLETRECORDRESPONSE
+DESCRIPTOR.message_types_by_name['GetWalletRecordRequest'] = _GETWALLETRECORDREQUEST
+DESCRIPTOR.message_types_by_name['GetWalletRecordResponse'] = _GETWALLETRECORDRESPONSE
+DESCRIPTOR.message_types_by_name['OpenWalletSearchRequest'] = _OPENWALLETSEARCHREQUEST
+DESCRIPTOR.message_types_by_name['OpenWalletSearchResponse'] = _OPENWALLETSEARCHRESPONSE
+DESCRIPTOR.message_types_by_name['FetchWalletSearchNextRecordsRequest'] = _FETCHWALLETSEARCHNEXTRECORDSREQUEST
+DESCRIPTOR.message_types_by_name['FetchWalletSearchNextRecordsResponse'] = _FETCHWALLETSEARCHNEXTRECORDSRESPONSE
+DESCRIPTOR.message_types_by_name['CloseWalletSearchRequest'] = _CLOSEWALLETSEARCHREQUEST
+DESCRIPTOR.message_types_by_name['CloseWalletSearchResponse'] = _CLOSEWALLETSEARCHRESPONSE
 _sym_db.RegisterFileDescriptor(DESCRIPTOR)
+
+NewWalletDefinition = _reflection.GeneratedProtocolMessageType('NewWalletDefinition', (_message.Message,), dict(
+  DESCRIPTOR = _NEWWALLETDEFINITION,
+  __module__ = 'identitylayer_pb2'
+  # @@protoc_insertion_point(class_scope:identitylayer.NewWalletDefinition)
+  ))
+_sym_db.RegisterMessage(NewWalletDefinition)
+
+Config = _reflection.GeneratedProtocolMessageType('Config', (_message.Message,), dict(
+  DESCRIPTOR = _CONFIG,
+  __module__ = 'identitylayer_pb2'
+  # @@protoc_insertion_point(class_scope:identitylayer.Config)
+  ))
+_sym_db.RegisterMessage(Config)
+
+StorageConfig = _reflection.GeneratedProtocolMessageType('StorageConfig', (_message.Message,), dict(
+  DESCRIPTOR = _STORAGECONFIG,
+  __module__ = 'identitylayer_pb2'
+  # @@protoc_insertion_point(class_scope:identitylayer.StorageConfig)
+  ))
+_sym_db.RegisterMessage(StorageConfig)
+
+Credentials = _reflection.GeneratedProtocolMessageType('Credentials', (_message.Message,), dict(
+  DESCRIPTOR = _CREDENTIALS,
+  __module__ = 'identitylayer_pb2'
+  # @@protoc_insertion_point(class_scope:identitylayer.Credentials)
+  ))
+_sym_db.RegisterMessage(Credentials)
+
+CreateWalletErrorCode = _reflection.GeneratedProtocolMessageType('CreateWalletErrorCode', (_message.Message,), dict(
+  DESCRIPTOR = _CREATEWALLETERRORCODE,
+  __module__ = 'identitylayer_pb2'
+  # @@protoc_insertion_point(class_scope:identitylayer.CreateWalletErrorCode)
+  ))
+_sym_db.RegisterMessage(CreateWalletErrorCode)
+
+OpenWalletDefinition = _reflection.GeneratedProtocolMessageType('OpenWalletDefinition', (_message.Message,), dict(
+  DESCRIPTOR = _OPENWALLETDEFINITION,
+  __module__ = 'identitylayer_pb2'
+  # @@protoc_insertion_point(class_scope:identitylayer.OpenWalletDefinition)
+  ))
+_sym_db.RegisterMessage(OpenWalletDefinition)
+
+OpenWalletConfig = _reflection.GeneratedProtocolMessageType('OpenWalletConfig', (_message.Message,), dict(
+  DESCRIPTOR = _OPENWALLETCONFIG,
+  __module__ = 'identitylayer_pb2'
+  # @@protoc_insertion_point(class_scope:identitylayer.OpenWalletConfig)
+  ))
+_sym_db.RegisterMessage(OpenWalletConfig)
+
+OpenWalletStorageConfig = _reflection.GeneratedProtocolMessageType('OpenWalletStorageConfig', (_message.Message,), dict(
+  DESCRIPTOR = _OPENWALLETSTORAGECONFIG,
+  __module__ = 'identitylayer_pb2'
+  # @@protoc_insertion_point(class_scope:identitylayer.OpenWalletStorageConfig)
+  ))
+_sym_db.RegisterMessage(OpenWalletStorageConfig)
+
+OpenWalletCredentials = _reflection.GeneratedProtocolMessageType('OpenWalletCredentials', (_message.Message,), dict(
+  DESCRIPTOR = _OPENWALLETCREDENTIALS,
+  __module__ = 'identitylayer_pb2'
+  # @@protoc_insertion_point(class_scope:identitylayer.OpenWalletCredentials)
+  ))
+_sym_db.RegisterMessage(OpenWalletCredentials)
+
+OpenWalletHandle = _reflection.GeneratedProtocolMessageType('OpenWalletHandle', (_message.Message,), dict(
+  DESCRIPTOR = _OPENWALLETHANDLE,
+  __module__ = 'identitylayer_pb2'
+  # @@protoc_insertion_point(class_scope:identitylayer.OpenWalletHandle)
+  ))
+_sym_db.RegisterMessage(OpenWalletHandle)
+
+CloseWalletHandle = _reflection.GeneratedProtocolMessageType('CloseWalletHandle', (_message.Message,), dict(
+  DESCRIPTOR = _CLOSEWALLETHANDLE,
+  __module__ = 'identitylayer_pb2'
+  # @@protoc_insertion_point(class_scope:identitylayer.CloseWalletHandle)
+  ))
+_sym_db.RegisterMessage(CloseWalletHandle)
+
+CloseWalletStatus = _reflection.GeneratedProtocolMessageType('CloseWalletStatus', (_message.Message,), dict(
+  DESCRIPTOR = _CLOSEWALLETSTATUS,
+  __module__ = 'identitylayer_pb2'
+  # @@protoc_insertion_point(class_scope:identitylayer.CloseWalletStatus)
+  ))
+_sym_db.RegisterMessage(CloseWalletStatus)
+
+DeleteWalletDefinition = _reflection.GeneratedProtocolMessageType('DeleteWalletDefinition', (_message.Message,), dict(
+  DESCRIPTOR = _DELETEWALLETDEFINITION,
+  __module__ = 'identitylayer_pb2'
+  # @@protoc_insertion_point(class_scope:identitylayer.DeleteWalletDefinition)
+  ))
+_sym_db.RegisterMessage(DeleteWalletDefinition)
+
+DeleteWalletConfig = _reflection.GeneratedProtocolMessageType('DeleteWalletConfig', (_message.Message,), dict(
+  DESCRIPTOR = _DELETEWALLETCONFIG,
+  __module__ = 'identitylayer_pb2'
+  # @@protoc_insertion_point(class_scope:identitylayer.DeleteWalletConfig)
+  ))
+_sym_db.RegisterMessage(DeleteWalletConfig)
+
+DeleteWalletStorageConfiguration = _reflection.GeneratedProtocolMessageType('DeleteWalletStorageConfiguration', (_message.Message,), dict(
+  DESCRIPTOR = _DELETEWALLETSTORAGECONFIGURATION,
+  __module__ = 'identitylayer_pb2'
+  # @@protoc_insertion_point(class_scope:identitylayer.DeleteWalletStorageConfiguration)
+  ))
+_sym_db.RegisterMessage(DeleteWalletStorageConfiguration)
+
+DeleteWaletCredentials = _reflection.GeneratedProtocolMessageType('DeleteWaletCredentials', (_message.Message,), dict(
+  DESCRIPTOR = _DELETEWALETCREDENTIALS,
+  __module__ = 'identitylayer_pb2'
+  # @@protoc_insertion_point(class_scope:identitylayer.DeleteWaletCredentials)
+  ))
+_sym_db.RegisterMessage(DeleteWaletCredentials)
+
+DeleteWalletConfirmation = _reflection.GeneratedProtocolMessageType('DeleteWalletConfirmation', (_message.Message,), dict(
+  DESCRIPTOR = _DELETEWALLETCONFIRMATION,
+  __module__ = 'identitylayer_pb2'
+  # @@protoc_insertion_point(class_scope:identitylayer.DeleteWalletConfirmation)
+  ))
+_sym_db.RegisterMessage(DeleteWalletConfirmation)
+
+ExportWalletDefinition = _reflection.GeneratedProtocolMessageType('ExportWalletDefinition', (_message.Message,), dict(
+  DESCRIPTOR = _EXPORTWALLETDEFINITION,
+  __module__ = 'identitylayer_pb2'
+  # @@protoc_insertion_point(class_scope:identitylayer.ExportWalletDefinition)
+  ))
+_sym_db.RegisterMessage(ExportWalletDefinition)
+
+ExportWalletConfigJson = _reflection.GeneratedProtocolMessageType('ExportWalletConfigJson', (_message.Message,), dict(
+  DESCRIPTOR = _EXPORTWALLETCONFIGJSON,
+  __module__ = 'identitylayer_pb2'
+  # @@protoc_insertion_point(class_scope:identitylayer.ExportWalletConfigJson)
+  ))
+_sym_db.RegisterMessage(ExportWalletConfigJson)
+
+ExportWalletConfirmation = _reflection.GeneratedProtocolMessageType('ExportWalletConfirmation', (_message.Message,), dict(
+  DESCRIPTOR = _EXPORTWALLETCONFIRMATION,
+  __module__ = 'identitylayer_pb2'
+  # @@protoc_insertion_point(class_scope:identitylayer.ExportWalletConfirmation)
+  ))
+_sym_db.RegisterMessage(ExportWalletConfirmation)
+
+ImportWalletDefinition = _reflection.GeneratedProtocolMessageType('ImportWalletDefinition', (_message.Message,), dict(
+  DESCRIPTOR = _IMPORTWALLETDEFINITION,
+  __module__ = 'identitylayer_pb2'
+  # @@protoc_insertion_point(class_scope:identitylayer.ImportWalletDefinition)
+  ))
+_sym_db.RegisterMessage(ImportWalletDefinition)
+
+ImportWalletConfig = _reflection.GeneratedProtocolMessageType('ImportWalletConfig', (_message.Message,), dict(
+  DESCRIPTOR = _IMPORTWALLETCONFIG,
+  __module__ = 'identitylayer_pb2'
+  # @@protoc_insertion_point(class_scope:identitylayer.ImportWalletConfig)
+  ))
+_sym_db.RegisterMessage(ImportWalletConfig)
+
+ImportWalletStorageConfig = _reflection.GeneratedProtocolMessageType('ImportWalletStorageConfig', (_message.Message,), dict(
+  DESCRIPTOR = _IMPORTWALLETSTORAGECONFIG,
+  __module__ = 'identitylayer_pb2'
+  # @@protoc_insertion_point(class_scope:identitylayer.ImportWalletStorageConfig)
+  ))
+_sym_db.RegisterMessage(ImportWalletStorageConfig)
+
+ImportWalletCredentials = _reflection.GeneratedProtocolMessageType('ImportWalletCredentials', (_message.Message,), dict(
+  DESCRIPTOR = _IMPORTWALLETCREDENTIALS,
+  __module__ = 'identitylayer_pb2'
+  # @@protoc_insertion_point(class_scope:identitylayer.ImportWalletCredentials)
+  ))
+_sym_db.RegisterMessage(ImportWalletCredentials)
+
+ImportWalletConfigJson = _reflection.GeneratedProtocolMessageType('ImportWalletConfigJson', (_message.Message,), dict(
+  DESCRIPTOR = _IMPORTWALLETCONFIGJSON,
+  __module__ = 'identitylayer_pb2'
+  # @@protoc_insertion_point(class_scope:identitylayer.ImportWalletConfigJson)
+  ))
+_sym_db.RegisterMessage(ImportWalletConfigJson)
+
+ImportWalletConfirmation = _reflection.GeneratedProtocolMessageType('ImportWalletConfirmation', (_message.Message,), dict(
+  DESCRIPTOR = _IMPORTWALLETCONFIRMATION,
+  __module__ = 'identitylayer_pb2'
+  # @@protoc_insertion_point(class_scope:identitylayer.ImportWalletConfirmation)
+  ))
+_sym_db.RegisterMessage(ImportWalletConfirmation)
+
+GenerateWalletKeyDefinition = _reflection.GeneratedProtocolMessageType('GenerateWalletKeyDefinition', (_message.Message,), dict(
+  DESCRIPTOR = _GENERATEWALLETKEYDEFINITION,
+  __module__ = 'identitylayer_pb2'
+  # @@protoc_insertion_point(class_scope:identitylayer.GenerateWalletKeyDefinition)
+  ))
+_sym_db.RegisterMessage(GenerateWalletKeyDefinition)
+
+GenerateWalletKeyConfirmation = _reflection.GeneratedProtocolMessageType('GenerateWalletKeyConfirmation', (_message.Message,), dict(
+  DESCRIPTOR = _GENERATEWALLETKEYCONFIRMATION,
+  __module__ = 'identitylayer_pb2'
+  # @@protoc_insertion_point(class_scope:identitylayer.GenerateWalletKeyConfirmation)
+  ))
+_sym_db.RegisterMessage(GenerateWalletKeyConfirmation)
+
+CreatePoolLedgerConfigRequest = _reflection.GeneratedProtocolMessageType('CreatePoolLedgerConfigRequest', (_message.Message,), dict(
+  DESCRIPTOR = _CREATEPOOLLEDGERCONFIGREQUEST,
+  __module__ = 'identitylayer_pb2'
+  # @@protoc_insertion_point(class_scope:identitylayer.CreatePoolLedgerConfigRequest)
+  ))
+_sym_db.RegisterMessage(CreatePoolLedgerConfigRequest)
+
+ConfigCreatePoolLedger = _reflection.GeneratedProtocolMessageType('ConfigCreatePoolLedger', (_message.Message,), dict(
+  DESCRIPTOR = _CONFIGCREATEPOOLLEDGER,
+  __module__ = 'identitylayer_pb2'
+  # @@protoc_insertion_point(class_scope:identitylayer.ConfigCreatePoolLedger)
+  ))
+_sym_db.RegisterMessage(ConfigCreatePoolLedger)
+
+CreatePoolLedgerConfigResponse = _reflection.GeneratedProtocolMessageType('CreatePoolLedgerConfigResponse', (_message.Message,), dict(
+  DESCRIPTOR = _CREATEPOOLLEDGERCONFIGRESPONSE,
+  __module__ = 'identitylayer_pb2'
+  # @@protoc_insertion_point(class_scope:identitylayer.CreatePoolLedgerConfigResponse)
+  ))
+_sym_db.RegisterMessage(CreatePoolLedgerConfigResponse)
+
+OpenPoolLedgerRequest = _reflection.GeneratedProtocolMessageType('OpenPoolLedgerRequest', (_message.Message,), dict(
+  DESCRIPTOR = _OPENPOOLLEDGERREQUEST,
+  __module__ = 'identitylayer_pb2'
+  # @@protoc_insertion_point(class_scope:identitylayer.OpenPoolLedgerRequest)
+  ))
+_sym_db.RegisterMessage(OpenPoolLedgerRequest)
+
+ConfigOpenLedger = _reflection.GeneratedProtocolMessageType('ConfigOpenLedger', (_message.Message,), dict(
+  DESCRIPTOR = _CONFIGOPENLEDGER,
+  __module__ = 'identitylayer_pb2'
+  # @@protoc_insertion_point(class_scope:identitylayer.ConfigOpenLedger)
+  ))
+_sym_db.RegisterMessage(ConfigOpenLedger)
+
+OpenPoolLedgerResponse = _reflection.GeneratedProtocolMessageType('OpenPoolLedgerResponse', (_message.Message,), dict(
+  DESCRIPTOR = _OPENPOOLLEDGERRESPONSE,
+  __module__ = 'identitylayer_pb2'
+  # @@protoc_insertion_point(class_scope:identitylayer.OpenPoolLedgerResponse)
+  ))
+_sym_db.RegisterMessage(OpenPoolLedgerResponse)
+
+RefreshPoolLedgerRequest = _reflection.GeneratedProtocolMessageType('RefreshPoolLedgerRequest', (_message.Message,), dict(
+  DESCRIPTOR = _REFRESHPOOLLEDGERREQUEST,
+  __module__ = 'identitylayer_pb2'
+  # @@protoc_insertion_point(class_scope:identitylayer.RefreshPoolLedgerRequest)
+  ))
+_sym_db.RegisterMessage(RefreshPoolLedgerRequest)
+
+RefreshPoolLedgerResponse = _reflection.GeneratedProtocolMessageType('RefreshPoolLedgerResponse', (_message.Message,), dict(
+  DESCRIPTOR = _REFRESHPOOLLEDGERRESPONSE,
+  __module__ = 'identitylayer_pb2'
+  # @@protoc_insertion_point(class_scope:identitylayer.RefreshPoolLedgerResponse)
+  ))
+_sym_db.RegisterMessage(RefreshPoolLedgerResponse)
+
+ListPoolsRequest = _reflection.GeneratedProtocolMessageType('ListPoolsRequest', (_message.Message,), dict(
+  DESCRIPTOR = _LISTPOOLSREQUEST,
+  __module__ = 'identitylayer_pb2'
+  # @@protoc_insertion_point(class_scope:identitylayer.ListPoolsRequest)
+  ))
+_sym_db.RegisterMessage(ListPoolsRequest)
+
+ListPoolsResponse = _reflection.GeneratedProtocolMessageType('ListPoolsResponse', (_message.Message,), dict(
+  DESCRIPTOR = _LISTPOOLSRESPONSE,
+  __module__ = 'identitylayer_pb2'
+  # @@protoc_insertion_point(class_scope:identitylayer.ListPoolsResponse)
+  ))
+_sym_db.RegisterMessage(ListPoolsResponse)
+
+ClosePoolLedgerRequest = _reflection.GeneratedProtocolMessageType('ClosePoolLedgerRequest', (_message.Message,), dict(
+  DESCRIPTOR = _CLOSEPOOLLEDGERREQUEST,
+  __module__ = 'identitylayer_pb2'
+  # @@protoc_insertion_point(class_scope:identitylayer.ClosePoolLedgerRequest)
+  ))
+_sym_db.RegisterMessage(ClosePoolLedgerRequest)
+
+ClosePoolLedgerResponse = _reflection.GeneratedProtocolMessageType('ClosePoolLedgerResponse', (_message.Message,), dict(
+  DESCRIPTOR = _CLOSEPOOLLEDGERRESPONSE,
+  __module__ = 'identitylayer_pb2'
+  # @@protoc_insertion_point(class_scope:identitylayer.ClosePoolLedgerResponse)
+  ))
+_sym_db.RegisterMessage(ClosePoolLedgerResponse)
+
+DeletePoolLedgerConfigRequest = _reflection.GeneratedProtocolMessageType('DeletePoolLedgerConfigRequest', (_message.Message,), dict(
+  DESCRIPTOR = _DELETEPOOLLEDGERCONFIGREQUEST,
+  __module__ = 'identitylayer_pb2'
+  # @@protoc_insertion_point(class_scope:identitylayer.DeletePoolLedgerConfigRequest)
+  ))
+_sym_db.RegisterMessage(DeletePoolLedgerConfigRequest)
+
+DeletePoolLedgerConfigResponse = _reflection.GeneratedProtocolMessageType('DeletePoolLedgerConfigResponse', (_message.Message,), dict(
+  DESCRIPTOR = _DELETEPOOLLEDGERCONFIGRESPONSE,
+  __module__ = 'identitylayer_pb2'
+  # @@protoc_insertion_point(class_scope:identitylayer.DeletePoolLedgerConfigResponse)
+  ))
+_sym_db.RegisterMessage(DeletePoolLedgerConfigResponse)
+
+SetProtocolVersionRequest = _reflection.GeneratedProtocolMessageType('SetProtocolVersionRequest', (_message.Message,), dict(
+  DESCRIPTOR = _SETPROTOCOLVERSIONREQUEST,
+  __module__ = 'identitylayer_pb2'
+  # @@protoc_insertion_point(class_scope:identitylayer.SetProtocolVersionRequest)
+  ))
+_sym_db.RegisterMessage(SetProtocolVersionRequest)
+
+SetProtocolVersionResponse = _reflection.GeneratedProtocolMessageType('SetProtocolVersionResponse', (_message.Message,), dict(
+  DESCRIPTOR = _SETPROTOCOLVERSIONRESPONSE,
+  __module__ = 'identitylayer_pb2'
+  # @@protoc_insertion_point(class_scope:identitylayer.SetProtocolVersionResponse)
+  ))
+_sym_db.RegisterMessage(SetProtocolVersionResponse)
+
+OpenReaderRequest = _reflection.GeneratedProtocolMessageType('OpenReaderRequest', (_message.Message,), dict(
+  DESCRIPTOR = _OPENREADERREQUEST,
+  __module__ = 'identitylayer_pb2'
+  # @@protoc_insertion_point(class_scope:identitylayer.OpenReaderRequest)
+  ))
+_sym_db.RegisterMessage(OpenReaderRequest)
+
+OpenReaderResponse = _reflection.GeneratedProtocolMessageType('OpenReaderResponse', (_message.Message,), dict(
+  DESCRIPTOR = _OPENREADERRESPONSE,
+  __module__ = 'identitylayer_pb2'
+  # @@protoc_insertion_point(class_scope:identitylayer.OpenReaderResponse)
+  ))
+_sym_db.RegisterMessage(OpenReaderResponse)
+
+OpenWriterRequest = _reflection.GeneratedProtocolMessageType('OpenWriterRequest', (_message.Message,), dict(
+  DESCRIPTOR = _OPENWRITERREQUEST,
+  __module__ = 'identitylayer_pb2'
+  # @@protoc_insertion_point(class_scope:identitylayer.OpenWriterRequest)
+  ))
+_sym_db.RegisterMessage(OpenWriterRequest)
+
+OpenWriterResponse = _reflection.GeneratedProtocolMessageType('OpenWriterResponse', (_message.Message,), dict(
+  DESCRIPTOR = _OPENWRITERRESPONSE,
+  __module__ = 'identitylayer_pb2'
+  # @@protoc_insertion_point(class_scope:identitylayer.OpenWriterResponse)
+  ))
+_sym_db.RegisterMessage(OpenWriterResponse)
+
+IssuerCreateSchemaRequest = _reflection.GeneratedProtocolMessageType('IssuerCreateSchemaRequest', (_message.Message,), dict(
+  DESCRIPTOR = _ISSUERCREATESCHEMAREQUEST,
+  __module__ = 'identitylayer_pb2'
+  # @@protoc_insertion_point(class_scope:identitylayer.IssuerCreateSchemaRequest)
+  ))
+_sym_db.RegisterMessage(IssuerCreateSchemaRequest)
+
+IssuerCreateSchemaResponse = _reflection.GeneratedProtocolMessageType('IssuerCreateSchemaResponse', (_message.Message,), dict(
+  DESCRIPTOR = _ISSUERCREATESCHEMARESPONSE,
+  __module__ = 'identitylayer_pb2'
+  # @@protoc_insertion_point(class_scope:identitylayer.IssuerCreateSchemaResponse)
+  ))
+_sym_db.RegisterMessage(IssuerCreateSchemaResponse)
+
+IssuerCreateAndStoreCredentialDefRequest = _reflection.GeneratedProtocolMessageType('IssuerCreateAndStoreCredentialDefRequest', (_message.Message,), dict(
+  DESCRIPTOR = _ISSUERCREATEANDSTORECREDENTIALDEFREQUEST,
+  __module__ = 'identitylayer_pb2'
+  # @@protoc_insertion_point(class_scope:identitylayer.IssuerCreateAndStoreCredentialDefRequest)
+  ))
+_sym_db.RegisterMessage(IssuerCreateAndStoreCredentialDefRequest)
+
+IssuerCreateAndStoreCredentialDefResponse = _reflection.GeneratedProtocolMessageType('IssuerCreateAndStoreCredentialDefResponse', (_message.Message,), dict(
+  DESCRIPTOR = _ISSUERCREATEANDSTORECREDENTIALDEFRESPONSE,
+  __module__ = 'identitylayer_pb2'
+  # @@protoc_insertion_point(class_scope:identitylayer.IssuerCreateAndStoreCredentialDefResponse)
+  ))
+_sym_db.RegisterMessage(IssuerCreateAndStoreCredentialDefResponse)
+
+IssuerCreateAndStoreRevocRegRequest = _reflection.GeneratedProtocolMessageType('IssuerCreateAndStoreRevocRegRequest', (_message.Message,), dict(
+  DESCRIPTOR = _ISSUERCREATEANDSTOREREVOCREGREQUEST,
+  __module__ = 'identitylayer_pb2'
+  # @@protoc_insertion_point(class_scope:identitylayer.IssuerCreateAndStoreRevocRegRequest)
+  ))
+_sym_db.RegisterMessage(IssuerCreateAndStoreRevocRegRequest)
+
+IssuerCreateAndStoreRevocRegResponse = _reflection.GeneratedProtocolMessageType('IssuerCreateAndStoreRevocRegResponse', (_message.Message,), dict(
+  DESCRIPTOR = _ISSUERCREATEANDSTOREREVOCREGRESPONSE,
+  __module__ = 'identitylayer_pb2'
+  # @@protoc_insertion_point(class_scope:identitylayer.IssuerCreateAndStoreRevocRegResponse)
+  ))
+_sym_db.RegisterMessage(IssuerCreateAndStoreRevocRegResponse)
+
+IssuerCreateCredentialOfferRequest = _reflection.GeneratedProtocolMessageType('IssuerCreateCredentialOfferRequest', (_message.Message,), dict(
+  DESCRIPTOR = _ISSUERCREATECREDENTIALOFFERREQUEST,
+  __module__ = 'identitylayer_pb2'
+  # @@protoc_insertion_point(class_scope:identitylayer.IssuerCreateCredentialOfferRequest)
+  ))
+_sym_db.RegisterMessage(IssuerCreateCredentialOfferRequest)
+
+IssuerCreateCredentialOfferResponse = _reflection.GeneratedProtocolMessageType('IssuerCreateCredentialOfferResponse', (_message.Message,), dict(
+  DESCRIPTOR = _ISSUERCREATECREDENTIALOFFERRESPONSE,
+  __module__ = 'identitylayer_pb2'
+  # @@protoc_insertion_point(class_scope:identitylayer.IssuerCreateCredentialOfferResponse)
+  ))
+_sym_db.RegisterMessage(IssuerCreateCredentialOfferResponse)
+
+IssuerCreateCredentialRequest = _reflection.GeneratedProtocolMessageType('IssuerCreateCredentialRequest', (_message.Message,), dict(
+  DESCRIPTOR = _ISSUERCREATECREDENTIALREQUEST,
+  __module__ = 'identitylayer_pb2'
+  # @@protoc_insertion_point(class_scope:identitylayer.IssuerCreateCredentialRequest)
+  ))
+_sym_db.RegisterMessage(IssuerCreateCredentialRequest)
+
+IssuerCreateCredentialResponse = _reflection.GeneratedProtocolMessageType('IssuerCreateCredentialResponse', (_message.Message,), dict(
+  DESCRIPTOR = _ISSUERCREATECREDENTIALRESPONSE,
+  __module__ = 'identitylayer_pb2'
+  # @@protoc_insertion_point(class_scope:identitylayer.IssuerCreateCredentialResponse)
+  ))
+_sym_db.RegisterMessage(IssuerCreateCredentialResponse)
+
+CredJsonMessage = _reflection.GeneratedProtocolMessageType('CredJsonMessage', (_message.Message,), dict(
+  DESCRIPTOR = _CREDJSONMESSAGE,
+  __module__ = 'identitylayer_pb2'
+  # @@protoc_insertion_point(class_scope:identitylayer.CredJsonMessage)
+  ))
+_sym_db.RegisterMessage(CredJsonMessage)
+
+IssuerRevokeCredentialRequest = _reflection.GeneratedProtocolMessageType('IssuerRevokeCredentialRequest', (_message.Message,), dict(
+  DESCRIPTOR = _ISSUERREVOKECREDENTIALREQUEST,
+  __module__ = 'identitylayer_pb2'
+  # @@protoc_insertion_point(class_scope:identitylayer.IssuerRevokeCredentialRequest)
+  ))
+_sym_db.RegisterMessage(IssuerRevokeCredentialRequest)
+
+IssuerRevokeCredentialResponse = _reflection.GeneratedProtocolMessageType('IssuerRevokeCredentialResponse', (_message.Message,), dict(
+  DESCRIPTOR = _ISSUERREVOKECREDENTIALRESPONSE,
+  __module__ = 'identitylayer_pb2'
+  # @@protoc_insertion_point(class_scope:identitylayer.IssuerRevokeCredentialResponse)
+  ))
+_sym_db.RegisterMessage(IssuerRevokeCredentialResponse)
+
+IssuerMergeRevocationRegistryDeltasRequest = _reflection.GeneratedProtocolMessageType('IssuerMergeRevocationRegistryDeltasRequest', (_message.Message,), dict(
+  DESCRIPTOR = _ISSUERMERGEREVOCATIONREGISTRYDELTASREQUEST,
+  __module__ = 'identitylayer_pb2'
+  # @@protoc_insertion_point(class_scope:identitylayer.IssuerMergeRevocationRegistryDeltasRequest)
+  ))
+_sym_db.RegisterMessage(IssuerMergeRevocationRegistryDeltasRequest)
+
+IssuerMergeRevocationRegistryDeltasResponse = _reflection.GeneratedProtocolMessageType('IssuerMergeRevocationRegistryDeltasResponse', (_message.Message,), dict(
+  DESCRIPTOR = _ISSUERMERGEREVOCATIONREGISTRYDELTASRESPONSE,
+  __module__ = 'identitylayer_pb2'
+  # @@protoc_insertion_point(class_scope:identitylayer.IssuerMergeRevocationRegistryDeltasResponse)
+  ))
+_sym_db.RegisterMessage(IssuerMergeRevocationRegistryDeltasResponse)
+
+ProverCreateMasterSecretRequest = _reflection.GeneratedProtocolMessageType('ProverCreateMasterSecretRequest', (_message.Message,), dict(
+  DESCRIPTOR = _PROVERCREATEMASTERSECRETREQUEST,
+  __module__ = 'identitylayer_pb2'
+  # @@protoc_insertion_point(class_scope:identitylayer.ProverCreateMasterSecretRequest)
+  ))
+_sym_db.RegisterMessage(ProverCreateMasterSecretRequest)
+
+ProverCreateMasterSecretResponse = _reflection.GeneratedProtocolMessageType('ProverCreateMasterSecretResponse', (_message.Message,), dict(
+  DESCRIPTOR = _PROVERCREATEMASTERSECRETRESPONSE,
+  __module__ = 'identitylayer_pb2'
+  # @@protoc_insertion_point(class_scope:identitylayer.ProverCreateMasterSecretResponse)
+  ))
+_sym_db.RegisterMessage(ProverCreateMasterSecretResponse)
+
+ProverCreateCredentialReqRequest = _reflection.GeneratedProtocolMessageType('ProverCreateCredentialReqRequest', (_message.Message,), dict(
+  DESCRIPTOR = _PROVERCREATECREDENTIALREQREQUEST,
+  __module__ = 'identitylayer_pb2'
+  # @@protoc_insertion_point(class_scope:identitylayer.ProverCreateCredentialReqRequest)
+  ))
+_sym_db.RegisterMessage(ProverCreateCredentialReqRequest)
+
+ProverCreateCredentialReqResponse = _reflection.GeneratedProtocolMessageType('ProverCreateCredentialReqResponse', (_message.Message,), dict(
+  DESCRIPTOR = _PROVERCREATECREDENTIALREQRESPONSE,
+  __module__ = 'identitylayer_pb2'
+  # @@protoc_insertion_point(class_scope:identitylayer.ProverCreateCredentialReqResponse)
+  ))
+_sym_db.RegisterMessage(ProverCreateCredentialReqResponse)
+
+CredReqJsonMessage = _reflection.GeneratedProtocolMessageType('CredReqJsonMessage', (_message.Message,), dict(
+  DESCRIPTOR = _CREDREQJSONMESSAGE,
+  __module__ = 'identitylayer_pb2'
+  # @@protoc_insertion_point(class_scope:identitylayer.CredReqJsonMessage)
+  ))
+_sym_db.RegisterMessage(CredReqJsonMessage)
+
+ProverStoreCredentialRequest = _reflection.GeneratedProtocolMessageType('ProverStoreCredentialRequest', (_message.Message,), dict(
+  DESCRIPTOR = _PROVERSTORECREDENTIALREQUEST,
+  __module__ = 'identitylayer_pb2'
+  # @@protoc_insertion_point(class_scope:identitylayer.ProverStoreCredentialRequest)
+  ))
+_sym_db.RegisterMessage(ProverStoreCredentialRequest)
+
+ProverStoreCredentialResponse = _reflection.GeneratedProtocolMessageType('ProverStoreCredentialResponse', (_message.Message,), dict(
+  DESCRIPTOR = _PROVERSTORECREDENTIALRESPONSE,
+  __module__ = 'identitylayer_pb2'
+  # @@protoc_insertion_point(class_scope:identitylayer.ProverStoreCredentialResponse)
+  ))
+_sym_db.RegisterMessage(ProverStoreCredentialResponse)
+
+ProverGetCredentialRequest = _reflection.GeneratedProtocolMessageType('ProverGetCredentialRequest', (_message.Message,), dict(
+  DESCRIPTOR = _PROVERGETCREDENTIALREQUEST,
+  __module__ = 'identitylayer_pb2'
+  # @@protoc_insertion_point(class_scope:identitylayer.ProverGetCredentialRequest)
+  ))
+_sym_db.RegisterMessage(ProverGetCredentialRequest)
+
+ProverGetCredentialResponse = _reflection.GeneratedProtocolMessageType('ProverGetCredentialResponse', (_message.Message,), dict(
+  DESCRIPTOR = _PROVERGETCREDENTIALRESPONSE,
+  __module__ = 'identitylayer_pb2'
+  # @@protoc_insertion_point(class_scope:identitylayer.ProverGetCredentialResponse)
+  ))
+_sym_db.RegisterMessage(ProverGetCredentialResponse)
+
+ProverGetCredentialsRequest = _reflection.GeneratedProtocolMessageType('ProverGetCredentialsRequest', (_message.Message,), dict(
+  DESCRIPTOR = _PROVERGETCREDENTIALSREQUEST,
+  __module__ = 'identitylayer_pb2'
+  # @@protoc_insertion_point(class_scope:identitylayer.ProverGetCredentialsRequest)
+  ))
+_sym_db.RegisterMessage(ProverGetCredentialsRequest)
+
+FilterJsonMessage = _reflection.GeneratedProtocolMessageType('FilterJsonMessage', (_message.Message,), dict(
+  DESCRIPTOR = _FILTERJSONMESSAGE,
+  __module__ = 'identitylayer_pb2'
+  # @@protoc_insertion_point(class_scope:identitylayer.FilterJsonMessage)
+  ))
+_sym_db.RegisterMessage(FilterJsonMessage)
+
+ProverGetCredentialsResponse = _reflection.GeneratedProtocolMessageType('ProverGetCredentialsResponse', (_message.Message,), dict(
+  DESCRIPTOR = _PROVERGETCREDENTIALSRESPONSE,
+  __module__ = 'identitylayer_pb2'
+  # @@protoc_insertion_point(class_scope:identitylayer.ProverGetCredentialsResponse)
+  ))
+_sym_db.RegisterMessage(ProverGetCredentialsResponse)
+
+CredentialsJsonMessage = _reflection.GeneratedProtocolMessageType('CredentialsJsonMessage', (_message.Message,), dict(
+  DESCRIPTOR = _CREDENTIALSJSONMESSAGE,
+  __module__ = 'identitylayer_pb2'
+  # @@protoc_insertion_point(class_scope:identitylayer.CredentialsJsonMessage)
+  ))
+_sym_db.RegisterMessage(CredentialsJsonMessage)
+
+ProverSeachCredentialsRequest = _reflection.GeneratedProtocolMessageType('ProverSeachCredentialsRequest', (_message.Message,), dict(
+  DESCRIPTOR = _PROVERSEACHCREDENTIALSREQUEST,
+  __module__ = 'identitylayer_pb2'
+  # @@protoc_insertion_point(class_scope:identitylayer.ProverSeachCredentialsRequest)
+  ))
+_sym_db.RegisterMessage(ProverSeachCredentialsRequest)
+
+ProverSeachCredentialsResponse = _reflection.GeneratedProtocolMessageType('ProverSeachCredentialsResponse', (_message.Message,), dict(
+  DESCRIPTOR = _PROVERSEACHCREDENTIALSRESPONSE,
+  __module__ = 'identitylayer_pb2'
+  # @@protoc_insertion_point(class_scope:identitylayer.ProverSeachCredentialsResponse)
+  ))
+_sym_db.RegisterMessage(ProverSeachCredentialsResponse)
+
+ProverFetchCredentialsRequest = _reflection.GeneratedProtocolMessageType('ProverFetchCredentialsRequest', (_message.Message,), dict(
+  DESCRIPTOR = _PROVERFETCHCREDENTIALSREQUEST,
+  __module__ = 'identitylayer_pb2'
+  # @@protoc_insertion_point(class_scope:identitylayer.ProverFetchCredentialsRequest)
+  ))
+_sym_db.RegisterMessage(ProverFetchCredentialsRequest)
+
+ProverFetchCredentialsResponse = _reflection.GeneratedProtocolMessageType('ProverFetchCredentialsResponse', (_message.Message,), dict(
+  DESCRIPTOR = _PROVERFETCHCREDENTIALSRESPONSE,
+  __module__ = 'identitylayer_pb2'
+  # @@protoc_insertion_point(class_scope:identitylayer.ProverFetchCredentialsResponse)
+  ))
+_sym_db.RegisterMessage(ProverFetchCredentialsResponse)
+
+ProverCloseCredentialsSearchRequest = _reflection.GeneratedProtocolMessageType('ProverCloseCredentialsSearchRequest', (_message.Message,), dict(
+  DESCRIPTOR = _PROVERCLOSECREDENTIALSSEARCHREQUEST,
+  __module__ = 'identitylayer_pb2'
+  # @@protoc_insertion_point(class_scope:identitylayer.ProverCloseCredentialsSearchRequest)
+  ))
+_sym_db.RegisterMessage(ProverCloseCredentialsSearchRequest)
+
+ProverCloseCredentialsSearchResponse = _reflection.GeneratedProtocolMessageType('ProverCloseCredentialsSearchResponse', (_message.Message,), dict(
+  DESCRIPTOR = _PROVERCLOSECREDENTIALSSEARCHRESPONSE,
+  __module__ = 'identitylayer_pb2'
+  # @@protoc_insertion_point(class_scope:identitylayer.ProverCloseCredentialsSearchResponse)
+  ))
+_sym_db.RegisterMessage(ProverCloseCredentialsSearchResponse)
+
+ProverGetCredentialsForProofReqRequest = _reflection.GeneratedProtocolMessageType('ProverGetCredentialsForProofReqRequest', (_message.Message,), dict(
+  DESCRIPTOR = _PROVERGETCREDENTIALSFORPROOFREQREQUEST,
+  __module__ = 'identitylayer_pb2'
+  # @@protoc_insertion_point(class_scope:identitylayer.ProverGetCredentialsForProofReqRequest)
+  ))
+_sym_db.RegisterMessage(ProverGetCredentialsForProofReqRequest)
+
+ProofRequestJsonMessage = _reflection.GeneratedProtocolMessageType('ProofRequestJsonMessage', (_message.Message,), dict(
+  DESCRIPTOR = _PROOFREQUESTJSONMESSAGE,
+  __module__ = 'identitylayer_pb2'
+  # @@protoc_insertion_point(class_scope:identitylayer.ProofRequestJsonMessage)
+  ))
+_sym_db.RegisterMessage(ProofRequestJsonMessage)
+
+ProverGetCredentialsForProofReqResponse = _reflection.GeneratedProtocolMessageType('ProverGetCredentialsForProofReqResponse', (_message.Message,), dict(
+  DESCRIPTOR = _PROVERGETCREDENTIALSFORPROOFREQRESPONSE,
+  __module__ = 'identitylayer_pb2'
+  # @@protoc_insertion_point(class_scope:identitylayer.ProverGetCredentialsForProofReqResponse)
+  ))
+_sym_db.RegisterMessage(ProverGetCredentialsForProofReqResponse)
+
+ProverSearchCredentialsForProofReqRequest = _reflection.GeneratedProtocolMessageType('ProverSearchCredentialsForProofReqRequest', (_message.Message,), dict(
+  DESCRIPTOR = _PROVERSEARCHCREDENTIALSFORPROOFREQREQUEST,
+  __module__ = 'identitylayer_pb2'
+  # @@protoc_insertion_point(class_scope:identitylayer.ProverSearchCredentialsForProofReqRequest)
+  ))
+_sym_db.RegisterMessage(ProverSearchCredentialsForProofReqRequest)
+
+ExtraQueryJsonMessage = _reflection.GeneratedProtocolMessageType('ExtraQueryJsonMessage', (_message.Message,), dict(
+  DESCRIPTOR = _EXTRAQUERYJSONMESSAGE,
+  __module__ = 'identitylayer_pb2'
+  # @@protoc_insertion_point(class_scope:identitylayer.ExtraQueryJsonMessage)
+  ))
+_sym_db.RegisterMessage(ExtraQueryJsonMessage)
+
+ProverSearchCredentialsForProofReqResponse = _reflection.GeneratedProtocolMessageType('ProverSearchCredentialsForProofReqResponse', (_message.Message,), dict(
+  DESCRIPTOR = _PROVERSEARCHCREDENTIALSFORPROOFREQRESPONSE,
+  __module__ = 'identitylayer_pb2'
+  # @@protoc_insertion_point(class_scope:identitylayer.ProverSearchCredentialsForProofReqResponse)
+  ))
+_sym_db.RegisterMessage(ProverSearchCredentialsForProofReqResponse)
+
+ProverFetchCredentialsForProofReqRequest = _reflection.GeneratedProtocolMessageType('ProverFetchCredentialsForProofReqRequest', (_message.Message,), dict(
+  DESCRIPTOR = _PROVERFETCHCREDENTIALSFORPROOFREQREQUEST,
+  __module__ = 'identitylayer_pb2'
+  # @@protoc_insertion_point(class_scope:identitylayer.ProverFetchCredentialsForProofReqRequest)
+  ))
+_sym_db.RegisterMessage(ProverFetchCredentialsForProofReqRequest)
+
+ProverFetchCredentialsForProofReqResponse = _reflection.GeneratedProtocolMessageType('ProverFetchCredentialsForProofReqResponse', (_message.Message,), dict(
+  DESCRIPTOR = _PROVERFETCHCREDENTIALSFORPROOFREQRESPONSE,
+  __module__ = 'identitylayer_pb2'
+  # @@protoc_insertion_point(class_scope:identitylayer.ProverFetchCredentialsForProofReqResponse)
+  ))
+_sym_db.RegisterMessage(ProverFetchCredentialsForProofReqResponse)
+
+CredentialsGivenProofRequest = _reflection.GeneratedProtocolMessageType('CredentialsGivenProofRequest', (_message.Message,), dict(
+  DESCRIPTOR = _CREDENTIALSGIVENPROOFREQUEST,
+  __module__ = 'identitylayer_pb2'
+  # @@protoc_insertion_point(class_scope:identitylayer.CredentialsGivenProofRequest)
+  ))
+_sym_db.RegisterMessage(CredentialsGivenProofRequest)
+
+CredentialInfo = _reflection.GeneratedProtocolMessageType('CredentialInfo', (_message.Message,), dict(
+  DESCRIPTOR = _CREDENTIALINFO,
+  __module__ = 'identitylayer_pb2'
+  # @@protoc_insertion_point(class_scope:identitylayer.CredentialInfo)
+  ))
+_sym_db.RegisterMessage(CredentialInfo)
+
+ProverCloseCredentialsSearchForProofReqRequest = _reflection.GeneratedProtocolMessageType('ProverCloseCredentialsSearchForProofReqRequest', (_message.Message,), dict(
+  DESCRIPTOR = _PROVERCLOSECREDENTIALSSEARCHFORPROOFREQREQUEST,
+  __module__ = 'identitylayer_pb2'
+  # @@protoc_insertion_point(class_scope:identitylayer.ProverCloseCredentialsSearchForProofReqRequest)
+  ))
+_sym_db.RegisterMessage(ProverCloseCredentialsSearchForProofReqRequest)
+
+ProverCloseCredentialsSearchForProofReqResponse = _reflection.GeneratedProtocolMessageType('ProverCloseCredentialsSearchForProofReqResponse', (_message.Message,), dict(
+  DESCRIPTOR = _PROVERCLOSECREDENTIALSSEARCHFORPROOFREQRESPONSE,
+  __module__ = 'identitylayer_pb2'
+  # @@protoc_insertion_point(class_scope:identitylayer.ProverCloseCredentialsSearchForProofReqResponse)
+  ))
+_sym_db.RegisterMessage(ProverCloseCredentialsSearchForProofReqResponse)
+
+ProverCreateProofRequest = _reflection.GeneratedProtocolMessageType('ProverCreateProofRequest', (_message.Message,), dict(
+  DESCRIPTOR = _PROVERCREATEPROOFREQUEST,
+  __module__ = 'identitylayer_pb2'
+  # @@protoc_insertion_point(class_scope:identitylayer.ProverCreateProofRequest)
+  ))
+_sym_db.RegisterMessage(ProverCreateProofRequest)
+
+ProofReqJsonMessage = _reflection.GeneratedProtocolMessageType('ProofReqJsonMessage', (_message.Message,), dict(
+  DESCRIPTOR = _PROOFREQJSONMESSAGE,
+  __module__ = 'identitylayer_pb2'
+  # @@protoc_insertion_point(class_scope:identitylayer.ProofReqJsonMessage)
+  ))
+_sym_db.RegisterMessage(ProofReqJsonMessage)
+
+NonRevocIntervalMessage = _reflection.GeneratedProtocolMessageType('NonRevocIntervalMessage', (_message.Message,), dict(
+  DESCRIPTOR = _NONREVOCINTERVALMESSAGE,
+  __module__ = 'identitylayer_pb2'
+  # @@protoc_insertion_point(class_scope:identitylayer.NonRevocIntervalMessage)
+  ))
+_sym_db.RegisterMessage(NonRevocIntervalMessage)
+
+RequestedCredentialsJsonMessage = _reflection.GeneratedProtocolMessageType('RequestedCredentialsJsonMessage', (_message.Message,), dict(
+  DESCRIPTOR = _REQUESTEDCREDENTIALSJSONMESSAGE,
+  __module__ = 'identitylayer_pb2'
+  # @@protoc_insertion_point(class_scope:identitylayer.RequestedCredentialsJsonMessage)
+  ))
+_sym_db.RegisterMessage(RequestedCredentialsJsonMessage)
+
+ProverCreateProofResponse = _reflection.GeneratedProtocolMessageType('ProverCreateProofResponse', (_message.Message,), dict(
+  DESCRIPTOR = _PROVERCREATEPROOFRESPONSE,
+  __module__ = 'identitylayer_pb2'
+  # @@protoc_insertion_point(class_scope:identitylayer.ProverCreateProofResponse)
+  ))
+_sym_db.RegisterMessage(ProverCreateProofResponse)
+
+VerifierVerifyProofRequest = _reflection.GeneratedProtocolMessageType('VerifierVerifyProofRequest', (_message.Message,), dict(
+  DESCRIPTOR = _VERIFIERVERIFYPROOFREQUEST,
+  __module__ = 'identitylayer_pb2'
+  # @@protoc_insertion_point(class_scope:identitylayer.VerifierVerifyProofRequest)
+  ))
+_sym_db.RegisterMessage(VerifierVerifyProofRequest)
+
+VerifierVerifyProofResponse = _reflection.GeneratedProtocolMessageType('VerifierVerifyProofResponse', (_message.Message,), dict(
+  DESCRIPTOR = _VERIFIERVERIFYPROOFRESPONSE,
+  __module__ = 'identitylayer_pb2'
+  # @@protoc_insertion_point(class_scope:identitylayer.VerifierVerifyProofResponse)
+  ))
+_sym_db.RegisterMessage(VerifierVerifyProofResponse)
+
+CreateRevocationStateRequest = _reflection.GeneratedProtocolMessageType('CreateRevocationStateRequest', (_message.Message,), dict(
+  DESCRIPTOR = _CREATEREVOCATIONSTATEREQUEST,
+  __module__ = 'identitylayer_pb2'
+  # @@protoc_insertion_point(class_scope:identitylayer.CreateRevocationStateRequest)
+  ))
+_sym_db.RegisterMessage(CreateRevocationStateRequest)
+
+CreateRevocationStateResponse = _reflection.GeneratedProtocolMessageType('CreateRevocationStateResponse', (_message.Message,), dict(
+  DESCRIPTOR = _CREATEREVOCATIONSTATERESPONSE,
+  __module__ = 'identitylayer_pb2'
+  # @@protoc_insertion_point(class_scope:identitylayer.CreateRevocationStateResponse)
+  ))
+_sym_db.RegisterMessage(CreateRevocationStateResponse)
+
+UpdateRevocationStateRequest = _reflection.GeneratedProtocolMessageType('UpdateRevocationStateRequest', (_message.Message,), dict(
+  DESCRIPTOR = _UPDATEREVOCATIONSTATEREQUEST,
+  __module__ = 'identitylayer_pb2'
+  # @@protoc_insertion_point(class_scope:identitylayer.UpdateRevocationStateRequest)
+  ))
+_sym_db.RegisterMessage(UpdateRevocationStateRequest)
+
+UpdateRevocationStateResponse = _reflection.GeneratedProtocolMessageType('UpdateRevocationStateResponse', (_message.Message,), dict(
+  DESCRIPTOR = _UPDATEREVOCATIONSTATERESPONSE,
+  __module__ = 'identitylayer_pb2'
+  # @@protoc_insertion_point(class_scope:identitylayer.UpdateRevocationStateResponse)
+  ))
+_sym_db.RegisterMessage(UpdateRevocationStateResponse)
+
+CreateKeyRequest = _reflection.GeneratedProtocolMessageType('CreateKeyRequest', (_message.Message,), dict(
+  DESCRIPTOR = _CREATEKEYREQUEST,
+  __module__ = 'identitylayer_pb2'
+  # @@protoc_insertion_point(class_scope:identitylayer.CreateKeyRequest)
+  ))
+_sym_db.RegisterMessage(CreateKeyRequest)
+
+KeyJsonCreateKey = _reflection.GeneratedProtocolMessageType('KeyJsonCreateKey', (_message.Message,), dict(
+  DESCRIPTOR = _KEYJSONCREATEKEY,
+  __module__ = 'identitylayer_pb2'
+  # @@protoc_insertion_point(class_scope:identitylayer.KeyJsonCreateKey)
+  ))
+_sym_db.RegisterMessage(KeyJsonCreateKey)
+
+CreateKeyResponse = _reflection.GeneratedProtocolMessageType('CreateKeyResponse', (_message.Message,), dict(
+  DESCRIPTOR = _CREATEKEYRESPONSE,
+  __module__ = 'identitylayer_pb2'
+  # @@protoc_insertion_point(class_scope:identitylayer.CreateKeyResponse)
+  ))
+_sym_db.RegisterMessage(CreateKeyResponse)
+
+SetKeyMetadataRequest = _reflection.GeneratedProtocolMessageType('SetKeyMetadataRequest', (_message.Message,), dict(
+  DESCRIPTOR = _SETKEYMETADATAREQUEST,
+  __module__ = 'identitylayer_pb2'
+  # @@protoc_insertion_point(class_scope:identitylayer.SetKeyMetadataRequest)
+  ))
+_sym_db.RegisterMessage(SetKeyMetadataRequest)
+
+SetKeyMetadataResponse = _reflection.GeneratedProtocolMessageType('SetKeyMetadataResponse', (_message.Message,), dict(
+  DESCRIPTOR = _SETKEYMETADATARESPONSE,
+  __module__ = 'identitylayer_pb2'
+  # @@protoc_insertion_point(class_scope:identitylayer.SetKeyMetadataResponse)
+  ))
+_sym_db.RegisterMessage(SetKeyMetadataResponse)
+
+GetKeyMetadataRequest = _reflection.GeneratedProtocolMessageType('GetKeyMetadataRequest', (_message.Message,), dict(
+  DESCRIPTOR = _GETKEYMETADATAREQUEST,
+  __module__ = 'identitylayer_pb2'
+  # @@protoc_insertion_point(class_scope:identitylayer.GetKeyMetadataRequest)
+  ))
+_sym_db.RegisterMessage(GetKeyMetadataRequest)
+
+GetKeyMetadataResponse = _reflection.GeneratedProtocolMessageType('GetKeyMetadataResponse', (_message.Message,), dict(
+  DESCRIPTOR = _GETKEYMETADATARESPONSE,
+  __module__ = 'identitylayer_pb2'
+  # @@protoc_insertion_point(class_scope:identitylayer.GetKeyMetadataResponse)
+  ))
+_sym_db.RegisterMessage(GetKeyMetadataResponse)
+
+CryptoSignRequest = _reflection.GeneratedProtocolMessageType('CryptoSignRequest', (_message.Message,), dict(
+  DESCRIPTOR = _CRYPTOSIGNREQUEST,
+  __module__ = 'identitylayer_pb2'
+  # @@protoc_insertion_point(class_scope:identitylayer.CryptoSignRequest)
+  ))
+_sym_db.RegisterMessage(CryptoSignRequest)
+
+CryptoSignResponse = _reflection.GeneratedProtocolMessageType('CryptoSignResponse', (_message.Message,), dict(
+  DESCRIPTOR = _CRYPTOSIGNRESPONSE,
+  __module__ = 'identitylayer_pb2'
+  # @@protoc_insertion_point(class_scope:identitylayer.CryptoSignResponse)
+  ))
+_sym_db.RegisterMessage(CryptoSignResponse)
+
+CryptoVerifyRequest = _reflection.GeneratedProtocolMessageType('CryptoVerifyRequest', (_message.Message,), dict(
+  DESCRIPTOR = _CRYPTOVERIFYREQUEST,
+  __module__ = 'identitylayer_pb2'
+  # @@protoc_insertion_point(class_scope:identitylayer.CryptoVerifyRequest)
+  ))
+_sym_db.RegisterMessage(CryptoVerifyRequest)
+
+CryptoVerifyResponse = _reflection.GeneratedProtocolMessageType('CryptoVerifyResponse', (_message.Message,), dict(
+  DESCRIPTOR = _CRYPTOVERIFYRESPONSE,
+  __module__ = 'identitylayer_pb2'
+  # @@protoc_insertion_point(class_scope:identitylayer.CryptoVerifyResponse)
+  ))
+_sym_db.RegisterMessage(CryptoVerifyResponse)
+
+AuthCryptRequest = _reflection.GeneratedProtocolMessageType('AuthCryptRequest', (_message.Message,), dict(
+  DESCRIPTOR = _AUTHCRYPTREQUEST,
+  __module__ = 'identitylayer_pb2'
+  # @@protoc_insertion_point(class_scope:identitylayer.AuthCryptRequest)
+  ))
+_sym_db.RegisterMessage(AuthCryptRequest)
+
+AuthCryptResponse = _reflection.GeneratedProtocolMessageType('AuthCryptResponse', (_message.Message,), dict(
+  DESCRIPTOR = _AUTHCRYPTRESPONSE,
+  __module__ = 'identitylayer_pb2'
+  # @@protoc_insertion_point(class_scope:identitylayer.AuthCryptResponse)
+  ))
+_sym_db.RegisterMessage(AuthCryptResponse)
+
+AuthDecryptRequest = _reflection.GeneratedProtocolMessageType('AuthDecryptRequest', (_message.Message,), dict(
+  DESCRIPTOR = _AUTHDECRYPTREQUEST,
+  __module__ = 'identitylayer_pb2'
+  # @@protoc_insertion_point(class_scope:identitylayer.AuthDecryptRequest)
+  ))
+_sym_db.RegisterMessage(AuthDecryptRequest)
+
+AuthDecryptResponse = _reflection.GeneratedProtocolMessageType('AuthDecryptResponse', (_message.Message,), dict(
+  DESCRIPTOR = _AUTHDECRYPTRESPONSE,
+  __module__ = 'identitylayer_pb2'
+  # @@protoc_insertion_point(class_scope:identitylayer.AuthDecryptResponse)
+  ))
+_sym_db.RegisterMessage(AuthDecryptResponse)
+
+AnonCryptRequest = _reflection.GeneratedProtocolMessageType('AnonCryptRequest', (_message.Message,), dict(
+  DESCRIPTOR = _ANONCRYPTREQUEST,
+  __module__ = 'identitylayer_pb2'
+  # @@protoc_insertion_point(class_scope:identitylayer.AnonCryptRequest)
+  ))
+_sym_db.RegisterMessage(AnonCryptRequest)
+
+AnonCryptResponse = _reflection.GeneratedProtocolMessageType('AnonCryptResponse', (_message.Message,), dict(
+  DESCRIPTOR = _ANONCRYPTRESPONSE,
+  __module__ = 'identitylayer_pb2'
+  # @@protoc_insertion_point(class_scope:identitylayer.AnonCryptResponse)
+  ))
+_sym_db.RegisterMessage(AnonCryptResponse)
+
+AnonDecryptRequest = _reflection.GeneratedProtocolMessageType('AnonDecryptRequest', (_message.Message,), dict(
+  DESCRIPTOR = _ANONDECRYPTREQUEST,
+  __module__ = 'identitylayer_pb2'
+  # @@protoc_insertion_point(class_scope:identitylayer.AnonDecryptRequest)
+  ))
+_sym_db.RegisterMessage(AnonDecryptRequest)
+
+AnonDecryptResponse = _reflection.GeneratedProtocolMessageType('AnonDecryptResponse', (_message.Message,), dict(
+  DESCRIPTOR = _ANONDECRYPTRESPONSE,
+  __module__ = 'identitylayer_pb2'
+  # @@protoc_insertion_point(class_scope:identitylayer.AnonDecryptResponse)
+  ))
+_sym_db.RegisterMessage(AnonDecryptResponse)
+
+IsPairwiseExistsRequest = _reflection.GeneratedProtocolMessageType('IsPairwiseExistsRequest', (_message.Message,), dict(
+  DESCRIPTOR = _ISPAIRWISEEXISTSREQUEST,
+  __module__ = 'identitylayer_pb2'
+  # @@protoc_insertion_point(class_scope:identitylayer.IsPairwiseExistsRequest)
+  ))
+_sym_db.RegisterMessage(IsPairwiseExistsRequest)
+
+IsPairwiseExistsResponse = _reflection.GeneratedProtocolMessageType('IsPairwiseExistsResponse', (_message.Message,), dict(
+  DESCRIPTOR = _ISPAIRWISEEXISTSRESPONSE,
+  __module__ = 'identitylayer_pb2'
+  # @@protoc_insertion_point(class_scope:identitylayer.IsPairwiseExistsResponse)
+  ))
+_sym_db.RegisterMessage(IsPairwiseExistsResponse)
+
+CreatePairwiseRequest = _reflection.GeneratedProtocolMessageType('CreatePairwiseRequest', (_message.Message,), dict(
+  DESCRIPTOR = _CREATEPAIRWISEREQUEST,
+  __module__ = 'identitylayer_pb2'
+  # @@protoc_insertion_point(class_scope:identitylayer.CreatePairwiseRequest)
+  ))
+_sym_db.RegisterMessage(CreatePairwiseRequest)
+
+CreatePairwiseResponse = _reflection.GeneratedProtocolMessageType('CreatePairwiseResponse', (_message.Message,), dict(
+  DESCRIPTOR = _CREATEPAIRWISERESPONSE,
+  __module__ = 'identitylayer_pb2'
+  # @@protoc_insertion_point(class_scope:identitylayer.CreatePairwiseResponse)
+  ))
+_sym_db.RegisterMessage(CreatePairwiseResponse)
+
+ListPairwiseRequest = _reflection.GeneratedProtocolMessageType('ListPairwiseRequest', (_message.Message,), dict(
+  DESCRIPTOR = _LISTPAIRWISEREQUEST,
+  __module__ = 'identitylayer_pb2'
+  # @@protoc_insertion_point(class_scope:identitylayer.ListPairwiseRequest)
+  ))
+_sym_db.RegisterMessage(ListPairwiseRequest)
+
+ListPairwiseResponse = _reflection.GeneratedProtocolMessageType('ListPairwiseResponse', (_message.Message,), dict(
+  DESCRIPTOR = _LISTPAIRWISERESPONSE,
+  __module__ = 'identitylayer_pb2'
+  # @@protoc_insertion_point(class_scope:identitylayer.ListPairwiseResponse)
+  ))
+_sym_db.RegisterMessage(ListPairwiseResponse)
+
+GetPairwiseRequest = _reflection.GeneratedProtocolMessageType('GetPairwiseRequest', (_message.Message,), dict(
+  DESCRIPTOR = _GETPAIRWISEREQUEST,
+  __module__ = 'identitylayer_pb2'
+  # @@protoc_insertion_point(class_scope:identitylayer.GetPairwiseRequest)
+  ))
+_sym_db.RegisterMessage(GetPairwiseRequest)
+
+GetPairwiseResponse = _reflection.GeneratedProtocolMessageType('GetPairwiseResponse', (_message.Message,), dict(
+  DESCRIPTOR = _GETPAIRWISERESPONSE,
+  __module__ = 'identitylayer_pb2'
+  # @@protoc_insertion_point(class_scope:identitylayer.GetPairwiseResponse)
+  ))
+_sym_db.RegisterMessage(GetPairwiseResponse)
+
+SetPairwiseMetadataRequest = _reflection.GeneratedProtocolMessageType('SetPairwiseMetadataRequest', (_message.Message,), dict(
+  DESCRIPTOR = _SETPAIRWISEMETADATAREQUEST,
+  __module__ = 'identitylayer_pb2'
+  # @@protoc_insertion_point(class_scope:identitylayer.SetPairwiseMetadataRequest)
+  ))
+_sym_db.RegisterMessage(SetPairwiseMetadataRequest)
+
+SetPairwiseMetadataResponse = _reflection.GeneratedProtocolMessageType('SetPairwiseMetadataResponse', (_message.Message,), dict(
+  DESCRIPTOR = _SETPAIRWISEMETADATARESPONSE,
+  __module__ = 'identitylayer_pb2'
+  # @@protoc_insertion_point(class_scope:identitylayer.SetPairwiseMetadataResponse)
+  ))
+_sym_db.RegisterMessage(SetPairwiseMetadataResponse)
+
+CreateAndStoreMyDidRequest = _reflection.GeneratedProtocolMessageType('CreateAndStoreMyDidRequest', (_message.Message,), dict(
+  DESCRIPTOR = _CREATEANDSTOREMYDIDREQUEST,
+  __module__ = 'identitylayer_pb2'
+  # @@protoc_insertion_point(class_scope:identitylayer.CreateAndStoreMyDidRequest)
+  ))
+_sym_db.RegisterMessage(CreateAndStoreMyDidRequest)
+
+CreateAndStoreMyDidJsonMessage = _reflection.GeneratedProtocolMessageType('CreateAndStoreMyDidJsonMessage', (_message.Message,), dict(
+  DESCRIPTOR = _CREATEANDSTOREMYDIDJSONMESSAGE,
+  __module__ = 'identitylayer_pb2'
+  # @@protoc_insertion_point(class_scope:identitylayer.CreateAndStoreMyDidJsonMessage)
+  ))
+_sym_db.RegisterMessage(CreateAndStoreMyDidJsonMessage)
+
+CreateAndStoreMyDidResponse = _reflection.GeneratedProtocolMessageType('CreateAndStoreMyDidResponse', (_message.Message,), dict(
+  DESCRIPTOR = _CREATEANDSTOREMYDIDRESPONSE,
+  __module__ = 'identitylayer_pb2'
+  # @@protoc_insertion_point(class_scope:identitylayer.CreateAndStoreMyDidResponse)
+  ))
+_sym_db.RegisterMessage(CreateAndStoreMyDidResponse)
+
+ReplaceKeysStartRequest = _reflection.GeneratedProtocolMessageType('ReplaceKeysStartRequest', (_message.Message,), dict(
+  DESCRIPTOR = _REPLACEKEYSSTARTREQUEST,
+  __module__ = 'identitylayer_pb2'
+  # @@protoc_insertion_point(class_scope:identitylayer.ReplaceKeysStartRequest)
+  ))
+_sym_db.RegisterMessage(ReplaceKeysStartRequest)
+
+ReplaceKeysStartIdentityJsonMessage = _reflection.GeneratedProtocolMessageType('ReplaceKeysStartIdentityJsonMessage', (_message.Message,), dict(
+  DESCRIPTOR = _REPLACEKEYSSTARTIDENTITYJSONMESSAGE,
+  __module__ = 'identitylayer_pb2'
+  # @@protoc_insertion_point(class_scope:identitylayer.ReplaceKeysStartIdentityJsonMessage)
+  ))
+_sym_db.RegisterMessage(ReplaceKeysStartIdentityJsonMessage)
+
+ReplaceKeysStartResponse = _reflection.GeneratedProtocolMessageType('ReplaceKeysStartResponse', (_message.Message,), dict(
+  DESCRIPTOR = _REPLACEKEYSSTARTRESPONSE,
+  __module__ = 'identitylayer_pb2'
+  # @@protoc_insertion_point(class_scope:identitylayer.ReplaceKeysStartResponse)
+  ))
+_sym_db.RegisterMessage(ReplaceKeysStartResponse)
+
+ReplaceKeysApplyRequest = _reflection.GeneratedProtocolMessageType('ReplaceKeysApplyRequest', (_message.Message,), dict(
+  DESCRIPTOR = _REPLACEKEYSAPPLYREQUEST,
+  __module__ = 'identitylayer_pb2'
+  # @@protoc_insertion_point(class_scope:identitylayer.ReplaceKeysApplyRequest)
+  ))
+_sym_db.RegisterMessage(ReplaceKeysApplyRequest)
+
+ReplaceKeysApplyResponse = _reflection.GeneratedProtocolMessageType('ReplaceKeysApplyResponse', (_message.Message,), dict(
+  DESCRIPTOR = _REPLACEKEYSAPPLYRESPONSE,
+  __module__ = 'identitylayer_pb2'
+  # @@protoc_insertion_point(class_scope:identitylayer.ReplaceKeysApplyResponse)
+  ))
+_sym_db.RegisterMessage(ReplaceKeysApplyResponse)
+
+StoreTheirDidRequest = _reflection.GeneratedProtocolMessageType('StoreTheirDidRequest', (_message.Message,), dict(
+  DESCRIPTOR = _STORETHEIRDIDREQUEST,
+  __module__ = 'identitylayer_pb2'
+  # @@protoc_insertion_point(class_scope:identitylayer.StoreTheirDidRequest)
+  ))
+_sym_db.RegisterMessage(StoreTheirDidRequest)
+
+StoreTheirDidIdentityJsonMessage = _reflection.GeneratedProtocolMessageType('StoreTheirDidIdentityJsonMessage', (_message.Message,), dict(
+  DESCRIPTOR = _STORETHEIRDIDIDENTITYJSONMESSAGE,
+  __module__ = 'identitylayer_pb2'
+  # @@protoc_insertion_point(class_scope:identitylayer.StoreTheirDidIdentityJsonMessage)
+  ))
+_sym_db.RegisterMessage(StoreTheirDidIdentityJsonMessage)
+
+StoreTheirDidResponse = _reflection.GeneratedProtocolMessageType('StoreTheirDidResponse', (_message.Message,), dict(
+  DESCRIPTOR = _STORETHEIRDIDRESPONSE,
+  __module__ = 'identitylayer_pb2'
+  # @@protoc_insertion_point(class_scope:identitylayer.StoreTheirDidResponse)
+  ))
+_sym_db.RegisterMessage(StoreTheirDidResponse)
+
+DidCreateKeyRequest = _reflection.GeneratedProtocolMessageType('DidCreateKeyRequest', (_message.Message,), dict(
+  DESCRIPTOR = _DIDCREATEKEYREQUEST,
+  __module__ = 'identitylayer_pb2'
+  # @@protoc_insertion_point(class_scope:identitylayer.DidCreateKeyRequest)
+  ))
+_sym_db.RegisterMessage(DidCreateKeyRequest)
+
+DidCreateKeyResponse = _reflection.GeneratedProtocolMessageType('DidCreateKeyResponse', (_message.Message,), dict(
+  DESCRIPTOR = _DIDCREATEKEYRESPONSE,
+  __module__ = 'identitylayer_pb2'
+  # @@protoc_insertion_point(class_scope:identitylayer.DidCreateKeyResponse)
+  ))
+_sym_db.RegisterMessage(DidCreateKeyResponse)
+
+DidSetKeyMetadataRequest = _reflection.GeneratedProtocolMessageType('DidSetKeyMetadataRequest', (_message.Message,), dict(
+  DESCRIPTOR = _DIDSETKEYMETADATAREQUEST,
+  __module__ = 'identitylayer_pb2'
+  # @@protoc_insertion_point(class_scope:identitylayer.DidSetKeyMetadataRequest)
+  ))
+_sym_db.RegisterMessage(DidSetKeyMetadataRequest)
+
+DidSetKeyMetadataResponse = _reflection.GeneratedProtocolMessageType('DidSetKeyMetadataResponse', (_message.Message,), dict(
+  DESCRIPTOR = _DIDSETKEYMETADATARESPONSE,
+  __module__ = 'identitylayer_pb2'
+  # @@protoc_insertion_point(class_scope:identitylayer.DidSetKeyMetadataResponse)
+  ))
+_sym_db.RegisterMessage(DidSetKeyMetadataResponse)
+
+DidGetKeyMetadataRequest = _reflection.GeneratedProtocolMessageType('DidGetKeyMetadataRequest', (_message.Message,), dict(
+  DESCRIPTOR = _DIDGETKEYMETADATAREQUEST,
+  __module__ = 'identitylayer_pb2'
+  # @@protoc_insertion_point(class_scope:identitylayer.DidGetKeyMetadataRequest)
+  ))
+_sym_db.RegisterMessage(DidGetKeyMetadataRequest)
+
+DidGetKeyMetadataResponse = _reflection.GeneratedProtocolMessageType('DidGetKeyMetadataResponse', (_message.Message,), dict(
+  DESCRIPTOR = _DIDGETKEYMETADATARESPONSE,
+  __module__ = 'identitylayer_pb2'
+  # @@protoc_insertion_point(class_scope:identitylayer.DidGetKeyMetadataResponse)
+  ))
+_sym_db.RegisterMessage(DidGetKeyMetadataResponse)
+
+KeyForDidRequest = _reflection.GeneratedProtocolMessageType('KeyForDidRequest', (_message.Message,), dict(
+  DESCRIPTOR = _KEYFORDIDREQUEST,
+  __module__ = 'identitylayer_pb2'
+  # @@protoc_insertion_point(class_scope:identitylayer.KeyForDidRequest)
+  ))
+_sym_db.RegisterMessage(KeyForDidRequest)
+
+KeyForDidResponse = _reflection.GeneratedProtocolMessageType('KeyForDidResponse', (_message.Message,), dict(
+  DESCRIPTOR = _KEYFORDIDRESPONSE,
+  __module__ = 'identitylayer_pb2'
+  # @@protoc_insertion_point(class_scope:identitylayer.KeyForDidResponse)
+  ))
+_sym_db.RegisterMessage(KeyForDidResponse)
+
+KeyForLocalDidRequest = _reflection.GeneratedProtocolMessageType('KeyForLocalDidRequest', (_message.Message,), dict(
+  DESCRIPTOR = _KEYFORLOCALDIDREQUEST,
+  __module__ = 'identitylayer_pb2'
+  # @@protoc_insertion_point(class_scope:identitylayer.KeyForLocalDidRequest)
+  ))
+_sym_db.RegisterMessage(KeyForLocalDidRequest)
+
+KeyForLocalDidResponse = _reflection.GeneratedProtocolMessageType('KeyForLocalDidResponse', (_message.Message,), dict(
+  DESCRIPTOR = _KEYFORLOCALDIDRESPONSE,
+  __module__ = 'identitylayer_pb2'
+  # @@protoc_insertion_point(class_scope:identitylayer.KeyForLocalDidResponse)
+  ))
+_sym_db.RegisterMessage(KeyForLocalDidResponse)
+
+SetEndpointForDidRequest = _reflection.GeneratedProtocolMessageType('SetEndpointForDidRequest', (_message.Message,), dict(
+  DESCRIPTOR = _SETENDPOINTFORDIDREQUEST,
+  __module__ = 'identitylayer_pb2'
+  # @@protoc_insertion_point(class_scope:identitylayer.SetEndpointForDidRequest)
+  ))
+_sym_db.RegisterMessage(SetEndpointForDidRequest)
+
+SetEndpointForDidResponse = _reflection.GeneratedProtocolMessageType('SetEndpointForDidResponse', (_message.Message,), dict(
+  DESCRIPTOR = _SETENDPOINTFORDIDRESPONSE,
+  __module__ = 'identitylayer_pb2'
+  # @@protoc_insertion_point(class_scope:identitylayer.SetEndpointForDidResponse)
+  ))
+_sym_db.RegisterMessage(SetEndpointForDidResponse)
+
+GetEndpointForDidRequest = _reflection.GeneratedProtocolMessageType('GetEndpointForDidRequest', (_message.Message,), dict(
+  DESCRIPTOR = _GETENDPOINTFORDIDREQUEST,
+  __module__ = 'identitylayer_pb2'
+  # @@protoc_insertion_point(class_scope:identitylayer.GetEndpointForDidRequest)
+  ))
+_sym_db.RegisterMessage(GetEndpointForDidRequest)
+
+GetEndpointForDidResponse = _reflection.GeneratedProtocolMessageType('GetEndpointForDidResponse', (_message.Message,), dict(
+  DESCRIPTOR = _GETENDPOINTFORDIDRESPONSE,
+  __module__ = 'identitylayer_pb2'
+  # @@protoc_insertion_point(class_scope:identitylayer.GetEndpointForDidResponse)
+  ))
+_sym_db.RegisterMessage(GetEndpointForDidResponse)
+
+SetDidMetadataRequest = _reflection.GeneratedProtocolMessageType('SetDidMetadataRequest', (_message.Message,), dict(
+  DESCRIPTOR = _SETDIDMETADATAREQUEST,
+  __module__ = 'identitylayer_pb2'
+  # @@protoc_insertion_point(class_scope:identitylayer.SetDidMetadataRequest)
+  ))
+_sym_db.RegisterMessage(SetDidMetadataRequest)
+
+SetDidMetadataResponse = _reflection.GeneratedProtocolMessageType('SetDidMetadataResponse', (_message.Message,), dict(
+  DESCRIPTOR = _SETDIDMETADATARESPONSE,
+  __module__ = 'identitylayer_pb2'
+  # @@protoc_insertion_point(class_scope:identitylayer.SetDidMetadataResponse)
+  ))
+_sym_db.RegisterMessage(SetDidMetadataResponse)
+
+GetDidMetadataRequest = _reflection.GeneratedProtocolMessageType('GetDidMetadataRequest', (_message.Message,), dict(
+  DESCRIPTOR = _GETDIDMETADATAREQUEST,
+  __module__ = 'identitylayer_pb2'
+  # @@protoc_insertion_point(class_scope:identitylayer.GetDidMetadataRequest)
+  ))
+_sym_db.RegisterMessage(GetDidMetadataRequest)
+
+GetDidMetadataResponse = _reflection.GeneratedProtocolMessageType('GetDidMetadataResponse', (_message.Message,), dict(
+  DESCRIPTOR = _GETDIDMETADATARESPONSE,
+  __module__ = 'identitylayer_pb2'
+  # @@protoc_insertion_point(class_scope:identitylayer.GetDidMetadataResponse)
+  ))
+_sym_db.RegisterMessage(GetDidMetadataResponse)
+
+GetMyDidWithMetaRequest = _reflection.GeneratedProtocolMessageType('GetMyDidWithMetaRequest', (_message.Message,), dict(
+  DESCRIPTOR = _GETMYDIDWITHMETAREQUEST,
+  __module__ = 'identitylayer_pb2'
+  # @@protoc_insertion_point(class_scope:identitylayer.GetMyDidWithMetaRequest)
+  ))
+_sym_db.RegisterMessage(GetMyDidWithMetaRequest)
+
+GetMyDidWithMetaResponse = _reflection.GeneratedProtocolMessageType('GetMyDidWithMetaResponse', (_message.Message,), dict(
+  DESCRIPTOR = _GETMYDIDWITHMETARESPONSE,
+  __module__ = 'identitylayer_pb2'
+  # @@protoc_insertion_point(class_scope:identitylayer.GetMyDidWithMetaResponse)
+  ))
+_sym_db.RegisterMessage(GetMyDidWithMetaResponse)
+
+ListMyDidsWithMetaRequest = _reflection.GeneratedProtocolMessageType('ListMyDidsWithMetaRequest', (_message.Message,), dict(
+  DESCRIPTOR = _LISTMYDIDSWITHMETAREQUEST,
+  __module__ = 'identitylayer_pb2'
+  # @@protoc_insertion_point(class_scope:identitylayer.ListMyDidsWithMetaRequest)
+  ))
+_sym_db.RegisterMessage(ListMyDidsWithMetaRequest)
+
+ListMyDidsWithMetaResponse = _reflection.GeneratedProtocolMessageType('ListMyDidsWithMetaResponse', (_message.Message,), dict(
+  DESCRIPTOR = _LISTMYDIDSWITHMETARESPONSE,
+  __module__ = 'identitylayer_pb2'
+  # @@protoc_insertion_point(class_scope:identitylayer.ListMyDidsWithMetaResponse)
+  ))
+_sym_db.RegisterMessage(ListMyDidsWithMetaResponse)
+
+AbbreviateVerkeyRequest = _reflection.GeneratedProtocolMessageType('AbbreviateVerkeyRequest', (_message.Message,), dict(
+  DESCRIPTOR = _ABBREVIATEVERKEYREQUEST,
+  __module__ = 'identitylayer_pb2'
+  # @@protoc_insertion_point(class_scope:identitylayer.AbbreviateVerkeyRequest)
+  ))
+_sym_db.RegisterMessage(AbbreviateVerkeyRequest)
+
+AbbreviateVerkeyResponse = _reflection.GeneratedProtocolMessageType('AbbreviateVerkeyResponse', (_message.Message,), dict(
+  DESCRIPTOR = _ABBREVIATEVERKEYRESPONSE,
+  __module__ = 'identitylayer_pb2'
+  # @@protoc_insertion_point(class_scope:identitylayer.AbbreviateVerkeyResponse)
+  ))
+_sym_db.RegisterMessage(AbbreviateVerkeyResponse)
+
+SignAndSubmitRequestRq = _reflection.GeneratedProtocolMessageType('SignAndSubmitRequestRq', (_message.Message,), dict(
+  DESCRIPTOR = _SIGNANDSUBMITREQUESTRQ,
+  __module__ = 'identitylayer_pb2'
+  # @@protoc_insertion_point(class_scope:identitylayer.SignAndSubmitRequestRq)
+  ))
+_sym_db.RegisterMessage(SignAndSubmitRequestRq)
+
+SignAndSubmitRequestRs = _reflection.GeneratedProtocolMessageType('SignAndSubmitRequestRs', (_message.Message,), dict(
+  DESCRIPTOR = _SIGNANDSUBMITREQUESTRS,
+  __module__ = 'identitylayer_pb2'
+  # @@protoc_insertion_point(class_scope:identitylayer.SignAndSubmitRequestRs)
+  ))
+_sym_db.RegisterMessage(SignAndSubmitRequestRs)
+
+SubmitRequestRq = _reflection.GeneratedProtocolMessageType('SubmitRequestRq', (_message.Message,), dict(
+  DESCRIPTOR = _SUBMITREQUESTRQ,
+  __module__ = 'identitylayer_pb2'
+  # @@protoc_insertion_point(class_scope:identitylayer.SubmitRequestRq)
+  ))
+_sym_db.RegisterMessage(SubmitRequestRq)
+
+SubmitRequestRs = _reflection.GeneratedProtocolMessageType('SubmitRequestRs', (_message.Message,), dict(
+  DESCRIPTOR = _SUBMITREQUESTRS,
+  __module__ = 'identitylayer_pb2'
+  # @@protoc_insertion_point(class_scope:identitylayer.SubmitRequestRs)
+  ))
+_sym_db.RegisterMessage(SubmitRequestRs)
+
+SubmitActionRq = _reflection.GeneratedProtocolMessageType('SubmitActionRq', (_message.Message,), dict(
+  DESCRIPTOR = _SUBMITACTIONRQ,
+  __module__ = 'identitylayer_pb2'
+  # @@protoc_insertion_point(class_scope:identitylayer.SubmitActionRq)
+  ))
+_sym_db.RegisterMessage(SubmitActionRq)
+
+SubmitActionRs = _reflection.GeneratedProtocolMessageType('SubmitActionRs', (_message.Message,), dict(
+  DESCRIPTOR = _SUBMITACTIONRS,
+  __module__ = 'identitylayer_pb2'
+  # @@protoc_insertion_point(class_scope:identitylayer.SubmitActionRs)
+  ))
+_sym_db.RegisterMessage(SubmitActionRs)
+
+SignRequestRq = _reflection.GeneratedProtocolMessageType('SignRequestRq', (_message.Message,), dict(
+  DESCRIPTOR = _SIGNREQUESTRQ,
+  __module__ = 'identitylayer_pb2'
+  # @@protoc_insertion_point(class_scope:identitylayer.SignRequestRq)
+  ))
+_sym_db.RegisterMessage(SignRequestRq)
+
+SignRequestRs = _reflection.GeneratedProtocolMessageType('SignRequestRs', (_message.Message,), dict(
+  DESCRIPTOR = _SIGNREQUESTRS,
+  __module__ = 'identitylayer_pb2'
+  # @@protoc_insertion_point(class_scope:identitylayer.SignRequestRs)
+  ))
+_sym_db.RegisterMessage(SignRequestRs)
+
+MultiSignRequestRq = _reflection.GeneratedProtocolMessageType('MultiSignRequestRq', (_message.Message,), dict(
+  DESCRIPTOR = _MULTISIGNREQUESTRQ,
+  __module__ = 'identitylayer_pb2'
+  # @@protoc_insertion_point(class_scope:identitylayer.MultiSignRequestRq)
+  ))
+_sym_db.RegisterMessage(MultiSignRequestRq)
+
+MultiSignRequestRs = _reflection.GeneratedProtocolMessageType('MultiSignRequestRs', (_message.Message,), dict(
+  DESCRIPTOR = _MULTISIGNREQUESTRS,
+  __module__ = 'identitylayer_pb2'
+  # @@protoc_insertion_point(class_scope:identitylayer.MultiSignRequestRs)
+  ))
+_sym_db.RegisterMessage(MultiSignRequestRs)
+
+BuildGetDdoRequestRq = _reflection.GeneratedProtocolMessageType('BuildGetDdoRequestRq', (_message.Message,), dict(
+  DESCRIPTOR = _BUILDGETDDOREQUESTRQ,
+  __module__ = 'identitylayer_pb2'
+  # @@protoc_insertion_point(class_scope:identitylayer.BuildGetDdoRequestRq)
+  ))
+_sym_db.RegisterMessage(BuildGetDdoRequestRq)
+
+BuildGetDdoRequestRs = _reflection.GeneratedProtocolMessageType('BuildGetDdoRequestRs', (_message.Message,), dict(
+  DESCRIPTOR = _BUILDGETDDOREQUESTRS,
+  __module__ = 'identitylayer_pb2'
+  # @@protoc_insertion_point(class_scope:identitylayer.BuildGetDdoRequestRs)
+  ))
+_sym_db.RegisterMessage(BuildGetDdoRequestRs)
+
+BuildNymRequestRq = _reflection.GeneratedProtocolMessageType('BuildNymRequestRq', (_message.Message,), dict(
+  DESCRIPTOR = _BUILDNYMREQUESTRQ,
+  __module__ = 'identitylayer_pb2'
+  # @@protoc_insertion_point(class_scope:identitylayer.BuildNymRequestRq)
+  ))
+_sym_db.RegisterMessage(BuildNymRequestRq)
+
+BuildNymRequestRs = _reflection.GeneratedProtocolMessageType('BuildNymRequestRs', (_message.Message,), dict(
+  DESCRIPTOR = _BUILDNYMREQUESTRS,
+  __module__ = 'identitylayer_pb2'
+  # @@protoc_insertion_point(class_scope:identitylayer.BuildNymRequestRs)
+  ))
+_sym_db.RegisterMessage(BuildNymRequestRs)
+
+BuildAttribRequestRq = _reflection.GeneratedProtocolMessageType('BuildAttribRequestRq', (_message.Message,), dict(
+  DESCRIPTOR = _BUILDATTRIBREQUESTRQ,
+  __module__ = 'identitylayer_pb2'
+  # @@protoc_insertion_point(class_scope:identitylayer.BuildAttribRequestRq)
+  ))
+_sym_db.RegisterMessage(BuildAttribRequestRq)
+
+BuildAttribRequestRs = _reflection.GeneratedProtocolMessageType('BuildAttribRequestRs', (_message.Message,), dict(
+  DESCRIPTOR = _BUILDATTRIBREQUESTRS,
+  __module__ = 'identitylayer_pb2'
+  # @@protoc_insertion_point(class_scope:identitylayer.BuildAttribRequestRs)
+  ))
+_sym_db.RegisterMessage(BuildAttribRequestRs)
+
+BuildGetAttribRequestRq = _reflection.GeneratedProtocolMessageType('BuildGetAttribRequestRq', (_message.Message,), dict(
+  DESCRIPTOR = _BUILDGETATTRIBREQUESTRQ,
+  __module__ = 'identitylayer_pb2'
+  # @@protoc_insertion_point(class_scope:identitylayer.BuildGetAttribRequestRq)
+  ))
+_sym_db.RegisterMessage(BuildGetAttribRequestRq)
+
+BuildGetAttribRequestRs = _reflection.GeneratedProtocolMessageType('BuildGetAttribRequestRs', (_message.Message,), dict(
+  DESCRIPTOR = _BUILDGETATTRIBREQUESTRS,
+  __module__ = 'identitylayer_pb2'
+  # @@protoc_insertion_point(class_scope:identitylayer.BuildGetAttribRequestRs)
+  ))
+_sym_db.RegisterMessage(BuildGetAttribRequestRs)
+
+BuildGetNymRequestRq = _reflection.GeneratedProtocolMessageType('BuildGetNymRequestRq', (_message.Message,), dict(
+  DESCRIPTOR = _BUILDGETNYMREQUESTRQ,
+  __module__ = 'identitylayer_pb2'
+  # @@protoc_insertion_point(class_scope:identitylayer.BuildGetNymRequestRq)
+  ))
+_sym_db.RegisterMessage(BuildGetNymRequestRq)
+
+BuildGetNymRequestRs = _reflection.GeneratedProtocolMessageType('BuildGetNymRequestRs', (_message.Message,), dict(
+  DESCRIPTOR = _BUILDGETNYMREQUESTRS,
+  __module__ = 'identitylayer_pb2'
+  # @@protoc_insertion_point(class_scope:identitylayer.BuildGetNymRequestRs)
+  ))
+_sym_db.RegisterMessage(BuildGetNymRequestRs)
+
+BuildSchemaRequestRq = _reflection.GeneratedProtocolMessageType('BuildSchemaRequestRq', (_message.Message,), dict(
+  DESCRIPTOR = _BUILDSCHEMAREQUESTRQ,
+  __module__ = 'identitylayer_pb2'
+  # @@protoc_insertion_point(class_scope:identitylayer.BuildSchemaRequestRq)
+  ))
+_sym_db.RegisterMessage(BuildSchemaRequestRq)
+
+BuildSchemaRequestRs = _reflection.GeneratedProtocolMessageType('BuildSchemaRequestRs', (_message.Message,), dict(
+  DESCRIPTOR = _BUILDSCHEMAREQUESTRS,
+  __module__ = 'identitylayer_pb2'
+  # @@protoc_insertion_point(class_scope:identitylayer.BuildSchemaRequestRs)
+  ))
+_sym_db.RegisterMessage(BuildSchemaRequestRs)
+
+BuildGetSchemaRequestRq = _reflection.GeneratedProtocolMessageType('BuildGetSchemaRequestRq', (_message.Message,), dict(
+  DESCRIPTOR = _BUILDGETSCHEMAREQUESTRQ,
+  __module__ = 'identitylayer_pb2'
+  # @@protoc_insertion_point(class_scope:identitylayer.BuildGetSchemaRequestRq)
+  ))
+_sym_db.RegisterMessage(BuildGetSchemaRequestRq)
+
+BuildGetSchemaRequestRs = _reflection.GeneratedProtocolMessageType('BuildGetSchemaRequestRs', (_message.Message,), dict(
+  DESCRIPTOR = _BUILDGETSCHEMAREQUESTRS,
+  __module__ = 'identitylayer_pb2'
+  # @@protoc_insertion_point(class_scope:identitylayer.BuildGetSchemaRequestRs)
+  ))
+_sym_db.RegisterMessage(BuildGetSchemaRequestRs)
+
+ParseGetSchemaResponseRq = _reflection.GeneratedProtocolMessageType('ParseGetSchemaResponseRq', (_message.Message,), dict(
+  DESCRIPTOR = _PARSEGETSCHEMARESPONSERQ,
+  __module__ = 'identitylayer_pb2'
+  # @@protoc_insertion_point(class_scope:identitylayer.ParseGetSchemaResponseRq)
+  ))
+_sym_db.RegisterMessage(ParseGetSchemaResponseRq)
+
+ParseGetSchemaResponseRs = _reflection.GeneratedProtocolMessageType('ParseGetSchemaResponseRs', (_message.Message,), dict(
+  DESCRIPTOR = _PARSEGETSCHEMARESPONSERS,
+  __module__ = 'identitylayer_pb2'
+  # @@protoc_insertion_point(class_scope:identitylayer.ParseGetSchemaResponseRs)
+  ))
+_sym_db.RegisterMessage(ParseGetSchemaResponseRs)
+
+BuildCredDefRequestRq = _reflection.GeneratedProtocolMessageType('BuildCredDefRequestRq', (_message.Message,), dict(
+  DESCRIPTOR = _BUILDCREDDEFREQUESTRQ,
+  __module__ = 'identitylayer_pb2'
+  # @@protoc_insertion_point(class_scope:identitylayer.BuildCredDefRequestRq)
+  ))
+_sym_db.RegisterMessage(BuildCredDefRequestRq)
+
+BuildCredDefRequestRs = _reflection.GeneratedProtocolMessageType('BuildCredDefRequestRs', (_message.Message,), dict(
+  DESCRIPTOR = _BUILDCREDDEFREQUESTRS,
+  __module__ = 'identitylayer_pb2'
+  # @@protoc_insertion_point(class_scope:identitylayer.BuildCredDefRequestRs)
+  ))
+_sym_db.RegisterMessage(BuildCredDefRequestRs)
+
+BuildGetCredDefRequestRq = _reflection.GeneratedProtocolMessageType('BuildGetCredDefRequestRq', (_message.Message,), dict(
+  DESCRIPTOR = _BUILDGETCREDDEFREQUESTRQ,
+  __module__ = 'identitylayer_pb2'
+  # @@protoc_insertion_point(class_scope:identitylayer.BuildGetCredDefRequestRq)
+  ))
+_sym_db.RegisterMessage(BuildGetCredDefRequestRq)
+
+BuildGetCredDefRequestRs = _reflection.GeneratedProtocolMessageType('BuildGetCredDefRequestRs', (_message.Message,), dict(
+  DESCRIPTOR = _BUILDGETCREDDEFREQUESTRS,
+  __module__ = 'identitylayer_pb2'
+  # @@protoc_insertion_point(class_scope:identitylayer.BuildGetCredDefRequestRs)
+  ))
+_sym_db.RegisterMessage(BuildGetCredDefRequestRs)
+
+ParseGetCredDefResponseRq = _reflection.GeneratedProtocolMessageType('ParseGetCredDefResponseRq', (_message.Message,), dict(
+  DESCRIPTOR = _PARSEGETCREDDEFRESPONSERQ,
+  __module__ = 'identitylayer_pb2'
+  # @@protoc_insertion_point(class_scope:identitylayer.ParseGetCredDefResponseRq)
+  ))
+_sym_db.RegisterMessage(ParseGetCredDefResponseRq)
+
+ParseGetCredDefResponseRs = _reflection.GeneratedProtocolMessageType('ParseGetCredDefResponseRs', (_message.Message,), dict(
+  DESCRIPTOR = _PARSEGETCREDDEFRESPONSERS,
+  __module__ = 'identitylayer_pb2'
+  # @@protoc_insertion_point(class_scope:identitylayer.ParseGetCredDefResponseRs)
+  ))
+_sym_db.RegisterMessage(ParseGetCredDefResponseRs)
+
+BuildNodeRequestRq = _reflection.GeneratedProtocolMessageType('BuildNodeRequestRq', (_message.Message,), dict(
+  DESCRIPTOR = _BUILDNODEREQUESTRQ,
+  __module__ = 'identitylayer_pb2'
+  # @@protoc_insertion_point(class_scope:identitylayer.BuildNodeRequestRq)
+  ))
+_sym_db.RegisterMessage(BuildNodeRequestRq)
+
+BuildNodeRequestRs = _reflection.GeneratedProtocolMessageType('BuildNodeRequestRs', (_message.Message,), dict(
+  DESCRIPTOR = _BUILDNODEREQUESTRS,
+  __module__ = 'identitylayer_pb2'
+  # @@protoc_insertion_point(class_scope:identitylayer.BuildNodeRequestRs)
+  ))
+_sym_db.RegisterMessage(BuildNodeRequestRs)
+
+BuildGetValidatorInfoRequestRq = _reflection.GeneratedProtocolMessageType('BuildGetValidatorInfoRequestRq', (_message.Message,), dict(
+  DESCRIPTOR = _BUILDGETVALIDATORINFOREQUESTRQ,
+  __module__ = 'identitylayer_pb2'
+  # @@protoc_insertion_point(class_scope:identitylayer.BuildGetValidatorInfoRequestRq)
+  ))
+_sym_db.RegisterMessage(BuildGetValidatorInfoRequestRq)
+
+BuildGetValidatorInfoRequestRs = _reflection.GeneratedProtocolMessageType('BuildGetValidatorInfoRequestRs', (_message.Message,), dict(
+  DESCRIPTOR = _BUILDGETVALIDATORINFOREQUESTRS,
+  __module__ = 'identitylayer_pb2'
+  # @@protoc_insertion_point(class_scope:identitylayer.BuildGetValidatorInfoRequestRs)
+  ))
+_sym_db.RegisterMessage(BuildGetValidatorInfoRequestRs)
+
+BuildGetTxnRequestRq = _reflection.GeneratedProtocolMessageType('BuildGetTxnRequestRq', (_message.Message,), dict(
+  DESCRIPTOR = _BUILDGETTXNREQUESTRQ,
+  __module__ = 'identitylayer_pb2'
+  # @@protoc_insertion_point(class_scope:identitylayer.BuildGetTxnRequestRq)
+  ))
+_sym_db.RegisterMessage(BuildGetTxnRequestRq)
+
+BuildGetTxnRequestRs = _reflection.GeneratedProtocolMessageType('BuildGetTxnRequestRs', (_message.Message,), dict(
+  DESCRIPTOR = _BUILDGETTXNREQUESTRS,
+  __module__ = 'identitylayer_pb2'
+  # @@protoc_insertion_point(class_scope:identitylayer.BuildGetTxnRequestRs)
+  ))
+_sym_db.RegisterMessage(BuildGetTxnRequestRs)
+
+BuildPoolConfigRequestRq = _reflection.GeneratedProtocolMessageType('BuildPoolConfigRequestRq', (_message.Message,), dict(
+  DESCRIPTOR = _BUILDPOOLCONFIGREQUESTRQ,
+  __module__ = 'identitylayer_pb2'
+  # @@protoc_insertion_point(class_scope:identitylayer.BuildPoolConfigRequestRq)
+  ))
+_sym_db.RegisterMessage(BuildPoolConfigRequestRq)
+
+BuildPoolConfigRequestRs = _reflection.GeneratedProtocolMessageType('BuildPoolConfigRequestRs', (_message.Message,), dict(
+  DESCRIPTOR = _BUILDPOOLCONFIGREQUESTRS,
+  __module__ = 'identitylayer_pb2'
+  # @@protoc_insertion_point(class_scope:identitylayer.BuildPoolConfigRequestRs)
+  ))
+_sym_db.RegisterMessage(BuildPoolConfigRequestRs)
+
+BuildPoolRestartRequestRq = _reflection.GeneratedProtocolMessageType('BuildPoolRestartRequestRq', (_message.Message,), dict(
+  DESCRIPTOR = _BUILDPOOLRESTARTREQUESTRQ,
+  __module__ = 'identitylayer_pb2'
+  # @@protoc_insertion_point(class_scope:identitylayer.BuildPoolRestartRequestRq)
+  ))
+_sym_db.RegisterMessage(BuildPoolRestartRequestRq)
+
+BuildPoolRestartRequestRs = _reflection.GeneratedProtocolMessageType('BuildPoolRestartRequestRs', (_message.Message,), dict(
+  DESCRIPTOR = _BUILDPOOLRESTARTREQUESTRS,
+  __module__ = 'identitylayer_pb2'
+  # @@protoc_insertion_point(class_scope:identitylayer.BuildPoolRestartRequestRs)
+  ))
+_sym_db.RegisterMessage(BuildPoolRestartRequestRs)
+
+BuildPoolUpgradeRequestRq = _reflection.GeneratedProtocolMessageType('BuildPoolUpgradeRequestRq', (_message.Message,), dict(
+  DESCRIPTOR = _BUILDPOOLUPGRADEREQUESTRQ,
+  __module__ = 'identitylayer_pb2'
+  # @@protoc_insertion_point(class_scope:identitylayer.BuildPoolUpgradeRequestRq)
+  ))
+_sym_db.RegisterMessage(BuildPoolUpgradeRequestRq)
+
+BuildPoolUpgradeRequestRs = _reflection.GeneratedProtocolMessageType('BuildPoolUpgradeRequestRs', (_message.Message,), dict(
+  DESCRIPTOR = _BUILDPOOLUPGRADEREQUESTRS,
+  __module__ = 'identitylayer_pb2'
+  # @@protoc_insertion_point(class_scope:identitylayer.BuildPoolUpgradeRequestRs)
+  ))
+_sym_db.RegisterMessage(BuildPoolUpgradeRequestRs)
+
+BuildRevocRegDefRequestRq = _reflection.GeneratedProtocolMessageType('BuildRevocRegDefRequestRq', (_message.Message,), dict(
+  DESCRIPTOR = _BUILDREVOCREGDEFREQUESTRQ,
+  __module__ = 'identitylayer_pb2'
+  # @@protoc_insertion_point(class_scope:identitylayer.BuildRevocRegDefRequestRq)
+  ))
+_sym_db.RegisterMessage(BuildRevocRegDefRequestRq)
+
+BuildRevocRegDefRequestRs = _reflection.GeneratedProtocolMessageType('BuildRevocRegDefRequestRs', (_message.Message,), dict(
+  DESCRIPTOR = _BUILDREVOCREGDEFREQUESTRS,
+  __module__ = 'identitylayer_pb2'
+  # @@protoc_insertion_point(class_scope:identitylayer.BuildRevocRegDefRequestRs)
+  ))
+_sym_db.RegisterMessage(BuildRevocRegDefRequestRs)
+
+BuildGetRevocRegDefRequestRq = _reflection.GeneratedProtocolMessageType('BuildGetRevocRegDefRequestRq', (_message.Message,), dict(
+  DESCRIPTOR = _BUILDGETREVOCREGDEFREQUESTRQ,
+  __module__ = 'identitylayer_pb2'
+  # @@protoc_insertion_point(class_scope:identitylayer.BuildGetRevocRegDefRequestRq)
+  ))
+_sym_db.RegisterMessage(BuildGetRevocRegDefRequestRq)
+
+BuildGetRevocRegDefRequestRs = _reflection.GeneratedProtocolMessageType('BuildGetRevocRegDefRequestRs', (_message.Message,), dict(
+  DESCRIPTOR = _BUILDGETREVOCREGDEFREQUESTRS,
+  __module__ = 'identitylayer_pb2'
+  # @@protoc_insertion_point(class_scope:identitylayer.BuildGetRevocRegDefRequestRs)
+  ))
+_sym_db.RegisterMessage(BuildGetRevocRegDefRequestRs)
+
+ParseGetRevocRegDefResponseRq = _reflection.GeneratedProtocolMessageType('ParseGetRevocRegDefResponseRq', (_message.Message,), dict(
+  DESCRIPTOR = _PARSEGETREVOCREGDEFRESPONSERQ,
+  __module__ = 'identitylayer_pb2'
+  # @@protoc_insertion_point(class_scope:identitylayer.ParseGetRevocRegDefResponseRq)
+  ))
+_sym_db.RegisterMessage(ParseGetRevocRegDefResponseRq)
+
+ParseGetRevocRegDefResponseRs = _reflection.GeneratedProtocolMessageType('ParseGetRevocRegDefResponseRs', (_message.Message,), dict(
+  DESCRIPTOR = _PARSEGETREVOCREGDEFRESPONSERS,
+  __module__ = 'identitylayer_pb2'
+  # @@protoc_insertion_point(class_scope:identitylayer.ParseGetRevocRegDefResponseRs)
+  ))
+_sym_db.RegisterMessage(ParseGetRevocRegDefResponseRs)
+
+BuildRevocRegEntryRequestRq = _reflection.GeneratedProtocolMessageType('BuildRevocRegEntryRequestRq', (_message.Message,), dict(
+  DESCRIPTOR = _BUILDREVOCREGENTRYREQUESTRQ,
+  __module__ = 'identitylayer_pb2'
+  # @@protoc_insertion_point(class_scope:identitylayer.BuildRevocRegEntryRequestRq)
+  ))
+_sym_db.RegisterMessage(BuildRevocRegEntryRequestRq)
+
+BuildRevocRegEntryRequestRs = _reflection.GeneratedProtocolMessageType('BuildRevocRegEntryRequestRs', (_message.Message,), dict(
+  DESCRIPTOR = _BUILDREVOCREGENTRYREQUESTRS,
+  __module__ = 'identitylayer_pb2'
+  # @@protoc_insertion_point(class_scope:identitylayer.BuildRevocRegEntryRequestRs)
+  ))
+_sym_db.RegisterMessage(BuildRevocRegEntryRequestRs)
+
+BuildGetRevocRegRequestRq = _reflection.GeneratedProtocolMessageType('BuildGetRevocRegRequestRq', (_message.Message,), dict(
+  DESCRIPTOR = _BUILDGETREVOCREGREQUESTRQ,
+  __module__ = 'identitylayer_pb2'
+  # @@protoc_insertion_point(class_scope:identitylayer.BuildGetRevocRegRequestRq)
+  ))
+_sym_db.RegisterMessage(BuildGetRevocRegRequestRq)
+
+BuildGetRevocRegRequestRs = _reflection.GeneratedProtocolMessageType('BuildGetRevocRegRequestRs', (_message.Message,), dict(
+  DESCRIPTOR = _BUILDGETREVOCREGREQUESTRS,
+  __module__ = 'identitylayer_pb2'
+  # @@protoc_insertion_point(class_scope:identitylayer.BuildGetRevocRegRequestRs)
+  ))
+_sym_db.RegisterMessage(BuildGetRevocRegRequestRs)
+
+ParseGetRevocRegResponseRq = _reflection.GeneratedProtocolMessageType('ParseGetRevocRegResponseRq', (_message.Message,), dict(
+  DESCRIPTOR = _PARSEGETREVOCREGRESPONSERQ,
+  __module__ = 'identitylayer_pb2'
+  # @@protoc_insertion_point(class_scope:identitylayer.ParseGetRevocRegResponseRq)
+  ))
+_sym_db.RegisterMessage(ParseGetRevocRegResponseRq)
+
+ParseGetRevocRegResponseRs = _reflection.GeneratedProtocolMessageType('ParseGetRevocRegResponseRs', (_message.Message,), dict(
+  DESCRIPTOR = _PARSEGETREVOCREGRESPONSERS,
+  __module__ = 'identitylayer_pb2'
+  # @@protoc_insertion_point(class_scope:identitylayer.ParseGetRevocRegResponseRs)
+  ))
+_sym_db.RegisterMessage(ParseGetRevocRegResponseRs)
+
+BuildGetRevocRegDeltaRequestRq = _reflection.GeneratedProtocolMessageType('BuildGetRevocRegDeltaRequestRq', (_message.Message,), dict(
+  DESCRIPTOR = _BUILDGETREVOCREGDELTAREQUESTRQ,
+  __module__ = 'identitylayer_pb2'
+  # @@protoc_insertion_point(class_scope:identitylayer.BuildGetRevocRegDeltaRequestRq)
+  ))
+_sym_db.RegisterMessage(BuildGetRevocRegDeltaRequestRq)
+
+BuildGetRevocRegDeltaRequestRs = _reflection.GeneratedProtocolMessageType('BuildGetRevocRegDeltaRequestRs', (_message.Message,), dict(
+  DESCRIPTOR = _BUILDGETREVOCREGDELTAREQUESTRS,
+  __module__ = 'identitylayer_pb2'
+  # @@protoc_insertion_point(class_scope:identitylayer.BuildGetRevocRegDeltaRequestRs)
+  ))
+_sym_db.RegisterMessage(BuildGetRevocRegDeltaRequestRs)
+
+ParseGetRevocRegDeltaResponseRq = _reflection.GeneratedProtocolMessageType('ParseGetRevocRegDeltaResponseRq', (_message.Message,), dict(
+  DESCRIPTOR = _PARSEGETREVOCREGDELTARESPONSERQ,
+  __module__ = 'identitylayer_pb2'
+  # @@protoc_insertion_point(class_scope:identitylayer.ParseGetRevocRegDeltaResponseRq)
+  ))
+_sym_db.RegisterMessage(ParseGetRevocRegDeltaResponseRq)
+
+ParseGetRevocRegDeltaResponseRs = _reflection.GeneratedProtocolMessageType('ParseGetRevocRegDeltaResponseRs', (_message.Message,), dict(
+  DESCRIPTOR = _PARSEGETREVOCREGDELTARESPONSERS,
+  __module__ = 'identitylayer_pb2'
+  # @@protoc_insertion_point(class_scope:identitylayer.ParseGetRevocRegDeltaResponseRs)
+  ))
+_sym_db.RegisterMessage(ParseGetRevocRegDeltaResponseRs)
+
+GetResponseMetadataRq = _reflection.GeneratedProtocolMessageType('GetResponseMetadataRq', (_message.Message,), dict(
+  DESCRIPTOR = _GETRESPONSEMETADATARQ,
+  __module__ = 'identitylayer_pb2'
+  # @@protoc_insertion_point(class_scope:identitylayer.GetResponseMetadataRq)
+  ))
+_sym_db.RegisterMessage(GetResponseMetadataRq)
+
+GetResponseMetadataRs = _reflection.GeneratedProtocolMessageType('GetResponseMetadataRs', (_message.Message,), dict(
+  DESCRIPTOR = _GETRESPONSEMETADATARS,
+  __module__ = 'identitylayer_pb2'
+  # @@protoc_insertion_point(class_scope:identitylayer.GetResponseMetadataRs)
+  ))
+_sym_db.RegisterMessage(GetResponseMetadataRs)
+
+AddWalletRecordRequest = _reflection.GeneratedProtocolMessageType('AddWalletRecordRequest', (_message.Message,), dict(
+  DESCRIPTOR = _ADDWALLETRECORDREQUEST,
+  __module__ = 'identitylayer_pb2'
+  # @@protoc_insertion_point(class_scope:identitylayer.AddWalletRecordRequest)
+  ))
+_sym_db.RegisterMessage(AddWalletRecordRequest)
+
+AddWalletRecordResponse = _reflection.GeneratedProtocolMessageType('AddWalletRecordResponse', (_message.Message,), dict(
+  DESCRIPTOR = _ADDWALLETRECORDRESPONSE,
+  __module__ = 'identitylayer_pb2'
+  # @@protoc_insertion_point(class_scope:identitylayer.AddWalletRecordResponse)
+  ))
+_sym_db.RegisterMessage(AddWalletRecordResponse)
+
+UpdateWalletRecordValueRequest = _reflection.GeneratedProtocolMessageType('UpdateWalletRecordValueRequest', (_message.Message,), dict(
+  DESCRIPTOR = _UPDATEWALLETRECORDVALUEREQUEST,
+  __module__ = 'identitylayer_pb2'
+  # @@protoc_insertion_point(class_scope:identitylayer.UpdateWalletRecordValueRequest)
+  ))
+_sym_db.RegisterMessage(UpdateWalletRecordValueRequest)
+
+UpdateWalletRecordValueResponse = _reflection.GeneratedProtocolMessageType('UpdateWalletRecordValueResponse', (_message.Message,), dict(
+  DESCRIPTOR = _UPDATEWALLETRECORDVALUERESPONSE,
+  __module__ = 'identitylayer_pb2'
+  # @@protoc_insertion_point(class_scope:identitylayer.UpdateWalletRecordValueResponse)
+  ))
+_sym_db.RegisterMessage(UpdateWalletRecordValueResponse)
+
+UpdateWalletRecordTagsRequest = _reflection.GeneratedProtocolMessageType('UpdateWalletRecordTagsRequest', (_message.Message,), dict(
+  DESCRIPTOR = _UPDATEWALLETRECORDTAGSREQUEST,
+  __module__ = 'identitylayer_pb2'
+  # @@protoc_insertion_point(class_scope:identitylayer.UpdateWalletRecordTagsRequest)
+  ))
+_sym_db.RegisterMessage(UpdateWalletRecordTagsRequest)
+
+UpdateWalletRecordTagsResponse = _reflection.GeneratedProtocolMessageType('UpdateWalletRecordTagsResponse', (_message.Message,), dict(
+  DESCRIPTOR = _UPDATEWALLETRECORDTAGSRESPONSE,
+  __module__ = 'identitylayer_pb2'
+  # @@protoc_insertion_point(class_scope:identitylayer.UpdateWalletRecordTagsResponse)
+  ))
+_sym_db.RegisterMessage(UpdateWalletRecordTagsResponse)
+
+AddWalletRecordTagsRequest = _reflection.GeneratedProtocolMessageType('AddWalletRecordTagsRequest', (_message.Message,), dict(
+  DESCRIPTOR = _ADDWALLETRECORDTAGSREQUEST,
+  __module__ = 'identitylayer_pb2'
+  # @@protoc_insertion_point(class_scope:identitylayer.AddWalletRecordTagsRequest)
+  ))
+_sym_db.RegisterMessage(AddWalletRecordTagsRequest)
+
+AddWalletRecordTagsResponse = _reflection.GeneratedProtocolMessageType('AddWalletRecordTagsResponse', (_message.Message,), dict(
+  DESCRIPTOR = _ADDWALLETRECORDTAGSRESPONSE,
+  __module__ = 'identitylayer_pb2'
+  # @@protoc_insertion_point(class_scope:identitylayer.AddWalletRecordTagsResponse)
+  ))
+_sym_db.RegisterMessage(AddWalletRecordTagsResponse)
+
+DeleteWalletRecordTagsRequest = _reflection.GeneratedProtocolMessageType('DeleteWalletRecordTagsRequest', (_message.Message,), dict(
+  DESCRIPTOR = _DELETEWALLETRECORDTAGSREQUEST,
+  __module__ = 'identitylayer_pb2'
+  # @@protoc_insertion_point(class_scope:identitylayer.DeleteWalletRecordTagsRequest)
+  ))
+_sym_db.RegisterMessage(DeleteWalletRecordTagsRequest)
+
+DeleteWalletRecordTagsResponse = _reflection.GeneratedProtocolMessageType('DeleteWalletRecordTagsResponse', (_message.Message,), dict(
+  DESCRIPTOR = _DELETEWALLETRECORDTAGSRESPONSE,
+  __module__ = 'identitylayer_pb2'
+  # @@protoc_insertion_point(class_scope:identitylayer.DeleteWalletRecordTagsResponse)
+  ))
+_sym_db.RegisterMessage(DeleteWalletRecordTagsResponse)
+
+DeleteWalletRecordRequest = _reflection.GeneratedProtocolMessageType('DeleteWalletRecordRequest', (_message.Message,), dict(
+  DESCRIPTOR = _DELETEWALLETRECORDREQUEST,
+  __module__ = 'identitylayer_pb2'
+  # @@protoc_insertion_point(class_scope:identitylayer.DeleteWalletRecordRequest)
+  ))
+_sym_db.RegisterMessage(DeleteWalletRecordRequest)
+
+DeleteWalletRecordResponse = _reflection.GeneratedProtocolMessageType('DeleteWalletRecordResponse', (_message.Message,), dict(
+  DESCRIPTOR = _DELETEWALLETRECORDRESPONSE,
+  __module__ = 'identitylayer_pb2'
+  # @@protoc_insertion_point(class_scope:identitylayer.DeleteWalletRecordResponse)
+  ))
+_sym_db.RegisterMessage(DeleteWalletRecordResponse)
+
+GetWalletRecordRequest = _reflection.GeneratedProtocolMessageType('GetWalletRecordRequest', (_message.Message,), dict(
+  DESCRIPTOR = _GETWALLETRECORDREQUEST,
+  __module__ = 'identitylayer_pb2'
+  # @@protoc_insertion_point(class_scope:identitylayer.GetWalletRecordRequest)
+  ))
+_sym_db.RegisterMessage(GetWalletRecordRequest)
+
+GetWalletRecordResponse = _reflection.GeneratedProtocolMessageType('GetWalletRecordResponse', (_message.Message,), dict(
+  DESCRIPTOR = _GETWALLETRECORDRESPONSE,
+  __module__ = 'identitylayer_pb2'
+  # @@protoc_insertion_point(class_scope:identitylayer.GetWalletRecordResponse)
+  ))
+_sym_db.RegisterMessage(GetWalletRecordResponse)
+
+OpenWalletSearchRequest = _reflection.GeneratedProtocolMessageType('OpenWalletSearchRequest', (_message.Message,), dict(
+  DESCRIPTOR = _OPENWALLETSEARCHREQUEST,
+  __module__ = 'identitylayer_pb2'
+  # @@protoc_insertion_point(class_scope:identitylayer.OpenWalletSearchRequest)
+  ))
+_sym_db.RegisterMessage(OpenWalletSearchRequest)
+
+OpenWalletSearchResponse = _reflection.GeneratedProtocolMessageType('OpenWalletSearchResponse', (_message.Message,), dict(
+  DESCRIPTOR = _OPENWALLETSEARCHRESPONSE,
+  __module__ = 'identitylayer_pb2'
+  # @@protoc_insertion_point(class_scope:identitylayer.OpenWalletSearchResponse)
+  ))
+_sym_db.RegisterMessage(OpenWalletSearchResponse)
+
+FetchWalletSearchNextRecordsRequest = _reflection.GeneratedProtocolMessageType('FetchWalletSearchNextRecordsRequest', (_message.Message,), dict(
+  DESCRIPTOR = _FETCHWALLETSEARCHNEXTRECORDSREQUEST,
+  __module__ = 'identitylayer_pb2'
+  # @@protoc_insertion_point(class_scope:identitylayer.FetchWalletSearchNextRecordsRequest)
+  ))
+_sym_db.RegisterMessage(FetchWalletSearchNextRecordsRequest)
+
+FetchWalletSearchNextRecordsResponse = _reflection.GeneratedProtocolMessageType('FetchWalletSearchNextRecordsResponse', (_message.Message,), dict(
+  DESCRIPTOR = _FETCHWALLETSEARCHNEXTRECORDSRESPONSE,
+  __module__ = 'identitylayer_pb2'
+  # @@protoc_insertion_point(class_scope:identitylayer.FetchWalletSearchNextRecordsResponse)
+  ))
+_sym_db.RegisterMessage(FetchWalletSearchNextRecordsResponse)
+
+CloseWalletSearchRequest = _reflection.GeneratedProtocolMessageType('CloseWalletSearchRequest', (_message.Message,), dict(
+  DESCRIPTOR = _CLOSEWALLETSEARCHREQUEST,
+  __module__ = 'identitylayer_pb2'
+  # @@protoc_insertion_point(class_scope:identitylayer.CloseWalletSearchRequest)
+  ))
+_sym_db.RegisterMessage(CloseWalletSearchRequest)
+
+CloseWalletSearchResponse = _reflection.GeneratedProtocolMessageType('CloseWalletSearchResponse', (_message.Message,), dict(
+  DESCRIPTOR = _CLOSEWALLETSEARCHRESPONSE,
+  __module__ = 'identitylayer_pb2'
+  # @@protoc_insertion_point(class_scope:identitylayer.CloseWalletSearchResponse)
+  ))
+_sym_db.RegisterMessage(CloseWalletSearchResponse)
 
 
 
@@ -44,16 +11982,16 @@ _NONSECRETSERVICE = _descriptor.ServiceDescriptor(
   file=DESCRIPTOR,
   index=0,
   serialized_options=None,
-  serialized_start=175,
-  serialized_end=1048,
+  serialized_start=19589,
+  serialized_end=20743,
   methods=[
   _descriptor.MethodDescriptor(
     name='AddWalletRecord',
     full_name='identitylayer.NonSecretService.AddWalletRecord',
     index=0,
     containing_service=None,
-    input_type=non__secret__pb2._ADDWALLETRECORDREQUEST,
-    output_type=non__secret__pb2._ADDWALLETRECORDRESPONSE,
+    input_type=_ADDWALLETRECORDREQUEST,
+    output_type=_ADDWALLETRECORDRESPONSE,
     serialized_options=None,
   ),
   _descriptor.MethodDescriptor(
@@ -61,8 +11999,8 @@ _NONSECRETSERVICE = _descriptor.ServiceDescriptor(
     full_name='identitylayer.NonSecretService.UpdateWalletRecordValue',
     index=1,
     containing_service=None,
-    input_type=non__secret__pb2._UPDATEWALLETRECORDVALUEREQUEST,
-    output_type=non__secret__pb2._UPDATEWALLETRECORDVALUERESPONSE,
+    input_type=_UPDATEWALLETRECORDVALUEREQUEST,
+    output_type=_UPDATEWALLETRECORDVALUERESPONSE,
     serialized_options=None,
   ),
   _descriptor.MethodDescriptor(
@@ -70,8 +12008,8 @@ _NONSECRETSERVICE = _descriptor.ServiceDescriptor(
     full_name='identitylayer.NonSecretService.UpdateWalletRecordTags',
     index=2,
     containing_service=None,
-    input_type=non__secret__pb2._UPDATEWALLETRECORDTAGSREQUEST,
-    output_type=non__secret__pb2._UPDATEWALLETRECORDTAGSRESPONSE,
+    input_type=_UPDATEWALLETRECORDTAGSREQUEST,
+    output_type=_UPDATEWALLETRECORDTAGSRESPONSE,
     serialized_options=None,
   ),
   _descriptor.MethodDescriptor(
@@ -79,8 +12017,8 @@ _NONSECRETSERVICE = _descriptor.ServiceDescriptor(
     full_name='identitylayer.NonSecretService.AddWalletRecordTags',
     index=3,
     containing_service=None,
-    input_type=non__secret__pb2._ADDWALLETRECORDTAGSREQUEST,
-    output_type=non__secret__pb2._ADDWALLETRECORDTAGSRESPONSE,
+    input_type=_ADDWALLETRECORDTAGSREQUEST,
+    output_type=_ADDWALLETRECORDTAGSRESPONSE,
     serialized_options=None,
   ),
   _descriptor.MethodDescriptor(
@@ -88,8 +12026,8 @@ _NONSECRETSERVICE = _descriptor.ServiceDescriptor(
     full_name='identitylayer.NonSecretService.DeleteWalletRecordTags',
     index=4,
     containing_service=None,
-    input_type=non__secret__pb2._DELETEWALLETRECORDTAGSREQUEST,
-    output_type=non__secret__pb2._DELETEWALLETRECORDTAGSRESPONSE,
+    input_type=_DELETEWALLETRECORDTAGSREQUEST,
+    output_type=_DELETEWALLETRECORDTAGSRESPONSE,
     serialized_options=None,
   ),
   _descriptor.MethodDescriptor(
@@ -97,8 +12035,8 @@ _NONSECRETSERVICE = _descriptor.ServiceDescriptor(
     full_name='identitylayer.NonSecretService.DeleteWalletRecord',
     index=5,
     containing_service=None,
-    input_type=non__secret__pb2._DELETEWALLETRECORDREQUEST,
-    output_type=non__secret__pb2._DELETEWALLETRECORDRESPONSE,
+    input_type=_DELETEWALLETRECORDREQUEST,
+    output_type=_DELETEWALLETRECORDRESPONSE,
     serialized_options=None,
   ),
   _descriptor.MethodDescriptor(
@@ -106,8 +12044,8 @@ _NONSECRETSERVICE = _descriptor.ServiceDescriptor(
     full_name='identitylayer.NonSecretService.GetWalletRecord',
     index=6,
     containing_service=None,
-    input_type=non__secret__pb2._GETWALLETRECORDREQUEST,
-    output_type=non__secret__pb2._GETWALLETRECORDRESPONSE,
+    input_type=_GETWALLETRECORDREQUEST,
+    output_type=_GETWALLETRECORDRESPONSE,
     serialized_options=None,
   ),
   _descriptor.MethodDescriptor(
@@ -115,8 +12053,8 @@ _NONSECRETSERVICE = _descriptor.ServiceDescriptor(
     full_name='identitylayer.NonSecretService.OpenWalletSearch',
     index=7,
     containing_service=None,
-    input_type=non__secret__pb2._OPENWALLETSEARCHREQUEST,
-    output_type=non__secret__pb2._OPENWALLETSEARCHRESPONSE,
+    input_type=_OPENWALLETSEARCHREQUEST,
+    output_type=_OPENWALLETSEARCHRESPONSE,
     serialized_options=None,
   ),
   _descriptor.MethodDescriptor(
@@ -124,8 +12062,8 @@ _NONSECRETSERVICE = _descriptor.ServiceDescriptor(
     full_name='identitylayer.NonSecretService.FetchWalletSearchNextRecords',
     index=8,
     containing_service=None,
-    input_type=non__secret__pb2._FETCHWALLETSEARCHNEXTRECORDSREQUEST,
-    output_type=non__secret__pb2._FETCHWALLETSEARCHNEXTRECORDSRESPONSE,
+    input_type=_FETCHWALLETSEARCHNEXTRECORDSREQUEST,
+    output_type=_FETCHWALLETSEARCHNEXTRECORDSRESPONSE,
     serialized_options=None,
   ),
   _descriptor.MethodDescriptor(
@@ -133,8 +12071,8 @@ _NONSECRETSERVICE = _descriptor.ServiceDescriptor(
     full_name='identitylayer.NonSecretService.CloseWalletSearch',
     index=9,
     containing_service=None,
-    input_type=non__secret__pb2._CLOSEWALLETSEARCHREQUEST,
-    output_type=non__secret__pb2._CLOSEWALLETSEARCHRESPONSE,
+    input_type=_CLOSEWALLETSEARCHREQUEST,
+    output_type=_CLOSEWALLETSEARCHRESPONSE,
     serialized_options=None,
   ),
 ])
@@ -149,16 +12087,16 @@ _LEDGERSERVICE = _descriptor.ServiceDescriptor(
   file=DESCRIPTOR,
   index=1,
   serialized_options=None,
-  serialized_start=1051,
-  serialized_end=3485,
+  serialized_start=20746,
+  serialized_end=24049,
   methods=[
   _descriptor.MethodDescriptor(
     name='SignAndSubmitRequest',
     full_name='identitylayer.LedgerService.SignAndSubmitRequest',
     index=0,
     containing_service=None,
-    input_type=ledger__pb2._SIGNANDSUBMITREQUESTRQ,
-    output_type=ledger__pb2._SIGNANDSUBMITREQUESTRS,
+    input_type=_SIGNANDSUBMITREQUESTRQ,
+    output_type=_SIGNANDSUBMITREQUESTRS,
     serialized_options=None,
   ),
   _descriptor.MethodDescriptor(
@@ -166,8 +12104,8 @@ _LEDGERSERVICE = _descriptor.ServiceDescriptor(
     full_name='identitylayer.LedgerService.SubmitRequest',
     index=1,
     containing_service=None,
-    input_type=ledger__pb2._SUBMITREQUESTRQ,
-    output_type=ledger__pb2._SUBMITREQUESTRS,
+    input_type=_SUBMITREQUESTRQ,
+    output_type=_SUBMITREQUESTRS,
     serialized_options=None,
   ),
   _descriptor.MethodDescriptor(
@@ -175,8 +12113,8 @@ _LEDGERSERVICE = _descriptor.ServiceDescriptor(
     full_name='identitylayer.LedgerService.SubmitAction',
     index=2,
     containing_service=None,
-    input_type=ledger__pb2._SUBMITACTIONRQ,
-    output_type=ledger__pb2._SUBMITACTIONRS,
+    input_type=_SUBMITACTIONRQ,
+    output_type=_SUBMITACTIONRS,
     serialized_options=None,
   ),
   _descriptor.MethodDescriptor(
@@ -184,8 +12122,8 @@ _LEDGERSERVICE = _descriptor.ServiceDescriptor(
     full_name='identitylayer.LedgerService.SignRequest',
     index=3,
     containing_service=None,
-    input_type=ledger__pb2._SIGNREQUESTRQ,
-    output_type=ledger__pb2._SIGNREQUESTRS,
+    input_type=_SIGNREQUESTRQ,
+    output_type=_SIGNREQUESTRS,
     serialized_options=None,
   ),
   _descriptor.MethodDescriptor(
@@ -193,8 +12131,8 @@ _LEDGERSERVICE = _descriptor.ServiceDescriptor(
     full_name='identitylayer.LedgerService.MultiSignRequest',
     index=4,
     containing_service=None,
-    input_type=ledger__pb2._MULTISIGNREQUESTRQ,
-    output_type=ledger__pb2._MULTISIGNREQUESTRS,
+    input_type=_MULTISIGNREQUESTRQ,
+    output_type=_MULTISIGNREQUESTRS,
     serialized_options=None,
   ),
   _descriptor.MethodDescriptor(
@@ -202,8 +12140,8 @@ _LEDGERSERVICE = _descriptor.ServiceDescriptor(
     full_name='identitylayer.LedgerService.BuildGetDdoRequest',
     index=5,
     containing_service=None,
-    input_type=ledger__pb2._BUILDGETDDOREQUESTRQ,
-    output_type=ledger__pb2._BUILDGETDDOREQUESTRS,
+    input_type=_BUILDGETDDOREQUESTRQ,
+    output_type=_BUILDGETDDOREQUESTRS,
     serialized_options=None,
   ),
   _descriptor.MethodDescriptor(
@@ -211,8 +12149,8 @@ _LEDGERSERVICE = _descriptor.ServiceDescriptor(
     full_name='identitylayer.LedgerService.BuildNymRequest',
     index=6,
     containing_service=None,
-    input_type=ledger__pb2._BUILDNYMREQUESTRQ,
-    output_type=ledger__pb2._BUILDNYMREQUESTRS,
+    input_type=_BUILDNYMREQUESTRQ,
+    output_type=_BUILDNYMREQUESTRS,
     serialized_options=None,
   ),
   _descriptor.MethodDescriptor(
@@ -220,8 +12158,8 @@ _LEDGERSERVICE = _descriptor.ServiceDescriptor(
     full_name='identitylayer.LedgerService.BuildAttribRequest',
     index=7,
     containing_service=None,
-    input_type=ledger__pb2._BUILDATTRIBREQUESTRQ,
-    output_type=ledger__pb2._BUILDATTRIBREQUESTRS,
+    input_type=_BUILDATTRIBREQUESTRQ,
+    output_type=_BUILDATTRIBREQUESTRS,
     serialized_options=None,
   ),
   _descriptor.MethodDescriptor(
@@ -229,8 +12167,8 @@ _LEDGERSERVICE = _descriptor.ServiceDescriptor(
     full_name='identitylayer.LedgerService.BuildGetAttribRequest',
     index=8,
     containing_service=None,
-    input_type=ledger__pb2._BUILDGETATTRIBREQUESTRQ,
-    output_type=ledger__pb2._BUILDGETATTRIBREQUESTRS,
+    input_type=_BUILDGETATTRIBREQUESTRQ,
+    output_type=_BUILDGETATTRIBREQUESTRS,
     serialized_options=None,
   ),
   _descriptor.MethodDescriptor(
@@ -238,8 +12176,8 @@ _LEDGERSERVICE = _descriptor.ServiceDescriptor(
     full_name='identitylayer.LedgerService.BuildGetNymRequest',
     index=9,
     containing_service=None,
-    input_type=ledger__pb2._BUILDGETNYMREQUESTRQ,
-    output_type=ledger__pb2._BUILDGETNYMREQUESTRS,
+    input_type=_BUILDGETNYMREQUESTRQ,
+    output_type=_BUILDGETNYMREQUESTRS,
     serialized_options=None,
   ),
   _descriptor.MethodDescriptor(
@@ -247,8 +12185,8 @@ _LEDGERSERVICE = _descriptor.ServiceDescriptor(
     full_name='identitylayer.LedgerService.BuildSchemaRequest',
     index=10,
     containing_service=None,
-    input_type=ledger__pb2._BUILDSCHEMAREQUESTRQ,
-    output_type=ledger__pb2._BUILDSCHEMAREQUESTRS,
+    input_type=_BUILDSCHEMAREQUESTRQ,
+    output_type=_BUILDSCHEMAREQUESTRS,
     serialized_options=None,
   ),
   _descriptor.MethodDescriptor(
@@ -256,8 +12194,8 @@ _LEDGERSERVICE = _descriptor.ServiceDescriptor(
     full_name='identitylayer.LedgerService.BuildGetSchemaRequest',
     index=11,
     containing_service=None,
-    input_type=ledger__pb2._BUILDGETSCHEMAREQUESTRQ,
-    output_type=ledger__pb2._BUILDGETSCHEMAREQUESTRS,
+    input_type=_BUILDGETSCHEMAREQUESTRQ,
+    output_type=_BUILDGETSCHEMAREQUESTRS,
     serialized_options=None,
   ),
   _descriptor.MethodDescriptor(
@@ -265,8 +12203,8 @@ _LEDGERSERVICE = _descriptor.ServiceDescriptor(
     full_name='identitylayer.LedgerService.ParseGetSchemaResponse',
     index=12,
     containing_service=None,
-    input_type=ledger__pb2._PARSEGETSCHEMARESPONSERQ,
-    output_type=ledger__pb2._PARSEGETSCHEMARESPONSERS,
+    input_type=_PARSEGETSCHEMARESPONSERQ,
+    output_type=_PARSEGETSCHEMARESPONSERS,
     serialized_options=None,
   ),
   _descriptor.MethodDescriptor(
@@ -274,8 +12212,8 @@ _LEDGERSERVICE = _descriptor.ServiceDescriptor(
     full_name='identitylayer.LedgerService.BuildCredDefRequest',
     index=13,
     containing_service=None,
-    input_type=ledger__pb2._BUILDCREDDEFREQUESTRQ,
-    output_type=ledger__pb2._BUILDCREDDEFREQUESTRS,
+    input_type=_BUILDCREDDEFREQUESTRQ,
+    output_type=_BUILDCREDDEFREQUESTRS,
     serialized_options=None,
   ),
   _descriptor.MethodDescriptor(
@@ -283,8 +12221,8 @@ _LEDGERSERVICE = _descriptor.ServiceDescriptor(
     full_name='identitylayer.LedgerService.BuildGetCredDefRequest',
     index=14,
     containing_service=None,
-    input_type=ledger__pb2._BUILDGETCREDDEFREQUESTRQ,
-    output_type=ledger__pb2._BUILDGETCREDDEFREQUESTRS,
+    input_type=_BUILDGETCREDDEFREQUESTRQ,
+    output_type=_BUILDGETCREDDEFREQUESTRS,
     serialized_options=None,
   ),
   _descriptor.MethodDescriptor(
@@ -292,8 +12230,8 @@ _LEDGERSERVICE = _descriptor.ServiceDescriptor(
     full_name='identitylayer.LedgerService.ParseGetCredDefResponse',
     index=15,
     containing_service=None,
-    input_type=ledger__pb2._PARSEGETCREDDEFRESPONSERQ,
-    output_type=ledger__pb2._PARSEGETCREDDEFRESPONSERS,
+    input_type=_PARSEGETCREDDEFRESPONSERQ,
+    output_type=_PARSEGETCREDDEFRESPONSERS,
     serialized_options=None,
   ),
   _descriptor.MethodDescriptor(
@@ -301,8 +12239,8 @@ _LEDGERSERVICE = _descriptor.ServiceDescriptor(
     full_name='identitylayer.LedgerService.BuildNodeRequest',
     index=16,
     containing_service=None,
-    input_type=ledger__pb2._BUILDNODEREQUESTRQ,
-    output_type=ledger__pb2._BUILDNODEREQUESTRS,
+    input_type=_BUILDNODEREQUESTRQ,
+    output_type=_BUILDNODEREQUESTRS,
     serialized_options=None,
   ),
   _descriptor.MethodDescriptor(
@@ -310,8 +12248,8 @@ _LEDGERSERVICE = _descriptor.ServiceDescriptor(
     full_name='identitylayer.LedgerService.BuildGetValidatorInfoRequest',
     index=17,
     containing_service=None,
-    input_type=ledger__pb2._BUILDGETVALIDATORINFOREQUESTRQ,
-    output_type=ledger__pb2._BUILDGETVALIDATORINFOREQUESTRS,
+    input_type=_BUILDGETVALIDATORINFOREQUESTRQ,
+    output_type=_BUILDGETVALIDATORINFOREQUESTRS,
     serialized_options=None,
   ),
   _descriptor.MethodDescriptor(
@@ -319,8 +12257,8 @@ _LEDGERSERVICE = _descriptor.ServiceDescriptor(
     full_name='identitylayer.LedgerService.BuildGetTxnRequest',
     index=18,
     containing_service=None,
-    input_type=ledger__pb2._BUILDGETTXNREQUESTRQ,
-    output_type=ledger__pb2._BUILDGETTXNREQUESTRS,
+    input_type=_BUILDGETTXNREQUESTRQ,
+    output_type=_BUILDGETTXNREQUESTRS,
     serialized_options=None,
   ),
   _descriptor.MethodDescriptor(
@@ -328,8 +12266,8 @@ _LEDGERSERVICE = _descriptor.ServiceDescriptor(
     full_name='identitylayer.LedgerService.BuildPoolConfigRequest',
     index=19,
     containing_service=None,
-    input_type=ledger__pb2._BUILDPOOLCONFIGREQUESTRQ,
-    output_type=ledger__pb2._BUILDPOOLCONFIGREQUESTRS,
+    input_type=_BUILDPOOLCONFIGREQUESTRQ,
+    output_type=_BUILDPOOLCONFIGREQUESTRS,
     serialized_options=None,
   ),
   _descriptor.MethodDescriptor(
@@ -337,8 +12275,8 @@ _LEDGERSERVICE = _descriptor.ServiceDescriptor(
     full_name='identitylayer.LedgerService.BuildPoolRestartRequest',
     index=20,
     containing_service=None,
-    input_type=ledger__pb2._BUILDPOOLRESTARTREQUESTRQ,
-    output_type=ledger__pb2._BUILDPOOLRESTARTREQUESTRS,
+    input_type=_BUILDPOOLRESTARTREQUESTRQ,
+    output_type=_BUILDPOOLRESTARTREQUESTRS,
     serialized_options=None,
   ),
   _descriptor.MethodDescriptor(
@@ -346,8 +12284,8 @@ _LEDGERSERVICE = _descriptor.ServiceDescriptor(
     full_name='identitylayer.LedgerService.BuildPoolUpgradeRequest',
     index=21,
     containing_service=None,
-    input_type=ledger__pb2._BUILDPOOLUPGRADEREQUESTRQ,
-    output_type=ledger__pb2._BUILDPOOLUPGRADEREQUESTRS,
+    input_type=_BUILDPOOLUPGRADEREQUESTRQ,
+    output_type=_BUILDPOOLUPGRADEREQUESTRS,
     serialized_options=None,
   ),
   _descriptor.MethodDescriptor(
@@ -355,8 +12293,8 @@ _LEDGERSERVICE = _descriptor.ServiceDescriptor(
     full_name='identitylayer.LedgerService.BuildRevocRegDefRequest',
     index=22,
     containing_service=None,
-    input_type=ledger__pb2._BUILDREVOCREGDEFREQUESTRQ,
-    output_type=ledger__pb2._BUILDREVOCREGDEFREQUESTRS,
+    input_type=_BUILDREVOCREGDEFREQUESTRQ,
+    output_type=_BUILDREVOCREGDEFREQUESTRS,
     serialized_options=None,
   ),
   _descriptor.MethodDescriptor(
@@ -364,8 +12302,8 @@ _LEDGERSERVICE = _descriptor.ServiceDescriptor(
     full_name='identitylayer.LedgerService.BuildGetRevocRegDefRequest',
     index=23,
     containing_service=None,
-    input_type=ledger__pb2._BUILDGETREVOCREGDEFREQUESTRQ,
-    output_type=ledger__pb2._BUILDGETREVOCREGDEFREQUESTRS,
+    input_type=_BUILDGETREVOCREGDEFREQUESTRQ,
+    output_type=_BUILDGETREVOCREGDEFREQUESTRS,
     serialized_options=None,
   ),
   _descriptor.MethodDescriptor(
@@ -373,8 +12311,8 @@ _LEDGERSERVICE = _descriptor.ServiceDescriptor(
     full_name='identitylayer.LedgerService.ParseGetRevocRegDefResponse',
     index=24,
     containing_service=None,
-    input_type=ledger__pb2._PARSEGETREVOCREGDEFRESPONSERQ,
-    output_type=ledger__pb2._PARSEGETREVOCREGDEFRESPONSERS,
+    input_type=_PARSEGETREVOCREGDEFRESPONSERQ,
+    output_type=_PARSEGETREVOCREGDEFRESPONSERS,
     serialized_options=None,
   ),
   _descriptor.MethodDescriptor(
@@ -382,8 +12320,8 @@ _LEDGERSERVICE = _descriptor.ServiceDescriptor(
     full_name='identitylayer.LedgerService.BuildRevocRegEntryRequest',
     index=25,
     containing_service=None,
-    input_type=ledger__pb2._BUILDREVOCREGENTRYREQUESTRQ,
-    output_type=ledger__pb2._BUILDREVOCREGENTRYREQUESTRS,
+    input_type=_BUILDREVOCREGENTRYREQUESTRQ,
+    output_type=_BUILDREVOCREGENTRYREQUESTRS,
     serialized_options=None,
   ),
   _descriptor.MethodDescriptor(
@@ -391,8 +12329,8 @@ _LEDGERSERVICE = _descriptor.ServiceDescriptor(
     full_name='identitylayer.LedgerService.BuildGetRevocRegRequest',
     index=26,
     containing_service=None,
-    input_type=ledger__pb2._BUILDGETREVOCREGREQUESTRQ,
-    output_type=ledger__pb2._BUILDGETREVOCREGREQUESTRS,
+    input_type=_BUILDGETREVOCREGREQUESTRQ,
+    output_type=_BUILDGETREVOCREGREQUESTRS,
     serialized_options=None,
   ),
   _descriptor.MethodDescriptor(
@@ -400,8 +12338,8 @@ _LEDGERSERVICE = _descriptor.ServiceDescriptor(
     full_name='identitylayer.LedgerService.ParseGetRevocRegResponse',
     index=27,
     containing_service=None,
-    input_type=ledger__pb2._PARSEGETREVOCREGRESPONSERQ,
-    output_type=ledger__pb2._PARSEGETREVOCREGRESPONSERS,
+    input_type=_PARSEGETREVOCREGRESPONSERQ,
+    output_type=_PARSEGETREVOCREGRESPONSERS,
     serialized_options=None,
   ),
   _descriptor.MethodDescriptor(
@@ -409,8 +12347,8 @@ _LEDGERSERVICE = _descriptor.ServiceDescriptor(
     full_name='identitylayer.LedgerService.BuildGetRevocRegDeltaRequest',
     index=28,
     containing_service=None,
-    input_type=ledger__pb2._BUILDGETREVOCREGDELTAREQUESTRQ,
-    output_type=ledger__pb2._BUILDGETREVOCREGDELTAREQUESTRS,
+    input_type=_BUILDGETREVOCREGDELTAREQUESTRQ,
+    output_type=_BUILDGETREVOCREGDELTAREQUESTRS,
     serialized_options=None,
   ),
   _descriptor.MethodDescriptor(
@@ -418,8 +12356,8 @@ _LEDGERSERVICE = _descriptor.ServiceDescriptor(
     full_name='identitylayer.LedgerService.ParseGetRevocRegDeltaResponse',
     index=29,
     containing_service=None,
-    input_type=ledger__pb2._PARSEGETREVOCREGDELTARESPONSERQ,
-    output_type=ledger__pb2._PARSEGETREVOCREGDELTARESPONSERS,
+    input_type=_PARSEGETREVOCREGDELTARESPONSERQ,
+    output_type=_PARSEGETREVOCREGDELTARESPONSERS,
     serialized_options=None,
   ),
   _descriptor.MethodDescriptor(
@@ -427,8 +12365,8 @@ _LEDGERSERVICE = _descriptor.ServiceDescriptor(
     full_name='identitylayer.LedgerService.GetResponseMetadata',
     index=30,
     containing_service=None,
-    input_type=ledger__pb2._GETRESPONSEMETADATARQ,
-    output_type=ledger__pb2._GETRESPONSEMETADATARS,
+    input_type=_GETRESPONSEMETADATARQ,
+    output_type=_GETRESPONSEMETADATARS,
     serialized_options=None,
   ),
 ])
@@ -443,16 +12381,16 @@ _DIDSERVICE = _descriptor.ServiceDescriptor(
   file=DESCRIPTOR,
   index=2,
   serialized_options=None,
-  serialized_start=3488,
-  serialized_end=4666,
+  serialized_start=24052,
+  serialized_end=25678,
   methods=[
   _descriptor.MethodDescriptor(
     name='CreateAndStoreMyDid',
     full_name='identitylayer.DidService.CreateAndStoreMyDid',
     index=0,
     containing_service=None,
-    input_type=did__pb2._CREATEANDSTOREMYDIDREQUEST,
-    output_type=did__pb2._CREATEANDSTOREMYDIDRESPONSE,
+    input_type=_CREATEANDSTOREMYDIDREQUEST,
+    output_type=_CREATEANDSTOREMYDIDRESPONSE,
     serialized_options=None,
   ),
   _descriptor.MethodDescriptor(
@@ -460,8 +12398,8 @@ _DIDSERVICE = _descriptor.ServiceDescriptor(
     full_name='identitylayer.DidService.ReplaceKeysStart',
     index=1,
     containing_service=None,
-    input_type=did__pb2._REPLACEKEYSSTARTREQUEST,
-    output_type=did__pb2._REPLACEKEYSSTARTRESPONSE,
+    input_type=_REPLACEKEYSSTARTREQUEST,
+    output_type=_REPLACEKEYSSTARTRESPONSE,
     serialized_options=None,
   ),
   _descriptor.MethodDescriptor(
@@ -469,8 +12407,8 @@ _DIDSERVICE = _descriptor.ServiceDescriptor(
     full_name='identitylayer.DidService.ReplaceKeysApply',
     index=2,
     containing_service=None,
-    input_type=did__pb2._REPLACEKEYSAPPLYREQUEST,
-    output_type=did__pb2._REPLACEKEYSAPPLYRESPONSE,
+    input_type=_REPLACEKEYSAPPLYREQUEST,
+    output_type=_REPLACEKEYSAPPLYRESPONSE,
     serialized_options=None,
   ),
   _descriptor.MethodDescriptor(
@@ -478,8 +12416,8 @@ _DIDSERVICE = _descriptor.ServiceDescriptor(
     full_name='identitylayer.DidService.StoreTheirDid',
     index=3,
     containing_service=None,
-    input_type=did__pb2._STORETHEIRDIDREQUEST,
-    output_type=did__pb2._STORETHEIRDIDRESPONSE,
+    input_type=_STORETHEIRDIDREQUEST,
+    output_type=_STORETHEIRDIDRESPONSE,
     serialized_options=None,
   ),
   _descriptor.MethodDescriptor(
@@ -487,8 +12425,8 @@ _DIDSERVICE = _descriptor.ServiceDescriptor(
     full_name='identitylayer.DidService.DidCreateKey',
     index=4,
     containing_service=None,
-    input_type=did__pb2._DIDCREATEKEYREQUEST,
-    output_type=did__pb2._DIDCREATEKEYRESPONSE,
+    input_type=_DIDCREATEKEYREQUEST,
+    output_type=_DIDCREATEKEYRESPONSE,
     serialized_options=None,
   ),
   _descriptor.MethodDescriptor(
@@ -496,8 +12434,8 @@ _DIDSERVICE = _descriptor.ServiceDescriptor(
     full_name='identitylayer.DidService.DidSetKeyMetadata',
     index=5,
     containing_service=None,
-    input_type=did__pb2._DIDSETKEYMETADATAREQUEST,
-    output_type=did__pb2._DIDSETKEYMETADATAREQUEST,
+    input_type=_DIDSETKEYMETADATAREQUEST,
+    output_type=_DIDSETKEYMETADATAREQUEST,
     serialized_options=None,
   ),
   _descriptor.MethodDescriptor(
@@ -505,8 +12443,8 @@ _DIDSERVICE = _descriptor.ServiceDescriptor(
     full_name='identitylayer.DidService.DidGetKeyMetadata',
     index=6,
     containing_service=None,
-    input_type=did__pb2._DIDGETKEYMETADATAREQUEST,
-    output_type=did__pb2._DIDGETKEYMETADATARESPONSE,
+    input_type=_DIDGETKEYMETADATAREQUEST,
+    output_type=_DIDGETKEYMETADATARESPONSE,
     serialized_options=None,
   ),
   _descriptor.MethodDescriptor(
@@ -514,8 +12452,8 @@ _DIDSERVICE = _descriptor.ServiceDescriptor(
     full_name='identitylayer.DidService.KeyForDid',
     index=7,
     containing_service=None,
-    input_type=did__pb2._KEYFORDIDREQUEST,
-    output_type=did__pb2._KEYFORDIDRESPONSE,
+    input_type=_KEYFORDIDREQUEST,
+    output_type=_KEYFORDIDRESPONSE,
     serialized_options=None,
   ),
   _descriptor.MethodDescriptor(
@@ -523,8 +12461,8 @@ _DIDSERVICE = _descriptor.ServiceDescriptor(
     full_name='identitylayer.DidService.KeyForLocalDid',
     index=8,
     containing_service=None,
-    input_type=did__pb2._KEYFORLOCALDIDREQUEST,
-    output_type=did__pb2._KEYFORLOCALDIDRESPONSE,
+    input_type=_KEYFORLOCALDIDREQUEST,
+    output_type=_KEYFORLOCALDIDRESPONSE,
     serialized_options=None,
   ),
   _descriptor.MethodDescriptor(
@@ -532,8 +12470,8 @@ _DIDSERVICE = _descriptor.ServiceDescriptor(
     full_name='identitylayer.DidService.SetEndpointForDid',
     index=9,
     containing_service=None,
-    input_type=did__pb2._SETENDPOINTFORDIDREQUEST,
-    output_type=did__pb2._SETENDPOINTFORDIDRESPONSE,
+    input_type=_SETENDPOINTFORDIDREQUEST,
+    output_type=_SETENDPOINTFORDIDRESPONSE,
     serialized_options=None,
   ),
   _descriptor.MethodDescriptor(
@@ -541,8 +12479,8 @@ _DIDSERVICE = _descriptor.ServiceDescriptor(
     full_name='identitylayer.DidService.GetEndpointForDid',
     index=10,
     containing_service=None,
-    input_type=did__pb2._GETENDPOINTFORDIDREQUEST,
-    output_type=did__pb2._GETENDPOINTFORDIDRESPONSE,
+    input_type=_GETENDPOINTFORDIDREQUEST,
+    output_type=_GETENDPOINTFORDIDRESPONSE,
     serialized_options=None,
   ),
   _descriptor.MethodDescriptor(
@@ -550,8 +12488,8 @@ _DIDSERVICE = _descriptor.ServiceDescriptor(
     full_name='identitylayer.DidService.SetDidMetadata',
     index=11,
     containing_service=None,
-    input_type=did__pb2._SETDIDMETADATAREQUEST,
-    output_type=did__pb2._SETDIDMETADATARESPONSE,
+    input_type=_SETDIDMETADATAREQUEST,
+    output_type=_SETDIDMETADATARESPONSE,
     serialized_options=None,
   ),
   _descriptor.MethodDescriptor(
@@ -559,8 +12497,8 @@ _DIDSERVICE = _descriptor.ServiceDescriptor(
     full_name='identitylayer.DidService.GetDidMetadata',
     index=12,
     containing_service=None,
-    input_type=did__pb2._GETDIDMETADATAREQUEST,
-    output_type=did__pb2._GETDIDMETADATARESPONSE,
+    input_type=_GETDIDMETADATAREQUEST,
+    output_type=_GETDIDMETADATARESPONSE,
     serialized_options=None,
   ),
   _descriptor.MethodDescriptor(
@@ -568,8 +12506,8 @@ _DIDSERVICE = _descriptor.ServiceDescriptor(
     full_name='identitylayer.DidService.GetMyDidWithMeta',
     index=13,
     containing_service=None,
-    input_type=did__pb2._GETMYDIDWITHMETAREQUEST,
-    output_type=did__pb2._GETMYDIDWITHMETARESPONSE,
+    input_type=_GETMYDIDWITHMETAREQUEST,
+    output_type=_GETMYDIDWITHMETARESPONSE,
     serialized_options=None,
   ),
   _descriptor.MethodDescriptor(
@@ -577,8 +12515,8 @@ _DIDSERVICE = _descriptor.ServiceDescriptor(
     full_name='identitylayer.DidService.ListMyDidsWithMeta',
     index=14,
     containing_service=None,
-    input_type=did__pb2._LISTMYDIDSWITHMETAREQUEST,
-    output_type=did__pb2._LISTMYDIDSWITHMETARESPONSE,
+    input_type=_LISTMYDIDSWITHMETAREQUEST,
+    output_type=_LISTMYDIDSWITHMETARESPONSE,
     serialized_options=None,
   ),
   _descriptor.MethodDescriptor(
@@ -586,8 +12524,8 @@ _DIDSERVICE = _descriptor.ServiceDescriptor(
     full_name='identitylayer.DidService.AbbreviateVerkey',
     index=15,
     containing_service=None,
-    input_type=did__pb2._ABBREVIATEVERKEYREQUEST,
-    output_type=did__pb2._ABBREVIATEVERKEYRESPONSE,
+    input_type=_ABBREVIATEVERKEYREQUEST,
+    output_type=_ABBREVIATEVERKEYRESPONSE,
     serialized_options=None,
   ),
 ])
@@ -602,16 +12540,16 @@ _PAIRWISESERVICE = _descriptor.ServiceDescriptor(
   file=DESCRIPTOR,
   index=3,
   serialized_options=None,
-  serialized_start=4669,
-  serialized_end=5037,
+  serialized_start=25681,
+  serialized_end=26189,
   methods=[
   _descriptor.MethodDescriptor(
     name='IsPairwiseExists',
     full_name='identitylayer.PairwiseService.IsPairwiseExists',
     index=0,
     containing_service=None,
-    input_type=pairwise__pb2._ISPAIRWISEEXISTSREQUEST,
-    output_type=pairwise__pb2._ISPAIRWISEEXISTSRESPONSE,
+    input_type=_ISPAIRWISEEXISTSREQUEST,
+    output_type=_ISPAIRWISEEXISTSRESPONSE,
     serialized_options=None,
   ),
   _descriptor.MethodDescriptor(
@@ -619,8 +12557,8 @@ _PAIRWISESERVICE = _descriptor.ServiceDescriptor(
     full_name='identitylayer.PairwiseService.CreatePairwise',
     index=1,
     containing_service=None,
-    input_type=pairwise__pb2._CREATEPAIRWISEREQUEST,
-    output_type=pairwise__pb2._CREATEPAIRWISERESPONSE,
+    input_type=_CREATEPAIRWISEREQUEST,
+    output_type=_CREATEPAIRWISERESPONSE,
     serialized_options=None,
   ),
   _descriptor.MethodDescriptor(
@@ -628,8 +12566,8 @@ _PAIRWISESERVICE = _descriptor.ServiceDescriptor(
     full_name='identitylayer.PairwiseService.ListPairwise',
     index=2,
     containing_service=None,
-    input_type=pairwise__pb2._LISTPAIRWISEREQUEST,
-    output_type=pairwise__pb2._LISTPAIRWISERESPONSE,
+    input_type=_LISTPAIRWISEREQUEST,
+    output_type=_LISTPAIRWISERESPONSE,
     serialized_options=None,
   ),
   _descriptor.MethodDescriptor(
@@ -637,8 +12575,8 @@ _PAIRWISESERVICE = _descriptor.ServiceDescriptor(
     full_name='identitylayer.PairwiseService.GetPairwise',
     index=3,
     containing_service=None,
-    input_type=pairwise__pb2._GETPAIRWISEREQUEST,
-    output_type=pairwise__pb2._GETPAIRWISERESPONSE,
+    input_type=_GETPAIRWISEREQUEST,
+    output_type=_GETPAIRWISERESPONSE,
     serialized_options=None,
   ),
   _descriptor.MethodDescriptor(
@@ -646,8 +12584,8 @@ _PAIRWISESERVICE = _descriptor.ServiceDescriptor(
     full_name='identitylayer.PairwiseService.SetPairwiseMetadata',
     index=4,
     containing_service=None,
-    input_type=pairwise__pb2._SETPAIRWISEMETADATAREQUEST,
-    output_type=pairwise__pb2._SETPAIRWISEMETADATARESPONSE,
+    input_type=_SETPAIRWISEMETADATAREQUEST,
+    output_type=_SETPAIRWISEMETADATARESPONSE,
     serialized_options=None,
   ),
 ])
@@ -662,16 +12600,16 @@ _CRYPTOSERVICE = _descriptor.ServiceDescriptor(
   file=DESCRIPTOR,
   index=4,
   serialized_options=None,
-  serialized_start=5040,
-  serialized_end=5595,
+  serialized_start=26192,
+  serialized_end=26999,
   methods=[
   _descriptor.MethodDescriptor(
     name='CreateKey',
     full_name='identitylayer.CryptoService.CreateKey',
     index=0,
     containing_service=None,
-    input_type=crypto__pb2._CREATEKEYREQUEST,
-    output_type=crypto__pb2._CREATEKEYRESPONSE,
+    input_type=_CREATEKEYREQUEST,
+    output_type=_CREATEKEYRESPONSE,
     serialized_options=None,
   ),
   _descriptor.MethodDescriptor(
@@ -679,8 +12617,8 @@ _CRYPTOSERVICE = _descriptor.ServiceDescriptor(
     full_name='identitylayer.CryptoService.SetKeyMetadata',
     index=1,
     containing_service=None,
-    input_type=crypto__pb2._SETKEYMETADATAREQUEST,
-    output_type=crypto__pb2._SETKEYMETADATARESPONSE,
+    input_type=_SETKEYMETADATAREQUEST,
+    output_type=_SETKEYMETADATARESPONSE,
     serialized_options=None,
   ),
   _descriptor.MethodDescriptor(
@@ -688,8 +12626,8 @@ _CRYPTOSERVICE = _descriptor.ServiceDescriptor(
     full_name='identitylayer.CryptoService.GetKeyMetadata',
     index=2,
     containing_service=None,
-    input_type=crypto__pb2._GETKEYMETADATAREQUEST,
-    output_type=crypto__pb2._GETKEYMETADATARESPONSE,
+    input_type=_GETKEYMETADATAREQUEST,
+    output_type=_GETKEYMETADATARESPONSE,
     serialized_options=None,
   ),
   _descriptor.MethodDescriptor(
@@ -697,8 +12635,8 @@ _CRYPTOSERVICE = _descriptor.ServiceDescriptor(
     full_name='identitylayer.CryptoService.CryptoSign',
     index=3,
     containing_service=None,
-    input_type=crypto__pb2._CRYPTOSIGNREQUEST,
-    output_type=crypto__pb2._CRYPTOSIGNRESPONSE,
+    input_type=_CRYPTOSIGNREQUEST,
+    output_type=_CRYPTOSIGNRESPONSE,
     serialized_options=None,
   ),
   _descriptor.MethodDescriptor(
@@ -706,8 +12644,8 @@ _CRYPTOSERVICE = _descriptor.ServiceDescriptor(
     full_name='identitylayer.CryptoService.CryptoVerify',
     index=4,
     containing_service=None,
-    input_type=crypto__pb2._CRYPTOVERIFYREQUEST,
-    output_type=crypto__pb2._CRYPTOVERIFYRESPONSE,
+    input_type=_CRYPTOVERIFYREQUEST,
+    output_type=_CRYPTOVERIFYRESPONSE,
     serialized_options=None,
   ),
   _descriptor.MethodDescriptor(
@@ -715,8 +12653,8 @@ _CRYPTOSERVICE = _descriptor.ServiceDescriptor(
     full_name='identitylayer.CryptoService.AuthCrypt',
     index=5,
     containing_service=None,
-    input_type=crypto__pb2._AUTHCRYPTREQUEST,
-    output_type=crypto__pb2._AUTHCRYPTRESPONSE,
+    input_type=_AUTHCRYPTREQUEST,
+    output_type=_AUTHCRYPTRESPONSE,
     serialized_options=None,
   ),
   _descriptor.MethodDescriptor(
@@ -724,8 +12662,8 @@ _CRYPTOSERVICE = _descriptor.ServiceDescriptor(
     full_name='identitylayer.CryptoService.AuthDecrypt',
     index=6,
     containing_service=None,
-    input_type=crypto__pb2._AUTHDECRYPTREQUEST,
-    output_type=crypto__pb2._AUTHDECRYPTRESPONSE,
+    input_type=_AUTHDECRYPTREQUEST,
+    output_type=_AUTHDECRYPTRESPONSE,
     serialized_options=None,
   ),
   _descriptor.MethodDescriptor(
@@ -733,8 +12671,8 @@ _CRYPTOSERVICE = _descriptor.ServiceDescriptor(
     full_name='identitylayer.CryptoService.AnonCrypt',
     index=7,
     containing_service=None,
-    input_type=crypto__pb2._ANONCRYPTREQUEST,
-    output_type=crypto__pb2._ANONCRYPTRESPONSE,
+    input_type=_ANONCRYPTREQUEST,
+    output_type=_ANONCRYPTRESPONSE,
     serialized_options=None,
   ),
   _descriptor.MethodDescriptor(
@@ -742,8 +12680,8 @@ _CRYPTOSERVICE = _descriptor.ServiceDescriptor(
     full_name='identitylayer.CryptoService.AnonDecrypt',
     index=8,
     containing_service=None,
-    input_type=crypto__pb2._ANONDECRYPTREQUEST,
-    output_type=crypto__pb2._ANONDECRYPTRESPONSE,
+    input_type=_ANONDECRYPTREQUEST,
+    output_type=_ANONDECRYPTRESPONSE,
     serialized_options=None,
   ),
 ])
@@ -758,16 +12696,16 @@ _POOLSERVICE = _descriptor.ServiceDescriptor(
   file=DESCRIPTOR,
   index=5,
   serialized_options=None,
-  serialized_start=5598,
-  serialized_end=6151,
+  serialized_start=27002,
+  serialized_end=27751,
   methods=[
   _descriptor.MethodDescriptor(
     name='CreatePoolLedgerConfig',
     full_name='identitylayer.PoolService.CreatePoolLedgerConfig',
     index=0,
     containing_service=None,
-    input_type=pool__pb2._CREATEPOOLLEDGERCONFIGREQUEST,
-    output_type=pool__pb2._CREATEPOOLLEDGERCONFIGRESPONSE,
+    input_type=_CREATEPOOLLEDGERCONFIGREQUEST,
+    output_type=_CREATEPOOLLEDGERCONFIGRESPONSE,
     serialized_options=None,
   ),
   _descriptor.MethodDescriptor(
@@ -775,8 +12713,8 @@ _POOLSERVICE = _descriptor.ServiceDescriptor(
     full_name='identitylayer.PoolService.OpenPoolLedger',
     index=1,
     containing_service=None,
-    input_type=pool__pb2._OPENPOOLLEDGERREQUEST,
-    output_type=pool__pb2._OPENPOOLLEDGERRESPONSE,
+    input_type=_OPENPOOLLEDGERREQUEST,
+    output_type=_OPENPOOLLEDGERRESPONSE,
     serialized_options=None,
   ),
   _descriptor.MethodDescriptor(
@@ -784,8 +12722,8 @@ _POOLSERVICE = _descriptor.ServiceDescriptor(
     full_name='identitylayer.PoolService.RefreshPoolLedger',
     index=2,
     containing_service=None,
-    input_type=pool__pb2._REFRESHPOOLLEDGERREQUEST,
-    output_type=pool__pb2._REFRESHPOOLLEDGERRESPONSE,
+    input_type=_REFRESHPOOLLEDGERREQUEST,
+    output_type=_REFRESHPOOLLEDGERRESPONSE,
     serialized_options=None,
   ),
   _descriptor.MethodDescriptor(
@@ -793,8 +12731,8 @@ _POOLSERVICE = _descriptor.ServiceDescriptor(
     full_name='identitylayer.PoolService.ListPools',
     index=3,
     containing_service=None,
-    input_type=pool__pb2._LISTPOOLSREQUEST,
-    output_type=pool__pb2._LISTPOOLSRESPONSE,
+    input_type=_LISTPOOLSREQUEST,
+    output_type=_LISTPOOLSRESPONSE,
     serialized_options=None,
   ),
   _descriptor.MethodDescriptor(
@@ -802,8 +12740,8 @@ _POOLSERVICE = _descriptor.ServiceDescriptor(
     full_name='identitylayer.PoolService.ClosePoolLedger',
     index=4,
     containing_service=None,
-    input_type=pool__pb2._CLOSEPOOLLEDGERREQUEST,
-    output_type=pool__pb2._CLOSEPOOLLEDGERRESPONSE,
+    input_type=_CLOSEPOOLLEDGERREQUEST,
+    output_type=_CLOSEPOOLLEDGERRESPONSE,
     serialized_options=None,
   ),
   _descriptor.MethodDescriptor(
@@ -811,8 +12749,8 @@ _POOLSERVICE = _descriptor.ServiceDescriptor(
     full_name='identitylayer.PoolService.DeletePoolLedgerConfig',
     index=5,
     containing_service=None,
-    input_type=pool__pb2._DELETEPOOLLEDGERCONFIGREQUEST,
-    output_type=pool__pb2._DELETEPOOLLEDGERCONFIGRESPONSE,
+    input_type=_DELETEPOOLLEDGERCONFIGREQUEST,
+    output_type=_DELETEPOOLLEDGERCONFIGRESPONSE,
     serialized_options=None,
   ),
   _descriptor.MethodDescriptor(
@@ -820,8 +12758,8 @@ _POOLSERVICE = _descriptor.ServiceDescriptor(
     full_name='identitylayer.PoolService.SetProtocolVersion',
     index=6,
     containing_service=None,
-    input_type=pool__pb2._SETPROTOCOLVERSIONREQUEST,
-    output_type=pool__pb2._SETPROTOCOLVERSIONRESPONSE,
+    input_type=_SETPROTOCOLVERSIONREQUEST,
+    output_type=_SETPROTOCOLVERSIONRESPONSE,
     serialized_options=None,
   ),
 ])
@@ -836,16 +12774,16 @@ _ANONCREDSSERVICE = _descriptor.ServiceDescriptor(
   file=DESCRIPTOR,
   index=6,
   serialized_options=None,
-  serialized_start=6154,
-  serialized_end=8538,
+  serialized_start=27754,
+  serialized_end=30790,
   methods=[
   _descriptor.MethodDescriptor(
     name='IssuerCreateSchema',
     full_name='identitylayer.AnoncredsService.IssuerCreateSchema',
     index=0,
     containing_service=None,
-    input_type=anoncreds__pb2._ISSUERCREATESCHEMAREQUEST,
-    output_type=anoncreds__pb2._ISSUERCREATESCHEMARESPONSE,
+    input_type=_ISSUERCREATESCHEMAREQUEST,
+    output_type=_ISSUERCREATESCHEMARESPONSE,
     serialized_options=None,
   ),
   _descriptor.MethodDescriptor(
@@ -853,8 +12791,8 @@ _ANONCREDSSERVICE = _descriptor.ServiceDescriptor(
     full_name='identitylayer.AnoncredsService.IssuerCreateAndStoreCredentialDef',
     index=1,
     containing_service=None,
-    input_type=anoncreds__pb2._ISSUERCREATEANDSTORECREDENTIALDEFREQUEST,
-    output_type=anoncreds__pb2._ISSUERCREATEANDSTORECREDENTIALDEFRESPONSE,
+    input_type=_ISSUERCREATEANDSTORECREDENTIALDEFREQUEST,
+    output_type=_ISSUERCREATEANDSTORECREDENTIALDEFRESPONSE,
     serialized_options=None,
   ),
   _descriptor.MethodDescriptor(
@@ -862,8 +12800,8 @@ _ANONCREDSSERVICE = _descriptor.ServiceDescriptor(
     full_name='identitylayer.AnoncredsService.IssuerCreateAndStoreRevocReg',
     index=2,
     containing_service=None,
-    input_type=anoncreds__pb2._ISSUERCREATEANDSTOREREVOCREGREQUEST,
-    output_type=anoncreds__pb2._ISSUERCREATEANDSTOREREVOCREGRESPONSE,
+    input_type=_ISSUERCREATEANDSTOREREVOCREGREQUEST,
+    output_type=_ISSUERCREATEANDSTOREREVOCREGRESPONSE,
     serialized_options=None,
   ),
   _descriptor.MethodDescriptor(
@@ -871,8 +12809,8 @@ _ANONCREDSSERVICE = _descriptor.ServiceDescriptor(
     full_name='identitylayer.AnoncredsService.IssuerCreateCredentialOffer',
     index=3,
     containing_service=None,
-    input_type=anoncreds__pb2._ISSUERCREATECREDENTIALOFFERREQUEST,
-    output_type=anoncreds__pb2._ISSUERCREATECREDENTIALOFFERRESPONSE,
+    input_type=_ISSUERCREATECREDENTIALOFFERREQUEST,
+    output_type=_ISSUERCREATECREDENTIALOFFERRESPONSE,
     serialized_options=None,
   ),
   _descriptor.MethodDescriptor(
@@ -880,8 +12818,8 @@ _ANONCREDSSERVICE = _descriptor.ServiceDescriptor(
     full_name='identitylayer.AnoncredsService.IssuerCreateCredential',
     index=4,
     containing_service=None,
-    input_type=anoncreds__pb2._ISSUERCREATECREDENTIALREQUEST,
-    output_type=anoncreds__pb2._ISSUERCREATECREDENTIALRESPONSE,
+    input_type=_ISSUERCREATECREDENTIALREQUEST,
+    output_type=_ISSUERCREATECREDENTIALRESPONSE,
     serialized_options=None,
   ),
   _descriptor.MethodDescriptor(
@@ -889,8 +12827,8 @@ _ANONCREDSSERVICE = _descriptor.ServiceDescriptor(
     full_name='identitylayer.AnoncredsService.IssuerRevokeCredential',
     index=5,
     containing_service=None,
-    input_type=anoncreds__pb2._ISSUERREVOKECREDENTIALREQUEST,
-    output_type=anoncreds__pb2._ISSUERREVOKECREDENTIALRESPONSE,
+    input_type=_ISSUERREVOKECREDENTIALREQUEST,
+    output_type=_ISSUERREVOKECREDENTIALRESPONSE,
     serialized_options=None,
   ),
   _descriptor.MethodDescriptor(
@@ -898,8 +12836,8 @@ _ANONCREDSSERVICE = _descriptor.ServiceDescriptor(
     full_name='identitylayer.AnoncredsService.IssuerMergeRevocationRegistryDeltas',
     index=6,
     containing_service=None,
-    input_type=anoncreds__pb2._ISSUERMERGEREVOCATIONREGISTRYDELTASREQUEST,
-    output_type=anoncreds__pb2._ISSUERMERGEREVOCATIONREGISTRYDELTASRESPONSE,
+    input_type=_ISSUERMERGEREVOCATIONREGISTRYDELTASREQUEST,
+    output_type=_ISSUERMERGEREVOCATIONREGISTRYDELTASRESPONSE,
     serialized_options=None,
   ),
   _descriptor.MethodDescriptor(
@@ -907,8 +12845,8 @@ _ANONCREDSSERVICE = _descriptor.ServiceDescriptor(
     full_name='identitylayer.AnoncredsService.ProverCreateMasterSecret',
     index=7,
     containing_service=None,
-    input_type=anoncreds__pb2._PROVERCREATEMASTERSECRETREQUEST,
-    output_type=anoncreds__pb2._PROVERCREATEMASTERSECRETRESPONSE,
+    input_type=_PROVERCREATEMASTERSECRETREQUEST,
+    output_type=_PROVERCREATEMASTERSECRETRESPONSE,
     serialized_options=None,
   ),
   _descriptor.MethodDescriptor(
@@ -916,8 +12854,8 @@ _ANONCREDSSERVICE = _descriptor.ServiceDescriptor(
     full_name='identitylayer.AnoncredsService.ProverCreateCredentialReq',
     index=8,
     containing_service=None,
-    input_type=anoncreds__pb2._PROVERCREATECREDENTIALREQREQUEST,
-    output_type=anoncreds__pb2._PROVERCREATECREDENTIALREQRESPONSE,
+    input_type=_PROVERCREATECREDENTIALREQREQUEST,
+    output_type=_PROVERCREATECREDENTIALREQRESPONSE,
     serialized_options=None,
   ),
   _descriptor.MethodDescriptor(
@@ -925,8 +12863,8 @@ _ANONCREDSSERVICE = _descriptor.ServiceDescriptor(
     full_name='identitylayer.AnoncredsService.ProverStoreCredential',
     index=9,
     containing_service=None,
-    input_type=anoncreds__pb2._PROVERSTORECREDENTIALREQUEST,
-    output_type=anoncreds__pb2._PROVERSTORECREDENTIALRESPONSE,
+    input_type=_PROVERSTORECREDENTIALREQUEST,
+    output_type=_PROVERSTORECREDENTIALRESPONSE,
     serialized_options=None,
   ),
   _descriptor.MethodDescriptor(
@@ -934,8 +12872,8 @@ _ANONCREDSSERVICE = _descriptor.ServiceDescriptor(
     full_name='identitylayer.AnoncredsService.ProverGetCredential',
     index=10,
     containing_service=None,
-    input_type=anoncreds__pb2._PROVERGETCREDENTIALREQUEST,
-    output_type=anoncreds__pb2._PROVERGETCREDENTIALRESPONSE,
+    input_type=_PROVERGETCREDENTIALREQUEST,
+    output_type=_PROVERGETCREDENTIALRESPONSE,
     serialized_options=None,
   ),
   _descriptor.MethodDescriptor(
@@ -943,8 +12881,8 @@ _ANONCREDSSERVICE = _descriptor.ServiceDescriptor(
     full_name='identitylayer.AnoncredsService.ProverGetCredentials',
     index=11,
     containing_service=None,
-    input_type=anoncreds__pb2._PROVERGETCREDENTIALSREQUEST,
-    output_type=anoncreds__pb2._PROVERGETCREDENTIALSRESPONSE,
+    input_type=_PROVERGETCREDENTIALSREQUEST,
+    output_type=_PROVERGETCREDENTIALSRESPONSE,
     serialized_options=None,
   ),
   _descriptor.MethodDescriptor(
@@ -952,8 +12890,8 @@ _ANONCREDSSERVICE = _descriptor.ServiceDescriptor(
     full_name='identitylayer.AnoncredsService.ProverSeachCredentials',
     index=12,
     containing_service=None,
-    input_type=anoncreds__pb2._PROVERSEACHCREDENTIALSREQUEST,
-    output_type=anoncreds__pb2._PROVERSEACHCREDENTIALSRESPONSE,
+    input_type=_PROVERSEACHCREDENTIALSREQUEST,
+    output_type=_PROVERSEACHCREDENTIALSRESPONSE,
     serialized_options=None,
   ),
   _descriptor.MethodDescriptor(
@@ -961,8 +12899,8 @@ _ANONCREDSSERVICE = _descriptor.ServiceDescriptor(
     full_name='identitylayer.AnoncredsService.ProverFetchCredentials',
     index=13,
     containing_service=None,
-    input_type=anoncreds__pb2._PROVERFETCHCREDENTIALSREQUEST,
-    output_type=anoncreds__pb2._PROVERFETCHCREDENTIALSRESPONSE,
+    input_type=_PROVERFETCHCREDENTIALSREQUEST,
+    output_type=_PROVERFETCHCREDENTIALSRESPONSE,
     serialized_options=None,
   ),
   _descriptor.MethodDescriptor(
@@ -970,8 +12908,8 @@ _ANONCREDSSERVICE = _descriptor.ServiceDescriptor(
     full_name='identitylayer.AnoncredsService.ProverCloseCredentialsSearch',
     index=14,
     containing_service=None,
-    input_type=anoncreds__pb2._PROVERCLOSECREDENTIALSSEARCHREQUEST,
-    output_type=anoncreds__pb2._PROVERCLOSECREDENTIALSSEARCHRESPONSE,
+    input_type=_PROVERCLOSECREDENTIALSSEARCHREQUEST,
+    output_type=_PROVERCLOSECREDENTIALSSEARCHRESPONSE,
     serialized_options=None,
   ),
   _descriptor.MethodDescriptor(
@@ -979,8 +12917,8 @@ _ANONCREDSSERVICE = _descriptor.ServiceDescriptor(
     full_name='identitylayer.AnoncredsService.ProverGetCredentialsForProofReq',
     index=15,
     containing_service=None,
-    input_type=anoncreds__pb2._PROVERGETCREDENTIALSFORPROOFREQREQUEST,
-    output_type=anoncreds__pb2._PROVERGETCREDENTIALSFORPROOFREQRESPONSE,
+    input_type=_PROVERGETCREDENTIALSFORPROOFREQREQUEST,
+    output_type=_PROVERGETCREDENTIALSFORPROOFREQRESPONSE,
     serialized_options=None,
   ),
   _descriptor.MethodDescriptor(
@@ -988,8 +12926,8 @@ _ANONCREDSSERVICE = _descriptor.ServiceDescriptor(
     full_name='identitylayer.AnoncredsService.ProverSearchCredentialsForProofReq',
     index=16,
     containing_service=None,
-    input_type=anoncreds__pb2._PROVERSEARCHCREDENTIALSFORPROOFREQREQUEST,
-    output_type=anoncreds__pb2._PROVERSEARCHCREDENTIALSFORPROOFREQRESPONSE,
+    input_type=_PROVERSEARCHCREDENTIALSFORPROOFREQREQUEST,
+    output_type=_PROVERSEARCHCREDENTIALSFORPROOFREQRESPONSE,
     serialized_options=None,
   ),
   _descriptor.MethodDescriptor(
@@ -997,8 +12935,8 @@ _ANONCREDSSERVICE = _descriptor.ServiceDescriptor(
     full_name='identitylayer.AnoncredsService.ProverFetchCredentialsForProofReq',
     index=17,
     containing_service=None,
-    input_type=anoncreds__pb2._PROVERFETCHCREDENTIALSFORPROOFREQREQUEST,
-    output_type=anoncreds__pb2._PROVERFETCHCREDENTIALSFORPROOFREQRESPONSE,
+    input_type=_PROVERFETCHCREDENTIALSFORPROOFREQREQUEST,
+    output_type=_PROVERFETCHCREDENTIALSFORPROOFREQRESPONSE,
     serialized_options=None,
   ),
   _descriptor.MethodDescriptor(
@@ -1006,8 +12944,8 @@ _ANONCREDSSERVICE = _descriptor.ServiceDescriptor(
     full_name='identitylayer.AnoncredsService.ProverCloseCredentialsSearchForProofReq',
     index=18,
     containing_service=None,
-    input_type=anoncreds__pb2._PROVERCLOSECREDENTIALSSEARCHFORPROOFREQREQUEST,
-    output_type=anoncreds__pb2._PROVERCLOSECREDENTIALSSEARCHFORPROOFREQRESPONSE,
+    input_type=_PROVERCLOSECREDENTIALSSEARCHFORPROOFREQREQUEST,
+    output_type=_PROVERCLOSECREDENTIALSSEARCHFORPROOFREQRESPONSE,
     serialized_options=None,
   ),
   _descriptor.MethodDescriptor(
@@ -1015,8 +12953,8 @@ _ANONCREDSSERVICE = _descriptor.ServiceDescriptor(
     full_name='identitylayer.AnoncredsService.ProverCreateProof',
     index=19,
     containing_service=None,
-    input_type=anoncreds__pb2._PROVERCREATEPROOFREQUEST,
-    output_type=anoncreds__pb2._PROVERCREATEPROOFRESPONSE,
+    input_type=_PROVERCREATEPROOFREQUEST,
+    output_type=_PROVERCREATEPROOFRESPONSE,
     serialized_options=None,
   ),
   _descriptor.MethodDescriptor(
@@ -1024,8 +12962,8 @@ _ANONCREDSSERVICE = _descriptor.ServiceDescriptor(
     full_name='identitylayer.AnoncredsService.VerifierVerifyProof',
     index=20,
     containing_service=None,
-    input_type=anoncreds__pb2._VERIFIERVERIFYPROOFREQUEST,
-    output_type=anoncreds__pb2._VERIFIERVERIFYPROOFRESPONSE,
+    input_type=_VERIFIERVERIFYPROOFREQUEST,
+    output_type=_VERIFIERVERIFYPROOFRESPONSE,
     serialized_options=None,
   ),
   _descriptor.MethodDescriptor(
@@ -1033,8 +12971,8 @@ _ANONCREDSSERVICE = _descriptor.ServiceDescriptor(
     full_name='identitylayer.AnoncredsService.CreateRevocationState',
     index=21,
     containing_service=None,
-    input_type=anoncreds__pb2._CREATEREVOCATIONSTATEREQUEST,
-    output_type=anoncreds__pb2._CREATEREVOCATIONSTATERESPONSE,
+    input_type=_CREATEREVOCATIONSTATEREQUEST,
+    output_type=_CREATEREVOCATIONSTATERESPONSE,
     serialized_options=None,
   ),
   _descriptor.MethodDescriptor(
@@ -1042,8 +12980,8 @@ _ANONCREDSSERVICE = _descriptor.ServiceDescriptor(
     full_name='identitylayer.AnoncredsService.UpdateRevocationState',
     index=22,
     containing_service=None,
-    input_type=anoncreds__pb2._UPDATEREVOCATIONSTATEREQUEST,
-    output_type=anoncreds__pb2._UPDATEREVOCATIONSTATERESPONSE,
+    input_type=_UPDATEREVOCATIONSTATEREQUEST,
+    output_type=_UPDATEREVOCATIONSTATERESPONSE,
     serialized_options=None,
   ),
 ])
@@ -1058,16 +12996,16 @@ _WALLETSERVICE = _descriptor.ServiceDescriptor(
   file=DESCRIPTOR,
   index=7,
   serialized_options=None,
-  serialized_start=8541,
-  serialized_end=9033,
+  serialized_start=30793,
+  serialized_end=31481,
   methods=[
   _descriptor.MethodDescriptor(
     name='CreateNewWallet',
     full_name='identitylayer.WalletService.CreateNewWallet',
     index=0,
     containing_service=None,
-    input_type=wallet__pb2._NEWWALLETDEFINITION,
-    output_type=wallet__pb2._CREATEWALLETERRORCODE,
+    input_type=_NEWWALLETDEFINITION,
+    output_type=_CREATEWALLETERRORCODE,
     serialized_options=None,
   ),
   _descriptor.MethodDescriptor(
@@ -1075,8 +13013,8 @@ _WALLETSERVICE = _descriptor.ServiceDescriptor(
     full_name='identitylayer.WalletService.OpenWallet',
     index=1,
     containing_service=None,
-    input_type=wallet__pb2._OPENWALLETDEFINITION,
-    output_type=wallet__pb2._OPENWALLETHANDLE,
+    input_type=_OPENWALLETDEFINITION,
+    output_type=_OPENWALLETHANDLE,
     serialized_options=None,
   ),
   _descriptor.MethodDescriptor(
@@ -1084,8 +13022,8 @@ _WALLETSERVICE = _descriptor.ServiceDescriptor(
     full_name='identitylayer.WalletService.CloseWallet',
     index=2,
     containing_service=None,
-    input_type=wallet__pb2._CLOSEWALLETHANDLE,
-    output_type=wallet__pb2._CLOSEWALLETSTATUS,
+    input_type=_CLOSEWALLETHANDLE,
+    output_type=_CLOSEWALLETSTATUS,
     serialized_options=None,
   ),
   _descriptor.MethodDescriptor(
@@ -1093,8 +13031,8 @@ _WALLETSERVICE = _descriptor.ServiceDescriptor(
     full_name='identitylayer.WalletService.DeleteWallet',
     index=3,
     containing_service=None,
-    input_type=wallet__pb2._DELETEWALLETDEFINITION,
-    output_type=wallet__pb2._DELETEWALLETCONFIRMATION,
+    input_type=_DELETEWALLETDEFINITION,
+    output_type=_DELETEWALLETCONFIRMATION,
     serialized_options=None,
   ),
   _descriptor.MethodDescriptor(
@@ -1102,8 +13040,8 @@ _WALLETSERVICE = _descriptor.ServiceDescriptor(
     full_name='identitylayer.WalletService.ExportWallet',
     index=4,
     containing_service=None,
-    input_type=wallet__pb2._EXPORTWALLETDEFINITION,
-    output_type=wallet__pb2._EXPORTWALLETCONFIRMATION,
+    input_type=_EXPORTWALLETDEFINITION,
+    output_type=_EXPORTWALLETCONFIRMATION,
     serialized_options=None,
   ),
   _descriptor.MethodDescriptor(
@@ -1111,8 +13049,8 @@ _WALLETSERVICE = _descriptor.ServiceDescriptor(
     full_name='identitylayer.WalletService.ImportWallet',
     index=5,
     containing_service=None,
-    input_type=wallet__pb2._IMPORTWALLETDEFINITION,
-    output_type=wallet__pb2._IMPORTWALLETCONFIRMATION,
+    input_type=_IMPORTWALLETDEFINITION,
+    output_type=_IMPORTWALLETCONFIRMATION,
     serialized_options=None,
   ),
   _descriptor.MethodDescriptor(
@@ -1120,8 +13058,8 @@ _WALLETSERVICE = _descriptor.ServiceDescriptor(
     full_name='identitylayer.WalletService.GenerateWalletKey',
     index=6,
     containing_service=None,
-    input_type=wallet__pb2._GENERATEWALLETKEYDEFINITION,
-    output_type=wallet__pb2._GENERATEWALLETKEYCONFIRMATION,
+    input_type=_GENERATEWALLETKEYDEFINITION,
+    output_type=_GENERATEWALLETKEYCONFIRMATION,
     serialized_options=None,
   ),
 ])
@@ -1136,16 +13074,16 @@ _BLOBSTORAGESERVICE = _descriptor.ServiceDescriptor(
   file=DESCRIPTOR,
   index=8,
   serialized_options=None,
-  serialized_start=9036,
-  serialized_end=9170,
+  serialized_start=31484,
+  serialized_end=31674,
   methods=[
   _descriptor.MethodDescriptor(
     name='OpenReader',
     full_name='identitylayer.BlobStorageService.OpenReader',
     index=0,
     containing_service=None,
-    input_type=blob__storage__pb2._OPENREADERREQUEST,
-    output_type=blob__storage__pb2._OPENREADERRESPONSE,
+    input_type=_OPENREADERREQUEST,
+    output_type=_OPENREADERRESPONSE,
     serialized_options=None,
   ),
   _descriptor.MethodDescriptor(
@@ -1153,8 +13091,8 @@ _BLOBSTORAGESERVICE = _descriptor.ServiceDescriptor(
     full_name='identitylayer.BlobStorageService.OpenWriter',
     index=1,
     containing_service=None,
-    input_type=blob__storage__pb2._OPENWRITERREQUEST,
-    output_type=blob__storage__pb2._OPENWRITERRESPONSE,
+    input_type=_OPENWRITERREQUEST,
+    output_type=_OPENWRITERRESPONSE,
     serialized_options=None,
   ),
 ])

@@ -1,17 +1,6 @@
-import asyncio
 import json
-import time
-import math
 import os
 import sys
-import base64
-import binascii
-
-import warnings
-# warnings.simplefilter('ignore')
-from concurrent import futures
-import grpc
-
 from indy import pool as indy_pool
 
 
@@ -70,6 +59,7 @@ class PoolServiceServicer(identitylayer_pb2_grpc.PoolServiceServicer):
     async def CreatePoolLedgerConfig(self, request, context):
         """Create Pool Ledger Config
         """
+        resp = None
         try:
             config_name = get_value(request.ConfigName)
             config = json.dumps({"genesis_txn": get_value(request.Config.GensisTxn)})
@@ -85,6 +75,7 @@ class PoolServiceServicer(identitylayer_pb2_grpc.PoolServiceServicer):
     async def OpenPoolLedger(self, request, context):
         """Open Pool Ledger
         """
+        resp = None
         try:
             config_name = get_value(request.ConfigName)
             config = json.dumps({"timeout": get_value(request.Config.Timeout),
@@ -101,6 +92,7 @@ class PoolServiceServicer(identitylayer_pb2_grpc.PoolServiceServicer):
     async def RefreshPoolLedger(self, request, context):
         """Refresh Pool Ledger
         """
+        resp = None
         try:
             handle = get_value(request.Handle)
             resp = await indy_pool.refresh_pool_ledger(handle)
@@ -113,6 +105,7 @@ class PoolServiceServicer(identitylayer_pb2_grpc.PoolServiceServicer):
     async def ListPools(self, request, context):
         """List Pools
         """
+        resp = None
         try:
             resp = await indy_pool.list_pools()
             return identitylayer_pb2.ListPoolsResponse(resp)
@@ -124,6 +117,7 @@ class PoolServiceServicer(identitylayer_pb2_grpc.PoolServiceServicer):
     async def ClosePoolLedger(self, request, context):
         """Close Pool Ledger
         """
+        resp = None
         try:
             handle = get_value(request.Handle)
             resp = await indy_pool.close_pool_ledger(handle)
@@ -136,6 +130,7 @@ class PoolServiceServicer(identitylayer_pb2_grpc.PoolServiceServicer):
     async def DeletePoolLedgerConfig(self, request, context):
         """Delete Pool Ledger Config
         """
+        resp = None
         try:
             config_name = get_value(request.ConfigName)
             resp = await indy_pool.delete_pool_ledger_config(config_name)
@@ -148,6 +143,7 @@ class PoolServiceServicer(identitylayer_pb2_grpc.PoolServiceServicer):
     async def SetProtocolVersion(self, request, context):
         """Set Protocol Version
         """
+        resp = None
         try:
             protocol_version = get_value(request.ProtocolVersion)
             resp = await indy_pool.set_protocol_version(protocol_version)
