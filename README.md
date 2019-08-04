@@ -28,7 +28,7 @@ Current release covers implementation for most of the modules from Indy SDK, pre
 * Pool
 * Wallet
 
-### Project is structure
+### Project structure
 
 **grpc_server** folder contains Indy SDK module implementation in python
 
@@ -42,7 +42,9 @@ Note: You'll need to add pool_transactions_genesis file first before configuring
 
 ### Pre-req
 
-You'll need Indy node / Server before going through with steps defined below.
+You'll need Indy node / Server before going through with steps defined below. See [How to install Test network](https://github.com/hyperledger/indy-node#how-to-install-a-test-network). 
+
+Once ready use following steps to start with Miu setup
 
 1. Install python 3
 ```
@@ -86,4 +88,10 @@ Of course we'd appreciate help to further enhance this project. Post this alpha 
 
 * Fixing bugs to stablize this release
 * Writing test cases for the Miu server for automated testing
+* Enhanced logging
+* And more...
 
+## Contributors
+
+* [bootstrapsp](https://github.com/bootstrapsp)
+* [sagar-88](https://github.com/sagar-88)
