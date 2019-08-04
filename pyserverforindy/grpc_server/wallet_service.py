@@ -1,18 +1,8 @@
-import asyncio
 import json
-import time
-import math
 import os
 import sys
-import base64
-import binascii
 
-import warnings
-# warnings.simplefilter('ignore')
-from concurrent import futures
-import grpc
-
-from indy import anoncreds as indy_anoncreds
+from indy import wallet as indy_wallet
 
 
 ROOT_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))

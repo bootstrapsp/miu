@@ -5,7 +5,6 @@
 import asyncio
 from concurrent import futures
 import functools
-import inspect
 import threading
 
 import os
@@ -15,6 +14,11 @@ import grpc
 import time
 
 from grpc import _server
+
+import logging
+logger = logging.getLogger(__name__)
+logging.basicConfig(level=logging.DEBUG)
+
 
 ROOT_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
@@ -160,22 +164,23 @@ _server._stream_response_in_pool = _stream_response_in_pool
 
 if __name__ == '__main__':
     server = grpc.server(AsyncioExecutor())
-    # identitylayer_pb2_grpc.add_PoolServiceServicer_to_server(PoolServiceServicer(), server)
     
-    identitylayer_pb2_grpc.add_NonSecretServiceServicer_to_server(NonSecretServiceServicer, server)
-    identitylayer_pb2_grpc.add_LedgerServiceServicer_to_server(LedgerServiceServicer, server)
-    identitylayer_pb2_grpc.add_DidServiceServicer_to_server(DidServiceServicer, server)
-    identitylayer_pb2_grpc.add_PairwiseServiceServicer_to_server(PairwiseServiceServicer, server)
-    identitylayer_pb2_grpc.add_CryptoServiceServicer_to_server(CryptoServiceServicer, server)
-    identitylayer_pb2_grpc.add_PoolServiceServicer_to_server(PoolServiceServicer, server)
-    identitylayer_pb2_grpc.add_AnoncredsServiceServicer_to_server(AnoncredsServiceServicer, server)
-    identitylayer_pb2_grpc.add_WalletServiceServicer_to_server(WalletServiceServicer, server)
-    identitylayer_pb2_grpc.add_BlobStorageServiceServicer_to_server(BlobStorageServiceServicer, server)
+    identitylayer_pb2_grpc.add_NonSecretServiceServicer_to_server(NonSecretServiceServicer(), server)
+    identitylayer_pb2_grpc.add_LedgerServiceServicer_to_server(LedgerServiceServicer(), server)
+    identitylayer_pb2_grpc.add_DidServiceServicer_to_server(DidServiceServicer(), server)
+    identitylayer_pb2_grpc.add_PairwiseServiceServicer_to_server(PairwiseServiceServicer(), server)
+    identitylayer_pb2_grpc.add_CryptoServiceServicer_to_server(CryptoServiceServicer(), server)
+    identitylayer_pb2_grpc.add_PoolServiceServicer_to_server(PoolServiceServicer(), server)
+    identitylayer_pb2_grpc.add_AnoncredsServiceServicer_to_server(AnoncredsServiceServicer(), server)
+    identitylayer_pb2_grpc.add_WalletServiceServicer_to_server(WalletServiceServicer(), server)
+    identitylayer_pb2_grpc.add_BlobStorageServiceServicer_to_server(BlobStorageServiceServicer(), server)
     
     server.add_insecure_port('[::]:50051')
     server.start()
     try:
+        logger.debug("Started `miu` Server on port :50051")
         while True:
             time.sleep(_ONE_DAY_IN_SECONDS)
     except KeyboardInterrupt:
+        logger.debug("Stopped `miu` server.")
         server.stop(0)
