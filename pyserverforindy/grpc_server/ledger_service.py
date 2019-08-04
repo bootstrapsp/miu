@@ -1,16 +1,5 @@
-import asyncio
-import json
-import time
-import math
 import os
 import sys
-import base64
-import binascii
-
-import warnings
-# warnings.simplefilter('ignore')
-from concurrent import futures
-import grpc
 
 from indy import ledger as indy_ledger
 
@@ -71,7 +60,7 @@ class LedgerServiceServicer(object):
         except Exception as e:
             logger.error("Exception occurred @ SignAndSubmitRequest----")
             logger.error(e)
-            return identitylayer_pb2.SignAndSubmitRequest()
+            return identitylayer_pb2.SignAndSubmitRequestRs()
 
 
     async def SubmitRequest(self, request, context):
@@ -82,7 +71,7 @@ class LedgerServiceServicer(object):
         except Exception as e:
             logger.error("Exception occurred @ SubmitRequest----")
             logger.error(e)
-            return identitylayer_pb2.SubmitRequest()
+            return identitylayer_pb2.SubmitRequestRs()
 
 
     async def SubmitAction(self, request, context):
@@ -93,7 +82,7 @@ class LedgerServiceServicer(object):
         except Exception as e:
             logger.error("Exception occurred @ SubmitAction----")
             logger.error(e)
-            return identitylayer_pb2.SubmitAction()
+            return identitylayer_pb2.SubmitActionRs()
 
 
     async def SignRequest(self, request, context):
@@ -104,7 +93,7 @@ class LedgerServiceServicer(object):
         except Exception as e:
             logger.error("Exception occurred @ SignRequest----")
             logger.error(e)
-            return identitylayer_pb2.SignRequest()
+            return identitylayer_pb2.SignRequestRs()
 
 
     async def MultiSignRequest(self, request, context):
@@ -115,7 +104,7 @@ class LedgerServiceServicer(object):
         except Exception as e:
             logger.error("Exception occurred @ MultiSignRequest----")
             logger.error(e)
-            return identitylayer_pb2.MultiSignRequest()
+            return identitylayer_pb2.MultiSignRequestRs()
 
 
     async def BuildGetDdoRequest(self, request, context):
@@ -126,7 +115,7 @@ class LedgerServiceServicer(object):
         except Exception as e:
             logger.error("Exception occurred @ BuildGetDdoRequest----")
             logger.error(e)
-            return identitylayer_pb2.BuildGetDdoRequest()
+            return identitylayer_pb2.BuildGetDdoRequestRs()
 
 
     async def BuildNymRequest(self, request, context):
@@ -137,7 +126,7 @@ class LedgerServiceServicer(object):
         except Exception as e:
             logger.error("Exception occurred @ BuildNymRequest----")
             logger.error(e)
-            return identitylayer_pb2.BuildNymRequest()
+            return identitylayer_pb2.BuildNymRequestRs()
 
 
     async def BuildAttribRequest(self, request, context):
@@ -148,7 +137,7 @@ class LedgerServiceServicer(object):
         except Exception as e:
             logger.error("Exception occurred @ BuildAttribRequest----")
             logger.error(e)
-            return identitylayer_pb2.BuildAttribRequest()
+            return identitylayer_pb2.BuildAttribRequestRs()
 
 
     async def BuildGetAttribRequest(self, request, context):
@@ -159,7 +148,7 @@ class LedgerServiceServicer(object):
         except Exception as e:
             logger.error("Exception occurred @ BuildGetAttribRequest----")
             logger.error(e)
-            return identitylayer_pb2.BuildGetAttribRequest()
+            return identitylayer_pb2.BuildGetAttribRequestRs()
 
 
     async def BuildGetNymRequest(self, request, context):
@@ -170,7 +159,7 @@ class LedgerServiceServicer(object):
         except Exception as e:
             logger.error("Exception occurred @ BuildGetNymRequest----")
             logger.error(e)
-            return identitylayer_pb2.BuildGetNymRequest()
+            return identitylayer_pb2.BuildGetNymRequestRs()
 
 
     async def BuildSchemaRequest(self, request, context):
@@ -181,7 +170,7 @@ class LedgerServiceServicer(object):
         except Exception as e:
             logger.error("Exception occurred @ BuildSchemaRequest----")
             logger.error(e)
-            return identitylayer_pb2.BuildSchemaRequest()
+            return identitylayer_pb2.BuildSchemaRequestRs()
 
 
     async def BuildGetSchemaRequest(self, request, context):
@@ -192,7 +181,7 @@ class LedgerServiceServicer(object):
         except Exception as e:
             logger.error("Exception occurred @ BuildGetSchemaRequest----")
             logger.error(e)
-            return identitylayer_pb2.BuildGetSchemaRequest()
+            return identitylayer_pb2.BuildGetSchemaRequestRs()
 
 
     async def ParseGetSchemaResponse(self, request, context):
@@ -203,7 +192,7 @@ class LedgerServiceServicer(object):
         except Exception as e:
             logger.error("Exception occurred @ ParseGetSchemaResponse----")
             logger.error(e)
-            return identitylayer_pb2.ParseGetSchemaResponse()
+            return identitylayer_pb2.ParseGetSchemaResponseRs()
 
 
     async def BuildCredDefRequest(self, request, context):
@@ -214,7 +203,7 @@ class LedgerServiceServicer(object):
         except Exception as e:
             logger.error("Exception occurred @ BuildCredDefRequest----")
             logger.error(e)
-            return identitylayer_pb2.BuildCredDefRequest()
+            return identitylayer_pb2.BuildCredDefRequestRs()
 
 
     async def BuildGetCredDefRequest(self, request, context):
@@ -225,7 +214,7 @@ class LedgerServiceServicer(object):
         except Exception as e:
             logger.error("Exception occurred @ BuildGetCredDefRequest----")
             logger.error(e)
-            return identitylayer_pb2.BuildGetCredDefRequest()
+            return identitylayer_pb2.BuildGetCredDefRequestRs()
 
 
     async def ParseGetCredDefResponse(self, request, context):
@@ -236,7 +225,7 @@ class LedgerServiceServicer(object):
         except Exception as e:
             logger.error("Exception occurred @ ParseGetCredDefResponse----")
             logger.error(e)
-            return identitylayer_pb2.ParseGetCredDefResponse()
+            return identitylayer_pb2.ParseGetCredDefResponseRs()
 
 
     async def BuildNodeRequest(self, request, context):
@@ -247,7 +236,7 @@ class LedgerServiceServicer(object):
         except Exception as e:
             logger.error("Exception occurred @ BuildNodeRequest----")
             logger.error(e)
-            return identitylayer_pb2.BuildNodeRequest()
+            return identitylayer_pb2.BuildNodeRequestRs()
 
 
     async def BuildGetValidatorInfoRequest(self, request, context):
@@ -258,7 +247,7 @@ class LedgerServiceServicer(object):
         except Exception as e:
             logger.error("Exception occurred @ BuildGetValidatorInfoRequest----")
             logger.error(e)
-            return identitylayer_pb2.BuildGetValidatorInfoRequest()
+            return identitylayer_pb2.BuildGetValidatorInfoRequestRs()
 
 
     async def BuildGetTxnRequest(self, request, context):
@@ -269,7 +258,7 @@ class LedgerServiceServicer(object):
         except Exception as e:
             logger.error("Exception occurred @ BuildGetTxnRequest----")
             logger.error(e)
-            return identitylayer_pb2.BuildGetTxnRequest()
+            return identitylayer_pb2.BuildGetTxnRequestRs()
 
 
     async def BuildPoolConfigRequest(self, request, context):
@@ -280,7 +269,7 @@ class LedgerServiceServicer(object):
         except Exception as e:
             logger.error("Exception occurred @ BuildPoolConfigRequest----")
             logger.error(e)
-            return identitylayer_pb2.BuildPoolConfigRequest()
+            return identitylayer_pb2.BuildPoolConfigRequestRs()
 
 
     async def BuildPoolRestartRequest(self, request, context):
@@ -291,7 +280,7 @@ class LedgerServiceServicer(object):
         except Exception as e:
             logger.error("Exception occurred @ BuildPoolRestartRequest----")
             logger.error(e)
-            return identitylayer_pb2.BuildPoolRestartRequest()
+            return identitylayer_pb2.BuildPoolRestartRequestRs()
 
 
     async def BuildPoolUpgradeRequest(self, request, context):
@@ -302,7 +291,7 @@ class LedgerServiceServicer(object):
         except Exception as e:
             logger.error("Exception occurred @ BuildPoolUpgradeRequest----")
             logger.error(e)
-            return identitylayer_pb2.BuildPoolUpgradeRequest()
+            return identitylayer_pb2.BuildPoolUpgradeRequestRs()
 
 
     async def BuildRevocRegDefRequest(self, request, context):
@@ -313,7 +302,7 @@ class LedgerServiceServicer(object):
         except Exception as e:
             logger.error("Exception occurred @ BuildRevocRegDefRequest----")
             logger.error(e)
-            return identitylayer_pb2.BuildRevocRegDefRequest()
+            return identitylayer_pb2.BuildRevocRegDefRequestRs()
 
 
     async def BuildGetRevocRegDefRequest(self, request, context):
@@ -324,7 +313,7 @@ class LedgerServiceServicer(object):
         except Exception as e:
             logger.error("Exception occurred @ BuildGetRevocRegDefRequest----")
             logger.error(e)
-            return identitylayer_pb2.BuildGetRevocRegDefRequest()
+            return identitylayer_pb2.BuildGetRevocRegDefRequestRs()
 
 
     async def ParseGetRevocRegDefResponse(self, request, context):
@@ -335,7 +324,7 @@ class LedgerServiceServicer(object):
         except Exception as e:
             logger.error("Exception occurred @ ParseGetRevocRegDefResponse----")
             logger.error(e)
-            return identitylayer_pb2.ParseGetRevocRegDefResponse()
+            return identitylayer_pb2.ParseGetRevocRegDefResponseRs()
 
 
     async def BuildRevocRegEntryRequest(self, request, context):
@@ -346,7 +335,7 @@ class LedgerServiceServicer(object):
         except Exception as e:
             logger.error("Exception occurred @ BuildRevocRegEntryRequest----")
             logger.error(e)
-            return identitylayer_pb2.BuildRevocRegEntryRequest()
+            return identitylayer_pb2.BuildRevocRegEntryRequestRs()
 
 
     async def BuildGetRevocRegRequest(self, request, context):
@@ -357,7 +346,7 @@ class LedgerServiceServicer(object):
         except Exception as e:
             logger.error("Exception occurred @ BuildGetRevocRegRequest----")
             logger.error(e)
-            return identitylayer_pb2.BuildGetRevocRegRequest()
+            return identitylayer_pb2.BuildGetRevocRegRequestRs()
 
 
     async def ParseGetRevocRegResponse(self, request, context):
@@ -368,7 +357,7 @@ class LedgerServiceServicer(object):
         except Exception as e:
             logger.error("Exception occurred @ ParseGetRevocRegResponse----")
             logger.error(e)
-            return identitylayer_pb2.ParseGetRevocRegResponse()
+            return identitylayer_pb2.ParseGetRevocRegResponseRs()
 
 
     async def BuildGetRevocRegDeltaRequest(self, request, context):
@@ -379,18 +368,18 @@ class LedgerServiceServicer(object):
         except Exception as e:
             logger.error("Exception occurred @ BuildGetRevocRegDeltaRequest----")
             logger.error(e)
-            return identitylayer_pb2.BuildGetRevocRegDeltaRequest()
+            return identitylayer_pb2.BuildGetRevocRegDeltaRequestRs()
 
 
     async def ParseGetRevocRegDeltaResponse(self, request, context):
         try:
             get_revoc_reg_delta_response = get_value(request.GetRevocRegDeltaResponse)
-            resp = await indy_ledger.parse_get_revoc_reg_delta_response(Id=resp[0], Json=resp[1], Timestamp=resp[2])
+            resp = await indy_ledger.parse_get_revoc_reg_delta_response(get_revoc_reg_delta_response)
             return identitylayer_pb2.ParseGetRevocRegDeltaResponseRs(resp)
         except Exception as e:
             logger.error("Exception occurred @ ParseGetRevocRegDeltaResponse----")
             logger.error(e)
-            return identitylayer_pb2.ParseGetRevocRegDeltaResponse()
+            return identitylayer_pb2.ParseGetRevocRegDeltaResponseRs()
 
 
     async def GetResponseMetadata(self, request, context):
@@ -401,5 +390,5 @@ class LedgerServiceServicer(object):
         except Exception as e:
             logger.error("Exception occurred @ GetResponseMetadata----")
             logger.error(e)
-            return identitylayer_pb2.GetResponseMetadata()
+            return identitylayer_pb2.GetResponseMetadataRs()
 

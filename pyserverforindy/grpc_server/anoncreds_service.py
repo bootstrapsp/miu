@@ -1,16 +1,6 @@
-import asyncio
 import json
-import time
-import math
 import os
 import sys
-import base64
-import binascii
-
-import warnings
-# warnings.simplefilter('ignore')
-from concurrent import futures
-import grpc
 
 from indy import anoncreds as indy_anoncreds
 
@@ -318,9 +308,9 @@ class AnoncredsServiceServicer(identitylayer_pb2_grpc.AnoncredsServiceServicer):
         try:
             search_handle, item_referent, count = get_value(request.SearchHandle), get_value(request.ItemReference), get_value(request.Count)
             resp = await indy_anoncreds.prover_fetch_credentials_for_proof_req(search_handle, item_referent, count)
-            credentials_json = [identitylayer_pb2.CredentialsGivenProofRequest(CredInfo=identitylayer_pb2.CredentialInfo(Referent=cred_info['referent'], \
-                Attrs=cred_info['attrs'], SchemaId=cred_info['schema_id'], CredDefId=cred_info['cred_def_id'], RevRegId=cred_info['rev_reg_id'], \
-                CredRevId=cred_info['cred_rev_id']),Interval=el[1]) for el in resp]
+            credentials_json = [identitylayer_pb2.CredentialsGivenProofRequest(CredInfo=identitylayer_pb2.CredentialInfo(Referent=el['cred_info']['referent'], \
+                Attrs=el['cred_info']['attrs'], SchemaId=el['cred_info']['schema_id'], CredDefId=el['cred_info']['cred_def_id'], RevRegId=el['cred_info']['rev_reg_id'], \
+                CredRevId=el['cred_info']['cred_rev_id']),Interval=el["interval"]) for el in resp]
             return identitylayer_pb2.ProverFetchCredentialsForProofReqResponse(credentials_json)
         except Exception as e:
             logger.error("Exception Occurred @ProverFetchCredentialsForProofReq ------")

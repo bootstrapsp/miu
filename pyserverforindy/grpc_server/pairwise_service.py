@@ -1,16 +1,5 @@
-import asyncio
-import json
-import time
-import math
 import os
 import sys
-import base64
-import binascii
-
-import warnings
-# warnings.simplefilter('ignore')
-from concurrent import futures
-import grpc
 
 from indy import pairwise as indy_pairwise
 
@@ -69,12 +58,13 @@ class PairwiseServiceServicer(identitylayer_pb2_grpc.PairwiseServiceServicer):
     async def IsPairwiseExists(self, request, context):
         """Is Pairwise Exists
         """
+        resp = None
         try:
             wallet_handle = get_value(request.WalletHandle)
             their_did = get_value(request.TheirDid)
             resp = await indy_pairwise.is_pairwise_exists(wallet_handle, their_did)
             return identitylayer_pb2.IsPairwiseExistsResponse(Res=resp)
-        except Except as e:
+        except Exception as e:
             logger.error("Exception occurred @ IsPairwiseExists--------")
             logger.error(e)
             return identitylayer_pb2.IsPairwiseExistsResponse(Res=resp)
@@ -83,6 +73,7 @@ class PairwiseServiceServicer(identitylayer_pb2_grpc.PairwiseServiceServicer):
     async def CreatePairwise(self, request, context):
         """Create Pairwise
         """
+        resp = None
         try:
             wallet_handle = get_value(request.WalletHandle)
             their_did = get_value(request.TheirDid)
@@ -90,7 +81,7 @@ class PairwiseServiceServicer(identitylayer_pb2_grpc.PairwiseServiceServicer):
             metadata = get_value(request.Metadata)
             resp = await indy_pairwise.create_pairwise(wallet_handle, their_did, my_did, metadata)
             return identitylayer_pb2.CreatePairwiseResponse(ErrorCode=resp)
-        except Except as e:
+        except Exception as e:
             logger.error("Exception occurred @ CreatePairwise--------")
             logger.error(e)
             return identitylayer_pb2.CreatePairwiseResponse(ErrorCode=resp)
@@ -98,11 +89,12 @@ class PairwiseServiceServicer(identitylayer_pb2_grpc.PairwiseServiceServicer):
     async def ListPairwise(self, request, context):
         """List Pairwise
         """
+        resp = None
         try:
             wallet_handle = get_value(request.WalletHandle)
             resp = await indy_pairwise.list_pairwise(wallet_handle)
             return identitylayer_pb2.ListPairwiseResponse(PairwiseList=resp)
-        except Except as e:
+        except Exception as e:
             logger.error("Exception occurred @ ListPairwise--------")
             logger.error(e)
             return identitylayer_pb2.ListPairwiseResponse(PairwiseList=resp)
@@ -110,12 +102,13 @@ class PairwiseServiceServicer(identitylayer_pb2_grpc.PairwiseServiceServicer):
     async def GetPairwise(self, request, context):
         """Get Pairwise
         """
+        resp = None
         try:
             wallet_handle = get_value(request.WalletHandle)
             their_did = get_value(request.TheirDid)
             resp = await indy_pairwise.get_pairwise(wallet_handle, their_did)
             return identitylayer_pb2.GetPairwiseResponse(PairwiseInfoJson=resp)
-        except Except as e:
+        except Exception as e:
             logger.error("Exception occurred @ GetPairwise--------")
             logger.error(e)
             return identitylayer_pb2.GetPairwiseResponse(PairwiseInfoJson=resp)
@@ -123,13 +116,14 @@ class PairwiseServiceServicer(identitylayer_pb2_grpc.PairwiseServiceServicer):
     async def SetPairwiseMetadata(self, request, context):
         """Set Pairwise
         """
+        resp = None
         try:
             wallet_handle = get_value(request.WalletHandle)
             their_did = get_value(request.TheirDid)
             metadata = get_value(request.Metadata)
             resp = await indy_pairwise.set_pairwise_metadata(wallet_handle, their_did, metadata)
             return identitylayer_pb2.SetPairwiseMetadataResponse(ErrorCode=resp)
-        except Except as e:
+        except Exception as e:
             logger.error("Exception occurred @ SetPairwiseMetadata--------")
             logger.error(e)
             return identitylayer_pb2.SetPairwiseMetadataResponse(ErrorCode=resp)
