@@ -95,3 +95,4 @@ Of course we'd appreciate help to further enhance this project. Post this alpha 
 
 * [bootstrapsp](https://github.com/bootstrapsp)
 * [sagar-88](https://github.com/sagar-88)
+* [yashasvigoel](https://github.com/yashasvi-goel)
