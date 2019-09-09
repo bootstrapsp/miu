@@ -60,7 +60,7 @@ sudo apt-get install python3.6
 4. Create virtualenv:
 
 ```
-python3 -m venv my_venv
+~/miu$ python3 -m venv my_venv
 ```
 
 
@@ -72,12 +72,12 @@ source ./my_venv/bin/activate
 
 6. Install Dependencies
 ```
-pip install -r requirements.txt
+~/miu/pyserverforindy$ pip install -r requirements.txt
 ```
 
 7. Run the miu server
 ```
-python server.py
+~/miu/pyserverforindy/grpc_server$ python server.py
 ```
 
 This will start the server on localhost:50051. You then will have to connect your gRPC client to this. 
@@ -95,3 +95,4 @@ Of course we'd appreciate help to further enhance this project. Post this alpha 
 
 * [bootstrapsp](https://github.com/bootstrapsp)
 * [sagar-88](https://github.com/sagar-88)
+* [yashasvigoel](https://github.com/yashasvi-goel)
