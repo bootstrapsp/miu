@@ -2,3 +2,6 @@ pool_transactions_genesis
 *.pyc
 .idea
 venv
+scurid
+.vscode
+temp

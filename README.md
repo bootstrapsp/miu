@@ -14,6 +14,10 @@ Being able to code Indy clients in Golang. :D
 
 Miu is implemented in gRPC python using the [Indy SDK for Python](https://github.com/hyperledger/indy-sdk/blob/master/wrappers/python/README.md). This now allows us to build Hyperledger Indy SDK clients using gRPC which can communicate with Miu in high performant [Protobuf](https://developers.google.com/protocol-buffers/) protocol.
 
+### Design Overview
+
+Here's a quick concept overview [Miu-Approach](https://github.com/bootstrapsp/miu/files/3666644/Miu-Approach.pdf)
+
 ## Current state with this release
 
 Current release covers implementation for most of the modules from Indy SDK, precisely speaking :
@@ -60,9 +64,8 @@ sudo apt-get install python3.6
 4. Create virtualenv:
 
 ```
-~/miu$ python3 -m venv my_venv
+python3 -m venv my_venv
 ```
-
 
 5. Activate virtualenv
 
@@ -71,11 +74,12 @@ source ./my_venv/bin/activate
 ```
 
 6. Install Dependencies
+
 ```
-~/miu/pyserverforindy$ pip install -r requirements.txt
+pip install -r requirements.txt
 ```
 
-7. Run the miu server
+7. Run the miu interface
 ```
 ~/miu/pyserverforindy/grpc_server$ python server.py
 ```
@@ -87,12 +91,6 @@ This will start the server on localhost:50051. You then will have to connect you
 Of course we'd appreciate help to further enhance this project. Post this alpha release we are looking to work on
 
 * Fixing bugs to stablize this release
-* Writing test cases for the Miu server for automated testing
+* Writing test cases for the Miu interface for automated testing
 * Enhanced logging
 * And more...
-
-## Contributors
-
-* [bootstrapsp](https://github.com/bootstrapsp)
-* [sagar-88](https://github.com/sagar-88)
-* [yashasvigoel](https://github.com/yashasvi-goel)
