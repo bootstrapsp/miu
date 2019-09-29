@@ -1,3 +1,5 @@
+Status : Active (Under active development, breaking changes may occur)
+
 # Miu
 
 Miu is a [gRPC](https://grpc.io/) based python server enabling developers to easily connect and develop [Hyperledger Indy](https://www.hyperledger.org/projects/hyperledger-indy) based clients using Hyperledger Indy SDK.
@@ -12,7 +14,7 @@ Being able to code Indy clients in Golang. :D
 
 ## Concept
 
-Miu is implemented in gRPC python using the [Indy SDK for Python](https://github.com/hyperledger/indy-sdk/blob/master/wrappers/python/README.md). This now allows us to build Hyperledger Indy SDK clients using gRPC which can communicate with Miu in high performant [Protobuf](https://developers.google.com/protocol-buffers/) protocol.
+Miu is implemented in gRPC python using the [Indy SDK for Python](https://github.com/hyperledger/indy-sdk/blob/master/wrappers/python/README.md). This now allows us to build Hyperledger Indy SDK based clients using gRPC which can communicate with Miu in high performant [Protobuf](https://developers.google.com/protocol-buffers/) protocol.
 
 ### Design Overview
 
@@ -81,7 +83,7 @@ pip install -r requirements.txt
 
 7. Run the miu interface
 ```
-~/miu/pyserverforindy/grpc_server$ python server.py
+python server.py
 ```
 
 This will start the server on localhost:50051. You then will have to connect your gRPC client to this. 
