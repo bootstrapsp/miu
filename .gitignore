@@ -2,4 +2,10 @@ pool_transactions_genesis
 *.pyc
 .idea
 venv
+<<<<<<< HEAD
 scurid
+=======
+scurid
+.vscode
+temp
+>>>>>>> 2226c0550ac229c0b6ab615f2c2f4f7b60c9c356
