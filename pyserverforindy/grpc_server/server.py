@@ -25,18 +25,18 @@ ROOT_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 sys.path.append(os.path.abspath(ROOT_DIR+'/identityLayer'))
 sys.path.append(os.path.abspath(ROOT_DIR))
 
-from identityLayer import identitylayer_pb2
-from identityLayer import identitylayer_pb2_grpc
+from ..identityLayer import identitylayer_pb2
+from ..identityLayer import identitylayer_pb2_grpc
 
-from anoncreds_service import AnoncredsServiceServicer
-from blob_storage_service import BlobStorageServiceServicer
-from crypto_service import CryptoServiceServicer
-from did_service import DidServiceServicer
-from ledger_service import LedgerServiceServicer
-from non_secret_service import NonSecretServiceServicer
-from pairwise_service import PairwiseServiceServicer
-from pool_service import PoolServiceServicer
-from wallet_service import WalletServiceServicer
+from .anoncreds_service import AnoncredsServiceServicer
+from .blob_storage_service import BlobStorageServiceServicer
+from .crypto_service import CryptoServiceServicer
+from .did_service import DidServiceServicer
+from .ledger_service import LedgerServiceServicer
+from .non_secret_service import NonSecretServiceServicer
+from .pairwise_service import PairwiseServiceServicer
+from .pool_service import PoolServiceServicer
+from .wallet_service import WalletServiceServicer
 
 _ONE_DAY_IN_SECONDS = 60 * 60 * 24
 

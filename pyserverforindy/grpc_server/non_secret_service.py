@@ -10,8 +10,8 @@ sys.path.append(os.path.abspath(ROOT_DIR+'/identityLayer'))
 sys.path.append(os.path.abspath(ROOT_DIR))
 
 
-from identityLayer import identitylayer_pb2
-from identityLayer import identitylayer_pb2_grpc
+from ..identityLayer import identitylayer_pb2
+from ..identityLayer import identitylayer_pb2_grpc
 
 
 import logging
