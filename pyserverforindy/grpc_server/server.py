@@ -25,7 +25,7 @@ ROOT_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 sys.path.append(os.path.abspath(ROOT_DIR+'/identityLayer'))
 sys.path.append(os.path.abspath(ROOT_DIR))
 
-from identityLayer import identitylayer_pb2
+
 from identityLayer import identitylayer_pb2_grpc
 
 from anoncreds_service import AnoncredsServiceServicer

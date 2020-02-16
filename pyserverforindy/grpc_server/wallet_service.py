@@ -21,7 +21,7 @@ logger = logging.getLogger(__name__)
 logging.basicConfig(level=logging.DEBUG)
 
 
-def get_value(value, value_type=None):
+def get_value(value):
     """
     This function return the value of the specified key else `None`
 
