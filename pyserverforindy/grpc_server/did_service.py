@@ -1,7 +1,9 @@
 import os
 import json
 import sys
-from indy import did as indy_did
+from indy import did as indy_did, IndyError
+from indy.error import ErrorCode
+from grpc import StatusCode
 
 
 ROOT_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -66,6 +68,10 @@ class DidServiceServicer(identitylayer_pb2_grpc.DidServiceServicer):
                 "cid": get_value(request.DidJson.Cid)})
             resp = await indy_did.create_and_store_my_did(wallet_handle, did_json)
             return identitylayer_pb2.CreateAndStoreMyDidResponse(Did=resp[0], Verkey=resp[1])
+        except IndyError as e:
+            logger.error("Indy Exception Occurred @ CreateAndStoreMyDid ------")
+            logger.error(e.message)
+            return identitylayer_pb2.CreateAndStoreMyDidResponse() 
         except Exception as e:
             logger.error("Exception occurred @ CreateAndStoreMyDid----")
             logger.error(e)
@@ -81,7 +87,11 @@ class DidServiceServicer(identitylayer_pb2_grpc.DidServiceServicer):
             identity_json = json.dumps({"seed": get_value(request.IdentityJson.Seed),
                 "crypto_type":get_value(request.IdentityJson.CryptoType)})
             resp = await indy_did.replace_keys_start(wallet_handle, did, identity_json)
-            return identitylayer_pb2.ReplaceKeysStartResponse(resp)
+            return identitylayer_pb2.ReplaceKeysStartResponse(Verkey=resp)
+        except IndyError as e:
+            logger.error("Indy Exception Occurred @ ReplaceKeysStart ------")
+            logger.error(e.message)
+            return identitylayer_pb2.ReplaceKeysStartResponse() 
         except Exception as e:
             logger.error("Exception occurred @ ReplaceKeysStart----")
             logger.error(e)
@@ -95,11 +105,15 @@ class DidServiceServicer(identitylayer_pb2_grpc.DidServiceServicer):
             wallet_handle = get_value(request.WalletHandle)
             did = get_value(request.Did)
             resp = await indy_did.replace_keys_apply(wallet_handle, did)
-            return identitylayer_pb2.ReplaceKeysApplyResponse(resp)
+            return identitylayer_pb2.ReplaceKeysApplyResponse(ErrorCode=resp)
+        except IndyError as e:
+            logger.error("Indy Exception Occurred @ ReplaceKeysApply ------")
+            logger.error(e.message)
+            return identitylayer_pb2.ReplaceKeysApplyResponse(ErrorCode=e.error_code) 
         except Exception as e:
             logger.error("Exception occurred @ ReplaceKeysApply----")
             logger.error(e)
-            return identitylayer_pb2.ReplaceKeysApplyResponse()
+            return identitylayer_pb2.ReplaceKeysApplyResponse(ErrorCode=StatusCode.INTERNAL.value[0])
 
 
     async def StoreTheirDid(self, request, context):
@@ -111,11 +125,15 @@ class DidServiceServicer(identitylayer_pb2_grpc.DidServiceServicer):
                 "verkey": get_value(request.IdentityJson.Verkey),
                 "crypto_type":get_value(request.IdentityJson.CryptoType)})
             resp = await indy_did.store_their_did(wallet_handle, identity_json)
-            return identitylayer_pb2.StoreTheirDidResponse(resp)
+            return identitylayer_pb2.StoreTheirDidResponse(ErrorCode=resp)
+        except IndyError as e:
+            logger.error("Indy Exception Occurred @ StoreTheirDid ------")
+            logger.error(e.message)
+            return identitylayer_pb2.StoreTheirDidResponse(ErrorCode=e.error_code) 
         except Exception as e:
             logger.error("Exception occurred @ StoreTheirDid----")
             logger.error(e)
-            return identitylayer_pb2.StoreTheirDidResponse()
+            return identitylayer_pb2.StoreTheirDidResponse(ErrorCode=StatusCode.INTERNAL.value[0])
 
 
     async def DidCreateKey(self, request, context):
@@ -127,6 +145,10 @@ class DidServiceServicer(identitylayer_pb2_grpc.DidServiceServicer):
                 "crypto_type":get_value(request.KeyJson.CryptoType)})
             resp = await indy_did.create_key(wallet_handle, key_json)
             return identitylayer_pb2.DidCreateKeyResponse(verkey=resp)
+        except IndyError as e:
+            logger.error("Indy Exception Occurred @ DidCreateKey ------")
+            logger.error(e.message)
+            return identitylayer_pb2.DidCreateKeyResponse() 
         except Exception as e:
             logger.error("Exception occurred @ DidCreateKey----")
             logger.error(e)
@@ -141,11 +163,15 @@ class DidServiceServicer(identitylayer_pb2_grpc.DidServiceServicer):
             verkey = get_value(request.Verkey)
             metadata = get_value(request.Metadata)
             resp = await indy_did.set_key_metadata(wallet_handle, verkey, metadata)
-            return identitylayer_pb2.DidSetKeyMetadataRequest(resp)
+            return identitylayer_pb2.DidSetKeyMetadataResponse(ErrorCode=resp)
+        except IndyError as e:
+            logger.error("Indy Exception Occurred @ DidSetKeyMetadata ------")
+            logger.error(e.message)
+            return identitylayer_pb2.DidSetKeyMetadataResponse(ErrorCode=e.error_code) 
         except Exception as e:
             logger.error("Exception occurred @ DidSetKeyMetadata----")
             logger.error(e)
-            return identitylayer_pb2.DidSetKeyMetadataRequest()
+            return identitylayer_pb2.DidSetKeyMetadataResponse(ErrorCode=StatusCode.INTERNAL.value[0])
 
 
     async def DidGetKeyMetadata(self, request, context):
@@ -155,7 +181,11 @@ class DidServiceServicer(identitylayer_pb2_grpc.DidServiceServicer):
             wallet_handle = get_value(request.WalletHandle)
             verkey = get_value(request.Verkey)
             resp = await indy_did.get_key_metadata(wallet_handle, verkey)
-            return identitylayer_pb2.DidGetKeyMetadataResponse(resp)
+            return identitylayer_pb2.DidGetKeyMetadataResponse(Metadata=resp)
+        except IndyError as e:
+            logger.error("Indy Exception Occurred @ DidGetKeyMetadata ------")
+            logger.error(e.message)
+            return identitylayer_pb2.DidGetKeyMetadataResponse() 
         except Exception as e:
             logger.error("Exception occurred @ DidGetKeyMetadata----")
             logger.error(e)
@@ -171,6 +201,10 @@ class DidServiceServicer(identitylayer_pb2_grpc.DidServiceServicer):
             did = get_value(request.Did)
             resp = await indy_did.key_for_did(pool_handle, wallet_handle, did)
             return identitylayer_pb2.KeyForDidResponse(key=resp)
+        except IndyError as e:
+            logger.error("Indy Exception Occurred @ KeyForDid ------")
+            logger.error(e.message)
+            return identitylayer_pb2.KeyForDidResponse() 
         except Exception as e:
             logger.error("Exception occurred @ KeyForDid----")
             logger.error(e)
@@ -185,6 +219,10 @@ class DidServiceServicer(identitylayer_pb2_grpc.DidServiceServicer):
             did = get_value(request.Did)
             resp = await indy_did.key_for_local_did(wallet_handle, did)
             return identitylayer_pb2.KeyForLocalDidResponse(key=resp)
+        except IndyError as e:
+            logger.error("Indy Exception Occurred @ KeyForLocalDid ------")
+            logger.error(e.message)
+            return identitylayer_pb2.KeyForLocalDidResponse() 
         except Exception as e:
             logger.error("Exception occurred @ KeyForLocalDid----")
             logger.error(e)
@@ -200,11 +238,15 @@ class DidServiceServicer(identitylayer_pb2_grpc.DidServiceServicer):
             address = get_value(request.Address)
             transport_key = get_value(request.TransportKey)
             resp = await indy_did.set_endpoint_for_did(wallet_handle, did, address, transport_key)
-            return identitylayer_pb2.SetEndpointForDidResponse(resp)
+            return identitylayer_pb2.SetEndpointForDidResponse(ErrorCode=resp)
+        except IndyError as e:
+            logger.error("Indy Exception Occurred @ SetEndpointForDid ------")
+            logger.error(e.message)
+            return identitylayer_pb2.SetEndpointForDidResponse(ErrorCode=e.error_code) 
         except Exception as e:
             logger.error("Exception occurred @ SetEndpointForDid----")
             logger.error(e)
-            return identitylayer_pb2.SetEndpointForDidResponse()
+            return identitylayer_pb2.SetEndpointForDidResponse(ErrorCode=StatusCode.INTERNAL.value[0])
 
 
     async def GetEndpointForDid(self, request, context):
@@ -216,6 +258,10 @@ class DidServiceServicer(identitylayer_pb2_grpc.DidServiceServicer):
             did = get_value(request.Did)
             resp = await indy_did.get_endpoint_for_did(wallet_handle, pool_handle, did)
             return identitylayer_pb2.GetEndpointForDidResponse(Endpoint=resp[0], TransportVk=resp[1])
+        except IndyError as e:
+            logger.error("Indy Exception Occurred @ GetEndpointForDid ------")
+            logger.error(e.message)
+            return identitylayer_pb2.GetEndpointForDidResponse() 
         except Exception as e:
             logger.error("Exception occurred @ GetEndpointForDid----")
             logger.error(e)
@@ -230,11 +276,15 @@ class DidServiceServicer(identitylayer_pb2_grpc.DidServiceServicer):
             did = get_value(request.Did)
             metadata = get_value(request.Metadata)
             resp = await indy_did.set_did_metadata(wallet_handle, did, metadata)
-            return identitylayer_pb2.SetDidMetadataResponse(resp)
+            return identitylayer_pb2.SetDidMetadataResponse(Error=resp)
+        except IndyError as e:
+            logger.error("Indy Exception Occurred @ SetDidMetadata ------")
+            logger.error(e.message)
+            return identitylayer_pb2.SetDidMetadataResponse(Error=e.error_code) 
         except Exception as e:
             logger.error("Exception occurred @ SetDidMetadata----")
             logger.error(e)
-            return identitylayer_pb2.SetDidMetadataResponse()
+            return identitylayer_pb2.SetDidMetadataResponse(Error=StatusCode.INTERNAL.value[0])
 
 
     async def GetDidMetadata(self, request, context):
@@ -245,6 +295,10 @@ class DidServiceServicer(identitylayer_pb2_grpc.DidServiceServicer):
             did = get_value(request.Did)
             resp = await indy_did.get_did_metadata(wallet_handle, did)
             return identitylayer_pb2.GetDidMetadataResponse(Metadata=resp)
+        except IndyError as e:
+            logger.error("Indy Exception Occurred @ GetDidMetadata ------")
+            logger.error(e.message)
+            return identitylayer_pb2.GetDidMetadataResponse() 
         except Exception as e:
             logger.error("Exception occurred @ GetDidMetadata----")
             logger.error(e)
@@ -258,7 +312,11 @@ class DidServiceServicer(identitylayer_pb2_grpc.DidServiceServicer):
             wallet_handle = get_value(request.WalletHandle)
             did = get_value(request.Did)
             resp = await indy_did.get_my_did_with_meta(wallet_handle, did)
-            return identitylayer_pb2.GetMyDidWithMetaResponse(resp)
+            return identitylayer_pb2.GetMyDidWithMetaResponse(Did=resp)
+        except IndyError as e:
+            logger.error("Indy Exception Occurred @ GetMyDidWithMeta ------")
+            logger.error(e.message)
+            return identitylayer_pb2.GetMyDidWithMetaResponse() 
         except Exception as e:
             logger.error("Exception occurred @ GetMyDidWithMeta----")
             logger.error(e)
@@ -271,7 +329,11 @@ class DidServiceServicer(identitylayer_pb2_grpc.DidServiceServicer):
         try:
             wallet_handle = get_value(request.WalletHandle)
             resp = await indy_did.list_my_dids_with_meta(wallet_handle)
-            return identitylayer_pb2.ListMyDidsWithMetaResponse(resp)
+            return identitylayer_pb2.ListMyDidsWithMetaResponse(Did=resp)
+        except IndyError as e:
+            logger.error("Indy Exception Occurred @ ListMyDidsWithMeta ------")
+            logger.error(e.message)
+            return identitylayer_pb2.ListMyDidsWithMetaResponse() 
         except Exception as e:
             logger.error("Exception occurred @ ListMyDidsWithMeta----")
             logger.error(e)
@@ -283,9 +345,13 @@ class DidServiceServicer(identitylayer_pb2_grpc.DidServiceServicer):
         """
         try:
             did = get_value(request.Did)
-            verkey = get_value(request.Verkey)
+            verkey = get_value(request.FullVerkey)
             resp = await indy_did.abbreviate_verkey(did, verkey)
-            return identitylayer_pb2.AbbreviateVerkeyResponse(resp)
+            return identitylayer_pb2.AbbreviateVerkeyResponse(Metadata=resp)
+        except IndyError as e:
+            logger.error("Indy Exception Occurred @ AbbreviateVerkey ------")
+            logger.error(e.message)
+            return identitylayer_pb2.AbbreviateVerkeyResponse() 
         except Exception as e:
             logger.error("Exception occurred @ AbbreviateVerkey----")
             logger.error(e)
