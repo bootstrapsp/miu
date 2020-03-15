@@ -3,7 +3,8 @@ import os
 import sys
 
 import grpc
-from indy import wallet as indy_wallet
+from indy import wallet as indy_wallet, IndyError
+from indy.error import ErrorCode
 
 ROOT_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
@@ -73,10 +74,14 @@ class WalletServiceServicer(identitylayer_pb2_grpc.WalletServiceServicer):
 
             resp = await indy_wallet.create_wallet(wallet_config, wallet_credentials)
             return identitylayer_pb2.CreateWalletErrorCode(NewWalletErrorCode=str(resp))
+        except IndyError as e:
+            logger.error("Indy Exception Occurred @ CreateNewWallet ------")
+            logger.error(e.message)
+            return identitylayer_pb2.CreateWalletErrorCode(NewWalletErrorCode=e.message)
         except Exception as e:
             logger.error("Exception Occurred @ CreateNewWallet------")
             logger.error(e)
-            return identitylayer_pb2.CreateWalletErrorCode(NewWalletErrorCode=str(resp))
+            return identitylayer_pb2.CreateWalletErrorCode(NewWalletErrorCode=str(e))
 
     async def OpenWallet(self, request, context):
         resp = None
@@ -98,19 +103,28 @@ class WalletServiceServicer(identitylayer_pb2_grpc.WalletServiceServicer):
                                       })
             resp = await indy_wallet.open_wallet(config, credentials)
             return identitylayer_pb2.OpenWalletHandle(WalletHandle=resp)
+        except IndyError as e:
+            logger.error("Indy Exception Occurred @ OpenWallet ------")
+            logger.error(e.message)
+            return identitylayer_pb2.OpenWalletHandle(WalletHandle=e.error_code) 
         except Exception as e:
             logger.error("Exception Occurred @ OpenWallet------")
             logger.error(e)
+            return identitylayer_pb2.OpenWalletHandle(WalletHandle= -1) 
 
     async def CloseWallet(self, request, context):
         resp = None
         try:
             resp = await indy_wallet.close_wallet(request.WalletHandle)
-            return identitylayer_pb2.CreateWalletErrorCode(NewWalletErrorCode=str(resp))
+            return identitylayer_pb2.CloseWalletStatus(CloseWalletCode=str(resp))
+        except IndyError as e:
+            logger.error("Indy Exception Occurred @ CloseWallet ------")
+            logger.error(e.message)
+            return identitylayer_pb2.CloseWalletStatus(CloseWalletCode=e.message) 
         except Exception as e:
             logger.error("Exception Occurred @ CloseWallet------")
             logger.error(e)
-            return identitylayer_pb2.CreateWalletErrorCode(NewWalletErrorCode=str(resp))
+            return identitylayer_pb2.CloseWalletStatus(CloseWalletCode=str(e))
 
     async def DeleteWallet(self, request, context):
         resp = None
@@ -129,6 +143,10 @@ class WalletServiceServicer(identitylayer_pb2_grpc.WalletServiceServicer):
                                       })
             resp = await indy_wallet.delete_wallet(config=config, credentials=credentials)
             return identitylayer_pb2.DeleteWalletConfirmation(DeleteWalletStatus=1)
+        except IndyError as e:
+            logger.error("Indy Exception Occurred @ DeleteWallet ------")
+            logger.error(e.message)
+            return identitylayer_pb2.DeleteWalletConfirmation(DeleteWalletStatus=0) 
         except Exception as e:
             logger.error("Exception Occurred @ DeleteWallet------")
             logger.error(e)
@@ -144,6 +162,10 @@ class WalletServiceServicer(identitylayer_pb2_grpc.WalletServiceServicer):
                                              "key_derivation_method": 'ARGON2I_MOD' if key_derivation_method is None else key_derivation_method})
             resp = await indy_wallet.export_wallet(wallet_handle, export_config_json)
             return identitylayer_pb2.ExportWalletConfirmation(ExportWalletStatus=1)
+        except IndyError as e:
+            logger.error("Indy Exception Occurred @ ExportWallet ------")
+            logger.error(e.message)
+            return identitylayer_pb2.ExportWalletConfirmation(ExportWalletStatus=0) 
         except Exception as e:
             logger.error("Exception Occurred @ ExportWallet------")
             logger.error(e)
@@ -168,10 +190,14 @@ class WalletServiceServicer(identitylayer_pb2_grpc.WalletServiceServicer):
             import_config_json = json.dumps({"path": request.ConfigJson.Path, "key": request.ConfigJson.Key})
             resp = await indy_wallet.import_wallet(config, credentials, import_config_json)
             return identitylayer_pb2.ImportWalletConfirmation(ImportWalletStatusCode=str(resp))
+        except IndyError as e:
+            logger.error("Indy Exception Occurred @ ImportWallet ------")
+            logger.error(e.message)
+            return identitylayer_pb2.ImportWalletConfirmation(ImportWalletStatusCode=e.message) 
         except Exception as e:
             logger.error("Exception Occurred @ ImportWallet------")
             logger.error(e)
-            return identitylayer_pb2.ImportWalletConfirmation(ImportWalletStatusCode=str(resp))
+            return identitylayer_pb2.ImportWalletConfirmation(ImportWalletStatusCode=str(e))
 
     async def GenerateWalletKey(self, request, context):
         resp = None
@@ -180,7 +206,11 @@ class WalletServiceServicer(identitylayer_pb2_grpc.WalletServiceServicer):
 
             resp = await indy_wallet.generate_wallet_key(config=config)
             return identitylayer_pb2.GenerateWalletKeyConfirmation(GenerateWalletKeyStatus=str(resp))
+        except IndyError as e:
+            logger.error("Indy Exception Occurred @ GenerateWalletKey ------")
+            logger.error(e.message)
+            return identitylayer_pb2.GenerateWalletKeyConfirmation(GenerateWalletKeyStatus=e.message) 
         except Exception as e:
             logger.error("Exception Occurred @ GenerateWalletKey------")
             logger.error(e)
-            return identitylayer_pb2.GenerateWalletKeyConfirmation(GenerateWalletKeyStatus=str(resp))
+            return identitylayer_pb2.GenerateWalletKeyConfirmation(GenerateWalletKeyStatus=str(e))

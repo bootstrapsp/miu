@@ -1,7 +1,9 @@
 import json
 import os
 import sys
-from indy import pool as indy_pool
+from indy import pool as indy_pool, IndyError
+from indy.error import ErrorCode
+from grpc import StatusCode
 
 
 ROOT_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -63,13 +65,16 @@ class PoolServiceServicer(identitylayer_pb2_grpc.PoolServiceServicer):
         try:
             config_name = get_value(request.ConfigName)
             config = json.dumps({"genesis_txn": get_value(request.Config.GensisTxn)})
-
             resp = await indy_pool.create_pool_ledger_config(config_name, config)
-            return identitylayer_pb2.CreatePoolLedgerConfigResponse(resp)
+            return identitylayer_pb2.CreatePoolLedgerConfigResponse(ErrorCode=resp)
+        except IndyError as e:
+            logger.error("Indy Exception Occurred @ CreatePoolLedgerConfig ------")
+            logger.error(e)
+            return identitylayer_pb2.CreatePoolLedgerConfigResponse(ErrorCode=e.error_code )
         except Exception as e:
             logger.error("Exception Occurred @ CreatePoolLedgerConfig ------")
             logger.error(e)
-            return identitylayer_pb2.CreatePoolLedgerConfigResponse(resp)
+            return identitylayer_pb2.CreatePoolLedgerConfigResponse(ErrorCode=StatusCode.INTERNAL.value[0]) 
 
 
     async def OpenPoolLedger(self, request, context):
@@ -80,14 +85,18 @@ class PoolServiceServicer(identitylayer_pb2_grpc.PoolServiceServicer):
             config_name = get_value(request.ConfigName)
             config = json.dumps({"timeout": get_value(request.Config.Timeout),
                 "extended_timeout":get_value(request.Config.ExtendedTimeour),
-                "preordered_nodes":get_value(request.Config.PreorderedNodes)})
+                "preordered_nodes":[]}) # TODO : support this parameter get_value(request.Config.PreorderedNodes). getValue returns always NULL now.
 
             resp = await indy_pool.open_pool_ledger(config_name, config)
-            return identitylayer_pb2.OpenPoolLedgerResponse(resp)
+            return identitylayer_pb2.OpenPoolLedgerResponse(Handle=resp)
+        except IndyError as e:
+            logger.error("Indy Exception Occurred @ OpenPoolLedger ------")
+            logger.error(e.message)
+            return identitylayer_pb2.OpenPoolLedgerResponse(Handle=-1 ) # TODO: extend Responses with Handle Field to support Error
         except Exception as e:
             logger.error("Exception Occurred @ OpenPoolLedger------")
             logger.error(e)
-            return identitylayer_pb2.OpenPoolLedgerResponse(resp)
+            return identitylayer_pb2.OpenPoolLedgerResponse(Handle=-1)
 
     async def RefreshPoolLedger(self, request, context):
         """Refresh Pool Ledger
@@ -96,11 +105,15 @@ class PoolServiceServicer(identitylayer_pb2_grpc.PoolServiceServicer):
         try:
             handle = get_value(request.Handle)
             resp = await indy_pool.refresh_pool_ledger(handle)
-            return identitylayer_pb2.RefreshPoolLedgerResponse(resp)
+            return identitylayer_pb2.RefreshPoolLedgerResponse(Handle=resp)
+        except IndyError as e:
+            logger.error("Indy Exception Occurred @ RefreshPoolLedger ------")
+            logger.error(e.message)
+            return identitylayer_pb2.RefreshPoolLedgerResponse(Handle=-1 )
         except Exception as e:
             logger.error("Exception Occurred @ RefreshPoolLedger------")
             logger.error(e)
-            return identitylayer_pb2.RefreshPoolLedgerResponse(resp)
+            return identitylayer_pb2.RefreshPoolLedgerResponse(Handle=-1)
 
     async def ListPools(self, request, context):
         """List Pools
@@ -108,11 +121,15 @@ class PoolServiceServicer(identitylayer_pb2_grpc.PoolServiceServicer):
         resp = None
         try:
             resp = await indy_pool.list_pools()
-            return identitylayer_pb2.ListPoolsResponse(resp)
+            return identitylayer_pb2.ListPoolsResponse(ErrorCode=StatusCode.OK.value[0]) #TODO: return list and not ErrorCode
+        except IndyError as e:
+            logger.error("Indy Exception Occurred @ ListPools ------")
+            logger.error(e.message)
+            return identitylayer_pb2.ListPoolsResponse(ErrorCode=e.error_code )
         except Exception as e:
             logger.error("Exception Occurred @ ListPools------")
             logger.error(e)
-            return identitylayer_pb2.ListPoolsResponse(resp)
+            return identitylayer_pb2.ListPoolsResponse(ErrorCode=StatusCode.INTERNAL.value[0])
 
     async def ClosePoolLedger(self, request, context):
         """Close Pool Ledger
@@ -121,11 +138,15 @@ class PoolServiceServicer(identitylayer_pb2_grpc.PoolServiceServicer):
         try:
             handle = get_value(request.Handle)
             resp = await indy_pool.close_pool_ledger(handle)
-            return identitylayer_pb2.ClosePoolLedgerResponse(resp)
+            return identitylayer_pb2.ClosePoolLedgerResponse(ErrorCode=resp)
+        except IndyError as e:
+            logger.error("Indy Exception Occurred @ ClosePoolLedger ------")
+            logger.error(e.message)
+            return identitylayer_pb2.ClosePoolLedgerResponse(ErrorCode=e.error_code )
         except Exception as e:
             logger.error("Exception Occurred @ ClosePoolLedger------")
             logger.error(e)
-            return identitylayer_pb2.ClosePoolLedgerResponse(resp)
+            return identitylayer_pb2.ClosePoolLedgerResponse(ErrorCode=StatusCode.INTERNAL.value[0])
 
     async def DeletePoolLedgerConfig(self, request, context):
         """Delete Pool Ledger Config
@@ -134,11 +155,15 @@ class PoolServiceServicer(identitylayer_pb2_grpc.PoolServiceServicer):
         try:
             config_name = get_value(request.ConfigName)
             resp = await indy_pool.delete_pool_ledger_config(config_name)
-            return identitylayer_pb2.DeletePoolLedgerConfigResponse(resp)
+            return identitylayer_pb2.DeletePoolLedgerConfigResponse(ErrorCode=resp)
+        except IndyError as e:
+            logger.error("Indy Exception Occurred @ DeletePoolLedgerConfig ------")
+            logger.error(e)
+            return identitylayer_pb2.DeletePoolLedgerConfigResponse(ErrorCode=e.error_code )
         except Exception as e:
             logger.error("Exception Occurred @ DeletePoolLedgerConfig------")
             logger.error(e)
-            return identitylayer_pb2.DeletePoolLedgerConfigResponse(resp)
+            return identitylayer_pb2.DeletePoolLedgerConfigResponse(ErrorCode=StatusCode.INTERNAL.value[0])
 
     async def SetProtocolVersion(self, request, context):
         """Set Protocol Version
@@ -147,8 +172,12 @@ class PoolServiceServicer(identitylayer_pb2_grpc.PoolServiceServicer):
         try:
             protocol_version = get_value(request.ProtocolVersion)
             resp = await indy_pool.set_protocol_version(protocol_version)
-            return identitylayer_pb2.SetProtocolVersionResponse(resp)
+            return identitylayer_pb2.SetProtocolVersionResponse(ErrorCode=resp)
+        except IndyError as e:
+            logger.error("Indy Exception Occurred @ DeletePoolLedgerConfig ------")
+            logger.error(e.message)
+            return identitylayer_pb2.SetProtocolVersionResponse(ErrorCode=e.error_code )
         except Exception as e:
             logger.error("Exception Occurred @ SetProtocolVersion------")
             logger.error(e)
-            return identitylayer_pb2.SetProtocolVersionResponse(resp)
+            return identitylayer_pb2.SetProtocolVersionResponse(ErrorCode=StatusCode.INTERNAL.value[0])
