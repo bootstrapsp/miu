@@ -2,7 +2,9 @@ import json
 import os
 import sys
 
-from indy import crypto as indy_crypto
+from indy import crypto as indy_crypto, IndyError
+from indy.error import ErrorCode
+from grpc import StatusCode
 
 
 ROOT_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -64,7 +66,11 @@ class CryptoServiceServicer(identitylayer_pb2_grpc.CryptoServiceServicer):
             key_json = json.dumps({"seed": get_value(request.KeyJsonCreateKey.seed),
                 "crypto_type": get_value(request.KeyJsonCreateKey.CryptoType)})
             resp = await indy_crypto.create_key(wallet_handle, key_json)
-            return identitylayer_pb2.CreateKeyResponse(resp)
+            return identitylayer_pb2.CreateKeyResponse(Verkey=resp)
+        except IndyError as e:
+            logger.error("Indy Exception Occurred @ CreateKey ------")
+            logger.error(e.message)
+            return identitylayer_pb2.CreateKeyResponse() 
         except Exception as e:
             logger.error("Exception occurred @CreateKey--------")
             logger.error(e)
@@ -78,11 +84,15 @@ class CryptoServiceServicer(identitylayer_pb2_grpc.CryptoServiceServicer):
             wallet_handle, verkey, metadata = get_value(request.WalletHandle), \
             get_value(request.Verkey), get_value(request.Metadata)
             resp = await indy_crypto.set_key_metadata(wallet_handle, verkey, metadata)
-            return identitylayer_pb2.SetKeyMetadataResponse(resp)
+            return identitylayer_pb2.SetKeyMetadataResponse(ErrorCode=resp)
+        except IndyError as e:
+            logger.error("Indy Exception Occurred @ SetKeyMetadata ------")
+            logger.error(e.message)
+            return identitylayer_pb2.SetKeyMetadataResponse(ErrorCode=e.error_code) 
         except Exception as e:
             logger.error("Exception occurred @SetKeyMetadata--------")
             logger.error(e)
-            return identitylayer_pb2.SetKeyMetadataResponse(resp)
+            return identitylayer_pb2.SetKeyMetadataResponse(ErrorCode=StatusCode.INTERNAL.value[0])
 
     async def GetKeyMetadata(self, request, context):
         """Get Key Metadata
@@ -91,11 +101,15 @@ class CryptoServiceServicer(identitylayer_pb2_grpc.CryptoServiceServicer):
         try:
             wallet_handle, verkey = get_value(request.WalletHandle), get_value(request.Verkey)
             resp = await indy_crypto.get_key_metadata(wallet_handle, verkey)
-            return identitylayer_pb2.GetKeyMetadataResponse(resp)
+            return identitylayer_pb2.GetKeyMetadataResponse(Metadata=resp)
+        except IndyError as e:
+            logger.error("Indy Exception Occurred @ GetKeyMetadata ------")
+            logger.error(e.message)
+            return identitylayer_pb2.GetKeyMetadataResponse() 
         except Exception as e:
             logger.error("Exception occurred @GetKeyMetadata--------")
             logger.error(e)
-            return identitylayer_pb2.GetKeyMetadataResponse(resp)
+            return identitylayer_pb2.GetKeyMetadataResponse()
 
     async def CryptoSign(self, request, context):
         """Crypto Sign
@@ -104,11 +118,15 @@ class CryptoServiceServicer(identitylayer_pb2_grpc.CryptoServiceServicer):
         try:
             wallet_handle, signer_vk, msg = get_value(request.WalletHandle), get_value(request.SignerVk), get_value(request.Msg)
             resp = await indy_crypto.crypto_sign(wallet_handle, signer_vk, msg)
-            return identitylayer_pb2.CryptoSignResponse(resp)
+            return identitylayer_pb2.CryptoSignResponse(Signature=resp)
+        except IndyError as e:
+            logger.error("Indy Exception Occurred @ GetKeyMetadata ------")
+            logger.error(e.message)
+            return identitylayer_pb2.CryptoSignResponse() 
         except Exception as e:
             logger.error("Exception occurred @CryptoSign--------")
             logger.error(e)
-            return identitylayer_pb2.CryptoSignResponse(resp)
+            return identitylayer_pb2.CryptoSignResponse()
 
     async def CryptoVerify(self, request, context):
         """Crypto Verify
@@ -117,11 +135,15 @@ class CryptoServiceServicer(identitylayer_pb2_grpc.CryptoServiceServicer):
         try:
             signer_vk, msg, signature = get_value(request.SignerVk), get_value(request.Msg), get_value(request.Signature)
             resp = await indy_crypto.crypto_verify(signer_vk, msg, signature)
-            return identitylayer_pb2.CryptoVerifyResponse(resp)
+            return identitylayer_pb2.CryptoVerifyResponse(Valid=resp)
+        except IndyError as e:
+            logger.error("Indy Exception Occurred @ CryptoVerify ------")
+            logger.error(e.message)
+            return identitylayer_pb2.CryptoVerifyResponse(Valid=0) 
         except Exception as e:
             logger.error("Exception occurred @CryptoVerify--------")
             logger.error(e)
-            return identitylayer_pb2.CryptoVerifyResponse(resp)
+            return identitylayer_pb2.CryptoVerifyResponse(Valid=0)
 
     async def AuthCrypt(self, request, context):
         """Auth Crypt
@@ -130,11 +152,15 @@ class CryptoServiceServicer(identitylayer_pb2_grpc.CryptoServiceServicer):
         try:
             wallet_handle, sender_vk, recipient_vk, msg = get_value(request.WalletHandle), get_value(request.SenderVk), get_value(request.RecipientVk), get_value(request.Msg)
             resp = await indy_crypto.auth_crypt(wallet_handle, sender_vk, recipient_vk, msg)
-            return identitylayer_pb2.AuthCryptResponse(resp)
+            return identitylayer_pb2.AuthCryptResponse(Msg=resp)
+        except IndyError as e:
+            logger.error("Indy Exception Occurred @ AuthCrypt ------")
+            logger.error(e.message)
+            return identitylayer_pb2.AuthCryptResponse() 
         except Exception as e:
             logger.error("Exception occurred @AuthCrypt--------")
             logger.error(e)
-            return identitylayer_pb2.AuthCryptResponse(resp)
+            return identitylayer_pb2.AuthCryptResponse()
 
     async def AuthDecrypt(self, request, context):
         """Auth Decrypt
@@ -143,11 +169,15 @@ class CryptoServiceServicer(identitylayer_pb2_grpc.CryptoServiceServicer):
         try:
             wallet_handle, recipient_vk, encrypted_msg = get_value(request.WalletHandle), get_value(request.RecipientVk), get_value(request.EncryptedMsg)
             resp = await indy_crypto.auth_decrypt(wallet_handle, recipient_vk, encrypted_msg)
-            return identitylayer_pb2.AuthDecryptResponse(resp)
+            return identitylayer_pb2.AuthDecryptResponse(Verkey=resp[0], Msg=resp[1])
+        except IndyError as e:
+            logger.error("Indy Exception Occurred @ AuthDecrypt ------")
+            logger.error(e.message)
+            return identitylayer_pb2.AuthDecryptResponse() 
         except Exception as e:
             logger.error("Exception occurred @AuthDecrypt--------")
             logger.error(e)
-            return identitylayer_pb2.AuthDecryptResponse(Verkey=resp[0], Msg=resp[1])
+            return identitylayer_pb2.AuthDecryptResponse()
 
     async def AnonCrypt(self, request, context):
         """Anon Crypt
@@ -156,7 +186,11 @@ class CryptoServiceServicer(identitylayer_pb2_grpc.CryptoServiceServicer):
         try:
             recipient_vk, msg = get_value(request.RecipientVk), get_value(request.Msg)
             resp = await indy_crypto.anon_crypt(recipient_vk, msg)
-            return identitylayer_pb2.AnonCryptResponse(resp)
+            return identitylayer_pb2.AnonCryptResponse(Msg=resp)
+        except IndyError as e:
+            logger.error("Indy Exception Occurred @ AnonCrypt ------")
+            logger.error(e.message)
+            return identitylayer_pb2.AnonCryptResponse() 
         except Exception as e:
             logger.error("Exception occurred @AnonCrypt--------")
             logger.error(e)
@@ -169,8 +203,12 @@ class CryptoServiceServicer(identitylayer_pb2_grpc.CryptoServiceServicer):
         try:
             wallet_handle, recipient_vk, encrypted_msg = get_value(request.WalletHandle), get_value(request.RecipientVk), get_value(request.EncryptedMsg)
             resp = await indy_crypto.anon_decrypt(wallet_handle, recipient_vk, encrypted_msg)
-            return identitylayer_pb2.AnonDecryptResponse(resp)
+            return identitylayer_pb2.AnonDecryptResponse(DecryptedMsg=resp)
+        except IndyError as e:
+            logger.error("Indy Exception Occurred @ AnonDecrypt ------")
+            logger.error(e.message)
+            return identitylayer_pb2.AnonDecryptResponse() 
         except Exception as e:
             logger.error("Exception occurred @AnonDecrypt--------")
             logger.error(e)
-            return identitylayer_pb2.AnonDecryptResponse(resp)
+            return identitylayer_pb2.AnonDecryptResponse()
