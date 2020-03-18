@@ -5,6 +5,8 @@ import sys
 import grpc
 from indy import wallet as indy_wallet, IndyError
 from indy.error import ErrorCode
+from grpc import StatusCode
+import hashlib
 
 ROOT_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
@@ -53,7 +55,8 @@ def get_value(value):
 class WalletServiceServicer(identitylayer_pb2_grpc.WalletServiceServicer):
     """ WalletServiceServicer
   """
-
+    #dictionary for opened wallets - key : walletID ; value : WalletHandle;
+    openedWallets = {}
     async def CreateNewWallet(self, request, context):
         resp = None
         try:
@@ -85,6 +88,7 @@ class WalletServiceServicer(identitylayer_pb2_grpc.WalletServiceServicer):
 
     async def OpenWallet(self, request, context):
         resp = None
+        openWalletKey = ""
         try:
             storage_config_path = get_value(request.Config.Path.path)
             config = json.dumps({"id": get_value(request.Config.Id),
@@ -101,21 +105,35 @@ class WalletServiceServicer(identitylayer_pb2_grpc.WalletServiceServicer):
                                       "key_derivation_method": 'ARGON2I_MOD' if key_derivation_method is None else key_derivation_method,
                                       "rekey_derivation_method": 'ARGON2I_MOD' if re_key_derivation_method is None else re_key_derivation_method,
                                       })
+            # hashing of cred key is done, because we need to control who can recieve a handler if wallet is opened
+            openWalletKey = hashlib.sha256((request.Config.Id + request.Credentials.Key).encode('utf-8')).hexdigest() 
             resp = await indy_wallet.open_wallet(config, credentials)
+            self.openedWallets[openWalletKey] = resp
+            logger.info("wallet with id %s is added to memory, memoryKey: %s",request.Config.Id, openWalletKey) 
             return identitylayer_pb2.OpenWalletHandle(WalletHandle=resp)
         except IndyError as e:
             logger.error("Indy Exception Occurred @ OpenWallet ------")
             logger.error(e.message)
-            return identitylayer_pb2.OpenWalletHandle(WalletHandle=e.error_code) 
+            if e.error_code == ErrorCode.WalletAlreadyOpenedError:
+                if openWalletKey in self.openedWallets.keys():
+                    return identitylayer_pb2.OpenWalletHandle(WalletHandle=self.openedWallets[openWalletKey], ErrorCode = ErrorCode.WalletAlreadyOpenedError)
+                else:
+                    logger.error("wallet with id %s has been opened before, but provided credentials are wrong",request.Config.Id) 
+                    return identitylayer_pb2.OpenWalletHandle(WalletHandle=-1, ErrorCode = ErrorCode.WalletAccessFailed)
+            return identitylayer_pb2.OpenWalletHandle(WalletHandle=-1 ,ErrorCode = e.error_code) 
         except Exception as e:
             logger.error("Exception Occurred @ OpenWallet------")
             logger.error(e)
-            return identitylayer_pb2.OpenWalletHandle(WalletHandle= -1) 
+            return identitylayer_pb2.OpenWalletHandle(WalletHandle= -1, ErrorCode = StatusCode.INTERNAL.value[0] ) 
 
     async def CloseWallet(self, request, context):
         resp = None
         try:
             resp = await indy_wallet.close_wallet(request.WalletHandle)
+            for k, v in list(self.openedWallets.items()):
+                if v == request.WalletHandle:
+                    del self.openedWallets[k]   
+                    logger.info("wallet with memoryKey %s is removed from memory",k)   
             return identitylayer_pb2.CloseWalletStatus(CloseWalletCode=str(resp))
         except IndyError as e:
             logger.error("Indy Exception Occurred @ CloseWallet ------")
