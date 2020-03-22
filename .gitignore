@@ -5,3 +5,5 @@ venv
 scurid
 .vscode
 temp
+miu
+*.db
