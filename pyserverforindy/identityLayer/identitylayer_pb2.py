@@ -19,7 +19,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   package='identitylayer',
   syntax='proto3',
   serialized_options=None,
-  serialized_pb=b'\n\x13identitylayer.proto\x12\ridentitylayer\x1a\x19google/protobuf/any.proto\"y\n\x13NewWalletDefinition\x12+\n\x0cwalletConfig\x18\x01 \x01(\x0b\x32\x15.identitylayer.Config\x12\x35\n\x11walletCredentials\x18\x02 \x01(\x0b\x32\x1a.identitylayer.Credentials\"f\n\x06\x43onfig\x12\x10\n\x08walletID\x18\x01 \x01(\t\x12\x19\n\x11walletstorageType\x18\x02 \x01(\t\x12/\n\tstorePath\x18\x03 \x01(\x0b\x32\x1c.identitylayer.StorageConfig\"&\n\rStorageConfig\x12\x15\n\rnewWalletPath\x18\x01 \x01(\t\"n\n\x0b\x43redentials\x12\x14\n\x0cnewWalletKey\x18\x01 \x01(\t\x12#\n\x1bnewWalletStorageCredentials\x18\x02 \x01(\t\x12$\n\x1cnewWalletKeyDerivationMethod\x18\x03 \x01(\t\"3\n\x15\x43reateWalletErrorCode\x12\x1a\n\x12NewWalletErrorCode\x18\x01 \x01(\t\"\x82\x01\n\x14OpenWalletDefinition\x12/\n\x06\x43onfig\x18\x01 \x01(\x0b\x32\x1f.identitylayer.OpenWalletConfig\x12\x39\n\x0b\x43redentials\x18\x02 \x01(\x0b\x32$.identitylayer.OpenWalletCredentials\"i\n\x10OpenWalletConfig\x12\n\n\x02Id\x18\x01 \x01(\t\x12\x13\n\x0bStorageType\x18\x02 \x01(\t\x12\x34\n\x04Path\x18\x03 \x01(\x0b\x32&.identitylayer.OpenWalletStorageConfig\"\'\n\x17OpenWalletStorageConfig\x12\x0c\n\x04path\x18\x01 \x01(\t\"\x8b\x01\n\x15OpenWalletCredentials\x12\x0b\n\x03Key\x18\x01 \x01(\t\x12\r\n\x05ReKey\x18\x02 \x01(\t\x12\x1a\n\x12StorageCredentials\x18\x03 \x01(\t\x12\x1b\n\x13KeyDerivationMethod\x18\x04 \x01(\t\x12\x1d\n\x15ReKeyDerivationMethod\x18\x05 \x01(\t\";\n\x10OpenWalletHandle\x12\x14\n\x0cWalletHandle\x18\x01 \x01(\x03\x12\x11\n\tErrorCode\x18\x02 \x01(\x03\")\n\x11\x43loseWalletHandle\x12\x14\n\x0cWalletHandle\x18\x01 \x01(\x03\",\n\x11\x43loseWalletStatus\x12\x17\n\x0f\x43loseWalletCode\x18\x01 \x01(\t\"\x87\x01\n\x16\x44\x65leteWalletDefinition\x12\x31\n\x06\x43onfig\x18\x01 \x01(\x0b\x32!.identitylayer.DeleteWalletConfig\x12:\n\x0b\x43redentials\x18\x02 \x01(\x0b\x32%.identitylayer.DeleteWaletCredentials\"\x95\x01\n\x12\x44\x65leteWalletConfig\x12\x16\n\x0e\x44\x65leteWalletID\x18\x01 \x01(\t\x12\x1f\n\x17\x44\x65leteWalletStorageType\x18\x02 \x01(\t\x12\x46\n\rStorageConfig\x18\x03 \x01(\x0b\x32/.identitylayer.DeleteWalletStorageConfiguration\"0\n DeleteWalletStorageConfiguration\x12\x0c\n\x04Path\x18\x01 \x01(\t\"\x82\x01\n\x16\x44\x65leteWaletCredentials\x12\x17\n\x0f\x44\x65leteWalletKey\x18\x01 \x01(\t\x12&\n\x1e\x44\x65leteWalletStorageCredentials\x18\x02 \x01(\t\x12\'\n\x1f\x44\x65leteWalletKeyDerivationMethod\x18\x03 \x01(\t\"6\n\x18\x44\x65leteWalletConfirmation\x12\x1a\n\x12\x44\x65leteWalletStatus\x18\x01 \x01(\x08\"u\n\x16\x45xportWalletDefinition\x12\x1a\n\x12\x45xportWalletHandle\x18\x01 \x01(\x03\x12?\n\x10\x45xportConfigJson\x18\x02 \x01(\x0b\x32%.identitylayer.ExportWalletConfigJson\"t\n\x16\x45xportWalletConfigJson\x12\x18\n\x10\x45xportWalletPath\x18\x01 \x01(\t\x12\x17\n\x0f\x45xportWalletKey\x18\x02 \x01(\t\x12\'\n\x1f\x45xportWalletKeyDerivationMethod\x18\x03 \x01(\t\"6\n\x18\x45xportWalletConfirmation\x12\x1a\n\x12\x45xportWalletStatus\x18\x01 \x01(\x08\"\xc3\x01\n\x16ImportWalletDefinition\x12\x31\n\x06\x43onfig\x18\x01 \x01(\x0b\x32!.identitylayer.ImportWalletConfig\x12;\n\x0b\x43redentials\x18\x02 \x01(\x0b\x32&.identitylayer.ImportWalletCredentials\x12\x39\n\nConfigJson\x18\x03 \x01(\x0b\x32%.identitylayer.ImportWalletConfigJson\"v\n\x12ImportWalletConfig\x12\n\n\x02Id\x18\x01 \x01(\t\x12\x13\n\x0bStorageType\x18\x02 \x01(\t\x12?\n\rStorageConfig\x18\x03 \x01(\x0b\x32(.identitylayer.ImportWalletStorageConfig\")\n\x19ImportWalletStorageConfig\x12\x0c\n\x04Path\x18\x01 \x01(\t\"_\n\x17ImportWalletCredentials\x12\x0b\n\x03Key\x18\x01 \x01(\t\x12\x1a\n\x12StorageCredentials\x18\x02 \x01(\t\x12\x1b\n\x13KeyDerivationMethod\x18\x03 \x01(\t\"3\n\x16ImportWalletConfigJson\x12\x0c\n\x04Path\x18\x01 \x01(\t\x12\x0b\n\x03Key\x18\x02 \x01(\t\":\n\x18ImportWalletConfirmation\x12\x1e\n\x16ImportWalletStatusCode\x18\x01 \x01(\t\"+\n\x1bGenerateWalletKeyDefinition\x12\x0c\n\x04Seed\x18\x01 \x01(\t\"@\n\x1dGenerateWalletKeyConfirmation\x12\x1f\n\x17GenerateWalletKeyStatus\x18\x01 \x01(\t\"j\n\x1d\x43reatePoolLedgerConfigRequest\x12\x12\n\nConfigName\x18\x01 \x01(\t\x12\x35\n\x06\x43onfig\x18\x02 \x01(\x0b\x32%.identitylayer.ConfigCreatePoolLedger\"+\n\x16\x43onfigCreatePoolLedger\x12\x11\n\tGensisTxn\x18\x01 \x01(\t\"3\n\x1e\x43reatePoolLedgerConfigResponse\x12\x11\n\tErrorCode\x18\x01 \x01(\x03\"\\\n\x15OpenPoolLedgerRequest\x12\x12\n\nConfigName\x18\x01 \x01(\t\x12/\n\x06\x43onfig\x18\x02 \x01(\x0b\x32\x1f.identitylayer.ConfigOpenLedger\"U\n\x10\x43onfigOpenLedger\x12\x0f\n\x07Timeout\x18\x01 \x01(\x03\x12\x17\n\x0f\x45xtendedTimeour\x18\x02 \x01(\x03\x12\x17\n\x0fPreorderedNodes\x18\x03 \x03(\t\";\n\x16OpenPoolLedgerResponse\x12\x0e\n\x06Handle\x18\x01 \x01(\x03\x12\x11\n\tErrorCode\x18\x02 \x01(\x03\"*\n\x18RefreshPoolLedgerRequest\x12\x0e\n\x06Handle\x18\x01 \x01(\x03\".\n\x19RefreshPoolLedgerResponse\x12\x11\n\tErrorCode\x18\x01 \x01(\x03\"\x12\n\x10ListPoolsRequest\"&\n\x11ListPoolsResponse\x12\x11\n\tErrorCode\x18\x01 \x01(\x03\"(\n\x16\x43losePoolLedgerRequest\x12\x0e\n\x06Handle\x18\x01 \x01(\x03\",\n\x17\x43losePoolLedgerResponse\x12\x11\n\tErrorCode\x18\x01 \x01(\x03\"3\n\x1d\x44\x65letePoolLedgerConfigRequest\x12\x12\n\nConfigName\x18\x01 \x01(\t\"3\n\x1e\x44\x65letePoolLedgerConfigResponse\x12\x11\n\tErrorCode\x18\x01 \x01(\x03\"4\n\x19SetProtocolVersionRequest\x12\x17\n\x0fProtocolVersion\x18\x01 \x01(\x03\"/\n\x1aSetProtocolVersionResponse\x12\x11\n\tErrorCode\x18\x01 \x01(\x03\"2\n\x11OpenReaderRequest\x12\r\n\x05Type_\x18\x01 \x01(\t\x12\x0e\n\x06\x43onfig\x18\x02 \x01(\t\"!\n\x12OpenReaderResponse\x12\x0b\n\x03Res\x18\x01 \x01(\x03\"2\n\x11OpenWriterRequest\x12\r\n\x05Type_\x18\x01 \x01(\t\x12\x0e\n\x06\x43onfig\x18\x02 \x01(\t\"!\n\x12OpenWriterResponse\x12\x0b\n\x03Res\x18\x01 \x01(\x03\"\\\n\x19IssuerCreateSchemaRequest\x12\x11\n\tIssuerDid\x18\x01 \x01(\t\x12\x0c\n\x04Name\x18\x02 \x01(\t\x12\x0f\n\x07Version\x18\x03 \x01(\t\x12\r\n\x05\x41ttrs\x18\x04 \x01(\t\"B\n\x1aIssuerCreateSchemaResponse\x12\x10\n\x08SchemaId\x18\x01 \x01(\t\x12\x12\n\nSchemaJson\x18\x02 \x01(\t\"\x9f\x01\n(IssuerCreateAndStoreCredentialDefRequest\x12\x14\n\x0cWalletHandle\x18\x01 \x01(\x03\x12\x11\n\tIssuerDid\x18\x02 \x01(\t\x12\x12\n\nSchemaJson\x18\x03 \x01(\t\x12\x0b\n\x03Tag\x18\x04 \x01(\t\x12\x15\n\rSignatureType\x18\x05 \x01(\t\x12\x12\n\nConfigJson\x18\x06 \x01(\t\"S\n)IssuerCreateAndStoreCredentialDefResponse\x12\x11\n\tCredDefId\x18\x01 \x01(\t\x12\x13\n\x0b\x43redDefJson\x18\x02 \x01(\t\"\xb3\x01\n#IssuerCreateAndStoreRevocRegRequest\x12\x14\n\x0cWalletHandle\x18\x01 \x01(\x03\x12\x11\n\tIssuerDid\x18\x02 \x01(\t\x12\x14\n\x0cRevocDefType\x18\x03 \x01(\t\x12\x0b\n\x03Tag\x18\x04 \x01(\t\x12\x11\n\tCredDefId\x18\x05 \x01(\t\x12\x12\n\nConfigJSon\x18\x06 \x01(\t\x12\x19\n\x11TailsWriterHandle\x18\x07 \x01(\x03\"n\n$IssuerCreateAndStoreRevocRegResponse\x12\x12\n\nRevocRegId\x18\x01 \x01(\t\x12\x17\n\x0fRevocRegDefJson\x18\x02 \x01(\t\x12\x19\n\x11RevocRegEntryJson\x18\x03 \x01(\t\"M\n\"IssuerCreateCredentialOfferRequest\x12\x14\n\x0cWalletHandle\x18\x01 \x01(\x03\x12\x11\n\tCredDefId\x18\x02 \x01(\t\"\x8c\x01\n#IssuerCreateCredentialOfferResponse\x12\x10\n\x08SchemaId\x18\x01 \x01(\t\x12\x11\n\tCredDefId\x18\x02 \x01(\t\x12\r\n\x05Nonce\x18\x03 \x01(\t\x12\x31\n\x13KeyCorrectnessProof\x18\x04 \x01(\x0b\x32\x14.google.protobuf.Any\"\xac\x01\n\x1dIssuerCreateCredentialRequest\x12\x14\n\x0cWalletHandle\x18\x01 \x01(\x03\x12\x15\n\rCredOfferJson\x18\x02 \x01(\t\x12\x13\n\x0b\x43redReqJson\x18\x03 \x01(\t\x12\x16\n\x0e\x43redValuesJson\x18\x04 \x01(\t\x12\x10\n\x08RevRegId\x18\x05 \x01(\t\x12\x1f\n\x17\x42lobStorageReaderHandle\x18\x06 \x01(\t\"\x82\x01\n\x1eIssuerCreateCredentialResponse\x12\x30\n\x08\x43redJson\x18\x01 \x01(\x0b\x32\x1e.identitylayer.CredJsonMessage\x12\x13\n\x0b\x43redRevocId\x18\x02 \x01(\t\x12\x19\n\x11RevocRegDeltaJson\x18\x03 \x01(\t\"\xd3\x01\n\x0f\x43redJsonMessage\x12\x10\n\x08SchemaId\x18\x01 \x01(\t\x12\x11\n\tCredDefId\x18\x02 \x01(\t\x12\x13\n\x0bRevRegDefID\x18\x03 \x01(\t\x12$\n\x06Values\x18\x04 \x01(\x0b\x32\x14.google.protobuf.Any\x12\'\n\tSignature\x18\x05 \x01(\x0b\x32\x14.google.protobuf.Any\x12\x37\n\x19SignatureCorrectnessProof\x18\x06 \x01(\x0b\x32\x14.google.protobuf.Any\"}\n\x1dIssuerRevokeCredentialRequest\x12\x14\n\x0cWalletHandle\x18\x01 \x01(\x03\x12\x1f\n\x17\x42lobStorageReaderHandle\x18\x02 \x01(\x03\x12\x10\n\x08RevRegId\x18\x03 \x01(\t\x12\x13\n\x0b\x43redRevocId\x18\x04 \x01(\t\"E\n\x1eIssuerRevokeCredentialResponse\x12#\n\x1bRevocationRegistryDeltaJson\x18\x01 \x01(\t\"c\n*IssuerMergeRevocationRegistryDeltasRequest\x12\x17\n\x0fRevRegDeltaJson\x18\x01 \x01(\t\x12\x1c\n\x14OtherRevRegDeltaJson\x18\x02 \x01(\t\"T\n+IssuerMergeRevocationRegistryDeltasResponse\x12%\n\x1dMergedRevocationRegistryDelta\x18\x01 \x01(\t\"Q\n\x1fProverCreateMasterSecretRequest\x12\x14\n\x0cWalletHandle\x18\x01 \x01(\x03\x12\x18\n\x10MasterSecretName\x18\x02 \x01(\t\"C\n ProverCreateMasterSecretResponse\x12\x1f\n\x17GeneratedMasterSecretId\x18\x01 \x01(\t\"\x8e\x01\n ProverCreateCredentialReqRequest\x12\x13\n\x0bWaletHandle\x18\x01 \x01(\x03\x12\x11\n\tProverDid\x18\x02 \x01(\t\x12\x15\n\rCredOfferJSon\x18\x03 \x01(\t\x12\x13\n\x0b\x43redDefJson\x18\x04 \x01(\t\x12\x16\n\x0eMasterSecretId\x18\x05 \x01(\t\"x\n!ProverCreateCredentialReqResponse\x12\x36\n\x0b\x43redReqJson\x18\x01 \x01(\x0b\x32!.identitylayer.CredReqJsonMessage\x12\x1b\n\x13\x43redReqMetadataJson\x18\x02 \x01(\t\"\xab\x01\n\x12\x43redReqJsonMessage\x12\x11\n\tProverDid\x18\x01 \x01(\t\x12\x11\n\tCredDefId\x18\x02 \x01(\t\x12\'\n\tBlindedMs\x18\x03 \x01(\x0b\x32\x14.google.protobuf.Any\x12\x37\n\x19\x42lindedMsCorrectnessProof\x18\x04 \x01(\x0b\x32\x14.google.protobuf.Any\x12\r\n\x05Nonce\x18\x05 \x01(\t\"\x9f\x01\n\x1cProverStoreCredentialRequest\x12\x14\n\x0cWalletHandle\x18\x01 \x01(\x03\x12\x0e\n\x06\x43redId\x18\x02 \x01(\t\x12\x1b\n\x13\x43redReqMetadataJson\x18\x03 \x01(\t\x12\x10\n\x08\x43redJson\x18\x04 \x01(\t\x12\x13\n\x0b\x43redDefJson\x18\x05 \x01(\t\x12\x15\n\rRevRegDefJson\x18\x06 \x01(\t\"/\n\x1dProverStoreCredentialResponse\x12\x0e\n\x06\x43redId\x18\x01 \x01(\t\"B\n\x1aProverGetCredentialRequest\x12\x14\n\x0cWalletHandle\x18\x01 \x01(\x03\x12\x0e\n\x06\x43redId\x18\x02 \x01(\t\"\x88\x01\n\x1bProverGetCredentialResponse\x12\x10\n\x08Referent\x18\x01 \x01(\t\x12\r\n\x05\x41ttrs\x18\x02 \x01(\t\x12\x10\n\x08SchemaId\x18\x03 \x01(\t\x12\x11\n\tCredDefId\x18\x04 \x01(\t\x12\x10\n\x08RevRegId\x18\x05 \x01(\t\x12\x11\n\tCredRevId\x18\x06 \x01(\t\"i\n\x1bProverGetCredentialsRequest\x12\x14\n\x0cWalletHandle\x18\x01 \x01(\x03\x12\x34\n\nFilterJson\x18\x02 \x01(\x0b\x32 .identitylayer.FilterJsonMessage\"\x8f\x01\n\x11\x46ilterJsonMessage\x12\x10\n\x08SchemaId\x18\x01 \x01(\t\x12\x17\n\x0fSchemaIssuerDid\x18\x02 \x01(\t\x12\x12\n\nSchemaName\x18\x03 \x01(\t\x12\x15\n\rSchemaVersion\x18\x04 \x01(\t\x12\x11\n\tIssuerDid\x18\x05 \x01(\t\x12\x11\n\tCredDefId\x18\x06 \x01(\t\"^\n\x1cProverGetCredentialsResponse\x12>\n\x0f\x43redentialsJson\x18\x01 \x03(\x0b\x32%.identitylayer.CredentialsJsonMessage\"\x83\x01\n\x16\x43redentialsJsonMessage\x12\x10\n\x08Referent\x18\x01 \x01(\t\x12\r\n\x05\x41ttrs\x18\x02 \x01(\t\x12\x10\n\x08SchemaID\x18\x03 \x01(\t\x12\x11\n\tCredDefId\x18\x04 \x01(\t\x12\x10\n\x08RevRegId\x18\x05 \x01(\t\x12\x11\n\tCredRevId\x18\x06 \x01(\t\"H\n\x1dProverSeachCredentialsRequest\x12\x14\n\x0cWalletHandle\x18\x01 \x01(\x03\x12\x11\n\tQueryJson\x18\x02 \x01(\t\"J\n\x1eProverSeachCredentialsResponse\x12\x14\n\x0cSearchHandle\x18\x01 \x01(\x03\x12\x12\n\nTotalCount\x18\x02 \x01(\x03\"D\n\x1dProverFetchCredentialsRequest\x12\x14\n\x0cSearchHandle\x18\x01 \x01(\x03\x12\r\n\x05\x43ount\x18\x02 \x01(\x03\"`\n\x1eProverFetchCredentialsResponse\x12>\n\x0f\x43redentialsJson\x18\x01 \x03(\x0b\x32%.identitylayer.CredentialsJsonMessage\";\n#ProverCloseCredentialsSearchRequest\x12\x14\n\x0cSearchHandle\x18\x01 \x01(\x03\"4\n$ProverCloseCredentialsSearchResponse\x12\x0c\n\x04Resp\x18\x01 \x01(\t\"\x80\x01\n&ProverGetCredentialsForProofReqRequest\x12\x14\n\x0cWalletHandle\x18\x01 \x01(\x03\x12@\n\x10ProofRequestJson\x18\x02 \x01(\x0b\x32&.identitylayer.ProofRequestJsonMessage\"\xab\x01\n\x17ProofRequestJsonMessage\x12\x0c\n\x04Name\x18\x01 \x01(\t\x12\x0f\n\x07Version\x18\x02 \x01(\t\x12\r\n\x05Nonce\x18\x03 \x01(\t\x12\x1b\n\x13RequestedAttributes\x18\x04 \x01(\t\x12\x1b\n\x13RequestedPredicates\x18\x05 \x01(\t\x12(\n\nNonRevoked\x18\x06 \x01(\x0b\x32\x14.google.protobuf.Any\"^\n\'ProverGetCredentialsForProofReqResponse\x12\x16\n\x0eRequestedAttrs\x18\x01 \x01(\t\x12\x1b\n\x13RequestedPredicates\x18\x02 \x01(\t\"\xc1\x01\n)ProverSearchCredentialsForProofReqRequest\x12\x14\n\x0cWalletHandle\x18\x01 \x01(\x03\x12@\n\x10ProofRequestJson\x18\x02 \x01(\x0b\x32&.identitylayer.ProofRequestJsonMessage\x12<\n\x0e\x45xtraQueryJson\x18\x03 \x01(\x0b\x32$.identitylayer.ExtraQueryJsonMessage\"t\n\x15\x45xtraQueryJsonMessage\x12*\n\x0c\x41ttrReferent\x18\x01 \x01(\x0b\x32\x14.google.protobuf.Any\x12/\n\x11PredicateReferent\x18\x02 \x01(\x0b\x32\x14.google.protobuf.Any\"B\n*ProverSearchCredentialsForProofReqResponse\x12\x14\n\x0cSearchHandle\x18\x01 \x01(\x03\"f\n(ProverFetchCredentialsForProofReqRequest\x12\x14\n\x0cSearchHandle\x18\x01 \x01(\x03\x12\x15\n\rItemReference\x18\x02 \x01(\t\x12\r\n\x05\x43ount\x18\x03 \x01(\x03\"q\n)ProverFetchCredentialsForProofReqResponse\x12\x44\n\x0f\x43redentialsJson\x18\x01 \x03(\x0b\x32+.identitylayer.CredentialsGivenProofRequest\"w\n\x1c\x43redentialsGivenProofRequest\x12/\n\x08\x43redInfo\x18\x01 \x01(\x0b\x32\x1d.identitylayer.CredentialInfo\x12&\n\x08Interval\x18\x02 \x01(\x0b\x32\x14.google.protobuf.Any\"{\n\x0e\x43redentialInfo\x12\x10\n\x08Referent\x18\x01 \x01(\t\x12\r\n\x05\x41ttrs\x18\x02 \x01(\t\x12\x10\n\x08SchemaId\x18\x03 \x01(\t\x12\x11\n\tCredDefId\x18\x04 \x01(\t\x12\x10\n\x08RevRegId\x18\x05 \x01(\x03\x12\x11\n\tCredRevId\x18\x06 \x01(\x03\"F\n.ProverCloseCredentialsSearchForProofReqRequest\x12\x14\n\x0cSearchHandle\x18\x01 \x01(\x03\"?\n/ProverCloseCredentialsSearchForProofReqResponse\x12\x0c\n\x04Resp\x18\x01 \x01(\t\"\x9e\x02\n\x18ProverCreateProofRequest\x12\x14\n\x0cWalletHandle\x18\x01 \x01(\x03\x12\x38\n\x0cProofReqJson\x18\x02 \x01(\x0b\x32\".identitylayer.ProofReqJsonMessage\x12P\n\x18RequestedCredentialsJson\x18\x03 \x01(\x0b\x32..identitylayer.RequestedCredentialsJsonMessage\x12\x18\n\x10MasterSecretName\x18\x04 \x01(\t\x12\x13\n\x0bSchemasJson\x18\x05 \x01(\t\x12\x1a\n\x12\x43redentialDefsJson\x18\x06 \x01(\t\x12\x15\n\rRevStatesJson\x18\x07 \x01(\t\"\xbe\x01\n\x13ProofReqJsonMessage\x12\x0c\n\x04Name\x18\x01 \x01(\t\x12\x0f\n\x07Version\x18\x02 \x01(\t\x12\r\n\x05Nonce\x18\x03 \x01(\t\x12\x1b\n\x13RequestedAttributes\x18\x04 \x01(\t\x12\x1b\n\x13RequestedPredicates\x18\x05 \x01(\t\x12?\n\x0fNonRevoInterval\x18\x06 \x01(\x0b\x32&.identitylayer.NonRevocIntervalMessage\"3\n\x17NonRevocIntervalMessage\x12\x0c\n\x04\x46rom\x18\x01 \x01(\x03\x12\n\n\x02To\x18\x02 \x01(\x03\"{\n\x1fRequestedCredentialsJsonMessage\x12\x1e\n\x16SelfAttestedAttributes\x18\x01 \x01(\t\x12\x1b\n\x13RequestedAttributes\x18\x02 \x01(\t\x12\x1b\n\x13RequestedPredicates\x18\x03 \x01(\t\"R\n\x19ProverCreateProofResponse\x12\x11\n\tRequested\x18\x01 \x01(\t\x12\r\n\x05Proof\x18\x02 \x01(\t\x12\x13\n\x0bidentifiers\x18\x03 \x01(\t\"\xce\x01\n\x1aVerifierVerifyProofRequest\x12@\n\x10ProofRequestJson\x18\x01 \x01(\x0b\x32&.identitylayer.ProofRequestJsonMessage\x12\x11\n\tProofJson\x18\x02 \x01(\t\x12\x13\n\x0bSchemasJson\x18\x03 \x01(\t\x12\x1a\n\x12\x43redentialDefsJson\x18\x04 \x01(\t\x12\x16\n\x0eRevRegDefsJson\x18\x05 \x01(\t\x12\x12\n\nRevRegJson\x18\x06 \x01(\t\",\n\x1bVerifierVerifyProofResponse\x12\r\n\x05Valid\x18\x01 \x01(\x08\"\x95\x01\n\x1c\x43reateRevocationStateRequest\x12\x1f\n\x17\x42lobStorageReaderHandle\x18\x01 \x01(\x03\x12\x15\n\rRevRegDefJson\x18\x02 \x01(\t\x12\x17\n\x0fRevRegDeltaJson\x18\x03 \x01(\t\x12\x11\n\tTimestamp\x18\x04 \x01(\x03\x12\x11\n\tCredRevId\x18\x05 \x01(\t\"S\n\x1d\x43reateRevocationStateResponse\x12\x0e\n\x06RevReg\x18\x01 \x01(\t\x12\x0f\n\x07Witness\x18\x02 \x01(\t\x12\x11\n\tTimestamp\x18\x03 \x01(\x03\"\xab\x01\n\x1cUpdateRevocationStateRequest\x12\x1f\n\x17\x42lobStorageReaderHandle\x18\x01 \x01(\x03\x12\x14\n\x0cRevStateJson\x18\x02 \x01(\t\x12\x15\n\rRevRegDefJson\x18\x03 \x01(\t\x12\x17\n\x0fRevRegDeltaJson\x18\x04 \x01(\t\x12\x11\n\tTimestamp\x18\x05 \x01(\x03\x12\x11\n\tCredRevId\x18\x06 \x01(\t\"S\n\x1dUpdateRevocationStateResponse\x12\x0e\n\x06RevReg\x18\x01 \x01(\t\x12\x0f\n\x07Witness\x18\x02 \x01(\t\x12\x11\n\tTimestamp\x18\x03 \x01(\x03\"B\n\x10\x43reateKeyRequest\x12\x14\n\x0cWalletHandle\x18\x01 \x01(\x03\x12\x18\n\x10KeyJsonCreateKey\x18\x02 \x01(\t\"4\n\x10KeyJsonCreateKey\x12\x0c\n\x04seed\x18\x01 \x01(\t\x12\x12\n\nCryptoType\x18\x02 \x01(\t\"#\n\x11\x43reateKeyResponse\x12\x0e\n\x06Verkey\x18\x01 \x01(\t\"O\n\x15SetKeyMetadataRequest\x12\x14\n\x0cWalletHandle\x18\x01 \x01(\x03\x12\x0e\n\x06Verkey\x18\x02 \x01(\t\x12\x10\n\x08Metadata\x18\x03 \x01(\t\"+\n\x16SetKeyMetadataResponse\x12\x11\n\tErrorCode\x18\x01 \x01(\x03\"=\n\x15GetKeyMetadataRequest\x12\x14\n\x0cWalletHandle\x18\x01 \x01(\x03\x12\x0e\n\x06Verkey\x18\x02 \x01(\t\"*\n\x16GetKeyMetadataResponse\x12\x10\n\x08Metadata\x18\x01 \x01(\t\"H\n\x11\x43ryptoSignRequest\x12\x14\n\x0cWalletHandle\x18\x01 \x01(\x03\x12\x10\n\x08SignerVk\x18\x02 \x01(\t\x12\x0b\n\x03Msg\x18\x03 \x01(\x0c\"\'\n\x12\x43ryptoSignResponse\x12\x11\n\tSignature\x18\x01 \x01(\x0c\"G\n\x13\x43ryptoVerifyRequest\x12\x10\n\x08SignerVk\x18\x01 \x01(\t\x12\x0b\n\x03Msg\x18\x02 \x01(\x0c\x12\x11\n\tSignature\x18\x03 \x01(\x0c\"%\n\x14\x43ryptoVerifyResponse\x12\r\n\x05Valid\x18\x01 \x01(\x08\"\\\n\x10\x41uthCryptRequest\x12\x14\n\x0cWalletHandle\x18\x01 \x01(\x03\x12\x10\n\x08SenderVk\x18\x02 \x01(\t\x12\x13\n\x0bRecipientVk\x18\x03 \x01(\t\x12\x0b\n\x03Msg\x18\x04 \x01(\x0c\" \n\x11\x41uthCryptResponse\x12\x0b\n\x03Msg\x18\x01 \x01(\x0c\"U\n\x12\x41uthDecryptRequest\x12\x14\n\x0cWalletHandle\x18\x01 \x01(\x03\x12\x13\n\x0bRecipientVk\x18\x02 \x01(\t\x12\x14\n\x0c\x45ncryptedMsg\x18\x03 \x01(\x0c\"2\n\x13\x41uthDecryptResponse\x12\x0e\n\x06Verkey\x18\x01 \x01(\t\x12\x0b\n\x03Msg\x18\x02 \x01(\x0c\"4\n\x10\x41nonCryptRequest\x12\x13\n\x0bRecipientVk\x18\x01 \x01(\t\x12\x0b\n\x03Msg\x18\x02 \x01(\x0c\" \n\x11\x41nonCryptResponse\x12\x0b\n\x03Msg\x18\x01 \x01(\x0c\"U\n\x12\x41nonDecryptRequest\x12\x14\n\x0cWalletHandle\x18\x01 \x01(\x03\x12\x13\n\x0bRecipientVk\x18\x02 \x01(\t\x12\x14\n\x0c\x45ncryptedMsg\x18\x03 \x01(\x0c\"+\n\x13\x41nonDecryptResponse\x12\x14\n\x0c\x44\x65\x63ryptedMsg\x18\x01 \x01(\x0c\"A\n\x17IsPairwiseExistsRequest\x12\x14\n\x0cWalletHandle\x18\x01 \x01(\x03\x12\x10\n\x08TheirDid\x18\x02 \x01(\t\"\'\n\x18IsPairwiseExistsResponse\x12\x0b\n\x03Res\x18\x01 \x01(\x08\"`\n\x15\x43reatePairwiseRequest\x12\x14\n\x0cWalletHandle\x18\x01 \x01(\x03\x12\x10\n\x08TheirDid\x18\x02 \x01(\t\x12\r\n\x05MyDid\x18\x03 \x01(\t\x12\x10\n\x08Metadata\x18\x04 \x01(\t\"+\n\x16\x43reatePairwiseResponse\x12\x11\n\tErrorCode\x18\x01 \x01(\x03\"+\n\x13ListPairwiseRequest\x12\x14\n\x0cWalletHandle\x18\x01 \x01(\x03\",\n\x14ListPairwiseResponse\x12\x14\n\x0cPairwiseList\x18\x01 \x03(\t\"<\n\x12GetPairwiseRequest\x12\x14\n\x0cWalletHandle\x18\x01 \x01(\x03\x12\x10\n\x08TheirDid\x18\x02 \x01(\t\"/\n\x13GetPairwiseResponse\x12\x18\n\x10PairwiseInfoJson\x18\x01 \x01(\t\"V\n\x1aSetPairwiseMetadataRequest\x12\x14\n\x0cWalletHandle\x18\x01 \x01(\x03\x12\x10\n\x08TheirDid\x18\x02 \x01(\t\x12\x10\n\x08MetaData\x18\x03 \x01(\t\"0\n\x1bSetPairwiseMetadataResponse\x12\x11\n\tErrorCode\x18\x01 \x01(\x03\"r\n\x1a\x43reateAndStoreMyDidRequest\x12\x14\n\x0cWalletHandle\x18\x01 \x01(\x03\x12>\n\x07\x44idJson\x18\x02 \x01(\x0b\x32-.identitylayer.CreateAndStoreMyDidJsonMessage\"\\\n\x1e\x43reateAndStoreMyDidJsonMessage\x12\x0b\n\x03\x44id\x18\x01 \x01(\t\x12\x0c\n\x04Seed\x18\x02 \x01(\t\x12\x12\n\nCryptoType\x18\x03 \x01(\t\x12\x0b\n\x03\x43id\x18\x04 \x01(\x08\":\n\x1b\x43reateAndStoreMyDidResponse\x12\x0b\n\x03\x44id\x18\x01 \x01(\t\x12\x0e\n\x06Verkey\x18\x02 \x01(\t\"\x86\x01\n\x17ReplaceKeysStartRequest\x12\x14\n\x0cWalletHandle\x18\x01 \x01(\x03\x12\x0b\n\x03\x44id\x18\x02 \x01(\t\x12H\n\x0cIdentityJson\x18\x03 \x01(\x0b\x32\x32.identitylayer.ReplaceKeysStartIdentityJsonMessage\"G\n#ReplaceKeysStartIdentityJsonMessage\x12\x0c\n\x04Seed\x18\x01 \x01(\t\x12\x12\n\nCryptoType\x18\x02 \x01(\t\"*\n\x18ReplaceKeysStartResponse\x12\x0e\n\x06Verkey\x18\x01 \x01(\t\"<\n\x17ReplaceKeysApplyRequest\x12\x14\n\x0cWalletHandle\x18\x01 \x01(\x03\x12\x0b\n\x03\x44id\x18\x02 \x01(\t\"-\n\x18ReplaceKeysApplyResponse\x12\x11\n\tErrorCode\x18\x01 \x01(\x03\"s\n\x14StoreTheirDidRequest\x12\x14\n\x0cWalletHandle\x18\x01 \x01(\x03\x12\x45\n\x0cIdentityJson\x18\x02 \x01(\x0b\x32/.identitylayer.StoreTheirDidIdentityJsonMessage\"S\n StoreTheirDidIdentityJsonMessage\x12\x0b\n\x03\x44id\x18\x01 \x01(\t\x12\x0e\n\x06Verkey\x18\x02 \x01(\t\x12\x12\n\nCryptoType\x18\x03 \x01(\t\"*\n\x15StoreTheirDidResponse\x12\x11\n\tErrorCode\x18\x01 \x01(\x03\"<\n\x13\x44idCreateKeyRequest\x12\x14\n\x0cWalletHandle\x18\x01 \x01(\x03\x12\x0f\n\x07KeyJson\x18\x02 \x01(\t\"&\n\x14\x44idCreateKeyResponse\x12\x0e\n\x06Verkey\x18\x01 \x01(\t\"R\n\x18\x44idSetKeyMetadataRequest\x12\x14\n\x0cWalletHandle\x18\x01 \x01(\x03\x12\x0e\n\x06Verkey\x18\x02 \x01(\t\x12\x10\n\x08Metadata\x18\x03 \x01(\t\".\n\x19\x44idSetKeyMetadataResponse\x12\x11\n\tErrorCode\x18\x01 \x01(\x03\"@\n\x18\x44idGetKeyMetadataRequest\x12\x14\n\x0cWalletHandle\x18\x01 \x01(\x03\x12\x0e\n\x06Verkey\x18\x02 \x01(\t\"-\n\x19\x44idGetKeyMetadataResponse\x12\x10\n\x08Metadata\x18\x01 \x01(\t\"I\n\x10KeyForDidRequest\x12\x12\n\nPoolHandle\x18\x01 \x01(\x03\x12\x14\n\x0cWalletHandle\x18\x02 \x01(\x03\x12\x0b\n\x03\x44id\x18\x03 \x01(\t\" \n\x11KeyForDidResponse\x12\x0b\n\x03Key\x18\x01 \x01(\t\":\n\x15KeyForLocalDidRequest\x12\x14\n\x0cWalletHandle\x18\x01 \x01(\x03\x12\x0b\n\x03\x44id\x18\x02 \x01(\t\"%\n\x16KeyForLocalDidResponse\x12\x0b\n\x03Key\x18\x01 \x01(\t\"d\n\x18SetEndpointForDidRequest\x12\x14\n\x0cWalletHandle\x18\x01 \x01(\x03\x12\x0b\n\x03\x44id\x18\x02 \x01(\t\x12\x0f\n\x07\x41\x64\x64ress\x18\x03 \x01(\t\x12\x14\n\x0cTransportKey\x18\x04 \x01(\t\".\n\x19SetEndpointForDidResponse\x12\x11\n\tErrorCode\x18\x01 \x01(\x03\"Q\n\x18GetEndpointForDidRequest\x12\x14\n\x0cWalletHandle\x18\x01 \x01(\x03\x12\x12\n\nPoolHandle\x18\x02 \x01(\x03\x12\x0b\n\x03\x44id\x18\x03 \x01(\t\"B\n\x19GetEndpointForDidResponse\x12\x10\n\x08\x45ndpoint\x18\x01 \x01(\t\x12\x13\n\x0bTransportVk\x18\x02 \x01(\t\"L\n\x15SetDidMetadataRequest\x12\x14\n\x0cWalletHandle\x18\x01 \x01(\x03\x12\x0b\n\x03\x44id\x18\x02 \x01(\t\x12\x10\n\x08Metadata\x18\x03 \x01(\t\"\'\n\x16SetDidMetadataResponse\x12\r\n\x05\x45rror\x18\x01 \x01(\x03\":\n\x15GetDidMetadataRequest\x12\x14\n\x0cWalletHandle\x18\x01 \x01(\x03\x12\x0b\n\x03\x44id\x18\x02 \x01(\t\"*\n\x16GetDidMetadataResponse\x12\x10\n\x08Metadata\x18\x01 \x01(\t\"<\n\x17GetMyDidWithMetaRequest\x12\x14\n\x0cWalletHandle\x18\x01 \x01(\x03\x12\x0b\n\x03\x44id\x18\x02 \x01(\t\"\'\n\x18GetMyDidWithMetaResponse\x12\x0b\n\x03\x44id\x18\x01 \x01(\t\"1\n\x19ListMyDidsWithMetaRequest\x12\x14\n\x0cWalletHandle\x18\x01 \x01(\x03\")\n\x1aListMyDidsWithMetaResponse\x12\x0b\n\x03\x44id\x18\x01 \x03(\t\":\n\x17\x41\x62\x62reviateVerkeyRequest\x12\x0b\n\x03\x44id\x18\x01 \x01(\t\x12\x12\n\nFullVerkey\x18\x02 \x01(\t\",\n\x18\x41\x62\x62reviateVerkeyResponse\x12\x10\n\x08Metadata\x18\x01 \x01(\t\"m\n\x16SignAndSubmitRequestRq\x12\x12\n\nPoolHandle\x18\x01 \x01(\x03\x12\x14\n\x0cWalletHandle\x18\x02 \x01(\x03\x12\x14\n\x0cSubmitterDid\x18\x03 \x01(\t\x12\x13\n\x0bRequestJson\x18\x04 \x01(\t\"&\n\x16SignAndSubmitRequestRs\x12\x0c\n\x04Resp\x18\x01 \x01(\t\":\n\x0fSubmitRequestRq\x12\x12\n\nPoolHandle\x18\x01 \x01(\x03\x12\x13\n\x0bRequestJson\x18\x02 \x01(\t\"\x1f\n\x0fSubmitRequestRs\x12\x0c\n\x04Resp\x18\x01 \x01(\t\"Y\n\x0eSubmitActionRq\x12\x12\n\nPoolHandle\x18\x01 \x01(\x03\x12\x13\n\x0bRequestJson\x18\x02 \x01(\t\x12\r\n\x05Nodes\x18\x03 \x01(\t\x12\x0f\n\x07Timeout\x18\x04 \x01(\x03\"\x1e\n\x0eSubmitActionRs\x12\x0c\n\x04Resp\x18\x01 \x01(\t\"P\n\rSignRequestRq\x12\x14\n\x0cWalletHandle\x18\x01 \x01(\x03\x12\x14\n\x0cSubmitterDid\x18\x02 \x01(\t\x12\x13\n\x0bRequestJson\x18\x03 \x01(\t\"\x1d\n\rSignRequestRs\x12\x0c\n\x04Resp\x18\x01 \x01(\t\"U\n\x12MultiSignRequestRq\x12\x14\n\x0cWalletHandle\x18\x01 \x01(\x03\x12\x14\n\x0cSubmitterDid\x18\x02 \x01(\t\x12\x13\n\x0bRequestJson\x18\x03 \x01(\t\"\"\n\x12MultiSignRequestRs\x12\x0c\n\x04Resp\x18\x01 \x01(\t\"?\n\x14\x42uildGetDdoRequestRq\x12\x14\n\x0cSubmitterDid\x18\x01 \x01(\t\x12\x11\n\tTargetDid\x18\x02 \x01(\t\"$\n\x14\x42uildGetDdoRequestRs\x12\x0c\n\x04Resp\x18\x01 \x01(\t\"i\n\x11\x42uildNymRequestRq\x12\x14\n\x0cSubmitterDid\x18\x01 \x01(\t\x12\x11\n\tTargetDid\x18\x02 \x01(\t\x12\x0e\n\x06VerKey\x18\x03 \x01(\t\x12\r\n\x05\x41lias\x18\x04 \x01(\t\x12\x0c\n\x04Role\x18\x05 \x01(\t\"!\n\x11\x42uildNymRequestRs\x12\x0c\n\x04Resp\x18\x01 \x01(\t\"h\n\x14\x42uildAttribRequestRq\x12\x14\n\x0cSubmitterDid\x18\x01 \x01(\t\x12\x11\n\tTargetDid\x18\x02 \x01(\t\x12\r\n\x05Xhash\x18\x03 \x01(\t\x12\x0b\n\x03Raw\x18\x04 \x01(\t\x12\x0b\n\x03\x45nc\x18\x05 \x01(\t\"$\n\x14\x42uildAttribRequestRs\x12\x0c\n\x04Resp\x18\x01 \x01(\t\"k\n\x17\x42uildGetAttribRequestRq\x12\x14\n\x0cSubmitterDid\x18\x01 \x01(\t\x12\x11\n\tTargetDid\x18\x02 \x01(\t\x12\r\n\x05Xhash\x18\x03 \x01(\t\x12\x0b\n\x03Raw\x18\x04 \x01(\t\x12\x0b\n\x03\x45nc\x18\x05 \x01(\t\"\'\n\x17\x42uildGetAttribRequestRs\x12\x0c\n\x04Resp\x18\x01 \x01(\t\"?\n\x14\x42uildGetNymRequestRq\x12\x14\n\x0cSubmitterDid\x18\x01 \x01(\t\x12\x11\n\tTargetDid\x18\x02 \x01(\t\"$\n\x14\x42uildGetNymRequestRs\x12\x0c\n\x04Resp\x18\x01 \x01(\t\":\n\x14\x42uildSchemaRequestRq\x12\x14\n\x0cSubmitterDid\x18\x01 \x01(\t\x12\x0c\n\x04\x44\x61ta\x18\x02 \x01(\t\"$\n\x14\x42uildSchemaRequestRs\x12\x0c\n\x04Resp\x18\x01 \x01(\t\"<\n\x17\x42uildGetSchemaRequestRq\x12\x14\n\x0cSubmitterDid\x18\x01 \x01(\t\x12\x0b\n\x03Id_\x18\x02 \x01(\t\"\'\n\x17\x42uildGetSchemaRequestRs\x12\x0c\n\x04Resp\x18\x01 \x01(\t\"5\n\x18ParseGetSchemaResponseRq\x12\x19\n\x11GetSchemaResponse\x18\x01 \x01(\t\":\n\x18ParseGetSchemaResponseRs\x12\n\n\x02Id\x18\x01 \x01(\t\x12\x12\n\nSchemaJson\x18\x02 \x01(\t\";\n\x15\x42uildCredDefRequestRq\x12\x14\n\x0cSubmitterDid\x18\x01 \x01(\t\x12\x0c\n\x04\x44\x61ta\x18\x02 \x01(\t\"%\n\x15\x42uildCredDefRequestRs\x12\x0c\n\x04Resp\x18\x01 \x01(\t\"=\n\x18\x42uildGetCredDefRequestRq\x12\x14\n\x0cSubmitterDid\x18\x01 \x01(\t\x12\x0b\n\x03Id_\x18\x02 \x01(\t\"(\n\x18\x42uildGetCredDefRequestRs\x12\x0c\n\x04Resp\x18\x01 \x01(\t\"7\n\x19ParseGetCredDefResponseRq\x12\x1a\n\x12GetCredDefResponse\x18\x01 \x01(\t\"]\n\x19ParseGetCredDefResponseRs\x12\x1e\n\x16\x43redentialDefinitionId\x18\x01 \x01(\t\x12 \n\x18\x43redentialDefinitionJson\x18\x02 \x01(\t\"K\n\x12\x42uildNodeRequestRq\x12\x14\n\x0cSubmitterDid\x18\x01 \x01(\t\x12\x11\n\tTargetDid\x18\x02 \x01(\t\x12\x0c\n\x04\x44\x61ta\x18\x03 \x01(\t\"\"\n\x12\x42uildNodeRequestRs\x12\x0c\n\x04Resp\x18\x01 \x01(\t\"6\n\x1e\x42uildGetValidatorInfoRequestRq\x12\x14\n\x0cSubmitterDid\x18\x01 \x01(\t\".\n\x1e\x42uildGetValidatorInfoRequestRs\x12\x0c\n\x04Resp\x18\x01 \x01(\t\"O\n\x14\x42uildGetTxnRequestRq\x12\x14\n\x0cSubmitterDid\x18\x01 \x01(\t\x12\x12\n\nLedgerType\x18\x02 \x01(\t\x12\r\n\x05SeqNo\x18\x03 \x01(\t\"$\n\x14\x42uildGetTxnRequestRs\x12\x0c\n\x04Resp\x18\x01 \x01(\t\"O\n\x18\x42uildPoolConfigRequestRq\x12\x14\n\x0cSubmitterDid\x18\x01 \x01(\t\x12\x0e\n\x06Writes\x18\x02 \x01(\x08\x12\r\n\x05\x46orce\x18\x03 \x01(\x08\"(\n\x18\x42uildPoolConfigRequestRs\x12\x0c\n\x04Resp\x18\x01 \x01(\t\"S\n\x19\x42uildPoolRestartRequestRq\x12\x14\n\x0cSubmitterDid\x18\x01 \x01(\t\x12\x0e\n\x06\x41\x63tion\x18\x02 \x01(\t\x12\x10\n\x08\x44\x61tetime\x18\x03 \x01(\t\")\n\x19\x42uildPoolRestartRequestRs\x12\x0c\n\x04Resp\x18\x01 \x01(\t\"\xdf\x01\n\x19\x42uildPoolUpgradeRequestRq\x12\x14\n\x0cSubmitterDid\x18\x01 \x01(\t\x12\x0c\n\x04Name\x18\x02 \x01(\t\x12\x0f\n\x07Version\x18\x03 \x01(\t\x12\x0e\n\x06\x41\x63tion\x18\x04 \x01(\t\x12\x0f\n\x07_sha256\x18\x05 \x01(\t\x12\x10\n\x08_timeout\x18\x06 \x01(\x03\x12\x10\n\x08Schedule\x18\x07 \x01(\t\x12\x15\n\rJustification\x18\x08 \x01(\t\x12\x11\n\tReinstall\x18\t \x01(\x08\x12\r\n\x05\x46orce\x18\n \x01(\x08\x12\x0f\n\x07Package\x18\x0b \x01(\t\")\n\x19\x42uildPoolUpgradeRequestRs\x12\x0c\n\x04Resp\x18\x01 \x01(\t\"?\n\x19\x42uildRevocRegDefRequestRq\x12\x14\n\x0cSubmitterDid\x18\x01 \x01(\t\x12\x0c\n\x04\x44\x61ta\x18\x02 \x01(\t\")\n\x19\x42uildRevocRegDefRequestRs\x12\x0c\n\x04Resp\x18\x01 \x01(\t\"I\n\x1c\x42uildGetRevocRegDefRequestRq\x12\x14\n\x0cSubmitterDid\x18\x01 \x01(\t\x12\x13\n\x0bRevRegDefId\x18\x02 \x01(\t\",\n\x1c\x42uildGetRevocRegDefRequestRs\x12\x0c\n\x04Resp\x18\x01 \x01(\t\"?\n\x1dParseGetRevocRegDefResponseRq\x12\x1e\n\x16GetRevocRefDefResponse\x18\x01 \x01(\t\"M\n\x1dParseGetRevocRegDefResponseRs\x12\x14\n\x0cRevocationId\x18\x01 \x01(\t\x12\x16\n\x0eRevocationJson\x18\x02 \x01(\t\"m\n\x1b\x42uildRevocRegEntryRequestRq\x12\x14\n\x0cSubmitterDid\x18\x01 \x01(\t\x12\x15\n\rRevocRegDefId\x18\x02 \x01(\t\x12\x12\n\nRevDefType\x18\x03 \x01(\t\x12\r\n\x05Value\x18\x04 \x01(\t\"+\n\x1b\x42uildRevocRegEntryRequestRs\x12\x0c\n\x04Resp\x18\x01 \x01(\t\"[\n\x19\x42uildGetRevocRegRequestRq\x12\x14\n\x0cSubmitterDid\x18\x01 \x01(\t\x12\x15\n\rRevocRegDefId\x18\x02 \x01(\t\x12\x11\n\tTimestamp\x18\x03 \x01(\t\")\n\x19\x42uildGetRevocRegRequestRs\x12\x0c\n\x04Resp\x18\x01 \x01(\t\"9\n\x1aParseGetRevocRegResponseRq\x12\x1b\n\x13GetRevocRegResponse\x18\x01 \x01(\t\"I\n\x1aParseGetRevocRegResponseRs\x12\n\n\x02Id\x18\x01 \x01(\t\x12\x0c\n\x04Json\x18\x02 \x01(\t\x12\x11\n\tTimestamp\x18\x03 \x01(\x03\"g\n\x1e\x42uildGetRevocRegDeltaRequestRq\x12\x13\n\x0bSubmiterDid\x18\x01 \x01(\t\x12\x15\n\rRevocRegDefId\x18\x02 \x01(\t\x12\r\n\x05\x46rom_\x18\x03 \x01(\x03\x12\n\n\x02To\x18\x04 \x01(\x03\".\n\x1e\x42uildGetRevocRegDeltaRequestRs\x12\x0c\n\x04Resp\x18\x01 \x01(\t\"C\n\x1fParseGetRevocRegDeltaResponseRq\x12 \n\x18GetRevocRegDeltaResponse\x18\x01 \x01(\t\"N\n\x1fParseGetRevocRegDeltaResponseRs\x12\n\n\x02Id\x18\x01 \x01(\t\x12\x0c\n\x04Json\x18\x02 \x01(\t\x12\x11\n\tTimestamp\x18\x03 \x01(\x03\")\n\x15GetResponseMetadataRq\x12\x10\n\x08Response\x18\x01 \x01(\t\"%\n\x15GetResponseMetadataRs\x12\x0c\n\x04Resp\x18\x01 \x01(\t\"k\n\x16\x41\x64\x64WalletRecordRequest\x12\x14\n\x0cWalletHandle\x18\x01 \x01(\x03\x12\r\n\x05Type_\x18\x02 \x01(\t\x12\x0b\n\x03Id_\x18\x03 \x01(\t\x12\r\n\x05Value\x18\x04 \x01(\t\x12\x10\n\x08TagsJson\x18\x05 \x01(\t\"\'\n\x17\x41\x64\x64WalletRecordResponse\x12\x0c\n\x04Resp\x18\x01 \x01(\t\"a\n\x1eUpdateWalletRecordValueRequest\x12\x14\n\x0cWalletHandle\x18\x01 \x01(\x03\x12\r\n\x05Type_\x18\x02 \x01(\t\x12\x0b\n\x03Id_\x18\x03 \x01(\t\x12\r\n\x05value\x18\x04 \x01(\t\"/\n\x1fUpdateWalletRecordValueResponse\x12\x0c\n\x04Resp\x18\x01 \x01(\t\"c\n\x1dUpdateWalletRecordTagsRequest\x12\x14\n\x0cWalletHandle\x18\x01 \x01(\x03\x12\r\n\x05Type_\x18\x02 \x01(\t\x12\x0b\n\x03Id_\x18\x03 \x01(\t\x12\x10\n\x08TagsJson\x18\x04 \x01(\t\".\n\x1eUpdateWalletRecordTagsResponse\x12\x0c\n\x04Resp\x18\x01 \x01(\t\"`\n\x1a\x41\x64\x64WalletRecordTagsRequest\x12\x14\n\x0cWalletHandle\x18\x01 \x01(\x03\x12\r\n\x05Type_\x18\x02 \x01(\t\x12\x0b\n\x03Id_\x18\x03 \x01(\t\x12\x10\n\x08TagsJson\x18\x04 \x01(\t\"+\n\x1b\x41\x64\x64WalletRecordTagsResponse\x12\x0c\n\x04Resp\x18\x01 \x01(\t\"g\n\x1d\x44\x65leteWalletRecordTagsRequest\x12\x14\n\x0cWalletHandle\x18\x01 \x01(\x03\x12\r\n\x05Type_\x18\x02 \x01(\t\x12\x0b\n\x03Id_\x18\x03 \x01(\t\x12\x14\n\x0cTagNamesJson\x18\x04 \x01(\t\".\n\x1e\x44\x65leteWalletRecordTagsResponse\x12\x0c\n\x04Resp\x18\x01 \x01(\t\"M\n\x19\x44\x65leteWalletRecordRequest\x12\x14\n\x0cWalletHandle\x18\x01 \x01(\x03\x12\r\n\x05Type_\x18\x02 \x01(\t\x12\x0b\n\x03Id_\x18\x03 \x01(\t\"*\n\x1a\x44\x65leteWalletRecordResponse\x12\x0c\n\x04Resp\x18\x01 \x01(\t\"^\n\x16GetWalletRecordRequest\x12\x14\n\x0cWalletHandle\x18\x01 \x01(\x03\x12\r\n\x05Type_\x18\x02 \x01(\t\x12\n\n\x02Id\x18\x03 \x01(\t\x12\x13\n\x0bOptionsJson\x18\x04 \x01(\t\"\'\n\x17GetWalletRecordResponse\x12\x0c\n\x04Resp\x18\x01 \x01(\t\"f\n\x17OpenWalletSearchRequest\x12\x14\n\x0cWalletHandle\x18\x01 \x01(\x03\x12\r\n\x05Type_\x18\x02 \x01(\t\x12\x11\n\tQueryJson\x18\x03 \x01(\t\x12\x13\n\x0bOptionsJson\x18\x04 \x01(\t\"0\n\x18OpenWalletSearchResponse\x12\x14\n\x0cSearchHandle\x18\x01 \x01(\x03\"f\n#FetchWalletSearchNextRecordsRequest\x12\x14\n\x0cWalletHandle\x18\x01 \x01(\x03\x12\x1a\n\x12WalletSearchHandle\x18\x02 \x01(\x03\x12\r\n\x05\x43ount\x18\x03 \x01(\x03\"A\n$FetchWalletSearchNextRecordsResponse\x12\x19\n\x11WalletRecordsJson\x18\x01 \x01(\t\"6\n\x18\x43loseWalletSearchRequest\x12\x1a\n\x12WalletSearchHandle\x18\x01 \x01(\x03\")\n\x19\x43loseWalletSearchResponse\x12\x0c\n\x04Resp\x18\x01 \x01(\t2\x82\t\n\x10NonSecretService\x12\x62\n\x0f\x41\x64\x64WalletRecord\x12%.identitylayer.AddWalletRecordRequest\x1a&.identitylayer.AddWalletRecordResponse\"\x00\x12z\n\x17UpdateWalletRecordValue\x12-.identitylayer.UpdateWalletRecordValueRequest\x1a..identitylayer.UpdateWalletRecordValueResponse\"\x00\x12w\n\x16UpdateWalletRecordTags\x12,.identitylayer.UpdateWalletRecordTagsRequest\x1a-.identitylayer.UpdateWalletRecordTagsResponse\"\x00\x12n\n\x13\x41\x64\x64WalletRecordTags\x12).identitylayer.AddWalletRecordTagsRequest\x1a*.identitylayer.AddWalletRecordTagsResponse\"\x00\x12w\n\x16\x44\x65leteWalletRecordTags\x12,.identitylayer.DeleteWalletRecordTagsRequest\x1a-.identitylayer.DeleteWalletRecordTagsResponse\"\x00\x12k\n\x12\x44\x65leteWalletRecord\x12(.identitylayer.DeleteWalletRecordRequest\x1a).identitylayer.DeleteWalletRecordResponse\"\x00\x12\x62\n\x0fGetWalletRecord\x12%.identitylayer.GetWalletRecordRequest\x1a&.identitylayer.GetWalletRecordResponse\"\x00\x12\x65\n\x10OpenWalletSearch\x12&.identitylayer.OpenWalletSearchRequest\x1a\'.identitylayer.OpenWalletSearchResponse\"\x00\x12\x89\x01\n\x1c\x46\x65tchWalletSearchNextRecords\x12\x32.identitylayer.FetchWalletSearchNextRecordsRequest\x1a\x33.identitylayer.FetchWalletSearchNextRecordsResponse\"\x00\x12h\n\x11\x43loseWalletSearch\x12\'.identitylayer.CloseWalletSearchRequest\x1a(.identitylayer.CloseWalletSearchResponse\"\x00\x32\xe7\x19\n\rLedgerService\x12\x66\n\x14SignAndSubmitRequest\x12%.identitylayer.SignAndSubmitRequestRq\x1a%.identitylayer.SignAndSubmitRequestRs\"\x00\x12Q\n\rSubmitRequest\x12\x1e.identitylayer.SubmitRequestRq\x1a\x1e.identitylayer.SubmitRequestRs\"\x00\x12N\n\x0cSubmitAction\x12\x1d.identitylayer.SubmitActionRq\x1a\x1d.identitylayer.SubmitActionRs\"\x00\x12K\n\x0bSignRequest\x12\x1c.identitylayer.SignRequestRq\x1a\x1c.identitylayer.SignRequestRs\"\x00\x12Z\n\x10MultiSignRequest\x12!.identitylayer.MultiSignRequestRq\x1a!.identitylayer.MultiSignRequestRs\"\x00\x12`\n\x12\x42uildGetDdoRequest\x12#.identitylayer.BuildGetDdoRequestRq\x1a#.identitylayer.BuildGetDdoRequestRs\"\x00\x12W\n\x0f\x42uildNymRequest\x12 .identitylayer.BuildNymRequestRq\x1a .identitylayer.BuildNymRequestRs\"\x00\x12`\n\x12\x42uildAttribRequest\x12#.identitylayer.BuildAttribRequestRq\x1a#.identitylayer.BuildAttribRequestRs\"\x00\x12i\n\x15\x42uildGetAttribRequest\x12&.identitylayer.BuildGetAttribRequestRq\x1a&.identitylayer.BuildGetAttribRequestRs\"\x00\x12`\n\x12\x42uildGetNymRequest\x12#.identitylayer.BuildGetNymRequestRq\x1a#.identitylayer.BuildGetNymRequestRs\"\x00\x12`\n\x12\x42uildSchemaRequest\x12#.identitylayer.BuildSchemaRequestRq\x1a#.identitylayer.BuildSchemaRequestRs\"\x00\x12i\n\x15\x42uildGetSchemaRequest\x12&.identitylayer.BuildGetSchemaRequestRq\x1a&.identitylayer.BuildGetSchemaRequestRs\"\x00\x12l\n\x16ParseGetSchemaResponse\x12\'.identitylayer.ParseGetSchemaResponseRq\x1a\'.identitylayer.ParseGetSchemaResponseRs\"\x00\x12\x63\n\x13\x42uildCredDefRequest\x12$.identitylayer.BuildCredDefRequestRq\x1a$.identitylayer.BuildCredDefRequestRs\"\x00\x12l\n\x16\x42uildGetCredDefRequest\x12\'.identitylayer.BuildGetCredDefRequestRq\x1a\'.identitylayer.BuildGetCredDefRequestRs\"\x00\x12o\n\x17ParseGetCredDefResponse\x12(.identitylayer.ParseGetCredDefResponseRq\x1a(.identitylayer.ParseGetCredDefResponseRs\"\x00\x12Z\n\x10\x42uildNodeRequest\x12!.identitylayer.BuildNodeRequestRq\x1a!.identitylayer.BuildNodeRequestRs\"\x00\x12~\n\x1c\x42uildGetValidatorInfoRequest\x12-.identitylayer.BuildGetValidatorInfoRequestRq\x1a-.identitylayer.BuildGetValidatorInfoRequestRs\"\x00\x12`\n\x12\x42uildGetTxnRequest\x12#.identitylayer.BuildGetTxnRequestRq\x1a#.identitylayer.BuildGetTxnRequestRs\"\x00\x12l\n\x16\x42uildPoolConfigRequest\x12\'.identitylayer.BuildPoolConfigRequestRq\x1a\'.identitylayer.BuildPoolConfigRequestRs\"\x00\x12o\n\x17\x42uildPoolRestartRequest\x12(.identitylayer.BuildPoolRestartRequestRq\x1a(.identitylayer.BuildPoolRestartRequestRs\"\x00\x12o\n\x17\x42uildPoolUpgradeRequest\x12(.identitylayer.BuildPoolUpgradeRequestRq\x1a(.identitylayer.BuildPoolUpgradeRequestRs\"\x00\x12o\n\x17\x42uildRevocRegDefRequest\x12(.identitylayer.BuildRevocRegDefRequestRq\x1a(.identitylayer.BuildRevocRegDefRequestRs\"\x00\x12x\n\x1a\x42uildGetRevocRegDefRequest\x12+.identitylayer.BuildGetRevocRegDefRequestRq\x1a+.identitylayer.BuildGetRevocRegDefRequestRs\"\x00\x12{\n\x1bParseGetRevocRegDefResponse\x12,.identitylayer.ParseGetRevocRegDefResponseRq\x1a,.identitylayer.ParseGetRevocRegDefResponseRs\"\x00\x12u\n\x19\x42uildRevocRegEntryRequest\x12*.identitylayer.BuildRevocRegEntryRequestRq\x1a*.identitylayer.BuildRevocRegEntryRequestRs\"\x00\x12o\n\x17\x42uildGetRevocRegRequest\x12(.identitylayer.BuildGetRevocRegRequestRq\x1a(.identitylayer.BuildGetRevocRegRequestRs\"\x00\x12r\n\x18ParseGetRevocRegResponse\x12).identitylayer.ParseGetRevocRegResponseRq\x1a).identitylayer.ParseGetRevocRegResponseRs\"\x00\x12~\n\x1c\x42uildGetRevocRegDeltaRequest\x12-.identitylayer.BuildGetRevocRegDeltaRequestRq\x1a-.identitylayer.BuildGetRevocRegDeltaRequestRs\"\x00\x12\x81\x01\n\x1dParseGetRevocRegDeltaResponse\x12..identitylayer.ParseGetRevocRegDeltaResponseRq\x1a..identitylayer.ParseGetRevocRegDeltaResponseRs\"\x00\x12\x63\n\x13GetResponseMetadata\x12$.identitylayer.GetResponseMetadataRq\x1a$.identitylayer.GetResponseMetadataRs\"\x00\x32\xda\x0c\n\nDidService\x12n\n\x13\x43reateAndStoreMyDid\x12).identitylayer.CreateAndStoreMyDidRequest\x1a*.identitylayer.CreateAndStoreMyDidResponse\"\x00\x12\x65\n\x10ReplaceKeysStart\x12&.identitylayer.ReplaceKeysStartRequest\x1a\'.identitylayer.ReplaceKeysStartResponse\"\x00\x12\x65\n\x10ReplaceKeysApply\x12&.identitylayer.ReplaceKeysApplyRequest\x1a\'.identitylayer.ReplaceKeysApplyResponse\"\x00\x12\\\n\rStoreTheirDid\x12#.identitylayer.StoreTheirDidRequest\x1a$.identitylayer.StoreTheirDidResponse\"\x00\x12Y\n\x0c\x44idCreateKey\x12\".identitylayer.DidCreateKeyRequest\x1a#.identitylayer.DidCreateKeyResponse\"\x00\x12g\n\x11\x44idSetKeyMetadata\x12\'.identitylayer.DidSetKeyMetadataRequest\x1a\'.identitylayer.DidSetKeyMetadataRequest\"\x00\x12h\n\x11\x44idGetKeyMetadata\x12\'.identitylayer.DidGetKeyMetadataRequest\x1a(.identitylayer.DidGetKeyMetadataResponse\"\x00\x12P\n\tKeyForDid\x12\x1f.identitylayer.KeyForDidRequest\x1a .identitylayer.KeyForDidResponse\"\x00\x12_\n\x0eKeyForLocalDid\x12$.identitylayer.KeyForLocalDidRequest\x1a%.identitylayer.KeyForLocalDidResponse\"\x00\x12h\n\x11SetEndpointForDid\x12\'.identitylayer.SetEndpointForDidRequest\x1a(.identitylayer.SetEndpointForDidResponse\"\x00\x12h\n\x11GetEndpointForDid\x12\'.identitylayer.GetEndpointForDidRequest\x1a(.identitylayer.GetEndpointForDidResponse\"\x00\x12_\n\x0eSetDidMetadata\x12$.identitylayer.SetDidMetadataRequest\x1a%.identitylayer.SetDidMetadataResponse\"\x00\x12_\n\x0eGetDidMetadata\x12$.identitylayer.GetDidMetadataRequest\x1a%.identitylayer.GetDidMetadataResponse\"\x00\x12\x65\n\x10GetMyDidWithMeta\x12&.identitylayer.GetMyDidWithMetaRequest\x1a\'.identitylayer.GetMyDidWithMetaResponse\"\x00\x12k\n\x12ListMyDidsWithMeta\x12(.identitylayer.ListMyDidsWithMetaRequest\x1a).identitylayer.ListMyDidsWithMetaResponse\"\x00\x12\x65\n\x10\x41\x62\x62reviateVerkey\x12&.identitylayer.AbbreviateVerkeyRequest\x1a\'.identitylayer.AbbreviateVerkeyResponse\"\x00\x32\xfc\x03\n\x0fPairwiseService\x12\x65\n\x10IsPairwiseExists\x12&.identitylayer.IsPairwiseExistsRequest\x1a\'.identitylayer.IsPairwiseExistsResponse\"\x00\x12_\n\x0e\x43reatePairwise\x12$.identitylayer.CreatePairwiseRequest\x1a%.identitylayer.CreatePairwiseResponse\"\x00\x12Y\n\x0cListPairwise\x12\".identitylayer.ListPairwiseRequest\x1a#.identitylayer.ListPairwiseResponse\"\x00\x12V\n\x0bGetPairwise\x12!.identitylayer.GetPairwiseRequest\x1a\".identitylayer.GetPairwiseResponse\"\x00\x12n\n\x13SetPairwiseMetadata\x12).identitylayer.SetPairwiseMetadataRequest\x1a*.identitylayer.SetPairwiseMetadataResponse\"\x00\x32\xa7\x06\n\rCryptoService\x12P\n\tCreateKey\x12\x1f.identitylayer.CreateKeyRequest\x1a .identitylayer.CreateKeyResponse\"\x00\x12_\n\x0eSetKeyMetadata\x12$.identitylayer.SetKeyMetadataRequest\x1a%.identitylayer.SetKeyMetadataResponse\"\x00\x12_\n\x0eGetKeyMetadata\x12$.identitylayer.GetKeyMetadataRequest\x1a%.identitylayer.GetKeyMetadataResponse\"\x00\x12S\n\nCryptoSign\x12 .identitylayer.CryptoSignRequest\x1a!.identitylayer.CryptoSignResponse\"\x00\x12Y\n\x0c\x43ryptoVerify\x12\".identitylayer.CryptoVerifyRequest\x1a#.identitylayer.CryptoVerifyResponse\"\x00\x12P\n\tAuthCrypt\x12\x1f.identitylayer.AuthCryptRequest\x1a .identitylayer.AuthCryptResponse\"\x00\x12V\n\x0b\x41uthDecrypt\x12!.identitylayer.AuthDecryptRequest\x1a\".identitylayer.AuthDecryptResponse\"\x00\x12P\n\tAnonCrypt\x12\x1f.identitylayer.AnonCryptRequest\x1a .identitylayer.AnonCryptResponse\"\x00\x12V\n\x0b\x41nonDecrypt\x12!.identitylayer.AnonDecryptRequest\x1a\".identitylayer.AnonDecryptResponse\"\x00\x32\xed\x05\n\x0bPoolService\x12w\n\x16\x43reatePoolLedgerConfig\x12,.identitylayer.CreatePoolLedgerConfigRequest\x1a-.identitylayer.CreatePoolLedgerConfigResponse\"\x00\x12_\n\x0eOpenPoolLedger\x12$.identitylayer.OpenPoolLedgerRequest\x1a%.identitylayer.OpenPoolLedgerResponse\"\x00\x12h\n\x11RefreshPoolLedger\x12\'.identitylayer.RefreshPoolLedgerRequest\x1a(.identitylayer.RefreshPoolLedgerResponse\"\x00\x12P\n\tListPools\x12\x1f.identitylayer.ListPoolsRequest\x1a .identitylayer.ListPoolsResponse\"\x00\x12\x62\n\x0f\x43losePoolLedger\x12%.identitylayer.ClosePoolLedgerRequest\x1a&.identitylayer.ClosePoolLedgerResponse\"\x00\x12w\n\x16\x44\x65letePoolLedgerConfig\x12,.identitylayer.DeletePoolLedgerConfigRequest\x1a-.identitylayer.DeletePoolLedgerConfigResponse\"\x00\x12k\n\x12SetProtocolVersion\x12(.identitylayer.SetProtocolVersionRequest\x1a).identitylayer.SetProtocolVersionResponse\"\x00\x32\xdc\x17\n\x10\x41noncredsService\x12k\n\x12IssuerCreateSchema\x12(.identitylayer.IssuerCreateSchemaRequest\x1a).identitylayer.IssuerCreateSchemaResponse\"\x00\x12\x98\x01\n!IssuerCreateAndStoreCredentialDef\x12\x37.identitylayer.IssuerCreateAndStoreCredentialDefRequest\x1a\x38.identitylayer.IssuerCreateAndStoreCredentialDefResponse\"\x00\x12\x89\x01\n\x1cIssuerCreateAndStoreRevocReg\x12\x32.identitylayer.IssuerCreateAndStoreRevocRegRequest\x1a\x33.identitylayer.IssuerCreateAndStoreRevocRegResponse\"\x00\x12\x86\x01\n\x1bIssuerCreateCredentialOffer\x12\x31.identitylayer.IssuerCreateCredentialOfferRequest\x1a\x32.identitylayer.IssuerCreateCredentialOfferResponse\"\x00\x12w\n\x16IssuerCreateCredential\x12,.identitylayer.IssuerCreateCredentialRequest\x1a-.identitylayer.IssuerCreateCredentialResponse\"\x00\x12w\n\x16IssuerRevokeCredential\x12,.identitylayer.IssuerRevokeCredentialRequest\x1a-.identitylayer.IssuerRevokeCredentialResponse\"\x00\x12\x9e\x01\n#IssuerMergeRevocationRegistryDeltas\x12\x39.identitylayer.IssuerMergeRevocationRegistryDeltasRequest\x1a:.identitylayer.IssuerMergeRevocationRegistryDeltasResponse\"\x00\x12}\n\x18ProverCreateMasterSecret\x12..identitylayer.ProverCreateMasterSecretRequest\x1a/.identitylayer.ProverCreateMasterSecretResponse\"\x00\x12\x80\x01\n\x19ProverCreateCredentialReq\x12/.identitylayer.ProverCreateCredentialReqRequest\x1a\x30.identitylayer.ProverCreateCredentialReqResponse\"\x00\x12t\n\x15ProverStoreCredential\x12+.identitylayer.ProverStoreCredentialRequest\x1a,.identitylayer.ProverStoreCredentialResponse\"\x00\x12n\n\x13ProverGetCredential\x12).identitylayer.ProverGetCredentialRequest\x1a*.identitylayer.ProverGetCredentialResponse\"\x00\x12q\n\x14ProverGetCredentials\x12*.identitylayer.ProverGetCredentialsRequest\x1a+.identitylayer.ProverGetCredentialsResponse\"\x00\x12w\n\x16ProverSeachCredentials\x12,.identitylayer.ProverSeachCredentialsRequest\x1a-.identitylayer.ProverSeachCredentialsResponse\"\x00\x12w\n\x16ProverFetchCredentials\x12,.identitylayer.ProverFetchCredentialsRequest\x1a-.identitylayer.ProverFetchCredentialsResponse\"\x00\x12\x89\x01\n\x1cProverCloseCredentialsSearch\x12\x32.identitylayer.ProverCloseCredentialsSearchRequest\x1a\x33.identitylayer.ProverCloseCredentialsSearchResponse\"\x00\x12\x92\x01\n\x1fProverGetCredentialsForProofReq\x12\x35.identitylayer.ProverGetCredentialsForProofReqRequest\x1a\x36.identitylayer.ProverGetCredentialsForProofReqResponse\"\x00\x12\x9b\x01\n\"ProverSearchCredentialsForProofReq\x12\x38.identitylayer.ProverSearchCredentialsForProofReqRequest\x1a\x39.identitylayer.ProverSearchCredentialsForProofReqResponse\"\x00\x12\x98\x01\n!ProverFetchCredentialsForProofReq\x12\x37.identitylayer.ProverFetchCredentialsForProofReqRequest\x1a\x38.identitylayer.ProverFetchCredentialsForProofReqResponse\"\x00\x12\xaa\x01\n\'ProverCloseCredentialsSearchForProofReq\x12=.identitylayer.ProverCloseCredentialsSearchForProofReqRequest\x1a>.identitylayer.ProverCloseCredentialsSearchForProofReqResponse\"\x00\x12h\n\x11ProverCreateProof\x12\'.identitylayer.ProverCreateProofRequest\x1a(.identitylayer.ProverCreateProofResponse\"\x00\x12n\n\x13VerifierVerifyProof\x12).identitylayer.VerifierVerifyProofRequest\x1a*.identitylayer.VerifierVerifyProofResponse\"\x00\x12t\n\x15\x43reateRevocationState\x12+.identitylayer.CreateRevocationStateRequest\x1a,.identitylayer.CreateRevocationStateResponse\"\x00\x12t\n\x15UpdateRevocationState\x12+.identitylayer.UpdateRevocationStateRequest\x1a,.identitylayer.UpdateRevocationStateResponse\"\x00\x32\xb0\x05\n\rWalletService\x12]\n\x0f\x43reateNewWallet\x12\".identitylayer.NewWalletDefinition\x1a$.identitylayer.CreateWalletErrorCode\"\x00\x12T\n\nOpenWallet\x12#.identitylayer.OpenWalletDefinition\x1a\x1f.identitylayer.OpenWalletHandle\"\x00\x12S\n\x0b\x43loseWallet\x12 .identitylayer.CloseWalletHandle\x1a .identitylayer.CloseWalletStatus\"\x00\x12`\n\x0c\x44\x65leteWallet\x12%.identitylayer.DeleteWalletDefinition\x1a\'.identitylayer.DeleteWalletConfirmation\"\x00\x12`\n\x0c\x45xportWallet\x12%.identitylayer.ExportWalletDefinition\x1a\'.identitylayer.ExportWalletConfirmation\"\x00\x12`\n\x0cImportWallet\x12%.identitylayer.ImportWalletDefinition\x1a\'.identitylayer.ImportWalletConfirmation\"\x00\x12o\n\x11GenerateWalletKey\x12*.identitylayer.GenerateWalletKeyDefinition\x1a,.identitylayer.GenerateWalletKeyConfirmation\"\x00\x32\xbe\x01\n\x12\x42lobStorageService\x12S\n\nOpenReader\x12 .identitylayer.OpenReaderRequest\x1a!.identitylayer.OpenReaderResponse\"\x00\x12S\n\nOpenWriter\x12 .identitylayer.OpenWriterRequest\x1a!.identitylayer.OpenWriterResponse\"\x00\x62\x06proto3'
+  serialized_pb=b'\n\x13identitylayer.proto\x12\ridentitylayer\x1a\x19google/protobuf/any.proto\"y\n\x13NewWalletDefinition\x12+\n\x0cwalletConfig\x18\x01 \x01(\x0b\x32\x15.identitylayer.Config\x12\x35\n\x11walletCredentials\x18\x02 \x01(\x0b\x32\x1a.identitylayer.Credentials\"f\n\x06\x43onfig\x12\x10\n\x08walletID\x18\x01 \x01(\t\x12\x19\n\x11walletstorageType\x18\x02 \x01(\t\x12/\n\tstorePath\x18\x03 \x01(\x0b\x32\x1c.identitylayer.StorageConfig\"&\n\rStorageConfig\x12\x15\n\rnewWalletPath\x18\x01 \x01(\t\"n\n\x0b\x43redentials\x12\x14\n\x0cnewWalletKey\x18\x01 \x01(\t\x12#\n\x1bnewWalletStorageCredentials\x18\x02 \x01(\t\x12$\n\x1cnewWalletKeyDerivationMethod\x18\x03 \x01(\t\"3\n\x15\x43reateWalletErrorCode\x12\x1a\n\x12NewWalletErrorCode\x18\x01 \x01(\t\"\x82\x01\n\x14OpenWalletDefinition\x12/\n\x06\x43onfig\x18\x01 \x01(\x0b\x32\x1f.identitylayer.OpenWalletConfig\x12\x39\n\x0b\x43redentials\x18\x02 \x01(\x0b\x32$.identitylayer.OpenWalletCredentials\"i\n\x10OpenWalletConfig\x12\n\n\x02Id\x18\x01 \x01(\t\x12\x13\n\x0bStorageType\x18\x02 \x01(\t\x12\x34\n\x04Path\x18\x03 \x01(\x0b\x32&.identitylayer.OpenWalletStorageConfig\"\'\n\x17OpenWalletStorageConfig\x12\x0c\n\x04path\x18\x01 \x01(\t\"\x8b\x01\n\x15OpenWalletCredentials\x12\x0b\n\x03Key\x18\x01 \x01(\t\x12\r\n\x05ReKey\x18\x02 \x01(\t\x12\x1a\n\x12StorageCredentials\x18\x03 \x01(\t\x12\x1b\n\x13KeyDerivationMethod\x18\x04 \x01(\t\x12\x1d\n\x15ReKeyDerivationMethod\x18\x05 \x01(\t\";\n\x10OpenWalletHandle\x12\x14\n\x0cWalletHandle\x18\x01 \x01(\x03\x12\x11\n\tErrorCode\x18\x02 \x01(\x03\")\n\x11\x43loseWalletHandle\x12\x14\n\x0cWalletHandle\x18\x01 \x01(\x03\",\n\x11\x43loseWalletStatus\x12\x17\n\x0f\x43loseWalletCode\x18\x01 \x01(\t\"\x87\x01\n\x16\x44\x65leteWalletDefinition\x12\x31\n\x06\x43onfig\x18\x01 \x01(\x0b\x32!.identitylayer.DeleteWalletConfig\x12:\n\x0b\x43redentials\x18\x02 \x01(\x0b\x32%.identitylayer.DeleteWaletCredentials\"\x95\x01\n\x12\x44\x65leteWalletConfig\x12\x16\n\x0e\x44\x65leteWalletID\x18\x01 \x01(\t\x12\x1f\n\x17\x44\x65leteWalletStorageType\x18\x02 \x01(\t\x12\x46\n\rStorageConfig\x18\x03 \x01(\x0b\x32/.identitylayer.DeleteWalletStorageConfiguration\"0\n DeleteWalletStorageConfiguration\x12\x0c\n\x04Path\x18\x01 \x01(\t\"\x82\x01\n\x16\x44\x65leteWaletCredentials\x12\x17\n\x0f\x44\x65leteWalletKey\x18\x01 \x01(\t\x12&\n\x1e\x44\x65leteWalletStorageCredentials\x18\x02 \x01(\t\x12\'\n\x1f\x44\x65leteWalletKeyDerivationMethod\x18\x03 \x01(\t\"6\n\x18\x44\x65leteWalletConfirmation\x12\x1a\n\x12\x44\x65leteWalletStatus\x18\x01 \x01(\x08\"u\n\x16\x45xportWalletDefinition\x12\x1a\n\x12\x45xportWalletHandle\x18\x01 \x01(\x03\x12?\n\x10\x45xportConfigJson\x18\x02 \x01(\x0b\x32%.identitylayer.ExportWalletConfigJson\"t\n\x16\x45xportWalletConfigJson\x12\x18\n\x10\x45xportWalletPath\x18\x01 \x01(\t\x12\x17\n\x0f\x45xportWalletKey\x18\x02 \x01(\t\x12\'\n\x1f\x45xportWalletKeyDerivationMethod\x18\x03 \x01(\t\"6\n\x18\x45xportWalletConfirmation\x12\x1a\n\x12\x45xportWalletStatus\x18\x01 \x01(\x08\"\xc3\x01\n\x16ImportWalletDefinition\x12\x31\n\x06\x43onfig\x18\x01 \x01(\x0b\x32!.identitylayer.ImportWalletConfig\x12;\n\x0b\x43redentials\x18\x02 \x01(\x0b\x32&.identitylayer.ImportWalletCredentials\x12\x39\n\nConfigJson\x18\x03 \x01(\x0b\x32%.identitylayer.ImportWalletConfigJson\"v\n\x12ImportWalletConfig\x12\n\n\x02Id\x18\x01 \x01(\t\x12\x13\n\x0bStorageType\x18\x02 \x01(\t\x12?\n\rStorageConfig\x18\x03 \x01(\x0b\x32(.identitylayer.ImportWalletStorageConfig\")\n\x19ImportWalletStorageConfig\x12\x0c\n\x04Path\x18\x01 \x01(\t\"_\n\x17ImportWalletCredentials\x12\x0b\n\x03Key\x18\x01 \x01(\t\x12\x1a\n\x12StorageCredentials\x18\x02 \x01(\t\x12\x1b\n\x13KeyDerivationMethod\x18\x03 \x01(\t\"3\n\x16ImportWalletConfigJson\x12\x0c\n\x04Path\x18\x01 \x01(\t\x12\x0b\n\x03Key\x18\x02 \x01(\t\":\n\x18ImportWalletConfirmation\x12\x1e\n\x16ImportWalletStatusCode\x18\x01 \x01(\t\"+\n\x1bGenerateWalletKeyDefinition\x12\x0c\n\x04Seed\x18\x01 \x01(\t\"@\n\x1dGenerateWalletKeyConfirmation\x12\x1f\n\x17GenerateWalletKeyStatus\x18\x01 \x01(\t\"j\n\x1d\x43reatePoolLedgerConfigRequest\x12\x12\n\nConfigName\x18\x01 \x01(\t\x12\x35\n\x06\x43onfig\x18\x02 \x01(\x0b\x32%.identitylayer.ConfigCreatePoolLedger\"+\n\x16\x43onfigCreatePoolLedger\x12\x11\n\tGensisTxn\x18\x01 \x01(\t\"3\n\x1e\x43reatePoolLedgerConfigResponse\x12\x11\n\tErrorCode\x18\x01 \x01(\x03\"\\\n\x15OpenPoolLedgerRequest\x12\x12\n\nConfigName\x18\x01 \x01(\t\x12/\n\x06\x43onfig\x18\x02 \x01(\x0b\x32\x1f.identitylayer.ConfigOpenLedger\"U\n\x10\x43onfigOpenLedger\x12\x0f\n\x07Timeout\x18\x01 \x01(\x03\x12\x17\n\x0f\x45xtendedTimeour\x18\x02 \x01(\x03\x12\x17\n\x0fPreorderedNodes\x18\x03 \x03(\t\";\n\x16OpenPoolLedgerResponse\x12\x0e\n\x06Handle\x18\x01 \x01(\x03\x12\x11\n\tErrorCode\x18\x02 \x01(\x03\"*\n\x18RefreshPoolLedgerRequest\x12\x0e\n\x06Handle\x18\x01 \x01(\x03\".\n\x19RefreshPoolLedgerResponse\x12\x11\n\tErrorCode\x18\x01 \x01(\x03\"\x12\n\x10ListPoolsRequest\"&\n\x11ListPoolsResponse\x12\x11\n\tErrorCode\x18\x01 \x01(\x03\"(\n\x16\x43losePoolLedgerRequest\x12\x0e\n\x06Handle\x18\x01 \x01(\x03\",\n\x17\x43losePoolLedgerResponse\x12\x11\n\tErrorCode\x18\x01 \x01(\x03\"3\n\x1d\x44\x65letePoolLedgerConfigRequest\x12\x12\n\nConfigName\x18\x01 \x01(\t\"3\n\x1e\x44\x65letePoolLedgerConfigResponse\x12\x11\n\tErrorCode\x18\x01 \x01(\x03\"4\n\x19SetProtocolVersionRequest\x12\x17\n\x0fProtocolVersion\x18\x01 \x01(\x03\"/\n\x1aSetProtocolVersionResponse\x12\x11\n\tErrorCode\x18\x01 \x01(\x03\"2\n\x11OpenReaderRequest\x12\r\n\x05Type_\x18\x01 \x01(\t\x12\x0e\n\x06\x43onfig\x18\x02 \x01(\t\"!\n\x12OpenReaderResponse\x12\x0b\n\x03Res\x18\x01 \x01(\x03\"2\n\x11OpenWriterRequest\x12\r\n\x05Type_\x18\x01 \x01(\t\x12\x0e\n\x06\x43onfig\x18\x02 \x01(\t\"!\n\x12OpenWriterResponse\x12\x0b\n\x03Res\x18\x01 \x01(\x03\"\\\n\x19IssuerCreateSchemaRequest\x12\x11\n\tIssuerDid\x18\x01 \x01(\t\x12\x0c\n\x04Name\x18\x02 \x01(\t\x12\x0f\n\x07Version\x18\x03 \x01(\t\x12\r\n\x05\x41ttrs\x18\x04 \x01(\t\"B\n\x1aIssuerCreateSchemaResponse\x12\x10\n\x08SchemaId\x18\x01 \x01(\t\x12\x12\n\nSchemaJson\x18\x02 \x01(\t\"\x9f\x01\n(IssuerCreateAndStoreCredentialDefRequest\x12\x14\n\x0cWalletHandle\x18\x01 \x01(\x03\x12\x11\n\tIssuerDid\x18\x02 \x01(\t\x12\x12\n\nSchemaJson\x18\x03 \x01(\t\x12\x0b\n\x03Tag\x18\x04 \x01(\t\x12\x15\n\rSignatureType\x18\x05 \x01(\t\x12\x12\n\nConfigJson\x18\x06 \x01(\t\"S\n)IssuerCreateAndStoreCredentialDefResponse\x12\x11\n\tCredDefId\x18\x01 \x01(\t\x12\x13\n\x0b\x43redDefJson\x18\x02 \x01(\t\"\xb3\x01\n#IssuerCreateAndStoreRevocRegRequest\x12\x14\n\x0cWalletHandle\x18\x01 \x01(\x03\x12\x11\n\tIssuerDid\x18\x02 \x01(\t\x12\x14\n\x0cRevocDefType\x18\x03 \x01(\t\x12\x0b\n\x03Tag\x18\x04 \x01(\t\x12\x11\n\tCredDefId\x18\x05 \x01(\t\x12\x12\n\nConfigJSon\x18\x06 \x01(\t\x12\x19\n\x11TailsWriterHandle\x18\x07 \x01(\x03\"n\n$IssuerCreateAndStoreRevocRegResponse\x12\x12\n\nRevocRegId\x18\x01 \x01(\t\x12\x17\n\x0fRevocRegDefJson\x18\x02 \x01(\t\x12\x19\n\x11RevocRegEntryJson\x18\x03 \x01(\t\"M\n\"IssuerCreateCredentialOfferRequest\x12\x14\n\x0cWalletHandle\x18\x01 \x01(\x03\x12\x11\n\tCredDefId\x18\x02 \x01(\t\"3\n#IssuerCreateCredentialOfferResponse\x12\x0c\n\x04Resp\x18\x01 \x01(\t\"\xac\x01\n\x1dIssuerCreateCredentialRequest\x12\x14\n\x0cWalletHandle\x18\x01 \x01(\x03\x12\x15\n\rCredOfferJson\x18\x02 \x01(\t\x12\x13\n\x0b\x43redReqJson\x18\x03 \x01(\t\x12\x16\n\x0e\x43redValuesJson\x18\x04 \x01(\t\x12\x10\n\x08RevRegId\x18\x05 \x01(\t\x12\x1f\n\x17\x42lobStorageReaderHandle\x18\x06 \x01(\x03\"b\n\x1eIssuerCreateCredentialResponse\x12\x10\n\x08\x43redJson\x18\x01 \x01(\t\x12\x13\n\x0b\x43redRevocId\x18\x02 \x01(\t\x12\x19\n\x11RevocRegDeltaJson\x18\x03 \x01(\t\"\xd3\x01\n\x0f\x43redJsonMessage\x12\x10\n\x08SchemaId\x18\x01 \x01(\t\x12\x11\n\tCredDefId\x18\x02 \x01(\t\x12\x13\n\x0bRevRegDefID\x18\x03 \x01(\t\x12$\n\x06Values\x18\x04 \x01(\x0b\x32\x14.google.protobuf.Any\x12\'\n\tSignature\x18\x05 \x01(\x0b\x32\x14.google.protobuf.Any\x12\x37\n\x19SignatureCorrectnessProof\x18\x06 \x01(\x0b\x32\x14.google.protobuf.Any\"}\n\x1dIssuerRevokeCredentialRequest\x12\x14\n\x0cWalletHandle\x18\x01 \x01(\x03\x12\x1f\n\x17\x42lobStorageReaderHandle\x18\x02 \x01(\x03\x12\x10\n\x08RevRegId\x18\x03 \x01(\t\x12\x13\n\x0b\x43redRevocId\x18\x04 \x01(\t\"E\n\x1eIssuerRevokeCredentialResponse\x12#\n\x1bRevocationRegistryDeltaJson\x18\x01 \x01(\t\"c\n*IssuerMergeRevocationRegistryDeltasRequest\x12\x17\n\x0fRevRegDeltaJson\x18\x01 \x01(\t\x12\x1c\n\x14OtherRevRegDeltaJson\x18\x02 \x01(\t\"T\n+IssuerMergeRevocationRegistryDeltasResponse\x12%\n\x1dMergedRevocationRegistryDelta\x18\x01 \x01(\t\"Q\n\x1fProverCreateMasterSecretRequest\x12\x14\n\x0cWalletHandle\x18\x01 \x01(\x03\x12\x18\n\x10MasterSecretName\x18\x02 \x01(\t\"C\n ProverCreateMasterSecretResponse\x12\x1f\n\x17GeneratedMasterSecretId\x18\x01 \x01(\t\"\x8e\x01\n ProverCreateCredentialReqRequest\x12\x13\n\x0bWaletHandle\x18\x01 \x01(\x03\x12\x11\n\tProverDid\x18\x02 \x01(\t\x12\x15\n\rCredOfferJSon\x18\x03 \x01(\t\x12\x13\n\x0b\x43redDefJson\x18\x04 \x01(\t\x12\x16\n\x0eMasterSecretId\x18\x05 \x01(\t\"U\n!ProverCreateCredentialReqResponse\x12\x13\n\x0b\x43redReqJson\x18\x01 \x01(\t\x12\x1b\n\x13\x43redReqMetadataJson\x18\x02 \x01(\t\"\xab\x01\n\x12\x43redReqJsonMessage\x12\x11\n\tProverDid\x18\x01 \x01(\t\x12\x11\n\tCredDefId\x18\x02 \x01(\t\x12\'\n\tBlindedMs\x18\x03 \x01(\x0b\x32\x14.google.protobuf.Any\x12\x37\n\x19\x42lindedMsCorrectnessProof\x18\x04 \x01(\x0b\x32\x14.google.protobuf.Any\x12\r\n\x05Nonce\x18\x05 \x01(\t\"\x9f\x01\n\x1cProverStoreCredentialRequest\x12\x14\n\x0cWalletHandle\x18\x01 \x01(\x03\x12\x0e\n\x06\x43redId\x18\x02 \x01(\t\x12\x1b\n\x13\x43redReqMetadataJson\x18\x03 \x01(\t\x12\x10\n\x08\x43redJson\x18\x04 \x01(\t\x12\x13\n\x0b\x43redDefJson\x18\x05 \x01(\t\x12\x15\n\rRevRegDefJson\x18\x06 \x01(\t\"/\n\x1dProverStoreCredentialResponse\x12\x0e\n\x06\x43redId\x18\x01 \x01(\t\"B\n\x1aProverGetCredentialRequest\x12\x14\n\x0cWalletHandle\x18\x01 \x01(\x03\x12\x0e\n\x06\x43redId\x18\x02 \x01(\t\"\x88\x01\n\x1bProverGetCredentialResponse\x12\x10\n\x08Referent\x18\x01 \x01(\t\x12\r\n\x05\x41ttrs\x18\x02 \x01(\t\x12\x10\n\x08SchemaId\x18\x03 \x01(\t\x12\x11\n\tCredDefId\x18\x04 \x01(\t\x12\x10\n\x08RevRegId\x18\x05 \x01(\t\x12\x11\n\tCredRevId\x18\x06 \x01(\t\"i\n\x1bProverGetCredentialsRequest\x12\x14\n\x0cWalletHandle\x18\x01 \x01(\x03\x12\x34\n\nFilterJson\x18\x02 \x01(\x0b\x32 .identitylayer.FilterJsonMessage\"\x8f\x01\n\x11\x46ilterJsonMessage\x12\x10\n\x08SchemaId\x18\x01 \x01(\t\x12\x17\n\x0fSchemaIssuerDid\x18\x02 \x01(\t\x12\x12\n\nSchemaName\x18\x03 \x01(\t\x12\x15\n\rSchemaVersion\x18\x04 \x01(\t\x12\x11\n\tIssuerDid\x18\x05 \x01(\t\x12\x11\n\tCredDefId\x18\x06 \x01(\t\"^\n\x1cProverGetCredentialsResponse\x12>\n\x0f\x43redentialsJson\x18\x01 \x03(\x0b\x32%.identitylayer.CredentialsJsonMessage\"\x83\x01\n\x16\x43redentialsJsonMessage\x12\x10\n\x08Referent\x18\x01 \x01(\t\x12\r\n\x05\x41ttrs\x18\x02 \x01(\t\x12\x10\n\x08SchemaID\x18\x03 \x01(\t\x12\x11\n\tCredDefId\x18\x04 \x01(\t\x12\x10\n\x08RevRegId\x18\x05 \x01(\t\x12\x11\n\tCredRevId\x18\x06 \x01(\t\"H\n\x1dProverSeachCredentialsRequest\x12\x14\n\x0cWalletHandle\x18\x01 \x01(\x03\x12\x11\n\tQueryJson\x18\x02 \x01(\t\"J\n\x1eProverSeachCredentialsResponse\x12\x14\n\x0cSearchHandle\x18\x01 \x01(\x03\x12\x12\n\nTotalCount\x18\x02 \x01(\x03\"D\n\x1dProverFetchCredentialsRequest\x12\x14\n\x0cSearchHandle\x18\x01 \x01(\x03\x12\r\n\x05\x43ount\x18\x02 \x01(\x03\"`\n\x1eProverFetchCredentialsResponse\x12>\n\x0f\x43redentialsJson\x18\x01 \x03(\x0b\x32%.identitylayer.CredentialsJsonMessage\";\n#ProverCloseCredentialsSearchRequest\x12\x14\n\x0cSearchHandle\x18\x01 \x01(\x03\"4\n$ProverCloseCredentialsSearchResponse\x12\x0c\n\x04Resp\x18\x01 \x01(\t\"\x80\x01\n&ProverGetCredentialsForProofReqRequest\x12\x14\n\x0cWalletHandle\x18\x01 \x01(\x03\x12@\n\x10ProofRequestJson\x18\x02 \x01(\x0b\x32&.identitylayer.ProofRequestJsonMessage\"\xab\x01\n\x17ProofRequestJsonMessage\x12\x0c\n\x04Name\x18\x01 \x01(\t\x12\x0f\n\x07Version\x18\x02 \x01(\t\x12\r\n\x05Nonce\x18\x03 \x01(\t\x12\x1b\n\x13RequestedAttributes\x18\x04 \x01(\t\x12\x1b\n\x13RequestedPredicates\x18\x05 \x01(\t\x12(\n\nNonRevoked\x18\x06 \x01(\x0b\x32\x14.google.protobuf.Any\"^\n\'ProverGetCredentialsForProofReqResponse\x12\x16\n\x0eRequestedAttrs\x18\x01 \x01(\t\x12\x1b\n\x13RequestedPredicates\x18\x02 \x01(\t\"\xc1\x01\n)ProverSearchCredentialsForProofReqRequest\x12\x14\n\x0cWalletHandle\x18\x01 \x01(\x03\x12@\n\x10ProofRequestJson\x18\x02 \x01(\x0b\x32&.identitylayer.ProofRequestJsonMessage\x12<\n\x0e\x45xtraQueryJson\x18\x03 \x01(\x0b\x32$.identitylayer.ExtraQueryJsonMessage\"t\n\x15\x45xtraQueryJsonMessage\x12*\n\x0c\x41ttrReferent\x18\x01 \x01(\x0b\x32\x14.google.protobuf.Any\x12/\n\x11PredicateReferent\x18\x02 \x01(\x0b\x32\x14.google.protobuf.Any\"B\n*ProverSearchCredentialsForProofReqResponse\x12\x14\n\x0cSearchHandle\x18\x01 \x01(\x03\"f\n(ProverFetchCredentialsForProofReqRequest\x12\x14\n\x0cSearchHandle\x18\x01 \x01(\x03\x12\x15\n\rItemReference\x18\x02 \x01(\t\x12\r\n\x05\x43ount\x18\x03 \x01(\x03\"q\n)ProverFetchCredentialsForProofReqResponse\x12\x44\n\x0f\x43redentialsJson\x18\x01 \x03(\x0b\x32+.identitylayer.CredentialsGivenProofRequest\"w\n\x1c\x43redentialsGivenProofRequest\x12/\n\x08\x43redInfo\x18\x01 \x01(\x0b\x32\x1d.identitylayer.CredentialInfo\x12&\n\x08Interval\x18\x02 \x01(\x0b\x32\x14.google.protobuf.Any\"{\n\x0e\x43redentialInfo\x12\x10\n\x08Referent\x18\x01 \x01(\t\x12\r\n\x05\x41ttrs\x18\x02 \x01(\t\x12\x10\n\x08SchemaId\x18\x03 \x01(\t\x12\x11\n\tCredDefId\x18\x04 \x01(\t\x12\x10\n\x08RevRegId\x18\x05 \x01(\x03\x12\x11\n\tCredRevId\x18\x06 \x01(\x03\"F\n.ProverCloseCredentialsSearchForProofReqRequest\x12\x14\n\x0cSearchHandle\x18\x01 \x01(\x03\"?\n/ProverCloseCredentialsSearchForProofReqResponse\x12\x0c\n\x04Resp\x18\x01 \x01(\t\"\x9e\x02\n\x18ProverCreateProofRequest\x12\x14\n\x0cWalletHandle\x18\x01 \x01(\x03\x12\x38\n\x0cProofReqJson\x18\x02 \x01(\x0b\x32\".identitylayer.ProofReqJsonMessage\x12P\n\x18RequestedCredentialsJson\x18\x03 \x01(\x0b\x32..identitylayer.RequestedCredentialsJsonMessage\x12\x18\n\x10MasterSecretName\x18\x04 \x01(\t\x12\x13\n\x0bSchemasJson\x18\x05 \x01(\t\x12\x1a\n\x12\x43redentialDefsJson\x18\x06 \x01(\t\x12\x15\n\rRevStatesJson\x18\x07 \x01(\t\"\xbe\x01\n\x13ProofReqJsonMessage\x12\x0c\n\x04Name\x18\x01 \x01(\t\x12\x0f\n\x07Version\x18\x02 \x01(\t\x12\r\n\x05Nonce\x18\x03 \x01(\t\x12\x1b\n\x13RequestedAttributes\x18\x04 \x01(\t\x12\x1b\n\x13RequestedPredicates\x18\x05 \x01(\t\x12?\n\x0fNonRevoInterval\x18\x06 \x01(\x0b\x32&.identitylayer.NonRevocIntervalMessage\"3\n\x17NonRevocIntervalMessage\x12\x0c\n\x04\x46rom\x18\x01 \x01(\x03\x12\n\n\x02To\x18\x02 \x01(\x03\"{\n\x1fRequestedCredentialsJsonMessage\x12\x1e\n\x16SelfAttestedAttributes\x18\x01 \x01(\t\x12\x1b\n\x13RequestedAttributes\x18\x02 \x01(\t\x12\x1b\n\x13RequestedPredicates\x18\x03 \x01(\t\"e\n\x19ProverCreateProofResponse\x12\x11\n\tRequested\x18\x01 \x01(\t\x12\r\n\x05Proof\x18\x02 \x01(\t\x12\x13\n\x0bidentifiers\x18\x03 \x01(\t\x12\x11\n\tProofResp\x18\x04 \x01(\t\"\xca\x01\n\x1aVerifierVerifyProofRequest\x12<\n\x10ProofRequestJson\x18\x01 \x01(\x0b\x32\".identitylayer.ProofReqJsonMessage\x12\x11\n\tProofJson\x18\x02 \x01(\t\x12\x13\n\x0bSchemasJson\x18\x03 \x01(\t\x12\x1a\n\x12\x43redentialDefsJson\x18\x04 \x01(\t\x12\x16\n\x0eRevRegDefsJson\x18\x05 \x01(\t\x12\x12\n\nRevRegJson\x18\x06 \x01(\t\",\n\x1bVerifierVerifyProofResponse\x12\r\n\x05Valid\x18\x01 \x01(\x08\"\x95\x01\n\x1c\x43reateRevocationStateRequest\x12\x1f\n\x17\x42lobStorageReaderHandle\x18\x01 \x01(\x03\x12\x15\n\rRevRegDefJson\x18\x02 \x01(\t\x12\x17\n\x0fRevRegDeltaJson\x18\x03 \x01(\t\x12\x11\n\tTimestamp\x18\x04 \x01(\x03\x12\x11\n\tCredRevId\x18\x05 \x01(\t\"e\n\x1d\x43reateRevocationStateResponse\x12\x0e\n\x06RevReg\x18\x01 \x01(\t\x12\x0f\n\x07Witness\x18\x02 \x01(\t\x12\x11\n\tTimestamp\x18\x03 \x01(\x03\x12\x10\n\x08RespJson\x18\x04 \x01(\t\"\xab\x01\n\x1cUpdateRevocationStateRequest\x12\x1f\n\x17\x42lobStorageReaderHandle\x18\x01 \x01(\x03\x12\x14\n\x0cRevStateJson\x18\x02 \x01(\t\x12\x15\n\rRevRegDefJson\x18\x03 \x01(\t\x12\x17\n\x0fRevRegDeltaJson\x18\x04 \x01(\t\x12\x11\n\tTimestamp\x18\x05 \x01(\x03\x12\x11\n\tCredRevId\x18\x06 \x01(\t\"S\n\x1dUpdateRevocationStateResponse\x12\x0e\n\x06RevReg\x18\x01 \x01(\t\x12\x0f\n\x07Witness\x18\x02 \x01(\t\x12\x11\n\tTimestamp\x18\x03 \x01(\x03\"\x16\n\x14GenerateNonceRequest\"&\n\x15GenerateNonceResponse\x12\r\n\x05Nonce\x18\x01 \x01(\t\"B\n\x10\x43reateKeyRequest\x12\x14\n\x0cWalletHandle\x18\x01 \x01(\x03\x12\x18\n\x10KeyJsonCreateKey\x18\x02 \x01(\t\"4\n\x10KeyJsonCreateKey\x12\x0c\n\x04seed\x18\x01 \x01(\t\x12\x12\n\nCryptoType\x18\x02 \x01(\t\"#\n\x11\x43reateKeyResponse\x12\x0e\n\x06Verkey\x18\x01 \x01(\t\"O\n\x15SetKeyMetadataRequest\x12\x14\n\x0cWalletHandle\x18\x01 \x01(\x03\x12\x0e\n\x06Verkey\x18\x02 \x01(\t\x12\x10\n\x08Metadata\x18\x03 \x01(\t\"+\n\x16SetKeyMetadataResponse\x12\x11\n\tErrorCode\x18\x01 \x01(\x03\"=\n\x15GetKeyMetadataRequest\x12\x14\n\x0cWalletHandle\x18\x01 \x01(\x03\x12\x0e\n\x06Verkey\x18\x02 \x01(\t\"*\n\x16GetKeyMetadataResponse\x12\x10\n\x08Metadata\x18\x01 \x01(\t\"H\n\x11\x43ryptoSignRequest\x12\x14\n\x0cWalletHandle\x18\x01 \x01(\x03\x12\x10\n\x08SignerVk\x18\x02 \x01(\t\x12\x0b\n\x03Msg\x18\x03 \x01(\x0c\"\'\n\x12\x43ryptoSignResponse\x12\x11\n\tSignature\x18\x01 \x01(\x0c\"G\n\x13\x43ryptoVerifyRequest\x12\x10\n\x08SignerVk\x18\x01 \x01(\t\x12\x0b\n\x03Msg\x18\x02 \x01(\x0c\x12\x11\n\tSignature\x18\x03 \x01(\x0c\"%\n\x14\x43ryptoVerifyResponse\x12\r\n\x05Valid\x18\x01 \x01(\x08\"\\\n\x10\x41uthCryptRequest\x12\x14\n\x0cWalletHandle\x18\x01 \x01(\x03\x12\x10\n\x08SenderVk\x18\x02 \x01(\t\x12\x13\n\x0bRecipientVk\x18\x03 \x01(\t\x12\x0b\n\x03Msg\x18\x04 \x01(\x0c\" \n\x11\x41uthCryptResponse\x12\x0b\n\x03Msg\x18\x01 \x01(\x0c\"U\n\x12\x41uthDecryptRequest\x12\x14\n\x0cWalletHandle\x18\x01 \x01(\x03\x12\x13\n\x0bRecipientVk\x18\x02 \x01(\t\x12\x14\n\x0c\x45ncryptedMsg\x18\x03 \x01(\x0c\"2\n\x13\x41uthDecryptResponse\x12\x0e\n\x06Verkey\x18\x01 \x01(\t\x12\x0b\n\x03Msg\x18\x02 \x01(\x0c\"4\n\x10\x41nonCryptRequest\x12\x13\n\x0bRecipientVk\x18\x01 \x01(\t\x12\x0b\n\x03Msg\x18\x02 \x01(\x0c\" \n\x11\x41nonCryptResponse\x12\x0b\n\x03Msg\x18\x01 \x01(\x0c\"U\n\x12\x41nonDecryptRequest\x12\x14\n\x0cWalletHandle\x18\x01 \x01(\x03\x12\x13\n\x0bRecipientVk\x18\x02 \x01(\t\x12\x14\n\x0c\x45ncryptedMsg\x18\x03 \x01(\x0c\"+\n\x13\x41nonDecryptResponse\x12\x14\n\x0c\x44\x65\x63ryptedMsg\x18\x01 \x01(\x0c\"A\n\x17IsPairwiseExistsRequest\x12\x14\n\x0cWalletHandle\x18\x01 \x01(\x03\x12\x10\n\x08TheirDid\x18\x02 \x01(\t\"\'\n\x18IsPairwiseExistsResponse\x12\x0b\n\x03Res\x18\x01 \x01(\x08\"`\n\x15\x43reatePairwiseRequest\x12\x14\n\x0cWalletHandle\x18\x01 \x01(\x03\x12\x10\n\x08TheirDid\x18\x02 \x01(\t\x12\r\n\x05MyDid\x18\x03 \x01(\t\x12\x10\n\x08Metadata\x18\x04 \x01(\t\"+\n\x16\x43reatePairwiseResponse\x12\x11\n\tErrorCode\x18\x01 \x01(\x03\"+\n\x13ListPairwiseRequest\x12\x14\n\x0cWalletHandle\x18\x01 \x01(\x03\",\n\x14ListPairwiseResponse\x12\x14\n\x0cPairwiseList\x18\x01 \x03(\t\"<\n\x12GetPairwiseRequest\x12\x14\n\x0cWalletHandle\x18\x01 \x01(\x03\x12\x10\n\x08TheirDid\x18\x02 \x01(\t\"/\n\x13GetPairwiseResponse\x12\x18\n\x10PairwiseInfoJson\x18\x01 \x01(\t\"V\n\x1aSetPairwiseMetadataRequest\x12\x14\n\x0cWalletHandle\x18\x01 \x01(\x03\x12\x10\n\x08TheirDid\x18\x02 \x01(\t\x12\x10\n\x08MetaData\x18\x03 \x01(\t\"0\n\x1bSetPairwiseMetadataResponse\x12\x11\n\tErrorCode\x18\x01 \x01(\x03\"r\n\x1a\x43reateAndStoreMyDidRequest\x12\x14\n\x0cWalletHandle\x18\x01 \x01(\x03\x12>\n\x07\x44idJson\x18\x02 \x01(\x0b\x32-.identitylayer.CreateAndStoreMyDidJsonMessage\"\\\n\x1e\x43reateAndStoreMyDidJsonMessage\x12\x0b\n\x03\x44id\x18\x01 \x01(\t\x12\x0c\n\x04Seed\x18\x02 \x01(\t\x12\x12\n\nCryptoType\x18\x03 \x01(\t\x12\x0b\n\x03\x43id\x18\x04 \x01(\x08\":\n\x1b\x43reateAndStoreMyDidResponse\x12\x0b\n\x03\x44id\x18\x01 \x01(\t\x12\x0e\n\x06Verkey\x18\x02 \x01(\t\"\x86\x01\n\x17ReplaceKeysStartRequest\x12\x14\n\x0cWalletHandle\x18\x01 \x01(\x03\x12\x0b\n\x03\x44id\x18\x02 \x01(\t\x12H\n\x0cIdentityJson\x18\x03 \x01(\x0b\x32\x32.identitylayer.ReplaceKeysStartIdentityJsonMessage\"G\n#ReplaceKeysStartIdentityJsonMessage\x12\x0c\n\x04Seed\x18\x01 \x01(\t\x12\x12\n\nCryptoType\x18\x02 \x01(\t\"*\n\x18ReplaceKeysStartResponse\x12\x0e\n\x06Verkey\x18\x01 \x01(\t\"<\n\x17ReplaceKeysApplyRequest\x12\x14\n\x0cWalletHandle\x18\x01 \x01(\x03\x12\x0b\n\x03\x44id\x18\x02 \x01(\t\"-\n\x18ReplaceKeysApplyResponse\x12\x11\n\tErrorCode\x18\x01 \x01(\x03\"s\n\x14StoreTheirDidRequest\x12\x14\n\x0cWalletHandle\x18\x01 \x01(\x03\x12\x45\n\x0cIdentityJson\x18\x02 \x01(\x0b\x32/.identitylayer.StoreTheirDidIdentityJsonMessage\"S\n StoreTheirDidIdentityJsonMessage\x12\x0b\n\x03\x44id\x18\x01 \x01(\t\x12\x0e\n\x06Verkey\x18\x02 \x01(\t\x12\x12\n\nCryptoType\x18\x03 \x01(\t\"*\n\x15StoreTheirDidResponse\x12\x11\n\tErrorCode\x18\x01 \x01(\x03\"<\n\x13\x44idCreateKeyRequest\x12\x14\n\x0cWalletHandle\x18\x01 \x01(\x03\x12\x0f\n\x07KeyJson\x18\x02 \x01(\t\"&\n\x14\x44idCreateKeyResponse\x12\x0e\n\x06Verkey\x18\x01 \x01(\t\"R\n\x18\x44idSetKeyMetadataRequest\x12\x14\n\x0cWalletHandle\x18\x01 \x01(\x03\x12\x0e\n\x06Verkey\x18\x02 \x01(\t\x12\x10\n\x08Metadata\x18\x03 \x01(\t\".\n\x19\x44idSetKeyMetadataResponse\x12\x11\n\tErrorCode\x18\x01 \x01(\x03\"@\n\x18\x44idGetKeyMetadataRequest\x12\x14\n\x0cWalletHandle\x18\x01 \x01(\x03\x12\x0e\n\x06Verkey\x18\x02 \x01(\t\"-\n\x19\x44idGetKeyMetadataResponse\x12\x10\n\x08Metadata\x18\x01 \x01(\t\"I\n\x10KeyForDidRequest\x12\x12\n\nPoolHandle\x18\x01 \x01(\x03\x12\x14\n\x0cWalletHandle\x18\x02 \x01(\x03\x12\x0b\n\x03\x44id\x18\x03 \x01(\t\" \n\x11KeyForDidResponse\x12\x0b\n\x03Key\x18\x01 \x01(\t\":\n\x15KeyForLocalDidRequest\x12\x14\n\x0cWalletHandle\x18\x01 \x01(\x03\x12\x0b\n\x03\x44id\x18\x02 \x01(\t\"%\n\x16KeyForLocalDidResponse\x12\x0b\n\x03Key\x18\x01 \x01(\t\"d\n\x18SetEndpointForDidRequest\x12\x14\n\x0cWalletHandle\x18\x01 \x01(\x03\x12\x0b\n\x03\x44id\x18\x02 \x01(\t\x12\x0f\n\x07\x41\x64\x64ress\x18\x03 \x01(\t\x12\x14\n\x0cTransportKey\x18\x04 \x01(\t\".\n\x19SetEndpointForDidResponse\x12\x11\n\tErrorCode\x18\x01 \x01(\x03\"Q\n\x18GetEndpointForDidRequest\x12\x14\n\x0cWalletHandle\x18\x01 \x01(\x03\x12\x12\n\nPoolHandle\x18\x02 \x01(\x03\x12\x0b\n\x03\x44id\x18\x03 \x01(\t\"B\n\x19GetEndpointForDidResponse\x12\x10\n\x08\x45ndpoint\x18\x01 \x01(\t\x12\x13\n\x0bTransportVk\x18\x02 \x01(\t\"L\n\x15SetDidMetadataRequest\x12\x14\n\x0cWalletHandle\x18\x01 \x01(\x03\x12\x0b\n\x03\x44id\x18\x02 \x01(\t\x12\x10\n\x08Metadata\x18\x03 \x01(\t\"\'\n\x16SetDidMetadataResponse\x12\r\n\x05\x45rror\x18\x01 \x01(\x03\":\n\x15GetDidMetadataRequest\x12\x14\n\x0cWalletHandle\x18\x01 \x01(\x03\x12\x0b\n\x03\x44id\x18\x02 \x01(\t\"*\n\x16GetDidMetadataResponse\x12\x10\n\x08Metadata\x18\x01 \x01(\t\"<\n\x17GetMyDidWithMetaRequest\x12\x14\n\x0cWalletHandle\x18\x01 \x01(\x03\x12\x0b\n\x03\x44id\x18\x02 \x01(\t\"\'\n\x18GetMyDidWithMetaResponse\x12\x0b\n\x03\x44id\x18\x01 \x01(\t\"1\n\x19ListMyDidsWithMetaRequest\x12\x14\n\x0cWalletHandle\x18\x01 \x01(\x03\")\n\x1aListMyDidsWithMetaResponse\x12\x0b\n\x03\x44id\x18\x01 \x03(\t\":\n\x17\x41\x62\x62reviateVerkeyRequest\x12\x0b\n\x03\x44id\x18\x01 \x01(\t\x12\x12\n\nFullVerkey\x18\x02 \x01(\t\",\n\x18\x41\x62\x62reviateVerkeyResponse\x12\x10\n\x08Metadata\x18\x01 \x01(\t\"m\n\x16SignAndSubmitRequestRq\x12\x12\n\nPoolHandle\x18\x01 \x01(\x03\x12\x14\n\x0cWalletHandle\x18\x02 \x01(\x03\x12\x14\n\x0cSubmitterDid\x18\x03 \x01(\t\x12\x13\n\x0bRequestJson\x18\x04 \x01(\t\"&\n\x16SignAndSubmitRequestRs\x12\x0c\n\x04Resp\x18\x01 \x01(\t\":\n\x0fSubmitRequestRq\x12\x12\n\nPoolHandle\x18\x01 \x01(\x03\x12\x13\n\x0bRequestJson\x18\x02 \x01(\t\"\x1f\n\x0fSubmitRequestRs\x12\x0c\n\x04Resp\x18\x01 \x01(\t\"Y\n\x0eSubmitActionRq\x12\x12\n\nPoolHandle\x18\x01 \x01(\x03\x12\x13\n\x0bRequestJson\x18\x02 \x01(\t\x12\r\n\x05Nodes\x18\x03 \x01(\t\x12\x0f\n\x07Timeout\x18\x04 \x01(\x03\"\x1e\n\x0eSubmitActionRs\x12\x0c\n\x04Resp\x18\x01 \x01(\t\"P\n\rSignRequestRq\x12\x14\n\x0cWalletHandle\x18\x01 \x01(\x03\x12\x14\n\x0cSubmitterDid\x18\x02 \x01(\t\x12\x13\n\x0bRequestJson\x18\x03 \x01(\t\"\x1d\n\rSignRequestRs\x12\x0c\n\x04Resp\x18\x01 \x01(\t\"U\n\x12MultiSignRequestRq\x12\x14\n\x0cWalletHandle\x18\x01 \x01(\x03\x12\x14\n\x0cSubmitterDid\x18\x02 \x01(\t\x12\x13\n\x0bRequestJson\x18\x03 \x01(\t\"\"\n\x12MultiSignRequestRs\x12\x0c\n\x04Resp\x18\x01 \x01(\t\"?\n\x14\x42uildGetDdoRequestRq\x12\x14\n\x0cSubmitterDid\x18\x01 \x01(\t\x12\x11\n\tTargetDid\x18\x02 \x01(\t\"$\n\x14\x42uildGetDdoRequestRs\x12\x0c\n\x04Resp\x18\x01 \x01(\t\"i\n\x11\x42uildNymRequestRq\x12\x14\n\x0cSubmitterDid\x18\x01 \x01(\t\x12\x11\n\tTargetDid\x18\x02 \x01(\t\x12\x0e\n\x06VerKey\x18\x03 \x01(\t\x12\r\n\x05\x41lias\x18\x04 \x01(\t\x12\x0c\n\x04Role\x18\x05 \x01(\t\"!\n\x11\x42uildNymRequestRs\x12\x0c\n\x04Resp\x18\x01 \x01(\t\"h\n\x14\x42uildAttribRequestRq\x12\x14\n\x0cSubmitterDid\x18\x01 \x01(\t\x12\x11\n\tTargetDid\x18\x02 \x01(\t\x12\r\n\x05Xhash\x18\x03 \x01(\t\x12\x0b\n\x03Raw\x18\x04 \x01(\t\x12\x0b\n\x03\x45nc\x18\x05 \x01(\t\"$\n\x14\x42uildAttribRequestRs\x12\x0c\n\x04Resp\x18\x01 \x01(\t\"k\n\x17\x42uildGetAttribRequestRq\x12\x14\n\x0cSubmitterDid\x18\x01 \x01(\t\x12\x11\n\tTargetDid\x18\x02 \x01(\t\x12\r\n\x05Xhash\x18\x03 \x01(\t\x12\x0b\n\x03Raw\x18\x04 \x01(\t\x12\x0b\n\x03\x45nc\x18\x05 \x01(\t\"\'\n\x17\x42uildGetAttribRequestRs\x12\x0c\n\x04Resp\x18\x01 \x01(\t\"?\n\x14\x42uildGetNymRequestRq\x12\x14\n\x0cSubmitterDid\x18\x01 \x01(\t\x12\x11\n\tTargetDid\x18\x02 \x01(\t\"$\n\x14\x42uildGetNymRequestRs\x12\x0c\n\x04Resp\x18\x01 \x01(\t\":\n\x14\x42uildSchemaRequestRq\x12\x14\n\x0cSubmitterDid\x18\x01 \x01(\t\x12\x0c\n\x04\x44\x61ta\x18\x02 \x01(\t\"$\n\x14\x42uildSchemaRequestRs\x12\x0c\n\x04Resp\x18\x01 \x01(\t\"<\n\x17\x42uildGetSchemaRequestRq\x12\x14\n\x0cSubmitterDid\x18\x01 \x01(\t\x12\x0b\n\x03Id_\x18\x02 \x01(\t\"\'\n\x17\x42uildGetSchemaRequestRs\x12\x0c\n\x04Resp\x18\x01 \x01(\t\"5\n\x18ParseGetSchemaResponseRq\x12\x19\n\x11GetSchemaResponse\x18\x01 \x01(\t\":\n\x18ParseGetSchemaResponseRs\x12\n\n\x02Id\x18\x01 \x01(\t\x12\x12\n\nSchemaJson\x18\x02 \x01(\t\";\n\x15\x42uildCredDefRequestRq\x12\x14\n\x0cSubmitterDid\x18\x01 \x01(\t\x12\x0c\n\x04\x44\x61ta\x18\x02 \x01(\t\"%\n\x15\x42uildCredDefRequestRs\x12\x0c\n\x04Resp\x18\x01 \x01(\t\"=\n\x18\x42uildGetCredDefRequestRq\x12\x14\n\x0cSubmitterDid\x18\x01 \x01(\t\x12\x0b\n\x03Id_\x18\x02 \x01(\t\"(\n\x18\x42uildGetCredDefRequestRs\x12\x0c\n\x04Resp\x18\x01 \x01(\t\"7\n\x19ParseGetCredDefResponseRq\x12\x1a\n\x12GetCredDefResponse\x18\x01 \x01(\t\"]\n\x19ParseGetCredDefResponseRs\x12\x1e\n\x16\x43redentialDefinitionId\x18\x01 \x01(\t\x12 \n\x18\x43redentialDefinitionJson\x18\x02 \x01(\t\"K\n\x12\x42uildNodeRequestRq\x12\x14\n\x0cSubmitterDid\x18\x01 \x01(\t\x12\x11\n\tTargetDid\x18\x02 \x01(\t\x12\x0c\n\x04\x44\x61ta\x18\x03 \x01(\t\"\"\n\x12\x42uildNodeRequestRs\x12\x0c\n\x04Resp\x18\x01 \x01(\t\"6\n\x1e\x42uildGetValidatorInfoRequestRq\x12\x14\n\x0cSubmitterDid\x18\x01 \x01(\t\".\n\x1e\x42uildGetValidatorInfoRequestRs\x12\x0c\n\x04Resp\x18\x01 \x01(\t\"O\n\x14\x42uildGetTxnRequestRq\x12\x14\n\x0cSubmitterDid\x18\x01 \x01(\t\x12\x12\n\nLedgerType\x18\x02 \x01(\t\x12\r\n\x05SeqNo\x18\x03 \x01(\t\"$\n\x14\x42uildGetTxnRequestRs\x12\x0c\n\x04Resp\x18\x01 \x01(\t\"O\n\x18\x42uildPoolConfigRequestRq\x12\x14\n\x0cSubmitterDid\x18\x01 \x01(\t\x12\x0e\n\x06Writes\x18\x02 \x01(\x08\x12\r\n\x05\x46orce\x18\x03 \x01(\x08\"(\n\x18\x42uildPoolConfigRequestRs\x12\x0c\n\x04Resp\x18\x01 \x01(\t\"S\n\x19\x42uildPoolRestartRequestRq\x12\x14\n\x0cSubmitterDid\x18\x01 \x01(\t\x12\x0e\n\x06\x41\x63tion\x18\x02 \x01(\t\x12\x10\n\x08\x44\x61tetime\x18\x03 \x01(\t\")\n\x19\x42uildPoolRestartRequestRs\x12\x0c\n\x04Resp\x18\x01 \x01(\t\"\xdf\x01\n\x19\x42uildPoolUpgradeRequestRq\x12\x14\n\x0cSubmitterDid\x18\x01 \x01(\t\x12\x0c\n\x04Name\x18\x02 \x01(\t\x12\x0f\n\x07Version\x18\x03 \x01(\t\x12\x0e\n\x06\x41\x63tion\x18\x04 \x01(\t\x12\x0f\n\x07_sha256\x18\x05 \x01(\t\x12\x10\n\x08_timeout\x18\x06 \x01(\x03\x12\x10\n\x08Schedule\x18\x07 \x01(\t\x12\x15\n\rJustification\x18\x08 \x01(\t\x12\x11\n\tReinstall\x18\t \x01(\x08\x12\r\n\x05\x46orce\x18\n \x01(\x08\x12\x0f\n\x07Package\x18\x0b \x01(\t\")\n\x19\x42uildPoolUpgradeRequestRs\x12\x0c\n\x04Resp\x18\x01 \x01(\t\"?\n\x19\x42uildRevocRegDefRequestRq\x12\x14\n\x0cSubmitterDid\x18\x01 \x01(\t\x12\x0c\n\x04\x44\x61ta\x18\x02 \x01(\t\")\n\x19\x42uildRevocRegDefRequestRs\x12\x0c\n\x04Resp\x18\x01 \x01(\t\"I\n\x1c\x42uildGetRevocRegDefRequestRq\x12\x14\n\x0cSubmitterDid\x18\x01 \x01(\t\x12\x13\n\x0bRevRegDefId\x18\x02 \x01(\t\",\n\x1c\x42uildGetRevocRegDefRequestRs\x12\x0c\n\x04Resp\x18\x01 \x01(\t\"?\n\x1dParseGetRevocRegDefResponseRq\x12\x1e\n\x16GetRevocRefDefResponse\x18\x01 \x01(\t\"M\n\x1dParseGetRevocRegDefResponseRs\x12\x14\n\x0cRevocationId\x18\x01 \x01(\t\x12\x16\n\x0eRevocationJson\x18\x02 \x01(\t\"m\n\x1b\x42uildRevocRegEntryRequestRq\x12\x14\n\x0cSubmitterDid\x18\x01 \x01(\t\x12\x15\n\rRevocRegDefId\x18\x02 \x01(\t\x12\x12\n\nRevDefType\x18\x03 \x01(\t\x12\r\n\x05Value\x18\x04 \x01(\t\"+\n\x1b\x42uildRevocRegEntryRequestRs\x12\x0c\n\x04Resp\x18\x01 \x01(\t\"[\n\x19\x42uildGetRevocRegRequestRq\x12\x14\n\x0cSubmitterDid\x18\x01 \x01(\t\x12\x15\n\rRevocRegDefId\x18\x02 \x01(\t\x12\x11\n\tTimestamp\x18\x03 \x01(\t\")\n\x19\x42uildGetRevocRegRequestRs\x12\x0c\n\x04Resp\x18\x01 \x01(\t\"9\n\x1aParseGetRevocRegResponseRq\x12\x1b\n\x13GetRevocRegResponse\x18\x01 \x01(\t\"I\n\x1aParseGetRevocRegResponseRs\x12\n\n\x02Id\x18\x01 \x01(\t\x12\x0c\n\x04Json\x18\x02 \x01(\t\x12\x11\n\tTimestamp\x18\x03 \x01(\x03\"g\n\x1e\x42uildGetRevocRegDeltaRequestRq\x12\x13\n\x0bSubmiterDid\x18\x01 \x01(\t\x12\x15\n\rRevocRegDefId\x18\x02 \x01(\t\x12\r\n\x05\x46rom_\x18\x03 \x01(\x03\x12\n\n\x02To\x18\x04 \x01(\x03\".\n\x1e\x42uildGetRevocRegDeltaRequestRs\x12\x0c\n\x04Resp\x18\x01 \x01(\t\"C\n\x1fParseGetRevocRegDeltaResponseRq\x12 \n\x18GetRevocRegDeltaResponse\x18\x01 \x01(\t\"N\n\x1fParseGetRevocRegDeltaResponseRs\x12\n\n\x02Id\x18\x01 \x01(\t\x12\x0c\n\x04Json\x18\x02 \x01(\t\x12\x11\n\tTimestamp\x18\x03 \x01(\x03\")\n\x15GetResponseMetadataRq\x12\x10\n\x08Response\x18\x01 \x01(\t\"%\n\x15GetResponseMetadataRs\x12\x0c\n\x04Resp\x18\x01 \x01(\t\"k\n\x16\x41\x64\x64WalletRecordRequest\x12\x14\n\x0cWalletHandle\x18\x01 \x01(\x03\x12\r\n\x05Type_\x18\x02 \x01(\t\x12\x0b\n\x03Id_\x18\x03 \x01(\t\x12\r\n\x05Value\x18\x04 \x01(\t\x12\x10\n\x08TagsJson\x18\x05 \x01(\t\"\'\n\x17\x41\x64\x64WalletRecordResponse\x12\x0c\n\x04Resp\x18\x01 \x01(\t\"a\n\x1eUpdateWalletRecordValueRequest\x12\x14\n\x0cWalletHandle\x18\x01 \x01(\x03\x12\r\n\x05Type_\x18\x02 \x01(\t\x12\x0b\n\x03Id_\x18\x03 \x01(\t\x12\r\n\x05value\x18\x04 \x01(\t\"/\n\x1fUpdateWalletRecordValueResponse\x12\x0c\n\x04Resp\x18\x01 \x01(\t\"c\n\x1dUpdateWalletRecordTagsRequest\x12\x14\n\x0cWalletHandle\x18\x01 \x01(\x03\x12\r\n\x05Type_\x18\x02 \x01(\t\x12\x0b\n\x03Id_\x18\x03 \x01(\t\x12\x10\n\x08TagsJson\x18\x04 \x01(\t\".\n\x1eUpdateWalletRecordTagsResponse\x12\x0c\n\x04Resp\x18\x01 \x01(\t\"`\n\x1a\x41\x64\x64WalletRecordTagsRequest\x12\x14\n\x0cWalletHandle\x18\x01 \x01(\x03\x12\r\n\x05Type_\x18\x02 \x01(\t\x12\x0b\n\x03Id_\x18\x03 \x01(\t\x12\x10\n\x08TagsJson\x18\x04 \x01(\t\"+\n\x1b\x41\x64\x64WalletRecordTagsResponse\x12\x0c\n\x04Resp\x18\x01 \x01(\t\"g\n\x1d\x44\x65leteWalletRecordTagsRequest\x12\x14\n\x0cWalletHandle\x18\x01 \x01(\x03\x12\r\n\x05Type_\x18\x02 \x01(\t\x12\x0b\n\x03Id_\x18\x03 \x01(\t\x12\x14\n\x0cTagNamesJson\x18\x04 \x01(\t\".\n\x1e\x44\x65leteWalletRecordTagsResponse\x12\x0c\n\x04Resp\x18\x01 \x01(\t\"M\n\x19\x44\x65leteWalletRecordRequest\x12\x14\n\x0cWalletHandle\x18\x01 \x01(\x03\x12\r\n\x05Type_\x18\x02 \x01(\t\x12\x0b\n\x03Id_\x18\x03 \x01(\t\"*\n\x1a\x44\x65leteWalletRecordResponse\x12\x0c\n\x04Resp\x18\x01 \x01(\t\"^\n\x16GetWalletRecordRequest\x12\x14\n\x0cWalletHandle\x18\x01 \x01(\x03\x12\r\n\x05Type_\x18\x02 \x01(\t\x12\n\n\x02Id\x18\x03 \x01(\t\x12\x13\n\x0bOptionsJson\x18\x04 \x01(\t\"\'\n\x17GetWalletRecordResponse\x12\x0c\n\x04Resp\x18\x01 \x01(\t\"f\n\x17OpenWalletSearchRequest\x12\x14\n\x0cWalletHandle\x18\x01 \x01(\x03\x12\r\n\x05Type_\x18\x02 \x01(\t\x12\x11\n\tQueryJson\x18\x03 \x01(\t\x12\x13\n\x0bOptionsJson\x18\x04 \x01(\t\"0\n\x18OpenWalletSearchResponse\x12\x14\n\x0cSearchHandle\x18\x01 \x01(\x03\"f\n#FetchWalletSearchNextRecordsRequest\x12\x14\n\x0cWalletHandle\x18\x01 \x01(\x03\x12\x1a\n\x12WalletSearchHandle\x18\x02 \x01(\x03\x12\r\n\x05\x43ount\x18\x03 \x01(\x03\"A\n$FetchWalletSearchNextRecordsResponse\x12\x19\n\x11WalletRecordsJson\x18\x01 \x01(\t\"6\n\x18\x43loseWalletSearchRequest\x12\x1a\n\x12WalletSearchHandle\x18\x01 \x01(\x03\")\n\x19\x43loseWalletSearchResponse\x12\x0c\n\x04Resp\x18\x01 \x01(\t2\x82\t\n\x10NonSecretService\x12\x62\n\x0f\x41\x64\x64WalletRecord\x12%.identitylayer.AddWalletRecordRequest\x1a&.identitylayer.AddWalletRecordResponse\"\x00\x12z\n\x17UpdateWalletRecordValue\x12-.identitylayer.UpdateWalletRecordValueRequest\x1a..identitylayer.UpdateWalletRecordValueResponse\"\x00\x12w\n\x16UpdateWalletRecordTags\x12,.identitylayer.UpdateWalletRecordTagsRequest\x1a-.identitylayer.UpdateWalletRecordTagsResponse\"\x00\x12n\n\x13\x41\x64\x64WalletRecordTags\x12).identitylayer.AddWalletRecordTagsRequest\x1a*.identitylayer.AddWalletRecordTagsResponse\"\x00\x12w\n\x16\x44\x65leteWalletRecordTags\x12,.identitylayer.DeleteWalletRecordTagsRequest\x1a-.identitylayer.DeleteWalletRecordTagsResponse\"\x00\x12k\n\x12\x44\x65leteWalletRecord\x12(.identitylayer.DeleteWalletRecordRequest\x1a).identitylayer.DeleteWalletRecordResponse\"\x00\x12\x62\n\x0fGetWalletRecord\x12%.identitylayer.GetWalletRecordRequest\x1a&.identitylayer.GetWalletRecordResponse\"\x00\x12\x65\n\x10OpenWalletSearch\x12&.identitylayer.OpenWalletSearchRequest\x1a\'.identitylayer.OpenWalletSearchResponse\"\x00\x12\x89\x01\n\x1c\x46\x65tchWalletSearchNextRecords\x12\x32.identitylayer.FetchWalletSearchNextRecordsRequest\x1a\x33.identitylayer.FetchWalletSearchNextRecordsResponse\"\x00\x12h\n\x11\x43loseWalletSearch\x12\'.identitylayer.CloseWalletSearchRequest\x1a(.identitylayer.CloseWalletSearchResponse\"\x00\x32\xe7\x19\n\rLedgerService\x12\x66\n\x14SignAndSubmitRequest\x12%.identitylayer.SignAndSubmitRequestRq\x1a%.identitylayer.SignAndSubmitRequestRs\"\x00\x12Q\n\rSubmitRequest\x12\x1e.identitylayer.SubmitRequestRq\x1a\x1e.identitylayer.SubmitRequestRs\"\x00\x12N\n\x0cSubmitAction\x12\x1d.identitylayer.SubmitActionRq\x1a\x1d.identitylayer.SubmitActionRs\"\x00\x12K\n\x0bSignRequest\x12\x1c.identitylayer.SignRequestRq\x1a\x1c.identitylayer.SignRequestRs\"\x00\x12Z\n\x10MultiSignRequest\x12!.identitylayer.MultiSignRequestRq\x1a!.identitylayer.MultiSignRequestRs\"\x00\x12`\n\x12\x42uildGetDdoRequest\x12#.identitylayer.BuildGetDdoRequestRq\x1a#.identitylayer.BuildGetDdoRequestRs\"\x00\x12W\n\x0f\x42uildNymRequest\x12 .identitylayer.BuildNymRequestRq\x1a .identitylayer.BuildNymRequestRs\"\x00\x12`\n\x12\x42uildAttribRequest\x12#.identitylayer.BuildAttribRequestRq\x1a#.identitylayer.BuildAttribRequestRs\"\x00\x12i\n\x15\x42uildGetAttribRequest\x12&.identitylayer.BuildGetAttribRequestRq\x1a&.identitylayer.BuildGetAttribRequestRs\"\x00\x12`\n\x12\x42uildGetNymRequest\x12#.identitylayer.BuildGetNymRequestRq\x1a#.identitylayer.BuildGetNymRequestRs\"\x00\x12`\n\x12\x42uildSchemaRequest\x12#.identitylayer.BuildSchemaRequestRq\x1a#.identitylayer.BuildSchemaRequestRs\"\x00\x12i\n\x15\x42uildGetSchemaRequest\x12&.identitylayer.BuildGetSchemaRequestRq\x1a&.identitylayer.BuildGetSchemaRequestRs\"\x00\x12l\n\x16ParseGetSchemaResponse\x12\'.identitylayer.ParseGetSchemaResponseRq\x1a\'.identitylayer.ParseGetSchemaResponseRs\"\x00\x12\x63\n\x13\x42uildCredDefRequest\x12$.identitylayer.BuildCredDefRequestRq\x1a$.identitylayer.BuildCredDefRequestRs\"\x00\x12l\n\x16\x42uildGetCredDefRequest\x12\'.identitylayer.BuildGetCredDefRequestRq\x1a\'.identitylayer.BuildGetCredDefRequestRs\"\x00\x12o\n\x17ParseGetCredDefResponse\x12(.identitylayer.ParseGetCredDefResponseRq\x1a(.identitylayer.ParseGetCredDefResponseRs\"\x00\x12Z\n\x10\x42uildNodeRequest\x12!.identitylayer.BuildNodeRequestRq\x1a!.identitylayer.BuildNodeRequestRs\"\x00\x12~\n\x1c\x42uildGetValidatorInfoRequest\x12-.identitylayer.BuildGetValidatorInfoRequestRq\x1a-.identitylayer.BuildGetValidatorInfoRequestRs\"\x00\x12`\n\x12\x42uildGetTxnRequest\x12#.identitylayer.BuildGetTxnRequestRq\x1a#.identitylayer.BuildGetTxnRequestRs\"\x00\x12l\n\x16\x42uildPoolConfigRequest\x12\'.identitylayer.BuildPoolConfigRequestRq\x1a\'.identitylayer.BuildPoolConfigRequestRs\"\x00\x12o\n\x17\x42uildPoolRestartRequest\x12(.identitylayer.BuildPoolRestartRequestRq\x1a(.identitylayer.BuildPoolRestartRequestRs\"\x00\x12o\n\x17\x42uildPoolUpgradeRequest\x12(.identitylayer.BuildPoolUpgradeRequestRq\x1a(.identitylayer.BuildPoolUpgradeRequestRs\"\x00\x12o\n\x17\x42uildRevocRegDefRequest\x12(.identitylayer.BuildRevocRegDefRequestRq\x1a(.identitylayer.BuildRevocRegDefRequestRs\"\x00\x12x\n\x1a\x42uildGetRevocRegDefRequest\x12+.identitylayer.BuildGetRevocRegDefRequestRq\x1a+.identitylayer.BuildGetRevocRegDefRequestRs\"\x00\x12{\n\x1bParseGetRevocRegDefResponse\x12,.identitylayer.ParseGetRevocRegDefResponseRq\x1a,.identitylayer.ParseGetRevocRegDefResponseRs\"\x00\x12u\n\x19\x42uildRevocRegEntryRequest\x12*.identitylayer.BuildRevocRegEntryRequestRq\x1a*.identitylayer.BuildRevocRegEntryRequestRs\"\x00\x12o\n\x17\x42uildGetRevocRegRequest\x12(.identitylayer.BuildGetRevocRegRequestRq\x1a(.identitylayer.BuildGetRevocRegRequestRs\"\x00\x12r\n\x18ParseGetRevocRegResponse\x12).identitylayer.ParseGetRevocRegResponseRq\x1a).identitylayer.ParseGetRevocRegResponseRs\"\x00\x12~\n\x1c\x42uildGetRevocRegDeltaRequest\x12-.identitylayer.BuildGetRevocRegDeltaRequestRq\x1a-.identitylayer.BuildGetRevocRegDeltaRequestRs\"\x00\x12\x81\x01\n\x1dParseGetRevocRegDeltaResponse\x12..identitylayer.ParseGetRevocRegDeltaResponseRq\x1a..identitylayer.ParseGetRevocRegDeltaResponseRs\"\x00\x12\x63\n\x13GetResponseMetadata\x12$.identitylayer.GetResponseMetadataRq\x1a$.identitylayer.GetResponseMetadataRs\"\x00\x32\xda\x0c\n\nDidService\x12n\n\x13\x43reateAndStoreMyDid\x12).identitylayer.CreateAndStoreMyDidRequest\x1a*.identitylayer.CreateAndStoreMyDidResponse\"\x00\x12\x65\n\x10ReplaceKeysStart\x12&.identitylayer.ReplaceKeysStartRequest\x1a\'.identitylayer.ReplaceKeysStartResponse\"\x00\x12\x65\n\x10ReplaceKeysApply\x12&.identitylayer.ReplaceKeysApplyRequest\x1a\'.identitylayer.ReplaceKeysApplyResponse\"\x00\x12\\\n\rStoreTheirDid\x12#.identitylayer.StoreTheirDidRequest\x1a$.identitylayer.StoreTheirDidResponse\"\x00\x12Y\n\x0c\x44idCreateKey\x12\".identitylayer.DidCreateKeyRequest\x1a#.identitylayer.DidCreateKeyResponse\"\x00\x12g\n\x11\x44idSetKeyMetadata\x12\'.identitylayer.DidSetKeyMetadataRequest\x1a\'.identitylayer.DidSetKeyMetadataRequest\"\x00\x12h\n\x11\x44idGetKeyMetadata\x12\'.identitylayer.DidGetKeyMetadataRequest\x1a(.identitylayer.DidGetKeyMetadataResponse\"\x00\x12P\n\tKeyForDid\x12\x1f.identitylayer.KeyForDidRequest\x1a .identitylayer.KeyForDidResponse\"\x00\x12_\n\x0eKeyForLocalDid\x12$.identitylayer.KeyForLocalDidRequest\x1a%.identitylayer.KeyForLocalDidResponse\"\x00\x12h\n\x11SetEndpointForDid\x12\'.identitylayer.SetEndpointForDidRequest\x1a(.identitylayer.SetEndpointForDidResponse\"\x00\x12h\n\x11GetEndpointForDid\x12\'.identitylayer.GetEndpointForDidRequest\x1a(.identitylayer.GetEndpointForDidResponse\"\x00\x12_\n\x0eSetDidMetadata\x12$.identitylayer.SetDidMetadataRequest\x1a%.identitylayer.SetDidMetadataResponse\"\x00\x12_\n\x0eGetDidMetadata\x12$.identitylayer.GetDidMetadataRequest\x1a%.identitylayer.GetDidMetadataResponse\"\x00\x12\x65\n\x10GetMyDidWithMeta\x12&.identitylayer.GetMyDidWithMetaRequest\x1a\'.identitylayer.GetMyDidWithMetaResponse\"\x00\x12k\n\x12ListMyDidsWithMeta\x12(.identitylayer.ListMyDidsWithMetaRequest\x1a).identitylayer.ListMyDidsWithMetaResponse\"\x00\x12\x65\n\x10\x41\x62\x62reviateVerkey\x12&.identitylayer.AbbreviateVerkeyRequest\x1a\'.identitylayer.AbbreviateVerkeyResponse\"\x00\x32\xfc\x03\n\x0fPairwiseService\x12\x65\n\x10IsPairwiseExists\x12&.identitylayer.IsPairwiseExistsRequest\x1a\'.identitylayer.IsPairwiseExistsResponse\"\x00\x12_\n\x0e\x43reatePairwise\x12$.identitylayer.CreatePairwiseRequest\x1a%.identitylayer.CreatePairwiseResponse\"\x00\x12Y\n\x0cListPairwise\x12\".identitylayer.ListPairwiseRequest\x1a#.identitylayer.ListPairwiseResponse\"\x00\x12V\n\x0bGetPairwise\x12!.identitylayer.GetPairwiseRequest\x1a\".identitylayer.GetPairwiseResponse\"\x00\x12n\n\x13SetPairwiseMetadata\x12).identitylayer.SetPairwiseMetadataRequest\x1a*.identitylayer.SetPairwiseMetadataResponse\"\x00\x32\xa7\x06\n\rCryptoService\x12P\n\tCreateKey\x12\x1f.identitylayer.CreateKeyRequest\x1a .identitylayer.CreateKeyResponse\"\x00\x12_\n\x0eSetKeyMetadata\x12$.identitylayer.SetKeyMetadataRequest\x1a%.identitylayer.SetKeyMetadataResponse\"\x00\x12_\n\x0eGetKeyMetadata\x12$.identitylayer.GetKeyMetadataRequest\x1a%.identitylayer.GetKeyMetadataResponse\"\x00\x12S\n\nCryptoSign\x12 .identitylayer.CryptoSignRequest\x1a!.identitylayer.CryptoSignResponse\"\x00\x12Y\n\x0c\x43ryptoVerify\x12\".identitylayer.CryptoVerifyRequest\x1a#.identitylayer.CryptoVerifyResponse\"\x00\x12P\n\tAuthCrypt\x12\x1f.identitylayer.AuthCryptRequest\x1a .identitylayer.AuthCryptResponse\"\x00\x12V\n\x0b\x41uthDecrypt\x12!.identitylayer.AuthDecryptRequest\x1a\".identitylayer.AuthDecryptResponse\"\x00\x12P\n\tAnonCrypt\x12\x1f.identitylayer.AnonCryptRequest\x1a .identitylayer.AnonCryptResponse\"\x00\x12V\n\x0b\x41nonDecrypt\x12!.identitylayer.AnonDecryptRequest\x1a\".identitylayer.AnonDecryptResponse\"\x00\x32\xed\x05\n\x0bPoolService\x12w\n\x16\x43reatePoolLedgerConfig\x12,.identitylayer.CreatePoolLedgerConfigRequest\x1a-.identitylayer.CreatePoolLedgerConfigResponse\"\x00\x12_\n\x0eOpenPoolLedger\x12$.identitylayer.OpenPoolLedgerRequest\x1a%.identitylayer.OpenPoolLedgerResponse\"\x00\x12h\n\x11RefreshPoolLedger\x12\'.identitylayer.RefreshPoolLedgerRequest\x1a(.identitylayer.RefreshPoolLedgerResponse\"\x00\x12P\n\tListPools\x12\x1f.identitylayer.ListPoolsRequest\x1a .identitylayer.ListPoolsResponse\"\x00\x12\x62\n\x0f\x43losePoolLedger\x12%.identitylayer.ClosePoolLedgerRequest\x1a&.identitylayer.ClosePoolLedgerResponse\"\x00\x12w\n\x16\x44\x65letePoolLedgerConfig\x12,.identitylayer.DeletePoolLedgerConfigRequest\x1a-.identitylayer.DeletePoolLedgerConfigResponse\"\x00\x12k\n\x12SetProtocolVersion\x12(.identitylayer.SetProtocolVersionRequest\x1a).identitylayer.SetProtocolVersionResponse\"\x00\x32\xba\x18\n\x10\x41noncredsService\x12k\n\x12IssuerCreateSchema\x12(.identitylayer.IssuerCreateSchemaRequest\x1a).identitylayer.IssuerCreateSchemaResponse\"\x00\x12\x98\x01\n!IssuerCreateAndStoreCredentialDef\x12\x37.identitylayer.IssuerCreateAndStoreCredentialDefRequest\x1a\x38.identitylayer.IssuerCreateAndStoreCredentialDefResponse\"\x00\x12\x89\x01\n\x1cIssuerCreateAndStoreRevocReg\x12\x32.identitylayer.IssuerCreateAndStoreRevocRegRequest\x1a\x33.identitylayer.IssuerCreateAndStoreRevocRegResponse\"\x00\x12\x86\x01\n\x1bIssuerCreateCredentialOffer\x12\x31.identitylayer.IssuerCreateCredentialOfferRequest\x1a\x32.identitylayer.IssuerCreateCredentialOfferResponse\"\x00\x12w\n\x16IssuerCreateCredential\x12,.identitylayer.IssuerCreateCredentialRequest\x1a-.identitylayer.IssuerCreateCredentialResponse\"\x00\x12w\n\x16IssuerRevokeCredential\x12,.identitylayer.IssuerRevokeCredentialRequest\x1a-.identitylayer.IssuerRevokeCredentialResponse\"\x00\x12\x9e\x01\n#IssuerMergeRevocationRegistryDeltas\x12\x39.identitylayer.IssuerMergeRevocationRegistryDeltasRequest\x1a:.identitylayer.IssuerMergeRevocationRegistryDeltasResponse\"\x00\x12}\n\x18ProverCreateMasterSecret\x12..identitylayer.ProverCreateMasterSecretRequest\x1a/.identitylayer.ProverCreateMasterSecretResponse\"\x00\x12\x80\x01\n\x19ProverCreateCredentialReq\x12/.identitylayer.ProverCreateCredentialReqRequest\x1a\x30.identitylayer.ProverCreateCredentialReqResponse\"\x00\x12t\n\x15ProverStoreCredential\x12+.identitylayer.ProverStoreCredentialRequest\x1a,.identitylayer.ProverStoreCredentialResponse\"\x00\x12n\n\x13ProverGetCredential\x12).identitylayer.ProverGetCredentialRequest\x1a*.identitylayer.ProverGetCredentialResponse\"\x00\x12q\n\x14ProverGetCredentials\x12*.identitylayer.ProverGetCredentialsRequest\x1a+.identitylayer.ProverGetCredentialsResponse\"\x00\x12w\n\x16ProverSeachCredentials\x12,.identitylayer.ProverSeachCredentialsRequest\x1a-.identitylayer.ProverSeachCredentialsResponse\"\x00\x12w\n\x16ProverFetchCredentials\x12,.identitylayer.ProverFetchCredentialsRequest\x1a-.identitylayer.ProverFetchCredentialsResponse\"\x00\x12\x89\x01\n\x1cProverCloseCredentialsSearch\x12\x32.identitylayer.ProverCloseCredentialsSearchRequest\x1a\x33.identitylayer.ProverCloseCredentialsSearchResponse\"\x00\x12\x92\x01\n\x1fProverGetCredentialsForProofReq\x12\x35.identitylayer.ProverGetCredentialsForProofReqRequest\x1a\x36.identitylayer.ProverGetCredentialsForProofReqResponse\"\x00\x12\x9b\x01\n\"ProverSearchCredentialsForProofReq\x12\x38.identitylayer.ProverSearchCredentialsForProofReqRequest\x1a\x39.identitylayer.ProverSearchCredentialsForProofReqResponse\"\x00\x12\x98\x01\n!ProverFetchCredentialsForProofReq\x12\x37.identitylayer.ProverFetchCredentialsForProofReqRequest\x1a\x38.identitylayer.ProverFetchCredentialsForProofReqResponse\"\x00\x12\xaa\x01\n\'ProverCloseCredentialsSearchForProofReq\x12=.identitylayer.ProverCloseCredentialsSearchForProofReqRequest\x1a>.identitylayer.ProverCloseCredentialsSearchForProofReqResponse\"\x00\x12h\n\x11ProverCreateProof\x12\'.identitylayer.ProverCreateProofRequest\x1a(.identitylayer.ProverCreateProofResponse\"\x00\x12n\n\x13VerifierVerifyProof\x12).identitylayer.VerifierVerifyProofRequest\x1a*.identitylayer.VerifierVerifyProofResponse\"\x00\x12t\n\x15\x43reateRevocationState\x12+.identitylayer.CreateRevocationStateRequest\x1a,.identitylayer.CreateRevocationStateResponse\"\x00\x12t\n\x15UpdateRevocationState\x12+.identitylayer.UpdateRevocationStateRequest\x1a,.identitylayer.UpdateRevocationStateResponse\"\x00\x12\\\n\rGenerateNonce\x12#.identitylayer.GenerateNonceRequest\x1a$.identitylayer.GenerateNonceResponse\"\x00\x32\xb0\x05\n\rWalletService\x12]\n\x0f\x43reateNewWallet\x12\".identitylayer.NewWalletDefinition\x1a$.identitylayer.CreateWalletErrorCode\"\x00\x12T\n\nOpenWallet\x12#.identitylayer.OpenWalletDefinition\x1a\x1f.identitylayer.OpenWalletHandle\"\x00\x12S\n\x0b\x43loseWallet\x12 .identitylayer.CloseWalletHandle\x1a .identitylayer.CloseWalletStatus\"\x00\x12`\n\x0c\x44\x65leteWallet\x12%.identitylayer.DeleteWalletDefinition\x1a\'.identitylayer.DeleteWalletConfirmation\"\x00\x12`\n\x0c\x45xportWallet\x12%.identitylayer.ExportWalletDefinition\x1a\'.identitylayer.ExportWalletConfirmation\"\x00\x12`\n\x0cImportWallet\x12%.identitylayer.ImportWalletDefinition\x1a\'.identitylayer.ImportWalletConfirmation\"\x00\x12o\n\x11GenerateWalletKey\x12*.identitylayer.GenerateWalletKeyDefinition\x1a,.identitylayer.GenerateWalletKeyConfirmation\"\x00\x32\xbe\x01\n\x12\x42lobStorageService\x12S\n\nOpenReader\x12 .identitylayer.OpenReaderRequest\x1a!.identitylayer.OpenReaderResponse\"\x00\x12S\n\nOpenWriter\x12 .identitylayer.OpenWriterRequest\x1a!.identitylayer.OpenWriterResponse\"\x00\x62\x06proto3'
   ,
   dependencies=[google_dot_protobuf_dot_any__pb2.DESCRIPTOR,])
 
@@ -2110,30 +2110,9 @@ _ISSUERCREATECREDENTIALOFFERRESPONSE = _descriptor.Descriptor(
   containing_type=None,
   fields=[
     _descriptor.FieldDescriptor(
-      name='SchemaId', full_name='identitylayer.IssuerCreateCredentialOfferResponse.SchemaId', index=0,
+      name='Resp', full_name='identitylayer.IssuerCreateCredentialOfferResponse.Resp', index=0,
       number=1, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
-    _descriptor.FieldDescriptor(
-      name='CredDefId', full_name='identitylayer.IssuerCreateCredentialOfferResponse.CredDefId', index=1,
-      number=2, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
-    _descriptor.FieldDescriptor(
-      name='Nonce', full_name='identitylayer.IssuerCreateCredentialOfferResponse.Nonce', index=2,
-      number=3, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
-    _descriptor.FieldDescriptor(
-      name='KeyCorrectnessProof', full_name='identitylayer.IssuerCreateCredentialOfferResponse.KeyCorrectnessProof', index=3,
-      number=4, type=11, cpp_type=10, label=1,
-      has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
@@ -2149,8 +2128,8 @@ _ISSUERCREATECREDENTIALOFFERRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=4428,
-  serialized_end=4568,
+  serialized_start=4427,
+  serialized_end=4478,
 )
 
 
@@ -2198,8 +2177,8 @@ _ISSUERCREATECREDENTIALREQUEST = _descriptor.Descriptor(
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='BlobStorageReaderHandle', full_name='identitylayer.IssuerCreateCredentialRequest.BlobStorageReaderHandle', index=5,
-      number=6, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
+      number=6, type=3, cpp_type=2, label=1,
+      has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
@@ -2215,8 +2194,8 @@ _ISSUERCREATECREDENTIALREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=4571,
-  serialized_end=4743,
+  serialized_start=4481,
+  serialized_end=4653,
 )
 
 
@@ -2229,8 +2208,8 @@ _ISSUERCREATECREDENTIALRESPONSE = _descriptor.Descriptor(
   fields=[
     _descriptor.FieldDescriptor(
       name='CredJson', full_name='identitylayer.IssuerCreateCredentialResponse.CredJson', index=0,
-      number=1, type=11, cpp_type=10, label=1,
-      has_default_value=False, default_value=None,
+      number=1, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
@@ -2260,8 +2239,8 @@ _ISSUERCREATECREDENTIALRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=4746,
-  serialized_end=4876,
+  serialized_start=4655,
+  serialized_end=4753,
 )
 
 
@@ -2326,8 +2305,8 @@ _CREDJSONMESSAGE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=4879,
-  serialized_end=5090,
+  serialized_start=4756,
+  serialized_end=4967,
 )
 
 
@@ -2378,8 +2357,8 @@ _ISSUERREVOKECREDENTIALREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=5092,
-  serialized_end=5217,
+  serialized_start=4969,
+  serialized_end=5094,
 )
 
 
@@ -2409,8 +2388,8 @@ _ISSUERREVOKECREDENTIALRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=5219,
-  serialized_end=5288,
+  serialized_start=5096,
+  serialized_end=5165,
 )
 
 
@@ -2447,8 +2426,8 @@ _ISSUERMERGEREVOCATIONREGISTRYDELTASREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=5290,
-  serialized_end=5389,
+  serialized_start=5167,
+  serialized_end=5266,
 )
 
 
@@ -2478,8 +2457,8 @@ _ISSUERMERGEREVOCATIONREGISTRYDELTASRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=5391,
-  serialized_end=5475,
+  serialized_start=5268,
+  serialized_end=5352,
 )
 
 
@@ -2516,8 +2495,8 @@ _PROVERCREATEMASTERSECRETREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=5477,
-  serialized_end=5558,
+  serialized_start=5354,
+  serialized_end=5435,
 )
 
 
@@ -2547,8 +2526,8 @@ _PROVERCREATEMASTERSECRETRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=5560,
-  serialized_end=5627,
+  serialized_start=5437,
+  serialized_end=5504,
 )
 
 
@@ -2606,8 +2585,8 @@ _PROVERCREATECREDENTIALREQREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=5630,
-  serialized_end=5772,
+  serialized_start=5507,
+  serialized_end=5649,
 )
 
 
@@ -2620,8 +2599,8 @@ _PROVERCREATECREDENTIALREQRESPONSE = _descriptor.Descriptor(
   fields=[
     _descriptor.FieldDescriptor(
       name='CredReqJson', full_name='identitylayer.ProverCreateCredentialReqResponse.CredReqJson', index=0,
-      number=1, type=11, cpp_type=10, label=1,
-      has_default_value=False, default_value=None,
+      number=1, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
@@ -2644,8 +2623,8 @@ _PROVERCREATECREDENTIALREQRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=5774,
-  serialized_end=5894,
+  serialized_start=5651,
+  serialized_end=5736,
 )
 
 
@@ -2703,8 +2682,8 @@ _CREDREQJSONMESSAGE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=5897,
-  serialized_end=6068,
+  serialized_start=5739,
+  serialized_end=5910,
 )
 
 
@@ -2769,8 +2748,8 @@ _PROVERSTORECREDENTIALREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=6071,
-  serialized_end=6230,
+  serialized_start=5913,
+  serialized_end=6072,
 )
 
 
@@ -2800,8 +2779,8 @@ _PROVERSTORECREDENTIALRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=6232,
-  serialized_end=6279,
+  serialized_start=6074,
+  serialized_end=6121,
 )
 
 
@@ -2838,8 +2817,8 @@ _PROVERGETCREDENTIALREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=6281,
-  serialized_end=6347,
+  serialized_start=6123,
+  serialized_end=6189,
 )
 
 
@@ -2904,8 +2883,8 @@ _PROVERGETCREDENTIALRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=6350,
-  serialized_end=6486,
+  serialized_start=6192,
+  serialized_end=6328,
 )
 
 
@@ -2942,8 +2921,8 @@ _PROVERGETCREDENTIALSREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=6488,
-  serialized_end=6593,
+  serialized_start=6330,
+  serialized_end=6435,
 )
 
 
@@ -3008,8 +2987,8 @@ _FILTERJSONMESSAGE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=6596,
-  serialized_end=6739,
+  serialized_start=6438,
+  serialized_end=6581,
 )
 
 
@@ -3039,8 +3018,8 @@ _PROVERGETCREDENTIALSRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=6741,
-  serialized_end=6835,
+  serialized_start=6583,
+  serialized_end=6677,
 )
 
 
@@ -3105,8 +3084,8 @@ _CREDENTIALSJSONMESSAGE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=6838,
-  serialized_end=6969,
+  serialized_start=6680,
+  serialized_end=6811,
 )
 
 
@@ -3143,8 +3122,8 @@ _PROVERSEACHCREDENTIALSREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=6971,
-  serialized_end=7043,
+  serialized_start=6813,
+  serialized_end=6885,
 )
 
 
@@ -3181,8 +3160,8 @@ _PROVERSEACHCREDENTIALSRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=7045,
-  serialized_end=7119,
+  serialized_start=6887,
+  serialized_end=6961,
 )
 
 
@@ -3219,8 +3198,8 @@ _PROVERFETCHCREDENTIALSREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=7121,
-  serialized_end=7189,
+  serialized_start=6963,
+  serialized_end=7031,
 )
 
 
@@ -3250,8 +3229,8 @@ _PROVERFETCHCREDENTIALSRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=7191,
-  serialized_end=7287,
+  serialized_start=7033,
+  serialized_end=7129,
 )
 
 
@@ -3281,8 +3260,8 @@ _PROVERCLOSECREDENTIALSSEARCHREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=7289,
-  serialized_end=7348,
+  serialized_start=7131,
+  serialized_end=7190,
 )
 
 
@@ -3312,8 +3291,8 @@ _PROVERCLOSECREDENTIALSSEARCHRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=7350,
-  serialized_end=7402,
+  serialized_start=7192,
+  serialized_end=7244,
 )
 
 
@@ -3350,8 +3329,8 @@ _PROVERGETCREDENTIALSFORPROOFREQREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=7405,
-  serialized_end=7533,
+  serialized_start=7247,
+  serialized_end=7375,
 )
 
 
@@ -3416,8 +3395,8 @@ _PROOFREQUESTJSONMESSAGE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=7536,
-  serialized_end=7707,
+  serialized_start=7378,
+  serialized_end=7549,
 )
 
 
@@ -3454,8 +3433,8 @@ _PROVERGETCREDENTIALSFORPROOFREQRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=7709,
-  serialized_end=7803,
+  serialized_start=7551,
+  serialized_end=7645,
 )
 
 
@@ -3499,8 +3478,8 @@ _PROVERSEARCHCREDENTIALSFORPROOFREQREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=7806,
-  serialized_end=7999,
+  serialized_start=7648,
+  serialized_end=7841,
 )
 
 
@@ -3537,8 +3516,8 @@ _EXTRAQUERYJSONMESSAGE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=8001,
-  serialized_end=8117,
+  serialized_start=7843,
+  serialized_end=7959,
 )
 
 
@@ -3568,8 +3547,8 @@ _PROVERSEARCHCREDENTIALSFORPROOFREQRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=8119,
-  serialized_end=8185,
+  serialized_start=7961,
+  serialized_end=8027,
 )
 
 
@@ -3613,8 +3592,8 @@ _PROVERFETCHCREDENTIALSFORPROOFREQREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=8187,
-  serialized_end=8289,
+  serialized_start=8029,
+  serialized_end=8131,
 )
 
 
@@ -3644,8 +3623,8 @@ _PROVERFETCHCREDENTIALSFORPROOFREQRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=8291,
-  serialized_end=8404,
+  serialized_start=8133,
+  serialized_end=8246,
 )
 
 
@@ -3682,8 +3661,8 @@ _CREDENTIALSGIVENPROOFREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=8406,
-  serialized_end=8525,
+  serialized_start=8248,
+  serialized_end=8367,
 )
 
 
@@ -3748,8 +3727,8 @@ _CREDENTIALINFO = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=8527,
-  serialized_end=8650,
+  serialized_start=8369,
+  serialized_end=8492,
 )
 
 
@@ -3779,8 +3758,8 @@ _PROVERCLOSECREDENTIALSSEARCHFORPROOFREQREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=8652,
-  serialized_end=8722,
+  serialized_start=8494,
+  serialized_end=8564,
 )
 
 
@@ -3810,8 +3789,8 @@ _PROVERCLOSECREDENTIALSSEARCHFORPROOFREQRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=8724,
-  serialized_end=8787,
+  serialized_start=8566,
+  serialized_end=8629,
 )
 
 
@@ -3883,8 +3862,8 @@ _PROVERCREATEPROOFREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=8790,
-  serialized_end=9076,
+  serialized_start=8632,
+  serialized_end=8918,
 )
 
 
@@ -3949,8 +3928,8 @@ _PROOFREQJSONMESSAGE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=9079,
-  serialized_end=9269,
+  serialized_start=8921,
+  serialized_end=9111,
 )
 
 
@@ -3987,8 +3966,8 @@ _NONREVOCINTERVALMESSAGE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=9271,
-  serialized_end=9322,
+  serialized_start=9113,
+  serialized_end=9164,
 )
 
 
@@ -4032,8 +4011,8 @@ _REQUESTEDCREDENTIALSJSONMESSAGE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=9324,
-  serialized_end=9447,
+  serialized_start=9166,
+  serialized_end=9289,
 )
 
 
@@ -4065,6 +4044,13 @@ _PROVERCREATEPROOFRESPONSE = _descriptor.Descriptor(
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='ProofResp', full_name='identitylayer.ProverCreateProofResponse.ProofResp', index=3,
+      number=4, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
   ],
   extensions=[
   ],
@@ -4077,8 +4063,8 @@ _PROVERCREATEPROOFRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=9449,
-  serialized_end=9531,
+  serialized_start=9291,
+  serialized_end=9392,
 )
 
 
@@ -4143,8 +4129,8 @@ _VERIFIERVERIFYPROOFREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=9534,
-  serialized_end=9740,
+  serialized_start=9395,
+  serialized_end=9597,
 )
 
 
@@ -4174,8 +4160,8 @@ _VERIFIERVERIFYPROOFRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=9742,
-  serialized_end=9786,
+  serialized_start=9599,
+  serialized_end=9643,
 )
 
 
@@ -4233,8 +4219,8 @@ _CREATEREVOCATIONSTATEREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=9789,
-  serialized_end=9938,
+  serialized_start=9646,
+  serialized_end=9795,
 )
 
 
@@ -4266,6 +4252,13 @@ _CREATEREVOCATIONSTATERESPONSE = _descriptor.Descriptor(
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='RespJson', full_name='identitylayer.CreateRevocationStateResponse.RespJson', index=3,
+      number=4, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
   ],
   extensions=[
   ],
@@ -4278,8 +4271,8 @@ _CREATEREVOCATIONSTATERESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=9940,
-  serialized_end=10023,
+  serialized_start=9797,
+  serialized_end=9898,
 )
 
 
@@ -4344,8 +4337,8 @@ _UPDATEREVOCATIONSTATEREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=10026,
-  serialized_end=10197,
+  serialized_start=9901,
+  serialized_end=10072,
 )
 
 
@@ -4389,8 +4382,63 @@ _UPDATEREVOCATIONSTATERESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=10199,
-  serialized_end=10282,
+  serialized_start=10074,
+  serialized_end=10157,
+)
+
+
+_GENERATENONCEREQUEST = _descriptor.Descriptor(
+  name='GenerateNonceRequest',
+  full_name='identitylayer.GenerateNonceRequest',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=10159,
+  serialized_end=10181,
+)
+
+
+_GENERATENONCERESPONSE = _descriptor.Descriptor(
+  name='GenerateNonceResponse',
+  full_name='identitylayer.GenerateNonceResponse',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='Nonce', full_name='identitylayer.GenerateNonceResponse.Nonce', index=0,
+      number=1, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=10183,
+  serialized_end=10221,
 )
 
 
@@ -4427,8 +4475,8 @@ _CREATEKEYREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=10284,
-  serialized_end=10350,
+  serialized_start=10223,
+  serialized_end=10289,
 )
 
 
@@ -4465,8 +4513,8 @@ _KEYJSONCREATEKEY = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=10352,
-  serialized_end=10404,
+  serialized_start=10291,
+  serialized_end=10343,
 )
 
 
@@ -4496,8 +4544,8 @@ _CREATEKEYRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=10406,
-  serialized_end=10441,
+  serialized_start=10345,
+  serialized_end=10380,
 )
 
 
@@ -4541,8 +4589,8 @@ _SETKEYMETADATAREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=10443,
-  serialized_end=10522,
+  serialized_start=10382,
+  serialized_end=10461,
 )
 
 
@@ -4572,8 +4620,8 @@ _SETKEYMETADATARESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=10524,
-  serialized_end=10567,
+  serialized_start=10463,
+  serialized_end=10506,
 )
 
 
@@ -4610,8 +4658,8 @@ _GETKEYMETADATAREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=10569,
-  serialized_end=10630,
+  serialized_start=10508,
+  serialized_end=10569,
 )
 
 
@@ -4641,8 +4689,8 @@ _GETKEYMETADATARESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=10632,
-  serialized_end=10674,
+  serialized_start=10571,
+  serialized_end=10613,
 )
 
 
@@ -4686,8 +4734,8 @@ _CRYPTOSIGNREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=10676,
-  serialized_end=10748,
+  serialized_start=10615,
+  serialized_end=10687,
 )
 
 
@@ -4717,8 +4765,8 @@ _CRYPTOSIGNRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=10750,
-  serialized_end=10789,
+  serialized_start=10689,
+  serialized_end=10728,
 )
 
 
@@ -4762,8 +4810,8 @@ _CRYPTOVERIFYREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=10791,
-  serialized_end=10862,
+  serialized_start=10730,
+  serialized_end=10801,
 )
 
 
@@ -4793,8 +4841,8 @@ _CRYPTOVERIFYRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=10864,
-  serialized_end=10901,
+  serialized_start=10803,
+  serialized_end=10840,
 )
 
 
@@ -4845,8 +4893,8 @@ _AUTHCRYPTREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=10903,
-  serialized_end=10995,
+  serialized_start=10842,
+  serialized_end=10934,
 )
 
 
@@ -4876,8 +4924,8 @@ _AUTHCRYPTRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=10997,
-  serialized_end=11029,
+  serialized_start=10936,
+  serialized_end=10968,
 )
 
 
@@ -4921,8 +4969,8 @@ _AUTHDECRYPTREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=11031,
-  serialized_end=11116,
+  serialized_start=10970,
+  serialized_end=11055,
 )
 
 
@@ -4959,8 +5007,8 @@ _AUTHDECRYPTRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=11118,
-  serialized_end=11168,
+  serialized_start=11057,
+  serialized_end=11107,
 )
 
 
@@ -4997,8 +5045,8 @@ _ANONCRYPTREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=11170,
-  serialized_end=11222,
+  serialized_start=11109,
+  serialized_end=11161,
 )
 
 
@@ -5028,8 +5076,8 @@ _ANONCRYPTRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=11224,
-  serialized_end=11256,
+  serialized_start=11163,
+  serialized_end=11195,
 )
 
 
@@ -5073,8 +5121,8 @@ _ANONDECRYPTREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=11258,
-  serialized_end=11343,
+  serialized_start=11197,
+  serialized_end=11282,
 )
 
 
@@ -5104,8 +5152,8 @@ _ANONDECRYPTRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=11345,
-  serialized_end=11388,
+  serialized_start=11284,
+  serialized_end=11327,
 )
 
 
@@ -5142,8 +5190,8 @@ _ISPAIRWISEEXISTSREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=11390,
-  serialized_end=11455,
+  serialized_start=11329,
+  serialized_end=11394,
 )
 
 
@@ -5173,8 +5221,8 @@ _ISPAIRWISEEXISTSRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=11457,
-  serialized_end=11496,
+  serialized_start=11396,
+  serialized_end=11435,
 )
 
 
@@ -5225,8 +5273,8 @@ _CREATEPAIRWISEREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=11498,
-  serialized_end=11594,
+  serialized_start=11437,
+  serialized_end=11533,
 )
 
 
@@ -5256,8 +5304,8 @@ _CREATEPAIRWISERESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=11596,
-  serialized_end=11639,
+  serialized_start=11535,
+  serialized_end=11578,
 )
 
 
@@ -5287,8 +5335,8 @@ _LISTPAIRWISEREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=11641,
-  serialized_end=11684,
+  serialized_start=11580,
+  serialized_end=11623,
 )
 
 
@@ -5318,8 +5366,8 @@ _LISTPAIRWISERESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=11686,
-  serialized_end=11730,
+  serialized_start=11625,
+  serialized_end=11669,
 )
 
 
@@ -5356,8 +5404,8 @@ _GETPAIRWISEREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=11732,
-  serialized_end=11792,
+  serialized_start=11671,
+  serialized_end=11731,
 )
 
 
@@ -5387,8 +5435,8 @@ _GETPAIRWISERESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=11794,
-  serialized_end=11841,
+  serialized_start=11733,
+  serialized_end=11780,
 )
 
 
@@ -5432,8 +5480,8 @@ _SETPAIRWISEMETADATAREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=11843,
-  serialized_end=11929,
+  serialized_start=11782,
+  serialized_end=11868,
 )
 
 
@@ -5463,8 +5511,8 @@ _SETPAIRWISEMETADATARESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=11931,
-  serialized_end=11979,
+  serialized_start=11870,
+  serialized_end=11918,
 )
 
 
@@ -5501,8 +5549,8 @@ _CREATEANDSTOREMYDIDREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=11981,
-  serialized_end=12095,
+  serialized_start=11920,
+  serialized_end=12034,
 )
 
 
@@ -5553,8 +5601,8 @@ _CREATEANDSTOREMYDIDJSONMESSAGE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=12097,
-  serialized_end=12189,
+  serialized_start=12036,
+  serialized_end=12128,
 )
 
 
@@ -5591,8 +5639,8 @@ _CREATEANDSTOREMYDIDRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=12191,
-  serialized_end=12249,
+  serialized_start=12130,
+  serialized_end=12188,
 )
 
 
@@ -5636,8 +5684,8 @@ _REPLACEKEYSSTARTREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=12252,
-  serialized_end=12386,
+  serialized_start=12191,
+  serialized_end=12325,
 )
 
 
@@ -5674,8 +5722,8 @@ _REPLACEKEYSSTARTIDENTITYJSONMESSAGE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=12388,
-  serialized_end=12459,
+  serialized_start=12327,
+  serialized_end=12398,
 )
 
 
@@ -5705,8 +5753,8 @@ _REPLACEKEYSSTARTRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=12461,
-  serialized_end=12503,
+  serialized_start=12400,
+  serialized_end=12442,
 )
 
 
@@ -5743,8 +5791,8 @@ _REPLACEKEYSAPPLYREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=12505,
-  serialized_end=12565,
+  serialized_start=12444,
+  serialized_end=12504,
 )
 
 
@@ -5774,8 +5822,8 @@ _REPLACEKEYSAPPLYRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=12567,
-  serialized_end=12612,
+  serialized_start=12506,
+  serialized_end=12551,
 )
 
 
@@ -5812,8 +5860,8 @@ _STORETHEIRDIDREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=12614,
-  serialized_end=12729,
+  serialized_start=12553,
+  serialized_end=12668,
 )
 
 
@@ -5857,8 +5905,8 @@ _STORETHEIRDIDIDENTITYJSONMESSAGE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=12731,
-  serialized_end=12814,
+  serialized_start=12670,
+  serialized_end=12753,
 )
 
 
@@ -5888,8 +5936,8 @@ _STORETHEIRDIDRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=12816,
-  serialized_end=12858,
+  serialized_start=12755,
+  serialized_end=12797,
 )
 
 
@@ -5926,8 +5974,8 @@ _DIDCREATEKEYREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=12860,
-  serialized_end=12920,
+  serialized_start=12799,
+  serialized_end=12859,
 )
 
 
@@ -5957,8 +6005,8 @@ _DIDCREATEKEYRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=12922,
-  serialized_end=12960,
+  serialized_start=12861,
+  serialized_end=12899,
 )
 
 
@@ -6002,8 +6050,8 @@ _DIDSETKEYMETADATAREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=12962,
-  serialized_end=13044,
+  serialized_start=12901,
+  serialized_end=12983,
 )
 
 
@@ -6033,8 +6081,8 @@ _DIDSETKEYMETADATARESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=13046,
-  serialized_end=13092,
+  serialized_start=12985,
+  serialized_end=13031,
 )
 
 
@@ -6071,8 +6119,8 @@ _DIDGETKEYMETADATAREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=13094,
-  serialized_end=13158,
+  serialized_start=13033,
+  serialized_end=13097,
 )
 
 
@@ -6102,8 +6150,8 @@ _DIDGETKEYMETADATARESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=13160,
-  serialized_end=13205,
+  serialized_start=13099,
+  serialized_end=13144,
 )
 
 
@@ -6147,8 +6195,8 @@ _KEYFORDIDREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=13207,
-  serialized_end=13280,
+  serialized_start=13146,
+  serialized_end=13219,
 )
 
 
@@ -6178,8 +6226,8 @@ _KEYFORDIDRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=13282,
-  serialized_end=13314,
+  serialized_start=13221,
+  serialized_end=13253,
 )
 
 
@@ -6216,8 +6264,8 @@ _KEYFORLOCALDIDREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=13316,
-  serialized_end=13374,
+  serialized_start=13255,
+  serialized_end=13313,
 )
 
 
@@ -6247,8 +6295,8 @@ _KEYFORLOCALDIDRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=13376,
-  serialized_end=13413,
+  serialized_start=13315,
+  serialized_end=13352,
 )
 
 
@@ -6299,8 +6347,8 @@ _SETENDPOINTFORDIDREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=13415,
-  serialized_end=13515,
+  serialized_start=13354,
+  serialized_end=13454,
 )
 
 
@@ -6330,8 +6378,8 @@ _SETENDPOINTFORDIDRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=13517,
-  serialized_end=13563,
+  serialized_start=13456,
+  serialized_end=13502,
 )
 
 
@@ -6375,8 +6423,8 @@ _GETENDPOINTFORDIDREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=13565,
-  serialized_end=13646,
+  serialized_start=13504,
+  serialized_end=13585,
 )
 
 
@@ -6413,8 +6461,8 @@ _GETENDPOINTFORDIDRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=13648,
-  serialized_end=13714,
+  serialized_start=13587,
+  serialized_end=13653,
 )
 
 
@@ -6458,8 +6506,8 @@ _SETDIDMETADATAREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=13716,
-  serialized_end=13792,
+  serialized_start=13655,
+  serialized_end=13731,
 )
 
 
@@ -6489,8 +6537,8 @@ _SETDIDMETADATARESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=13794,
-  serialized_end=13833,
+  serialized_start=13733,
+  serialized_end=13772,
 )
 
 
@@ -6527,8 +6575,8 @@ _GETDIDMETADATAREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=13835,
-  serialized_end=13893,
+  serialized_start=13774,
+  serialized_end=13832,
 )
 
 
@@ -6558,8 +6606,8 @@ _GETDIDMETADATARESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=13895,
-  serialized_end=13937,
+  serialized_start=13834,
+  serialized_end=13876,
 )
 
 
@@ -6596,8 +6644,8 @@ _GETMYDIDWITHMETAREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=13939,
-  serialized_end=13999,
+  serialized_start=13878,
+  serialized_end=13938,
 )
 
 
@@ -6627,8 +6675,8 @@ _GETMYDIDWITHMETARESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=14001,
-  serialized_end=14040,
+  serialized_start=13940,
+  serialized_end=13979,
 )
 
 
@@ -6658,8 +6706,8 @@ _LISTMYDIDSWITHMETAREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=14042,
-  serialized_end=14091,
+  serialized_start=13981,
+  serialized_end=14030,
 )
 
 
@@ -6689,8 +6737,8 @@ _LISTMYDIDSWITHMETARESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=14093,
-  serialized_end=14134,
+  serialized_start=14032,
+  serialized_end=14073,
 )
 
 
@@ -6727,8 +6775,8 @@ _ABBREVIATEVERKEYREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=14136,
-  serialized_end=14194,
+  serialized_start=14075,
+  serialized_end=14133,
 )
 
 
@@ -6758,8 +6806,8 @@ _ABBREVIATEVERKEYRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=14196,
-  serialized_end=14240,
+  serialized_start=14135,
+  serialized_end=14179,
 )
 
 
@@ -6810,8 +6858,8 @@ _SIGNANDSUBMITREQUESTRQ = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=14242,
-  serialized_end=14351,
+  serialized_start=14181,
+  serialized_end=14290,
 )
 
 
@@ -6841,8 +6889,8 @@ _SIGNANDSUBMITREQUESTRS = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=14353,
-  serialized_end=14391,
+  serialized_start=14292,
+  serialized_end=14330,
 )
 
 
@@ -6879,8 +6927,8 @@ _SUBMITREQUESTRQ = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=14393,
-  serialized_end=14451,
+  serialized_start=14332,
+  serialized_end=14390,
 )
 
 
@@ -6910,8 +6958,8 @@ _SUBMITREQUESTRS = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=14453,
-  serialized_end=14484,
+  serialized_start=14392,
+  serialized_end=14423,
 )
 
 
@@ -6962,8 +7010,8 @@ _SUBMITACTIONRQ = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=14486,
-  serialized_end=14575,
+  serialized_start=14425,
+  serialized_end=14514,
 )
 
 
@@ -6993,8 +7041,8 @@ _SUBMITACTIONRS = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=14577,
-  serialized_end=14607,
+  serialized_start=14516,
+  serialized_end=14546,
 )
 
 
@@ -7038,8 +7086,8 @@ _SIGNREQUESTRQ = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=14609,
-  serialized_end=14689,
+  serialized_start=14548,
+  serialized_end=14628,
 )
 
 
@@ -7069,8 +7117,8 @@ _SIGNREQUESTRS = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=14691,
-  serialized_end=14720,
+  serialized_start=14630,
+  serialized_end=14659,
 )
 
 
@@ -7114,8 +7162,8 @@ _MULTISIGNREQUESTRQ = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=14722,
-  serialized_end=14807,
+  serialized_start=14661,
+  serialized_end=14746,
 )
 
 
@@ -7145,8 +7193,8 @@ _MULTISIGNREQUESTRS = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=14809,
-  serialized_end=14843,
+  serialized_start=14748,
+  serialized_end=14782,
 )
 
 
@@ -7183,8 +7231,8 @@ _BUILDGETDDOREQUESTRQ = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=14845,
-  serialized_end=14908,
+  serialized_start=14784,
+  serialized_end=14847,
 )
 
 
@@ -7214,8 +7262,8 @@ _BUILDGETDDOREQUESTRS = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=14910,
-  serialized_end=14946,
+  serialized_start=14849,
+  serialized_end=14885,
 )
 
 
@@ -7273,8 +7321,8 @@ _BUILDNYMREQUESTRQ = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=14948,
-  serialized_end=15053,
+  serialized_start=14887,
+  serialized_end=14992,
 )
 
 
@@ -7304,8 +7352,8 @@ _BUILDNYMREQUESTRS = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=15055,
-  serialized_end=15088,
+  serialized_start=14994,
+  serialized_end=15027,
 )
 
 
@@ -7363,8 +7411,8 @@ _BUILDATTRIBREQUESTRQ = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=15090,
-  serialized_end=15194,
+  serialized_start=15029,
+  serialized_end=15133,
 )
 
 
@@ -7394,8 +7442,8 @@ _BUILDATTRIBREQUESTRS = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=15196,
-  serialized_end=15232,
+  serialized_start=15135,
+  serialized_end=15171,
 )
 
 
@@ -7453,8 +7501,8 @@ _BUILDGETATTRIBREQUESTRQ = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=15234,
-  serialized_end=15341,
+  serialized_start=15173,
+  serialized_end=15280,
 )
 
 
@@ -7484,8 +7532,8 @@ _BUILDGETATTRIBREQUESTRS = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=15343,
-  serialized_end=15382,
+  serialized_start=15282,
+  serialized_end=15321,
 )
 
 
@@ -7522,8 +7570,8 @@ _BUILDGETNYMREQUESTRQ = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=15384,
-  serialized_end=15447,
+  serialized_start=15323,
+  serialized_end=15386,
 )
 
 
@@ -7553,8 +7601,8 @@ _BUILDGETNYMREQUESTRS = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=15449,
-  serialized_end=15485,
+  serialized_start=15388,
+  serialized_end=15424,
 )
 
 
@@ -7591,8 +7639,8 @@ _BUILDSCHEMAREQUESTRQ = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=15487,
-  serialized_end=15545,
+  serialized_start=15426,
+  serialized_end=15484,
 )
 
 
@@ -7622,8 +7670,8 @@ _BUILDSCHEMAREQUESTRS = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=15547,
-  serialized_end=15583,
+  serialized_start=15486,
+  serialized_end=15522,
 )
 
 
@@ -7660,8 +7708,8 @@ _BUILDGETSCHEMAREQUESTRQ = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=15585,
-  serialized_end=15645,
+  serialized_start=15524,
+  serialized_end=15584,
 )
 
 
@@ -7691,8 +7739,8 @@ _BUILDGETSCHEMAREQUESTRS = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=15647,
-  serialized_end=15686,
+  serialized_start=15586,
+  serialized_end=15625,
 )
 
 
@@ -7722,8 +7770,8 @@ _PARSEGETSCHEMARESPONSERQ = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=15688,
-  serialized_end=15741,
+  serialized_start=15627,
+  serialized_end=15680,
 )
 
 
@@ -7760,8 +7808,8 @@ _PARSEGETSCHEMARESPONSERS = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=15743,
-  serialized_end=15801,
+  serialized_start=15682,
+  serialized_end=15740,
 )
 
 
@@ -7798,8 +7846,8 @@ _BUILDCREDDEFREQUESTRQ = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=15803,
-  serialized_end=15862,
+  serialized_start=15742,
+  serialized_end=15801,
 )
 
 
@@ -7829,8 +7877,8 @@ _BUILDCREDDEFREQUESTRS = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=15864,
-  serialized_end=15901,
+  serialized_start=15803,
+  serialized_end=15840,
 )
 
 
@@ -7867,8 +7915,8 @@ _BUILDGETCREDDEFREQUESTRQ = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=15903,
-  serialized_end=15964,
+  serialized_start=15842,
+  serialized_end=15903,
 )
 
 
@@ -7898,8 +7946,8 @@ _BUILDGETCREDDEFREQUESTRS = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=15966,
-  serialized_end=16006,
+  serialized_start=15905,
+  serialized_end=15945,
 )
 
 
@@ -7929,8 +7977,8 @@ _PARSEGETCREDDEFRESPONSERQ = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=16008,
-  serialized_end=16063,
+  serialized_start=15947,
+  serialized_end=16002,
 )
 
 
@@ -7967,8 +8015,8 @@ _PARSEGETCREDDEFRESPONSERS = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=16065,
-  serialized_end=16158,
+  serialized_start=16004,
+  serialized_end=16097,
 )
 
 
@@ -8012,8 +8060,8 @@ _BUILDNODEREQUESTRQ = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=16160,
-  serialized_end=16235,
+  serialized_start=16099,
+  serialized_end=16174,
 )
 
 
@@ -8043,8 +8091,8 @@ _BUILDNODEREQUESTRS = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=16237,
-  serialized_end=16271,
+  serialized_start=16176,
+  serialized_end=16210,
 )
 
 
@@ -8074,8 +8122,8 @@ _BUILDGETVALIDATORINFOREQUESTRQ = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=16273,
-  serialized_end=16327,
+  serialized_start=16212,
+  serialized_end=16266,
 )
 
 
@@ -8105,8 +8153,8 @@ _BUILDGETVALIDATORINFOREQUESTRS = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=16329,
-  serialized_end=16375,
+  serialized_start=16268,
+  serialized_end=16314,
 )
 
 
@@ -8150,8 +8198,8 @@ _BUILDGETTXNREQUESTRQ = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=16377,
-  serialized_end=16456,
+  serialized_start=16316,
+  serialized_end=16395,
 )
 
 
@@ -8181,8 +8229,8 @@ _BUILDGETTXNREQUESTRS = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=16458,
-  serialized_end=16494,
+  serialized_start=16397,
+  serialized_end=16433,
 )
 
 
@@ -8226,8 +8274,8 @@ _BUILDPOOLCONFIGREQUESTRQ = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=16496,
-  serialized_end=16575,
+  serialized_start=16435,
+  serialized_end=16514,
 )
 
 
@@ -8257,8 +8305,8 @@ _BUILDPOOLCONFIGREQUESTRS = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=16577,
-  serialized_end=16617,
+  serialized_start=16516,
+  serialized_end=16556,
 )
 
 
@@ -8302,8 +8350,8 @@ _BUILDPOOLRESTARTREQUESTRQ = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=16619,
-  serialized_end=16702,
+  serialized_start=16558,
+  serialized_end=16641,
 )
 
 
@@ -8333,8 +8381,8 @@ _BUILDPOOLRESTARTREQUESTRS = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=16704,
-  serialized_end=16745,
+  serialized_start=16643,
+  serialized_end=16684,
 )
 
 
@@ -8434,8 +8482,8 @@ _BUILDPOOLUPGRADEREQUESTRQ = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=16748,
-  serialized_end=16971,
+  serialized_start=16687,
+  serialized_end=16910,
 )
 
 
@@ -8465,8 +8513,8 @@ _BUILDPOOLUPGRADEREQUESTRS = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=16973,
-  serialized_end=17014,
+  serialized_start=16912,
+  serialized_end=16953,
 )
 
 
@@ -8503,8 +8551,8 @@ _BUILDREVOCREGDEFREQUESTRQ = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=17016,
-  serialized_end=17079,
+  serialized_start=16955,
+  serialized_end=17018,
 )
 
 
@@ -8534,8 +8582,8 @@ _BUILDREVOCREGDEFREQUESTRS = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=17081,
-  serialized_end=17122,
+  serialized_start=17020,
+  serialized_end=17061,
 )
 
 
@@ -8572,8 +8620,8 @@ _BUILDGETREVOCREGDEFREQUESTRQ = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=17124,
-  serialized_end=17197,
+  serialized_start=17063,
+  serialized_end=17136,
 )
 
 
@@ -8603,8 +8651,8 @@ _BUILDGETREVOCREGDEFREQUESTRS = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=17199,
-  serialized_end=17243,
+  serialized_start=17138,
+  serialized_end=17182,
 )
 
 
@@ -8634,8 +8682,8 @@ _PARSEGETREVOCREGDEFRESPONSERQ = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=17245,
-  serialized_end=17308,
+  serialized_start=17184,
+  serialized_end=17247,
 )
 
 
@@ -8672,8 +8720,8 @@ _PARSEGETREVOCREGDEFRESPONSERS = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=17310,
-  serialized_end=17387,
+  serialized_start=17249,
+  serialized_end=17326,
 )
 
 
@@ -8724,8 +8772,8 @@ _BUILDREVOCREGENTRYREQUESTRQ = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=17389,
-  serialized_end=17498,
+  serialized_start=17328,
+  serialized_end=17437,
 )
 
 
@@ -8755,8 +8803,8 @@ _BUILDREVOCREGENTRYREQUESTRS = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=17500,
-  serialized_end=17543,
+  serialized_start=17439,
+  serialized_end=17482,
 )
 
 
@@ -8800,8 +8848,8 @@ _BUILDGETREVOCREGREQUESTRQ = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=17545,
-  serialized_end=17636,
+  serialized_start=17484,
+  serialized_end=17575,
 )
 
 
@@ -8831,8 +8879,8 @@ _BUILDGETREVOCREGREQUESTRS = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=17638,
-  serialized_end=17679,
+  serialized_start=17577,
+  serialized_end=17618,
 )
 
 
@@ -8862,8 +8910,8 @@ _PARSEGETREVOCREGRESPONSERQ = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=17681,
-  serialized_end=17738,
+  serialized_start=17620,
+  serialized_end=17677,
 )
 
 
@@ -8907,8 +8955,8 @@ _PARSEGETREVOCREGRESPONSERS = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=17740,
-  serialized_end=17813,
+  serialized_start=17679,
+  serialized_end=17752,
 )
 
 
@@ -8959,8 +9007,8 @@ _BUILDGETREVOCREGDELTAREQUESTRQ = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=17815,
-  serialized_end=17918,
+  serialized_start=17754,
+  serialized_end=17857,
 )
 
 
@@ -8990,8 +9038,8 @@ _BUILDGETREVOCREGDELTAREQUESTRS = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=17920,
-  serialized_end=17966,
+  serialized_start=17859,
+  serialized_end=17905,
 )
 
 
@@ -9021,8 +9069,8 @@ _PARSEGETREVOCREGDELTARESPONSERQ = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=17968,
-  serialized_end=18035,
+  serialized_start=17907,
+  serialized_end=17974,
 )
 
 
@@ -9066,8 +9114,8 @@ _PARSEGETREVOCREGDELTARESPONSERS = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=18037,
-  serialized_end=18115,
+  serialized_start=17976,
+  serialized_end=18054,
 )
 
 
@@ -9097,8 +9145,8 @@ _GETRESPONSEMETADATARQ = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=18117,
-  serialized_end=18158,
+  serialized_start=18056,
+  serialized_end=18097,
 )
 
 
@@ -9128,8 +9176,8 @@ _GETRESPONSEMETADATARS = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=18160,
-  serialized_end=18197,
+  serialized_start=18099,
+  serialized_end=18136,
 )
 
 
@@ -9187,8 +9235,8 @@ _ADDWALLETRECORDREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=18199,
-  serialized_end=18306,
+  serialized_start=18138,
+  serialized_end=18245,
 )
 
 
@@ -9218,8 +9266,8 @@ _ADDWALLETRECORDRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=18308,
-  serialized_end=18347,
+  serialized_start=18247,
+  serialized_end=18286,
 )
 
 
@@ -9270,8 +9318,8 @@ _UPDATEWALLETRECORDVALUEREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=18349,
-  serialized_end=18446,
+  serialized_start=18288,
+  serialized_end=18385,
 )
 
 
@@ -9301,8 +9349,8 @@ _UPDATEWALLETRECORDVALUERESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=18448,
-  serialized_end=18495,
+  serialized_start=18387,
+  serialized_end=18434,
 )
 
 
@@ -9353,8 +9401,8 @@ _UPDATEWALLETRECORDTAGSREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=18497,
-  serialized_end=18596,
+  serialized_start=18436,
+  serialized_end=18535,
 )
 
 
@@ -9384,8 +9432,8 @@ _UPDATEWALLETRECORDTAGSRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=18598,
-  serialized_end=18644,
+  serialized_start=18537,
+  serialized_end=18583,
 )
 
 
@@ -9436,8 +9484,8 @@ _ADDWALLETRECORDTAGSREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=18646,
-  serialized_end=18742,
+  serialized_start=18585,
+  serialized_end=18681,
 )
 
 
@@ -9467,8 +9515,8 @@ _ADDWALLETRECORDTAGSRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=18744,
-  serialized_end=18787,
+  serialized_start=18683,
+  serialized_end=18726,
 )
 
 
@@ -9519,8 +9567,8 @@ _DELETEWALLETRECORDTAGSREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=18789,
-  serialized_end=18892,
+  serialized_start=18728,
+  serialized_end=18831,
 )
 
 
@@ -9550,8 +9598,8 @@ _DELETEWALLETRECORDTAGSRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=18894,
-  serialized_end=18940,
+  serialized_start=18833,
+  serialized_end=18879,
 )
 
 
@@ -9595,8 +9643,8 @@ _DELETEWALLETRECORDREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=18942,
-  serialized_end=19019,
+  serialized_start=18881,
+  serialized_end=18958,
 )
 
 
@@ -9626,8 +9674,8 @@ _DELETEWALLETRECORDRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=19021,
-  serialized_end=19063,
+  serialized_start=18960,
+  serialized_end=19002,
 )
 
 
@@ -9678,8 +9726,8 @@ _GETWALLETRECORDREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=19065,
-  serialized_end=19159,
+  serialized_start=19004,
+  serialized_end=19098,
 )
 
 
@@ -9709,8 +9757,8 @@ _GETWALLETRECORDRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=19161,
-  serialized_end=19200,
+  serialized_start=19100,
+  serialized_end=19139,
 )
 
 
@@ -9761,8 +9809,8 @@ _OPENWALLETSEARCHREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=19202,
-  serialized_end=19304,
+  serialized_start=19141,
+  serialized_end=19243,
 )
 
 
@@ -9792,8 +9840,8 @@ _OPENWALLETSEARCHRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=19306,
-  serialized_end=19354,
+  serialized_start=19245,
+  serialized_end=19293,
 )
 
 
@@ -9837,8 +9885,8 @@ _FETCHWALLETSEARCHNEXTRECORDSREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=19356,
-  serialized_end=19458,
+  serialized_start=19295,
+  serialized_end=19397,
 )
 
 
@@ -9868,8 +9916,8 @@ _FETCHWALLETSEARCHNEXTRECORDSRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=19460,
-  serialized_end=19525,
+  serialized_start=19399,
+  serialized_end=19464,
 )
 
 
@@ -9899,8 +9947,8 @@ _CLOSEWALLETSEARCHREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=19527,
-  serialized_end=19581,
+  serialized_start=19466,
+  serialized_end=19520,
 )
 
 
@@ -9930,8 +9978,8 @@ _CLOSEWALLETSEARCHRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=19583,
-  serialized_end=19624,
+  serialized_start=19522,
+  serialized_end=19563,
 )
 
 _NEWWALLETDEFINITION.fields_by_name['walletConfig'].message_type = _CONFIG
@@ -9950,12 +9998,9 @@ _IMPORTWALLETDEFINITION.fields_by_name['ConfigJson'].message_type = _IMPORTWALLE
 _IMPORTWALLETCONFIG.fields_by_name['StorageConfig'].message_type = _IMPORTWALLETSTORAGECONFIG
 _CREATEPOOLLEDGERCONFIGREQUEST.fields_by_name['Config'].message_type = _CONFIGCREATEPOOLLEDGER
 _OPENPOOLLEDGERREQUEST.fields_by_name['Config'].message_type = _CONFIGOPENLEDGER
-_ISSUERCREATECREDENTIALOFFERRESPONSE.fields_by_name['KeyCorrectnessProof'].message_type = google_dot_protobuf_dot_any__pb2._ANY
-_ISSUERCREATECREDENTIALRESPONSE.fields_by_name['CredJson'].message_type = _CREDJSONMESSAGE
 _CREDJSONMESSAGE.fields_by_name['Values'].message_type = google_dot_protobuf_dot_any__pb2._ANY
 _CREDJSONMESSAGE.fields_by_name['Signature'].message_type = google_dot_protobuf_dot_any__pb2._ANY
 _CREDJSONMESSAGE.fields_by_name['SignatureCorrectnessProof'].message_type = google_dot_protobuf_dot_any__pb2._ANY
-_PROVERCREATECREDENTIALREQRESPONSE.fields_by_name['CredReqJson'].message_type = _CREDREQJSONMESSAGE
 _CREDREQJSONMESSAGE.fields_by_name['BlindedMs'].message_type = google_dot_protobuf_dot_any__pb2._ANY
 _CREDREQJSONMESSAGE.fields_by_name['BlindedMsCorrectnessProof'].message_type = google_dot_protobuf_dot_any__pb2._ANY
 _PROVERGETCREDENTIALSREQUEST.fields_by_name['FilterJson'].message_type = _FILTERJSONMESSAGE
@@ -9973,7 +10018,7 @@ _CREDENTIALSGIVENPROOFREQUEST.fields_by_name['Interval'].message_type = google_d
 _PROVERCREATEPROOFREQUEST.fields_by_name['ProofReqJson'].message_type = _PROOFREQJSONMESSAGE
 _PROVERCREATEPROOFREQUEST.fields_by_name['RequestedCredentialsJson'].message_type = _REQUESTEDCREDENTIALSJSONMESSAGE
 _PROOFREQJSONMESSAGE.fields_by_name['NonRevoInterval'].message_type = _NONREVOCINTERVALMESSAGE
-_VERIFIERVERIFYPROOFREQUEST.fields_by_name['ProofRequestJson'].message_type = _PROOFREQUESTJSONMESSAGE
+_VERIFIERVERIFYPROOFREQUEST.fields_by_name['ProofRequestJson'].message_type = _PROOFREQJSONMESSAGE
 _CREATEANDSTOREMYDIDREQUEST.fields_by_name['DidJson'].message_type = _CREATEANDSTOREMYDIDJSONMESSAGE
 _REPLACEKEYSSTARTREQUEST.fields_by_name['IdentityJson'].message_type = _REPLACEKEYSSTARTIDENTITYJSONMESSAGE
 _STORETHEIRDIDREQUEST.fields_by_name['IdentityJson'].message_type = _STORETHEIRDIDIDENTITYJSONMESSAGE
@@ -10082,6 +10127,8 @@ DESCRIPTOR.message_types_by_name['CreateRevocationStateRequest'] = _CREATEREVOCA
 DESCRIPTOR.message_types_by_name['CreateRevocationStateResponse'] = _CREATEREVOCATIONSTATERESPONSE
 DESCRIPTOR.message_types_by_name['UpdateRevocationStateRequest'] = _UPDATEREVOCATIONSTATEREQUEST
 DESCRIPTOR.message_types_by_name['UpdateRevocationStateResponse'] = _UPDATEREVOCATIONSTATERESPONSE
+DESCRIPTOR.message_types_by_name['GenerateNonceRequest'] = _GENERATENONCEREQUEST
+DESCRIPTOR.message_types_by_name['GenerateNonceResponse'] = _GENERATENONCERESPONSE
 DESCRIPTOR.message_types_by_name['CreateKeyRequest'] = _CREATEKEYREQUEST
 DESCRIPTOR.message_types_by_name['KeyJsonCreateKey'] = _KEYJSONCREATEKEY
 DESCRIPTOR.message_types_by_name['CreateKeyResponse'] = _CREATEKEYRESPONSE
@@ -10964,6 +11011,20 @@ UpdateRevocationStateResponse = _reflection.GeneratedProtocolMessageType('Update
   # @@protoc_insertion_point(class_scope:identitylayer.UpdateRevocationStateResponse)
   })
 _sym_db.RegisterMessage(UpdateRevocationStateResponse)
+
+GenerateNonceRequest = _reflection.GeneratedProtocolMessageType('GenerateNonceRequest', (_message.Message,), {
+  'DESCRIPTOR' : _GENERATENONCEREQUEST,
+  '__module__' : 'identitylayer_pb2'
+  # @@protoc_insertion_point(class_scope:identitylayer.GenerateNonceRequest)
+  })
+_sym_db.RegisterMessage(GenerateNonceRequest)
+
+GenerateNonceResponse = _reflection.GeneratedProtocolMessageType('GenerateNonceResponse', (_message.Message,), {
+  'DESCRIPTOR' : _GENERATENONCERESPONSE,
+  '__module__' : 'identitylayer_pb2'
+  # @@protoc_insertion_point(class_scope:identitylayer.GenerateNonceResponse)
+  })
+_sym_db.RegisterMessage(GenerateNonceResponse)
 
 CreateKeyRequest = _reflection.GeneratedProtocolMessageType('CreateKeyRequest', (_message.Message,), {
   'DESCRIPTOR' : _CREATEKEYREQUEST,
@@ -11995,8 +12056,8 @@ _NONSECRETSERVICE = _descriptor.ServiceDescriptor(
   file=DESCRIPTOR,
   index=0,
   serialized_options=None,
-  serialized_start=19627,
-  serialized_end=20781,
+  serialized_start=19566,
+  serialized_end=20720,
   methods=[
   _descriptor.MethodDescriptor(
     name='AddWalletRecord',
@@ -12100,8 +12161,8 @@ _LEDGERSERVICE = _descriptor.ServiceDescriptor(
   file=DESCRIPTOR,
   index=1,
   serialized_options=None,
-  serialized_start=20784,
-  serialized_end=24087,
+  serialized_start=20723,
+  serialized_end=24026,
   methods=[
   _descriptor.MethodDescriptor(
     name='SignAndSubmitRequest',
@@ -12394,8 +12455,8 @@ _DIDSERVICE = _descriptor.ServiceDescriptor(
   file=DESCRIPTOR,
   index=2,
   serialized_options=None,
-  serialized_start=24090,
-  serialized_end=25716,
+  serialized_start=24029,
+  serialized_end=25655,
   methods=[
   _descriptor.MethodDescriptor(
     name='CreateAndStoreMyDid',
@@ -12553,8 +12614,8 @@ _PAIRWISESERVICE = _descriptor.ServiceDescriptor(
   file=DESCRIPTOR,
   index=3,
   serialized_options=None,
-  serialized_start=25719,
-  serialized_end=26227,
+  serialized_start=25658,
+  serialized_end=26166,
   methods=[
   _descriptor.MethodDescriptor(
     name='IsPairwiseExists',
@@ -12613,8 +12674,8 @@ _CRYPTOSERVICE = _descriptor.ServiceDescriptor(
   file=DESCRIPTOR,
   index=4,
   serialized_options=None,
-  serialized_start=26230,
-  serialized_end=27037,
+  serialized_start=26169,
+  serialized_end=26976,
   methods=[
   _descriptor.MethodDescriptor(
     name='CreateKey',
@@ -12709,8 +12770,8 @@ _POOLSERVICE = _descriptor.ServiceDescriptor(
   file=DESCRIPTOR,
   index=5,
   serialized_options=None,
-  serialized_start=27040,
-  serialized_end=27789,
+  serialized_start=26979,
+  serialized_end=27728,
   methods=[
   _descriptor.MethodDescriptor(
     name='CreatePoolLedgerConfig',
@@ -12787,8 +12848,8 @@ _ANONCREDSSERVICE = _descriptor.ServiceDescriptor(
   file=DESCRIPTOR,
   index=6,
   serialized_options=None,
-  serialized_start=27792,
-  serialized_end=30828,
+  serialized_start=27731,
+  serialized_end=30861,
   methods=[
   _descriptor.MethodDescriptor(
     name='IssuerCreateSchema',
@@ -12997,6 +13058,15 @@ _ANONCREDSSERVICE = _descriptor.ServiceDescriptor(
     output_type=_UPDATEREVOCATIONSTATERESPONSE,
     serialized_options=None,
   ),
+  _descriptor.MethodDescriptor(
+    name='GenerateNonce',
+    full_name='identitylayer.AnoncredsService.GenerateNonce',
+    index=23,
+    containing_service=None,
+    input_type=_GENERATENONCEREQUEST,
+    output_type=_GENERATENONCERESPONSE,
+    serialized_options=None,
+  ),
 ])
 _sym_db.RegisterServiceDescriptor(_ANONCREDSSERVICE)
 
@@ -13009,8 +13079,8 @@ _WALLETSERVICE = _descriptor.ServiceDescriptor(
   file=DESCRIPTOR,
   index=7,
   serialized_options=None,
-  serialized_start=30831,
-  serialized_end=31519,
+  serialized_start=30864,
+  serialized_end=31552,
   methods=[
   _descriptor.MethodDescriptor(
     name='CreateNewWallet',
@@ -13087,8 +13157,8 @@ _BLOBSTORAGESERVICE = _descriptor.ServiceDescriptor(
   file=DESCRIPTOR,
   index=8,
   serialized_options=None,
-  serialized_start=31522,
-  serialized_end=31712,
+  serialized_start=31555,
+  serialized_end=31745,
   methods=[
   _descriptor.MethodDescriptor(
     name='OpenReader',
