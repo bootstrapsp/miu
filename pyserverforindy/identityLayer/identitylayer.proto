@@ -473,7 +473,7 @@ message ProverGetCredentialsForProofReqResponse{
 // Prover Search Credentials For Proof Req
 message ProverSearchCredentialsForProofReqRequest{
     int64 WalletHandle = 1;
-    ProofRequestJsonMessage ProofRequestJson = 2;
+    ProofReqJsonMessage ProofRequestJson = 2;
     ExtraQueryJsonMessage ExtraQueryJson = 3;
 }
 message ExtraQueryJsonMessage{
@@ -491,7 +491,8 @@ message ProverFetchCredentialsForProofReqRequest{
     int64 Count = 3;
 }
 message ProverFetchCredentialsForProofReqResponse{
-    repeated CredentialsGivenProofRequest CredentialsJson = 1;
+	repeated CredentialsGivenProofRequest CredentialsJson = 1;
+	string RespJson = 2;
 }
 message CredentialsGivenProofRequest{
     CredentialInfo CredInfo = 1;
@@ -502,8 +503,8 @@ message CredentialInfo{
     string Attrs = 2;
     string SchemaId = 3;
     string CredDefId = 4;
-    int64 RevRegId = 5;
-    int64 CredRevId = 6;
+    string RevRegId = 5;
+    string CredRevId = 6;
 }
 
 // Prover Close Credentials Search For Proof Req

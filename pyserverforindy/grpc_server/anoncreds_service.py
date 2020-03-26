@@ -393,16 +393,25 @@ class AnoncredsServiceServicer(identitylayer_pb2_grpc.AnoncredsServiceServicer):
         try:
             wallet_handle, proof_request_json, extra_query_json = get_value(
                 request.WalletHandle), request.ProofRequestJson, request.ExtraQueryJson
+            # proof_request_json = json.dumps(
+            #     {"name": get_value(proof_request_json['Name']), "version": get_value(proof_request_json['Version']),
+            #      "nonce": get_value(proof_request_json['Nonce']),
+            #      "requested_attributes": get_value(proof_request_json['RequestedAttributes']),
+            #      "requested_predicates": get_value(proof_request_json['RequestedPredicates']),
+            #      "non_revoked": proof_request_json['NonRevoked']})
+
+            non_revoked =  {"from": proof_request_json.NonRevoInterval.From, "to": proof_request_json.NonRevoInterval.To}
             proof_request_json = json.dumps(
-                {"name": get_value(proof_request_json['Name']), "version": get_value(proof_request_json['Version']),
-                 "nonce": get_value(proof_request_json['Nonce']),
-                 "requested_attributes": get_value(proof_request_json['RequestedAttributes']),
-                 "requested_predicates": get_value(proof_request_json['RequestedPredicates']),
-                 "non_revoked": proof_request_json['NonRevoked']})
-            extra_query_json = json.dumps({"attr_referent": extra_query_json.AttrReferent,
-                                           "predicate_referent": extra_query_json.PredicateReferent})
+                {"name": proof_request_json.Name, "version": proof_request_json.Version, "nonce": proof_request_json.Nonce, \
+                 "requested_attributes": json.loads(proof_request_json.RequestedAttributes), \
+                 "requested_predicates": json.loads(proof_request_json.RequestedPredicates), \
+                 "non_revoked": non_revoked})
+            print(extra_query_json)
+
+            # extra_query_json = json.dumps({"attr_referent": extra_query_json.AttrReferent,
+            #                                "predicate_referent": extra_query_json.PredicateReferent})
             resp = await indy_anoncreds.prover_search_credentials_for_proof_req(wallet_handle, proof_request_json,
-                                                                                extra_query_json)
+                                                                                None)
             return identitylayer_pb2.ProverSearchCredentialsForProofReqResponse(SearchHandle=resp)
         except IndyError as e:
             logger.error("Indy Exception Occurred @ ProverSearchCredentialsForProofReq ------")
@@ -420,15 +429,20 @@ class AnoncredsServiceServicer(identitylayer_pb2_grpc.AnoncredsServiceServicer):
             search_handle, item_referent, count = get_value(request.SearchHandle), get_value(
                 request.ItemReference), get_value(request.Count)
             resp = await indy_anoncreds.prover_fetch_credentials_for_proof_req(search_handle, item_referent, count)
-            credentials_json = [identitylayer_pb2.CredentialsGivenProofRequest(
-                CredInfo=identitylayer_pb2.CredentialInfo(Referent=el['cred_info']['referent'], \
-                                                          Attrs=el['cred_info']['attrs'],
-                                                          SchemaId=el['cred_info']['schema_id'],
-                                                          CredDefId=el['cred_info']['cred_def_id'],
-                                                          RevRegId=el['cred_info']['rev_reg_id'], \
-                                                          CredRevId=el['cred_info']['cred_rev_id']),
-                Interval=el["interval"]) for el in resp]
-            return identitylayer_pb2.ProverFetchCredentialsForProofReqResponse(CredentialsJson=credentials_json)
+
+            print("FETCH ===============================================================================")
+            print(resp)
+
+           
+            # credentials_json = [identitylayer_pb2.CredentialsGivenProofRequest(
+            #     CredInfo=identitylayer_pb2.CredentialInfo(Referent=el['cred_info']['referent'], \
+            #                                               Attrs=el['cred_info']['attrs'],
+            #                                               SchemaId=el['cred_info']['schema_id'],
+            #                                               CredDefId=el['cred_info']['cred_def_id'],
+            #                                               RevRegId=el['cred_info']['rev_reg_id'], \
+            #                                               CredRevId=el['cred_info']['cred_rev_id']),
+            #     Interval=el["interval"]) for el in resp]
+            return identitylayer_pb2.ProverFetchCredentialsForProofReqResponse(CredentialsJson=None, RespJson = resp)
         except IndyError as e:
             logger.error("Indy Exception Occurred @ ProverFetchCredentialsForProofReq ------")
             logger.error(e.message)
@@ -444,6 +458,9 @@ class AnoncredsServiceServicer(identitylayer_pb2_grpc.AnoncredsServiceServicer):
         try:
             search_handle = get_value(request.SearchHandle)
             resp = await indy_anoncreds.prover_close_credentials_search_for_proof_req(search_handle)
+            print("CLOSE ===========================")
+            print(resp)
+
             return identitylayer_pb2.ProverCloseCredentialsSearchForProofReqResponse(Resp=resp)
         except IndyError as e:
             logger.error("Indy Exception Occurred @ ProverCloseCredentialsSearchForProofReq ------")
@@ -471,19 +488,8 @@ class AnoncredsServiceServicer(identitylayer_pb2_grpc.AnoncredsServiceServicer):
                  "requested_predicates": json.loads(proof_req_json.RequestedPredicates), \
                  "non_revoked": non_revoked})
 
-            # proof_req_json = json.dumps({
-            #     "nonce": "123432421212",
-            #     "name": "proof_req_1",
-            #     "version": "0.1",
-            #     "requested_attributes": {
-            #         "attr1_referent": {
-            #             "name": "email"
-            #         }
-            #     },
-            #     "requested_predicates": {}
-            # })
-            print('proof_req_json')
-            print(proof_req_json)   
+            print("PROOF============================================================================================================")
+            print(proof_req_json)
             requested_credentials_json = json.dumps(
                 {"self_attested_attributes": json.loads(requested_credentials_json.SelfAttestedAttributes), \
                  "requested_attributes": json.loads(requested_credentials_json.RequestedAttributes),
@@ -533,8 +539,8 @@ class AnoncredsServiceServicer(identitylayer_pb2_grpc.AnoncredsServiceServicer):
                  "requested_attributes": json.loads(proof_request_json.RequestedAttributes), \
                  "requested_predicates": json.loads(proof_request_json.RequestedPredicates), \
                  "non_revoked": non_revoked})
-
-
+            print("PROOF============================================================================================================")
+            print(proof_req_json)
             
            
             resp = await indy_anoncreds.verifier_verify_proof(proof_req_json, proof_json, schemas_json,
