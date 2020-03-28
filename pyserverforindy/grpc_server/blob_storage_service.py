@@ -70,7 +70,7 @@ class BlobStorageServiceServicer(object):
             type_ = get_value(request.Type_)
             config = get_value(request.Config)
             resp = await indy_blob_storage.open_writer(type_, config)
-            return identitylayer_pb2.OpenWriterRequest(Res=resp)
+            return identitylayer_pb2.OpenWriterResponse(Res=resp)
         except IndyError as e:
             logger.error("Indy Exception Occurred @ OpenWriter ------")
             logger.error(e.message)
