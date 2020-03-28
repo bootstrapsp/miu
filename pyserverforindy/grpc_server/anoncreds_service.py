@@ -393,13 +393,7 @@ class AnoncredsServiceServicer(identitylayer_pb2_grpc.AnoncredsServiceServicer):
         try:
             wallet_handle, proof_request_json, extra_query_json = get_value(
                 request.WalletHandle), request.ProofRequestJson, request.ExtraQueryJson
-            # proof_request_json = json.dumps(
-            #     {"name": get_value(proof_request_json['Name']), "version": get_value(proof_request_json['Version']),
-            #      "nonce": get_value(proof_request_json['Nonce']),
-            #      "requested_attributes": get_value(proof_request_json['RequestedAttributes']),
-            #      "requested_predicates": get_value(proof_request_json['RequestedPredicates']),
-            #      "non_revoked": proof_request_json['NonRevoked']})
-
+           
             non_revoked =  {"from": proof_request_json.NonRevoInterval.From, "to": proof_request_json.NonRevoInterval.To}
             proof_request_json = json.dumps(
                 {"name": proof_request_json.Name, "version": proof_request_json.Version, "nonce": proof_request_json.Nonce, \
@@ -433,6 +427,8 @@ class AnoncredsServiceServicer(identitylayer_pb2_grpc.AnoncredsServiceServicer):
             print("FETCH ===============================================================================")
             print(resp)
 
+
+            #TODO : cast to credentials_json it not working . Fix later
            
             # credentials_json = [identitylayer_pb2.CredentialsGivenProofRequest(
             #     CredInfo=identitylayer_pb2.CredentialInfo(Referent=el['cred_info']['referent'], \
@@ -546,8 +542,7 @@ class AnoncredsServiceServicer(identitylayer_pb2_grpc.AnoncredsServiceServicer):
             resp = await indy_anoncreds.verifier_verify_proof(proof_req_json, proof_json, schemas_json,
                                                               credential_defs_json, rev_reg_defs_json, rev_regs_json)
           
-            print('resp')
-            print(resp)  
+    
             return identitylayer_pb2.VerifierVerifyProofResponse(Valid=resp)
         except IndyError as e:
             logger.error("Indy Exception Occurred @ VerifierVerifyProofRequest ------")
