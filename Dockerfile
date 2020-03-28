@@ -33,7 +33,7 @@ RUN pip3 install --no-cache-dir -r /app/pyserverforindy/requirements.txt
 # Add project files to image
 COPY --chown=app:app . /app
 
-VOLUME /home/app/.indy_client
+# VOLUME /home/app/.indy_client
 
 CMD ["python3", "/app/pyserverforindy/grpc_server/server.py"]
 

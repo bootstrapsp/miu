@@ -72,7 +72,7 @@ python3 -m venv my_venv
 5. Activate virtualenv
 
 ```
-source ./my_venv/bin/activate
+    source ./my_venv/bin/activate
 ```
 
 6. Install Dependencies

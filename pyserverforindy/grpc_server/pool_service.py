@@ -68,6 +68,8 @@ class PoolServiceServicer(identitylayer_pb2_grpc.PoolServiceServicer):
         resp = None
         try:
             config_name = get_value(request.ConfigName)
+            print("config")
+            print(request.Config.GensisTxn)
             config = json.dumps({"genesis_txn": get_value(request.Config.GensisTxn)})
             resp = await indy_pool.create_pool_ledger_config(config_name, config)
             return identitylayer_pb2.CreatePoolLedgerConfigResponse(ErrorCode=resp)
