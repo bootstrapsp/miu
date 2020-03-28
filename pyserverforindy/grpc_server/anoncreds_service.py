@@ -127,18 +127,15 @@ class AnoncredsServiceServicer(identitylayer_pb2_grpc.AnoncredsServiceServicer):
         try:
             wallet_handle, cred_def_id = get_value(request.WalletHandle), get_value(request.CredDefId)
             resp = await indy_anoncreds.issuer_create_credential_offer(wallet_handle, cred_def_id)
-            return identitylayer_pb2.IssuerCreateCredentialOfferResponse(SchemaId=resp[0], CreeDefId=resp[1],
-                                                                         Nonce=resp[2], KeyCorrectnessProof=resp[3])
+            return identitylayer_pb2.IssuerCreateCredentialOfferResponse(Resp = resp)
         except IndyError as e:
             logger.error("Indy Exception Occurred @ IssuerCreateCredentialOffer ------")
             logger.error(e.message)
-            return identitylayer_pb2.IssuerCreateAndStoreCredentialDefResponse(SchemaId='', CreeDefId='', Nonce='',
-                                                                         KeyCorrectnessProof='')
+            return identitylayer_pb2.IssuerCreateAndStoreCredentialDefResponse(Resp = None)
         except Exception as e:
             logger.error("Exception Occurred @IssuerCreateCredentialOffer------")
             logger.error(e)
-            return identitylayer_pb2.IssuerCreateCredentialOfferResponse(SchemaId='', CreeDefId='', Nonce='',
-                                                                         KeyCorrectnessProof='')
+            return identitylayer_pb2.IssuerCreateCredentialOfferResponse(Resp = None)
 
     async def IssuerCreateCredential(self, request, context):
         """ Issuer Create Credential
@@ -151,24 +148,24 @@ class AnoncredsServiceServicer(identitylayer_pb2_grpc.AnoncredsServiceServicer):
             resp = await indy_anoncreds.issuer_create_credential(wallet_handle, cred_offer_json, cred_req_json,
                                                                  cred_values_json, rev_reg_id,
                                                                  blob_storage_reader_handle)
-            cred_json = identitylayer_pb2.CredJsonMessage
-            cred_json.SchemaId = resp[0]['schema_id']
-            cred_json.CredDefId = resp[0]['cred_def_id']
-            cred_json.RevRegDefID = resp[0]['rev_reg_def_id']
-            cred_json.Values = resp[0]['signature']
-            cred_json.Signature = resp[0]['schema_id']
-            cred_json.SignatureCorrectnessProof = resp[0]['signature_correctness_proof']
-            return identitylayer_pb2.IssuerCreateCredentialResponse(CredJson=cred_json, CredRevocId=resp[1],
+            # cred_json = identitylayer_pb2.CredJsonMessage
+            # cred_json.SchemaId = resp[0]['schema_id']
+            # cred_json.CredDefId = resp[0]['cred_def_id']
+            # cred_json.RevRegDefID = resp[0]['rev_reg_def_id']
+            # cred_json.Values = resp[0]['signature']
+            # cred_json.Signature = resp[0]['schema_id']
+            # cred_json.SignatureCorrectnessProof = resp[0]['signature_correctness_proof']
+            return identitylayer_pb2.IssuerCreateCredentialResponse(CredJson=resp[0], CredRevocId=resp[1],
                                                                     RevocRegDeltaJson=resp[2])
         except IndyError as e:
             logger.error("Indy Exception Occurred @ IssuerCreateCredential ------")
             logger.error(e.message)
-            return identitylayer_pb2.IssuerCreateCredentialResponse(CredJson=identitylayer_pb2.CredJsonMessage,
+            return identitylayer_pb2.IssuerCreateCredentialResponse(CredJson=None,
                                                                     CredRevocId='', RevocRegDeltaJson='')
         except Exception as e:
             logger.error("Exception Occurred @IssuerCreateCredential ------")
             logger.error(e)
-            return identitylayer_pb2.IssuerCreateCredentialResponse(CredJson=identitylayer_pb2.CredJsonMessage,
+            return identitylayer_pb2.IssuerCreateCredentialResponse(CredJson=None,
                                                                     CredRevocId='', RevocRegDeltaJson='')
 
     async def IssuerRevokeCredential(self, request, context):
@@ -180,7 +177,8 @@ class AnoncredsServiceServicer(identitylayer_pb2_grpc.AnoncredsServiceServicer):
                 request.RevRegId), get_value(request.CredRevocId)
             resp = await indy_anoncreds.issuer_revoke_credential(wallet_handle, blob_storage_reader_handle, rev_reg_id,
                                                                  cred_revoc_id)
-            return identitylayer_pb2.IssuerRevokeCredentialResponse(RevocationRegistryDeltaJson=resp[0])
+            print(resp)
+            return identitylayer_pb2.IssuerRevokeCredentialResponse(RevocationRegistryDeltaJson=resp)
         except IndyError as e:
             logger.error("Indy Exception Occurred @ IssuerRevokeCredential ------")
             logger.error(e.message)
@@ -234,24 +232,23 @@ class AnoncredsServiceServicer(identitylayer_pb2_grpc.AnoncredsServiceServicer):
                 request.CredDefJson), get_value(request.MasterSecretId),
             resp = await indy_anoncreds.prover_create_credential_req(wallet_handle, prover_did, cred_offer_json,
                                                                      cred_def_json, master_secret_id)
-            cred_req_json = identitylayer_pb2.CredReqJsonMessage
-            cred_req_json.ProverDid = resp[0]['ProverDid']
-            cred_req_json.CredDefId = resp[0]['CredDefId']
-            cred_req_json.BlindedMs = resp[0]['BlindedMs']
-            cred_req_json.BlindedMsCorrectnessProof = resp[0]['BlindedMsCorrectnessProof']
-            cred_req_json.Nonce = resp[0]['Nonce']
-            return identitylayer_pb2.ProverCreateCredentialReqResponse(CredReqJson=cred_req_json,
-                                                                       CredReqMetadataJson=resp[1])
+            # cred_req_json = identitylayer_pb2.CredReqJsonMessage
+            # cred_req_json.ProverDid = resp[0]['ProverDid']
+            # cred_req_json.CredDefId = resp[0]['CredDefId']
+            # cred_req_json.BlindedMs = resp[0]['BlindedMs']
+            # cred_req_json.BlindedMsCorrectnessProof = resp[0]['BlindedMsCorrectnessProof']
+            # cred_req_json.Nonce = resp[0]['Nonce']
+            return identitylayer_pb2.ProverCreateCredentialReqResponse(CredReqJson=str(resp[0]),CredReqMetadataJson=str(resp[1]))
         except IndyError as e:
             logger.error("Indy Exception Occurred @ ProverCreateCredentialReq ------")
             logger.error(e.message)
-            return identitylayer_pb2.ProverCreateCredentialReqResponse(CredReqJson=identitylayer_pb2.CredReqJsonMessage,
-                                                                       CredReqMetadataJson='')
+            return identitylayer_pb2.ProverCreateCredentialReqResponse(CxredReqJson=None,
+                                                                       CredReqMetadataJson=None)
         except Exception as e:
             logger.error("Exception Occurred @ProverCreateCredentialReq ------")
             logger.error(e)
-            return identitylayer_pb2.ProverCreateCredentialReqResponse(CredReqJson=identitylayer_pb2.CredReqJsonMessage,
-                                                                       CredReqMetadataJson='')
+            return identitylayer_pb2.ProverCreateCredentialReqResponse(CredReqJson=None,
+                                                                       CredReqMetadataJson=None)
 
     async def ProverStoreCredential(self, request, context):
         """ Prover Store Credential
@@ -278,9 +275,11 @@ class AnoncredsServiceServicer(identitylayer_pb2_grpc.AnoncredsServiceServicer):
         """
         try:
             wallet_handle, cred_id = get_value(request.WalletHandle), get_value(request.CredId)
-            resp = await indy_anoncreds.prover_get_credential(wallet_handle, cred_id)
-            return identitylayer_pb2.ProverGetCredentialResponse(Referent=resp[0], Attrs=resp[1], SchemaId=resp[2],
-                                                                 CredDefId=resp[3], RevRegId=resp[4], CredRevId=resp[5])
+            respJSON = await indy_anoncreds.prover_get_credential(wallet_handle, cred_id)
+            resp = json.loads(respJSON)
+            print(respJSON)
+            return identitylayer_pb2.ProverGetCredentialResponse(Referent=resp["referent"], Attrs=str(resp["attrs"]), SchemaId=resp["schema_id"],
+                                                                 CredDefId=resp["cred_def_id"], RevRegId=resp["rev_reg_id"], CredRevId=resp["cred_rev_id"])
         except IndyError as e:
             logger.error("Indy Exception Occurred @ ProverGetCredential ------")
             logger.error(e.message)
@@ -394,16 +393,19 @@ class AnoncredsServiceServicer(identitylayer_pb2_grpc.AnoncredsServiceServicer):
         try:
             wallet_handle, proof_request_json, extra_query_json = get_value(
                 request.WalletHandle), request.ProofRequestJson, request.ExtraQueryJson
+           
+            non_revoked =  {"from": proof_request_json.NonRevoInterval.From, "to": proof_request_json.NonRevoInterval.To}
             proof_request_json = json.dumps(
-                {"name": get_value(proof_request_json['Name']), "version": get_value(proof_request_json['Version']),
-                 "nonce": get_value(proof_request_json['Nonce']),
-                 "requested_attributes": get_value(proof_request_json['RequestedAttributes']),
-                 "requested_predicates": get_value(proof_request_json['RequestedPredicates']),
-                 "non_revoked": proof_request_json['NonRevoked']})
-            extra_query_json = json.dumps({"attr_referent": extra_query_json.AttrReferent,
-                                           "predicate_referent": extra_query_json.PredicateReferent})
+                {"name": proof_request_json.Name, "version": proof_request_json.Version, "nonce": proof_request_json.Nonce, \
+                 "requested_attributes": json.loads(proof_request_json.RequestedAttributes), \
+                 "requested_predicates": json.loads(proof_request_json.RequestedPredicates), \
+                 "non_revoked": non_revoked})
+            print(extra_query_json)
+
+            # extra_query_json = json.dumps({"attr_referent": extra_query_json.AttrReferent,
+            #                                "predicate_referent": extra_query_json.PredicateReferent})
             resp = await indy_anoncreds.prover_search_credentials_for_proof_req(wallet_handle, proof_request_json,
-                                                                                extra_query_json)
+                                                                                None)
             return identitylayer_pb2.ProverSearchCredentialsForProofReqResponse(SearchHandle=resp)
         except IndyError as e:
             logger.error("Indy Exception Occurred @ ProverSearchCredentialsForProofReq ------")
@@ -421,15 +423,22 @@ class AnoncredsServiceServicer(identitylayer_pb2_grpc.AnoncredsServiceServicer):
             search_handle, item_referent, count = get_value(request.SearchHandle), get_value(
                 request.ItemReference), get_value(request.Count)
             resp = await indy_anoncreds.prover_fetch_credentials_for_proof_req(search_handle, item_referent, count)
-            credentials_json = [identitylayer_pb2.CredentialsGivenProofRequest(
-                CredInfo=identitylayer_pb2.CredentialInfo(Referent=el['cred_info']['referent'], \
-                                                          Attrs=el['cred_info']['attrs'],
-                                                          SchemaId=el['cred_info']['schema_id'],
-                                                          CredDefId=el['cred_info']['cred_def_id'],
-                                                          RevRegId=el['cred_info']['rev_reg_id'], \
-                                                          CredRevId=el['cred_info']['cred_rev_id']),
-                Interval=el["interval"]) for el in resp]
-            return identitylayer_pb2.ProverFetchCredentialsForProofReqResponse(CredentialsJson=credentials_json)
+
+            print("FETCH ===============================================================================")
+            print(resp)
+
+
+            #TODO : cast to credentials_json it not working . Fix later
+           
+            # credentials_json = [identitylayer_pb2.CredentialsGivenProofRequest(
+            #     CredInfo=identitylayer_pb2.CredentialInfo(Referent=el['cred_info']['referent'], \
+            #                                               Attrs=el['cred_info']['attrs'],
+            #                                               SchemaId=el['cred_info']['schema_id'],
+            #                                               CredDefId=el['cred_info']['cred_def_id'],
+            #                                               RevRegId=el['cred_info']['rev_reg_id'], \
+            #                                               CredRevId=el['cred_info']['cred_rev_id']),
+            #     Interval=el["interval"]) for el in resp]
+            return identitylayer_pb2.ProverFetchCredentialsForProofReqResponse(CredentialsJson=None, RespJson = resp)
         except IndyError as e:
             logger.error("Indy Exception Occurred @ ProverFetchCredentialsForProofReq ------")
             logger.error(e.message)
@@ -445,6 +454,9 @@ class AnoncredsServiceServicer(identitylayer_pb2_grpc.AnoncredsServiceServicer):
         try:
             search_handle = get_value(request.SearchHandle)
             resp = await indy_anoncreds.prover_close_credentials_search_for_proof_req(search_handle)
+            print("CLOSE ===========================")
+            print(resp)
+
             return identitylayer_pb2.ProverCloseCredentialsSearchForProofReqResponse(Resp=resp)
         except IndyError as e:
             logger.error("Indy Exception Occurred @ ProverCloseCredentialsSearchForProofReq ------")
@@ -460,24 +472,44 @@ class AnoncredsServiceServicer(identitylayer_pb2_grpc.AnoncredsServiceServicer):
         """
         try:
             wallet_handle, proof_req_json, requested_credentials_json, master_secret_name, schemas_json, credential_defs_json, \
-            rev_states_json = get_value(request.WalletHandle), get_value(request.ProofReqJson), get_value(
-                request.RequestedCredentialsJson), get_value(request.MasterSecretName), get_value(
-                request.SchemasJson), get_value(request.CredentialDefsJson), get_value(request.RevStatesJson),
-            non_revoked = json.dumps(
-                {"from": proof_req_json.NonRevoInterval.From, "to": proof_req_json.NonRevoInterval.To})
+            rev_states_json = get_value(request.WalletHandle),request.ProofReqJson, request.RequestedCredentialsJson, get_value(request.MasterSecretName), get_value(
+            request.SchemasJson), get_value(request.CredentialDefsJson), get_value(request.RevStatesJson),
+
+
+        
+            non_revoked =  {"from": proof_req_json.NonRevoInterval.From, "to": proof_req_json.NonRevoInterval.To}
             proof_req_json = json.dumps(
-                {"Name": proof_req_json.name, "Version": proof_req_json.version, "Nonce": proof_req_json.nonce, \
-                 "RequestedAttributes": proof_req_json.requested_attributes,
-                 "RequestedPredicates": proof_req_json.requested_predicates, \
+                {"name": proof_req_json.Name, "version": proof_req_json.Version, "nonce": proof_req_json.Nonce, \
+                 "requested_attributes": json.loads(proof_req_json.RequestedAttributes), \
+                 "requested_predicates": json.loads(proof_req_json.RequestedPredicates), \
                  "non_revoked": non_revoked})
+
+            print("PROOF============================================================================================================")
+            print(proof_req_json)
             requested_credentials_json = json.dumps(
-                {"self_attested_attributes": requested_credentials_json.SelfAttestedAttributes, \
-                 "requested_attributes": requested_credentials_json.RequestedAttributes,
-                 "requested_predicates": requested_credentials_json.RequestedPredicates})
-            resp = await indy_anoncreds.prover_create_proof(wallet_handle, proof_req_json, requested_credentials_json, \
+                {"self_attested_attributes": json.loads(requested_credentials_json.SelfAttestedAttributes), \
+                 "requested_attributes": json.loads(requested_credentials_json.RequestedAttributes),
+                 "requested_predicates": json.loads(requested_credentials_json.RequestedPredicates)})
+
+         
+            print('requested_credentials_json')
+            print(requested_credentials_json)
+
+
+            print('schemas_json')
+            print(schemas_json)
+
+            
+
+            respJson = await indy_anoncreds.prover_create_proof(wallet_handle, proof_req_json, requested_credentials_json, \
                                                             master_secret_name, schemas_json, credential_defs_json,
                                                             rev_states_json)
-            return identitylayer_pb2.ProverCreateProofResponse(Requested=resp[0], Proof=resp[1], identifiers=resp[2])
+            print("response=================================")
+
+            resp = json.loads(respJson)
+            for key in resp.keys(): 
+                print(key)
+            return identitylayer_pb2.ProverCreateProofResponse(Requested=str(resp["requested_proof"]), Proof=str(resp["proof"]), identifiers=str(resp["identifiers"]),ProofResp = respJson  )
         except IndyError as e:
             logger.error("Indy Exception Occurred @ ProverCreateProof ------")
             logger.error(e.message)
@@ -487,7 +519,7 @@ class AnoncredsServiceServicer(identitylayer_pb2_grpc.AnoncredsServiceServicer):
             logger.error(e)
             return identitylayer_pb2.ProverCreateProofResponse()
 
-    async def VerifierVerifyProofRequest(self, request, context):
+    async def VerifierVerifyProof(self, request, context):
         """ Verifier Verify Proof
         """
         try:
@@ -497,13 +529,20 @@ class AnoncredsServiceServicer(identitylayer_pb2_grpc.AnoncredsServiceServicer):
                 request.SchemasJson), get_value(request.CredentialDefsJson), get_value(request.RevRegDefsJson), \
                                                                                                                    get_value(
                                                                                                                        request.RevRegJson)
-            proof_request_json = json.dumps({"name": proof_request_json.Name, "version": proof_request_json.Version,
-                                             "nonce": proof_request_json.Nonce, "requested_attributes": \
-                                                 proof_request_json.RequestedAttributes,
-                                             "requested_predicates": proof_request_json.RequestedPredicates,
-                                             "non_revoked": proof_request_json.NonRevoked})
-            resp = await indy_anoncreds.verifier_verify_proof(proof_request_json, proof_json, schemas_json,
+            non_revoked =  {"from": proof_request_json.NonRevoInterval.From, "to": proof_request_json.NonRevoInterval.To}
+            proof_req_json = json.dumps(
+                {"name": proof_request_json.Name, "version": proof_request_json.Version, "nonce": proof_request_json.Nonce, \
+                 "requested_attributes": json.loads(proof_request_json.RequestedAttributes), \
+                 "requested_predicates": json.loads(proof_request_json.RequestedPredicates), \
+                 "non_revoked": non_revoked})
+            print("PROOF============================================================================================================")
+            print(proof_req_json)
+            
+           
+            resp = await indy_anoncreds.verifier_verify_proof(proof_req_json, proof_json, schemas_json,
                                                               credential_defs_json, rev_reg_defs_json, rev_regs_json)
+          
+    
             return identitylayer_pb2.VerifierVerifyProofResponse(Valid=resp)
         except IndyError as e:
             logger.error("Indy Exception Occurred @ VerifierVerifyProofRequest ------")
@@ -521,9 +560,10 @@ class AnoncredsServiceServicer(identitylayer_pb2_grpc.AnoncredsServiceServicer):
             blob_storage_reader_handle, rev_reg_def_json, rev_reg_delta_json, timestamp, cred_rev_id = \
                 get_value(request.BlobStorageReaderHandle), get_value(request.RevRegDefJson), get_value(
                     request.RevRegDeltaJson), get_value(request.Timestamp), get_value(request.CredRevId),
-            resp = await indy_anoncreds.create_revocation_state(blob_storage_reader_handle, rev_reg_def_json,
+            respJSON = await indy_anoncreds.create_revocation_state(blob_storage_reader_handle, rev_reg_def_json,
                                                                 rev_reg_delta_json, timestamp, cred_rev_id)
-            return identitylayer_pb2.CreateRevocationStateResponse(RevReg=resp[0], Witness=resp[1], Timestamp=resp[2])
+            resp = json.loads(respJSON)
+            return identitylayer_pb2.CreateRevocationStateResponse(RevReg=str(resp["rev_reg"]), Witness= str(resp["witness"]), Timestamp=resp["timestamp"] ,RespJson = respJSON)
         except IndyError as e:
             logger.error("Indy Exception Occurred @ CreateRevocationState ------")
             logger.error(e.message)
@@ -553,3 +593,20 @@ class AnoncredsServiceServicer(identitylayer_pb2_grpc.AnoncredsServiceServicer):
             logger.error("Exception Occurred @UpdateRevocationState ------")
             logger.error(e)
             return identitylayer_pb2.UpdateRevocationStateResponse()
+    async def GenerateNonce(self, request, context):
+        """ Generate Nonce
+        """
+        try:
+            print("nonce generation")
+            resp = await indy_anoncreds.generate_nonce()
+            print("nonce generation response")
+            print(resp)
+            return identitylayer_pb2.GenerateNonceResponse(Nonce=resp)
+        except IndyError as e:
+            logger.error("Indy Exception Occurred @ GenerateNonce ------")
+            logger.error(e.message)
+            return identitylayer_pb2.GenerateNonceResponse(Nonce=None)
+        except Exception as e:
+            logger.error("Exception Occurred @GenerateNonce ------")
+            logger.error(e)
+            return identitylayer_pb2.GenerateNonceResponse(Nonce=None)
