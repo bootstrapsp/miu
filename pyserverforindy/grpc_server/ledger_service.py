@@ -445,9 +445,9 @@ class LedgerServiceServicer(object):
 
     async def BuildGetRevocRegRequest(self, request, context):
         try:
-            submitter_did, revoc_reg_def_id, timestamp = get_value(request.SubmitterDid), get_value(request.RevocRegDefId), get_value(request.Timestamp)
+            submitter_did, revoc_reg_def_id, timestamp = get_value(request.SubmitterDid), get_value(request.RevocRegDefId),int( get_value(request.Timestamp))
             resp = await indy_ledger.build_get_revoc_reg_request(submitter_did, revoc_reg_def_id, timestamp)
-            return identitylayer_pb2.BuildGetRevocRegRequestRs(resp)
+            return identitylayer_pb2.BuildGetRevocRegRequestRs(Resp=resp)
         except IndyError as e:
             logger.error("Indy Exception Occurred @ BuildGetRevocRegRequest ------")
             logger.error(e.message)
@@ -475,7 +475,7 @@ class LedgerServiceServicer(object):
 
     async def BuildGetRevocRegDeltaRequest(self, request, context):
         try:
-            submitter_did, revoc_reg_def_id, from_, to = get_value(request.SubmitterDid), get_value(request.RevocRegDefId), get_value(request.From_), get_value(request.To)
+            submitter_did, revoc_reg_def_id, from_, to = get_value(request.SubmiterDid), get_value(request.RevocRegDefId), get_value(request.From_), get_value(request.To)
             resp = await indy_ledger.build_get_revoc_reg_delta_request(submitter_did, revoc_reg_def_id, from_, to)
             return identitylayer_pb2.BuildGetRevocRegDeltaRequestRs(Resp=resp)
         except IndyError as e:
