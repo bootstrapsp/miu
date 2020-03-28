@@ -6,7 +6,7 @@ import (
 	"google.golang.org/grpc/status"
 	"log"
 	"miu-client/grpcConn"
-	pb "miu-client/proto"
+	pb "miu-client/identityLayer"
 )
 
 /*
