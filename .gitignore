@@ -7,3 +7,4 @@ scurid
 temp
 miu
 *.db
+/pyserverforindy/grpc_server/get-pip.py
