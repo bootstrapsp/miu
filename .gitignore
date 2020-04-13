@@ -3,3 +3,7 @@ pool_transactions_genesis
 .idea
 venv
 scurid
+.vscode
+temp
+miu
+*.db

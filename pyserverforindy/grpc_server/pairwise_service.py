@@ -1,7 +1,9 @@
 import os
 import sys
 
-from indy import pairwise as indy_pairwise
+from indy import pairwise as indy_pairwise, IndyError
+from indy.error import ErrorCode
+from grpc import StatusCode
 
 
 ROOT_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -64,6 +66,10 @@ class PairwiseServiceServicer(identitylayer_pb2_grpc.PairwiseServiceServicer):
             their_did = get_value(request.TheirDid)
             resp = await indy_pairwise.is_pairwise_exists(wallet_handle, their_did)
             return identitylayer_pb2.IsPairwiseExistsResponse(Res=resp)
+        except IndyError as e:
+            logger.error("Indy Exception Occurred @ ListPairwise ------")
+            logger.error(e.message)
+            return identitylayer_pb2.IsPairwiseExistsResponse(Res=resp)
         except Exception as e:
             logger.error("Exception occurred @ IsPairwiseExists--------")
             logger.error(e)
@@ -81,10 +87,14 @@ class PairwiseServiceServicer(identitylayer_pb2_grpc.PairwiseServiceServicer):
             metadata = get_value(request.Metadata)
             resp = await indy_pairwise.create_pairwise(wallet_handle, their_did, my_did, metadata)
             return identitylayer_pb2.CreatePairwiseResponse(ErrorCode=resp)
+        except IndyError as e:
+            logger.error("Indy Exception Occurred @ CreatePairwise ------")
+            logger.error(e.message)
+            return identitylayer_pb2.CreatePairwiseResponse(ErrorCode=e.error_code) 
         except Exception as e:
             logger.error("Exception occurred @ CreatePairwise--------")
             logger.error(e)
-            return identitylayer_pb2.CreatePairwiseResponse(ErrorCode=resp)
+            return identitylayer_pb2.CreatePairwiseResponse(ErrorCode=StatusCode.INTERNAL.value[0])
 
     async def ListPairwise(self, request, context):
         """List Pairwise
@@ -94,6 +104,10 @@ class PairwiseServiceServicer(identitylayer_pb2_grpc.PairwiseServiceServicer):
             wallet_handle = get_value(request.WalletHandle)
             resp = await indy_pairwise.list_pairwise(wallet_handle)
             return identitylayer_pb2.ListPairwiseResponse(PairwiseList=resp)
+        except IndyError as e:
+            logger.error("Indy Exception Occurred @ ListPairwise ------")
+            logger.error(e.message)
+            return identitylayer_pb2.ListPairwiseResponse(PairwiseList=resp) 
         except Exception as e:
             logger.error("Exception occurred @ ListPairwise--------")
             logger.error(e)
@@ -108,10 +122,14 @@ class PairwiseServiceServicer(identitylayer_pb2_grpc.PairwiseServiceServicer):
             their_did = get_value(request.TheirDid)
             resp = await indy_pairwise.get_pairwise(wallet_handle, their_did)
             return identitylayer_pb2.GetPairwiseResponse(PairwiseInfoJson=resp)
+        except IndyError as e:
+            logger.error("Indy Exception Occurred @ GetPairwise ------")
+            logger.error(e.message)
+            return identitylayer_pb2.GetPairwiseResponse(PairwiseInfoJson=e.message) 
         except Exception as e:
             logger.error("Exception occurred @ GetPairwise--------")
             logger.error(e)
-            return identitylayer_pb2.GetPairwiseResponse(PairwiseInfoJson=resp)
+            return identitylayer_pb2.GetPairwiseResponse(PairwiseInfoJson=str(e))
 
     async def SetPairwiseMetadata(self, request, context):
         """Set Pairwise
@@ -123,7 +141,11 @@ class PairwiseServiceServicer(identitylayer_pb2_grpc.PairwiseServiceServicer):
             metadata = get_value(request.Metadata)
             resp = await indy_pairwise.set_pairwise_metadata(wallet_handle, their_did, metadata)
             return identitylayer_pb2.SetPairwiseMetadataResponse(ErrorCode=resp)
+        except IndyError as e:
+            logger.error("Indy Exception Occurred @ SetPairwiseMetadata ------")
+            logger.error(e.message)
+            return identitylayer_pb2.SetPairwiseMetadataResponse(ErrorCode=e.error_code) 
         except Exception as e:
             logger.error("Exception occurred @ SetPairwiseMetadata--------")
             logger.error(e)
-            return identitylayer_pb2.SetPairwiseMetadataResponse(ErrorCode=resp)
+            return identitylayer_pb2.SetPairwiseMetadataResponse(ErrorCode=StatusCode.INTERNAL.value[0])

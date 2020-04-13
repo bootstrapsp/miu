@@ -19,141 +19,142 @@ package identitylayer;
 
 // Request message with JSON structure for new wallet creation
 message NewWalletDefinition {
-  Config walletConfig = 1;
-  Credentials walletCredentials = 2;
+    Config walletConfig = 1;
+    Credentials walletCredentials = 2;
 }
 message Config {
-  string walletID = 1;
-  string walletstorageType = 2;
-  StorageConfig storePath = 3;
+    string walletID = 1;
+    string walletstorageType = 2;
+    StorageConfig storePath = 3;
 }
 message StorageConfig {
-  string newWalletPath = 1;
+    string newWalletPath = 1;
 }
 message Credentials {
-  string newWalletKey = 1;
-  string newWalletStorageCredentials = 2;
-  string newWalletKeyDerivationMethod = 3;
+    string newWalletKey = 1;
+    string newWalletStorageCredentials = 2;
+    string newWalletKeyDerivationMethod = 3;
 }
 
 
 // Request message with passphrase
 message CreateWalletErrorCode {
-  string NewWalletErrorCode = 1;
+    string NewWalletErrorCode = 1;
 }
 
 
 // Request message OpenWalletDefinition
 message OpenWalletDefinition {
-  OpenWalletConfig Config = 1;
-  OpenWalletCredentials Credentials = 2;
+    OpenWalletConfig Config = 1;
+    OpenWalletCredentials Credentials = 2;
 }
 message OpenWalletConfig {
-  string Id = 1;
-  string StorageType = 2;
-  OpenWalletStorageConfig Path = 3;
+    string Id = 1;
+    string StorageType = 2;
+    OpenWalletStorageConfig Path = 3;
 }
 message OpenWalletStorageConfig {
-  string path = 1;
+    string path = 1;
 }
 message OpenWalletCredentials {
-  string Key = 1;
-  string ReKey = 2;
-  string StorageCredentials = 3;
-  string KeyDerivationMethod = 4;
-  string ReKeyDerivationMethod = 5;
+    string Key = 1;
+    string ReKey = 2;
+    string StorageCredentials = 3;
+    string KeyDerivationMethod = 4;
+    string ReKeyDerivationMethod = 5;
 }
 // Response message OpenWallethandle
 message OpenWalletHandle {
-  int64 WalletHandle = 1;
+    int64 WalletHandle = 1;
+    int64 ErrorCode = 2;
 }
 
 
 // Request message Close Wallet
 message CloseWalletHandle {
-  int64 WalletHandle = 1;
+    int64 WalletHandle = 1;
 }
 // Response message close wallet
 message CloseWalletStatus {
-  string CloseWalletCode = 1;
+    string CloseWalletCode = 1;
 }
 
 
 // Request message delete wallet
 message DeleteWalletDefinition {
-  DeleteWalletConfig Config = 1;
-  DeleteWaletCredentials Credentials = 2;
+    DeleteWalletConfig Config = 1;
+    DeleteWaletCredentials Credentials = 2;
 }
 message DeleteWalletConfig {
-  string DeleteWalletID = 1;
-  string DeleteWalletStorageType = 2;
-  DeleteWalletStorageConfiguration StorageConfig = 3;
+    string DeleteWalletID = 1;
+    string DeleteWalletStorageType = 2;
+    DeleteWalletStorageConfiguration StorageConfig = 3;
 }
 message DeleteWalletStorageConfiguration {
-  string Path = 1;
+    string Path = 1;
 }
 message DeleteWaletCredentials {
-  string DeleteWalletKey = 1;
-  string DeleteWalletStorageCredentials = 2;
-  string DeleteWalletKeyDerivationMethod = 3;
+    string DeleteWalletKey = 1;
+    string DeleteWalletStorageCredentials = 2;
+    string DeleteWalletKeyDerivationMethod = 3;
 }
 // Response message delete wallet
 message DeleteWalletConfirmation {
-  bool DeleteWalletStatus = 1;
+    bool DeleteWalletStatus = 1;
 }
 
 // Request message export wallet
 message ExportWalletDefinition {
-  int64 ExportWalletHandle = 1;
-  ExportWalletConfigJson ExportConfigJson = 2;
+    int64 ExportWalletHandle = 1;
+    ExportWalletConfigJson ExportConfigJson = 2;
 }
 message ExportWalletConfigJson {
-  string ExportWalletPath = 1;
-  string ExportWalletKey = 2;
-  string ExportWalletKeyDerivationMethod = 3;
+    string ExportWalletPath = 1;
+    string ExportWalletKey = 2;
+    string ExportWalletKeyDerivationMethod = 3;
 }
 // Response message export wallet
 message ExportWalletConfirmation {
-  bool ExportWalletStatus = 1;
+    bool ExportWalletStatus = 1;
 }
 
 // Request message Import wallet
 message ImportWalletDefinition {
-  ImportWalletConfig Config = 1;
-  ImportWalletCredentials Credentials = 2;
-  ImportWalletConfigJson ConfigJson = 3;
+    ImportWalletConfig Config = 1;
+    ImportWalletCredentials Credentials = 2;
+    ImportWalletConfigJson ConfigJson = 3;
 }
 message ImportWalletConfig{
-  string Id = 1;
-  string StorageType = 2;
-  ImportWalletStorageConfig StorageConfig = 3;
+    string Id = 1;
+    string StorageType = 2;
+    ImportWalletStorageConfig StorageConfig = 3;
 
 }
 message ImportWalletStorageConfig{
-  string Path = 1;
+    string Path = 1;
 }
 message ImportWalletCredentials{
-  string Key = 1;
-  string StorageCredentials = 2;
-  string KeyDerivationMethod = 3;
+    string Key = 1;
+    string StorageCredentials = 2;
+    string KeyDerivationMethod = 3;
 }
 message ImportWalletConfigJson{
-  string Path = 1;
-  string Key = 2;
+    string Path = 1;
+    string Key = 2;
 }
 // Response message Import Wallet
 message ImportWalletConfirmation {
-  string ImportWalletStatusCode = 1;
+    string ImportWalletStatusCode = 1;
 }
 
 
 // Request message Generate wallet key
 message GenerateWalletKeyDefinition {
-  string Seed = 1;
+    string Seed = 1;
 }
 // Response message Generate Wallet Key
 message GenerateWalletKeyConfirmation {
-  string GenerateWalletKeyStatus = 1;
+    string GenerateWalletKeyStatus = 1;
 }
 
 
@@ -161,87 +162,88 @@ message GenerateWalletKeyConfirmation {
 
 // Create Pool Ledger Config
 message CreatePoolLedgerConfigRequest{
-	string ConfigName = 1;
-	ConfigCreatePoolLedger Config = 2;
+    string ConfigName = 1;
+    ConfigCreatePoolLedger Config = 2;
 }
 message ConfigCreatePoolLedger{
-	string GensisTxn = 1;
+    string GensisTxn = 1;
 }
 message CreatePoolLedgerConfigResponse{
-	int64 ErrorCode = 1;
+    int64 ErrorCode = 1;
 }
 
 // Open Pool Ledger
 message OpenPoolLedgerRequest{
-	string ConfigName = 1;
-	ConfigOpenLedger Config = 2;
+    string ConfigName = 1;
+    ConfigOpenLedger Config = 2;
 }
 message ConfigOpenLedger{
-	int64 Timeout = 1;
-	int64 ExtendedTimeour = 2;
-	repeated string PreorderedNodes = 3;
+    int64 Timeout = 1;
+    int64 ExtendedTimeour = 2;
+    repeated string PreorderedNodes = 3;
 }
 message OpenPoolLedgerResponse{
-	int64 Handle = 1;
+    int64 Handle = 1;
+    int64 ErrorCode = 2;
 }
 
 // Refresh Pool Ledger
 message RefreshPoolLedgerRequest{
-	int64 Handle = 1;
+    int64 Handle = 1;
 }
 message RefreshPoolLedgerResponse{
-	int64 ErrorCode = 1;
+    int64 ErrorCode = 1;
 }
 
 // List Pools
 message ListPoolsRequest{
 }
 message ListPoolsResponse{
-	int64 ErrorCode = 1;
+    int64 ErrorCode = 1;
 }
 
 // Close Pool Ledger
 message ClosePoolLedgerRequest{
-	int64 Handle = 1;
+    int64 Handle = 1;
 }
 message ClosePoolLedgerResponse{
-	int64 ErrorCode = 1;
+    int64 ErrorCode = 1;
 }
 
 // Delete Pool Ledger Config
 message DeletePoolLedgerConfigRequest{
-	string ConfigName = 1;
+    string ConfigName = 1;
 }
 message DeletePoolLedgerConfigResponse{
-	int64 ErrorCode = 1;
+    int64 ErrorCode = 1;
 }
 
 // Set Protocol Version
 message SetProtocolVersionRequest{
-	int64 ProtocolVersion = 1;
+    int64 ProtocolVersion = 1;
 }
 message SetProtocolVersionResponse{
-	int64 ErrorCode = 1;
+    int64 ErrorCode = 1;
 }
 
 /*------------ BLOB MESSAGES-------------*/
 
 // Open Reader
 message OpenReaderRequest{
-	string Type_ = 1;
-	string Config = 2;
+    string Type_ = 1;
+    string Config = 2;
 }
 message OpenReaderResponse{
-	int64 Res = 1;
+    int64 Res = 1;
 }
 
 // Open Writer
 message OpenWriterRequest{
-	string Type_ = 1;
-	string Config = 2;
+    string Type_ = 1;
+    string Config = 2;
 }
 message OpenWriterResponse{
-	int64 Res = 1;
+    int64 Res = 1;
 }
 
 
@@ -250,1125 +252,1129 @@ message OpenWriterResponse{
 
 // Issuer Create Schema
 message IssuerCreateSchemaRequest{
-	string IssuerDid = 1;
-	string Name = 2;
-	string Version = 3;
-	string Attrs = 4;
+    string IssuerDid = 1;
+    string Name = 2;
+    string Version = 3;
+    string Attrs = 4;
 }
 message IssuerCreateSchemaResponse{
-	string SchemaId = 1;
-	string SchemaJson = 2;
+    string SchemaId = 1;
+    string SchemaJson = 2;
 }
 
 // issuer create and store credential def
 message IssuerCreateAndStoreCredentialDefRequest{
-	int64 WalletHandle = 1;
-	string IssuerDid = 2;
-	string SchemaJson = 3;
-	string Tag = 4;
-	string SignatureType = 5;
-	string ConfigJson = 6;
+    int64 WalletHandle = 1;
+    string IssuerDid = 2;
+    string SchemaJson = 3;
+    string Tag = 4;
+    string SignatureType = 5;
+    string ConfigJson = 6;
 }
 message IssuerCreateAndStoreCredentialDefResponse{
-	string CredDefId = 1;
-	string CredDefJson = 2;
+    string CredDefId = 1;
+    string CredDefJson = 2;
 }
 
 // Issuer Create And Store Revoc Reg
 message IssuerCreateAndStoreRevocRegRequest{
-	int64 WalletHandle = 1;
-	string IssuerDid = 2;
-	string RevocDefType = 3;
-	string Tag = 4;
-	string CredDefId = 5;
-	string ConfigJSon = 6;
-	int64 TailsWriterHandle = 7;
+    int64 WalletHandle = 1;
+    string IssuerDid = 2;
+    string RevocDefType = 3;
+    string Tag = 4;
+    string CredDefId = 5;
+    string ConfigJSon = 6;
+    int64 TailsWriterHandle = 7;
 }
 message IssuerCreateAndStoreRevocRegResponse{
-	string RevocRegId = 1;
-	string RevocRegDefJson = 2;
-	string RevocRegEntryJson = 3;
+    string RevocRegId = 1;
+    string RevocRegDefJson = 2;
+    string RevocRegEntryJson = 3;
 }
 
 // Issuer Create Credential Offer
 message IssuerCreateCredentialOfferRequest{
-	int64 WalletHandle = 1;
-	string CredDefId = 2;
+    int64 WalletHandle = 1;
+    string CredDefId = 2;
 }
 message IssuerCreateCredentialOfferResponse{
-	string SchemaId = 1;
-	string CredDefId = 2;
-	string Nonce = 3;
-	google.protobuf.Any KeyCorrectnessProof = 4;
+    string Resp = 1 ;
 }
 
 // Issuer Create Credential
 message IssuerCreateCredentialRequest{
-	int64 WalletHandle = 1;
-	string CredOfferJson = 2;
-	string CredReqJson = 3;
-	string CredValuesJson = 4;
-	string RevRegId = 5;
-	string BlobStorageReaderHandle = 6;
+    int64 WalletHandle = 1;
+    string CredOfferJson = 2;
+    string CredReqJson = 3;
+    string CredValuesJson = 4;
+    string RevRegId = 5;
+    int64 BlobStorageReaderHandle = 6;
 }
 message IssuerCreateCredentialResponse{
-	CredJsonMessage CredJson = 1;
-	string CredRevocId = 2;
-	string RevocRegDeltaJson = 3;
+    string CredJson = 1;
+    string CredRevocId = 2;
+    string RevocRegDeltaJson = 3;
 }
 message CredJsonMessage{
-	string SchemaId = 1;
-	string CredDefId = 2;
-	string RevRegDefID = 3;
-	google.protobuf.Any Values = 4;
-	google.protobuf.Any Signature = 5;
-	google.protobuf.Any SignatureCorrectnessProof = 6;
+    string SchemaId = 1;
+    string CredDefId = 2;
+    string RevRegDefID = 3;
+    google.protobuf.Any Values = 4;
+    google.protobuf.Any Signature = 5;
+    google.protobuf.Any SignatureCorrectnessProof = 6;
 }
 
 // Issuer Revoke Credential
 message IssuerRevokeCredentialRequest{
-	int64 WalletHandle = 1;
-	int64 BlobStorageReaderHandle = 2;
-	string RevRegId = 3;
-	string CredRevocId = 4;
+    int64 WalletHandle = 1;
+    int64 BlobStorageReaderHandle = 2;
+    string RevRegId = 3;
+    string CredRevocId = 4;
 }
 message IssuerRevokeCredentialResponse{
-	string RevocationRegistryDeltaJson = 1;
+    string RevocationRegistryDeltaJson = 1;
 }
 
 // Issuer Merge Revocation Registry Deltas
 message IssuerMergeRevocationRegistryDeltasRequest{
-	string RevRegDeltaJson = 1;
-	string OtherRevRegDeltaJson = 2;
+    string RevRegDeltaJson = 1;
+    string OtherRevRegDeltaJson = 2;
 }
 message IssuerMergeRevocationRegistryDeltasResponse{
-	string MergedRevocationRegistryDelta = 1;
+    string MergedRevocationRegistryDelta = 1;
 }
 
 // Prover Create Master Secret
 message ProverCreateMasterSecretRequest{
-	int64 WalletHandle = 1;
-	string MasterSecretName = 2;
+    int64 WalletHandle = 1;
+    string MasterSecretName = 2;
 }
 message ProverCreateMasterSecretResponse{
-	string GeneratedMasterSecretId = 1;
+    string GeneratedMasterSecretId = 1;
 }
 
 // Prover Create Credential Req
 message ProverCreateCredentialReqRequest{
-	int64 WaletHandle = 1;
-	string ProverDid = 2;
-	string CredOfferJSon = 3;
-	string CredDefJson = 4;
-	string MasterSecretId = 5;
+    int64 WaletHandle = 1;
+    string ProverDid = 2;
+    string CredOfferJSon = 3;
+    string CredDefJson = 4;
+    string MasterSecretId = 5;
 }
 message ProverCreateCredentialReqResponse{
-	CredReqJsonMessage CredReqJson = 1;
-	string CredReqMetadataJson = 2;
+    string CredReqJson = 1;
+    string CredReqMetadataJson = 2;
 }
 message CredReqJsonMessage{
-	string ProverDid = 1;
-	string CredDefId = 2;
-	google.protobuf.Any BlindedMs = 3;
-	google.protobuf.Any BlindedMsCorrectnessProof = 4;
-	string Nonce = 5;
+    string ProverDid = 1;
+    string CredDefId = 2;
+    google.protobuf.Any BlindedMs = 3;
+    google.protobuf.Any BlindedMsCorrectnessProof = 4;
+    string Nonce = 5;
 }
 
 // Prover Store Credential
 message ProverStoreCredentialRequest{
-	int64 WalletHandle = 1;
-	string CredId = 2;
-	string CredReqMetadataJson = 3;
-	string CredJson = 4;
-	string CredDefJson = 5;
-	string RevRegDefJson = 6;
+    int64 WalletHandle = 1;
+    string CredId = 2;
+    string CredReqMetadataJson = 3;
+    string CredJson = 4;
+    string CredDefJson = 5;
+    string RevRegDefJson = 6;
 }
 message ProverStoreCredentialResponse{
-	string CredId = 1;
+    string CredId = 1;
 }
 
 // Prover Get Credential
 message ProverGetCredentialRequest{
-	int64 WalletHandle = 1;
-	string CredId = 2;
+    int64 WalletHandle = 1;
+    string CredId = 2;
 }
 message ProverGetCredentialResponse{
-	string Referent = 1;
-	string Attrs = 2;
-	string SchemaId = 3;
-	string CredDefId = 4;
-	string RevRegId = 5;
-	string CredRevId = 6;
+    string Referent = 1;
+    string Attrs = 2;
+    string SchemaId = 3;
+    string CredDefId = 4;
+    string RevRegId = 5;
+    string CredRevId = 6;
 }
 
 // Prover Get Credentials
 message ProverGetCredentialsRequest{
-	int64 WalletHandle = 1;
-	FilterJsonMessage FilterJson = 2;
+    int64 WalletHandle = 1;
+    FilterJsonMessage FilterJson = 2;
 }
 message FilterJsonMessage{
-	string SchemaId = 1;
-	string SchemaIssuerDid = 2;
-	string SchemaName = 3;
-	string SchemaVersion = 4;
-	string IssuerDid = 5;
-	string CredDefId = 6;
+    string SchemaId = 1;
+    string SchemaIssuerDid = 2;
+    string SchemaName = 3;
+    string SchemaVersion = 4;
+    string IssuerDid = 5;
+    string CredDefId = 6;
 }
 message ProverGetCredentialsResponse{
-	repeated CredentialsJsonMessage CredentialsJson = 1;
+    repeated CredentialsJsonMessage CredentialsJson = 1;
 }
 message CredentialsJsonMessage{
-	string Referent = 1;
-	string Attrs = 2;
-	string SchemaID = 3;
-	string CredDefId = 4;
-	string RevRegId = 5;
-	string CredRevId = 6;
+    string Referent = 1;
+    string Attrs = 2;
+    string SchemaID = 3;
+    string CredDefId = 4;
+    string RevRegId = 5;
+    string CredRevId = 6;
 }
 
 // Prover Seach Credentials
 message ProverSeachCredentialsRequest{
-	int64 WalletHandle = 1;
-	string QueryJson = 2;
+    int64 WalletHandle = 1;
+    string QueryJson = 2;
 }
 message ProverSeachCredentialsResponse{
-	int64 SearchHandle = 1;
-	int64 TotalCount = 2;
+    int64 SearchHandle = 1;
+    int64 TotalCount = 2;
 }
 
 // Prover Fetch Credentials
 message ProverFetchCredentialsRequest{
-	int64 SearchHandle = 1;
-	int64 Count = 2;
+    int64 SearchHandle = 1;
+    int64 Count = 2;
 }
 message ProverFetchCredentialsResponse{
-	repeated CredentialsJsonMessage CredentialsJson = 1;
+    repeated CredentialsJsonMessage CredentialsJson = 1;
 }
 
 // Prover Close Credentials Search
 message ProverCloseCredentialsSearchRequest{
-	int64 SearchHandle = 1;
+    int64 SearchHandle = 1;
 }
 message ProverCloseCredentialsSearchResponse{
-	string Resp = 1;
+    string Resp = 1;
 }
 
 // Prover Get Credentials For Proof Req
 message ProverGetCredentialsForProofReqRequest{
-	int64 WalletHandle = 1;
-	ProofRequestJsonMessage ProofRequestJson = 2;
+    int64 WalletHandle = 1;
+    ProofRequestJsonMessage ProofRequestJson = 2;
 }
 message ProofRequestJsonMessage{
-	string Name = 1;
-	string Version = 2;
-	string Nonce = 3;
-	string RequestedAttributes = 4;
-	string RequestedPredicates = 5;
-	google.protobuf.Any NonRevoked = 6;
+    string Name = 1;
+    string Version = 2;
+    string Nonce = 3;
+    string RequestedAttributes = 4;
+    string RequestedPredicates = 5;
+    google.protobuf.Any NonRevoked = 6;
 }
 message ProverGetCredentialsForProofReqResponse{
-	string RequestedAttrs = 1;
-	string RequestedPredicates = 2;
+    string RequestedAttrs = 1;
+    string RequestedPredicates = 2;
 }
 
 // Prover Search Credentials For Proof Req
 message ProverSearchCredentialsForProofReqRequest{
-	int64 WalletHandle = 1;
-	ProofRequestJsonMessage ProofRequestJson = 2;
-	ExtraQueryJsonMessage ExtraQueryJson = 3;
+    int64 WalletHandle = 1;
+    ProofReqJsonMessage ProofRequestJson = 2;
+    ExtraQueryJsonMessage ExtraQueryJson = 3;
 }
 message ExtraQueryJsonMessage{
-	google.protobuf.Any AttrReferent = 1;
-	google.protobuf.Any PredicateReferent = 2;
+    google.protobuf.Any AttrReferent = 1;
+    google.protobuf.Any PredicateReferent = 2;
 }
 message ProverSearchCredentialsForProofReqResponse{
-	int64 SearchHandle = 1;
+    int64 SearchHandle = 1;
 }
 
 // Prover Fetch Credentials For Proof Req
 message ProverFetchCredentialsForProofReqRequest{
-	int64 SearchHandle = 1;
-	string ItemReference = 2;
-	int64 Count = 3;
+    int64 SearchHandle = 1;
+    string ItemReference = 2;
+    int64 Count = 3;
 }
 message ProverFetchCredentialsForProofReqResponse{
 	repeated CredentialsGivenProofRequest CredentialsJson = 1;
+	string RespJson = 2;
 }
 message CredentialsGivenProofRequest{
-	CredentialInfo CredInfo = 1;
-	google.protobuf.Any Interval = 2;
+    CredentialInfo CredInfo = 1;
+    google.protobuf.Any Interval = 2;
 }
 message CredentialInfo{
-	string Referent = 1;
-	string Attrs = 2;
-	string SchemaId = 3;
-	string CredDefId = 4;
-	int64 RevRegId = 5;
-	int64 CredRevId = 6;
+    string Referent = 1;
+    string Attrs = 2;
+    string SchemaId = 3;
+    string CredDefId = 4;
+    string RevRegId = 5;
+    string CredRevId = 6;
 }
 
 // Prover Close Credentials Search For Proof Req
 message ProverCloseCredentialsSearchForProofReqRequest{
-	int64 SearchHandle = 1;
+    int64 SearchHandle = 1;
 }
 message ProverCloseCredentialsSearchForProofReqResponse{
-	string Resp = 1;
+    string Resp = 1;
 }
 
 // Prover Create Proof
 message ProverCreateProofRequest{
-	int64 WalletHandle = 1;
-	ProofReqJsonMessage  ProofReqJson = 2;
-	RequestedCredentialsJsonMessage RequestedCredentialsJson = 3;
-	string MasterSecretName = 4;
-	string SchemasJson = 5;
-	string CredentialDefsJson = 6;
-	string RevStatesJson = 7;
+    int64 WalletHandle = 1;
+    ProofReqJsonMessage  ProofReqJson = 2;
+    RequestedCredentialsJsonMessage RequestedCredentialsJson = 3;
+    string MasterSecretName = 4;
+    string SchemasJson = 5;
+    string CredentialDefsJson = 6;
+    string RevStatesJson = 7;
 }
 message ProofReqJsonMessage{
-	string Name = 1;
-	string Version = 2;
-	string Nonce = 3;
-	string RequestedAttributes = 4;
-	string RequestedPredicates = 5;
-	NonRevocIntervalMessage NonRevoInterval = 6;
+    string Name = 1;
+    string Version = 2;
+    string Nonce = 3;
+    string RequestedAttributes = 4;
+    string RequestedPredicates = 5;
+    NonRevocIntervalMessage NonRevoInterval = 6;
 }
 message NonRevocIntervalMessage{
-	int64 From = 1;
-	int64 To = 2;
+    int64 From = 1;
+    int64 To = 2;
 }
 message RequestedCredentialsJsonMessage{
-	string SelfAttestedAttributes = 1;
-	string RequestedAttributes = 2;
-	string RequestedPredicates = 3;
+    string SelfAttestedAttributes = 1;
+    string RequestedAttributes = 2;
+    string RequestedPredicates = 3;
 }
 message ProverCreateProofResponse{
-	string Requested = 1;
-	string Proof = 2;
-	string identifiers = 3;
+    string Requested = 1;
+    string Proof = 2;
+    string identifiers = 3;
+    string ProofResp  = 4;
 }
 
 // Verifier Verify Proof
 message VerifierVerifyProofRequest{
-	ProofRequestJsonMessage ProofRequestJson = 1;
-	string ProofJson = 2;
-	string SchemasJson = 3;
-	string CredentialDefsJson = 4;
-	string RevRegDefsJson = 5;
-	string RevRegJson = 6;
+    ProofReqJsonMessage ProofRequestJson = 1;
+    string ProofJson = 2;
+    string SchemasJson = 3;
+    string CredentialDefsJson = 4;
+    string RevRegDefsJson = 5;
+    string RevRegJson = 6;
 }
 message VerifierVerifyProofResponse{
-	bool Valid = 1;
+    bool Valid = 1;
 }
 
 // Create Revocation State
 message CreateRevocationStateRequest{
-	int64 BlobStorageReaderHandle = 1;
-	string RevRegDefJson = 2;
-	string RevRegDeltaJson = 3;
-	int64 Timestamp = 4;
-	string CredRevId = 5;
+    int64 BlobStorageReaderHandle = 1;
+    string RevRegDefJson = 2;
+    string RevRegDeltaJson = 3;
+    int64 Timestamp = 4;
+    string CredRevId = 5;
 }
 message CreateRevocationStateResponse{
-	string RevReg = 1;
-	string Witness = 2;
-	int64 Timestamp = 3;
+    string RevReg = 1;
+    string Witness = 2;
+    int64 Timestamp = 3;
+    string RespJson  = 4;
 }
 
 // Update Revocation State
 message UpdateRevocationStateRequest{
-	int64 BlobStorageReaderHandle = 1;
-	string RevStateJson = 2;
-	string RevRegDefJson = 3;
-	string RevRegDeltaJson = 4;
-	int64 Timestamp = 5;
-	string CredRevId = 6;
+    int64 BlobStorageReaderHandle = 1;
+    string RevStateJson = 2;
+    string RevRegDefJson = 3;
+    string RevRegDeltaJson = 4;
+    int64 Timestamp = 5;
+    string CredRevId = 6;
 }
 message UpdateRevocationStateResponse{
-	string RevReg = 1;
-	string Witness = 2;
-	int64 Timestamp = 3;
+    string RevReg = 1;
+    string Witness = 2;
+    int64 Timestamp = 3;
 }
 
-
+message GenerateNonceRequest {
+}
+message GenerateNonceResponse{
+    string Nonce = 1;
+}
 /*------------ CRYPTO MESSAGES-------------*/
 
 // Create Key
 message CreateKeyRequest{
-	int64 WalletHandle = 1;
-	string KeyJsonCreateKey = 2;
+    int64 WalletHandle = 1;
+    string KeyJsonCreateKey = 2;
 }
 message KeyJsonCreateKey{
-	string seed = 1;
-	string CryptoType = 2;
+    string seed = 1;
+    string CryptoType = 2;
 }
 message CreateKeyResponse{
-	string Verkey = 1;
+    string Verkey = 1;
 }
 
 // Set Key Metadata
 message SetKeyMetadataRequest{
-	int64 WalletHandle = 1;
-	string Verkey = 2;
-	string Metadata = 3;
+    int64 WalletHandle = 1;
+    string Verkey = 2;
+    string Metadata = 3;
 }
 message SetKeyMetadataResponse{
-	int64 ErrorCode = 1;
+    int64 ErrorCode = 1;
 }
 
 // Get Key Metadata
 message GetKeyMetadataRequest{
-	int64 WalletHandle = 1;
-	string Verkey = 2;
+    int64 WalletHandle = 1;
+    string Verkey = 2;
 }
 message GetKeyMetadataResponse{
-	string Metadata = 1;
+    string Metadata = 1;
 }
 
 // Crypto Sign
 message CryptoSignRequest{
-	int64 WalletHandle = 1;
-	string SignerVk = 2;
-	bytes Msg = 3;
+    int64 WalletHandle = 1;
+    string SignerVk = 2;
+    bytes Msg = 3;
 }
 message CryptoSignResponse{
-	bytes Signature = 1;
+    bytes Signature = 1;
 }
 
 // Crypto Verify
 message CryptoVerifyRequest{
-	string SignerVk = 1;
-	bytes Msg = 2;
-	bytes Signature = 3;
+    string SignerVk = 1;
+    bytes Msg = 2;
+    bytes Signature = 3;
 }
 message CryptoVerifyResponse{
-	bool Valid = 1;
+    bool Valid = 1;
 }
 
 // Auth Crypt
 message AuthCryptRequest{
-	int64 WalletHandle = 1;
-	string SenderVk = 2;
-	string RecipientVk = 3;
-	bytes Msg = 4;
+    int64 WalletHandle = 1;
+    string SenderVk = 2;
+    string RecipientVk = 3;
+    bytes Msg = 4;
 }
 message AuthCryptResponse{
-	bytes Msg = 1;
+    bytes Msg = 1;
 }
 
 // Auth Decrypt
 message AuthDecryptRequest{
-	int64 WalletHandle = 1;
-	string RecipientVk = 2;
-	bytes EncryptedMsg = 3;
+    int64 WalletHandle = 1;
+    string RecipientVk = 2;
+    bytes EncryptedMsg = 3;
 }
 message AuthDecryptResponse{
-	string Verkey = 1;
-	bytes Msg = 2;
+    string Verkey = 1;
+    bytes Msg = 2;
 }
 
 // Anon Crypt
 message AnonCryptRequest{
-	string RecipientVk = 1;
-	bytes Msg = 2;
+    string RecipientVk = 1;
+    bytes Msg = 2;
 }
 message AnonCryptResponse{
-	bytes Msg = 1;
+    bytes Msg = 1;
 }
 
 // Anon Decrypt
 message AnonDecryptRequest{
-	int64 WalletHandle = 1;
-	string RecipientVk = 2;
-	bytes EncryptedMsg = 3;
+    int64 WalletHandle = 1;
+    string RecipientVk = 2;
+    bytes EncryptedMsg = 3;
 }
 message AnonDecryptResponse{
-	bytes DecryptedMsg = 1;
+    bytes DecryptedMsg = 1;
 }
 
 /*------------ PAIRWISE MESSAGES-------------*/
 
 // Is Pairwise Exists
 message IsPairwiseExistsRequest{
-	int64 WalletHandle = 1;
-	string TheirDid = 2;
+    int64 WalletHandle = 1;
+    string TheirDid = 2;
 }
 message IsPairwiseExistsResponse{
-	bool Res = 1;
+    bool Res = 1;
 }
 
 // Create Pairwise
 message CreatePairwiseRequest{
-	int64 WalletHandle = 1;
-	string TheirDid = 2;
-	string MyDid = 3;
-	string Metadata = 4;
+    int64 WalletHandle = 1;
+    string TheirDid = 2;
+    string MyDid = 3;
+    string Metadata = 4;
 }
 message CreatePairwiseResponse{
-	int64 ErrorCode = 1;
+    int64 ErrorCode = 1;
 }
 
 // List Pairwise
 message ListPairwiseRequest{
-	int64 WalletHandle = 1;
+    int64 WalletHandle = 1;
 }
 message ListPairwiseResponse{
-	repeated string PairwiseList = 1;
+    repeated string PairwiseList = 1;
 }
 
 // Get Pairwise
 message GetPairwiseRequest{
-	int64 WalletHandle = 1;
-	string TheirDid = 2;
+    int64 WalletHandle = 1;
+    string TheirDid = 2;
 }
 message GetPairwiseResponse{
-	string PairwiseInfoJson = 1;
+    string PairwiseInfoJson = 1;
 }
 
 // Set Pairwise Metadata
 message SetPairwiseMetadataRequest{
-	int64 WalletHandle = 1;
-	string TheirDid = 2;
-	string MetaData = 3;
+    int64 WalletHandle = 1;
+    string TheirDid = 2;
+    string MetaData = 3;
 }
 message SetPairwiseMetadataResponse{
-	int64 ErrorCode = 1;
+    int64 ErrorCode = 1;
 }
 
 /*------------ DID MESSAGES-------------*/
 
 // Create And Store My Did
 message CreateAndStoreMyDidRequest{
-	int64 WalletHandle = 1;
-	CreateAndStoreMyDidJsonMessage DidJson = 2;
+    int64 WalletHandle = 1;
+    CreateAndStoreMyDidJsonMessage DidJson = 2;
 }
 message CreateAndStoreMyDidJsonMessage{
-	string Did = 1;
-	string Seed = 2;
-	string CryptoType = 3;
-	bool Cid = 4;
+    string Did = 1;
+    string Seed = 2;
+    string CryptoType = 3;
+    bool Cid = 4;
 }
 message CreateAndStoreMyDidResponse{
-	string Did = 1;
-	string Verkey = 2;
+    string Did = 1;
+    string Verkey = 2;
 }
 
 
 // Replace Keys Start
 message ReplaceKeysStartRequest{
-	int64 WalletHandle = 1;
-	string Did = 2;
-	ReplaceKeysStartIdentityJsonMessage IdentityJson = 3;
+    int64 WalletHandle = 1;
+    string Did = 2;
+    ReplaceKeysStartIdentityJsonMessage IdentityJson = 3;
 }
 message ReplaceKeysStartIdentityJsonMessage{
-	string Seed = 1;
-	string CryptoType = 2;
+    string Seed = 1;
+    string CryptoType = 2;
 }
 message ReplaceKeysStartResponse{
-	string Verkey = 1;
+    string Verkey = 1;
 }
 
 
 // Replace Keys Apply
 message ReplaceKeysApplyRequest{
-	int64 WalletHandle = 1;
-	string Did = 2;
+    int64 WalletHandle = 1;
+    string Did = 2;
 }
 message ReplaceKeysApplyResponse{
-	int64 ErrorCode = 1;
+    int64 ErrorCode = 1;
 }
 
 // Store Their Did
 message StoreTheirDidRequest{
-	int64 WalletHandle = 1;
-	StoreTheirDidIdentityJsonMessage IdentityJson = 2;
+    int64 WalletHandle = 1;
+    StoreTheirDidIdentityJsonMessage IdentityJson = 2;
 }
 message StoreTheirDidIdentityJsonMessage{
-	string Did = 1;
-	string Verkey = 2;
-	string CryptoType = 3;
+    string Did = 1;
+    string Verkey = 2;
+    string CryptoType = 3;
 }
 message StoreTheirDidResponse{
-	int64 ErrorCode = 1;
+    int64 ErrorCode = 1;
 }
 
 
 // Create Key
 message DidCreateKeyRequest{
-	int64 WalletHandle = 1;
-	string KeyJson = 2;
+    int64 WalletHandle = 1;
+    string KeyJson = 2;
 }
 message DidCreateKeyResponse{
-	string Verkey = 1;
+    string Verkey = 1;
 }
 
 
 // Set Key Metadata
 message DidSetKeyMetadataRequest{
-	int64 WalletHandle = 1;
-	string Verkey = 2;
-	string Metadata = 3;
+    int64 WalletHandle = 1;
+    string Verkey = 2;
+    string Metadata = 3;
 }
 message DidSetKeyMetadataResponse{
-	int64 ErrorCode = 1;
+    int64 ErrorCode = 1;
 }
 
 // Get Key Metadata
 message DidGetKeyMetadataRequest{
-	int64 WalletHandle = 1;
-	string Verkey = 2;
+    int64 WalletHandle = 1;
+    string Verkey = 2;
 }
 message DidGetKeyMetadataResponse{
-	string Metadata = 1;
+    string Metadata = 1;
 }
 
 
 // Key For Did
 message KeyForDidRequest{
-	int64 PoolHandle = 1;
-	int64 WalletHandle = 2;
-	string Did = 3;
+    int64 PoolHandle = 1;
+    int64 WalletHandle = 2;
+    string Did = 3;
 }
 message KeyForDidResponse{
-	string Key = 1;
+    string Key = 1;
 }
 
 
 // Key For Local Did
 message KeyForLocalDidRequest{
-	int64 WalletHandle = 1;
-	string Did = 2;
+    int64 WalletHandle = 1;
+    string Did = 2;
 }
 message KeyForLocalDidResponse{
-	string Key = 1;
+    string Key = 1;
 }
 
 
 // Set Endpoint For Did
 message SetEndpointForDidRequest{
-	int64 WalletHandle = 1;
-	string Did = 2;
-	string Address = 3;
-	string TransportKey = 4;
+    int64 WalletHandle = 1;
+    string Did = 2;
+    string Address = 3;
+    string TransportKey = 4;
 }
 message SetEndpointForDidResponse{
-	int64 ErrorCode = 1;
+    int64 ErrorCode = 1;
 }
 
 
 // Get Endpoint For Did
 message GetEndpointForDidRequest{
-	int64 WalletHandle = 1;
-	int64 PoolHandle = 2;
-	string Did = 3;
+    int64 WalletHandle = 1;
+    int64 PoolHandle = 2;
+    string Did = 3;
 }
 message GetEndpointForDidResponse{
-	string Endpoint = 1;
-	string TransportVk = 2;
+    string Endpoint = 1;
+    string TransportVk = 2;
 }
 
 
 // Set Did Metadata
 message SetDidMetadataRequest{
-	int64 WalletHandle = 1;
-	string Did = 2;
-	string Metadata = 3;
+    int64 WalletHandle = 1;
+    string Did = 2;
+    string Metadata = 3;
 }
 message SetDidMetadataResponse{
-	int64 Error = 1;
+    int64 Error = 1;
 }
 
 
 // Get Did Metadata
 message GetDidMetadataRequest{
-	int64 WalletHandle = 1;
-	string Did = 2;
+    int64 WalletHandle = 1;
+    string Did = 2;
 }
 message GetDidMetadataResponse{
-	string Metadata = 1;
+    string Metadata = 1;
 }
 
 
 // Get My Did With Meta
 message GetMyDidWithMetaRequest{
-	int64 WalletHandle = 1;
-	string Did = 2;
+    int64 WalletHandle = 1;
+    string Did = 2;
 }
 message GetMyDidWithMetaResponse{
-	string Did = 1;
+    string Did = 1;
 }
 
 
 // List My Dids With Meta
 message ListMyDidsWithMetaRequest{
-	int64 WalletHandle = 1;
+    int64 WalletHandle = 1;
 }
 message ListMyDidsWithMetaResponse{
-	repeated string Did = 1;
+    repeated string Did = 1;
 }
 
 
 // Abbreviate Verkey
 message AbbreviateVerkeyRequest{
-	string Did = 1;
-	string FullVerkey = 2;
+    string Did = 1;
+    string FullVerkey = 2;
 }
 message AbbreviateVerkeyResponse{
-	string Metadata = 1;
+    string Metadata = 1;
 }
 
 /*------------ LEDGER MESSAGES-------------*/
 // Sign And Submit Request
 message SignAndSubmitRequestRq{
-	int64 PoolHandle = 1;
-	int64 WalletHandle = 2;
-	string SubmitterDid = 3;
-	string RequestJson = 4;
+    int64 PoolHandle = 1;
+    int64 WalletHandle = 2;
+    string SubmitterDid = 3;
+    string RequestJson = 4;
 }
 message SignAndSubmitRequestRs{
-	string Resp = 1;
+    string Resp = 1;
 }
 
 
 // Submit Request
 message SubmitRequestRq{
-	int64 PoolHandle = 1;
-	string RequestJson = 2;
+    int64 PoolHandle = 1;
+    string RequestJson = 2;
 }
 message SubmitRequestRs{
-	string Resp = 1;
+    string Resp = 1;
 }
 
 
 // Submit Action
 message SubmitActionRq{
-	int64 PoolHandle = 1;
-	string RequestJson = 2;
-	string Nodes = 3;
-	int64 Timeout = 4;
+    int64 PoolHandle = 1;
+    string RequestJson = 2;
+    string Nodes = 3;
+    int64 Timeout = 4;
 }
 message SubmitActionRs{
-	string Resp = 1;
+    string Resp = 1;
 }
 
 
 // Sign Request
 message SignRequestRq{
-	int64 WalletHandle = 1;
-	string SubmitterDid = 2;
-	string RequestJson = 3;
+    int64 WalletHandle = 1;
+    string SubmitterDid = 2;
+    string RequestJson = 3;
 }
 message SignRequestRs{
-	string Resp = 1;
+    string Resp = 1;
 }
 
 
 //  Multi Sign Request
 message MultiSignRequestRq{
-	int64 WalletHandle = 1;
-	string SubmitterDid = 2;
-	string RequestJson = 3;
+    int64 WalletHandle = 1;
+    string SubmitterDid = 2;
+    string RequestJson = 3;
 }
 message MultiSignRequestRs{
-	string Resp = 1;
+    string Resp = 1;
 }
 
 
 // Build Get Ddo Request
 message BuildGetDdoRequestRq{
-	string SubmitterDid = 1;
-	string TargetDid = 2;
+    string SubmitterDid = 1;
+    string TargetDid = 2;
 }
 message BuildGetDdoRequestRs{
-	string Resp = 1;
+    string Resp = 1;
 }
 
 
 // Build Nym Request
 message BuildNymRequestRq{
-	string SubmitterDid = 1;
-	string TargetDid = 2;
-	string VerKey = 3;
-	string Alias = 4;
-	string Role = 5;
+    string SubmitterDid = 1;
+    string TargetDid = 2;
+    string VerKey = 3;
+    string Alias = 4;
+    string Role = 5;
 }
 message BuildNymRequestRs{
-	string Resp = 1;
+    string Resp = 1;
 }
 
 
 // Build Attrib Request
 message BuildAttribRequestRq{
-	string SubmitterDid = 1;
-	string TargetDid = 2;
-	string Xhash = 3;
-	string Raw = 4;
-	string Enc = 5;
+    string SubmitterDid = 1;
+    string TargetDid = 2;
+    string Xhash = 3;
+    string Raw = 4;
+    string Enc = 5;
 }
 message BuildAttribRequestRs{
-	string Resp = 1;
+    string Resp = 1;
 }
 
 
 // Build Get Attrib Request
 message BuildGetAttribRequestRq{
-	string SubmitterDid = 1;
-	string TargetDid = 2;
-	string Xhash = 3;
-	string Raw = 4;
-	string Enc = 5;
+    string SubmitterDid = 1;
+    string TargetDid = 2;
+    string Xhash = 3;
+    string Raw = 4;
+    string Enc = 5;
 }
 message BuildGetAttribRequestRs{
-	string Resp = 1;
+    string Resp = 1;
 }
 
 
 // Build Get Nym Request
 message BuildGetNymRequestRq{
-	string SubmitterDid = 1;
-	string TargetDid = 2;
+    string SubmitterDid = 1;
+    string TargetDid = 2;
 }
 message BuildGetNymRequestRs{
-	string Resp = 1;
+    string Resp = 1;
 }
 
 
 // Build Schema Request
 message BuildSchemaRequestRq{
-	string SubmitterDid = 1;
-	string Data = 2;
+    string SubmitterDid = 1;
+    string Data = 2;
 }
 message BuildSchemaRequestRs{
-	string Resp = 1;
+    string Resp = 1;
 }
 
 
 // Build Get Schema Request
 message BuildGetSchemaRequestRq{
-	string SubmitterDid = 1;
-	string Id_ = 2;
+    string SubmitterDid = 1;
+    string Id_ = 2;
 }
 message BuildGetSchemaRequestRs{
-	string Resp = 1;
+    string Resp = 1;
 }
 
 
 // Parse Get Schema Response
 message ParseGetSchemaResponseRq{
-	string GetSchemaResponse = 1;
+    string GetSchemaResponse = 1;
 }
 message ParseGetSchemaResponseRs{
-	string Id = 1;
-	string SchemaJson = 2;
+    string Id = 1;
+    string SchemaJson = 2;
 }
 
 
 // Build Cred Def Request
 message BuildCredDefRequestRq{
-	string SubmitterDid = 1;
-	string Data = 2;
+    string SubmitterDid = 1;
+    string Data = 2;
 }
 message BuildCredDefRequestRs{
-	string Resp = 1;
+    string Resp = 1;
 }
 
 
 // Build Get Cred Def Request
 message BuildGetCredDefRequestRq{
-	string SubmitterDid = 1;
-	string Id_ = 2;
+    string SubmitterDid = 1;
+    string Id_ = 2;
 }
 message BuildGetCredDefRequestRs{
-	string Resp = 1;
+    string Resp = 1;
 }
 
 // Parse Get Cred Deg Response
 message ParseGetCredDefResponseRq{
-	string GetCredDefResponse = 1;
+    string GetCredDefResponse = 1;
 }
 message ParseGetCredDefResponseRs{
-	string CredentialDefinitionId = 1;
-	string CredentialDefinitionJson = 2;
+    string CredentialDefinitionId = 1;
+    string CredentialDefinitionJson = 2;
 }
 
 
 // Build Node Request
 message BuildNodeRequestRq{
-	string SubmitterDid = 1;
-	string TargetDid = 2;
-	string Data = 3;
+    string SubmitterDid = 1;
+    string TargetDid = 2;
+    string Data = 3;
 }
 message BuildNodeRequestRs{
-	string Resp = 1;
+    string Resp = 1;
 }
 
 
 // Build Get Validator Info Request
 message BuildGetValidatorInfoRequestRq{
-	string SubmitterDid = 1;
+    string SubmitterDid = 1;
 }
 message BuildGetValidatorInfoRequestRs{
-	string Resp = 1;
+    string Resp = 1;
 }
 
 
 // Build Get Txn Request
 message BuildGetTxnRequestRq{
-	string SubmitterDid = 1;
-	string LedgerType = 2;
-	string SeqNo = 3;
+    string SubmitterDid = 1;
+    string LedgerType = 2;
+    string SeqNo = 3;
 }
 message BuildGetTxnRequestRs{
-	string Resp = 1;
+    string Resp = 1;
 }
 
 
 // Build Pool Config Request
 message BuildPoolConfigRequestRq{
-	string SubmitterDid = 1;
-	bool Writes = 2;
-	bool Force = 3;
+    string SubmitterDid = 1;
+    bool Writes = 2;
+    bool Force = 3;
 }
 message BuildPoolConfigRequestRs{
-	string Resp = 1;
+    string Resp = 1;
 }
 
 
 // Build Pool Restart Request
 message BuildPoolRestartRequestRq{
-	string SubmitterDid = 1;
-	string Action = 2;
-	string Datetime = 3;
+    string SubmitterDid = 1;
+    string Action = 2;
+    string Datetime = 3;
 }
 message BuildPoolRestartRequestRs{
-	string Resp = 1;
+    string Resp = 1;
 }
 
 
 // Build Pool Upgrade Request
 message BuildPoolUpgradeRequestRq{
-	string SubmitterDid = 1;
-	string Name = 2;
-	string Version = 3;
-	string Action = 4;
-	string _sha256 = 5;
-	int64 _timeout = 6;
-	string Schedule = 7;
-	string Justification = 8;
-	bool Reinstall = 9;
-	bool Force = 10;
-	string Package = 11;
+    string SubmitterDid = 1;
+    string Name = 2;
+    string Version = 3;
+    string Action = 4;
+    string _sha256 = 5;
+    int64 _timeout = 6;
+    string Schedule = 7;
+    string Justification = 8;
+    bool Reinstall = 9;
+    bool Force = 10;
+    string Package = 11;
 }
 message BuildPoolUpgradeRequestRs{
-	string Resp = 1;
+    string Resp = 1;
 }
 
 
 // Build Revoc Reg Def Request
 message BuildRevocRegDefRequestRq{
-	string SubmitterDid = 1;
-	string Data = 2;
+    string SubmitterDid = 1;
+    string Data = 2;
 }
 message BuildRevocRegDefRequestRs{
-	string Resp = 1;
+    string Resp = 1;
 }
 
 
 // Build Get Revoc Reg Def Request
 message BuildGetRevocRegDefRequestRq{
-	string SubmitterDid = 1;
-	string RevRegDefId = 2;
+    string SubmitterDid = 1;
+    string RevRegDefId = 2;
 }
 message BuildGetRevocRegDefRequestRs{
-	string Resp = 1;
+    string Resp = 1;
 }
 
 
 // Parse Get Revoc Reg Def Response
 message ParseGetRevocRegDefResponseRq{
-	string GetRevocRefDefResponse = 1;
+    string GetRevocRefDefResponse = 1;
 }
 message ParseGetRevocRegDefResponseRs{
-	string RevocationId = 1;
-	string RevocationJson = 2;
+    string RevocationId = 1;
+    string RevocationJson = 2;
 }
 
 
 // Build Revoc Reg Entry Request
 message BuildRevocRegEntryRequestRq{
-	string SubmitterDid = 1;
-	string RevocRegDefId = 2;
-	string RevDefType = 3;
-	string Value = 4;
+    string SubmitterDid = 1;
+    string RevocRegDefId = 2;
+    string RevDefType = 3;
+    string Value = 4;
 }
 message BuildRevocRegEntryRequestRs{
-	string Resp = 1;
+    string Resp = 1;
 }
 
 
 // Build Get Revoc Reg Request
 message BuildGetRevocRegRequestRq{
-	string SubmitterDid = 1;
-	string RevocRegDefId = 2;
-	string Timestamp = 3;
+    string SubmitterDid = 1;
+    string RevocRegDefId = 2;
+    string Timestamp = 3;
 }
 message BuildGetRevocRegRequestRs{
-	string Resp = 1;
+    string Resp = 1;
 }
 
 
 // Parse Get Revoc Reg Response
 message ParseGetRevocRegResponseRq{
-	string GetRevocRegResponse = 1;
+    string GetRevocRegResponse = 1;
 }
 message ParseGetRevocRegResponseRs{
-	string Id = 1;
-	string Json = 2;
-	int64 Timestamp = 3;
+    string Id = 1;
+    string Json = 2;
+    int64 Timestamp = 3;
 }
 
 
 // Build Get Revoc Reg Delta Request
 message BuildGetRevocRegDeltaRequestRq{
-	string SubmiterDid = 1;
-	string RevocRegDefId = 2;
-	int64 From_ = 3;
-	int64 To = 4;
+    string SubmiterDid = 1;
+    string RevocRegDefId = 2;
+    int64 From_ = 3;
+    int64 To = 4;
 }
 message BuildGetRevocRegDeltaRequestRs{
-	string Resp = 1;
+    string Resp = 1;
 }
 
 
 // Parse Get Revoc Reg Delta Response
 message ParseGetRevocRegDeltaResponseRq{
-	string GetRevocRegDeltaResponse = 1;
+    string GetRevocRegDeltaResponse = 1;
 }
 message ParseGetRevocRegDeltaResponseRs{
-	string Id = 1;
-	string Json = 2;
-	int64 Timestamp = 3;
+    string Id = 1;
+    string Json = 2;
+    int64 Timestamp = 3;
 }
 
 
 // Get Response MetaData
 message GetResponseMetadataRq{
-	string Response = 1;
+    string Response = 1;
 }
 message GetResponseMetadataRs{
-	string Resp = 1;
+    string Resp = 1;
 }
 
 /*---------------- NON SECRET SERVICE --------------*/
 
 // Add Wallet Record
 message AddWalletRecordRequest{
-	int64 WalletHandle = 1;
-	string Type_ = 2;
-	string Id_ = 3;
-	string Value = 4;
-	string TagsJson = 5;
+    int64 WalletHandle = 1;
+    string Type_ = 2;
+    string Id_ = 3;
+    string Value = 4;
+    string TagsJson = 5;
 }
 message AddWalletRecordResponse{
-	string Resp = 1;
+    string Resp = 1;
 }
 
 // Update Wallet Record Value
 message UpdateWalletRecordValueRequest{
-	int64 WalletHandle = 1;
-	string Type_ = 2;
-	string Id_ = 3;
-	string value = 4;
+    int64 WalletHandle = 1;
+    string Type_ = 2;
+    string Id_ = 3;
+    string value = 4;
 }
 message UpdateWalletRecordValueResponse{
-	string Resp = 1;
+    string Resp = 1;
 }
 
 
 // Update Wallet Record Tags
 message UpdateWalletRecordTagsRequest{
-	int64 WalletHandle = 1;
-	string Type_ = 2;
-	string Id_ = 3;
-	string TagsJson = 4;
+    int64 WalletHandle = 1;
+    string Type_ = 2;
+    string Id_ = 3;
+    string TagsJson = 4;
 }
 message UpdateWalletRecordTagsResponse{
-	string Resp = 1;
+    string Resp = 1;
 }
 
 // Add Wallet Record Tags
 message AddWalletRecordTagsRequest{
-	int64 WalletHandle = 1;
-	string Type_ = 2;
-	string Id_ = 3;
-	string TagsJson = 4;
+    int64 WalletHandle = 1;
+    string Type_ = 2;
+    string Id_ = 3;
+    string TagsJson = 4;
 }
 message AddWalletRecordTagsResponse{
-	string Resp = 1;
+    string Resp = 1;
 }
 
 // Delete Wallet Record Tags
 message DeleteWalletRecordTagsRequest{
-	int64 WalletHandle = 1;
-	string Type_ = 2;
-	string Id_ = 3;
-	string TagNamesJson = 4;
+    int64 WalletHandle = 1;
+    string Type_ = 2;
+    string Id_ = 3;
+    string TagNamesJson = 4;
 }
 
 message DeleteWalletRecordTagsResponse{
-	string Resp = 1;
+    string Resp = 1;
 }
 
 // Delete Wallet Record
 message DeleteWalletRecordRequest{
-	int64 WalletHandle = 1;
-	string Type_ = 2;
-	string Id_ = 3;
+    int64 WalletHandle = 1;
+    string Type_ = 2;
+    string Id_ = 3;
 }
 
 message DeleteWalletRecordResponse{
-	string Resp = 1;
+    string Resp = 1;
 }
 
 // Get Wallet Record
 message GetWalletRecordRequest{
-	int64 WalletHandle = 1;
-	string Type_ = 2;
-	string Id = 3;
-	string OptionsJson = 4;
+    int64 WalletHandle = 1;
+    string Type_ = 2;
+    string Id = 3;
+    string OptionsJson = 4;
 }
 message GetWalletRecordResponse{
-	string Resp = 1;
+    string Resp = 1;
 }
 
 // Open Wallet Search
 message OpenWalletSearchRequest{
-	int64 WalletHandle = 1;
-	string Type_ = 2;
-	string QueryJson = 3;
-	string OptionsJson = 4;
+    int64 WalletHandle = 1;
+    string Type_ = 2;
+    string QueryJson = 3;
+    string OptionsJson = 4;
 }
 message OpenWalletSearchResponse{
-	int64 SearchHandle = 1;
+    int64 SearchHandle = 1;
 }
 
 // Fetch Wallet Search Next Records
 message FetchWalletSearchNextRecordsRequest{
-	int64 WalletHandle = 1;
-	int64 WalletSearchHandle = 2;
-	int64 Count = 3;
+    int64 WalletHandle = 1;
+    int64 WalletSearchHandle = 2;
+    int64 Count = 3;
 }
 message FetchWalletSearchNextRecordsResponse{
-	string WalletRecordsJson = 1;
+    string WalletRecordsJson = 1;
 }
 
 
 // Close Wallet Search
 message CloseWalletSearchRequest{
-	int64 WalletSearchHandle = 1;
+    int64 WalletSearchHandle = 1;
 }
 message CloseWalletSearchResponse{
-	string Resp = 1;
+    string Resp = 1;
 }
 
 
@@ -1376,277 +1382,279 @@ message CloseWalletSearchResponse{
 
 // `non-secret` services
 service NonSecretService{
-  rpc AddWalletRecord (AddWalletRecordRequest) returns (AddWalletRecordResponse) {}
-  rpc UpdateWalletRecordValue (UpdateWalletRecordValueRequest) returns (UpdateWalletRecordValueResponse) {}
-  rpc UpdateWalletRecordTags (UpdateWalletRecordTagsRequest) returns (UpdateWalletRecordTagsResponse) {}
-  rpc AddWalletRecordTags (AddWalletRecordTagsRequest) returns (AddWalletRecordTagsResponse) {}
-  rpc DeleteWalletRecordTags (DeleteWalletRecordTagsRequest) returns (DeleteWalletRecordTagsResponse) {}
-  rpc DeleteWalletRecord (DeleteWalletRecordRequest) returns (DeleteWalletRecordResponse) {}
-  rpc GetWalletRecord (GetWalletRecordRequest) returns (GetWalletRecordResponse) {}
-  rpc OpenWalletSearch (OpenWalletSearchRequest) returns (OpenWalletSearchResponse) {}
-  rpc FetchWalletSearchNextRecords (FetchWalletSearchNextRecordsRequest) returns (FetchWalletSearchNextRecordsResponse) {}
-  rpc CloseWalletSearch (CloseWalletSearchRequest) returns (CloseWalletSearchResponse) {}
+    rpc AddWalletRecord (AddWalletRecordRequest) returns (AddWalletRecordResponse) {}
+    rpc UpdateWalletRecordValue (UpdateWalletRecordValueRequest) returns (UpdateWalletRecordValueResponse) {}
+    rpc UpdateWalletRecordTags (UpdateWalletRecordTagsRequest) returns (UpdateWalletRecordTagsResponse) {}
+    rpc AddWalletRecordTags (AddWalletRecordTagsRequest) returns (AddWalletRecordTagsResponse) {}
+    rpc DeleteWalletRecordTags (DeleteWalletRecordTagsRequest) returns (DeleteWalletRecordTagsResponse) {}
+    rpc DeleteWalletRecord (DeleteWalletRecordRequest) returns (DeleteWalletRecordResponse) {}
+    rpc GetWalletRecord (GetWalletRecordRequest) returns (GetWalletRecordResponse) {}
+    rpc OpenWalletSearch (OpenWalletSearchRequest) returns (OpenWalletSearchResponse) {}
+    rpc FetchWalletSearchNextRecords (FetchWalletSearchNextRecordsRequest) returns (FetchWalletSearchNextRecordsResponse) {}
+    rpc CloseWalletSearch (CloseWalletSearchRequest) returns (CloseWalletSearchResponse) {}
 }
 
 
 // `ledger` services
 service LedgerService{
-  rpc SignAndSubmitRequest (SignAndSubmitRequestRq) returns (SignAndSubmitRequestRs) {}
-  rpc SubmitRequest (SubmitRequestRq) returns (SubmitRequestRs) {}
-  rpc SubmitAction (SubmitActionRq) returns (SubmitActionRs) {}
-  rpc SignRequest (SignRequestRq) returns (SignRequestRs) {}
-  rpc MultiSignRequest (MultiSignRequestRq) returns (MultiSignRequestRs) {}
-  rpc BuildGetDdoRequest (BuildGetDdoRequestRq) returns (BuildGetDdoRequestRs) {}
-  rpc BuildNymRequest (BuildNymRequestRq) returns (BuildNymRequestRs) {}
-  rpc BuildAttribRequest (BuildAttribRequestRq) returns (BuildAttribRequestRs) {}
-  rpc BuildGetAttribRequest (BuildGetAttribRequestRq) returns (BuildGetAttribRequestRs) {}
-  rpc BuildGetNymRequest (BuildGetNymRequestRq) returns (BuildGetNymRequestRs) {}
-  rpc BuildSchemaRequest (BuildSchemaRequestRq) returns (BuildSchemaRequestRs) {}
-  rpc BuildGetSchemaRequest (BuildGetSchemaRequestRq) returns (BuildGetSchemaRequestRs) {}
-  rpc ParseGetSchemaResponse (ParseGetSchemaResponseRq) returns (ParseGetSchemaResponseRs) {}
-  rpc BuildCredDefRequest (BuildCredDefRequestRq) returns (BuildCredDefRequestRs) {}
-  rpc BuildGetCredDefRequest (BuildGetCredDefRequestRq) returns (BuildGetCredDefRequestRs) {}
-  rpc ParseGetCredDefResponse (ParseGetCredDefResponseRq) returns (ParseGetCredDefResponseRs) {}
-  rpc BuildNodeRequest (BuildNodeRequestRq) returns (BuildNodeRequestRs) {}
-  rpc BuildGetValidatorInfoRequest (BuildGetValidatorInfoRequestRq) returns (BuildGetValidatorInfoRequestRs) {}
-  rpc BuildGetTxnRequest (BuildGetTxnRequestRq) returns (BuildGetTxnRequestRs) {}
-  rpc BuildPoolConfigRequest (BuildPoolConfigRequestRq) returns (BuildPoolConfigRequestRs) {}
-  rpc BuildPoolRestartRequest (BuildPoolRestartRequestRq) returns (BuildPoolRestartRequestRs) {}
-  rpc BuildPoolUpgradeRequest (BuildPoolUpgradeRequestRq) returns (BuildPoolUpgradeRequestRs) {}
-  rpc BuildRevocRegDefRequest (BuildRevocRegDefRequestRq) returns (BuildRevocRegDefRequestRs) {}
-  rpc BuildGetRevocRegDefRequest (BuildGetRevocRegDefRequestRq) returns (BuildGetRevocRegDefRequestRs) {}
-  rpc ParseGetRevocRegDefResponse (ParseGetRevocRegDefResponseRq) returns (ParseGetRevocRegDefResponseRs) {}
-  rpc BuildRevocRegEntryRequest (BuildRevocRegEntryRequestRq) returns (BuildRevocRegEntryRequestRs) {}
-  rpc BuildGetRevocRegRequest (BuildGetRevocRegRequestRq) returns (BuildGetRevocRegRequestRs) {}
-  rpc ParseGetRevocRegResponse (ParseGetRevocRegResponseRq) returns (ParseGetRevocRegResponseRs) {}
-  rpc BuildGetRevocRegDeltaRequest (BuildGetRevocRegDeltaRequestRq) returns (BuildGetRevocRegDeltaRequestRs) {}
-  rpc ParseGetRevocRegDeltaResponse (ParseGetRevocRegDeltaResponseRq) returns (ParseGetRevocRegDeltaResponseRs) {}
-  rpc GetResponseMetadata (GetResponseMetadataRq) returns (GetResponseMetadataRs) {}
+    rpc SignAndSubmitRequest (SignAndSubmitRequestRq) returns (SignAndSubmitRequestRs) {}
+    rpc SubmitRequest (SubmitRequestRq) returns (SubmitRequestRs) {}
+    rpc SubmitAction (SubmitActionRq) returns (SubmitActionRs) {}
+    rpc SignRequest (SignRequestRq) returns (SignRequestRs) {}
+    rpc MultiSignRequest (MultiSignRequestRq) returns (MultiSignRequestRs) {}
+    rpc BuildGetDdoRequest (BuildGetDdoRequestRq) returns (BuildGetDdoRequestRs) {}
+    rpc BuildNymRequest (BuildNymRequestRq) returns (BuildNymRequestRs) {}
+    rpc BuildAttribRequest (BuildAttribRequestRq) returns (BuildAttribRequestRs) {}
+    rpc BuildGetAttribRequest (BuildGetAttribRequestRq) returns (BuildGetAttribRequestRs) {}
+    rpc BuildGetNymRequest (BuildGetNymRequestRq) returns (BuildGetNymRequestRs) {}
+    rpc BuildSchemaRequest (BuildSchemaRequestRq) returns (BuildSchemaRequestRs) {}
+    rpc BuildGetSchemaRequest (BuildGetSchemaRequestRq) returns (BuildGetSchemaRequestRs) {}
+    rpc ParseGetSchemaResponse (ParseGetSchemaResponseRq) returns (ParseGetSchemaResponseRs) {}
+    rpc BuildCredDefRequest (BuildCredDefRequestRq) returns (BuildCredDefRequestRs) {}
+    rpc BuildGetCredDefRequest (BuildGetCredDefRequestRq) returns (BuildGetCredDefRequestRs) {}
+    rpc ParseGetCredDefResponse (ParseGetCredDefResponseRq) returns (ParseGetCredDefResponseRs) {}
+    rpc BuildNodeRequest (BuildNodeRequestRq) returns (BuildNodeRequestRs) {}
+    rpc BuildGetValidatorInfoRequest (BuildGetValidatorInfoRequestRq) returns (BuildGetValidatorInfoRequestRs) {}
+    rpc BuildGetTxnRequest (BuildGetTxnRequestRq) returns (BuildGetTxnRequestRs) {}
+    rpc BuildPoolConfigRequest (BuildPoolConfigRequestRq) returns (BuildPoolConfigRequestRs) {}
+    rpc BuildPoolRestartRequest (BuildPoolRestartRequestRq) returns (BuildPoolRestartRequestRs) {}
+    rpc BuildPoolUpgradeRequest (BuildPoolUpgradeRequestRq) returns (BuildPoolUpgradeRequestRs) {}
+    rpc BuildRevocRegDefRequest (BuildRevocRegDefRequestRq) returns (BuildRevocRegDefRequestRs) {}
+    rpc BuildGetRevocRegDefRequest (BuildGetRevocRegDefRequestRq) returns (BuildGetRevocRegDefRequestRs) {}
+    rpc ParseGetRevocRegDefResponse (ParseGetRevocRegDefResponseRq) returns (ParseGetRevocRegDefResponseRs) {}
+    rpc BuildRevocRegEntryRequest (BuildRevocRegEntryRequestRq) returns (BuildRevocRegEntryRequestRs) {}
+    rpc BuildGetRevocRegRequest (BuildGetRevocRegRequestRq) returns (BuildGetRevocRegRequestRs) {}
+    rpc ParseGetRevocRegResponse (ParseGetRevocRegResponseRq) returns (ParseGetRevocRegResponseRs) {}
+    rpc BuildGetRevocRegDeltaRequest (BuildGetRevocRegDeltaRequestRq) returns (BuildGetRevocRegDeltaRequestRs) {}
+    rpc ParseGetRevocRegDeltaResponse (ParseGetRevocRegDeltaResponseRq) returns (ParseGetRevocRegDeltaResponseRs) {}
+    rpc GetResponseMetadata (GetResponseMetadataRq) returns (GetResponseMetadataRs) {}
 }
 
 
 // `did` Services
 service DidService{
-  
-  // Create And Store My Did
-  rpc CreateAndStoreMyDid (CreateAndStoreMyDidRequest) returns (CreateAndStoreMyDidResponse) {}
 
-  // Replace Keys Start
-  rpc ReplaceKeysStart (ReplaceKeysStartRequest) returns (ReplaceKeysStartResponse) {}
+    // Create And Store My Did
+    rpc CreateAndStoreMyDid (CreateAndStoreMyDidRequest) returns (CreateAndStoreMyDidResponse) {}
 
-  // Replace Keys Apply
-  rpc ReplaceKeysApply (ReplaceKeysApplyRequest) returns (ReplaceKeysApplyResponse) {}
+    // Replace Keys Start
+    rpc ReplaceKeysStart (ReplaceKeysStartRequest) returns (ReplaceKeysStartResponse) {}
 
-  // Store Their Did
-  rpc StoreTheirDid (StoreTheirDidRequest) returns (StoreTheirDidResponse) {}
+    // Replace Keys Apply
+    rpc ReplaceKeysApply (ReplaceKeysApplyRequest) returns (ReplaceKeysApplyResponse) {}
 
-  // Create Key; Prefix 'Did' to avoid conflict with other proto
-  rpc DidCreateKey (DidCreateKeyRequest) returns (DidCreateKeyResponse) {}
+    // Store Their Did
+    rpc StoreTheirDid (StoreTheirDidRequest) returns (StoreTheirDidResponse) {}
 
-  // Set Key Metadata
-  rpc DidSetKeyMetadata (DidSetKeyMetadataRequest) returns (DidSetKeyMetadataRequest) {}
+    // Create Key; Prefix 'Did' to avoid conflict with other proto
+    rpc DidCreateKey (DidCreateKeyRequest) returns (DidCreateKeyResponse) {}
 
-  // Get Key Metadata
-  rpc DidGetKeyMetadata (DidGetKeyMetadataRequest) returns (DidGetKeyMetadataResponse) {}
+    // Set Key Metadata
+    rpc DidSetKeyMetadata (DidSetKeyMetadataRequest) returns (DidSetKeyMetadataRequest) {}
 
-  // Key For Did
-  rpc KeyForDid (KeyForDidRequest) returns (KeyForDidResponse) {}
+    // Get Key Metadata
+    rpc DidGetKeyMetadata (DidGetKeyMetadataRequest) returns (DidGetKeyMetadataResponse) {}
 
-  // Key For Local Did
-  rpc KeyForLocalDid (KeyForLocalDidRequest) returns (KeyForLocalDidResponse) {}
+    // Key For Did
+    rpc KeyForDid (KeyForDidRequest) returns (KeyForDidResponse) {}
 
-  // Set Endpoint For Did
-  rpc SetEndpointForDid (SetEndpointForDidRequest) returns (SetEndpointForDidResponse) {}
+    // Key For Local Did
+    rpc KeyForLocalDid (KeyForLocalDidRequest) returns (KeyForLocalDidResponse) {}
 
-  // Get Endpoint For Did
-  rpc GetEndpointForDid (GetEndpointForDidRequest) returns (GetEndpointForDidResponse) {}
+    // Set Endpoint For Did
+    rpc SetEndpointForDid (SetEndpointForDidRequest) returns (SetEndpointForDidResponse) {}
 
-  // Set Did Metadata
-  rpc SetDidMetadata (SetDidMetadataRequest) returns (SetDidMetadataResponse) {}
+    // Get Endpoint For Did
+    rpc GetEndpointForDid (GetEndpointForDidRequest) returns (GetEndpointForDidResponse) {}
 
-  // Get Did Metadata
-  rpc GetDidMetadata (GetDidMetadataRequest) returns (GetDidMetadataResponse) {}
+    // Set Did Metadata
+    rpc SetDidMetadata (SetDidMetadataRequest) returns (SetDidMetadataResponse) {}
 
-  // Get My Did With Meta
-  rpc GetMyDidWithMeta (GetMyDidWithMetaRequest) returns (GetMyDidWithMetaResponse) {}
+    // Get Did Metadata
+    rpc GetDidMetadata (GetDidMetadataRequest) returns (GetDidMetadataResponse) {}
 
-  // List My Dids With Meta
-  rpc ListMyDidsWithMeta (ListMyDidsWithMetaRequest) returns (ListMyDidsWithMetaResponse) {}
+    // Get My Did With Meta
+    rpc GetMyDidWithMeta (GetMyDidWithMetaRequest) returns (GetMyDidWithMetaResponse) {}
 
-  // Abbreviate Verkey
-  rpc AbbreviateVerkey (AbbreviateVerkeyRequest) returns (AbbreviateVerkeyResponse) {}
+    // List My Dids With Meta
+    rpc ListMyDidsWithMeta (ListMyDidsWithMetaRequest) returns (ListMyDidsWithMetaResponse) {}
+
+    // Abbreviate Verkey
+    rpc AbbreviateVerkey (AbbreviateVerkeyRequest) returns (AbbreviateVerkeyResponse) {}
 }
 
 // `pairwise` Services
 service PairwiseService{
-  // Is Pairwise Exists
-  rpc IsPairwiseExists (IsPairwiseExistsRequest) returns (IsPairwiseExistsResponse) {}
+    // Is Pairwise Exists
+    rpc IsPairwiseExists (IsPairwiseExistsRequest) returns (IsPairwiseExistsResponse) {}
 
-  // Create Pairwise
-  rpc CreatePairwise (CreatePairwiseRequest) returns (CreatePairwiseResponse) {}
+    // Create Pairwise
+    rpc CreatePairwise (CreatePairwiseRequest) returns (CreatePairwiseResponse) {}
 
-  // List Pairwise
-  rpc ListPairwise (ListPairwiseRequest) returns (ListPairwiseResponse) {}
+    // List Pairwise
+    rpc ListPairwise (ListPairwiseRequest) returns (ListPairwiseResponse) {}
 
-  // Get Pairwise
-  rpc GetPairwise (GetPairwiseRequest) returns (GetPairwiseResponse) {}
+    // Get Pairwise
+    rpc GetPairwise (GetPairwiseRequest) returns (GetPairwiseResponse) {}
 
-  // Set Pairwise Metadata
-  rpc SetPairwiseMetadata (SetPairwiseMetadataRequest) returns (SetPairwiseMetadataResponse) {}
+    // Set Pairwise Metadata
+    rpc SetPairwiseMetadata (SetPairwiseMetadataRequest) returns (SetPairwiseMetadataResponse) {}
 }
 
 
 // `crypto` Services
 service CryptoService{
-  
-  // Create Key
-  rpc CreateKey (CreateKeyRequest) returns (CreateKeyResponse) {}
-  
-  // Set Key Metadata
-  rpc SetKeyMetadata (SetKeyMetadataRequest) returns (SetKeyMetadataResponse) {}
-  
-  // Get Key Metadata
-  rpc GetKeyMetadata (GetKeyMetadataRequest) returns (GetKeyMetadataResponse) {}
-  
-  // Crypto Sign
-  rpc CryptoSign (CryptoSignRequest) returns (CryptoSignResponse) {}
-  
-  // Crypto Verify
-  rpc CryptoVerify (CryptoVerifyRequest) returns (CryptoVerifyResponse) {}
-  
-  // Auth Crypt
-  rpc AuthCrypt (AuthCryptRequest) returns (AuthCryptResponse) {}
-  
-  // Auth Decrypt
-  rpc AuthDecrypt (AuthDecryptRequest) returns (AuthDecryptResponse) {}
-  
-  // Anon Crypt
-  rpc AnonCrypt (AnonCryptRequest) returns (AnonCryptResponse) {}
-  
-  // Anon Decrypt
-  rpc AnonDecrypt (AnonDecryptRequest) returns (AnonDecryptResponse) {}
+
+    // Create Key
+    rpc CreateKey (CreateKeyRequest) returns (CreateKeyResponse) {}
+
+    // Set Key Metadata
+    rpc SetKeyMetadata (SetKeyMetadataRequest) returns (SetKeyMetadataResponse) {}
+
+    // Get Key Metadata
+    rpc GetKeyMetadata (GetKeyMetadataRequest) returns (GetKeyMetadataResponse) {}
+
+    // Crypto Sign
+    rpc CryptoSign (CryptoSignRequest) returns (CryptoSignResponse) {}
+
+    // Crypto Verify
+    rpc CryptoVerify (CryptoVerifyRequest) returns (CryptoVerifyResponse) {}
+
+    // Auth Crypt
+    rpc AuthCrypt (AuthCryptRequest) returns (AuthCryptResponse) {}
+
+    // Auth Decrypt
+    rpc AuthDecrypt (AuthDecryptRequest) returns (AuthDecryptResponse) {}
+
+    // Anon Crypt
+    rpc AnonCrypt (AnonCryptRequest) returns (AnonCryptResponse) {}
+
+    // Anon Decrypt
+    rpc AnonDecrypt (AnonDecryptRequest) returns (AnonDecryptResponse) {}
 
 }
 
 // `pool` Services
 service PoolService{
-  
-  // Create Pool Ledger Config
-  rpc CreatePoolLedgerConfig (CreatePoolLedgerConfigRequest) returns (CreatePoolLedgerConfigResponse) {}
 
-  // Open Pool Ledger
-  rpc OpenPoolLedger(OpenPoolLedgerRequest) returns (OpenPoolLedgerResponse) {}
+    // Create Pool Ledger Config
+    rpc CreatePoolLedgerConfig (CreatePoolLedgerConfigRequest) returns (CreatePoolLedgerConfigResponse) {}
 
-  // Refresh Pool Ledger
-  rpc RefreshPoolLedger(RefreshPoolLedgerRequest) returns (RefreshPoolLedgerResponse) {}
+    // Open Pool Ledger
+    rpc OpenPoolLedger(OpenPoolLedgerRequest) returns (OpenPoolLedgerResponse) {}
 
-  // List Pools
-  rpc ListPools(ListPoolsRequest) returns(ListPoolsResponse) {}
+    // Refresh Pool Ledger
+    rpc RefreshPoolLedger(RefreshPoolLedgerRequest) returns (RefreshPoolLedgerResponse) {}
 
-  // Close Pool Ledger
-  rpc ClosePoolLedger(ClosePoolLedgerRequest) returns (ClosePoolLedgerResponse) {}
+    // List Pools
+    rpc ListPools(ListPoolsRequest) returns(ListPoolsResponse) {}
 
-  // Delete Pool Ledger Config
-  rpc DeletePoolLedgerConfig(DeletePoolLedgerConfigRequest) returns (DeletePoolLedgerConfigResponse) {}
+    // Close Pool Ledger
+    rpc ClosePoolLedger(ClosePoolLedgerRequest) returns (ClosePoolLedgerResponse) {}
 
-  // Set Protocol Version
-  rpc SetProtocolVersion(SetProtocolVersionRequest) returns (SetProtocolVersionResponse) {}
+    // Delete Pool Ledger Config
+    rpc DeletePoolLedgerConfig(DeletePoolLedgerConfigRequest) returns (DeletePoolLedgerConfigResponse) {}
+
+    // Set Protocol Version
+    rpc SetProtocolVersion(SetProtocolVersionRequest) returns (SetProtocolVersionResponse) {}
 }
 
 
 // `anoncreds` Services
 service AnoncredsService{
-  
-  // Issuer Create Schema
-  rpc IssuerCreateSchema (IssuerCreateSchemaRequest) returns (IssuerCreateSchemaResponse) {}
-  
-  // issuer create and store credential def
-  rpc IssuerCreateAndStoreCredentialDef (IssuerCreateAndStoreCredentialDefRequest) returns (IssuerCreateAndStoreCredentialDefResponse) {}
-  
-  // Issuer Create And Store Revoc Reg
-  rpc IssuerCreateAndStoreRevocReg (IssuerCreateAndStoreRevocRegRequest) returns (IssuerCreateAndStoreRevocRegResponse) {}
 
-  // Issuer Create Credential Offer
-  rpc IssuerCreateCredentialOffer (IssuerCreateCredentialOfferRequest) returns (IssuerCreateCredentialOfferResponse) {}
+    // Issuer Create Schema
+    rpc IssuerCreateSchema (IssuerCreateSchemaRequest) returns (IssuerCreateSchemaResponse) {}
 
-  // Issuer Create Credential
-  rpc IssuerCreateCredential (IssuerCreateCredentialRequest) returns (IssuerCreateCredentialResponse) {}
+    // issuer create and store credential def
+    rpc IssuerCreateAndStoreCredentialDef (IssuerCreateAndStoreCredentialDefRequest) returns (IssuerCreateAndStoreCredentialDefResponse) {}
 
-  // Issuer Revoke Credential
-  rpc IssuerRevokeCredential (IssuerRevokeCredentialRequest) returns (IssuerRevokeCredentialResponse) {}
+    // Issuer Create And Store Revoc Reg
+    rpc IssuerCreateAndStoreRevocReg (IssuerCreateAndStoreRevocRegRequest) returns (IssuerCreateAndStoreRevocRegResponse) {}
 
-  // Issuer Merge Revocation Registry Deltas
-  rpc IssuerMergeRevocationRegistryDeltas (IssuerMergeRevocationRegistryDeltasRequest) returns (IssuerMergeRevocationRegistryDeltasResponse) {}
+    // Issuer Create Credential Offer
+    rpc IssuerCreateCredentialOffer (IssuerCreateCredentialOfferRequest) returns (IssuerCreateCredentialOfferResponse) {}
 
-  // Prover Create Master Secret
-  rpc ProverCreateMasterSecret (ProverCreateMasterSecretRequest) returns (ProverCreateMasterSecretResponse) {}
+    // Issuer Create Credential
+    rpc IssuerCreateCredential (IssuerCreateCredentialRequest) returns (IssuerCreateCredentialResponse) {}
 
-  // Prover Create Credential Req
-  rpc ProverCreateCredentialReq (ProverCreateCredentialReqRequest) returns (ProverCreateCredentialReqResponse) {}
+    // Issuer Revoke Credential
+    rpc IssuerRevokeCredential (IssuerRevokeCredentialRequest) returns (IssuerRevokeCredentialResponse) {}
 
-  // Prover Store Credential
-  rpc ProverStoreCredential (ProverStoreCredentialRequest) returns (ProverStoreCredentialResponse) {}
+    // Issuer Merge Revocation Registry Deltas
+    rpc IssuerMergeRevocationRegistryDeltas (IssuerMergeRevocationRegistryDeltasRequest) returns (IssuerMergeRevocationRegistryDeltasResponse) {}
 
-  // Prover Get Credential
-  rpc ProverGetCredential (ProverGetCredentialRequest) returns (ProverGetCredentialResponse) {}
+    // Prover Create Master Secret
+    rpc ProverCreateMasterSecret (ProverCreateMasterSecretRequest) returns (ProverCreateMasterSecretResponse) {}
 
-  // Prover Get Credentials
-  rpc ProverGetCredentials (ProverGetCredentialsRequest) returns (ProverGetCredentialsResponse) {}
+    // Prover Create Credential Req
+    rpc ProverCreateCredentialReq (ProverCreateCredentialReqRequest) returns (ProverCreateCredentialReqResponse) {}
 
-  // Prover Seach Credentials
-  rpc ProverSeachCredentials (ProverSeachCredentialsRequest) returns (ProverSeachCredentialsResponse) {}
+    // Prover Store Credential
+    rpc ProverStoreCredential (ProverStoreCredentialRequest) returns (ProverStoreCredentialResponse) {}
 
-  // Prover Fetch Credentials
-  rpc ProverFetchCredentials (ProverFetchCredentialsRequest) returns (ProverFetchCredentialsResponse) {}
+    // Prover Get Credential
+    rpc ProverGetCredential (ProverGetCredentialRequest) returns (ProverGetCredentialResponse) {}
 
-  // Prover Close Credentials Search
-  rpc ProverCloseCredentialsSearch (ProverCloseCredentialsSearchRequest) returns (ProverCloseCredentialsSearchResponse) {}
+    // Prover Get Credentials
+    rpc ProverGetCredentials (ProverGetCredentialsRequest) returns (ProverGetCredentialsResponse) {}
 
-  // Prover Get Credentials For Proof Req
-  rpc ProverGetCredentialsForProofReq (ProverGetCredentialsForProofReqRequest) returns (ProverGetCredentialsForProofReqResponse) {}
+    // Prover Seach Credentials
+    rpc ProverSeachCredentials (ProverSeachCredentialsRequest) returns (ProverSeachCredentialsResponse) {}
 
-  // Prover Search Credentials For Proof Req
-  rpc ProverSearchCredentialsForProofReq (ProverSearchCredentialsForProofReqRequest) returns (ProverSearchCredentialsForProofReqResponse) {}
+    // Prover Fetch Credentials
+    rpc ProverFetchCredentials (ProverFetchCredentialsRequest) returns (ProverFetchCredentialsResponse) {}
 
-  // Prover Fetch Credentials For Proof Req
-  rpc ProverFetchCredentialsForProofReq (ProverFetchCredentialsForProofReqRequest) returns (ProverFetchCredentialsForProofReqResponse) {}
+    // Prover Close Credentials Search
+    rpc ProverCloseCredentialsSearch (ProverCloseCredentialsSearchRequest) returns (ProverCloseCredentialsSearchResponse) {}
 
-  // Prover Close Credentials Search For Proof Req
-  rpc ProverCloseCredentialsSearchForProofReq (ProverCloseCredentialsSearchForProofReqRequest) returns (ProverCloseCredentialsSearchForProofReqResponse) {}
+    // Prover Get Credentials For Proof Req
+    rpc ProverGetCredentialsForProofReq (ProverGetCredentialsForProofReqRequest) returns (ProverGetCredentialsForProofReqResponse) {}
 
-  // Prover Create Proof
-  rpc ProverCreateProof (ProverCreateProofRequest) returns (ProverCreateProofResponse) {}
+    // Prover Search Credentials For Proof Req
+    rpc ProverSearchCredentialsForProofReq (ProverSearchCredentialsForProofReqRequest) returns (ProverSearchCredentialsForProofReqResponse) {}
 
-  // Verifier Verify Proof
-  rpc VerifierVerifyProof (VerifierVerifyProofRequest) returns (VerifierVerifyProofResponse) {}
+    // Prover Fetch Credentials For Proof Req
+    rpc ProverFetchCredentialsForProofReq (ProverFetchCredentialsForProofReqRequest) returns (ProverFetchCredentialsForProofReqResponse) {}
 
-  // Create Revocation State
-  rpc CreateRevocationState (CreateRevocationStateRequest) returns (CreateRevocationStateResponse) {}
-  // Update Revocation State
-  rpc UpdateRevocationState (UpdateRevocationStateRequest) returns (UpdateRevocationStateResponse) {}
+    // Prover Close Credentials Search For Proof Req
+    rpc ProverCloseCredentialsSearchForProofReq (ProverCloseCredentialsSearchForProofReqRequest) returns (ProverCloseCredentialsSearchForProofReqResponse) {}
+
+    // Prover Create Proof
+    rpc ProverCreateProof (ProverCreateProofRequest) returns (ProverCreateProofResponse) {}
+
+    // Verifier Verify Proof
+    rpc VerifierVerifyProof (VerifierVerifyProofRequest) returns (VerifierVerifyProofResponse) {}
+
+    // Create Revocation State
+    rpc CreateRevocationState (CreateRevocationStateRequest) returns (CreateRevocationStateResponse) {}
+    // Update Revocation State
+    rpc UpdateRevocationState (UpdateRevocationStateRequest) returns (UpdateRevocationStateResponse) {}
+    // Generate Nonce
+    rpc GenerateNonce (GenerateNonceRequest) returns (GenerateNonceResponse) {}
 }
 
 
 // Wallet Service Start
 service WalletService {
-  // Create wallet
-  rpc CreateNewWallet (NewWalletDefinition) returns (CreateWalletErrorCode) {}
-  // Open Wallet
-  rpc OpenWallet (OpenWalletDefinition) returns (OpenWalletHandle) {}
-  // Close Wallet
-  rpc CloseWallet (CloseWalletHandle) returns (CloseWalletStatus) {}
-  // Delete Wallet
-  rpc DeleteWallet (DeleteWalletDefinition) returns (DeleteWalletConfirmation) {}
-  // Export Wallet
-  rpc ExportWallet (ExportWalletDefinition) returns (ExportWalletConfirmation) {}
-  // Import Wallet
-  rpc ImportWallet (ImportWalletDefinition) returns (ImportWalletConfirmation) {}
-  // Generate Wallet Key
-  rpc GenerateWalletKey (GenerateWalletKeyDefinition) returns (GenerateWalletKeyConfirmation) {}
+    // Create wallet
+    rpc CreateNewWallet (NewWalletDefinition) returns (CreateWalletErrorCode) {}
+    // Open Wallet
+    rpc OpenWallet (OpenWalletDefinition) returns (OpenWalletHandle) {}
+    // Close Wallet
+    rpc CloseWallet (CloseWalletHandle) returns (CloseWalletStatus) {}
+    // Delete Wallet
+    rpc DeleteWallet (DeleteWalletDefinition) returns (DeleteWalletConfirmation) {}
+    // Export Wallet
+    rpc ExportWallet (ExportWalletDefinition) returns (ExportWalletConfirmation) {}
+    // Import Wallet
+    rpc ImportWallet (ImportWalletDefinition) returns (ImportWalletConfirmation) {}
+    // Generate Wallet Key
+    rpc GenerateWalletKey (GenerateWalletKeyDefinition) returns (GenerateWalletKeyConfirmation) {}
 }
 
 // `blob storage` services
 service BlobStorageService{
-  rpc OpenReader (OpenReaderRequest) returns (OpenReaderResponse) {}
-  rpc OpenWriter (OpenWriterRequest) returns (OpenWriterResponse) {}
+    rpc OpenReader (OpenReaderRequest) returns (OpenReaderResponse) {}
+    rpc OpenWriter (OpenWriterRequest) returns (OpenWriterResponse) {}
 }

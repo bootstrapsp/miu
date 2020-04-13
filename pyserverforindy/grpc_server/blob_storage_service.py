@@ -1,7 +1,9 @@
 import os
 import sys
 
-from indy import blob_storage as indy_blob_storage
+from indy import blob_storage as indy_blob_storage, IndyError
+from indy.error import ErrorCode
+from grpc import StatusCode
 
 
 ROOT_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -54,6 +56,10 @@ class BlobStorageServiceServicer(object):
             type_, config = get_value(request.Type_), get_value(request.Config)
             resp = await indy_blob_storage.open_reader(type_, config)
             return identitylayer_pb2.OpenReaderResponse(Res=resp)
+        except IndyError as e:
+            logger.error("Indy Exception Occurred @ OpenReader ------")
+            logger.error(e.message)
+            return identitylayer_pb2.OpenReaderResponse() 
         except Exception as e:
             logger.error("Exception occurred @ OpenReader")
             logger.error(e)
@@ -64,7 +70,11 @@ class BlobStorageServiceServicer(object):
             type_ = get_value(request.Type_)
             config = get_value(request.Config)
             resp = await indy_blob_storage.open_writer(type_, config)
-            return identitylayer_pb2.OpenWriterRequest(Res=resp)
+            return identitylayer_pb2.OpenWriterResponse(Res=resp)
+        except IndyError as e:
+            logger.error("Indy Exception Occurred @ OpenWriter ------")
+            logger.error(e.message)
+            return identitylayer_pb2.OpenWriterResponse() 
         except Exception as e:
             logger.error("Exception occurred @ OpenWriter")
             logger.error(e)

@@ -1609,6 +1609,11 @@ class AnoncredsServiceStub(object):
         request_serializer=identitylayer__pb2.UpdateRevocationStateRequest.SerializeToString,
         response_deserializer=identitylayer__pb2.UpdateRevocationStateResponse.FromString,
         )
+    self.GenerateNonce = channel.unary_unary(
+        '/identitylayer.AnoncredsService/GenerateNonce',
+        request_serializer=identitylayer__pb2.GenerateNonceRequest.SerializeToString,
+        response_deserializer=identitylayer__pb2.GenerateNonceResponse.FromString,
+        )
 
 
 class AnoncredsServiceServicer(object):
@@ -1776,6 +1781,13 @@ class AnoncredsServiceServicer(object):
     context.set_details('Method not implemented!')
     raise NotImplementedError('Method not implemented!')
 
+  def GenerateNonce(self, request, context):
+    """Generate Nonce
+    """
+    context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+    context.set_details('Method not implemented!')
+    raise NotImplementedError('Method not implemented!')
+
 
 def add_AnoncredsServiceServicer_to_server(servicer, server):
   rpc_method_handlers = {
@@ -1893,6 +1905,11 @@ def add_AnoncredsServiceServicer_to_server(servicer, server):
           servicer.UpdateRevocationState,
           request_deserializer=identitylayer__pb2.UpdateRevocationStateRequest.FromString,
           response_serializer=identitylayer__pb2.UpdateRevocationStateResponse.SerializeToString,
+      ),
+      'GenerateNonce': grpc.unary_unary_rpc_method_handler(
+          servicer.GenerateNonce,
+          request_deserializer=identitylayer__pb2.GenerateNonceRequest.FromString,
+          response_serializer=identitylayer__pb2.GenerateNonceResponse.SerializeToString,
       ),
   }
   generic_handler = grpc.method_handlers_generic_handler(
