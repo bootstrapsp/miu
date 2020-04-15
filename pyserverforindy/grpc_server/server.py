@@ -7,11 +7,15 @@ from concurrent import futures
 import functools
 import threading
 
+from typing import Text
+
 import os
 import sys
 import inspect
 import grpc
 import time
+
+_PORT = os.environ["PORT"]
 
 from grpc import _server
 
@@ -162,9 +166,9 @@ _server._unary_response_in_pool = _unary_response_in_pool
 _server._stream_response_in_pool = _stream_response_in_pool
 
 
-if __name__ == '__main__':
-    server = grpc.server(AsyncioExecutor())
-    
+def _serve(port: Text):
+    bind_address = f"[::]:{port}"
+    server = grpc.server(futures.ThreadPoolExecutor())
     identitylayer_pb2_grpc.add_NonSecretServiceServicer_to_server(NonSecretServiceServicer(), server)
     identitylayer_pb2_grpc.add_LedgerServiceServicer_to_server(LedgerServiceServicer(), server)
     identitylayer_pb2_grpc.add_DidServiceServicer_to_server(DidServiceServicer(), server)
@@ -174,13 +178,12 @@ if __name__ == '__main__':
     identitylayer_pb2_grpc.add_AnoncredsServiceServicer_to_server(AnoncredsServiceServicer(), server)
     identitylayer_pb2_grpc.add_WalletServiceServicer_to_server(WalletServiceServicer(), server)
     identitylayer_pb2_grpc.add_BlobStorageServiceServicer_to_server(BlobStorageServiceServicer(), server)
-    
-    server.add_insecure_port('[::]:50051')
+
+    server.add_insecure_port(bind_address)
     server.start()
-    try:
-        logger.debug("Started `miu` Server on port :50051")
-        while True:
-            time.sleep(_ONE_DAY_IN_SECONDS)
-    except KeyboardInterrupt:
-        logger.debug("Stopped `miu` server.")
-        server.stop(0)
+    server.wait_for_termination()
+    logger.debug("Started `miu` Server on port :")
+
+if __name__ == '__main__':
+    logging.basicConfig(level=logging.DEBUG)
+    _serve(_PORT)
