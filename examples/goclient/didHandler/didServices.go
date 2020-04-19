@@ -185,7 +185,7 @@ func SetDidMetadata(target, did, metadata string, walletHandle int64) int64 {
 func KeyForLocalDid(target, did string, walletHandle, pHandle int64) string {
 	myConn, clientErr := grpcConn.GrpcConn(target)
 	if clientErr != nil {
-		log.Println("DIDHandler's SetDidMetadata() context failed to make grpc connection", clientErr)
+		log.Println("DIDHandler's KeyForLocalDid() context failed to make grpc connection", clientErr)
 		panic(clientErr)
 	}
 	didClient := pb.NewDidServiceClient(myConn)
@@ -210,7 +210,7 @@ func KeyForLocalDid(target, did string, walletHandle, pHandle int64) string {
 func ReplaceKeysStart(target, did string, wallHandle int64) string {
 	myConn, clientErr := grpcConn.GrpcConn(target)
 	if clientErr != nil {
-		log.Println("DIDHandler's SetDidMetadata() context failed to make grpc connection", clientErr)
+		log.Println("DIDHandler's ReplaceKeyStart() context failed to make grpc connection", clientErr)
 		panic(clientErr)
 	}
 	didClient := pb.NewDidServiceClient(myConn)
@@ -233,5 +233,82 @@ func ReplaceKeysStart(target, did string, wallHandle int64) string {
 	}
 
 	return res.Verkey
+
+}
+
+/*
+GetKeyMetadata takes targer, verykey as string and wallethandle and returns metadata as string
+*/
+func GetKeyMetadata(target, verkey string, walletHandle int64) string {
+	myConn, clientErr := grpcConn.GrpcConn(target)
+	if clientErr != nil {
+		log.Println("DIDHandler's GetKeyMetadata() context failed to make grpc connection", clientErr)
+		panic(clientErr)
+	}
+	didClient := pb.NewDidServiceClient(myConn)
+
+	res, err := didClient.DidGetKeyMetadata(context.Background(), &pb.DidGetKeyMetadataRequest{
+		WalletHandle: walletHandle,
+		Verkey:       verkey,
+	})
+
+	if err != nil {
+		log.Fatal("Couldn't get DidKeyMetadata see err: ", err)
+		resErr, ok := status.FromError(err)
+		if ok {
+			log.Fatal(resErr.Code())
+			log.Fatal(resErr.Message())
+			log.Fatal(resErr.Details())
+		}
+	}
+
+	return res.Metadata
+}
+
+/*
+	Incomplete impl RPC has wrong return signature opened a bug that should be fixed first, see
+	https://github.com/bootstrapsp/miu/issues/39 and
+	https://github.com/bootstrapsp/miu/issues/40
+	This needs to be fixed first.
+
+*/
+
+func SetKeyMetada(target, verkey, metadata string, walletHandle int64) {
+	myConn, clientErr := grpcConn.GrpcConn(target)
+	if clientErr != nil {
+		log.Println("DIDHandler's SetKeyMetada() context failed to make grpc connection", clientErr)
+		panic(clientErr)
+	}
+	didClient := pb.NewDidServiceClient(myConn)
+
+	_, err := didClient.DidSetKeyMetadata(context.Background(), &pb.DidSetKeyMetadataRequest{
+		WalletHandle: walletHandle,
+		Verkey:       verkey,
+		Metadata:     metadata,
+	})
+
+	if err != nil {
+		log.Fatal("Failed to SetKeyMetadata see error :", err)
+
+	}
+
+}
+
+/*
+Incomplete implementation need to fix https://github.com/bootstrapsp/miu/issues/40 first!
+KeyJson should have the capability to handle both the Seed and the Crypt as a single complex structure of strings
+*/
+func CreateKey(target string, walletHandle int64, kj keyJson) {
+	myConn, clientErr := grpcConn.GrpcConn(target)
+	if clientErr != nil {
+		log.Println("DIDHandler's CreateKey() context failed to make grpc connection", clientErr)
+		panic(clientErr)
+	}
+	didClient := pb.NewDidServiceClient(myConn)
+
+	didClient.DidCreateKey(context.Background(), &pb.DidCreateKeyRequest{
+		WalletHandle: walletHandle,
+		KeyJson:      kj.Seed,
+	})
 
 }
