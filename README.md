@@ -1,3 +1,5 @@
+[![Known Vulnerabilities](https://snyk.io/test/github/bootstrapsp/miu/badge.svg?targetFile=pyserverforindy/requirements.txt)](https://snyk.io/test/github/bootstrapsp/miu?targetFile=pyserverforindy/requirements.txt)
+
 Status : Active (Under active development, breaking changes may occur)
 
 # Miu
