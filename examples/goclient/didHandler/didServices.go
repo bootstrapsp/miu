@@ -13,8 +13,9 @@ func CreateAndStoreDID(target string, wallHandler int64) {
 
 	myConn, err := grpcConn.GrpcConn(target)
 	if err != nil {
+
 		log.Fatal("DIDHandler's CreateAndStoreDiD() context failed to make grpc connection ", err)
-		panic(myConn)
+
 	}
 	didClient := pb.NewDidServiceClient(myConn)
 
@@ -89,9 +90,9 @@ func AbbreviateVerkey(target, did, verkey string) (abbVerKeyMetaData string) {
 	if abbVerErr != nil {
 		abbVerRes, ok := status.FromError(abbVerErr)
 		if ok {
-			log.Fatalln(abbVerRes.Code())
-			log.Fatalln(abbVerRes.Message())
-			log.Fatalln(abbVerRes.Details())
+			log.Println(abbVerRes.Code())
+			log.Println(abbVerRes.Message())
+			log.Println(abbVerRes.Details())
 			return ""
 		}
 
@@ -116,12 +117,12 @@ func GetMyDidWithMeta(target, did string, wallHandle int64) (didWithMeta string)
 		Did:          did,
 	})
 	if err != nil {
-		log.Fatalln("Couldn't get proper metadata response for your DID, ", err)
+		log.Println("Couldn't get proper metadata response for your DID, ", err)
 		myDIDreserr, ok := status.FromError(err)
 		if ok {
-			log.Fatalln(myDIDreserr.Code())
-			log.Fatalln(myDIDreserr.Message())
-			log.Fatalln(myDIDreserr.Details())
+			log.Println(myDIDreserr.Code())
+			log.Println(myDIDreserr.Message())
+			log.Println(myDIDreserr.Details())
 		}
 
 	}
@@ -145,12 +146,12 @@ func GetDidMetadata(target, did string, walletHandle int64) string {
 	})
 
 	if err != nil {
-		log.Fatalln("Couldn't get the metadata information for DID ", err)
+		log.Println("Couldn't get the metadata information for DID ", err)
 		didMetaRestErr, ok := status.FromError(err)
 		if ok {
-			log.Fatalln(didMetaRestErr.Code())
-			log.Fatalln(didMetaRestErr.Message())
-			log.Fatalln(didMetaRestErr.Details())
+			log.Println(didMetaRestErr.Code())
+			log.Println(didMetaRestErr.Message())
+			log.Println(didMetaRestErr.Details())
 		}
 	}
 	return didMetaRes.Metadata
@@ -174,9 +175,9 @@ func SetDidMetadata(target, did, metadata string, walletHandle int64) int64 {
 	if err != nil {
 		setDidMetaResErr, ok := status.FromError(err)
 		if ok {
-			log.Fatalln(setDidMetaResErr.Code())
-			log.Fatalln(setDidMetaResErr.Details())
-			log.Fatalln(setDidMetaResErr.Message())
+			log.Println(setDidMetaResErr.Code())
+			log.Println(setDidMetaResErr.Details())
+			log.Println(setDidMetaResErr.Message())
 		}
 	}
 	return setDidMetaRes.Error
@@ -198,9 +199,9 @@ func KeyForLocalDid(target, did string, walletHandle, pHandle int64) string {
 	if err != nil {
 		resErr, ok := status.FromError(err)
 		if ok {
-			log.Fatalln(resErr.Code())
-			log.Fatalln(resErr.Message())
-			log.Fatalln(resErr.Details())
+			log.Println(resErr.Code())
+			log.Println(resErr.Message())
+			log.Println(resErr.Details())
 		}
 	}
 
@@ -226,9 +227,9 @@ func ReplaceKeysStart(target, did string, wallHandle int64) string {
 	if err != nil {
 		resErr, ok := status.FromError(err)
 		if ok {
-			log.Fatalln(resErr.Code())
-			log.Fatalln(resErr.Message())
-			log.Fatalln(resErr.Details())
+			log.Println(resErr.Code())
+			log.Println(resErr.Message())
+			log.Println(resErr.Details())
 		}
 	}
 
@@ -253,12 +254,12 @@ func GetKeyMetadata(target, verkey string, walletHandle int64) string {
 	})
 
 	if err != nil {
-		log.Fatal("Couldn't get DidKeyMetadata see err: ", err)
+		log.Println("Couldn't get DidKeyMetadata see err: ", err)
 		resErr, ok := status.FromError(err)
 		if ok {
-			log.Fatal(resErr.Code())
-			log.Fatal(resErr.Message())
-			log.Fatal(resErr.Details())
+			log.Println(resErr.Code())
+			log.Println(resErr.Message())
+			log.Println(resErr.Details())
 		}
 	}
 
