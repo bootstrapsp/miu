@@ -1,5 +1,3 @@
-Status : Active (Under active development, breaking changes may occur)
-
 # Miu
 
 Miu is a [gRPC](https://grpc.io/) based python server enabling developers to easily connect and develop [Hyperledger Indy](https://www.hyperledger.org/projects/hyperledger-indy) based clients using Hyperledger Indy SDK.
